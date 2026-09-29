@@ -1,0 +1,51 @@
+{
+  "throwRows": 78847,
+  "regularSeasonThrows": 72663,
+  "gamesWithThrows": 142,
+  "regularSeasonGames": 131,
+  "teams": 22,
+  "players": 758,
+  "nullAec": 18,
+  "callahans": 28,
+  "missingGames": [
+    {
+      "game": "2026-07-17-IND-PIT",
+      "phase": "Playoffs",
+      "reason": "The public API returned zero throws."
+    },
+    {
+      "game": "2026-07-18-PIT-CHI",
+      "phase": "Regular season",
+      "reason": "The public API returned zero throws."
+    },
+    {
+      "game": "2026-08-27-OAK-NY",
+      "phase": "Playoffs",
+      "reason": "The public API returned zero throws."
+    }
+  ],
+  "unknownPlayerNames": [
+    "unknown"
+  ],
+  "playerMetricChecks": 2304,
+  "maxPlayerMetricDelta": 6.217248937900877e-15,
+  "metricDisagreements": [],
+  "coordinateExtrema": {
+    "tx": [
+      -26.67,
+      26.66
+    ],
+    "ty": [
+      0.0,
+      100.0
+    ],
+    "rx": [
+      -26.67,
+      26.66
+    ],
+    "ry": [
+      0.81,
+      120.0
+    ]
+  }
+}
