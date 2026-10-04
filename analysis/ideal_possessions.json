@@ -1,0 +1,2000 @@
+{
+  "snapshotCapturedAt": "2026-09-29T16:19:13.770251+00:00",
+  "season": "2026 regular season",
+  "games": 131,
+  "throws": 72663,
+  "sourceManifest": "data/source-manifest.json",
+  "method": {
+    "start": "Central initiation: x in [-15,15), y in [20,40)",
+    "maxPasses": 4,
+    "minimumThrowerAttemptsPerEdge": 20,
+    "minimumReceiverTargetsPerEdge": 10,
+    "minimumGamesPerRoleEdge": 3,
+    "priorStrength": 40,
+    "objective": "Product of shrunk thrower delivery and receiver catch rates across the route.",
+    "terminal": "All attacking end-zone boxes pooled: recorded event type 19 goals, plus attempted end-zone passes on turnovers.",
+    "constraints": "Forward zone-center progress; no repeated player; 12 retained histories per player/zone state.",
+    "uncertainty": "90% conditional Beta posterior interval; does not cover model misspecification or cross-team chemistry.",
+    "limitations": [
+      "Exploratory in-sample screening, not a calibrated forecast or a claim of a global tactical optimum.",
+      "Broad spatial zones do not fix exact throw distance, marking pressure, weather, receiver separation, or timing.",
+      "Adjacent-zone historical throws often cross only part of a band; linking zone averages can overstate spatial progress. No exact continuous field path is estimated.",
+      "Thrower delivery and receiver catching are factored independently; fit together only in this hypothetical model.",
+      "Receiver exposure excludes untargeted throwaways; off-disc creation and ability to get open are not measured.",
+      "One regular-season game lacks throw data; playoffs excluded."
+    ]
+  },
+  "possessionAudit": {
+    "possessions": 10331,
+    "excluded": {
+      "nonconsecutive_order": 7,
+      "missing_aec": 2
+    },
+    "verified_goal_endings": 5312,
+    "median_goal_aec": 1.0009615899741766,
+    "goal_aec_p10": 0.8983743513565664,
+    "goal_aec_p90": 1.108293703956934,
+    "top_raw_sums": [
+      {
+        "key": [
+          "2026-07-12-NY-TOR",
+          4,
+          11,
+          2,
+          "empire"
+        ],
+        "passes": 7,
+        "aec": 1.655180700943613,
+        "startY": 75.47,
+        "people": [
+          "dschnaudi",
+          "nlhamo",
+          "bsimmons",
+          "elieman",
+          "bsimmons",
+          "adavis2",
+          "bsimmons",
+          "dschnaudi"
+        ]
+      },
+      {
+        "key": [
+          "2026-07-18-OAK-COL",
+          3,
+          10,
+          4,
+          "spiders"
+        ],
+        "passes": 17,
+        "aec": 1.6311357529871924,
+        "startY": 40.0,
+        "people": [
+          "tgoss",
+          "mwilliams",
+          "arosentha",
+          "jvallee",
+          "tgoss",
+          "jvallee",
+          "arosentha",
+          "tgoss",
+          "twarren",
+          "dritthale",
+          "dclyburn",
+          "dritthale",
+          "radkins",
+          "aorme",
+          "lgordon",
+          "aorme",
+          "radkins",
+          "dritthale"
+        ]
+      },
+      {
+        "key": [
+          "2026-07-05-TOR-MTL",
+          2,
+          8,
+          2,
+          "royal"
+        ],
+        "passes": 19,
+        "aec": 1.5763072012709365,
+        "startY": 22.57,
+        "people": [
+          "jbrissett",
+          "kquinlan",
+          "phooley",
+          "jbrissett",
+          "ccolbury",
+          "jbrissett",
+          "kquinlan",
+          "jbrissett",
+          "kquinlan",
+          "tpeterson",
+          "jhill",
+          "ngagnon",
+          "jbrissett",
+          "jhill",
+          "jbrissett",
+          "jhill",
+          "jbrissett",
+          "jhill",
+          "jbrissett",
+          "ngagnon"
+        ]
+      },
+      {
+        "key": [
+          "2026-06-14-IND-MAD",
+          3,
+          10,
+          1,
+          "radicals"
+        ],
+        "passes": 22,
+        "aec": 1.5275179975441608,
+        "startY": 7.36,
+        "people": [
+          "sstark",
+          "gvordick",
+          "sstark",
+          "gvordick",
+          "nranabhat",
+          "msample",
+          "nranabhat",
+          "gvordick",
+          "nranabhat",
+          "gvordick",
+          "sstark",
+          "gvordick",
+          "sstark",
+          "nranabhat",
+          "sstark",
+          "gvordick",
+          "nranabhat",
+          "gvordick",
+          "msample",
+          "sstark",
+          "gvordick",
+          "nranabhat",
+          "gvordick"
+        ]
+      },
+      {
+        "key": [
+          "2026-04-25-ATL-ATX",
+          2,
+          14,
+          1,
+          "sol"
+        ],
+        "passes": 15,
+        "aec": 1.5207061213028075,
+        "startY": 5.82,
+        "people": [
+          "dfitzgera",
+          "spalchuru",
+          "khenke",
+          "jwylie",
+          "khenke",
+          "eswiatek",
+          "rbowman",
+          "eswiatek",
+          "khenke",
+          "jwylie",
+          "khenke",
+          "marmstron",
+          "khenke",
+          "eswiatek",
+          "khenke",
+          "eswiatek"
+        ]
+      }
+    ]
+  },
+  "excludedUnmappedThrows": 0,
+  "candidateRoutes": 1749,
+  "topFive": [
+    {
+      "rank": 1,
+      "probability": 0.8476243311760273,
+      "interval90": [
+        0.7686249201767893,
+        0.9129936754566734
+      ],
+      "players": [
+        {
+          "id": "rdinger",
+          "name": "Ryan Dinger",
+          "team": "BOS"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "rpieran",
+          "name": "Pieran Robert",
+          "team": "MAD"
+        }
+      ],
+      "passes": [
+        {
+          "thrower": "rdinger",
+          "receiver": "nranabhat",
+          "from": "init",
+          "to": "build",
+          "p": 0.9699898061636617,
+          "throwBeta": [
+            66.63717445594006,
+            1.3628255440599357
+          ],
+          "catchBeta": [
+            52.46085672082718,
+            0.5391432791728201
+          ],
+          "throwEvidence": {
+            "n": 28,
+            "good": 28,
+            "games": 10,
+            "meanStart": [
+              -0.2767857142857143,
+              31.34
+            ],
+            "meanEnd": [
+              -0.7939285714285713,
+              45.128928571428574
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 9,
+            "meanStart": [
+              1.8838461538461537,
+              34.425384615384615
+            ],
+            "meanEnd": [
+              -0.5153846153846152,
+              46.24923076923077
+            ]
+          }
+        },
+        {
+          "thrower": "nranabhat",
+          "receiver": "gvordick",
+          "from": "build",
+          "to": "attack",
+          "p": 0.9614326008973405,
+          "throwBeta": [
+            59.11797752808989,
+            1.882022471910112
+          ],
+          "catchBeta": [
+            57.53831041257367,
+            0.46168958742632604
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              -1.1776190476190476,
+              52.74761904761905
+            ],
+            "meanEnd": [
+              -0.3333333333333334,
+              66.13190476190476
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 9,
+            "meanStart": [
+              -1.2327777777777778,
+              53.64666666666667
+            ],
+            "meanEnd": [
+              -3.2194444444444446,
+              65.7238888888889
+            ]
+          }
+        },
+        {
+          "thrower": "gvordick",
+          "receiver": "slofink",
+          "from": "attack",
+          "to": "red",
+          "p": 0.9630939528942504,
+          "throwBeta": [
+            65.16216216216216,
+            1.8378378378378368
+          ],
+          "catchBeta": [
+            52.48362720403023,
+            0.516372795969775
+          ],
+          "throwEvidence": {
+            "n": 27,
+            "good": 27,
+            "games": 10,
+            "meanStart": [
+              -1.6255555555555556,
+              74.22814814814815
+            ],
+            "meanEnd": [
+              -0.7707407407407408,
+              86.09333333333333
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 8,
+            "meanStart": [
+              0.10999999999999985,
+              74.31076923076922
+            ],
+            "meanEnd": [
+              1.623846153846154,
+              84.12615384615385
+            ]
+          }
+        },
+        {
+          "thrower": "slofink",
+          "receiver": "rpieran",
+          "from": "red",
+          "to": "goal",
+          "p": 0.9437321364375559,
+          "throwBeta": [
+            58.042833607907745,
+            2.9571663920922564
+          ],
+          "catchBeta": [
+            61.49243098842386,
+            0.5075690115761367
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              2.3033333333333332,
+              91.62619047619047
+            ],
+            "meanEnd": [
+              -2.287619047619048,
+              106.80047619047619
+            ]
+          },
+          "catchEvidence": {
+            "n": 22,
+            "good": 22,
+            "games": 9,
+            "meanStart": [
+              0.32909090909090905,
+              89.28
+            ],
+            "meanEnd": [
+              0.6095454545454545,
+              109.69090909090909
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "probability": 0.8473655978905936,
+      "interval90": [
+        0.7697932627110933,
+        0.9123165022504672
+      ],
+      "players": [
+        {
+          "id": "pjanas",
+          "name": "Pawel Janas",
+          "team": "CHI"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "rpieran",
+          "name": "Pieran Robert",
+          "team": "MAD"
+        }
+      ],
+      "passes": [
+        {
+          "thrower": "pjanas",
+          "receiver": "nranabhat",
+          "from": "init",
+          "to": "build",
+          "p": 0.9696937214004533,
+          "throwBeta": [
+            65.63717445594006,
+            1.3628255440599357
+          ],
+          "catchBeta": [
+            52.46085672082718,
+            0.5391432791728201
+          ],
+          "throwEvidence": {
+            "n": 27,
+            "good": 27,
+            "games": 8,
+            "meanStart": [
+              0.6240740740740741,
+              33.404444444444444
+            ],
+            "meanEnd": [
+              -0.5707407407407409,
+              46.105185185185185
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 9,
+            "meanStart": [
+              1.8838461538461537,
+              34.425384615384615
+            ],
+            "meanEnd": [
+              -0.5153846153846152,
+              46.24923076923077
+            ]
+          }
+        },
+        {
+          "thrower": "nranabhat",
+          "receiver": "gvordick",
+          "from": "build",
+          "to": "attack",
+          "p": 0.9614326008973405,
+          "throwBeta": [
+            59.11797752808989,
+            1.882022471910112
+          ],
+          "catchBeta": [
+            57.53831041257367,
+            0.46168958742632604
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              -1.1776190476190476,
+              52.74761904761905
+            ],
+            "meanEnd": [
+              -0.3333333333333334,
+              66.13190476190476
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 9,
+            "meanStart": [
+              -1.2327777777777778,
+              53.64666666666667
+            ],
+            "meanEnd": [
+              -3.2194444444444446,
+              65.7238888888889
+            ]
+          }
+        },
+        {
+          "thrower": "gvordick",
+          "receiver": "slofink",
+          "from": "attack",
+          "to": "red",
+          "p": 0.9630939528942504,
+          "throwBeta": [
+            65.16216216216216,
+            1.8378378378378368
+          ],
+          "catchBeta": [
+            52.48362720403023,
+            0.516372795969775
+          ],
+          "throwEvidence": {
+            "n": 27,
+            "good": 27,
+            "games": 10,
+            "meanStart": [
+              -1.6255555555555556,
+              74.22814814814815
+            ],
+            "meanEnd": [
+              -0.7707407407407408,
+              86.09333333333333
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 8,
+            "meanStart": [
+              0.10999999999999985,
+              74.31076923076922
+            ],
+            "meanEnd": [
+              1.623846153846154,
+              84.12615384615385
+            ]
+          }
+        },
+        {
+          "thrower": "slofink",
+          "receiver": "rpieran",
+          "from": "red",
+          "to": "goal",
+          "p": 0.9437321364375559,
+          "throwBeta": [
+            58.042833607907745,
+            2.9571663920922564
+          ],
+          "catchBeta": [
+            61.49243098842386,
+            0.5075690115761367
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              2.3033333333333332,
+              91.62619047619047
+            ],
+            "meanEnd": [
+              -2.287619047619048,
+              106.80047619047619
+            ]
+          },
+          "catchEvidence": {
+            "n": 22,
+            "good": 22,
+            "games": 9,
+            "meanStart": [
+              0.32909090909090905,
+              89.28
+            ],
+            "meanEnd": [
+              0.6095454545454545,
+              109.69090909090909
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "probability": 0.8471418183640661,
+      "interval90": [
+        0.7700748603647151,
+        0.9123019022080198
+      ],
+      "players": [
+        {
+          "id": "rdinger",
+          "name": "Ryan Dinger",
+          "team": "BOS"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "awilsonho",
+          "name": "Alec Wilson Holliday",
+          "team": "ATL"
+        }
+      ],
+      "passes": [
+        {
+          "thrower": "rdinger",
+          "receiver": "nranabhat",
+          "from": "init",
+          "to": "build",
+          "p": 0.9699898061636617,
+          "throwBeta": [
+            66.63717445594006,
+            1.3628255440599357
+          ],
+          "catchBeta": [
+            52.46085672082718,
+            0.5391432791728201
+          ],
+          "throwEvidence": {
+            "n": 28,
+            "good": 28,
+            "games": 10,
+            "meanStart": [
+              -0.2767857142857143,
+              31.34
+            ],
+            "meanEnd": [
+              -0.7939285714285713,
+              45.128928571428574
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 9,
+            "meanStart": [
+              1.8838461538461537,
+              34.425384615384615
+            ],
+            "meanEnd": [
+              -0.5153846153846152,
+              46.24923076923077
+            ]
+          }
+        },
+        {
+          "thrower": "nranabhat",
+          "receiver": "gvordick",
+          "from": "build",
+          "to": "attack",
+          "p": 0.9614326008973405,
+          "throwBeta": [
+            59.11797752808989,
+            1.882022471910112
+          ],
+          "catchBeta": [
+            57.53831041257367,
+            0.46168958742632604
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              -1.1776190476190476,
+              52.74761904761905
+            ],
+            "meanEnd": [
+              -0.3333333333333334,
+              66.13190476190476
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 9,
+            "meanStart": [
+              -1.2327777777777778,
+              53.64666666666667
+            ],
+            "meanEnd": [
+              -3.2194444444444446,
+              65.7238888888889
+            ]
+          }
+        },
+        {
+          "thrower": "gvordick",
+          "receiver": "slofink",
+          "from": "attack",
+          "to": "red",
+          "p": 0.9630939528942504,
+          "throwBeta": [
+            65.16216216216216,
+            1.8378378378378368
+          ],
+          "catchBeta": [
+            52.48362720403023,
+            0.516372795969775
+          ],
+          "throwEvidence": {
+            "n": 27,
+            "good": 27,
+            "games": 10,
+            "meanStart": [
+              -1.6255555555555556,
+              74.22814814814815
+            ],
+            "meanEnd": [
+              -0.7707407407407408,
+              86.09333333333333
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 8,
+            "meanStart": [
+              0.10999999999999985,
+              74.31076923076922
+            ],
+            "meanEnd": [
+              1.623846153846154,
+              84.12615384615385
+            ]
+          }
+        },
+        {
+          "thrower": "slofink",
+          "receiver": "awilsonho",
+          "from": "red",
+          "to": "goal",
+          "p": 0.9431949139556827,
+          "throwBeta": [
+            58.042833607907745,
+            2.9571663920922564
+          ],
+          "catchBeta": [
+            57.49243098842386,
+            0.5075690115761367
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              2.3033333333333332,
+              91.62619047619047
+            ],
+            "meanEnd": [
+              -2.287619047619048,
+              106.80047619047619
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 8,
+            "meanStart": [
+              -2.808333333333333,
+              89.53111111111112
+            ],
+            "meanEnd": [
+              -3.9955555555555553,
+              105.15833333333333
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "probability": 0.8471418183640661,
+      "interval90": [
+        0.7680291989699379,
+        0.9140782471092641
+      ],
+      "players": [
+        {
+          "id": "rdinger",
+          "name": "Ryan Dinger",
+          "team": "BOS"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "bshea",
+          "name": "Benen Shea",
+          "team": "COL"
+        }
+      ],
+      "passes": [
+        {
+          "thrower": "rdinger",
+          "receiver": "nranabhat",
+          "from": "init",
+          "to": "build",
+          "p": 0.9699898061636617,
+          "throwBeta": [
+            66.63717445594006,
+            1.3628255440599357
+          ],
+          "catchBeta": [
+            52.46085672082718,
+            0.5391432791728201
+          ],
+          "throwEvidence": {
+            "n": 28,
+            "good": 28,
+            "games": 10,
+            "meanStart": [
+              -0.2767857142857143,
+              31.34
+            ],
+            "meanEnd": [
+              -0.7939285714285713,
+              45.128928571428574
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 9,
+            "meanStart": [
+              1.8838461538461537,
+              34.425384615384615
+            ],
+            "meanEnd": [
+              -0.5153846153846152,
+              46.24923076923077
+            ]
+          }
+        },
+        {
+          "thrower": "nranabhat",
+          "receiver": "gvordick",
+          "from": "build",
+          "to": "attack",
+          "p": 0.9614326008973405,
+          "throwBeta": [
+            59.11797752808989,
+            1.882022471910112
+          ],
+          "catchBeta": [
+            57.53831041257367,
+            0.46168958742632604
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              -1.1776190476190476,
+              52.74761904761905
+            ],
+            "meanEnd": [
+              -0.3333333333333334,
+              66.13190476190476
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 9,
+            "meanStart": [
+              -1.2327777777777778,
+              53.64666666666667
+            ],
+            "meanEnd": [
+              -3.2194444444444446,
+              65.7238888888889
+            ]
+          }
+        },
+        {
+          "thrower": "gvordick",
+          "receiver": "slofink",
+          "from": "attack",
+          "to": "red",
+          "p": 0.9630939528942504,
+          "throwBeta": [
+            65.16216216216216,
+            1.8378378378378368
+          ],
+          "catchBeta": [
+            52.48362720403023,
+            0.516372795969775
+          ],
+          "throwEvidence": {
+            "n": 27,
+            "good": 27,
+            "games": 10,
+            "meanStart": [
+              -1.6255555555555556,
+              74.22814814814815
+            ],
+            "meanEnd": [
+              -0.7707407407407408,
+              86.09333333333333
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 8,
+            "meanStart": [
+              0.10999999999999985,
+              74.31076923076922
+            ],
+            "meanEnd": [
+              1.623846153846154,
+              84.12615384615385
+            ]
+          }
+        },
+        {
+          "thrower": "slofink",
+          "receiver": "bshea",
+          "from": "red",
+          "to": "goal",
+          "p": 0.9431949139556827,
+          "throwBeta": [
+            58.042833607907745,
+            2.9571663920922564
+          ],
+          "catchBeta": [
+            57.49243098842386,
+            0.5075690115761367
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              2.3033333333333332,
+              91.62619047619047
+            ],
+            "meanEnd": [
+              -2.287619047619048,
+              106.80047619047619
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 9,
+            "meanStart": [
+              0.7677777777777777,
+              88.19333333333334
+            ],
+            "meanEnd": [
+              -1.3083333333333336,
+              105.885
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "probability": 0.847010608739761,
+      "interval90": [
+        0.7707304139011599,
+        0.9129903443097268
+      ],
+      "players": [
+        {
+          "id": "rdinger",
+          "name": "Ryan Dinger",
+          "team": "BOS"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "bjagt",
+          "name": "Ben Jagt",
+          "team": "NY"
+        }
+      ],
+      "passes": [
+        {
+          "thrower": "rdinger",
+          "receiver": "nranabhat",
+          "from": "init",
+          "to": "build",
+          "p": 0.9699898061636617,
+          "throwBeta": [
+            66.63717445594006,
+            1.3628255440599357
+          ],
+          "catchBeta": [
+            52.46085672082718,
+            0.5391432791728201
+          ],
+          "throwEvidence": {
+            "n": 28,
+            "good": 28,
+            "games": 10,
+            "meanStart": [
+              -0.2767857142857143,
+              31.34
+            ],
+            "meanEnd": [
+              -0.7939285714285713,
+              45.128928571428574
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 9,
+            "meanStart": [
+              1.8838461538461537,
+              34.425384615384615
+            ],
+            "meanEnd": [
+              -0.5153846153846152,
+              46.24923076923077
+            ]
+          }
+        },
+        {
+          "thrower": "nranabhat",
+          "receiver": "gvordick",
+          "from": "build",
+          "to": "attack",
+          "p": 0.9614326008973405,
+          "throwBeta": [
+            59.11797752808989,
+            1.882022471910112
+          ],
+          "catchBeta": [
+            57.53831041257367,
+            0.46168958742632604
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              -1.1776190476190476,
+              52.74761904761905
+            ],
+            "meanEnd": [
+              -0.3333333333333334,
+              66.13190476190476
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 9,
+            "meanStart": [
+              -1.2327777777777778,
+              53.64666666666667
+            ],
+            "meanEnd": [
+              -3.2194444444444446,
+              65.7238888888889
+            ]
+          }
+        },
+        {
+          "thrower": "gvordick",
+          "receiver": "slofink",
+          "from": "attack",
+          "to": "red",
+          "p": 0.9630939528942504,
+          "throwBeta": [
+            65.16216216216216,
+            1.8378378378378368
+          ],
+          "catchBeta": [
+            52.48362720403023,
+            0.516372795969775
+          ],
+          "throwEvidence": {
+            "n": 27,
+            "good": 27,
+            "games": 10,
+            "meanStart": [
+              -1.6255555555555556,
+              74.22814814814815
+            ],
+            "meanEnd": [
+              -0.7707407407407408,
+              86.09333333333333
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 8,
+            "meanStart": [
+              0.10999999999999985,
+              74.31076923076922
+            ],
+            "meanEnd": [
+              1.623846153846154,
+              84.12615384615385
+            ]
+          }
+        },
+        {
+          "thrower": "slofink",
+          "receiver": "bjagt",
+          "from": "red",
+          "to": "goal",
+          "p": 0.9430488271404365,
+          "throwBeta": [
+            58.042833607907745,
+            2.9571663920922564
+          ],
+          "catchBeta": [
+            56.49243098842386,
+            0.5075690115761367
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              2.3033333333333332,
+              91.62619047619047
+            ],
+            "meanEnd": [
+              -2.287619047619048,
+              106.80047619047619
+            ]
+          },
+          "catchEvidence": {
+            "n": 17,
+            "good": 17,
+            "games": 7,
+            "meanStart": [
+              -2.8729411764705883,
+              92.35705882352941
+            ],
+            "meanEnd": [
+              -1.6658823529411761,
+              106.80294117647058
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bestByPassCount": [
+    {
+      "passes": 4,
+      "probability": 0.8476243311760273,
+      "players": [
+        {
+          "id": "rdinger",
+          "name": "Ryan Dinger",
+          "team": "BOS"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "rpieran",
+          "name": "Pieran Robert",
+          "team": "MAD"
+        }
+      ],
+      "edges": [
+        {
+          "thrower": "rdinger",
+          "receiver": "nranabhat",
+          "from": "init",
+          "to": "build",
+          "p": 0.9699898061636617,
+          "throwBeta": [
+            66.63717445594006,
+            1.3628255440599357
+          ],
+          "catchBeta": [
+            52.46085672082718,
+            0.5391432791728201
+          ],
+          "throwEvidence": {
+            "n": 28,
+            "good": 28,
+            "games": 10,
+            "meanStart": [
+              -0.2767857142857143,
+              31.34
+            ],
+            "meanEnd": [
+              -0.7939285714285713,
+              45.128928571428574
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 9,
+            "meanStart": [
+              1.8838461538461537,
+              34.425384615384615
+            ],
+            "meanEnd": [
+              -0.5153846153846152,
+              46.24923076923077
+            ]
+          }
+        },
+        {
+          "thrower": "nranabhat",
+          "receiver": "gvordick",
+          "from": "build",
+          "to": "attack",
+          "p": 0.9614326008973405,
+          "throwBeta": [
+            59.11797752808989,
+            1.882022471910112
+          ],
+          "catchBeta": [
+            57.53831041257367,
+            0.46168958742632604
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              -1.1776190476190476,
+              52.74761904761905
+            ],
+            "meanEnd": [
+              -0.3333333333333334,
+              66.13190476190476
+            ]
+          },
+          "catchEvidence": {
+            "n": 18,
+            "good": 18,
+            "games": 9,
+            "meanStart": [
+              -1.2327777777777778,
+              53.64666666666667
+            ],
+            "meanEnd": [
+              -3.2194444444444446,
+              65.7238888888889
+            ]
+          }
+        },
+        {
+          "thrower": "gvordick",
+          "receiver": "slofink",
+          "from": "attack",
+          "to": "red",
+          "p": 0.9630939528942504,
+          "throwBeta": [
+            65.16216216216216,
+            1.8378378378378368
+          ],
+          "catchBeta": [
+            52.48362720403023,
+            0.516372795969775
+          ],
+          "throwEvidence": {
+            "n": 27,
+            "good": 27,
+            "games": 10,
+            "meanStart": [
+              -1.6255555555555556,
+              74.22814814814815
+            ],
+            "meanEnd": [
+              -0.7707407407407408,
+              86.09333333333333
+            ]
+          },
+          "catchEvidence": {
+            "n": 13,
+            "good": 13,
+            "games": 8,
+            "meanStart": [
+              0.10999999999999985,
+              74.31076923076922
+            ],
+            "meanEnd": [
+              1.623846153846154,
+              84.12615384615385
+            ]
+          }
+        },
+        {
+          "thrower": "slofink",
+          "receiver": "rpieran",
+          "from": "red",
+          "to": "goal",
+          "p": 0.9437321364375559,
+          "throwBeta": [
+            58.042833607907745,
+            2.9571663920922564
+          ],
+          "catchBeta": [
+            61.49243098842386,
+            0.5075690115761367
+          ],
+          "throwEvidence": {
+            "n": 21,
+            "good": 21,
+            "games": 11,
+            "meanStart": [
+              2.3033333333333332,
+              91.62619047619047
+            ],
+            "meanEnd": [
+              -2.287619047619048,
+              106.80047619047619
+            ]
+          },
+          "catchEvidence": {
+            "n": 22,
+            "good": 22,
+            "games": 9,
+            "meanStart": [
+              0.32909090909090905,
+              89.28
+            ],
+            "meanEnd": [
+              0.6095454545454545,
+              109.69090909090909
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "priorSensitivity": {
+    "20": {
+      "best_probability": 0.8849691734180611,
+      "best_players": [
+        {
+          "id": "rdinger",
+          "name": "Ryan Dinger",
+          "team": "BOS"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "rpieran",
+          "name": "Pieran Robert",
+          "team": "MAD"
+        }
+      ]
+    },
+    "80": {
+      "best_probability": 0.8177996385502339,
+      "best_players": [
+        {
+          "id": "rdinger",
+          "name": "Ryan Dinger",
+          "team": "BOS"
+        },
+        {
+          "id": "nranabhat",
+          "name": "Nico Ranabhat",
+          "team": "MAD"
+        },
+        {
+          "id": "gvordick",
+          "name": "Gabe Vordick",
+          "team": "MAD"
+        },
+        {
+          "id": "slofink",
+          "name": "Spencer Lofink",
+          "team": "SEA"
+        },
+        {
+          "id": "rpieran",
+          "name": "Pieran Robert",
+          "team": "MAD"
+        }
+      ]
+    }
+  },
+  "relaxedSearch": {
+    "minimumAttemptsAndTargets": 3,
+    "minimumGames": 3,
+    "candidateRoutes": 1121099,
+    "bestByPassCount": [
+      {
+        "passes": 1,
+        "probability": 0.591536738338693,
+        "interval90": [
+          0.4761895392635582,
+          0.699978555801406
+        ],
+        "players": [
+          {
+            "id": "ehawkins",
+            "name": "Elliot Hawkins",
+            "team": "IND"
+          },
+          {
+            "id": "apiper",
+            "name": "Alex Piper",
+            "team": "COL"
+          }
+        ],
+        "edges": [
+          {
+            "thrower": "ehawkins",
+            "receiver": "apiper",
+            "from": "init",
+            "to": "goal",
+            "p": 0.591536738338693,
+            "throwBeta": [
+              31.02788844621514,
+              17.97211155378486
+            ],
+            "catchBeta": [
+              41.103448275862064,
+              2.8965517241379324
+            ],
+            "throwEvidence": {
+              "n": 9,
+              "good": 8,
+              "games": 5,
+              "meanStart": [
+                2.6777777777777776,
+                33.38333333333333
+              ],
+              "meanEnd": [
+                5.746666666666666,
+                113.65444444444445
+              ]
+            },
+            "catchEvidence": {
+              "n": 4,
+              "good": 4,
+              "games": 4,
+              "meanStart": [
+                1.2575000000000003,
+                38.3325
+              ],
+              "meanEnd": [
+                -9.5725,
+                109.36
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "passes": 2,
+        "probability": 0.677827059209699,
+        "interval90": [
+          0.5694735372644627,
+          0.7795386498223289
+        ],
+        "players": [
+          {
+            "id": "dbarram",
+            "name": "David Barram",
+            "team": "ORE"
+          },
+          {
+            "id": "bthoennes",
+            "name": "Ben Thoennes",
+            "team": "ORE"
+          },
+          {
+            "id": "rpieran",
+            "name": "Pieran Robert",
+            "team": "MAD"
+          }
+        ],
+        "edges": [
+          {
+            "thrower": "dbarram",
+            "receiver": "bthoennes",
+            "from": "init",
+            "to": "red",
+            "p": 0.7273157054816444,
+            "throwBeta": [
+              34.294871794871796,
+              10.705128205128208
+            ],
+            "catchBeta": [
+              41.991266375545855,
+              2.0087336244541465
+            ],
+            "throwEvidence": {
+              "n": 5,
+              "good": 5,
+              "games": 5,
+              "meanStart": [
+                3.322,
+                29.38
+              ],
+              "meanEnd": [
+                1.184,
+                85.83800000000001
+              ]
+            },
+            "catchEvidence": {
+              "n": 4,
+              "good": 4,
+              "games": 4,
+              "meanStart": [
+                -3.1425,
+                25.715
+              ],
+              "meanEnd": [
+                0.14749999999999985,
+                89.2975
+              ]
+            }
+          },
+          {
+            "thrower": "bthoennes",
+            "receiver": "rpieran",
+            "from": "red",
+            "to": "goal",
+            "p": 0.9319571323718729,
+            "throwBeta": [
+              46.042833607907745,
+              2.9571663920922564
+            ],
+            "catchBeta": [
+              61.49243098842386,
+              0.5075690115761367
+            ],
+            "throwEvidence": {
+              "n": 9,
+              "good": 9,
+              "games": 7,
+              "meanStart": [
+                3.283333333333333,
+                90.45555555555555
+              ],
+              "meanEnd": [
+                1.1011111111111112,
+                104.95666666666666
+              ]
+            },
+            "catchEvidence": {
+              "n": 22,
+              "good": 22,
+              "games": 9,
+              "meanStart": [
+                0.32909090909090905,
+                89.28
+              ],
+              "meanEnd": [
+                0.6095454545454545,
+                109.69090909090909
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "passes": 3,
+        "probability": 0.7777993668320058,
+        "interval90": [
+          0.6797425289403382,
+          0.8641415476386038
+        ],
+        "players": [
+          {
+            "id": "rdinger",
+            "name": "Ryan Dinger",
+            "team": "BOS"
+          },
+          {
+            "id": "aroy",
+            "name": "Andrew Roy",
+            "team": "DC"
+          },
+          {
+            "id": "mpettenuz",
+            "name": "Max Pettenuzzo",
+            "team": "TOR"
+          },
+          {
+            "id": "marmstron",
+            "name": "Myles Armstrong",
+            "team": "ATX"
+          }
+        ],
+        "edges": [
+          {
+            "thrower": "rdinger",
+            "receiver": "aroy",
+            "from": "init",
+            "to": "build",
+            "p": 0.9684728389457341,
+            "throwBeta": [
+              66.63717445594006,
+              1.3628255440599357
+            ],
+            "catchBeta": [
+              45.46085672082718,
+              0.5391432791728201
+            ],
+            "throwEvidence": {
+              "n": 28,
+              "good": 28,
+              "games": 10,
+              "meanStart": [
+                -0.2767857142857143,
+                31.34
+              ],
+              "meanEnd": [
+                -0.7939285714285713,
+                45.128928571428574
+              ]
+            },
+            "catchEvidence": {
+              "n": 6,
+              "good": 6,
+              "games": 4,
+              "meanStart": [
+                1.7666666666666668,
+                36.711666666666666
+              ],
+              "meanEnd": [
+                0.27,
+                46.265
+              ]
+            }
+          },
+          {
+            "thrower": "aroy",
+            "receiver": "mpettenuz",
+            "from": "build",
+            "to": "left-attack",
+            "p": 0.9314538690021066,
+            "throwBeta": [
+              48.76923076923077,
+              3.2307692307692326
+            ],
+            "catchBeta": [
+              43.69899665551839,
+              0.30100334448160737
+            ],
+            "throwEvidence": {
+              "n": 12,
+              "good": 12,
+              "games": 9,
+              "meanStart": [
+                -6.596666666666667,
+                49.49916666666667
+              ],
+              "meanEnd": [
+                -18.22833333333333,
+                67.41833333333334
+              ]
+            },
+            "catchEvidence": {
+              "n": 4,
+              "good": 4,
+              "games": 4,
+              "meanStart": [
+                -10.525,
+                53.06
+              ],
+              "meanEnd": [
+                -19.5175,
+                67.58
+              ]
+            }
+          },
+          {
+            "thrower": "mpettenuz",
+            "receiver": "marmstron",
+            "from": "left-attack",
+            "to": "goal",
+            "p": 0.8622213827003994,
+            "throwBeta": [
+              42.89067524115755,
+              6.109324758842445
+            ],
+            "catchBeta": [
+              48.26675094816688,
+              0.7332490518331225
+            ],
+            "throwEvidence": {
+              "n": 9,
+              "good": 9,
+              "games": 4,
+              "meanStart": [
+                -18.816666666666666,
+                81.47444444444444
+              ],
+              "meanEnd": [
+                -15.856666666666667,
+                106.53999999999999
+              ]
+            },
+            "catchEvidence": {
+              "n": 9,
+              "good": 9,
+              "games": 6,
+              "meanStart": [
+                -21.58222222222222,
+                84.92777777777778
+              ],
+              "meanEnd": [
+                -9.124444444444444,
+                108.87666666666667
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "passes": 4,
+        "probability": 0.8483397876959401,
+        "interval90": [
+          0.7705291052309703,
+          0.9146340624049026
+        ],
+        "players": [
+          {
+            "id": "rdinger",
+            "name": "Ryan Dinger",
+            "team": "BOS"
+          },
+          {
+            "id": "jlouie",
+            "name": "Jacob Louie",
+            "team": "CAR"
+          },
+          {
+            "id": "gvordick",
+            "name": "Gabe Vordick",
+            "team": "MAD"
+          },
+          {
+            "id": "slofink",
+            "name": "Spencer Lofink",
+            "team": "SEA"
+          },
+          {
+            "id": "rpieran",
+            "name": "Pieran Robert",
+            "team": "MAD"
+          }
+        ],
+        "edges": [
+          {
+            "thrower": "rdinger",
+            "receiver": "jlouie",
+            "from": "init",
+            "to": "build",
+            "p": 0.9684728389457341,
+            "throwBeta": [
+              66.63717445594006,
+              1.3628255440599357
+            ],
+            "catchBeta": [
+              45.46085672082718,
+              0.5391432791728201
+            ],
+            "throwEvidence": {
+              "n": 28,
+              "good": 28,
+              "games": 10,
+              "meanStart": [
+                -0.2767857142857143,
+                31.34
+              ],
+              "meanEnd": [
+                -0.7939285714285713,
+                45.128928571428574
+              ]
+            },
+            "catchEvidence": {
+              "n": 6,
+              "good": 6,
+              "games": 5,
+              "meanStart": [
+                1.8033333333333335,
+                35.45
+              ],
+              "meanEnd": [
+                4.258333333333333,
+                44.13166666666667
+              ]
+            }
+          },
+          {
+            "thrower": "jlouie",
+            "receiver": "gvordick",
+            "from": "build",
+            "to": "attack",
+            "p": 0.963751330730841,
+            "throwBeta": [
+              64.11797752808988,
+              1.882022471910112
+            ],
+            "catchBeta": [
+              57.53831041257367,
+              0.46168958742632604
+            ],
+            "throwEvidence": {
+              "n": 26,
+              "good": 26,
+              "games": 11,
+              "meanStart": [
+                -0.38230769230769224,
+                55.245000000000005
+              ],
+              "meanEnd": [
+                1.466923076923077,
+                65.9246153846154
+              ]
+            },
+            "catchEvidence": {
+              "n": 18,
+              "good": 18,
+              "games": 9,
+              "meanStart": [
+                -1.2327777777777778,
+                53.64666666666667
+              ],
+              "meanEnd": [
+                -3.2194444444444446,
+                65.7238888888889
+              ]
+            }
+          },
+          {
+            "thrower": "gvordick",
+            "receiver": "slofink",
+            "from": "attack",
+            "to": "red",
+            "p": 0.9630939528942504,
+            "throwBeta": [
+              65.16216216216216,
+              1.8378378378378368
+            ],
+            "catchBeta": [
+              52.48362720403023,
+              0.516372795969775
+            ],
+            "throwEvidence": {
+              "n": 27,
+              "good": 27,
+              "games": 10,
+              "meanStart": [
+                -1.6255555555555556,
+                74.22814814814815
+              ],
+              "meanEnd": [
+                -0.7707407407407408,
+                86.09333333333333
+              ]
+            },
+            "catchEvidence": {
+              "n": 13,
+              "good": 13,
+              "games": 8,
+              "meanStart": [
+                0.10999999999999985,
+                74.31076923076922
+              ],
+              "meanEnd": [
+                1.623846153846154,
+                84.12615384615385
+              ]
+            }
+          },
+          {
+            "thrower": "slofink",
+            "receiver": "rpieran",
+            "from": "red",
+            "to": "goal",
+            "p": 0.9437321364375559,
+            "throwBeta": [
+              58.042833607907745,
+              2.9571663920922564
+            ],
+            "catchBeta": [
+              61.49243098842386,
+              0.5075690115761367
+            ],
+            "throwEvidence": {
+              "n": 21,
+              "good": 21,
+              "games": 11,
+              "meanStart": [
+                2.3033333333333332,
+                91.62619047619047
+              ],
+              "meanEnd": [
+                -2.287619047619048,
+                106.80047619047619
+              ]
+            },
+            "catchEvidence": {
+              "n": 22,
+              "good": 22,
+              "games": 9,
+              "meanStart": [
+                0.32909090909090905,
+                89.28
+              ],
+              "meanEnd": [
+                0.6095454545454545,
+                109.69090909090909
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

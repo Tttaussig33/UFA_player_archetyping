@@ -23,7 +23,10 @@ Then open <http://127.0.0.1:4173>.
 
 - Choose any team or **League leaders** in the left rail.
 - The default is the full available **regular season**, with both O-line and D-line events.
-- Each box shows its aEC leader. Select a box for every recorded vector for that player in that zone.
+- **Original** is the default field view: receivers in the attacking end zone, throwers in midfield, and Callahans in the bottom panel, matching the first Instagram adaptation.
+- Switch to **Thrower aEC / Receiver aEC** above the field to use release locations or catch/drop locations across all 12 boxes. Both metrics include the bottom (own) end zone.
+- Each box shows its selected metric’s leader. Select a box for every recorded vector for that player in that zone.
+- In the full-field views, the **Bottom end zone** menu can show **Callahan aEC** separately; choose the field metric again to return to ordinary throws or receptions. Original always uses Callahans at the bottom.
 - **Player boxes** restores the full portrait map; **Disc vectors** shows the selected player’s events.
 - **Play zones** automatically cycles the 12 zones. Selecting a player or zone stops the tour.
 - The zone ranking lets you inspect other players, including the full list beyond the first seven.
@@ -40,8 +43,11 @@ vectors, not tracked player movement**.
 
 The Instagram post was inspected directly, including its animated vectors and the
 author’s explanation that main-field dots represent throwing locations and end-zone
-dots represent receiving locations. The reproduced geometry is eight throwing
-zones, three attacking-end-zone receiving zones, and a defensive Callahan panel.
+dots represent receiving locations. The reproduced geometry is eight main-field
+zones, three attacking-end-zone zones, and one own-end-zone panel. **Original**
+preserves that mixed-role layout. The full-field **Thrower aEC** and **Receiver aEC**
+views extend it so every zone supports either metric; Callahans are also available
+as a separate bottom-panel option in those views.
 
 Zone boundaries are inferred from the drawing, not obtained from the author’s
 source code: x = −15 and +15 yards define the central lane; the throwing field
@@ -81,12 +87,22 @@ intercepted throw’s aEC, reconstructing the video’s convention. This reprodu
 Josh Klane’s two interceptions and 1.86 aEC in the reference. Defensive credit is
 kept separate from offensive thrower/receiver totals.
 
-Every offense attacks toward y = 120 in the supplied coordinates. Normal throws
-from y < 20 are outside the reference’s eight main-field throwing zones. A source
+Every offense attacks toward y = 120 in the supplied coordinates. In the full-field
+views, ordinary throws and receptions at 0 ≤ y < 20 appear in the bottom own-end-zone box. Each event
+is assigned once per metric: by its release for throwing and by its catch/drop
+location for receiving. All y bands include their lower edge and exclude their
+upper edge, except y = 120 is included in the deep end zone. Thus y = 20 enters
+the main field and y = 100 enters the attacking end zone for either metric. A source
 coordinate rounded up to 0.02 yards beyond a sideline is drawn on that sideline;
 the original coordinates remain in source rows and CSV exports. Shared zone
 edges are assigned exactly once per role. Equal aEC totals break ties by event
 count, then player ID.
+
+Original preserves the first adaptation’s boundary convention: releases at exactly
+y = 100 remain in the main-field throwing zones, and catches/drops at y = 100
+enter the front receiving zones. A pass can contribute to both a throwing box and
+a receiving box; source inspection lists each underlying pass only once. Ordinary
+own-end-zone throws and receptions are available in the full-field views.
 
 ### Coverage caveats
 
@@ -117,7 +133,8 @@ inputs. Run `node --test tools/model.test.mjs` for analytical tests. The Data ap
 do not modify its protected runtime to change the analysis.
 
 The checks performed for this version include all 22 team maps, all six analytical
-tests, 2,304 supplied per-game player-metric reconciliations (largest numerical
+tests for the original build, plus full-field throwing/receiving coverage, attribution,
+bottom-panel checks, and regressions for the restored Original view; 2,304 supplied per-game player-metric reconciliations (largest numerical
 difference below 1e-8), and browser checks of throwing, receiving, Callahan,
 team/league selection, season/line filtering, playback, export and responsive layout.
 

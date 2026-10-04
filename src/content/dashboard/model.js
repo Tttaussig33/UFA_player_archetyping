@@ -1,43 +1,61 @@
 export const ZONES = [
-  { id:'ez-deep', label:'Deep end zone', role:'receive', x0:-26.65,x1:26.65,y0:110,y1:120 },
-  { id:'ez-left', label:'Left end zone', role:'receive', x0:-26.65,x1:0,y0:100,y1:110 },
-  { id:'ez-right', label:'Right end zone', role:'receive', x0:0,x1:26.65,y0:100,y1:110 },
-  { id:'left-attack', label:'Left attacking sideline', role:'throw', x0:-26.65,x1:-15,y0:60,y1:100 },
-  { id:'center-red', label:'Central red zone', role:'throw', x0:-15,x1:15,y0:80,y1:100 },
-  { id:'right-attack', label:'Right attacking sideline', role:'throw', x0:15,x1:26.65,y0:60,y1:100 },
-  { id:'center-attack', label:'Central attack', role:'throw', x0:-15,x1:15,y0:60,y1:80 },
-  { id:'left-build', label:'Left build-up sideline', role:'throw', x0:-26.65,x1:-15,y0:20,y1:60 },
-  { id:'center-build', label:'Central build-up', role:'throw', x0:-15,x1:15,y0:40,y1:60 },
-  { id:'right-build', label:'Right build-up sideline', role:'throw', x0:15,x1:26.65,y0:20,y1:60 },
-  { id:'center-init', label:'Central initiation', role:'throw', x0:-15,x1:15,y0:20,y1:40 },
-  { id:'callahan', label:'Callahan interceptions', role:'callahan', x0:-26.65,x1:26.65,y0:0,y1:20 },
+  { id:'ez-deep', label:'Deep end zone', x0:-26.65,x1:26.65,y0:110,y1:120 },
+  { id:'ez-left', label:'Left end zone', x0:-26.65,x1:0,y0:100,y1:110 },
+  { id:'ez-right', label:'Right end zone', x0:0,x1:26.65,y0:100,y1:110 },
+  { id:'left-attack', label:'Left attacking sideline', x0:-26.65,x1:-15,y0:60,y1:100 },
+  { id:'center-red', label:'Central red zone', x0:-15,x1:15,y0:80,y1:100 },
+  { id:'right-attack', label:'Right attacking sideline', x0:15,x1:26.65,y0:60,y1:100 },
+  { id:'center-attack', label:'Central attack', x0:-15,x1:15,y0:60,y1:80 },
+  { id:'left-build', label:'Left build-up sideline', x0:-26.65,x1:-15,y0:20,y1:60 },
+  { id:'center-build', label:'Central build-up', x0:-15,x1:15,y0:40,y1:60 },
+  { id:'right-build', label:'Right build-up sideline', x0:15,x1:26.65,y0:20,y1:60 },
+  { id:'center-init', label:'Central initiation', x0:-15,x1:15,y0:20,y1:40 },
+  { id:'own-endzone', label:'Own end zone', x0:-26.65,x1:26.65,y0:0,y1:20 },
 ];
+export function fieldZones(metric='throw',bottom='field') {
+  return ZONES.map(z=>z.id==='own-endzone'&&(metric==='original'||bottom==='callahan')
+    ? {...z,label:'Callahan interceptions',role:'callahan'}
+    : {...z,role:metric==='original'?(z.y0>=100?'receive':'throw'):metric});
+}
 export const fmt = (n, digits=2) => n==null || !Number.isFinite(n) ? '—' : n.toLocaleString('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits});
 export const int = n => n.toLocaleString('en-US');
 export const clampX = x => Math.max(-26.65,Math.min(26.65,x));
-export function zoneFor(x,y,role) {
-  if (!Number.isFinite(x)||!Number.isFinite(y)||x < -26.67-1e-8||x>26.67+1e-8) return null;
+export function zoneFor(x,y) {
+  if (!Number.isFinite(x)||!Number.isFinite(y)||x < -26.67-1e-8||x>26.67+1e-8||y<0||y>120) return null;
   x=clampX(x);
-  if(role==='receive') {
-    if(y<100||y>120)return null;
-    return y>=110?'ez-deep':x<0?'ez-left':'ez-right';
-  }
-  if(y<20||y>100)return null;
+  if(y<20)return 'own-endzone';
+  if(y>=100)return y>=110?'ez-deep':x<0?'ez-left':'ez-right';
+  return mainFieldZone(x,y);
+}
+function mainFieldZone(x,y) {
   if(x < -15)return y<60?'left-build':'left-attack';
   if(x >=15)return y<60?'right-build':'right-attack';
   return y<40?'center-init':y<60?'center-build':y<80?'center-attack':'center-red';
 }
-export function zoneBuckets(events,callahans) {
+function originalZoneFor(x,y,role) {
+  const zone=zoneFor(x,y);
+  if(!zone)return null;
+  if(role==='receive')return y>=100?zone:null;
+  // The first adaptation included releases on y=100 in the main field.
+  return y>=20&&y<=100?mainFieldZone(clampX(x),y):null;
+}
+export function zoneBuckets(events,callahans,metric='throw',bottom='field') {
   const buckets=Object.fromEntries(ZONES.map(z=>[z.id,[]]));
   for(const e of events) {
-    const t=zoneFor(e.tx,e.ty,'throw');
-    if(t)buckets[t].push(e);
-    if(e.receiver && (e.complete||e.drop)) {
-      const r=zoneFor(e.rx,e.ry,'receive');
-      if(r)buckets[r].push(e);
+    if(metric==='original') {
+      const t=originalZoneFor(e.tx,e.ty,'throw');
+      if(t)buckets[t].push(e);
+      if(e.receiver&&(e.complete||e.drop)) {
+        const r=originalZoneFor(e.rx,e.ry,'receive');
+        if(r)buckets[r].push(e);
+      }
+      continue;
     }
+    if(metric==='receive'&&!(e.receiver&&(e.complete||e.drop)))continue;
+    const z=metric==='throw'?zoneFor(e.tx,e.ty):zoneFor(e.rx,e.ry);
+    if(z)buckets[z].push(e);
   }
-  buckets.callahan=callahans;
+  if(metric==='original'||bottom==='callahan')buckets['own-endzone']=callahans;
   return buckets;
 }
 export function rankZone(rows,role) {
