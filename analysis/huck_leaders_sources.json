@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "high-volume-huck-leaders",
+      "title": "Atkins leads huck efficiency; Hawkins leads total regular-season value",
+      "assumptions": [
+        "\u201cHuck a lot\u201d means at least 30 huck attempts in the regular season. \u201cBest\u201d prioritizes observed thrower aEC per attempt, with total contribution considered separately."
+      ],
+      "queries": [
+        {
+          "id": "regular-season-huck-ranking",
+          "source": {
+            "label": "Shown Space \u00b7 project snapshot",
+            "url": "https://shownspace.com/players",
+            "files": [
+              "src/data.json",
+              "data/source-manifest.json",
+              "analysis/huck_leaders.py"
+            ],
+            "executedAt": "2026-10-05T01:43:55.442094+00:00",
+            "filters": [
+              "Season: 2026 regular season",
+              "Teams: all 22 UFA teams",
+              "Minimum volume: 30 huck attempts",
+              "Lines: offense and defense"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "Huck",
+                "definition": "A huck travels at least 40 yards from release to destination and gains at least 30 yards downfield."
+              },
+              {
+                "label": "Thrower aEC per huck",
+                "definition": "Thrower aEC per huck is total credited thrower aEC on hucks divided by all huck attempts. Throwaways retain their negative aEC, and drops receive zero thrower credit."
+              },
+              {
+                "label": "Completion percentage",
+                "definition": "Completed hucks divided by all huck attempts, retaining drops as unsuccessful attempts."
+              }
+            ],
+            "caveats": [
+              "The project has throw data for 131 of 132 regular-season games; July 18 Pittsburgh at Chicago is missing.",
+              "These are observed 2026 results, not an isolated estimate of throwing talent or a guarantee on future throws.",
+              "The cached league leaderboard includes playoffs and is not the same population as the main regular-season comparison.",
+              "Shown Space completion percentages exclude dropped hucks from the denominator; the main comparison here includes them."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "source",
+                "title": "Source selection",
+                "detail": "The website snapshot provides normalized throw coordinates and separate thrower credit. The cached league leaderboard includes playoffs, so regular-season rankings are calculated from individual throws."
+              },
+              {
+                "kind": "validation",
+                "title": "Definition reconciliation",
+                "detail": "The 40-yard distance and 30-yard downfield rule matches all 1,152 player-game huck counts in 29 preserved API game records."
+              },
+              {
+                "kind": "validation",
+                "title": "Independent source check",
+                "detail": "All 10 qualifying players\u2019 huck counts, completions, drops and aEC totals were independently recomputed from original CSV/API throw records and matched the snapshot calculations."
+              },
+              {
+                "kind": "validation",
+                "title": "Volume sensitivity",
+                "detail": "Alex Atkins leads observed aEC per attempt with minimums of 20, 25 and 30 regular-season hucks. With a 40-attempt minimum Atkins no longer qualifies and Chad Yorgason leads."
+              }
+            ]
+          },
+          "rows": [
+            {
+              "player": "Alex Atkins",
+              "team": "New York Empire",
+              "attempts": 35,
+              "completions": 28,
+              "drops": 2,
+              "completionPct": 80.0,
+              "throwerAec": 17.305849903599547,
+              "aecPerAttempt": 0.4944528543885585
+            },
+            {
+              "player": "Chad Yorgason",
+              "team": "Salt Lake Shred",
+              "attempts": 41,
+              "completions": 32,
+              "drops": 0,
+              "completionPct": 78.04878048780488,
+              "throwerAec": 17.30425076111628,
+              "aecPerAttempt": 0.42205489661259216
+            },
+            {
+              "player": "Austin Taylor",
+              "team": "Atlanta Hustle",
+              "attempts": 34,
+              "completions": 27,
+              "drops": 0,
+              "completionPct": 79.41176470588235,
+              "throwerAec": 14.238722970515271,
+              "aecPerAttempt": 0.4187859697210374
+            },
+            {
+              "player": "Elliot Hawkins",
+              "team": "Indianapolis AlleyCats",
+              "attempts": 49,
+              "completions": 34,
+              "drops": 1,
+              "completionPct": 69.38775510204081,
+              "throwerAec": 19.722415784384676,
+              "aecPerAttempt": 0.40249828131397297
+            },
+            {
+              "player": "Ben Thoennes",
+              "team": "Oregon Steel",
+              "attempts": 35,
+              "completions": 26,
+              "drops": 3,
+              "completionPct": 74.28571428571429,
+              "throwerAec": 12.292437575109346,
+              "aecPerAttempt": 0.3512125021459813
+            },
+            {
+              "player": "Max Pettenuzzo",
+              "team": "Toronto Rush",
+              "attempts": 31,
+              "completions": 22,
+              "drops": 0,
+              "completionPct": 70.96774193548387,
+              "throwerAec": 10.798368074135903,
+              "aecPerAttempt": 0.34833445400438395
+            },
+            {
+              "player": "Mark Turner",
+              "team": "Houston Havoc",
+              "attempts": 44,
+              "completions": 31,
+              "drops": 2,
+              "completionPct": 70.45454545454545,
+              "throwerAec": 15.111967611616702,
+              "aecPerAttempt": 0.34345380935492503
+            },
+            {
+              "player": "Seth Faris",
+              "team": "Colorado Apex",
+              "attempts": 38,
+              "completions": 25,
+              "drops": 1,
+              "completionPct": 65.78947368421052,
+              "throwerAec": 11.641621757277667,
+              "aecPerAttempt": 0.30635846729678073
+            },
+            {
+              "player": "Jake Felton",
+              "team": "Indianapolis AlleyCats",
+              "attempts": 62,
+              "completions": 37,
+              "drops": 3,
+              "completionPct": 59.67741935483871,
+              "throwerAec": 12.87879774932614,
+              "aecPerAttempt": 0.20772254434397
+            },
+            {
+              "player": "Ezra Beidler-Shenk",
+              "team": "Philadelphia Phoenix",
+              "attempts": 30,
+              "completions": 16,
+              "drops": 2,
+              "completionPct": 53.333333333333336,
+              "throwerAec": 3.059912285861083,
+              "aecPerAttempt": 0.10199707619536943
+            }
+          ],
+          "columns": [
+            {
+              "field": "player",
+              "label": "Player"
+            },
+            {
+              "field": "team",
+              "label": "Team"
+            },
+            {
+              "field": "attempts",
+              "label": "Huck attempts"
+            },
+            {
+              "field": "completions",
+              "label": "Completed"
+            },
+            {
+              "field": "drops",
+              "label": "Drops"
+            },
+            {
+              "field": "completionPct",
+              "label": "Completion (%)"
+            },
+            {
+              "field": "throwerAec",
+              "label": "Total thrower aEC"
+            },
+            {
+              "field": "aecPerAttempt",
+              "label": "aEC per huck"
+            }
+          ],
+          "reportingPeriod": "2026 regular season",
+          "capturedAt": "2026-09-29T16:19:13.770251+00:00",
+          "preview": {
+            "kind": "aggregate",
+            "note": "All 10 players with at least 30 regular-season huck attempts, sorted by thrower aEC per huck.",
+            "totalRows": 10
+          },
+          "methods": [
+            {
+              "language": "python",
+              "code": "\"\"\"Compare 2026 huck throwers using the website's preserved source snapshot.\n\nRun with Python 3 from any directory. Writes the reviewed result beside this file;\ndoes not update the website or its underlying data.\n\"\"\"\nfrom __future__ import annotations\n\nimport collections\nimport hashlib\nimport json\nimport math\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parents[1]\nSNAPSHOT = ROOT / 'src/data.json'\ndata = json.loads(SNAPSHOT.read_text())\nplayers = {p['id']: p['name'] for p in data['queries']['players']['rows']}\nteams = {p['id']: p['name'] for p in data['queries']['teams']['rows']}\n\n\ndef is_huck(event):\n    \"\"\"Reconciles to all 1,152 available source player-game huck counts.\"\"\"\n    dx, dy = event['rx'] - event['tx'], event['ry'] - event['ty']\n    return math.hypot(dx, dy) >= 40 and dy >= 30\n\n\ndef summarize(phase):\n    events = [e for e in data['queries']['events']['rows']\n              if phase == 'all' or e['phase'] == phase]\n    assert len(events) == len({e['id'] for e in events})\n    throws = collections.Counter(e['thrower'] for e in events)\n    by_player = collections.defaultdict(list)\n    for event in events:\n        if is_huck(event):\n            by_player[event['thrower']].append(event)\n    rows = []\n    for pid, hucks in by_player.items():\n        attempts = len(hucks)\n        completed = sum(e['complete'] for e in hucks)\n        drops = sum(e['drop'] for e in hucks)\n        scored = [e['throwAec'] for e in hucks if e['throwAec'] is not None]\n        total = math.fsum(scored) if scored else None\n        rows.append({\n            'id': pid, 'player': players[pid],\n            'team': ', '.join(sorted({teams[e['team']] for e in hucks})),\n            'attempts': attempts, 'completions': completed, 'drops': drops,\n            'completionPct': 100 * completed / attempts,\n            'completionPctExcludingDrops': 100 * completed / (attempts - drops)\n                if attempts > drops else None,\n            'throwerAec': total, 'aecPerAttempt': total / attempts if total is not None else None,\n            'huckPctOfThrows': 100 * attempts / throws[pid],\n            'meanDistanceYards': math.fsum(math.hypot(e['rx'] - e['tx'], e['ry'] - e['ty']) for e in hucks) / attempts,\n            'missingAec': attempts - len(scored),\n        })\n    rows.sort(key=lambda r: (-(r['aecPerAttempt'] if r['aecPerAttempt'] is not None else -math.inf), r['id']))\n    hucks = [e for player_hucks in by_player.values() for e in player_hucks]\n    return {\n        'phase': phase, 'throws': len(events), 'hucks': len(hucks),\n        'leagueCompletionPct': 100 * sum(e['complete'] for e in hucks) / len(hucks),\n        'leagueAecPerAttempt': math.fsum(e['throwAec'] for e in hucks if e['throwAec'] is not None) / len(hucks),\n        'missingHuckAec': sum(e['throwAec'] is None for e in hucks),\n        'rows': rows,\n        'qualifyingCounts': {str(n): sum(r['attempts'] >= n for r in rows) for n in [20, 25, 30, 40]},\n    }\n\n\nchecked_games, checked_counts = set(), 0\nfor file in sorted((ROOT / 'data/source-api').glob('*.json')):\n    payload = json.loads(file.read_text())\n    if not isinstance(payload, dict) or not payload.get('game') or not payload.get('throws'):\n        continue\n    gid = payload['game']['GameID']\n    if gid in checked_games:\n        continue\n    checked_games.add(gid)\n    counts = collections.Counter()\n    for throw in payload['throws']:\n        projected = {'tx': float(throw['ThrowerX']), 'ty': float(throw['ThrowerY']),\n                     'rx': float(throw['ReceiverX']), 'ry': float(throw['ReceiverY'])}\n        if is_huck(projected):\n            counts[throw['Thrower']] += 1\n    for player in payload['playerStats']:\n        assert counts[player['PlayerID']] == player['hucks_thrown'], (gid, player['PlayerID'])\n        checked_counts += 1\n\nresult = {\n    'snapshotGeneratedAt': data['generatedAt'],\n    'snapshotSha256': hashlib.sha256(SNAPSHOT.read_bytes()).hexdigest(),\n    'definition': 'A huck travels at least 40 yards from release to destination and gains at least 30 yards downfield.',\n    'ranking': 'Observed thrower aEC per huck attempt; main comparison requires at least 30 attempts in the regular season.',\n    'aecDefinition': 'Sum supplied thrower aEC, including negative throwaway credit and zero thrower credit for drops.',\n    'completionDefinition': 'Completed hucks divided by all huck attempts, retaining drops as unsuccessful attempts.',\n    'validation': {'sourceGames': len(checked_games), 'playerGameHuckCountsMatched': checked_counts, 'huckCountMismatches': 0},\n    'caveats': [\n        'The project has throw data for 131 of 132 regular-season games; July 18 Pittsburgh at Chicago is missing.',\n        'These are observed 2026 results, not an isolated estimate of throwing talent or a guarantee on future throws.',\n        'The cached league leaderboard includes playoffs and is not the same population as the main regular-season comparison.',\n        'Shown Space completion percentages exclude dropped hucks from the denominator; the main comparison here includes them.',\n    ],\n    'regularSeason': summarize('Regular season'),\n    'includingPlayoffs': summarize('all'),\n}\nfor scope in ['regularSeason', 'includingPlayoffs']:\n    qualified = [r for r in result[scope]['rows'] if r['attempts'] >= 30]\n    assert all(r['missingAec'] == 0 for r in qualified)\noutput = Path(__file__).with_suffix('.json')\noutput.write_text(json.dumps(result, indent=2, allow_nan=False) + '\\n')\nprint(json.dumps({\n    'validation': result['validation'],\n    'regularSeasonBaseline': {k: v for k, v in result['regularSeason'].items() if k != 'rows'},\n    'regularSeasonTopEfficiency': [r for r in result['regularSeason']['rows'] if r['attempts'] >= 30][:6],\n    'regularSeasonTopTotal': sorted(result['regularSeason']['rows'], key=lambda r: -(r['throwerAec'] or 0))[:3],\n    'includingPlayoffsTopEfficiency': [r for r in result['includingPlayoffs']['rows'] if r['attempts'] >= 30][:3],\n}, indent=2))\n"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

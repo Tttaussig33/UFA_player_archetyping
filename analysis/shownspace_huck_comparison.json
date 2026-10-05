@@ -1,0 +1,297 @@
+{
+  "capturedAt": "2026-10-05T02:09:42.548Z",
+  "sourceUrl": "https://shownspace.com/players",
+  "season": 2026,
+  "statView": "Per 100 Poss",
+  "baseFilters": {
+    "minimumGames": 10,
+    "minimumOffensivePossessions": 10,
+    "minimumDefensivePossessions": 10
+  },
+  "qualifyingFilters": {
+    "huckAttemptPctMinimum": 10,
+    "huckCompletionPctMinimum": 70
+  },
+  "nearbyFilters": {
+    "huckAttemptPctMinimum": 8,
+    "huckCompletionPctMinimum": 65
+  },
+  "rows": [
+    {
+      "defensivePossessions": 132,
+      "games": 10,
+      "huckAttemptPct": 15.9,
+      "huckCompletionPct": 73.8,
+      "huckCompletionRatio": "31.0/42",
+      "offensivePossessions": 262,
+      "player": "Mark Turner",
+      "playerUrl": "https://shownspace.com/players/mturner",
+      "team": "Havoc",
+      "teamUrl": "https://shownspace.com/teams/havoc?season=2026",
+      "throwAecPer100": 6.2,
+      "totalAecPer100": 16.7
+    },
+    {
+      "defensivePossessions": 223,
+      "games": 12,
+      "huckAttemptPct": 13.5,
+      "huckCompletionPct": 75,
+      "huckCompletionRatio": "9.0/12",
+      "offensivePossessions": 140,
+      "player": "William Coffin",
+      "playerUrl": "https://shownspace.com/players/wcoffin",
+      "team": "Flyers",
+      "teamUrl": "https://shownspace.com/teams/flyers?season=2026",
+      "throwAecPer100": 7.4,
+      "totalAecPer100": 15.9
+    },
+    {
+      "defensivePossessions": 155,
+      "games": 14,
+      "huckAttemptPct": 13.4,
+      "huckCompletionPct": 76.6,
+      "huckCompletionRatio": "36.0/47",
+      "offensivePossessions": 322,
+      "player": "Chad Yorgason",
+      "playerUrl": "https://shownspace.com/players/cyorgason",
+      "team": "Shred",
+      "teamUrl": "https://shownspace.com/teams/shred?season=2026",
+      "throwAecPer100": 12,
+      "totalAecPer100": 23
+    },
+    {
+      "defensivePossessions": 296,
+      "games": 14,
+      "huckAttemptPct": 13.4,
+      "huckCompletionPct": 70.6,
+      "huckCompletionRatio": "12.0/17",
+      "offensivePossessions": 166,
+      "player": "Nicholas Whitlock",
+      "playerUrl": "https://shownspace.com/players/nwhitlock",
+      "team": "Empire",
+      "teamUrl": "https://shownspace.com/teams/empire?season=2026",
+      "throwAecPer100": 7.2,
+      "totalAecPer100": 21.4
+    },
+    {
+      "defensivePossessions": 141,
+      "games": 11,
+      "huckAttemptPct": 10.5,
+      "huckCompletionPct": 76.2,
+      "huckCompletionRatio": "16.0/21",
+      "offensivePossessions": 222,
+      "player": "Miles Grovic",
+      "playerUrl": "https://shownspace.com/players/mgrovic",
+      "team": "Breeze",
+      "teamUrl": "https://shownspace.com/teams/breeze?season=2026",
+      "throwAecPer100": 8,
+      "totalAecPer100": 22.3
+    },
+    {
+      "defensivePossessions": 256,
+      "games": 12,
+      "huckAttemptPct": 10.4,
+      "huckCompletionPct": 89.5,
+      "huckCompletionRatio": "17.0/19",
+      "offensivePossessions": 204,
+      "player": "Max Gibson",
+      "playerUrl": "https://shownspace.com/players/mgibson",
+      "team": "Growlers",
+      "teamUrl": "https://shownspace.com/teams/growlers?season=2026",
+      "throwAecPer100": 12.2,
+      "totalAecPer100": 20.2
+    },
+    {
+      "defensivePossessions": 111,
+      "games": 13,
+      "huckAttemptPct": 10.2,
+      "huckCompletionPct": 73.3,
+      "huckCompletionRatio": "11.0/15",
+      "offensivePossessions": 280,
+      "player": "Jace Duennebeil",
+      "playerUrl": "https://shownspace.com/players/jduennebe",
+      "team": "Shred",
+      "teamUrl": "https://shownspace.com/teams/shred?season=2026",
+      "throwAecPer100": 2.8,
+      "totalAecPer100": 15.4
+    },
+    {
+      "defensivePossessions": 106,
+      "games": 13,
+      "huckAttemptPct": 10.1,
+      "huckCompletionPct": 76,
+      "huckCompletionRatio": "19.0/25",
+      "offensivePossessions": 308,
+      "player": "Jacob Fairfax",
+      "playerUrl": "https://shownspace.com/players/jfairfax",
+      "team": "Flyers",
+      "teamUrl": "https://shownspace.com/teams/flyers?season=2026",
+      "throwAecPer100": 4.9,
+      "totalAecPer100": 21.7
+    }
+  ],
+  "nearbyRows": [
+    {
+      "games": 11,
+      "huckAttemptPct": 20,
+      "huckCompletionPct": 67.6,
+      "huckCompletionRatio": "25.0/37",
+      "player": "Seth Faris",
+      "playerUrl": "https://shownspace.com/players/sfaris",
+      "team": "Apex"
+    },
+    {
+      "games": 10,
+      "huckAttemptPct": 15.9,
+      "huckCompletionPct": 73.8,
+      "huckCompletionRatio": "31.0/42",
+      "player": "Mark Turner",
+      "playerUrl": "https://shownspace.com/players/mturner",
+      "team": "Havoc"
+    },
+    {
+      "games": 11,
+      "huckAttemptPct": 13.8,
+      "huckCompletionPct": 67.3,
+      "huckCompletionRatio": "35.0/52",
+      "player": "Elliot Hawkins",
+      "playerUrl": "https://shownspace.com/players/ehawkins",
+      "team": "Alleycats"
+    },
+    {
+      "games": 12,
+      "huckAttemptPct": 13.5,
+      "huckCompletionPct": 75,
+      "huckCompletionRatio": "9.0/12",
+      "player": "William Coffin",
+      "playerUrl": "https://shownspace.com/players/wcoffin",
+      "team": "Flyers"
+    },
+    {
+      "games": 14,
+      "huckAttemptPct": 13.4,
+      "huckCompletionPct": 76.6,
+      "huckCompletionRatio": "36.0/47",
+      "player": "Chad Yorgason",
+      "playerUrl": "https://shownspace.com/players/cyorgason",
+      "team": "Shred"
+    },
+    {
+      "games": 14,
+      "huckAttemptPct": 13.4,
+      "huckCompletionPct": 70.6,
+      "huckCompletionRatio": "12.0/17",
+      "player": "Nicholas Whitlock",
+      "playerUrl": "https://shownspace.com/players/nwhitlock",
+      "team": "Empire"
+    },
+    {
+      "games": 11,
+      "huckAttemptPct": 10.5,
+      "huckCompletionPct": 76.2,
+      "huckCompletionRatio": "16.0/21",
+      "player": "Miles Grovic",
+      "playerUrl": "https://shownspace.com/players/mgrovic",
+      "team": "Breeze"
+    },
+    {
+      "games": 12,
+      "huckAttemptPct": 10.4,
+      "huckCompletionPct": 89.5,
+      "huckCompletionRatio": "17.0/19",
+      "player": "Max Gibson",
+      "playerUrl": "https://shownspace.com/players/mgibson",
+      "team": "Growlers"
+    },
+    {
+      "games": 13,
+      "huckAttemptPct": 10.2,
+      "huckCompletionPct": 73.3,
+      "huckCompletionRatio": "11.0/15",
+      "player": "Jace Duennebeil",
+      "playerUrl": "https://shownspace.com/players/jduennebe",
+      "team": "Shred"
+    },
+    {
+      "games": 13,
+      "huckAttemptPct": 10.1,
+      "huckCompletionPct": 76,
+      "huckCompletionRatio": "19.0/25",
+      "player": "Jacob Fairfax",
+      "playerUrl": "https://shownspace.com/players/jfairfax",
+      "team": "Flyers"
+    },
+    {
+      "games": 15,
+      "huckAttemptPct": 9.6,
+      "huckCompletionPct": 88.2,
+      "huckCompletionRatio": "45.0/51",
+      "player": "Alex Atkins",
+      "playerUrl": "https://shownspace.com/players/aatkins",
+      "team": "Empire"
+    },
+    {
+      "games": 11,
+      "huckAttemptPct": 9.3,
+      "huckCompletionPct": 85.7,
+      "huckCompletionRatio": "18.0/21",
+      "player": "Eric Sjostrom",
+      "playerUrl": "https://shownspace.com/players/esjostrom",
+      "team": "Radicals"
+    },
+    {
+      "games": 12,
+      "huckAttemptPct": 9.2,
+      "huckCompletionPct": 69.2,
+      "huckCompletionRatio": "18.0/26",
+      "player": "Spencer Dillon",
+      "playerUrl": "https://shownspace.com/players/sdillon",
+      "team": "Rush"
+    },
+    {
+      "games": 12,
+      "huckAttemptPct": 9.1,
+      "huckCompletionPct": 66.7,
+      "huckCompletionRatio": "14.0/21",
+      "player": "Martin Gallant",
+      "playerUrl": "https://shownspace.com/players/mgallant",
+      "team": "Rush"
+    },
+    {
+      "games": 12,
+      "huckAttemptPct": 8.9,
+      "huckCompletionPct": 75,
+      "huckCompletionRatio": "9.0/12",
+      "player": "Nicholas DiGiorgio",
+      "playerUrl": "https://shownspace.com/players/ndigiorgi",
+      "team": "Phoenix"
+    },
+    {
+      "games": 15,
+      "huckAttemptPct": 8.5,
+      "huckCompletionPct": 76.9,
+      "huckCompletionRatio": "10.0/13",
+      "player": "Noah Hanson",
+      "playerUrl": "https://shownspace.com/players/nhanson",
+      "team": "Windchill"
+    },
+    {
+      "games": 11,
+      "huckAttemptPct": 8.2,
+      "huckCompletionPct": 72,
+      "huckCompletionRatio": "18.0/25",
+      "player": "Matt Miller",
+      "playerUrl": "https://shownspace.com/players/mmiller1",
+      "team": "Growlers"
+    },
+    {
+      "games": 15,
+      "huckAttemptPct": 8.1,
+      "huckCompletionPct": 80,
+      "huckCompletionRatio": "4.0/5",
+      "player": "Dylan DeClerck",
+      "playerUrl": "https://shownspace.com/players/ddeclerck",
+      "team": "Windchill"
+    }
+  ]
+}

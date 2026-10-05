@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "shownspace-high-frequency-high-completion-huckers",
+      "title": "Eight players meet both huck cutoffs; Atkins is a strong nearby comparison",
+      "assumptions": [
+        "High huck usage means at least 10% of throws are hucks, and high completion means at least 70% in the site's HuCP metric."
+      ],
+      "queries": [
+        {
+          "id": "huck-qualifiers",
+          "source": {
+            "label": "Shown Space player rankings",
+            "url": "https://shownspace.com/players",
+            "files": [
+              "analysis/shownspace_huck_comparison.json"
+            ],
+            "executedAt": "2026-10-05T02:09:42.548Z",
+            "filters": [
+              "Minimum games: 10",
+              "Minimum offensive possessions: 10",
+              "Minimum defensive possessions: 10",
+              "Stat view: Per 100 Poss",
+              "Minimum huck attempt: 10%",
+              "Minimum huck completion: 70%"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "HuAP%",
+                "definition": "The share of a player's throws that are huck attempts."
+              },
+              {
+                "label": "HuCP%",
+                "definition": "Huck completion percentage as displayed by Shown Space, with its completion/sample ratio preserved."
+              }
+            ],
+            "caveats": [
+              "The 10% huck-attempt and 70% completion cutoffs are explicit analytical choices, not official Shown Space tiers.",
+              "The comparison retains the user's 10-game minimum, so it does not include players with fewer games.",
+              "Shown Space HuCP percentages and displayed completion ratios exclude dropped hucks from the denominator; they differ from the all-attempt completion percentages used in the earlier regular-season analysis.",
+              "The 2026 season view is different from the earlier project's regular-season-only comparison.",
+              "Displayed percentages are rounded to one decimal place. Small completion samples and differences in throw difficulty limit conclusions about underlying throwing ability."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "source",
+                "title": "Source selection",
+                "detail": "Read the user's open Shown Space player table in its 2026 season view. The initial maximum HuCP of 6% was replaced by a minimum to answer the high-completion question."
+              },
+              {
+                "kind": "validation",
+                "title": "Counts and thresholds",
+                "detail": "All 18 displayed completion ratios reproduce their displayed percentages within rounding. Applying the main cutoffs to the expanded comparison reproduces exactly the eight main qualifiers."
+              }
+            ]
+          },
+          "rows": [
+            {
+              "player": "Mark Turner",
+              "team": "Havoc",
+              "huckAttemptPct": 15.9,
+              "huckCompletionPct": 73.8,
+              "huckCompletionRatio": "31.0/42",
+              "games": 10
+            },
+            {
+              "player": "William Coffin",
+              "team": "Flyers",
+              "huckAttemptPct": 13.5,
+              "huckCompletionPct": 75,
+              "huckCompletionRatio": "9.0/12",
+              "games": 12
+            },
+            {
+              "player": "Chad Yorgason",
+              "team": "Shred",
+              "huckAttemptPct": 13.4,
+              "huckCompletionPct": 76.6,
+              "huckCompletionRatio": "36.0/47",
+              "games": 14
+            },
+            {
+              "player": "Nicholas Whitlock",
+              "team": "Empire",
+              "huckAttemptPct": 13.4,
+              "huckCompletionPct": 70.6,
+              "huckCompletionRatio": "12.0/17",
+              "games": 14
+            },
+            {
+              "player": "Miles Grovic",
+              "team": "Breeze",
+              "huckAttemptPct": 10.5,
+              "huckCompletionPct": 76.2,
+              "huckCompletionRatio": "16.0/21",
+              "games": 11
+            },
+            {
+              "player": "Max Gibson",
+              "team": "Growlers",
+              "huckAttemptPct": 10.4,
+              "huckCompletionPct": 89.5,
+              "huckCompletionRatio": "17.0/19",
+              "games": 12
+            },
+            {
+              "player": "Jace Duennebeil",
+              "team": "Shred",
+              "huckAttemptPct": 10.2,
+              "huckCompletionPct": 73.3,
+              "huckCompletionRatio": "11.0/15",
+              "games": 13
+            },
+            {
+              "player": "Jacob Fairfax",
+              "team": "Flyers",
+              "huckAttemptPct": 10.1,
+              "huckCompletionPct": 76,
+              "huckCompletionRatio": "19.0/25",
+              "games": 13
+            }
+          ],
+          "columns": [
+            {
+              "field": "player",
+              "label": "Player"
+            },
+            {
+              "field": "team",
+              "label": "Team"
+            },
+            {
+              "field": "huckAttemptPct",
+              "label": "Huck attempt (%)"
+            },
+            {
+              "field": "huckCompletionPct",
+              "label": "Huck completion (%)"
+            },
+            {
+              "field": "huckCompletionRatio",
+              "label": "Shown Space HuCP sample"
+            },
+            {
+              "field": "games",
+              "label": "Games"
+            }
+          ],
+          "reportingPeriod": "2026 season view",
+          "capturedAt": "2026-10-05T02:09:42.548Z",
+          "preview": {
+            "kind": "aggregate",
+            "note": "All 8 player rows returned by these filters; every table page was read.",
+            "totalRows": 8
+          },
+          "methods": [
+            {
+              "language": "python",
+              "code": "qualifiers = [r for r in nearby_rows if r['huckAttemptPct'] >= 10 and r['huckCompletionPct'] >= 70]\nfor r in nearby_rows:\n    completed, denominator = map(float, r['huckCompletionRatio'].split('/'))\n    assert abs(100 * completed / denominator - r['huckCompletionPct']) <= 0.051"
+            }
+          ]
+        },
+        {
+          "id": "nearby-huck-candidates",
+          "source": {
+            "label": "Shown Space nearby candidates",
+            "url": "https://shownspace.com/players",
+            "files": [
+              "analysis/shownspace_huck_comparison.json"
+            ],
+            "executedAt": "2026-10-05T02:09:42.548Z",
+            "filters": [
+              "Minimum games: 10",
+              "Minimum offensive possessions: 10",
+              "Minimum defensive possessions: 10",
+              "Stat view: Per 100 Poss",
+              "Minimum huck attempt: 8%",
+              "Minimum huck completion: 65%"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "HuAP%",
+                "definition": "The share of a player's throws that are huck attempts."
+              },
+              {
+                "label": "HuCP%",
+                "definition": "Huck completion percentage as displayed by Shown Space, with its completion/sample ratio preserved."
+              }
+            ],
+            "caveats": [
+              "The 10% huck-attempt and 70% completion cutoffs are explicit analytical choices, not official Shown Space tiers.",
+              "The comparison retains the user's 10-game minimum, so it does not include players with fewer games.",
+              "Shown Space HuCP percentages and displayed completion ratios exclude dropped hucks from the denominator; they differ from the all-attempt completion percentages used in the earlier regular-season analysis.",
+              "The 2026 season view is different from the earlier project's regular-season-only comparison.",
+              "Displayed percentages are rounded to one decimal place. Small completion samples and differences in throw difficulty limit conclusions about underlying throwing ability."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "source",
+                "title": "Source selection",
+                "detail": "Read the user's open Shown Space player table in its 2026 season view. The initial maximum HuCP of 6% was replaced by a minimum to answer the high-completion question."
+              },
+              {
+                "kind": "validation",
+                "title": "Counts and thresholds",
+                "detail": "All 18 displayed completion ratios reproduce their displayed percentages within rounding. Applying the main cutoffs to the expanded comparison reproduces exactly the eight main qualifiers."
+              }
+            ]
+          },
+          "rows": [
+            {
+              "player": "Seth Faris",
+              "team": "Apex",
+              "huckAttemptPct": 20,
+              "huckCompletionPct": 67.6,
+              "huckCompletionRatio": "25.0/37",
+              "games": 11
+            },
+            {
+              "player": "Mark Turner",
+              "team": "Havoc",
+              "huckAttemptPct": 15.9,
+              "huckCompletionPct": 73.8,
+              "huckCompletionRatio": "31.0/42",
+              "games": 10
+            },
+            {
+              "player": "Elliot Hawkins",
+              "team": "Alleycats",
+              "huckAttemptPct": 13.8,
+              "huckCompletionPct": 67.3,
+              "huckCompletionRatio": "35.0/52",
+              "games": 11
+            },
+            {
+              "player": "William Coffin",
+              "team": "Flyers",
+              "huckAttemptPct": 13.5,
+              "huckCompletionPct": 75,
+              "huckCompletionRatio": "9.0/12",
+              "games": 12
+            },
+            {
+              "player": "Chad Yorgason",
+              "team": "Shred",
+              "huckAttemptPct": 13.4,
+              "huckCompletionPct": 76.6,
+              "huckCompletionRatio": "36.0/47",
+              "games": 14
+            },
+            {
+              "player": "Nicholas Whitlock",
+              "team": "Empire",
+              "huckAttemptPct": 13.4,
+              "huckCompletionPct": 70.6,
+              "huckCompletionRatio": "12.0/17",
+              "games": 14
+            },
+            {
+              "player": "Miles Grovic",
+              "team": "Breeze",
+              "huckAttemptPct": 10.5,
+              "huckCompletionPct": 76.2,
+              "huckCompletionRatio": "16.0/21",
+              "games": 11
+            },
+            {
+              "player": "Max Gibson",
+              "team": "Growlers",
+              "huckAttemptPct": 10.4,
+              "huckCompletionPct": 89.5,
+              "huckCompletionRatio": "17.0/19",
+              "games": 12
+            },
+            {
+              "player": "Jace Duennebeil",
+              "team": "Shred",
+              "huckAttemptPct": 10.2,
+              "huckCompletionPct": 73.3,
+              "huckCompletionRatio": "11.0/15",
+              "games": 13
+            },
+            {
+              "player": "Jacob Fairfax",
+              "team": "Flyers",
+              "huckAttemptPct": 10.1,
+              "huckCompletionPct": 76,
+              "huckCompletionRatio": "19.0/25",
+              "games": 13
+            },
+            {
+              "player": "Alex Atkins",
+              "team": "Empire",
+              "huckAttemptPct": 9.6,
+              "huckCompletionPct": 88.2,
+              "huckCompletionRatio": "45.0/51",
+              "games": 15
+            },
+            {
+              "player": "Eric Sjostrom",
+              "team": "Radicals",
+              "huckAttemptPct": 9.3,
+              "huckCompletionPct": 85.7,
+              "huckCompletionRatio": "18.0/21",
+              "games": 11
+            },
+            {
+              "player": "Spencer Dillon",
+              "team": "Rush",
+              "huckAttemptPct": 9.2,
+              "huckCompletionPct": 69.2,
+              "huckCompletionRatio": "18.0/26",
+              "games": 12
+            },
+            {
+              "player": "Martin Gallant",
+              "team": "Rush",
+              "huckAttemptPct": 9.1,
+              "huckCompletionPct": 66.7,
+              "huckCompletionRatio": "14.0/21",
+              "games": 12
+            },
+            {
+              "player": "Nicholas DiGiorgio",
+              "team": "Phoenix",
+              "huckAttemptPct": 8.9,
+              "huckCompletionPct": 75,
+              "huckCompletionRatio": "9.0/12",
+              "games": 12
+            },
+            {
+              "player": "Noah Hanson",
+              "team": "Windchill",
+              "huckAttemptPct": 8.5,
+              "huckCompletionPct": 76.9,
+              "huckCompletionRatio": "10.0/13",
+              "games": 15
+            },
+            {
+              "player": "Matt Miller",
+              "team": "Growlers",
+              "huckAttemptPct": 8.2,
+              "huckCompletionPct": 72,
+              "huckCompletionRatio": "18.0/25",
+              "games": 11
+            },
+            {
+              "player": "Dylan DeClerck",
+              "team": "Windchill",
+              "huckAttemptPct": 8.1,
+              "huckCompletionPct": 80,
+              "huckCompletionRatio": "4.0/5",
+              "games": 15
+            }
+          ],
+          "columns": [
+            {
+              "field": "player",
+              "label": "Player"
+            },
+            {
+              "field": "team",
+              "label": "Team"
+            },
+            {
+              "field": "huckAttemptPct",
+              "label": "Huck attempt (%)"
+            },
+            {
+              "field": "huckCompletionPct",
+              "label": "Huck completion (%)"
+            },
+            {
+              "field": "huckCompletionRatio",
+              "label": "Shown Space HuCP sample"
+            },
+            {
+              "field": "games",
+              "label": "Games"
+            }
+          ],
+          "reportingPeriod": "2026 season view",
+          "capturedAt": "2026-10-05T02:09:42.548Z",
+          "preview": {
+            "kind": "aggregate",
+            "note": "All 18 player rows returned by these filters; every table page was read.",
+            "totalRows": 18
+          },
+          "methods": [
+            {
+              "language": "python",
+              "code": "qualifiers = [r for r in nearby_rows if r['huckAttemptPct'] >= 10 and r['huckCompletionPct'] >= 70]\nfor r in nearby_rows:\n    completed, denominator = map(float, r['huckCompletionRatio'].split('/'))\n    assert abs(100 * completed / denominator - r['huckCompletionPct']) <= 0.051"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

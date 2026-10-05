@@ -42,6 +42,15 @@ function originalZoneFor(x,y,role) {
 export function zoneBuckets(events,callahans,metric='throw',bottom='field') {
   const buckets=Object.fromEntries(ZONES.map(z=>[z.id,[]]));
   for(const e of events) {
+    if(metric==='combined') {
+      const t=zoneFor(e.tx,e.ty);
+      if(t)buckets[t].push({...e,creditRole:'throw'});
+      if(e.receiver&&(e.complete||e.drop)) {
+        const r=zoneFor(e.rx,e.ry);
+        if(r)buckets[r].push({...e,creditRole:'receive'});
+      }
+      continue;
+    }
     if(metric==='original') {
       const t=originalZoneFor(e.tx,e.ty,'throw');
       if(t)buckets[t].push(e);
@@ -61,15 +70,28 @@ export function zoneBuckets(events,callahans,metric='throw',bottom='field') {
 export function rankZone(rows,role) {
   const people=new Map();
   for(const e of rows) {
-    const id=role==='throw'?e.thrower:role==='receive'?e.receiver:e.player;
+    const contribution=eventRole(e,role),id=eventPlayer(e,role);
     if(!id||id==='unknown')continue;
-    if(!people.has(id))people.set(id,{id,count:0,completed:0,aec:0,scored:0,events:[]});
-    const p=people.get(id),a=role==='throw'?e.throwAec:role==='receive'?e.receiveAec:e.aec;
+    if(!people.has(id))people.set(id,{id,count:0,completed:0,aec:0,scored:0,events:[],throwCount:0,receiveCount:0,throwScored:0,receiveScored:0,throwAec:0,receiveAec:0});
+    const p=people.get(id),a=eventAec(e,role);
     p.count++;p.completed+=role==='callahan'||e.complete?1:0;p.events.push(e);
     if(Number.isFinite(a)){p.aec+=a;p.scored++;}
+    if(contribution==='throw'||contribution==='receive') {
+      p[`${contribution}Count`]++;
+      if(Number.isFinite(a)){p[`${contribution}Aec`]+=a;p[`${contribution}Scored`]++;}
+    }
   }
-  return [...people.values()].map(p=>({...p,aec:p.scored?p.aec:null,rate:p.count?p.completed/p.count:null}))
+  return [...people.values()].map(p=>({...p,aec:p.scored?p.aec:null,rate:p.count?p.completed/p.count:null,
+    throwAec:p.throwScored||!p.throwCount?p.throwAec:null,receiveAec:p.receiveScored||!p.receiveCount?p.receiveAec:null}))
     .sort((a,b)=>(b.aec??-Infinity)-(a.aec??-Infinity)||b.count-a.count||a.id.localeCompare(b.id));
 }
-export const roleLabel = role => role==='throw'?'Thrower aEC':role==='receive'?'Receiver aEC':'Callahan aEC';
-export const units = role => role==='throw'?'throws':role==='receive'?'targets':'interceptions';
+export const eventRole = (event,role) => role==='combined'?event.creditRole:role;
+export const eventPlayer = (event,role) => eventRole(event,role)==='throw'?event.thrower:eventRole(event,role)==='receive'?event.receiver:event.player;
+export const eventAec = (event,role) => eventRole(event,role)==='throw'?event.throwAec:eventRole(event,role)==='receive'?event.receiveAec:event.aec;
+// Combined buckets contain role contributions; source inspection retains each
+// underlying reviewed throw once, without its derived role annotation.
+export function sourceEvents(rows) {
+  return [...new Map(rows.map(({creditRole,...event})=>[event.id,event])).values()];
+}
+export const roleLabel = role => role==='combined'?'Overall aEC':role==='throw'?'Thrower aEC':role==='receive'?'Receiver aEC':'Callahan aEC';
+export const units = role => role==='combined'?'throws + targets':role==='throw'?'throws':role==='receive'?'targets':'interceptions';

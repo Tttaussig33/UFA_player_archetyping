@@ -25,6 +25,7 @@ Then open <http://127.0.0.1:4173>.
 - The default is the full available **regular season**, with both O-line and D-line events.
 - **Original** is the default field view: receivers in the attacking end zone, throwers in midfield, and Callahans in the bottom panel, matching the first Instagram adaptation.
 - Switch to **Thrower aEC / Receiver aEC** above the field to use release locations or catch/drop locations across all 12 boxes. Both metrics include the bottom (own) end zone.
+- **Overall aEC** is the fourth view. It adds each player’s thrower and receiver aEC in the same box and ranks players by that sum, across all 12 boxes. The detail panel shows both role totals; vectors, records, and CSV exports identify throwing versus receiving contributions.
 - Each box shows its selected metric’s leader. Select a box for every recorded vector for that player in that zone.
 - In the full-field views, the **Bottom end zone** menu can show **Callahan aEC** separately; choose the field metric again to return to ordinary throws or receptions. Original always uses Callahans at the bottom.
 - **Player boxes** restores the full portrait map; **Disc vectors** shows the selected player’s events.
@@ -46,7 +47,7 @@ author’s explanation that main-field dots represent throwing locations and end
 dots represent receiving locations. The reproduced geometry is eight main-field
 zones, three attacking-end-zone zones, and one own-end-zone panel. **Original**
 preserves that mixed-role layout. The full-field **Thrower aEC** and **Receiver aEC**
-views extend it so every zone supports either metric; Callahans are also available
+views extend it so every zone supports either metric; **Overall aEC** combines both roles per player. Callahans are also available
 as a separate bottom-panel option in those views.
 
 Zone boundaries are inferred from the drawing, not obtained from the author’s
@@ -79,7 +80,12 @@ thrower and receiver. For a drop, the receiver takes the aEC and the thrower get
 zero. For other turnovers, the thrower takes the aEC and no receiver is credited.
 The UI sums those role-specific credits within each zone; it does not estimate
 or retrain Shown Space’s model. Completion rate is completions/all throws; catch
-rate is catches/(catches + recorded drops).
+rate is catches/(catches + recorded drops). Overall aEC adds each player’s throwing
+and receiving credits within the same box. Role counts are throws plus targets; a
+completed pass may credit two different players, while source inspection retains
+the underlying pass once. Overall aEC is player-role contribution, not unique
+possession value. Circles/solid arrows mark throws; squares/dashed arrows mark
+receptions in the combined view.
 
 Callahans are matched to a unique opposite-side throwing event in the same game,
 quarter and point. The panel credits the named defender with the negative of the

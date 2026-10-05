@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "box-leader-possessions",
+      "title": "Hypothetical possessions connecting the mapped leaders",
+      "queries": [
+        {
+          "id": "box-leader-lanes",
+          "source": {
+            "label": "Shown Space \u00b7 2026 regular-season snapshot",
+            "url": "https://shownspace.com",
+            "files": [
+              "data/source-manifest.json",
+              "src/data.json",
+              "analysis/box_possessions.py",
+              "analysis/box_possessions.json"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "Historical throwing lanes",
+                "definition": "Throwing counts are attempts and completions by the displayed thrower from their original box into the next box, with actual teammates. Terminal goals additionally require the explicit source goal marker."
+              },
+              {
+                "label": "Historical receiving lanes",
+                "definition": "Receiving counts are catches and recorded drops by the hypothetical receiver on passes from the same origin box into their assigned box. End-zone catches require an explicit goal marker; no observed targets means the named receiver connection is unmeasured."
+              },
+              {
+                "label": "Candidate selection",
+                "definition": "Product of thrower delivery and receiver catch rates per lane, each shrunk toward that league lane using 40 pseudo-observations. Terminal success requires the explicit goal marker. This is an uncalibrated in-sample screening index, not a predicted scoring probability or aEC."
+              }
+            ],
+            "filters": [
+              "72,663 throws in 131 games; all 22 teams.",
+              "One to four passes; forward by box-center y; no repeated player; at least five thrower attempts and three receiver targets in the exact source/destination boxes, each across at least three games. Keep the highest-index box route for each distinct ordered player chain.",
+              "Original layout: eight throwing zones and three receiving zones; Callahan defenders excluded."
+            ],
+            "caveats": [
+              "The hypothetical cross-team passes were not jointly observed; statistics describe each player with their actual teammates.",
+              "Broad-box rates do not enforce identical catch/release points, getting open, pressure, clock, chemistry, or exact starting location.",
+              "Sample floors, shrinkage and the four-pass limit affect the shortlist. The candidates are not an established league top five.",
+              "A screenshot box indicates total seasonal contribution and includes players with different usage and line roles.",
+              "One listed regular-season game, Pittsburgh at Chicago on July 18, has no source throws.",
+              "The first candidate stays first at prior strengths 10, 20 and 80; lower positions change. Requiring ten thrower attempts and five receiving targets leaves zero eligible full routes.",
+              "The direct and Faris examples are shown for comparison even though they fail the shortlist sample thresholds.",
+              "The field arrows are box-center schematics, not actual pass coordinates.",
+              "Combined box aEC adds season totals from different possessions; longer routes can have larger totals because they include more boxes. It must not be read as a single-possession value or a measure of route efficiency. Observed event aEC belongs to its original possession context."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "source",
+                "title": "Scope and leaders",
+                "detail": "Used the same manifest-selected source snapshot as the explorer. All raw file hashes, event IDs and event aEC values were checked by the existing loader. Recomputed and matched all eleven offensive screenshot leaders, including their displayed aEC totals."
+              },
+              {
+                "kind": "calculation",
+                "title": "Restricted search",
+                "detail": "Exhaustively enumerated eligible forward paths of up to four passes within the eleven mapped roles, always starting with Atkins. Ten eligible box routes were found; keep five distinct ordered player chains, retaining the best lane variant."
+              },
+              {
+                "kind": "validation",
+                "title": "Spatial support",
+                "detail": "Each of the five shortlisted routes has at least one stitched set of historical completions with every catch-to-next-release mismatch below five yards. This is only an existence check. Across all incoming passes, the leading route\u2019s Graff handoff has a median nearest-release mismatch of 12.6 yards, so a box match often does not imply a location match. The Faris example\u2019s closest four-pass template requires a maximum mismatch of 7.7 yards."
+              }
+            ]
+          },
+          "rows": [
+            {
+              "route": "Candidate 1",
+              "step": 1,
+              "from_player": "Alex Atkins",
+              "to_player": "Gordon Larson",
+              "from_box": "init",
+              "to_box": "build",
+              "throw_attempts": 28,
+              "throw_completions": 27,
+              "throw_games": 10,
+              "throw_goals": 0,
+              "receiver_targets": 14,
+              "receiver_catches": 14,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 1",
+              "step": 2,
+              "from_player": "Gordon Larson",
+              "to_player": "Tobe Decraene",
+              "from_box": "build",
+              "to_box": "attack",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 8,
+              "throw_goals": 0,
+              "receiver_targets": 29,
+              "receiver_catches": 29,
+              "receiver_games": 10,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 1",
+              "step": 3,
+              "from_player": "Tobe Decraene",
+              "to_player": "Oscar Graff",
+              "from_box": "attack",
+              "to_box": "red",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 11,
+              "throw_goals": 0,
+              "receiver_targets": 12,
+              "receiver_catches": 12,
+              "receiver_games": 8,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 1",
+              "step": 4,
+              "from_player": "Oscar Graff",
+              "to_player": "Grayson Sanner",
+              "from_box": "red",
+              "to_box": "goal-left",
+              "throw_attempts": 8,
+              "throw_completions": 7,
+              "throw_games": 7,
+              "throw_goals": 7,
+              "receiver_targets": 12,
+              "receiver_catches": 12,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 2",
+              "step": 1,
+              "from_player": "Alex Atkins",
+              "to_player": "Gordon Larson",
+              "from_box": "init",
+              "to_box": "build",
+              "throw_attempts": 28,
+              "throw_completions": 27,
+              "throw_games": 10,
+              "throw_goals": 0,
+              "receiver_targets": 14,
+              "receiver_catches": 14,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 2",
+              "step": 2,
+              "from_player": "Gordon Larson",
+              "to_player": "Tobe Decraene",
+              "from_box": "build",
+              "to_box": "attack",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 8,
+              "throw_goals": 0,
+              "receiver_targets": 29,
+              "receiver_catches": 29,
+              "receiver_games": 10,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 2",
+              "step": 3,
+              "from_player": "Tobe Decraene",
+              "to_player": "Oscar Graff",
+              "from_box": "attack",
+              "to_box": "red",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 11,
+              "throw_goals": 0,
+              "receiver_targets": 12,
+              "receiver_catches": 12,
+              "receiver_games": 8,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 2",
+              "step": 4,
+              "from_player": "Oscar Graff",
+              "to_player": "Alec Wilson Holliday",
+              "from_box": "red",
+              "to_box": "goal-right",
+              "throw_attempts": 8,
+              "throw_completions": 8,
+              "throw_games": 4,
+              "throw_goals": 7,
+              "receiver_targets": 6,
+              "receiver_catches": 6,
+              "receiver_games": 4,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 3",
+              "step": 1,
+              "from_player": "Alex Atkins",
+              "to_player": "Gordon Larson",
+              "from_box": "init",
+              "to_box": "build",
+              "throw_attempts": 28,
+              "throw_completions": 27,
+              "throw_games": 10,
+              "throw_goals": 0,
+              "receiver_targets": 14,
+              "receiver_catches": 14,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 3",
+              "step": 2,
+              "from_player": "Gordon Larson",
+              "to_player": "Tobe Decraene",
+              "from_box": "build",
+              "to_box": "attack",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 8,
+              "throw_goals": 0,
+              "receiver_targets": 29,
+              "receiver_catches": 29,
+              "receiver_games": 10,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 3",
+              "step": 3,
+              "from_player": "Tobe Decraene",
+              "to_player": "Kyle Henke",
+              "from_box": "attack",
+              "to_box": "left-attack",
+              "throw_attempts": 12,
+              "throw_completions": 12,
+              "throw_games": 8,
+              "throw_goals": 0,
+              "receiver_targets": 12,
+              "receiver_catches": 12,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 3",
+              "step": 4,
+              "from_player": "Kyle Henke",
+              "to_player": "Pieran Robert",
+              "from_box": "left-attack",
+              "to_box": "goal-deep",
+              "throw_attempts": 6,
+              "throw_completions": 6,
+              "throw_games": 5,
+              "throw_goals": 6,
+              "receiver_targets": 4,
+              "receiver_catches": 4,
+              "receiver_games": 3,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 4",
+              "step": 1,
+              "from_player": "Alex Atkins",
+              "to_player": "Gordon Larson",
+              "from_box": "init",
+              "to_box": "build",
+              "throw_attempts": 28,
+              "throw_completions": 27,
+              "throw_games": 10,
+              "throw_goals": 0,
+              "receiver_targets": 14,
+              "receiver_catches": 14,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 4",
+              "step": 2,
+              "from_player": "Gordon Larson",
+              "to_player": "Tobe Decraene",
+              "from_box": "build",
+              "to_box": "attack",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 8,
+              "throw_goals": 0,
+              "receiver_targets": 29,
+              "receiver_catches": 29,
+              "receiver_games": 10,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 4",
+              "step": 3,
+              "from_player": "Tobe Decraene",
+              "to_player": "Kyle Henke",
+              "from_box": "attack",
+              "to_box": "left-attack",
+              "throw_attempts": 12,
+              "throw_completions": 12,
+              "throw_games": 8,
+              "throw_goals": 0,
+              "receiver_targets": 12,
+              "receiver_catches": 12,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 4",
+              "step": 4,
+              "from_player": "Kyle Henke",
+              "to_player": "Grayson Sanner",
+              "from_box": "left-attack",
+              "to_box": "goal-left",
+              "throw_attempts": 9,
+              "throw_completions": 8,
+              "throw_games": 8,
+              "throw_goals": 8,
+              "receiver_targets": 3,
+              "receiver_catches": 3,
+              "receiver_games": 3,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 5",
+              "step": 1,
+              "from_player": "Alex Atkins",
+              "to_player": "Gordon Larson",
+              "from_box": "init",
+              "to_box": "build",
+              "throw_attempts": 28,
+              "throw_completions": 27,
+              "throw_games": 10,
+              "throw_goals": 0,
+              "receiver_targets": 14,
+              "receiver_catches": 14,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 5",
+              "step": 2,
+              "from_player": "Gordon Larson",
+              "to_player": "Tobe Decraene",
+              "from_box": "build",
+              "to_box": "attack",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 8,
+              "throw_goals": 0,
+              "receiver_targets": 29,
+              "receiver_catches": 29,
+              "receiver_games": 10,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Candidate 5",
+              "step": 3,
+              "from_player": "Tobe Decraene",
+              "to_player": "Grayson Sanner",
+              "from_box": "attack",
+              "to_box": "goal-left",
+              "throw_attempts": 5,
+              "throw_completions": 5,
+              "throw_games": 4,
+              "throw_goals": 5,
+              "receiver_targets": 4,
+              "receiver_catches": 4,
+              "receiver_games": 4,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Direct example",
+              "step": 1,
+              "from_player": "Alex Atkins",
+              "to_player": "Alec Wilson Holliday",
+              "from_box": "init",
+              "to_box": "goal-right",
+              "throw_attempts": 2,
+              "throw_completions": 1,
+              "throw_games": 2,
+              "throw_goals": 1,
+              "receiver_targets": 0,
+              "receiver_catches": 0,
+              "receiver_games": 0,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Faris example",
+              "step": 1,
+              "from_player": "Alex Atkins",
+              "to_player": "Seth Faris",
+              "from_box": "init",
+              "to_box": "right-build",
+              "throw_attempts": 19,
+              "throw_completions": 19,
+              "throw_games": 9,
+              "throw_goals": 0,
+              "receiver_targets": 17,
+              "receiver_catches": 17,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Faris example",
+              "step": 2,
+              "from_player": "Seth Faris",
+              "to_player": "Tobe Decraene",
+              "from_box": "right-build",
+              "to_box": "attack",
+              "throw_attempts": 2,
+              "throw_completions": 2,
+              "throw_games": 2,
+              "throw_goals": 0,
+              "receiver_targets": 4,
+              "receiver_catches": 4,
+              "receiver_games": 3,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Faris example",
+              "step": 3,
+              "from_player": "Tobe Decraene",
+              "to_player": "Oscar Graff",
+              "from_box": "attack",
+              "to_box": "red",
+              "throw_attempts": 22,
+              "throw_completions": 21,
+              "throw_games": 11,
+              "throw_goals": 0,
+              "receiver_targets": 12,
+              "receiver_catches": 12,
+              "receiver_games": 8,
+              "observed_pair_attempts": 0
+            },
+            {
+              "route": "Faris example",
+              "step": 4,
+              "from_player": "Oscar Graff",
+              "to_player": "Grayson Sanner",
+              "from_box": "red",
+              "to_box": "goal-left",
+              "throw_attempts": 8,
+              "throw_completions": 7,
+              "throw_games": 7,
+              "throw_goals": 7,
+              "receiver_targets": 12,
+              "receiver_catches": 12,
+              "receiver_games": 7,
+              "observed_pair_attempts": 0
+            }
+          ],
+          "columns": [
+            {
+              "field": "route",
+              "label": "Route"
+            },
+            {
+              "field": "step",
+              "label": "Step"
+            },
+            {
+              "field": "from_player",
+              "label": "From player"
+            },
+            {
+              "field": "to_player",
+              "label": "To player"
+            },
+            {
+              "field": "from_box",
+              "label": "From box"
+            },
+            {
+              "field": "to_box",
+              "label": "To box"
+            },
+            {
+              "field": "throw_attempts",
+              "label": "Throw attempts"
+            },
+            {
+              "field": "throw_completions",
+              "label": "Throw completions"
+            },
+            {
+              "field": "throw_games",
+              "label": "Throw games"
+            },
+            {
+              "field": "throw_goals",
+              "label": "Throw goals"
+            },
+            {
+              "field": "receiver_targets",
+              "label": "Receiver targets"
+            },
+            {
+              "field": "receiver_catches",
+              "label": "Receiver catches"
+            },
+            {
+              "field": "receiver_games",
+              "label": "Receiver games"
+            },
+            {
+              "field": "observed_pair_attempts",
+              "label": "Observed pair attempts"
+            }
+          ],
+          "capturedAt": "2026-09-29T16:19:13.770251+00:00",
+          "reportingPeriod": "2026 regular season: 2026-04-24 through 2026-07-19",
+          "preview": {
+            "kind": "aggregate",
+            "note": "Per-pass lane statistics for five shortlisted hypothetical possessions and the two user-proposed examples. Repeated lanes are intentionally repeated by candidate.",
+            "totalRows": 24
+          },
+          "methods": [
+            {
+              "language": "python",
+              "code": "\"\"\"Compare hypothetical paths among the eleven offensive box leaders.\n\nThe screen is descriptive, in-sample, and deliberately separate from aEC.\nRun from any directory with Python 3; reuses the snapshot validation loader.\n\"\"\"\nfrom __future__ import annotations\nimport collections\nimport json\nimport math\nimport statistics\nfrom pathlib import Path\nfrom ideal_possessions import load\n\nOUT = Path(__file__).resolve().parent\nNODES = {\n    'init': ('aatkins', 'Atkins', 0, 30),\n    'left-build': ('khenke', 'Henke', -20.825, 40),\n    'right-build': ('sfaris', 'Faris', 20.825, 40),\n    'build': ('glarson', 'Larson', 0, 50),\n    'attack': ('tdecraene', 'Decraene', 0, 70),\n    'left-attack': ('khenke', 'Henke', -20.825, 80),\n    'right-attack': ('tdecraene', 'Decraene', 20.825, 80),\n    'red': ('ograff', 'Graff', 0, 90),\n    'goal-left': ('gsanner', 'Sanner', -13.325, 105),\n    'goal-right': ('awilsonho', 'Wilson Holliday', 13.325, 105),\n    'goal-deep': ('rpieran', 'Robert', 0, 115),\n}\n\n\ndef zone(x, y, release=False):\n    if x is None or y is None or abs(x) > 26.670001 or not 0 <= y <= 120:\n        return None\n    if y >= 100 and not (release and y == 100):\n        return 'goal-deep' if y >= 110 else 'goal-left' if x < 0 else 'goal-right'\n    if y < 20:\n        return 'own'\n    if x < -15:\n        return 'left-build' if y < 60 else 'left-attack'\n    if x >= 15:\n        return 'right-build' if y < 60 else 'right-attack'\n    return 'init' if y < 40 else 'build' if y < 60 else 'attack' if y < 80 else 'red'\n\n\ndef terminal(node):\n    return node.startswith('goal-')\n\n\ndef delivered(e, dest):\n    # A completed catch on the goal line is not necessarily an explicit goal.\n    return e['drop'] or (e['complete'] and (not terminal(dest) or e['goal']))\n\n\ndef stats(rows, dest):\n    return {\n        'attempts': len(rows), 'completions': sum(e['complete'] for e in rows),\n        'drops': sum(e['drop'] for e in rows),\n        'deliveries': sum(delivered(e, dest) for e in rows),\n        'goals': sum(e['complete'] and e['goal'] for e in rows),\n        'games': len({e['game'] for e in rows}),\n        'meanObservedAec': statistics.mean(e['aec'] for e in rows if e['aec'] is not None) if rows else None,\n        'eventIds': [e['id'] for e in rows],\n    }\n\n\ndef main():\n    snapshot, rows = load()\n    people = {p['id']: p['name'] for p in snapshot['queries']['players']['rows']}\n    throws, catches, league = (collections.defaultdict(list) for _ in range(3))\n    box_totals = collections.defaultdict(lambda: collections.defaultdict(float))\n    for e in rows:\n        a, b = zone(e['tx'], e['ty'], True), zone(e['rx'], e['ry'])\n        if a in NODES and not terminal(a) and e['throwAec'] is not None:\n            box_totals[a][e['thrower']] += e['throwAec']\n        if b in NODES and terminal(b) and e['receiver'] and (e['complete'] or e['drop']) and e['receiveAec'] is not None:\n            box_totals[b][e['receiver']] += e['receiveAec']\n        if a not in NODES or b not in NODES:\n            continue\n        league[a, b].append(e)\n        if e['thrower'] == NODES[a][0]:\n            throws[a, b].append(e)\n        if e['receiver'] == NODES[b][0] and delivered(e, b):\n            catches[a, b].append(e)\n    for node, (pid, *_rest) in NODES.items():\n        assert max(box_totals[node], key=box_totals[node].get) == pid\n\n    def edge(a, b, strength=40):\n        t, c, base = throws[a, b], catches[a, b], league[a, b]\n        delivery_n = sum(delivered(e, b) for e in base)\n        success_n = sum(e['complete'] and (not terminal(b) or e['goal']) for e in base)\n        delivery_prior = (delivery_n + .5) / (len(base) + 1)\n        catch_prior = (success_n + .5) / (delivery_n + 1)\n        pt = (sum(delivered(e, b) for e in t) + strength * delivery_prior) / (len(t) + strength)\n        pr = (sum(e['complete'] for e in c) + strength * catch_prior) / (len(c) + strength)\n        return {'from': a, 'to': b, 'thrower': NODES[a][0], 'receiver': NODES[b][0],\n                'throw': stats(t, b), 'catch': stats(c, b),\n                'league': stats(base, b), 'screenIndex': pt * pr,\n                'observedPairAttempts': sum(e['receiver'] == NODES[b][0] for e in t)}\n\n    def junctions(path):\n        result = []\n        for a, b, c in zip(path, path[1:], path[2:]):\n            incoming = [e for e in throws[a, b] if e['complete']]\n            outgoing = throws[b, c]\n            distances = [min(math.hypot(e['rx']-f['tx'], e['ry']-f['ty']) for f in outgoing) for e in incoming] if outgoing else []\n            result.append({'node': b, 'incomingCompletions': len(incoming),\n                'medianNearestReleaseYards': statistics.median(distances) if distances else None,\n                'landingsWithin5Yards': sum(d <= 5 for d in distances),\n                'landingsWithin10Yards': sum(d <= 10 for d in distances)})\n        return result\n\n    def closest_template(path):\n        \"\"\"One illustrative chain of completed throws, minimizing release gaps.\n\n        This is a geometric existence check, not a real possession, likelihood,\n        or proof that the assigned receivers would have been available.\n        \"\"\"\n        groups = [[e for e in throws[a, b] if e['complete'] and\n                   (not terminal(b) or e['goal'])] for a, b in zip(path, path[1:])]\n        if any(not group for group in groups):\n            return None\n        frontier = [(0., 0., [e], []) for e in groups[0]]\n        for group in groups[1:]:\n            following = []\n            for nxt in group:\n                options = []\n                for worst, total, chosen, gaps in frontier:\n                    prior = chosen[-1]\n                    gap = math.hypot(prior['rx']-nxt['tx'], prior['ry']-nxt['ty'])\n                    options.append((max(worst, gap), total+gap, chosen+[nxt], gaps+[gap]))\n                following.append(min(options, key=lambda item: (item[0], item[1])))\n            frontier = following\n        worst, total, chosen, gaps = min(frontier, key=lambda item: (item[0], item[1]))\n        return {'maxGapYards': worst, 'totalGapYards': total, 'gapsYards': gaps,\n                'throws': [{k: e[k] for k in ('id', 'game', 'thrower', 'receiver', 'tx', 'ty', 'rx', 'ry', 'aec', 'goal')} for e in chosen]}\n\n    def describe(path, strength=40):\n        edges = [edge(a, b, strength) for a, b in zip(path, path[1:])]\n        contributions = [{'node': n, 'player': NODES[n][0],\n                          'role': 'Receiver' if terminal(n) else 'Thrower',\n                          'aec': box_totals[n][NODES[n][0]]} for n in path]\n        return {'nodes': path, 'names': [people[NODES[n][0]] for n in path],\n                'overallBoxAec': math.fsum(c['aec'] for c in contributions),\n                'boxAecContributions': contributions,\n                'screenIndex': math.prod(e['screenIndex'] for e in edges),\n                'passes': edges, 'junctions': junctions(path),\n                'closestTemplate': closest_template(path)}\n\n    def search(min_t=5, min_c=3, games=3, strength=40):\n        routes = []\n        def visit(path):\n            if terminal(path[-1]):\n                routes.append(describe(path, strength))\n                return\n            if len(path) == 5:\n                return\n            a = path[-1]\n            for b, (pid, _name, _x, y) in NODES.items():\n                if y <= NODES[a][3] or any(NODES[n][0] == pid for n in path):\n                    continue\n                t, c = throws[a, b], catches[a, b]\n                if len(t) < min_t or len(c) < min_c:\n                    continue\n                if len({e['game'] for e in t}) < games or len({e['game'] for e in c}) < games:\n                    continue\n                visit(path + [b])\n        visit(['init'])\n        return sorted(routes, key=lambda r: r['screenIndex'], reverse=True)\n\n    routes = search()\n    # Keep five distinct ordered player chains; preserve the best box route\n    # when the same player leads more than one box.\n    top, seen = [], set()\n    for route in routes:\n        key = tuple(route['names'])\n        if key not in seen:\n            top.append(route)\n            seen.add(key)\n        if len(top) == 5:\n            break\n    assert len(top) == 5\n    for r in routes:\n        assert len(r['names']) == len(set(r['names']))\n        assert math.isclose(r['screenIndex'], math.prod(e['screenIndex'] for e in r['passes']))\n    comparisons = [describe(['init', 'goal-right']),\n                   describe(['init', 'right-build', 'attack', 'red', 'goal-left'])]\n    record = {\n        'snapshotCapturedAt': '2026-09-29T16:19:13.770251+00:00',\n        'reportingPeriod': [min(e['date'] for e in rows), max(e['date'] for e in rows)],\n        'population': {'throws': len(rows), 'games': len({e['game'] for e in rows})},\n        'nodes': {n: {'player': v[0], 'name': people[v[0]], 'label': v[1],\n                       'x': v[2], 'y': v[3], 'boxAec': box_totals[n][v[0]]} for n, v in NODES.items()},\n        'method': {\n            'question': 'Connect the exact offensive box leaders in the supplied screenshot into hypothetical scoring sequences, starting with Atkins in central initiation.',\n            'eligibility': 'One to four passes; forward by box-center y; no repeated player; at least five thrower attempts and three receiver targets in the exact source/destination boxes, each across at least three games. Keep the highest-index box route for each distinct ordered player chain.',\n            'ranking': 'Product of thrower delivery and receiver catch rates per lane, each shrunk toward that league lane using 40 pseudo-observations. Terminal success requires the explicit goal marker. This is an uncalibrated in-sample screening index, not a predicted scoring probability or aEC.',\n            'overallBoxAec': 'Combined box aEC is the sum of the unrounded 2026 regular-season aEC totals for the selected player in each selected box: thrower aEC for intermediate boxes and receiver aEC for the final end-zone box. It is a season aggregate, not an observed or predicted aEC for one possession. It does not change the candidate ordering.',\n            'spatialCheck': 'For each intermediate box, compare the incoming thrower\\'s completed landing points to the next thrower\\'s recorded releases toward the next box. Nearest distances are diagnostics, not additional passes or feasibility probabilities.',\n            'limitations': [\n                'The hypothetical cross-team passes were not jointly observed; statistics describe each player with their actual teammates.',\n                'Broad-box rates do not enforce identical catch/release points, getting open, pressure, clock, chemistry, or exact starting location.',\n                'Sample floors, shrinkage and the four-pass limit affect the shortlist. The candidates are not an established league top five.',\n                'Combined box aEC adds season totals from different possessions; longer routes can have larger totals because they include more boxes. It must not be read as a single-possession value or a measure of route efficiency. Observed event aEC belongs to its original possession context.',\n                'A screenshot box indicates total seasonal contribution and includes players with different usage and line roles.',\n                'One listed regular-season game, Pittsburgh at Chicago on July 18, has no source throws.'\n            ],\n        },\n        'eligibleRoutes': len(routes), 'topFive': top, 'userExamples': comparisons,\n        'sensitivity': {str(k): [r['nodes'] for r in search(strength=k)[:5]] for k in (10, 20, 80)},\n        'stricterSampleEligibleRoutes': len(search(min_t=10, min_c=5)),\n        'relaxedSampleTopFive': [r['nodes'] for r in search(min_t=2, min_c=1, games=1)[:5]],\n    }\n    (OUT / 'box_possessions.json').write_text(json.dumps(record, indent=2) + '\\n')\n    for i, r in enumerate(top, 1):\n        print(i, ' \u2192 '.join(NODES[n][1] for n in r['nodes']), r['nodes'], round(r['screenIndex'], 4))\n        print('  junctions', r['junctions'])\n    print('Eligible routes:', len(routes), '; stricter sample:', record['stricterSampleEligibleRoutes'])\n    print('Sensitivity:', record['sensitivity'])\n\n\nif __name__ == '__main__':\n    main()\n\n\n# Reused snapshot loader from ideal_possessions.py\ndef load():\n    snapshot = json.loads((ROOT / 'src/data.json').read_text())\n    manifest = json.loads((ROOT / 'data/source-manifest.json').read_text())\n    games = {g['game']: g for g in snapshot['queries']['games']['rows']}\n    reviewed = {e['id']: e for e in snapshot['queries']['events']['rows']}\n    rows = []\n    for item in manifest:\n        path = ROOT / item['file']\n        assert hashlib.sha256(path.read_bytes()).hexdigest() == item['sha256']\n        if path.suffix == '.csv':\n            with path.open() as handle:\n                source_rows = list(csv.DictReader(handle))\n        else:\n            source_rows = json.loads(path.read_text())['throws']\n        assert len(source_rows) == item['rows']\n        for index, raw in enumerate(source_rows):\n            gid = raw['GameID']\n            key = f\"{gid}:{raw.get('throw_sig_id') or raw.get('event_sig_id') or index}\"\n            event = reviewed[key]\n            assert number(raw.get('aec')) == event['aec']\n            if event['phase'] != 'Regular season':\n                continue\n            row = dict(event)\n            row.update({\n                'point': int(float(raw['quarter_point'])),\n                'possession': int(float(raw['possession_num'])),\n                'order': int(float(raw['possession_throw'])),\n                'goal': number(raw.get('source_event_type')) == 19,\n                'cp': number(raw.get('cp')),\n                'fv_start': number(raw.get('fv_thrower')),\n                'fv_end': number(raw.get('fv_receiver')),\n                'min_fv': number(raw.get('min_fv')),\n            })\n            row['start_zone'] = zone(row['tx'], row['ty'])\n            row['end_zone'] = zone(row['rx'], row['ry'], row['goal'] or not row['complete'])\n            rows.append(row)\n    assert len(rows) == 72663\n    assert len({r['id'] for r in rows}) == len(rows)\n    return snapshot, rows\n\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combined-box-aec",
+      "title": "Combined aEC of the selected boxes",
+      "queries": [
+        {
+          "id": "combined-box-aec",
+          "source": {
+            "label": "Shown Space \u00b7 selected season box totals",
+            "url": "https://shownspace.com",
+            "files": [
+              "src/data.json",
+              "src/content/dashboard/model.js",
+              "analysis/box_possessions.py"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "Combined box aEC",
+                "definition": "Combined box aEC is the sum of the unrounded 2026 regular-season aEC totals for the selected player in each selected box: thrower aEC for intermediate boxes and receiver aEC for the final end-zone box. It is a season aggregate, not an observed or predicted aEC for one possession. It does not change the candidate ordering."
+              }
+            ],
+            "filters": [
+              "All 22 teams; regular season; all lines.",
+              "Selected offensive boxes only; eight throwing roles and three receiving roles. The Callahan panel is excluded."
+            ],
+            "caveats": [
+              "Combining season totals does not estimate the aEC produced in one possession. A longer route includes more boxes and can therefore have a larger total without being a better possession.",
+              "Displayed figures round to two decimals after summing unrounded source totals. The sum of rounded contribution labels can differ by 0.01."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "calculation",
+                "title": "Aggregation",
+                "detail": "For each unchanged route, sum its selected player\u2019s full-season aEC in each selected box. Use thrower aEC in all intermediate boxes and receiver aEC for the finishing box. Include each selected box once."
+              }
+            ]
+          },
+          "rows": [
+            {
+              "option": "1",
+              "players": "Alex Atkins \u2192 Gordon Larson \u2192 Tobe Decraene \u2192 Oscar Graff \u2192 Grayson Sanner",
+              "boxes": 5,
+              "thrower_box_aec": 41.99247028353929,
+              "receiver_box_aec": 11.848607343119097,
+              "combined_box_aec": 53.84107762665839,
+              "breakdown": "Atkins (init): 9.909104366; Larson (build): 10.186237253; Decraene (attack): 11.140931423; Graff (red): 10.756197242; Sanner (goal-left): 11.848607343"
+            },
+            {
+              "option": "2",
+              "players": "Alex Atkins \u2192 Gordon Larson \u2192 Tobe Decraene \u2192 Oscar Graff \u2192 Alec Wilson Holliday",
+              "boxes": 5,
+              "thrower_box_aec": 41.99247028353929,
+              "receiver_box_aec": 9.928851333857615,
+              "combined_box_aec": 51.92132161739691,
+              "breakdown": "Atkins (init): 9.909104366; Larson (build): 10.186237253; Decraene (attack): 11.140931423; Graff (red): 10.756197242; Wilson Holliday (goal-right): 9.928851334"
+            },
+            {
+              "option": "3",
+              "players": "Alex Atkins \u2192 Gordon Larson \u2192 Tobe Decraene \u2192 Kyle Henke \u2192 Pieran Robert",
+              "boxes": 5,
+              "thrower_box_aec": 40.77635587345424,
+              "receiver_box_aec": 12.501766401046545,
+              "combined_box_aec": 53.27812227450079,
+              "breakdown": "Atkins (init): 9.909104366; Larson (build): 10.186237253; Decraene (attack): 11.140931423; Henke (left-attack): 9.540082832; Robert (goal-deep): 12.501766401"
+            },
+            {
+              "option": "4",
+              "players": "Alex Atkins \u2192 Gordon Larson \u2192 Tobe Decraene \u2192 Kyle Henke \u2192 Grayson Sanner",
+              "boxes": 5,
+              "thrower_box_aec": 40.77635587345424,
+              "receiver_box_aec": 11.848607343119097,
+              "combined_box_aec": 52.624963216573335,
+              "breakdown": "Atkins (init): 9.909104366; Larson (build): 10.186237253; Decraene (attack): 11.140931423; Henke (left-attack): 9.540082832; Sanner (goal-left): 11.848607343"
+            },
+            {
+              "option": "5",
+              "players": "Alex Atkins \u2192 Gordon Larson \u2192 Tobe Decraene \u2192 Grayson Sanner",
+              "boxes": 4,
+              "thrower_box_aec": 31.236273041482413,
+              "receiver_box_aec": 11.848607343119097,
+              "combined_box_aec": 43.08488038460151,
+              "breakdown": "Atkins (init): 9.909104366; Larson (build): 10.186237253; Decraene (attack): 11.140931423; Sanner (goal-left): 11.848607343"
+            },
+            {
+              "option": "Direct to Wilson Holliday",
+              "players": "Alex Atkins \u2192 Alec Wilson Holliday",
+              "boxes": 2,
+              "thrower_box_aec": 9.90910436591622,
+              "receiver_box_aec": 9.928851333857615,
+              "combined_box_aec": 19.837955699773836,
+              "breakdown": "Atkins (init): 9.909104366; Wilson Holliday (goal-right): 9.928851334"
+            },
+            {
+              "option": "Via Faris",
+              "players": "Alex Atkins \u2192 Seth Faris \u2192 Tobe Decraene \u2192 Oscar Graff \u2192 Grayson Sanner",
+              "boxes": 5,
+              "thrower_box_aec": 38.70939216846972,
+              "receiver_box_aec": 11.848607343119097,
+              "combined_box_aec": 50.55799951158882,
+              "breakdown": "Atkins (init): 9.909104366; Faris (right-build): 6.903159138; Decraene (attack): 11.140931423; Graff (red): 10.756197242; Sanner (goal-left): 11.848607343"
+            }
+          ],
+          "columns": [
+            {
+              "field": "option",
+              "label": "Option"
+            },
+            {
+              "field": "players",
+              "label": "Players"
+            },
+            {
+              "field": "boxes",
+              "label": "Boxes"
+            },
+            {
+              "field": "thrower_box_aec",
+              "label": "Thrower box aec"
+            },
+            {
+              "field": "receiver_box_aec",
+              "label": "Receiver box aec"
+            },
+            {
+              "field": "combined_box_aec",
+              "label": "Combined box aec"
+            },
+            {
+              "field": "breakdown",
+              "label": "Breakdown"
+            }
+          ],
+          "capturedAt": "2026-09-29T16:19:13.770251+00:00",
+          "reportingPeriod": "2026 regular season: 2026-04-24 through 2026-07-19",
+          "preview": {
+            "kind": "aggregate",
+            "note": "Combined box aEC and contributions for all seven existing options.",
+            "totalRows": 7
+          },
+          "methods": [
+            {
+              "language": "calculation",
+              "code": "combined_box_aec = sum(selected player season aEC in each selected box)\nExample option 1: 9.90910436591622 + 10.186237252856598 + 11.140931422709597 + 10.75619724205688 + 11.848607343119097 = 53.84107762665839, displayed as 53.84."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {ZONES,fieldZones,zoneFor,zoneBuckets,rankZone} from '../src/content/dashboard/model.js';
+import {ZONES,fieldZones,zoneFor,zoneBuckets,rankZone,eventRole,eventPlayer,eventAec,sourceEvents} from '../src/content/dashboard/model.js';
 const snapshot=JSON.parse(fs.readFileSync(new URL('../src/data.json',import.meta.url)));
 const events=snapshot.queries.events.rows,calls=snapshot.queries.callahans.rows;
 test('zones cover both end zones and assign shared boundaries consistently for either metric',()=>{
@@ -53,12 +53,57 @@ test('receiving uses destinations and receiver credit, including drops but exclu
  assert.equal(rankZone(r['left-attack'],'receive')[0].aec,-.4);
 });
 test('Callahans replace only the selected bottom panel and never enter offensive aEC',()=>{
- for(const role of ['throw','receive']){
+ for(const role of ['throw','receive','combined']){
   const ordinary=zoneBuckets(events,calls,role),defensive=zoneBuckets(events,calls,role,'callahan');
   assert.deepEqual(defensive['own-endzone'],calls);
   for(const zone of ZONES.filter(z=>z.id!=='own-endzone'))assert.deepEqual(ordinary[zone.id],defensive[zone.id]);
   assert.equal(fieldZones(role,'callahan').find(z=>z.id==='own-endzone').role,'callahan');
   assert.ok(fieldZones(role).every(z=>z.role===role));
+ }
+});
+test('Overall credits both participants correctly without duplicating underlying source passes',()=>{
+ const rows=[
+  {id:'a-to-b',thrower:'a',receiver:'b',tx:0,ty:30,rx:2,ry:35,complete:true,throwAec:.3,receiveAec:.3},
+  {id:'b-to-a',thrower:'b',receiver:'a',tx:2,ty:35,rx:0,ry:30,complete:true,throwAec:.2,receiveAec:.2},
+  {id:'drop',thrower:'a',receiver:'b',tx:0,ty:30,rx:2,ry:35,complete:false,drop:true,throwAec:0,receiveAec:-.4},
+  {id:'away',thrower:'b',receiver:'a',tx:2,ty:35,rx:0,ry:30,complete:false,drop:false,throwAec:-.5,receiveAec:0},
+  {id:'incoming',thrower:'c',receiver:'a',tx:0,ty:10,rx:0,ry:30,complete:true,throwAec:.4,receiveAec:.4},
+  {id:'outgoing',thrower:'a',receiver:'c',tx:0,ty:30,rx:0,ry:50,complete:true,throwAec:.1,receiveAec:.1},
+ ];
+ const bucket=zoneBuckets(rows,[],'combined')['center-init'];
+ const [a,b]=rankZone(bucket,'combined');
+ assert.equal(a.id,'a');assert.ok(Math.abs(a.aec-1)<1e-12);
+ assert.equal(a.throwAec,.4);assert.ok(Math.abs(a.receiveAec-.6)<1e-12);
+ assert.equal(a.throwCount,3);assert.equal(a.receiveCount,2);assert.equal(a.count,5);
+ assert.equal(b.id,'b');assert.ok(Math.abs(b.aec+.4)<1e-12);
+ assert.deepEqual(sourceEvents(bucket),rows);
+ assert.ok(a.events.every(e=>eventPlayer(e,'combined')==='a'));
+ const drop=a.events.find(e=>e.id==='drop');
+ assert.equal(eventRole(drop,'combined'),'throw');assert.equal(eventAec(drop,'combined'),0);
+ assert.ok(!a.events.some(e=>e.id==='away'));
+ assert.equal(rankZone(zoneBuckets(rows,[],'combined')['own-endzone'],'combined')[0].throwAec,.4);
+});
+test('Overall reconciles to separate throwing plus receiving for every player, zone, team and season phase',()=>{
+ for(const team of snapshot.queries.teams.rows)for(const phase of ['Regular season','Playoffs']){
+  const e=events.filter(e=>e.team===team.id&&e.phase===phase);
+  const t=zoneBuckets(e,[],'throw'),r=zoneBuckets(e,[],'receive'),c=zoneBuckets(e,[],'combined');
+  for(const z of ZONES){
+   const throwing=new Map(rankZone(t[z.id],'throw').map(p=>[p.id,p]));
+   const receiving=new Map(rankZone(r[z.id],'receive').map(p=>[p.id,p]));
+   const combined=rankZone(c[z.id],'combined');
+   assert.equal(combined.length,new Set([...throwing.keys(),...receiving.keys()]).size);
+   for(const p of combined){
+    const tp=throwing.get(p.id),rp=receiving.get(p.id);
+    const expected=(tp?.aec??0)+(rp?.aec??0),scored=(tp?.scored??0)+(rp?.scored??0);
+    if(scored)assert.ok(Math.abs(p.aec-expected)<1e-8,`${team.id}/${phase}/${z.id}/${p.id}`);
+    else assert.equal(p.aec,null);
+    assert.equal(p.count,(tp?.count??0)+(rp?.count??0));
+    assert.equal(p.throwAec,tp?tp.aec:0);assert.equal(p.receiveAec,rp?rp.aec:0);
+   }
+   const raw=sourceEvents(c[z.id]);
+   assert.equal(raw.length,new Set([...t[z.id],...r[z.id]].map(e=>e.id)).size);
+   assert.ok(raw.every(e=>!('creditRole' in e)));
+  }
  }
 });
 test('Original preserves mixed roles, role-specific goal-line edges, and defensive bottom credit',()=>{
