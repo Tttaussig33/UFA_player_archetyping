@@ -23,6 +23,26 @@ TEAM_NAMES = {
     'union': ('Chicago Union','CHI'), 'windchill': ('Minnesota Wind Chill','MIN'),
 }
 
+CONNECTION_DEFINITIONS = [
+    {'label':'Passing connections','componentIds':['ufa-connections-chart','ufa-connection-records'],
+     'definition':'For the selected player, count each eligible pass from a teammate on the incoming side and to a teammate on the outgoing side. The sides are separate event totals across the selected games, not a sequence within one possession. Stalls are excluded.'},
+    {'label':'Huck passes','componentIds':['ufa-connections-chart','ufa-connection-records'],
+     'definition':'A huck has recorded flight distance sqrt((rx-tx)^2 + (ry-ty)^2) >= 40 yards and forward gain ry-ty >= 30 yards. The source normalizes every offense toward y=120. Missing coordinates cannot qualify. Hucks only filters incoming and outgoing passes.'},
+    {'label':'Connection outcomes','componentIds':['ufa-connections-chart','ufa-connection-records'],
+     'definition':'Completed passes is the default. All pass attempts additionally includes drops and other incompletions, without discarding unnamed targets. Unrecorded player means the source did not name that endpoint; an intended receiver is never inferred.'},
+    {'label':'Displayed partners','componentIds':['ufa-connections-chart'],
+     'definition':'Rank each side independently by eligible pass count. Top 5 and Top 10 retain remaining partners in an additive Other players group. All partners shows every recorded partner. Source rows retain every original pass once, and a selected link retrieves only its corresponding passes.'},
+]
+
+def add_connection_metadata(snapshot):
+    query=snapshot['queries']['events']
+    source=query['source']
+    labels={item['label'] for item in CONNECTION_DEFINITIONS}
+    source['metricDefinitions']=[item for item in source.get('metricDefinitions',[]) if item.get('label') not in labels]+CONNECTION_DEFINITIONS
+    method={'language':'text','code':'src/content/dashboard/connections-model.js: buildConnections filters reviewed events by selected player, pass outcome and huck geometry after team/phase/line filtering; it groups incoming and outgoing passes separately by partner, retaining all remaining partners in Other players. selectedConnectionEvents resolves selected diagram endpoints to original event IDs. No pass sequence is inferred.'}
+    query['methods']=[item for item in query.get('methods',[]) if not item.get('code','').startswith('src/content/dashboard/connections-model.js:')]+[method]
+    return snapshot
+
 def truth(v):
     return str(v).lower() in ('true','1','1.0')
 
@@ -158,6 +178,7 @@ def build():
         {'id':'line','label':'Line','field':'line','defaultValue':'all','queryIds':['events','callahans']}],
       'queries':{k:{'rows':rows,'source':dict(metadata),'methods':[{'language':'python','code':'python3 tools/build_dataset.py'}]} for k,rows in
         [('events',events),('callahans',calls),('players',list(players.values())),('teams',teams),('games',games)]}}
+    add_connection_metadata(snapshot)
     (ROOT/'src/data.json').write_text(json.dumps(snapshot,separators=(',',':'),allow_nan=False))
     print(json.dumps(stats,indent=2))
 

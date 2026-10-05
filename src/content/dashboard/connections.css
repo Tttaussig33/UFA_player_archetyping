@@ -1,0 +1,15 @@
+.ufa-connection-controls{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin:18px 0 0}
+.ufa-pass-type{display:flex;flex-direction:column;gap:6px}
+.ufa-pass-type>span{font-size:11px;color:var(--secondary)}
+.ufa-connection-definition,.ufa-connection-note{font-size:12px;color:var(--secondary);line-height:1.6;margin:12px 0 22px}
+.ufa-connection-layout{display:grid;gap:22px;min-width:0}
+.ufa-connections-scroll{overflow-x:auto;padding:4px 0 8px}
+.ufa-connections-plot{min-width:650px}
+.ufa-connection-stages{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:12px;min-height:68px;margin-bottom:12px;font-size:12px;font-weight:600;color:var(--text)}
+.ufa-connection-stages>span:last-child{text-align:right}
+.ufa-connection-stages small{display:block;font-size:11px;font-weight:400;color:var(--secondary);margin-top:5px}
+.ufa-connection-center{display:flex;align-items:center;justify-content:center;gap:10px;text-align:left}
+.ufa-connection-center .ufa-face{width:40px;height:48px}
+.ufa-two-stages{grid-template-columns:1fr 1fr}
+.ufa-connection-selected{font-size:12px;margin:4px 0 12px;color:var(--text)}
+@media(max-width:600px){.ufa-connection-controls{gap:14px 10px}.ufa-connection-definition,.ufa-connection-note{font-size:12px}.ufa-connections-scroll{padding-bottom:16px}}

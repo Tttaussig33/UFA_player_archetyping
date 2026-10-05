@@ -126,6 +126,24 @@ See `data/validation.json` for coverage and reconciliation results and
 
 ## Development
 
+### Connections tab
+
+The Connections tab recreates the incoming-player → selected-player → outgoing-player
+diagram with the existing 2026 throw snapshot. Choose any player within the active
+team, season phase and line. All passes preserves the general connections view;
+Hucks only requires at least 40 yards of flight and 30 yards of forward gain from
+the recorded coordinates and filters both sides of the diagram.
+
+Completed passes is the default. All pass attempts also shows dropped and other
+incomplete passes; unnamed targets remain visible as Unrecorded player. Stalls
+are excluded. The two sides count separate events, not a single possession or an
+inferred three-player sequence. Top 5/10 retain every remaining partner in Other
+players, and All partners expands the full set. Selecting a link opens its exact
+pass records, including flight and downfield distance, with a matching CSV export.
+
+Run `node --test tools/connections.test.mjs` for huck thresholds, attribution,
+grouping, link-detail scope, empty scopes and reconciliation across all teams.
+
 - `src/content/dashboard/`: authored React, field geometry, ranking logic and CSS.
 - `src/data.json`: reviewed data and provenance snapshot.
 - `tools/build_dataset.py`: reproducible standard-library Python transformation.

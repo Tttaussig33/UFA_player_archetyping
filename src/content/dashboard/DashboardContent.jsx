@@ -1,7 +1,8 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
-import {DataComponent,Dropdown,SegmentedControl,Button,SortableItem,SortableRegion,useDataApp} from '../../data-app-public.jsx';
+import {DataComponent,Dropdown,SegmentedControl,Button,SortableItem,SortableRegion,useDataApp,useDashboardTabs} from '../../data-app-public.jsx';
 import {fieldZones,fmt,int,zoneBuckets,rankZone,roleLabel,units,eventRole,eventPlayer,eventAec,sourceEvents} from './model.js';
 import {Field,Face,playerName} from './Field.jsx';
+import {Connections} from './Connections.jsx';
 import './archetyping.css';
 function downloadFile(name,type,body){const url=URL.createObjectURL(new Blob([body],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function exportCsv(events,role,players,zone){
@@ -10,6 +11,8 @@ function exportCsv(events,role,players,zone){
 }
 export function DashboardContent(){
  const {queries,filters,setFilter}=useDataApp();
+ const {activeTabId}=useDashboardTabs([{id:'dashboard',label:'Field views'},{id:'connections',label:'Connections'}]);
+ const connectionsActive=activeTabId==='connections';
  const events=queries.events?.rows||[],calls=queries.callahans?.rows||[],games=queries.games?.rows||[],teams=queries.teams?.rows||[];
  const players=useMemo(()=>Object.fromEntries((queries.players?.rows||[]).map(p=>[p.id,p])),[queries.players]);
  const [zoneId,setZoneId]=useState('center-init'),[playerId,setPlayerId]=useState(null),[mode,setMode]=useState('map'),[playing,setPlaying]=useState(false),[outcome,setOutcome]=useState('all'),[hover,setHover]=useState(null),[page,setPage]=useState(0),[search,setSearch]=useState('');
@@ -34,6 +37,7 @@ export function DashboardContent(){
  const chooseZone=id=>{setZoneId(id);setPlayerId(null);setPage(0);setHover(null);setMode('vectors');};
  const chooseMetric=value=>{setMetric(value);setPlayerId(null);setPage(0);setHover(null);setPlaying(false);};
  useEffect(()=>{setPlayerId(null);setPage(0);setHover(null);setPlaying(false);},[team,phase,line]);
+ useEffect(()=>{if(connectionsActive)setPlaying(false);},[connectionsActive]);
  useEffect(()=>{setPage(0);setHover(null);},[activeId,outcome,zoneId]);
  useEffect(()=>{if(!playing)return;const timer=setInterval(()=>{setZoneId(id=>zones[(zones.findIndex(z=>z.id===id)+1)%zones.length].id);setPlayerId(null);setHover(null);},4200);return()=>clearInterval(timer);},[playing,zones]);
  const leaderRows=zones.map(z=>{const p=ranks[z.id][0];return{zone:z.label,role:roleLabel(z.role),player:p?playerName(players,p.id):null,aec:p?.aec??null,events:p?.count??0,...(z.role==='combined'?{throwerAec:p?.throwAec??null,receiverAec:p?.receiveAec??null}:{} )};});
@@ -44,8 +48,9 @@ export function DashboardContent(){
    <div className="ufa-team-list"><button aria-pressed={team==='all'} className="ufa-team" onClick={()=>setFilter('team','all')}><span className="ufa-abbrev">UFA</span><span>League leaders<small>All 22 teams</small></span></button>{teams.filter(t=>t.name.toLowerCase().includes(search.toLowerCase())).map(t=><button key={t.id} aria-pressed={team===t.id} className="ufa-team" onClick={()=>setFilter('team',t.id)}><span className="ufa-abbrev">{t.abbrev}</span><span>{t.name}<small>{t.games}/{t.scheduled} regular-season games</small></span></button>)}</div>
    <a className="ufa-prior" href="https://tttaussig33.github.io/frisbee-analytics/" target="_blank" rel="noreferrer">Open possession browser ↗</a>
   </aside><div className="ufa-analysis">
-   <div className="ufa-team-heading"><div><h2>{teamName}</h2><p>{phase==='all'?'Regular season + playoffs':phase} · {line==='all'?'All lines':line} · {int(scoped.length)} throws</p></div><div className="ufa-view-controls"><SegmentedControl value={mode} onChange={v=>{setMode(v);if(v==='map')setPlaying(false);}} options={[{value:'map',label:'Player boxes'},{value:'vectors',label:'Disc vectors'}]}/><Button onClick={()=>{setMode('vectors');setPlaying(!playing);}} aria-label={playing?'Pause zone tour':'Play zone tour'}>{playing?'Pause':'Play zones'}</Button></div></div>
+   <div className="ufa-team-heading"><div><h2>{teamName}</h2><p>{phase==='all'?'Regular season + playoffs':phase} · {line==='all'?'All lines':line} · {int(scoped.length)} throws</p></div>{!connectionsActive&&<div className="ufa-view-controls"><SegmentedControl value={mode} onChange={v=>{setMode(v);if(v==='map')setPlaying(false);}} options={[{value:'map',label:'Player boxes'},{value:'vectors',label:'Disc vectors'}]}/><Button onClick={()=>{setMode('vectors');setPlaying(!playing);}} aria-label={playing?'Pause zone tour':'Play zone tour'}>{playing?'Pause':'Play zones'}</Button></div>}</div>
    {missingGames.length>0&&<p className="ufa-coverage">{loadedGames.length}/{selectedGames.length} listed games have throw data. Missing: {missingGames.map(g=>g.game.replace('2026-','')).join(', ')}.</p>}
+   {connectionsActive?<Connections events={scoped} players={players} scopeFilters={scopeFilters}/>:<>
    <div className="ufa-metric-controls"><span>Field view</span><SegmentedControl value={metric} onChange={chooseMetric} options={[{value:'original',label:'Original'},{value:'throw',label:'Thrower aEC'},{value:'receive',label:'Receiver aEC'},{value:'combined',label:'Overall aEC'}]}/></div>
    <p className="ufa-method-line">{metric==='original'?'Original Instagram layout: receivers in the attacking end zone, throwers in midfield, and Callahans at the bottom.':metric==='combined'?`Overall aEC = each player’s thrower aEC + receiver aEC in the same box. Throws use release locations; receptions use catch / drop locations.${hasCallahans?' The bottom box shows Callahans.':''}`:`Each box shows the leader in ${metric==='throw'?'thrower':'receiver'} aEC, using ${metric==='throw'?'release':'catch / drop'} locations across the full field.${hasCallahans?' The bottom box shows Callahans.':''}`}</p>
    <SortableRegion id="ufa:explorer" variant="freeform" authoredRevision={1} className="ufa-explorer"><SortableItem id="ufa-field-map" label="Field zone leaders" kind="custom">
@@ -70,7 +75,8 @@ export function DashboardContent(){
    {player&&<DataComponent id="ufa-event-records" queryId={zone.role==='callahan'?'callahans':'events'} title="Selected player’s zone events" kind="table" sourceRows={selectedSource} displayRows={shownEvents.map(e=>({...e,creditedAec:eventAec(e,zone.role)}))} scopeFilters={[...metricScope,{label:'Zone',value:zone.label},{label:'Player',value:playerName(players,activeId)},{label:'Outcome',value:zone.role==='callahan'?'all':outcome}]} headerControls={<Button onClick={()=>exportCsv(shownEvents,zone.role,players,zone.label)}>Export {shownEvents.length} events</Button>}>
     <details className="ufa-records" data-reviewed-rows><summary>Inspect {int(shownEvents.length)} event{shownEvents.length===1?'':'s'} · {playerName(players,activeId)}</summary><div className="ufa-table-scroll"><table><thead><tr><th>Game</th><th>From → to</th><th>Result</th>{zone.role==='combined'&&<th>Role</th>}<th className="ufa-num">Credited aEC</th><th className="ufa-num">Start (yd)</th><th className="ufa-num">End (yd)</th></tr></thead><tbody>{shownEvents.slice(page*12,(page+1)*12).map(e=><tr key={`${e.id}-${eventRole(e,zone.role)}`}><td>{e.game}</td><td>{playerName(players,e.thrower||e.opponentThrower)} → {e.receiver?playerName(players,e.receiver):zone.role==='callahan'?playerName(players,e.player):'—'}</td><td>{zone.role==='callahan'?'Callahan':e.complete?'Complete':e.drop?'Drop':e.stall?'Stall':'Turnover'}</td>{zone.role==='combined'&&<td>{eventRole(e,zone.role)==='throw'?'Thrower':'Receiver'}</td>}<td className="ufa-num">{fmt(eventAec(e,zone.role),3)}</td><td className="ufa-num">{fmt(e.tx,1)}, {fmt(e.ty,1)}</td><td className="ufa-num">{fmt(e.rx,1)}, {fmt(e.ry,1)}</td></tr>)}</tbody></table></div><div className="ufa-pagination"><Button disabled={page===0} onClick={()=>setPage(page-1)}>Previous</Button><span>{page+1} / {Math.max(1,Math.ceil(shownEvents.length/12))}</span><Button disabled={(page+1)*12>=shownEvents.length} onClick={()=>setPage(page+1)}>Next</Button></div></details>
    </DataComponent>}
-   <footer className="ufa-attribution"><span>Concept: <a href="https://www.instagram.com/p/Danlzl5SoUs/" target="_blank" rel="noreferrer">Shown Space’s Kings of the Field ↗</a> · Data: <a href="https://shownspace.com" target="_blank" rel="noreferrer">Shown Space ↗</a></span><span>Later 2026 data; rankings may differ from the July 10 post. Zone edges reconstructed from the video.</span></footer>
+   </>}
+   <footer className="ufa-attribution"><span>Concept: <a href="https://www.instagram.com/p/Danlzl5SoUs/" target="_blank" rel="noreferrer">Shown Space’s Kings of the Field ↗</a> · Data: <a href="https://shownspace.com" target="_blank" rel="noreferrer">Shown Space ↗</a></span><span>{connectionsActive?'Connections use the same 2026 throw snapshot and team, season and line filters.':'Later 2026 data; rankings may differ from the July 10 post. Zone edges reconstructed from the video.'}</span></footer>
   </div></div>
  </article>;
 }
