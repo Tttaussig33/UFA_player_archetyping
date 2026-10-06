@@ -129,8 +129,11 @@ See `data/validation.json` for coverage and reconciliation results and
 ### Connections tab
 
 The Connections tab recreates the incoming-player → selected-player → outgoing-player
-diagram with the existing 2026 throw snapshot. Choose any player within the active
-team, season phase and line. All passes preserves the general connections view;
+diagram with the existing 2026 throw snapshot. Search players by name or team across
+the full reviewed roster. Choosing a player from another team updates the team
+filter; the All teams view stays unrestricted. Season, line and pass filters stay
+selected, with an explicit empty state when that player has no matching passes.
+All passes preserves the general connections view;
 Hucks only requires at least 40 yards of flight and 30 yards of forward gain from
 the recorded coordinates and filters both sides of the diagram.
 

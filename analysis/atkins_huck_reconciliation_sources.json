@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "atkins-huck-reconciliation",
+      "title": "Atkins: 28 regular-season completions + 17 playoff completions = 45",
+      "queries": [
+        {
+          "id": "atkins-hucks-by-phase",
+          "source": {
+            "label": "Shown Space \u00b7 preserved throw records",
+            "url": "https://shownspace.com/players/aatkins",
+            "files": [
+              "src/data.json",
+              "data/source-api/leaderboard.json",
+              "analysis/atkins_huck_reconciliation.ipynb"
+            ],
+            "filters": [
+              "Player: Alex Atkins",
+              "Team: New York Empire",
+              "Lines: all",
+              "Stalls: excluded",
+              "Huck distance: at least 40 yards",
+              "Huck downfield gain: at least 30 yards"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "Completed hucks",
+                "definition": "Completed hucks count successful throws, grouped by regular season and playoffs."
+              },
+              {
+                "label": "Shown Space HuCP",
+                "definition": "Shown Space\u2019s huck completion percentage excludes dropped hucks from its denominator."
+              }
+            ],
+            "caveats": [
+              "Uses the project\u2019s preserved September 29, 2026 snapshot and the supplied screenshots. No fresh Shown Space fetch was performed."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "validation",
+                "title": "Season reconciliation",
+                "detail": "Regular season has 28 completed hucks; playoffs add 17. The actual Connections model returns 45 when phase is all."
+              },
+              {
+                "kind": "validation",
+                "title": "Leaderboard agreement",
+                "detail": "Event records and the preserved leaderboard both have 45 completions, 53 attempts and 2 dropped hucks. The leaderboard percentage equals 45 divided by 51."
+              }
+            ]
+          },
+          "rows": [
+            {
+              "phase": "Regular season",
+              "attempts": 35,
+              "completions": 28,
+              "drops": 2
+            },
+            {
+              "phase": "Playoffs",
+              "attempts": 18,
+              "completions": 17,
+              "drops": 0
+            },
+            {
+              "phase": "All 2026",
+              "attempts": 53,
+              "completions": 45,
+              "drops": 2
+            }
+          ],
+          "columns": [
+            {
+              "field": "phase",
+              "label": "Season phase"
+            },
+            {
+              "field": "completions",
+              "label": "Completed hucks"
+            },
+            {
+              "field": "attempts",
+              "label": "All huck attempts"
+            },
+            {
+              "field": "drops",
+              "label": "Dropped hucks"
+            }
+          ],
+          "reportingPeriod": "2026 season",
+          "capturedAt": "2026-09-29T16:19:13.770251+00:00",
+          "preview": {
+            "kind": "aggregate",
+            "note": "All three scoped totals for Alex Atkins. All 2026 combines the two phase rows.",
+            "totalRows": 3
+          },
+          "methods": [
+            {
+              "language": "python",
+              "code": "import json, math\nfrom pathlib import Path\nproject = Path.cwd()\nif not (project / 'src/data.json').exists():\n    project = project.parent\nsnapshot = json.loads((project / 'src/data.json').read_text())\nthrows = [e for e in snapshot['queries']['events']['rows']\n          if e['thrower'] == 'aatkins' and e['team'] == 'empire' and not e['stall']]\nhucks = [e for e in throws if all(isinstance(e.get(k), (int, float)) for k in ('tx', 'ty', 'rx', 'ry'))\n         and math.hypot(e['rx'] - e['tx'], e['ry'] - e['ty']) >= 40\n         and e['ry'] - e['ty'] >= 30]\nassert len(hucks) == len({e['id'] for e in hucks})\nrows = []\nfor phase in ['Regular season', 'Playoffs', 'All 2026']:\n    selected = [e for e in hucks if phase == 'All 2026' or e['phase'] == phase]\n    rows.append({'phase': phase, 'attempts': len(selected),\n                 'completions': sum(e['complete'] for e in selected),\n                 'drops': sum(e['drop'] for e in selected)})\nleaderboard = json.loads((project / 'data/source-api/leaderboard.json').read_text())\natkins = next(p for p in leaderboard['data'] if p['PlayerID'] == 'aatkins')\nassert rows[-1]['attempts'] == atkins['hucks_thrown'] == 53\nassert rows[-1]['completions'] == atkins['hucks_completed'] == 45\nassert rows[-1]['drops'] == atkins['hucks_dropped'] == 2\nassert abs(45 / (53 - 2) - atkins['huck_completion_percentage']) < 1e-12\nprint(json.dumps(rows, indent=2))\nprint('Shown Space HuCP: 45 / (53 - 2) = 88.2353%')\n"
+            },
+            {
+              "language": "calculation",
+              "code": "Completed hucks: 28 + 17 = 45\nShown Space HuCP denominator: 53 attempts - 2 drops = 51\n45 / 51 \u00d7 100 = 88.2% (rounded)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

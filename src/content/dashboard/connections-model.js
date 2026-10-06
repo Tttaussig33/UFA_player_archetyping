@@ -16,6 +16,26 @@ export function connectionPlayers(events) {
   return [...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([id])=>id);
 }
 
+export function connectionPlayerDirectory(events,players,teams) {
+  const teamNames=Object.fromEntries(teams.map(team=>[team.id,team.name]));
+  const memberships=new Map();
+  for(const event of events)for(const id of [event.thrower,event.receiver]) {
+    if(!id||id==='unknown'||!event.team)continue;
+    if(!memberships.has(id))memberships.set(id,new Set());
+    memberships.get(id).add(event.team);
+  }
+  return Object.entries(players).map(([id,player])=>{
+    const teamIds=[...(memberships.get(id)||[])].sort();
+    const teamLabel=teamIds.map(teamId=>teamNames[teamId]||teamId).join(', ');
+    return {id,name:player.name,teamIds,label:player.name+(teamLabel?` · ${teamLabel}`:'')};
+  }).sort((a,b)=>a.name.localeCompare(b.name)||a.id.localeCompare(b.id));
+}
+
+export function connectionSearchTeam(player,currentTeam) {
+  if(currentTeam==='all'||player.teamIds.includes(currentTeam))return currentTeam;
+  return player.teamIds.length===1?player.teamIds[0]:'all';
+}
+
 export function buildConnections(events,playerId,{passType='all',outcome='complete',limit=5,name=id=>id}={}) {
   const bySide={incoming:new Map(),outgoing:new Map()};
   const eligible=events.filter(event=>!event.stall&&(event.thrower===playerId||event.receiver===playerId)

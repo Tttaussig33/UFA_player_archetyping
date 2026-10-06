@@ -1,10 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {passGeometry,buildConnections,connectionPlayers,selectedConnectionEvents} from '../src/content/dashboard/connections-model.js';
+import {passGeometry,buildConnections,connectionPlayerDirectory,connectionPlayers,connectionSearchTeam,selectedConnectionEvents} from '../src/content/dashboard/connections-model.js';
 const snapshot=JSON.parse(fs.readFileSync(new URL('../src/data.json',import.meta.url)));
 const events=snapshot.queries.events.rows;
 const pass=(id,thrower,receiver,more={})=>({id,thrower,receiver,tx:0,ty:20,rx:0,ry:70,complete:true,stall:false,...more});
+
+test('player search includes the full reviewed roster and selects a compatible team without dropping transfers',()=>{
+ const players={a:{name:'Alex'},b:{name:'Ben'},c:{name:'Casey'},d:{name:'Daan De Marrée'}};
+ const rows=[pass('one','a','b',{team:'east'}),pass('two','b','d',{team:'west'})];
+ const directory=connectionPlayerDirectory(rows,players,[{id:'east',name:'East Team'},{id:'west',name:'West Team'}]);
+ assert.equal(directory.length,4,'A named player remains searchable even without passes in the selected scope');
+ const alex=directory.find(p=>p.id==='a'),ben=directory.find(p=>p.id==='b');
+ assert.equal(alex.label,'Alex · East Team');
+ assert.equal(connectionSearchTeam(alex,'west'),'east');
+ assert.equal(connectionSearchTeam(alex,'all'),'all');
+ assert.equal(connectionSearchTeam(ben,'west'),'west');
+ assert.equal(connectionSearchTeam(ben,'other'),'all','Players recorded on multiple teams keep all their records');
+ assert.equal(connectionSearchTeam(directory.find(p=>p.id==='c'),'east'),'all');
+});
 
 test('hucks require both forward gain and flight distance, exclude stalls, and reject missing coordinates',()=>{
  assert.equal(passGeometry(pass('edge','a','b',{rx:0,ry:60})).huck,true);
