@@ -1,0 +1,1 @@
+{"schema" : "prod", "function" : "get_player_throw_directions", "arguments" : "p_player_id text, p_year integer DEFAULT NULL::integer, p_bucket_count integer DEFAULT 12", "returns" : "jsonb", "language" : "plpgsql", "volatility" : "s", "security_definer" : false, "description" : null, "settings" : null, "checked_at" : "2026-10-12T19:42:46.109888+00:00"}

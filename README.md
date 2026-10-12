@@ -62,16 +62,32 @@ it does not yet assign learned player-archetype or clustering labels.
 
 ## Data and metric definitions
 
-The project imports the previous frisbee-analytics possession-browser cache and
-preserves an independent copy in `data/raw/`. Read-only public Shown Space API
-responses supply schedule metadata, names, portrait URLs, missing-game checks,
-new playoff games and Callahan defenders. They are preserved in `data/source-api/`.
-No changes were made to the earlier project.
+The current app uses the October 12, 2026 DBeaver exports of `prod.throws`,
+`prod.games`, `prod.players`, `prod.teams`, and `prod.blocks`. Full, unmodified
+copies are in `data/database-exports/2026-10-12/`; `manifest.json` records their
+original filenames, row counts, sizes and SHA-256 hashes. `current.json` selects
+the snapshot and the app's 2026 season. These files support offline rebuilding;
+the website makes no database connection and contains no database credentials.
+
+The saved exports include 490,688 throws and 17,508 blocks across 2021–2026,
+plus 2,059 game rows, 10,399 roster rows and 297 team-season rows. The app still
+shows 2026, while all other exported seasons remain available locally. The full
+CSV files are excluded from Git and publication; keep them when backing up the
+project. They have been checked locally, not compared with a live database count.
+
+The earlier possession-browser cache remains in `data/raw/` and the historical
+public API responses remain in `data/source-api/`. They supply existing portrait
+URLs and historical aggregate checks, but cannot override imported event, game,
+name, team or defender records. No changes were made to the earlier project.
 
 - **78,847 unique throws**, covering 142 games with available throws.
 - **72,663 regular-season throws**, covering 131 of the 132 regular-season entries.
 - **6,184 playoff throws**, covering 11 entries with available throws.
 - **669 player portraits** are stored locally. Players without a portrait use initials.
+- **826 distinct named 2026 roster players** are available. Seven repeated player
+  IDs share one display identity after their names agree; one blank-ID roster row
+  is skipped. Active flags do not remove players' historical events. The source
+  roster rows are not joined directly onto throws, avoiding duplicated passes.
 - Eighteen throws lack aEC. They remain in counts and vectors, but are omitted from aEC sums.
 - Source player ID `unknown` is retained in event records and excluded from player rankings.
 
@@ -112,7 +128,7 @@ own-end-zone throws and receptions are available in the full-field views.
 
 ### Coverage caveats
 
-Shown Space returned no throws for July 18 Pittsburgh–Chicago. Chicago and
+The database export contains no throws for July 18 Pittsburgh–Chicago. Chicago and
 Pittsburgh therefore each have 11 games of regular-season throws. The app displays
 this gap when either team or the whole league is selected.
 
@@ -123,6 +139,44 @@ silently turned into zero-valued player performance or treated as a played game.
 
 See `data/validation.json` for coverage and reconciliation results and
 `data/source-manifest.json` for hashes of the files used.
+
+The import preserved all 78,847 existing 2026 event IDs and their chart values
+(numeric comparison tolerance 1e-12). The 28 Callahan records still reconcile.
+Snapshot import time describes local processing, not a fresh model run or newly
+played games.
+
+### Refresh from another DBeaver export
+
+Export all five tables to a directory with DBeaver's names such as
+`throws_202610121011.csv`. Use the date appearing in those filenames:
+
+```sh
+python3 tools/import_database_exports.py --source-dir /path/to/exports --snapshot 2026-10-12 --season 2026
+python3 tools/build_dataset.py
+```
+
+The importer requires one file per table for that date and refuses to overwrite
+a different preserved snapshot. The builder verifies the recorded hashes and
+fails if an imported file is missing or changed. It does not silently fall back
+to older API data. Follow `AGENTS.md` to build and verify the updated app, then
+set `buildStatus` to `complete` and rebuild before delivery.
+
+### Possession and radial fields
+
+The imported event rows preserve `point`, `possession`, `possessionThrow` and
+`eventSequence`, corresponding to `quarter_point`, `possession_num`,
+`possession_throw` and `global_event_seq`. They are game-context fields, not
+league-wide identifiers. Their presence does not establish a hypothetical
+cross-team possession or a unique team-level aEC formula.
+
+The input for throw-direction radial diagrams is in `prod.throws`: `Thrower`,
+`Receiver`, `throw_angle`, `throw_distance`, `x_diff`, `y_diff`, `ThrowerX/Y` and
+`ReceiverX/Y`. The reviewed event aliases are `throwAngle`, `throwDistance`,
+`xDiff`, `yDiff`, `tx/ty` and `rx/ry`. The numeric source values are preserved;
+no radial chart, angle convention or binning scheme is invented by this import.
+`cp`, `cpoe` and `ec` are also preserved as supplied. Chart images are not part of
+these five CSV exports. Shown Space's exact radial aggregation settings have
+not been verified against its implementation.
 
 ## Development
 
@@ -149,6 +203,8 @@ grouping, link-detail scope, empty scopes and reconciliation across all teams.
 
 - `src/content/dashboard/`: authored React, field geometry, ranking logic and CSS.
 - `src/data.json`: reviewed data and provenance snapshot.
+- `tools/import_database_exports.py`: preserve and select dated local CSV exports.
+- `tools/database_exports.py`: validate source hashes, season scope and roster identities.
 - `tools/build_dataset.py`: reproducible standard-library Python transformation.
 - `tools/fetch_portraits.py`: downloads only public URLs supplied by Shown Space.
 - `tools/model.test.mjs`: zone-edge, population, missing-value and reconciliation tests.

@@ -4,24 +4,24 @@
   "gamesWithThrows": 142,
   "regularSeasonGames": 131,
   "teams": 22,
-  "players": 758,
+  "players": 827,
   "nullAec": 18,
   "callahans": 28,
   "missingGames": [
     {
       "game": "2026-07-17-IND-PIT",
       "phase": "Playoffs",
-      "reason": "The public API returned zero throws."
+      "reason": "The database export contains no throws."
     },
     {
       "game": "2026-07-18-PIT-CHI",
       "phase": "Regular season",
-      "reason": "The public API returned zero throws."
+      "reason": "The database export contains no throws."
     },
     {
       "game": "2026-08-27-OAK-NY",
       "phase": "Playoffs",
-      "reason": "The public API returned zero throws."
+      "reason": "The database export contains no throws."
     }
   ],
   "unknownPlayerNames": [
@@ -47,5 +47,124 @@
       0.81,
       120.0
     ]
+  },
+  "databaseImport": {
+    "season": 2026,
+    "snapshot": "2026-10-12",
+    "importedAt": "2026-10-12T15:29:06.881443+00:00",
+    "repeatedRosterPlayerIds": {
+      "hmcallist": 2,
+      "ndemorgan": 2,
+      "ielsayed": 2,
+      "lhaberfie": 2,
+      "luhl": 2,
+      "mobrien2": 2,
+      "omccall": 2
+    },
+    "rosterRows": 834,
+    "rosterRowsWithoutPlayerId": 1,
+    "uniqueRosterPlayers": 826,
+    "rosterPolicy": "Merge repeated season player IDs only when display names agree; never join roster rows onto events."
+  },
+  "comparisonBasis": "Historical per-game player aggregates retained from public API responses; not a fresh database aggregate query.",
+  "previousSnapshotComparison": {
+    "previousGeneratedAt": "2026-09-29T16:19:13.770251+00:00",
+    "previousRows": 78847,
+    "addedIds": [],
+    "removedIds": [],
+    "changedExistingEvents": [],
+    "numericComparisonTolerance": 1e-12,
+    "otherQueries": {
+      "callahans": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "games": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "teams": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "players": {
+        "added": [
+          "aaucoin",
+          "adonadio",
+          "agrant",
+          "akabat",
+          "amacisaac",
+          "avandeber",
+          "awhitton",
+          "badibe",
+          "bbaird",
+          "bdowney",
+          "cbellando",
+          "cfoster",
+          "chyzer",
+          "cmoore",
+          "cnichimlu",
+          "ctabor",
+          "cwatkins",
+          "dhobday",
+          "dkervick",
+          "dnichols",
+          "dpadgett",
+          "ebloodwor",
+          "emoore",
+          "esumbi",
+          "ethoreson",
+          "gmartin",
+          "heverett",
+          "hwang",
+          "iyudkovic",
+          "jchampagn",
+          "jcubitt",
+          "jhoffman",
+          "jkaplan",
+          "jlaney1",
+          "jlithio",
+          "jmattes",
+          "jmcdonnel",
+          "jmcguines",
+          "jmolder",
+          "jpardo",
+          "jstangosb",
+          "jwellers",
+          "khuang",
+          "knorth",
+          "kstaber",
+          "kthiers",
+          "lblooston",
+          "lreavy",
+          "mgunter",
+          "mmoar",
+          "mnighting",
+          "mwalter",
+          "npollack",
+          "pjoyce",
+          "pkotz",
+          "plavallee",
+          "poyler",
+          "rliao",
+          "skelley1",
+          "smoghazy",
+          "sweaver",
+          "swildavsk",
+          "tmurthy",
+          "tpolisukb",
+          "troberts1",
+          "tschewe",
+          "twong",
+          "wmcdonald",
+          "zguerrieo"
+        ],
+        "removed": [],
+        "changed": []
+      }
+    }
   }
 }

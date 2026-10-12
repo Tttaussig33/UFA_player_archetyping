@@ -1,0 +1,45 @@
+{
+  "source": {
+    "database": "postgres",
+    "schema": "prod",
+    "function": "get_player_throw_directions",
+    "checked_at": "2026-10-12T19:42:46.109888+00:00",
+    "access": "Read-only SQL through the supplied session pooler"
+  },
+  "location_in_dbeaver": "Databases > postgres > Schemas > prod > Functions > get_player_throw_directions",
+  "source_table": "prod.throws",
+  "inputs": {
+    "p_player_id": "Required player identifier",
+    "p_year": "Optional year, default NULL includes all years",
+    "p_bucket_count": "Default 12; clamped to 4 through 36"
+  },
+  "grouping": {
+    "angle": "Supplied throw_angle normalized modulo 360",
+    "bucket": "floor(normalized_angle / (360 / bucket_count))",
+    "labels": "0 degrees, 30 degrees, etc. with 12 buckets",
+    "centerAngle_note": "Despite the key name, the returned angle is the bucket lower edge, not its midpoint",
+    "receiving_angle": "Uses the same throw_angle as the throwing count; this database function does not rotate it by 180 degrees"
+  },
+  "filters": {
+    "requires_non_null_angle": true,
+    "year": "First four characters of GameID, when a year is supplied",
+    "hucks_only": false,
+    "completed_only": false,
+    "regular_season_only": false,
+    "exclude_stalls": false
+  },
+  "output": "JSON with buckets containing label, centerAngle, throwerCount and receiverCount, plus role totals",
+  "verification": "Executed for aatkins, 2026, 12; each role total and bucket sum reconciled to a separate read-only query of prod.throws",
+  "limits": [
+    "The function returns counts, not a finished diagram or image.",
+    "Chart orientation, radial scaling, colours and website usage were not verified from frontend source.",
+    "No website files or database data were changed."
+  ],
+  "files": [
+    "get_player_throw_directions.sql",
+    "function-metadata.json",
+    "alex-atkins-2026-radial.json",
+    "validation.json",
+    "inspect-radials.sql"
+  ]
+}

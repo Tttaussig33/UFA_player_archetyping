@@ -1,0 +1,45 @@
+{
+  "snapshot": "2026-10-12",
+  "importedAt": "2026-10-12T15:29:06.881443+00:00",
+  "source": "User-exported CSVs from postgres.prod through DBeaver",
+  "tables": {
+    "throws": {
+      "file": "throws.csv",
+      "originalFilename": "throws_202610121011.csv",
+      "sha256": "10fbc9e30efe263bbfdf626a182afd28e7bacc5bc2326f97232e404d02621025",
+      "rows": 490688,
+      "bytes": 358529955
+    },
+    "games": {
+      "file": "games.csv",
+      "originalFilename": "games_202610121022.csv",
+      "sha256": "1fba1f00bff914bd89e358d9cce145767c63c7027945c73957190c527adafef6",
+      "rows": 2059,
+      "bytes": 334880
+    },
+    "players": {
+      "file": "players.csv",
+      "originalFilename": "players_202610121023.csv",
+      "sha256": "bd622652a1b250294e32f6b6693ba2516ed3c9455c725b09ec0078a72a0adc9f",
+      "rows": 10399,
+      "bytes": 832477
+    },
+    "teams": {
+      "file": "teams.csv",
+      "originalFilename": "teams_202610121024.csv",
+      "sha256": "b3f20513df39890b86655770225d6bb9da471d05818f77c73365c94d171523b4",
+      "rows": 297,
+      "bytes": 27802
+    },
+    "blocks": {
+      "file": "blocks.csv",
+      "originalFilename": "blocks_202610121024.csv",
+      "sha256": "c1adb97ce9812c6808af99e55ef8ff873257fa97b5dd4f545f9f7c1d0ccb8919",
+      "rows": 17508,
+      "bytes": 4738046
+    }
+  },
+  "caveats": [
+    "Export row counts have not been compared with a live database query."
+  ]
+}

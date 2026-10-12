@@ -17,4 +17,7 @@ __pycache__/
 # Portable exports contain complete datasets and stay outside Git
 .data-app-offline/
 
+# Full database exports are preserved locally; manifests and import tools are tracked.
+data/database-exports/**/*.csv
+
 # Keep dist/: the documented launcher opens this ready-to-use build.
