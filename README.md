@@ -21,7 +21,7 @@ Then open <http://127.0.0.1:4173>.
 
 ## Explore
 
-- Choose **Light**, **Dark**, or **System** in the Appearance control above any tab. System follows your device; your choice is saved between visits and stays in sync with the existing theme menu.
+- Use the **sun/moon icon** above any tab to switch between light and dark mode. The icon shows the mode you can switch to, and your choice is saved between visits. The separate theme picker has been removed.
 - Choose any team or **League leaders** in the left rail.
 - The default is the full available **regular season**, with both O-line and D-line events.
 - **Original** is the default field view: receivers in the attacking end zone, throwers in midfield, and Callahans in the bottom panel, matching the first Instagram adaptation.
@@ -232,9 +232,12 @@ inputs. Run `node --test tools/model.test.mjs` for analytical tests. The Data ap
 `AGENTS.md` documents how to rebuild authored React using the installed Data plugin;
 do not modify its protected runtime to change the analysis.
 
-The visible Appearance control uses a narrowly authorized change in
-`src/DataAppShell.jsx`: `useDataApp()` exposes `appearance` and `setAppearance`,
-sharing the existing theme drawer's owner/viewer persistence. Rebuild this version
+The sun/moon toggle uses narrowly authorized changes in `src/DataAppShell.jsx`
+and `src/components/DataAppChrome.jsx`. `useDataApp()` exposes `appearance`,
+`resolvedAppearance`, and `setAppearance`, using the existing owner/viewer
+persistence. The resolved scheme makes the first toggle work even with a saved
+System preference. The shell no longer offers the theme picker; both desktop and
+mobile overflow menus respect that choice. Rebuild this version
 with the installed Data plugin's `data-app.mjs build --project-dir <project> --source`
 using the project-local locked dependencies. The prebuilt runtime does not include
 this binding. Source builds produce a standalone HTML file; `--separate-data` is

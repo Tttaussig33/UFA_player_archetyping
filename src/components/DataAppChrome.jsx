@@ -568,7 +568,7 @@ function DataAppOverflowMenu({
           <option value="ask" aria-label="Ask ChatGPT">Ask ChatGPT</option>
           {canEdit && <option value="edit">Edit text and layout</option>}
           {!published && <option value="publish" aria-label="Publish" disabled={publishDisabled}>Publish</option>}
-          {canEdit && <option value="theme">Switch theme</option>}
+          {canSwitchTheme && <option value="theme">Switch theme</option>}
           {published && <option value="copy-link">Copy link</option>}
           {published && onOpenHandoffSettings && <option value="handoff-settings">Open in ChatGPT settings</option>}
           {surface !== "report" && <option value="duplicate">Create a copy</option>}
@@ -912,7 +912,7 @@ export function DataAppTopbar({
           {mode !== "edit" && <>
           <DataAppOverflowMenu
             canEdit={canEdit && !editingBlocked}
-            canSwitchTheme={canEdit}
+            canSwitchTheme={canEdit && Boolean(onOpenThemes)}
             getActionHref={getActionHref}
             hiddenCount={hiddenCount}
             mode={mode}

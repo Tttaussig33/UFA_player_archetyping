@@ -1,5 +1,5 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
-import {DataComponent,Dropdown,SegmentedControl,Button,SortableItem,SortableRegion,useDataApp,useDashboardTabs} from '../../data-app-public.jsx';
+import {DataComponent,Dropdown,SegmentedControl,Button,Icon,SortableItem,SortableRegion,useDataApp,useDashboardTabs} from '../../data-app-public.jsx';
 import {fieldZones,fmt,int,zoneBuckets,rankZone,roleLabel,units,eventRole,eventPlayer,eventAec,sourceEvents} from './model.js';
 import {Field,Face,playerName} from './Field.jsx';
 import {Connections} from './Connections.jsx';
@@ -11,7 +11,8 @@ function exportCsv(events,role,players,zone){
  const quote=x=>'"'+String(x??'').replaceAll('"','""')+'"';downloadFile(`ufa-${role}-zone-vectors.csv`,'text/csv;charset=utf-8',rows.map(r=>r.map(quote).join(',')).join('\n'));
 }
 export function DashboardContent(){
- const {queries,filters,setFilter,appearance,setAppearance}=useDataApp();
+ const {queries,filters,setFilter,resolvedAppearance,setAppearance}=useDataApp();
+ const nextAppearance=resolvedAppearance==='dark'?'light':'dark',appearanceLabel=`Switch to ${nextAppearance} mode`;
  const {activeTabId}=useDashboardTabs([{id:'dashboard',label:'Field views'},{id:'connections',label:'Connections'},{id:'radials',label:'Throw radials'}]);
  const connectionsActive=activeTabId==='connections';
  const radialsActive=activeTabId==='radials',fieldActive=!connectionsActive&&!radialsActive;
@@ -44,7 +45,7 @@ export function DashboardContent(){
  useEffect(()=>{if(!playing)return;const timer=setInterval(()=>{setZoneId(id=>zones[(zones.findIndex(z=>z.id===id)+1)%zones.length].id);setPlayerId(null);setHover(null);},4200);return()=>clearInterval(timer);},[playing,zones]);
  const leaderRows=zones.map(z=>{const p=ranks[z.id][0];return{zone:z.label,role:roleLabel(z.role),player:p?playerName(players,p.id):null,aec:p?.aec??null,events:p?.count??0,...(z.role==='combined'?{throwerAec:p?.throwAec??null,receiverAec:p?.receiveAec??null}:{} )};});
  return <article className="ufa-app">
-  <div className="ufa-toolbar"><div className="ufa-scope-label">2026 season <span>· {int(loadedGames.length)} games with throws</span></div><div className="ufa-controls"><Dropdown label="Season phase" showLabel value={phase} choices={['Regular season','Playoffs','all']} allLabel="All 2026" choiceLabels={{all:'All 2026'}} onChange={v=>setFilter('phase',v)}/><Dropdown label="Line" showLabel value={line} choices={['all','O-line','D-line']} allLabel="All lines" choiceLabels={{all:'All lines'}} onChange={v=>setFilter('line',v)}/><div className="ufa-appearance"><span>Appearance</span><SegmentedControl ariaLabel="Color mode" value={appearance} onChange={setAppearance} options={[{value:'light',label:'Light'},{value:'dark',label:'Dark'},{value:'system',label:'System',tooltip:'Follow your device’s light or dark mode'}]}/></div></div></div>
+  <div className="ufa-toolbar"><div className="ufa-scope-label">2026 season <span>· {int(loadedGames.length)} games with throws</span></div><div className="ufa-controls"><Dropdown label="Season phase" showLabel value={phase} choices={['Regular season','Playoffs','all']} allLabel="All 2026" choiceLabels={{all:'All 2026'}} onChange={v=>setFilter('phase',v)}/><Dropdown label="Line" showLabel value={line} choices={['all','O-line','D-line']} allLabel="All lines" choiceLabels={{all:'All lines'}} onChange={v=>setFilter('line',v)}/><Button className="ufa-appearance-toggle" aria-label={appearanceLabel} title={appearanceLabel} onClick={()=>setAppearance(nextAppearance)}><Icon name={nextAppearance==='light'?'sun':'moon'} size={20}/></Button></div></div>
   <div className="ufa-workspace"><aside className="ufa-team-rail" aria-label="Choose a UFA team">
    <label className="ufa-search-label">Teams <span>22</span><input aria-label="Search teams" placeholder="Find a team…" value={search} onChange={e=>setSearch(e.target.value)}/></label>
    <div className="ufa-team-list"><button aria-pressed={team==='all'} className="ufa-team" onClick={()=>setFilter('team','all')}><span className="ufa-abbrev">UFA</span><span>League leaders<small>All 22 teams</small></span></button>{teams.filter(t=>t.name.toLowerCase().includes(search.toLowerCase())).map(t=><button key={t.id} aria-pressed={team===t.id} className="ufa-team" onClick={()=>setFilter('team',t.id)}><span className="ufa-abbrev">{t.abbrev}</span><span>{t.name}<small>{t.games}/{t.scheduled} regular-season games</small></span></button>)}</div>

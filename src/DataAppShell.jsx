@@ -237,6 +237,9 @@ export function DataAppShell({
   const [activeTheme, setActiveTheme] = useState(savedPresentation.theme ?? "original");
   const [appearance, setAppearance] = useState(normalizeAppearance(savedPresentation.appearance));
   const [viewerAppearance, setViewerAppearance] = useState(() => readViewerAppearance(snapshot));
+  const [resolvedAppearance, setResolvedAppearance] = useState(() =>
+    globalThis.document?.documentElement.dataset.colorScheme === "dark" ? "dark" : "light",
+  );
   // Authored controls and the theme drawer share the same persisted preference.
   const changeAppearance = useCallback((value) => {
     const next = normalizeAppearance(value);
@@ -560,6 +563,17 @@ export function DataAppShell({
   useEffect(() => {
     setDataAppAppearance(viewerAppearance || appearance);
   }, [viewerAppearance, appearance, activeTheme]);
+
+  useEffect(() => {
+    const root = globalThis.document?.documentElement;
+    if (!root) return;
+    // Track the rendered scheme, including an existing System preference.
+    const syncAppearance = () => setResolvedAppearance(root.dataset.colorScheme === "dark" ? "dark" : "light");
+    syncAppearance();
+    const observer = new MutationObserver(syncAppearance);
+    observer.observe(root, { attributes: true, attributeFilter: ["data-color-scheme"] });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!tabs.some(({ id }) => id === activeTabId)) setActiveTabId(tabs[0].id);
@@ -1070,6 +1084,7 @@ export function DataAppShell({
       activeFilters,
       mode,
       appearance: viewerAppearance || appearance,
+      resolvedAppearance,
       setAppearance: changeAppearance,
       appTitle,
       setAppTitle,
@@ -1125,6 +1140,7 @@ export function DataAppShell({
       activeTheme,
       appearance,
       viewerAppearance,
+      resolvedAppearance,
       changeAppearance,
       narrativeEdits,
     ],
@@ -1157,7 +1173,6 @@ export function DataAppShell({
               onTitleChange={setAppTitle}
               onAction={runAction}
               getActionHref={actionHref}
-              onOpenThemes={() => setThemesOpen(true)}
               published={hosted}
               canEdit={ownerCanEdit}
               verification={verification}
