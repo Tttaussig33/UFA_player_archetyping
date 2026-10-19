@@ -47,6 +47,31 @@ def add_connection_metadata(snapshot):
     query['methods']=[item for item in query.get('methods',[]) if not item.get('code','').startswith('src/content/dashboard/connections-model.js:')]+[method]
     return snapshot
 
+def add_radial_metadata(snapshot):
+    query=snapshot['queries']['events']
+    source=query['source']
+    components=['ufa-radial-throw','ufa-radial-receive','ufa-radial-records']
+    definitions=[
+        {'label':'Radial direction buckets','componentIds':components,
+         'definition':'Reproduce prod.get_player_throw_directions from its read-only October 12, 2026 definition: normalize supplied throwAngle modulo 360 and group by floor(angle / 30). Twelve buckets include their lower edge and exclude their upper edge. Missing angles are excluded, not reconstructed.'},
+        {'label':'Radial counts and shares','componentIds':components,
+         'definition':'Count thrower and receiver involvement separately. Each bucket share divides its count by the selected role’s total events with recorded angles, after the team, season phase, line, player, outcome and huck filters. The pass list deduplicates shared source events; role totals are not a possession total. An empty role has no percentage denominator.'},
+        {'label':'Radial outcomes','componentIds':components,
+         'definition':'All recorded (original) matches the function’s inclusion of incompletions, named targets and stalls. Completed passes keeps complete=true only. Receiving is the named Receiver endpoint, including unsuccessful targets when All recorded is selected. Unnamed targets are never inferred. The huck filter excludes stalls, as in Connections.'},
+        {'label':'Radial display','componentIds':['ufa-radial-throw','ufa-radial-receive'],
+         'definition':'Rendered Shown Space profile inspected October 14, 2026: 0 degrees at the top, clockwise; wedges centered on each bucket’s lower-edge angle; receiving angles are not rotated. Radius is innerRadius + (outerRadius-innerRadius) * bucketShare / scaleMaximum. Original scale uses each role’s maximum share; Shared percentage uses the maximum across both roles. Length, not wedge area, encodes frequency; outer-ring percentages disclose the scale.'},
+    ]
+    labels={item['label'] for item in definitions}
+    source['metricDefinitions']=[item for item in source.get('metricDefinitions',[]) if item.get('label') not in labels]+definitions
+    for definition in source['metricDefinitions']:
+        if definition['label']=='Huck passes':
+            definition['componentIds']=list(dict.fromkeys(definition['componentIds']+components))
+    method={'language':'text','code':'src/content/dashboard/radial-model.js: buildRadials applies selected player, outcome and huck filters to the page-scoped events, excludes missing throwAngle, normalizes modulo 360 and counts each role in twelve lower-inclusive 30-degree buckets. radialRecords resolves selected role/bucket to original source events. Grouping is from data/database-metadata/2026-10-12/get_player_throw_directions.sql; comparison fixture is alex-atkins-2026-radial.json. Radials.jsx reproduces the inspected reference orientation and radial-length scaling, with an optional shared percentage scale.'}
+    query['methods']=[item for item in query.get('methods',[]) if not item.get('code','').startswith('src/content/dashboard/radial-model.js:')]+[method]
+    flow={'title':'Radial reference','detail':'The read-only prod.get_player_throw_directions definition and aatkins / 2026 / 12 result were captured October 12, 2026. Its counts reconcile to the imported local snapshot. The visible SVG on https://shownspace.com/players/aatkins was inspected October 14, 2026 to reproduce wedge positioning and radius scaling. The new local filters operate on the CSV snapshot; this is not a live database refresh.'}
+    source['evidenceFlow']=[item for item in source.get('evidenceFlow',[]) if item.get('title')!='Radial reference']+[flow]
+    return snapshot
+
 def truth(v):
     return str(v).lower() in ('true','1','1.0')
 
@@ -241,6 +266,7 @@ def build():
             snapshot['queries'][query]['source']['files']=[m['file'] for m in manifests if m['table'] in {f'prod.{name}' for name in names}]
         snapshot['queries']['players']['source']['files']+=['data/source-api/leaderboard.json','data/source-api/*.json','src/content/assets/portraits.json']
     add_connection_metadata(snapshot)
+    add_radial_metadata(snapshot)
     (ROOT/'src/data.json').write_text(json.dumps(snapshot,separators=(',',':'),allow_nan=False))
     print(json.dumps(stats,indent=2))
 

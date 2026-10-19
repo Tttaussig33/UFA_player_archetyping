@@ -237,6 +237,18 @@ export function DataAppShell({
   const [activeTheme, setActiveTheme] = useState(savedPresentation.theme ?? "original");
   const [appearance, setAppearance] = useState(normalizeAppearance(savedPresentation.appearance));
   const [viewerAppearance, setViewerAppearance] = useState(() => readViewerAppearance(snapshot));
+  // Authored controls and the theme drawer share the same persisted preference.
+  const changeAppearance = useCallback((value) => {
+    const next = normalizeAppearance(value);
+    if (canEdit) {
+      setAppearance(next);
+      setViewerAppearance("");
+      writeViewerAppearance(snapshot, "");
+    } else {
+      setViewerAppearance(next);
+      writeViewerAppearance(snapshot, next);
+    }
+  }, [canEdit, snapshot]);
   const [chartStates, setChartStates] = useState(initialUrlState.charts);
   const [sectionViews, setSectionViews] = useState(initialUrlState.sections);
   const setSectionView = useCallback((id, values) => {
@@ -1057,6 +1069,8 @@ export function DataAppShell({
       reviewedAggregatePeriodRows,
       activeFilters,
       mode,
+      appearance: viewerAppearance || appearance,
+      setAppearance: changeAppearance,
       appTitle,
       setAppTitle,
       assumptions,
@@ -1111,6 +1125,7 @@ export function DataAppShell({
       activeTheme,
       appearance,
       viewerAppearance,
+      changeAppearance,
       narrativeEdits,
     ],
   );
@@ -1169,16 +1184,7 @@ export function DataAppShell({
               activeTheme={displayedTheme}
               originalTokens={originalThemeTokens}
               appearance={viewerAppearance || appearance}
-              onAppearanceChange={(value) => {
-                if (canEdit) {
-                  setAppearance(value);
-                  setViewerAppearance("");
-                  writeViewerAppearance(snapshot, "");
-                } else {
-                  setViewerAppearance(value);
-                  writeViewerAppearance(snapshot, value);
-                }
-              }}
+              onAppearanceChange={changeAppearance}
               onClose={() => setThemesOpen(false)}
               onApply={(themeId) => {
                 applyDataAppTheme(themeId);

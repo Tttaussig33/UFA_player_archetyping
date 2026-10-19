@@ -21,6 +21,7 @@ Then open <http://127.0.0.1:4173>.
 
 ## Explore
 
+- Choose **Light**, **Dark**, or **System** in the Appearance control above any tab. System follows your device; your choice is saved between visits and stays in sync with the existing theme menu.
 - Choose any team or **League leaders** in the left rail.
 - The default is the full available **regular season**, with both O-line and D-line events.
 - **Original** is the default field view: receivers in the attacking end zone, throwers in midfield, and Callahans in the bottom panel, matching the first Instagram adaptation.
@@ -34,6 +35,9 @@ Then open <http://127.0.0.1:4173>.
 - Filter to completed passes or turnovers/drops; inspect the underlying event records below the field.
 - **Save field SVG** exports the current field, including embedded portraits. **Export events** saves exactly the displayed player/zone/outcome event population to CSV.
 - Open the earlier [possession browser](https://tttaussig33.github.io/frisbee-analytics/) from the sidebar.
+- **Throw radials** shows a searchable player’s throwing and receiving direction diagrams. It shares the team, season-phase and line filters with Field views and Connections. **Hucks only** uses the same distance thresholds as Connections; **Completed passes** excludes unsuccessful events.
+- Radials default to **All recorded (original)** and twelve 30° buckets, matching `prod.get_player_throw_directions`. To compare with Shown Space’s 2026 profile, choose **All 2026**, **All lines**, and **All passes**. All recorded includes stalls and unsuccessful named targets, so receiving totals are not necessarily completed catches.
+- Original radial scaling fits each diagram to its own largest bucket; **Shared percentage** gives both roles the same percentage scale. Hover or focus a wedge for exact counts and shares. Select it and choose **Inspect passes** to open its underlying events; CSV export follows that selection.
 
 The field is deliberately compact enough to see all zones at once. **Enlarge field**, browser zoom
 or the SVG export provides a larger view. Green lines are completions; red lines
@@ -61,6 +65,19 @@ post’s historical rankings**. This version supplies the spatial exploration la
 it does not yet assign learned player-archetype or clustering labels.
 
 ## Data and metric definitions
+
+Radial grouping is preserved in `data/database-metadata/2026-10-12/`, including
+the read-only database function and Alex Atkins verification output. His full
+2026 snapshot reconciles to all twelve buckets, 552 throwing events and 469
+receiving targets. The original profile’s rendered SVG was inspected on October
+14, 2026: it places 0° at the top, increases angles clockwise, centers wedges on
+their bucket’s lower-edge label and scales radial length from a small central
+hole. Receiving uses the same flight angle without rotation. These reproduce the
+source’s display convention; the sector’s exact numeric interval is shown in its
+tooltip. Percentages divide by the selected role’s events with recorded angles.
+Missing angles are excluded, never reconstructed from coordinates. The model and
+source metadata survive future local snapshot rebuilds; tests live in
+`tools/radials.test.mjs`.
 
 The current app uses the October 12, 2026 DBeaver exports of `prod.throws`,
 `prod.games`, `prod.players`, `prod.teams`, and `prod.blocks`. Full, unmodified
@@ -173,10 +190,10 @@ The input for throw-direction radial diagrams is in `prod.throws`: `Thrower`,
 `Receiver`, `throw_angle`, `throw_distance`, `x_diff`, `y_diff`, `ThrowerX/Y` and
 `ReceiverX/Y`. The reviewed event aliases are `throwAngle`, `throwDistance`,
 `xDiff`, `yDiff`, `tx/ty` and `rx/ry`. The numeric source values are preserved;
-no radial chart, angle convention or binning scheme is invented by this import.
+no radial angle is reconstructed by this import.
 `cp`, `cpoe` and `ec` are also preserved as supplied. Chart images are not part of
-these five CSV exports. Shown Space's exact radial aggregation settings have
-not been verified against its implementation.
+these five CSV exports. The separate Throw radials implementation uses the verified
+database function and display convention described above.
 
 ## Development
 
@@ -208,12 +225,21 @@ grouping, link-detail scope, empty scopes and reconciliation across all teams.
 - `tools/build_dataset.py`: reproducible standard-library Python transformation.
 - `tools/fetch_portraits.py`: downloads only public URLs supplied by Shown Space.
 - `tools/model.test.mjs`: zone-edge, population, missing-value and reconciliation tests.
-- `dist/`: complete built browser app and its required data sidecar.
+- `dist/`: complete built browser app. Keep the full directory when copying a build.
 
 Run `python3 tools/build_dataset.py` to reconstruct the dataset from the preserved
 inputs. Run `node --test tools/model.test.mjs` for analytical tests. The Data app’s
 `AGENTS.md` documents how to rebuild authored React using the installed Data plugin;
 do not modify its protected runtime to change the analysis.
+
+The visible Appearance control uses a narrowly authorized change in
+`src/DataAppShell.jsx`: `useDataApp()` exposes `appearance` and `setAppearance`,
+sharing the existing theme drawer's owner/viewer persistence. Rebuild this version
+with the installed Data plugin's `data-app.mjs build --project-dir <project> --source`
+using the project-local locked dependencies. The prebuilt runtime does not include
+this binding. Source builds produce a standalone HTML file; `--separate-data` is
+not supported with `--source`. Keep the scoped protected-runtime manifest in sync
+only through the authorization workflow in `AGENTS.md`.
 
 The checks performed for this version include all 22 team maps, all six analytical
 tests for the original build, plus full-field throwing/receiving coverage, attribution,
