@@ -4,7 +4,7 @@ export const HUCK_GAIN = 30;
 export function passGeometry(event) {
   if (![event.tx,event.ty,event.rx,event.ry].every(Number.isFinite)) return {distance:null,gain:null,huck:false};
   const distance=Math.hypot(event.rx-event.tx,event.ry-event.ty),gain=event.ry-event.ty;
-  return {distance,gain,huck:!event.stall&&distance>=HUCK_DISTANCE&&gain>=HUCK_GAIN};
+  return {distance,gain,huck:!event.stall&&distance>HUCK_DISTANCE&&gain>HUCK_GAIN};
 }
 
 export function connectionPlayers(events) {

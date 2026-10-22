@@ -41,7 +41,7 @@ export function Connections({events,allEvents,players,teams,team,onTeamChange,sc
   const baseScope=scopeFilters.map(filter=>({...filter,field:({'Team':'team','Season phase':'phase','Line':'line'})[filter.label]||filter.label}));
   // Scope descriptions reference the original fields used by each predicate.
   // Player involvement is an OR across the two endpoints, not a thrower-only cut.
-  const filteredScope=[...baseScope,{field:'thrower',label:'Player (thrower or receiver)',value:name||'No recorded players'},{field:'rx',label:'Pass geometry',value:passType==='hucks'?'Hucks only: flight ≥40 yd and downfield ≥30 yd':'All passes'},{field:'complete',label:'Outcome',value:outcome==='complete'?'Completed passes':'All pass attempts'}];
+  const filteredScope=[...baseScope,{field:'thrower',label:'Player (thrower or receiver)',value:name||'No recorded players'},{field:'rx',label:'Pass geometry',value:passType==='hucks'?'Hucks only: flight >40 yd and downfield >30 yd':'All passes'},{field:'complete',label:'Outcome',value:outcome==='complete'?'Completed passes':'All pass attempts'}];
   const detailScope=[...filteredScope,...(selectedLabel?[{field:'id',label:'Connection',value:selectedLabel}]:[])];
   const recordRows=selectedEvents.map(event=>{const geometry=passGeometry(event);return {...event,throwerName:playerName(players,event.thrower),receiverName:event.receiver?playerName(players,event.receiver):'Unrecorded player',distanceYards:geometry.distance,downfieldYards:geometry.gain,huck:geometry.huck};});
   const metricLabel=outcome==='complete'?(passType==='hucks'?'completed hucks':'completed passes'):(passType==='hucks'?'huck attempts':'pass attempts');
@@ -57,7 +57,7 @@ export function Connections({events,allEvents,players,teams,team,onTeamChange,sc
       <Dropdown label="Outcome" showLabel value={outcome} choices={['complete','all']} allLabel="All pass attempts" choiceLabels={{complete:'Completed passes'}} onChange={setOutcome}/>
       <Dropdown label="Partners" showLabel value={limit} choices={['5','10','all']} allLabel="All partners" choiceLabels={{'5':'Top 5 + others','10':'Top 10 + others'}} onChange={setLimit}/>
     </div>
-    <p className="ufa-connection-definition">Huck: at least 40 yards of flight and 30 yards downfield. {passType==='hucks'?'The huck filter applies to both incoming and outgoing passes.':'Switch to Hucks only to see the deep connections.'}</p>
+    <p className="ufa-connection-definition">Huck: more than 40 yards of straight-line flight and more than 30 yards forward. {passType==='hucks'?'The huck filter applies to both incoming and outgoing passes.':'Switch to Hucks only to see the deep connections.'}</p>
     {!playerId?<div className="ufa-empty" role="status">No players have recorded passes for this team, season phase and line. Search for a player above to explore another team.</div>:<SortableRegion id="ufa:connections" variant="freeform" authoredRevision={1} className="ufa-connection-layout">
       <SortableItem id="ufa-connections-chart" label="Passing connections" kind="chart">
         <EvidenceChart key={JSON.stringify([scopeFilters,playerId,passType,outcome,limit,resetKey])} id="ufa-connections-chart" queryId="events" title="Passing connections" spec={connectionSpec}

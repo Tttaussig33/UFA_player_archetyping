@@ -30,9 +30,9 @@ test('direction boundaries wrap at 360 and retain missing angles as unknown',()=
 
 test('all recorded includes stalls and drops; completed and huck scopes have their own denominators',()=>{
   const rows=[
-    {id:'a',thrower:'a',receiver:'b',throwAngle:0,complete:true,tx:0,ty:0,rx:0,ry:40},
-    {id:'b',thrower:'a',receiver:'b',throwAngle:30,drop:true,tx:0,ty:0,rx:0,ry:40},
-    {id:'c',thrower:'a',receiver:null,throwAngle:60,stall:true,tx:0,ty:0,rx:0,ry:40},
+    {id:'a',thrower:'a',receiver:'b',throwAngle:0,complete:true,tx:0,ty:0,rx:0,ry:41},
+    {id:'b',thrower:'a',receiver:'b',throwAngle:30,drop:true,tx:0,ty:0,rx:0,ry:41},
+    {id:'c',thrower:'a',receiver:null,throwAngle:60,stall:true,tx:0,ty:0,rx:0,ry:41},
     {id:'d',thrower:'b',receiver:'a',throwAngle:90,complete:true,tx:0,ty:0,rx:0,ry:20},
     {id:'e',thrower:'a',receiver:null,throwAngle:120,tx:0,ty:0,rx:40,ry:0},
     {id:'f',thrower:'b',receiver:'a',throwAngle:300,tx:null,ty:0,rx:0,ry:50},

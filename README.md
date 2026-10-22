@@ -38,6 +38,12 @@ Then open <http://127.0.0.1:4173>.
 - **Throw radials** shows a searchable player’s throwing and receiving direction diagrams. It shares the team, season-phase and line filters with Field views and Connections. **Hucks only** uses the same distance thresholds as Connections; **Completed passes** excludes unsuccessful events.
 - Radials default to **All recorded (original)** and twelve 30° buckets, matching `prod.get_player_throw_directions`. To compare with Shown Space’s 2026 profile, choose **All 2026**, **All lines**, and **All passes**. All recorded includes stalls and unsuccessful named targets, so receiving totals are not necessarily completed catches.
 - Original radial scaling fits each diagram to its own largest bucket; **Shared percentage** gives both roles the same percentage scale. Hover or focus a wedge for exact counts and shares. Select it and choose **Inspect passes** to open its underlying events; CSV export follows that selection.
+- **Deep throwers** opens on a leaderboard: one player per row, release zones across columns, and completion rates with completed/attempted counts. Click a zone heading or use **Rank location** to rank players there. **Rank by** switches between completion rate and attempt volume. Team selection is a compact filter on this tab; the other tabs retain their team rail. The selected team, season phase and line apply throughout.
+- Select a player to open their detailed profile; **Back to leaderboard** restores the comparison. The paired fields show **where they receive** and **where they release successful hucks**. Receiving defaults to verified catches immediately before a huck; **All catches** includes every completed reception. Release maps can show completion rate or attempt count. Cells display counts as well as rates; zone areas differ, so counts are not a spatial density.
+- **Player minimum** requires total hucks across all locations. Ranking a specific zone also requires **Zone minimum** attempts there. Small-sample cells remain hatched, and no-attempt cells show a dash. The scope baseline includes all named throwers before minimums and search. The player minimum affects only the leaderboard; the zone minimum also controls profile-map shading and the highest-observed-zone summary.
+- **Completion filter** defaults to at least the scope average in the ranked location. Use 70%, 80%, or Any completion rate to change it. Attempt count is a sample/volume measure; it does not identify better throwers by itself. The baseline precedes all eligibility filters and search.
+- In a player profile, **What happens after the incoming pass?** compares forward, lateral and backward prior passes. **Huck choice** uses all located next throws as its denominator; **Huck completion** uses only huck attempts. Filter by release location and inspect each group’s original passes. Unclassified setups remain separate.
+- Select a field zone, then its **Inspect** action, to examine individual hucks below. **The pass before the huck** draws verified preceding passes and actual hucks, with pagination, original records and a CSV export containing event IDs and coordinates. Unmatched hucks remain included without a guessed setup.
 
 The field is deliberately compact enough to see all zones at once. **Enlarge field**, browser zoom
 or the SVG export provides a larger view. Green lines are completions; red lines
@@ -197,6 +203,53 @@ database function and display convention described above.
 
 ## Development
 
+### Deep thrower profiles
+
+`deep-thrower-model.js`, `DeepLeaderboard.jsx`, `DeepSetups.jsx` and `DeepThrowers.jsx` implement
+the Deep throwers leaderboard and on-demand profiles. The leaderboard pools
+counts for its scope baseline, retains the same 0–100% color scale across zones,
+and sorts eligible players by the chosen location. Its source includes all
+named throwers before sample/completion/search filters; derived display rows contain the
+full matching player/zone leaderboard and baseline, not just the current page.
+The huck definition is shared with Connections: flight >40 yards, downfield gain
+>30 yards and no stall. Huck share divides by non-stall throws with usable
+endpoint coordinates. Completion includes drops and unnamed targets. Individual pass
+records and exports retain the supplied thrower aEC.
+
+Prior-pass links require the same game, team, quarter, point and possession,
+consecutive `possessionThrow`, unique order/sequence keys, increasing
+`eventSequence`, a completed non-stall prior pass, and a prior receiver equal to
+the current thrower. The join runs within the page-filtered population. It does
+not infer routes, upline/swing labels, dead-disc starts, time-to-throw or the huck
+receiver's location at release. Catch and release coordinates remain distinct.
+
+Incoming-pass groups use the verified prior vector: forward when `dy > abs(dx)`,
+backward when `-dy > abs(dx)`, and lateral otherwise for nonzero distance.
+Exact 45-degree boundaries are lateral. Missing links/coordinates and zero-distance
+passes stay unclassified. Huck choice divides huck attempts by non-stall next throws
+with usable endpoints in the group; catches without a recorded next throw are not
+included. Huck completion divides completed hucks by attempts in that same group.
+The release-location filter uses the current throw origin. Original sources include
+both next throws and their verified preceding passes. These descriptive groups are
+not cutting routes or causal estimates; setup details can be inspected and exported.
+
+The strict `>40` / `>30` definition was supplied by the user on October 22, 2026.
+Replacing the former inclusive cutoffs removes no throws from the current snapshot.
+
+The imported full-2026 data has 3,778 geometrically identified huck attempts;
+3,406 have a verified preceding catch under these rules. Alex Atkins reconciles
+to 53 attempts, 45 completions and 44 linked catches; restricting to the regular
+season gives 28 completions. These checks, boundary/missing-data cases and
+sequence ambiguity tests live in `tools/deep-throwers.test.mjs`.
+
+Release tooltips show 95% Wilson completion intervals. They describe binomial
+sampling uncertainty, without adjustments for player/game dependence, and do
+not establish causal location effects or pairwise significance. The default
+five-attempt zone minimum is an exploration aid, not a reliability guarantee.
+Source metadata and definitions are regenerated by `add_deep_thrower_metadata`
+in `tools/build_dataset.py`. Source inspection preserves original events;
+sequence exports contain one row per huck plus verified preceding-pass fields.
+
 ### Connections tab
 
 The Connections tab recreates the incoming-player → selected-player → outgoing-player
@@ -205,7 +258,7 @@ the full reviewed roster. Choosing a player from another team updates the team
 filter; the All teams view stays unrestricted. Season, line and pass filters stay
 selected, with an explicit empty state when that player has no matching passes.
 All passes preserves the general connections view;
-Hucks only requires at least 40 yards of flight and 30 yards of forward gain from
+Hucks only requires more than 40 yards of straight-line flight and more than 30 yards of forward gain from
 the recorded coordinates and filters both sides of the diagram.
 
 Completed passes is the default. All pass attempts also shows dropped and other

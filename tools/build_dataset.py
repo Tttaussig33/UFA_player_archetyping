@@ -31,7 +31,7 @@ CONNECTION_DEFINITIONS = [
     {'label':'Passing connections','componentIds':['ufa-connections-chart','ufa-connection-records'],
      'definition':'For the selected player, count each eligible pass from a teammate on the incoming side and to a teammate on the outgoing side. The sides are separate event totals across the selected games, not a sequence within one possession. Stalls are excluded.'},
     {'label':'Huck passes','componentIds':['ufa-connections-chart','ufa-connection-records'],
-     'definition':'A huck has recorded flight distance sqrt((rx-tx)^2 + (ry-ty)^2) >= 40 yards and forward gain ry-ty >= 30 yards. The source normalizes every offense toward y=120. Missing coordinates cannot qualify. Hucks only filters incoming and outgoing passes.'},
+     'definition':'A huck has recorded flight distance sqrt((rx-tx)^2 + (ry-ty)^2) > 40 yards and forward gain ry-ty > 30 yards. The source normalizes every offense toward y=120. Missing coordinates cannot qualify. Hucks only filters incoming and outgoing passes.'},
     {'label':'Connection outcomes','componentIds':['ufa-connections-chart','ufa-connection-records'],
      'definition':'Completed passes is the default. All pass attempts additionally includes drops and other incompletions, without discarding unnamed targets. Unrecorded player means the source did not name that endpoint; an intended receiver is never inferred.'},
     {'label':'Displayed partners','componentIds':['ufa-connections-chart'],
@@ -45,6 +45,8 @@ def add_connection_metadata(snapshot):
     source['metricDefinitions']=[item for item in source.get('metricDefinitions',[]) if item.get('label') not in labels]+CONNECTION_DEFINITIONS
     method={'language':'text','code':'src/content/dashboard/connections-model.js: buildConnections filters reviewed events by selected player, pass outcome and huck geometry after team/phase/line filtering; it groups incoming and outgoing passes separately by partner, retaining all remaining partners in Other players. selectedConnectionEvents resolves selected diagram endpoints to original event IDs. No pass sequence is inferred.'}
     query['methods']=[item for item in query.get('methods',[]) if not item.get('code','').startswith('src/content/dashboard/connections-model.js:')]+[method]
+    definition_flow={'title':'Huck definition clarified','detail':'On October 22, 2026 the user supplied strict cutoffs: receiver Y minus thrower Y >30 yards and Euclidean endpoint distance >40 yards, with attack normalized toward y=120. The local huck filters now share these rules. This changes derived classification only; the imported database rows are unchanged. No throws in the current snapshot lie on either former inclusive boundary.'}
+    source['evidenceFlow']=[item for item in source.get('evidenceFlow',[]) if item.get('title')!='Huck definition clarified']+[definition_flow]
     return snapshot
 
 def add_radial_metadata(snapshot):
@@ -70,6 +72,33 @@ def add_radial_metadata(snapshot):
     query['methods']=[item for item in query.get('methods',[]) if not item.get('code','').startswith('src/content/dashboard/radial-model.js:')]+[method]
     flow={'title':'Radial reference','detail':'The read-only prod.get_player_throw_directions definition and aatkins / 2026 / 12 result were captured October 12, 2026. Its counts reconcile to the imported local snapshot. The visible SVG on https://shownspace.com/players/aatkins was inspected October 14, 2026 to reproduce wedge positioning and radius scaling. The new local filters operate on the CSV snapshot; this is not a live database refresh.'}
     source['evidenceFlow']=[item for item in source.get('evidenceFlow',[]) if item.get('title')!='Radial reference']+[flow]
+    return snapshot
+
+def add_deep_thrower_metadata(snapshot):
+    query=snapshot['queries']['events']
+    source=query['source']
+    components=['ufa-deep-profile','ufa-deep-receive','ufa-deep-release','ufa-deep-comparison','ufa-deep-sequences','ufa-deep-setups']
+    definitions=[
+        {'label':'Deep thrower performance','componentIds':components,
+         'definition':'Hucks use the Connections definition: non-stall throws with endpoint flight >40 yards and forward gain >30 yards. Completion is completed hucks / all huck attempts, retaining drops and unnamed targets. Huck share is hucks / non-stall throws with all four finite endpoint coordinates; missing geometry is excluded from this denominator. Individual huck records and CSV exports retain the supplied thrower aEC.'},
+        {'label':'Deep thrower field zones','componentIds':['ufa-deep-receive','ufa-deep-release','ufa-deep-profile'],
+         'definition':'Use the same twelve exhaustive field zones as the full-field views, normalized toward y=120. Receiving counts completed catches at rx/ry; release performance uses hucks at tx/ty. Catch shares divide by all catches in the selected receiving view, including any unmapped catches. Out-of-field endpoints are excluded only from spatial cells, with counts disclosed. The zone minimum applies to performance shading, the highest-observed-zone summary and eligibility when ranking a particular release zone. Low-sample cells in otherwise eligible rows retain their counts. Profile source rows and exports retain every selected huck. Counts are never converted into area-normalized densities; zone sizes differ.'},
+        {'label':'Verified pass before a huck','componentIds':['ufa-deep-receive','ufa-deep-sequences','ufa-deep-setups'],
+         'definition':'Within the page-scoped events, match by game, team, quarter, point and possession. The prior pass has possessionThrow exactly one less than the huck; both order keys and event sequence keys must be unique within that context, and the prior eventSequence must be smaller. Require a completed, non-stall prior pass whose receiver is the huck thrower. Missing, first-throw and ambiguous cases remain unmatched, not inferred as dead-disc starts. The preceding catch is the prior pass destination, which may differ from the next recorded release. No receiver movement, upline, swing, defensive position or dead-disc label is inferred.'},
+        {'label':'Deep thrower leaderboard','componentIds':['ufa-deep-comparison'],
+         'definition':'One matrix row per named thrower, with completion rates and completed/attempted hucks by release zone. The player minimum uses all hucks in the team, phase and line scope. Ranking one zone additionally requires the zone minimum there. The completion filter applies to the ranked location: at least the scope baseline by default, or at least 70%, at least 80%, or any rate. All eligibility filters precede name/team search. Sort uses the chosen location and selected measure descending, then attempts, then completion rate, then player ID. Attempt sorting measures volume, not quality. The scope baseline pools all named throwers before sample minimums, completion filtering and search, summing numerators and denominators rather than averaging rates. Source rows include their non-stall throws to preserve huck-share denominators. Display rows contain the complete matching leaderboard plus scope baseline in player/zone long form; pagination shows fifteen players. Nine non-attacking-end-zone columns remain visible; attacking-end-zone columns are added if they have attempts or are the selected ranking zone. Unmapped releases remain in all-location totals. The fixed 0–100% color scale is identical across columns; below-minimum cells are hatched. These are observed outcomes, not difficulty-adjusted ratings or learned archetypes.'},
+        {'label':'Incoming pass tendencies','componentIds':['ufa-deep-setups','ufa-deep-sequences'],
+         'definition':'Classify the verified prior disc-flight vector as forward when dy > abs(dx), backward when -dy > abs(dx), otherwise lateral when distance is nonzero. Thus exact 45-degree boundaries belong to lateral. Missing or ambiguous links, missing prior coordinates and zero-distance passes are unclassified; no dead-disc or cutting-route label is inferred. Within each group, huck choice is huck attempts / non-stall next throws with finite current endpoints, while huck completion is completed hucks / huck attempts. Catches with no recorded next throw are not opportunities in this denominator. All setups pools the same groups, including unclassified. Release-location filtering uses current tx/ty; page team/phase/line filters apply first. Missing current geometry is disclosed and excluded from both rates. Source rows include every scoped next throw and its verified prior pass, deduplicated by event ID. Inspect actions select the exact group and release zone; CSV exports preserve the prior-pass category and original IDs. These are descriptive tendencies, not causal effects or comparisons adjusted for receivers, opponents, pressure or throw distance.'},
+        {'label':'Deep thrower sampling uncertainty','componentIds':['ufa-deep-release','ufa-deep-profile','ufa-deep-comparison','ufa-deep-setups'],
+         'definition':'Release-zone tooltips report a two-sided 95% Wilson interval for completed / attempted hucks, with z=1.959963984540054. Empty rates are undefined. These binomial intervals do not adjust for dependence between throws, opponents or games and do not establish a causal location effect or statistically significant pairwise differences. Highest-observed-zone summaries rank completion rates and require the selected attempt minimum; ties break by attempts then zone ID. The player minimum affects only the leaderboard; the zone minimum also controls the player profile shading and highest-observed-zone summary.'},
+    ]
+    labels={item['label'] for item in definitions}
+    source['metricDefinitions']=[item for item in source.get('metricDefinitions',[]) if item.get('label') not in labels]+definitions
+    for definition in source['metricDefinitions']:
+        if definition['label']=='Huck passes':
+            definition['componentIds']=list(dict.fromkeys(definition['componentIds']+components))
+    method={'language':'text','code':'src/content/dashboard/deep-thrower-model.js: precedingPasses verifies unique consecutive passes within the filtered game/team/quarter/point/possession; buildDeepThrower computes completed-catch locations, matched prior-catch locations, and huck release-zone attempts, completions and Wilson intervals. deepThrowerComparison computes each player and release zone under the same huck and denominator rules; rankDeepThrowers applies total, zone and completion eligibility and orders the selected location. priorPassDirection and buildHuckSetups group all located next throws by incoming disc direction, separating huck choice from completion. selectHucks resolves spatial or setup selections to original hucks; sequenceSource includes their verified original preceding passes once. No archetype clusters or causal effects are fitted.'}
+    query['methods']=[item for item in query.get('methods',[]) if not item.get('code','').startswith('src/content/dashboard/deep-thrower-model.js:')]+[method]
     return snapshot
 
 def truth(v):
@@ -267,6 +296,7 @@ def build():
         snapshot['queries']['players']['source']['files']+=['data/source-api/leaderboard.json','data/source-api/*.json','src/content/assets/portraits.json']
     add_connection_metadata(snapshot)
     add_radial_metadata(snapshot)
+    add_deep_thrower_metadata(snapshot)
     (ROOT/'src/data.json').write_text(json.dumps(snapshot,separators=(',',':'),allow_nan=False))
     print(json.dumps(stats,indent=2))
 

@@ -20,9 +20,11 @@ test('player search includes the full reviewed roster and selects a compatible t
  assert.equal(connectionSearchTeam(directory.find(p=>p.id==='c'),'east'),'all');
 });
 
-test('hucks require both forward gain and flight distance, exclude stalls, and reject missing coordinates',()=>{
- assert.equal(passGeometry(pass('edge','a','b',{rx:0,ry:60})).huck,true);
- assert.equal(passGeometry(pass('diagonal','a','b',{rx:Math.sqrt(700),ry:50})).huck,true);
+test('hucks strictly exceed both cutoffs, exclude stalls, and reject missing coordinates',()=>{
+ assert.equal(passGeometry(pass('distance-edge','a','b',{rx:0,ry:60})).huck,false);
+ assert.equal(passGeometry(pass('gain-edge','a','b',{rx:30,ry:50})).huck,false);
+ assert.equal(passGeometry(pass('just-longer','a','b',{rx:0,ry:60.01})).huck,true);
+ assert.equal(passGeometry(pass('just-forward','a','b',{rx:30,ry:50.01})).huck,true);
  assert.equal(passGeometry(pass('short','a','b',{ry:59.99})).huck,false);
  assert.equal(passGeometry(pass('sideways','a','b',{rx:50,ry:30})).huck,false);
  assert.equal(passGeometry(pass('backward','a','b',{ry:-30})).huck,false);

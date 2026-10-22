@@ -66,7 +66,7 @@ export function Radials({events,allEvents,players,teams,team,onTeamChange,scopeF
     outcome:outcomeLabel(event),directionDegrees:directionAngle(event.throwAngle),flightYards:geometry.distance,downfieldYards:geometry.gain,huck:geometry.huck};}),[selectedEvents,players]);
   const filteredScope=[...scopeFilters.map(filter=>({...filter,field:({'Team':'team','Season phase':'phase','Line':'line'})[filter.label]})),
     {field:'thrower',label:'Player (thrower or receiver)',value:name},
-    {field:'rx',label:'Pass type',value:passType==='hucks'?'Hucks only: flight ≥40 yd and downfield ≥30 yd':'All passes'},
+    {field:'rx',label:'Pass type',value:passType==='hucks'?'Hucks only: flight >40 yd and downfield >30 yd':'All passes'},
     {field:'complete',label:'Outcome',value:outcome==='all'?'All recorded events (original)':'Completed passes'},
     {field:'throwAngle',label:'Direction',value:'Recorded angles only; twelve 30° buckets'}];
   const selectedBucket=selection?model[selection.role].buckets[selection.index]:null;
@@ -81,7 +81,7 @@ export function Radials({events,allEvents,players,teams,team,onTeamChange,scopeF
       <Dropdown label="Outcome" showLabel value={outcome} choices={['all','complete']} allLabel="All recorded (original)" choiceLabels={{complete:'Completed passes'}} onChange={setOutcome}/>
       <Dropdown label="Scale" showLabel value={scale} choices={['original','shared']} choiceLabels={{original:'Original: each diagram',shared:'Shared percentage'}} onChange={setScale}/>
     </div>
-    <p className="ufa-radial-note">Twelve directions, matching Shown Space’s radial diagrams. {passType==='hucks'?'Hucks travel at least 40 yards and gain at least 30 yards downfield.':'Percentages show how often a player uses each direction.'}</p>
+    <p className="ufa-radial-note">Twelve directions, matching Shown Space’s radial diagrams. {passType==='hucks'?'Hucks travel more than 40 yards in a straight line and gain more than 30 yards forward.':'Percentages show how often a player uses each direction.'}</p>
     {!playerId?<div className="ufa-empty" role="status">No recorded players in this scope. Search for a player above to explore another team.</div>:<>
       <div className="ufa-radial-player"><Face id={playerId} name={name}/><h3>{name}</h3></div>
       <SortableRegion id="ufa:radials" variant="freeform" authoredRevision={1} className="ufa-radial-layout">
