@@ -25,7 +25,7 @@ function exportHucks(rows) {
   const link=document.createElement('a');link.href=url;link.download='ufa-deep-thrower-hucks.csv';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 
-function ZoneField({zones,kind,receiving,metric,minimum,selection,onInspect,name}) {
+function ZoneField({zones,kind,receiving,metric,minimum,selection,onInspect,name,overallRate}) {
   const isReceive=kind==='receive',countKey=receiving==='before'?'beforeHuck':'catches';
   const maxCount=Math.max(1,...zones.map(z=>isReceive?z[countKey]:z.attempts));
   return <div className="ufa-deep-field-wrap" data-chart-interaction-root data-reviewed-rows>
@@ -45,6 +45,8 @@ function ZoneField({zones,kind,receiving,metric,minimum,selection,onInspect,name
         ]:[{label:'Completed / attempts',value:`${zone.completed} / ${zone.attempts}`},
           {label:'Completion rate',value:percent(zone.rate)},
           {label:'95% Wilson interval',value:zone.attempts?`${percent(zone.lower)}–${percent(zone.upper)}`:'—'},
+          {label:'Player’s overall completion',value:percent(overallRate)},
+          {label:'Difference from their overall rate',value:zone.attempts?`${zone.rate>=overallRate?'+':''}${fmt((zone.rate-overallRate)*100,1)} percentage points`:'—'},
           ...(!qualified&&count?[{label:'Sample',value:`Below ${minimum}-attempt shading minimum`}]:[])];
         const actions=isReceive&&receiving==='all'?[]:[{label:isReceive?'Inspect following hucks':'Inspect hucks from here',onSelect:()=>onInspect({kind,zoneId:zone.id})}];
         return <ChartMark key={zone.id} className={`ufa-deep-cell${!qualified&&count?' is-small-sample':''}`}
@@ -88,7 +90,7 @@ export function DeepThrowers({events,allEvents,players,teams,team,onTeamChange,s
   const [profileOpen,setProfileOpen]=useState(false),[scrollToProfile,setScrollToProfile]=useState(false);
   const [selection,setSelection]=useState(null),[sequenceIndex,setSequenceIndex]=useState(0),[recordPage,setRecordPage]=useState(0);
   const [setupZone,setSetupZone]=useState('all');
-  const profileRef=useRef(null),recordsRef=useRef(null),leaderboardRef=useRef(null),setupsRef=useRef(null);
+  const profileRef=useRef(null),recordsRef=useRef(null),leaderboardRef=useRef(null),locationsRef=useRef(null);
   const chosenMatches=team==='all'||chosen.team===team||directory.find(p=>p.id===chosen.id)?.teamIds.includes(team);
   const playerId=chosen.id&&chosenMatches?chosen.id:comparison[0]?.id,name=playerName(players,playerId);
   const choosePlayer=(id,scroll=false,releaseZoneId=null)=>{
@@ -131,7 +133,7 @@ export function DeepThrowers({events,allEvents,players,teams,team,onTeamChange,s
   return <section className="ufa-deep" aria-label="Deep thrower profiles">
     <div ref={leaderboardRef} className="ufa-deep-board-anchor"><DeepLeaderboard comparison={comparison} events={events} players={players} teams={teams} scopeFilters={baseScope} minimum={minimum} onMinimumChange={setMinimum} onInspect={(id,releaseZoneId)=>choosePlayer(id,true,releaseZoneId)} selectedPlayer={profileOpen?playerId:null}/></div>
     {profileOpen&&<div ref={profileRef} className="ufa-deep-detail">
-    <div className="ufa-deep-detail-heading"><h3>{name} · player profile</h3><div className="ufa-deep-profile-nav"><Button onClick={()=>setupsRef.current?.scrollIntoView({block:'start',behavior:'auto'})}>Incoming pass tendencies</Button><Button onClick={()=>{setProfileOpen(false);leaderboardRef.current?.scrollIntoView({block:'start',behavior:'auto'});}}>Back to leaderboard</Button></div></div>
+    <div className="ufa-deep-detail-heading"><h3>{name} · player profile</h3><div className="ufa-deep-profile-nav"><Button onClick={()=>locationsRef.current?.scrollIntoView({block:'start',behavior:'auto'})}>Release location results</Button><Button onClick={()=>{setProfileOpen(false);leaderboardRef.current?.scrollIntoView({block:'start',behavior:'auto'});}}>Back to leaderboard</Button></div></div>
     <div className="ufa-deep-controls">
       <div className="ufa-player-search" onFocusCapture={e=>{if(e.target.getAttribute('role')==='combobox')e.target.select();}}><span>Search players <small>All teams</small></span><Dropdown label="Search deep throwers" searchable placeholder="Type a player or team name…" value={playerId||'all'} allLabel="Choose a player" choices={choices} choiceLabels={choiceLabels} onChange={id=>choosePlayer(id)}/></div>
       <Dropdown label="Release map" showLabel value={metric} choices={['rate','attempts']} choiceLabels={metricNames} onChange={setMetric}/>
@@ -145,10 +147,10 @@ export function DeepThrowers({events,allEvents,players,teams,team,onTeamChange,s
           <div className="ufa-deep-summary" data-reviewed-rows><Face id={playerId} name={name}/><div><strong>{int(model.attempts)}</strong><span>huck attempts</span></div><div><strong>{percent(model.rate)}</strong><span>{model.completed} complete · {model.failed} unsuccessful</span></div><div><strong>{percent(model.huckShare)}</strong><span>of {int(model.locatedThrows.length)} located throws</span></div></div>
           {!model.attempts&&<p className="ufa-deep-note" role="status">No huck attempts are recorded for {name} with these team, season and line filters. Change the filters to broaden the scope.</p>}
           {model.throws.length>model.locatedThrows.length&&<p className="ufa-deep-note">{model.throws.length-model.locatedThrows.length} throws lack endpoint coordinates and cannot be classified as hucks.</p>}
-          <p className="ufa-deep-finding" data-reviewed-rows>{best?<><span>Highest observed completion rate</span><strong>{best.label}</strong> · {best.completed}/{best.attempts} completed ({percent(best.rate)}). At least {minimum} attempts per eligible zone.</>:`No release zone has ${minimum} huck attempts in this scope. Counts remain visible below.`}</p>
+          <p className="ufa-deep-finding" data-reviewed-rows>{best?<><span>Highest observed completion rate · at least {minimum} attempts per zone</span><strong>{best.label}</strong> · {best.completed}/{best.attempts} completed ({percent(best.rate)}). Their overall rate is {percent(model.rate)}—a difference of {best.rate>=model.rate?'+':''}{fmt((best.rate-model.rate)*100,1)} percentage points. This is an observed comparison, not proof of a location effect.</>:`No release zone has ${minimum} huck attempts in this scope. Counts remain visible below.`}</p>
         </DataComponent>
       </div>
-      <div className="ufa-deep-map-controls"><span>Receiving map</span><SegmentedControl value={receiving} onChange={v=>{setReceiving(v);if(selection?.kind==='receive'){setSelection(null);setSequenceIndex(0);setRecordPage(0);}}} options={[{value:'before',label:'Before a huck'},{value:'all',label:'All catches'}]}/></div>
+      <div ref={locationsRef} className="ufa-deep-map-controls ufa-deep-location-anchor"><span>Receiving map</span><SegmentedControl value={receiving} onChange={v=>{setReceiving(v);if(selection?.kind==='receive'){setSelection(null);setSequenceIndex(0);setRecordPage(0);}}} options={[{value:'before',label:'Before a huck'},{value:'all',label:'All catches'}]}/></div>
       <SortableRegion id="ufa:deep-fields" variant="freeform" authoredRevision={1} className="ufa-deep-maps">
         <SortableItem id="ufa-deep-receive" label="Receiving locations" kind="custom">
           <DataComponent id="ufa-deep-receive" queryId="events" title="Where they receive" kind="custom" sourceRows={receiptRows}
@@ -164,11 +166,11 @@ export function DeepThrowers({events,allEvents,players,teams,team,onTeamChange,s
         </SortableItem>
         <SortableItem id="ufa-deep-release" label="Huck release locations" kind="custom">
           <DataComponent id="ufa-deep-release" queryId="events" title="Where their hucks succeed" kind="custom" sourceRows={model.hucks}
-            displayRows={model.zones.map(z=>({zone:z.label,attempts:z.attempts,completed:z.completed,completionRate:z.rate,wilson95Low:z.lower,wilson95High:z.upper}))}
+            displayRows={model.zones.map(z=>({zone:z.label,attempts:z.attempts,completed:z.completed,completionRate:z.rate,overallCompletionRate:model.rate,differenceFromOverall:z.rate===null?null:z.rate-model.rate,wilson95Low:z.lower,wilson95High:z.upper}))}
             scopeFilters={[...playerScope,{field:metric==='rate'?'complete':'id',label:'Map measure',value:metricNames[metric]},{field:'tx',label:'Shading threshold',value:`${minimum} attempts per zone; all counts retained`}]}
             description="Each huck belongs to the zone containing its recorded release, using the same field boundaries as Field views. Completion rate divides completed hucks by every huck attempt in the zone. Tooltips show 95% Wilson intervals, which summarize sampling uncertainty without adjusting for repeated players, games or opponents.">
             <p className="ufa-deep-map-caption" data-reviewed-rows><strong>{metricNames[metric]}</strong> · completed / attempts below each value</p>
-            <ZoneField zones={model.zones} kind="release" receiving={receiving} metric={metric} minimum={Number(minimum)} selection={selection} onInspect={selectZone} name={name}/>
+            <ZoneField zones={model.zones} kind="release" receiving={receiving} metric={metric} minimum={Number(minimum)} selection={selection} onInspect={selectZone} name={name} overallRate={model.rate}/>
             <p className="ufa-deep-scale" data-reviewed-rows><i/>{metric==='rate'?'0% → 100% completion':`0 → ${maxAttempts} attempts`}</p>
             <p className="ufa-deep-note">{metric!=='attempts'?`Hatched zones have fewer than ${minimum} attempts. `:''}Hover for exact values and uncertainty. Select a zone, then <strong>Inspect hucks from here</strong>.</p>
             {model.unmappedReleases>0&&<p className="ufa-coverage">{model.unmappedReleases} huck releases fall outside the mapped field; included in totals and records.</p>}
@@ -176,16 +178,16 @@ export function DeepThrowers({events,allEvents,players,teams,team,onTeamChange,s
         </SortableItem>
       </SortableRegion>
       <p className="ufa-deep-caution">These are observed patterns, not proof that a location causes success. The data does not show the receiver’s position when the huck is released, defensive pressure, or cutting routes.</p>
-      <div ref={setupsRef} className="ufa-deep-setup-anchor"><DeepSetups model={model} links={links} name={name} scopeFilters={baseScope} minimum={Number(minimum)} zoneId={setupZone} onZoneChange={setSetupZone} onInspect={selectZone}/></div>
+      <details className="ufa-deep-setup-exploration"><summary>Explore incoming pass direction</summary><DeepSetups model={model} links={links} name={name} scopeFilters={baseScope} minimum={Number(minimum)} zoneId={setupZone} onZoneChange={setSetupZone} onInspect={selectZone}/></details>
     </>}
 
     {playerId&&<div ref={recordsRef} className="ufa-deep-sequences">
       <div className="ufa-deep-record-controls"><Dropdown label="Inspect hucks" showLabel value={inspectionValue} choices={['all',...inspectionOptions.map(([value])=>value)]} allLabel="All hucks" choiceLabels={Object.fromEntries(inspectionOptions)} onChange={value=>{const [kind,first,second]=value.split(':');setSelection(value==='all'?null:kind==='setup'?{kind,setupId:first,zoneId:second}:{kind,zoneId:first});setSequenceIndex(0);setRecordPage(0);}}/></div>
       <DataComponent id="ufa-deep-sequences" queryId="events" kind="custom" title="The pass before the huck" sourceRows={inspectedSources} displayRows={recordRows}
         scopeFilters={[...playerScope,{field:selection?.kind==='receive'?'rx':'tx',label:'Selected hucks',value:selectedLabel},{field:'possessionThrow',label:'Record grain',value:'One row per huck; original source also includes linked preceding passes'}]}
-        headerControls={<Button disabled={!recordRows.length} onClick={()=>exportHucks(recordRows)}>Export {int(recordRows.length)} hucks</Button>}
+        headerControls={<Button disabled={!recordRows.length} onClick={()=>exportHucks(recordRows)}>Export {int(recordRows.length)} huck{recordRows.length===1?'':'s'}</Button>}
         description="The dashed line is a verified completed pass into the selected thrower; the solid line is their next recorded throw in that possession. These are disc-flight endpoints, not tracked player motion. No upline, swing, dead-disc or receiver-route label is inferred. Export contains one row per selected huck, with prior-pass ID and endpoint coordinates when available; source inspection retains both original events once.">
-        <p className="ufa-deep-note" data-reviewed-rows>{selectedLabel} · {selectedHucks.length} hucks</p>
+        <p className="ufa-deep-note" data-reviewed-rows>{selectedLabel} · {selectedHucks.length} huck{selectedHucks.length===1?'':'s'}</p>
         {sequence?<div data-reviewed-rows>
           <div className="ufa-deep-sequence-heading"><div><strong>{previous?`${endpointName(players,previous.thrower)} → `:''}{name} → {endpointName(players,sequence.receiver)}</strong><span>{sequence.game} · Q{sequence.quarter} · Point {sequence.point} · {result(sequence)}</span></div><span>{fmt(passGeometry(sequence).distance,1)} yd flight · {fmt(sequence.throwAec,3)} thrower aEC</span></div>
           <SequenceField huck={sequence} previous={previous}/>

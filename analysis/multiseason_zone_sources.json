@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "historical-best-zones",
+      "title": "Do earlier best zones stay better?",
+      "queries": [
+        {
+          "id": "historical-best-zone-test",
+          "source": {
+            "label": "Shown Space database exports",
+            "tables": [
+              "prod.throws",
+              "prod.games",
+              "prod.players"
+            ],
+            "files": [
+              {
+                "label": "throws.csv \u2014 October 12 snapshot"
+              },
+              {
+                "label": "games.csv \u2014 October 12 snapshot"
+              },
+              {
+                "label": "players.csv \u2014 October 12 snapshot"
+              },
+              {
+                "label": "multiseason_release_validation.py"
+              }
+            ],
+            "caveats": [
+              "Computation uses the October 12 export; October 24 live season counts match but row contents were not refetched.",
+              "These are exploratory historical checks, including a previously inspected 2026 season. Associations do not establish a causal benefit from changing release location.",
+              "Historical rates are optimistic because the best-looking zone is selected from those outcomes.",
+              "Intervals resample the 48 players 5,000 times and are conditional on historical selection; pooled throw rates use different weights."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "validation",
+                "title": "Independent recalculation",
+                "detail": "A separate csv-reader implementation matched all 22,386 huck attempts, 13,836 completions, the 48 selected player-zone pairs, and the 2026 counts of 139/201 versus 438/660."
+              },
+              {
+                "kind": "source",
+                "title": "Source coverage",
+                "detail": "SHA-256 hashes matched the recorded export manifest. Game and throw counts matched the saved live query for every season. No duplicate game/throw keys or orphan GameIDs were found."
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "Chosen-zone advantage",
+                "definition": "The mean difference between each player\u2019s completion rate in their historically selected zone and their rate elsewhere, giving each player equal weight."
+              },
+              {
+                "label": "Huck",
+                "definition": "A nonstall pass with forward gain strictly over 30 yards and straight-line distance strictly over 40 yards."
+              }
+            ],
+            "filters": [
+              "Phase: regular season",
+              "Identity: source player IDs, excluding unnamed throwers",
+              "Geometry: finite, in-bounds endpoints",
+              "Historical eligibility: 40 hucks and two zones with at least 10 attempts",
+              "Selection: highest historical zone completion, ties by attempts then zone ID",
+              "Evaluation: 2026 attempts both inside and outside the chosen zone"
+            ]
+          },
+          "reportingPeriod": "2021\u20132025 selection; 2026 evaluation",
+          "rows": [
+            {
+              "period": "2021\u20132025",
+              "players": 48,
+              "mean_gap_pp": 12.7245854269843,
+              "ci_low_pp": 10.338419289528472,
+              "ci_high_pp": 15.127795466355188,
+              "chosen_complete": 604,
+              "chosen_attempts": 818,
+              "other_complete": 1995,
+              "other_attempts": 3246
+            },
+            {
+              "period": "2026",
+              "players": 48,
+              "mean_gap_pp": 0.708521478986673,
+              "ci_low_pp": -9.077928853151326,
+              "ci_high_pp": 10.183960589559161,
+              "chosen_complete": 139,
+              "chosen_attempts": 201,
+              "other_complete": 438,
+              "other_attempts": 660
+            }
+          ],
+          "columns": [
+            {
+              "field": "period",
+              "label": "Period"
+            },
+            {
+              "field": "players",
+              "label": "Players"
+            },
+            {
+              "field": "mean_gap_pp",
+              "label": "Mean advantage (pp)"
+            },
+            {
+              "field": "ci_low_pp",
+              "label": "95% interval low (pp)"
+            },
+            {
+              "field": "ci_high_pp",
+              "label": "95% interval high (pp)"
+            },
+            {
+              "field": "chosen_complete",
+              "label": "Chosen-zone completions"
+            },
+            {
+              "field": "chosen_attempts",
+              "label": "Chosen-zone attempts"
+            },
+            {
+              "field": "other_complete",
+              "label": "Other-zone completions"
+            },
+            {
+              "field": "other_attempts",
+              "label": "Other-zone attempts"
+            }
+          ],
+          "methods": [
+            {
+              "language": "python",
+              "code": "def best_zone(train, test, names, outcome='complete', zone_min=10, min_hucks=40):\n    eligibility = train.groupby('player').huck.sum()\n    eligible = set(eligibility[eligibility >= min_hucks].index)\n    tab = train[train.player.isin(eligible)].groupby(['player', 'zone'])[outcome].agg(['size', 'sum'])\n    choices = []\n    for player, rows in tab.groupby(level=0):\n        rows = rows[rows['size'] >= zone_min].copy()\n        if outcome == 'huck':\n            rows = rows[rows['sum'] >= 5]\n        if len(rows) < 2:\n            continue\n        rows['rate'] = rows['sum'] / rows['size']\n        rows['zoneID'] = rows.index.get_level_values('zone')\n        rows = rows.sort_values(['rate', 'size', 'zoneID'], ascending=[False, False, True])\n        choices.append((player, rows.index[0][1]))\n    results = []\n    tp = {k: v for k, v in train.groupby('player')}\n    vp = {k: v for k, v in test.groupby('player')}\n    empty = test.iloc[:0]\n    for player, zone in choices:\n        row = {'player': player, 'name': names.get(player, player), 'zone': zone, 'zoneLabel': ZONES[zone]}\n        for period, d in [('train', tp[player]), ('test', vp.get(player, empty))]:\n            a, b = d[d.zone == zone], d[d.zone != zone]\n            row[period] = {'chosen': count(len(a), a[outcome].sum()), 'other': count(len(b), b[outcome].sum())}\n            row[period]['gap'] = float(a[outcome].mean() - b[outcome].mean()) if len(a) and len(b) else None\n        results.append(row)\n    paired = [r for r in results if r['test']['gap'] is not None]\n    summary = {'eligiblePlayers': len(results), 'testablePlayers': len(paired),\n               'testPositive': sum(r['test']['gap'] > 0 for r in paired),\n               'testTied': sum(r['test']['gap'] == 0 for r in paired),\n               'trainPlayerGap': boot_mean([r['train']['gap'] for r in paired]),\n               'testPlayerGap': boot_mean([r['test']['gap'] for r in paired]),\n               'rows': results}\n    for period in ['train', 'test']:\n        summary[period] = {}\n        for group in ['chosen', 'other']:\n            cells = [r[period][group] for r in paired]\n            summary[period][group] = count(sum(c['attempts'] for c in cells), sum(c['successes'] for c in cells))\n    return summary\n\ndef boot_mean(values):\n    if not len(values):\n        return None\n    v = np.asarray(values, dtype=float)\n    if len(v) < 10:\n        return {'mean': float(v.mean()), 'ci95': None, 'players': len(v),\n                'intervalOmitted': 'Fewer than 10 players; bootstrap interval too unstable to present.'}\n    rng = np.random.default_rng(SEED)\n    b = v[rng.integers(0, len(v), (BOOTSTRAPS, len(v)))].mean(axis=1)\n    return {'mean': float(v.mean()), 'ci95': np.quantile(b, [.025, .975]).tolist(), 'players': len(v)}\n"
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "Same 48 testable players in both periods."
+          }
+        }
+      ]
+    }
+  ]
+}

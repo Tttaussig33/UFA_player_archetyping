@@ -14,7 +14,7 @@ const totalStats=stats=>{
   return {attempts,completed,rate:attempts?completed/attempts:null,lower,upper};
 };
 
-function RateCell({stats,minimum,name,zone,onInspect,baseline=false}) {
+function RateCell({stats,minimum,name,zone,onInspect,baseline=false,overallRate=null,scopeRate=null}) {
   if(!stats.attempts)return <span className="ufa-deep-no-attempts" aria-label={`${name} · ${zone}: no huck attempts`}>—</span>;
   const small=stats.attempts<minimum;
   if(baseline)return <span className="ufa-deep-baseline-value"><strong>{percent(stats.rate)}</strong><small>{int(stats.completed)}/{int(stats.attempts)}</small></span>;
@@ -25,6 +25,8 @@ function RateCell({stats,minimum,name,zone,onInspect,baseline=false}) {
     tooltip={<ChartTooltip active label={`${name} · ${zone}`} headerValue={percent(stats.rate)} details={[
       {label:'Completed / attempts',value:`${stats.completed} / ${stats.attempts}`},
       {label:'95% Wilson interval',value:`${percent(stats.lower)}–${percent(stats.upper)}`},
+      ...(Number.isFinite(overallRate)?[{label:'Player’s overall completion',value:percent(overallRate)},{label:'Difference from their overall rate',value:`${stats.rate>=overallRate?'+':''}${fmt((stats.rate-overallRate)*100,1)} percentage points`}]:[]),
+      ...(Number.isFinite(scopeRate)?[{label:'All throwers in this location',value:percent(scopeRate)}]:[]),
       ...(small?[{label:'Small sample',value:`Fewer than ${minimum} attempts; not eligible for a zone ranking`}]:[]),
     ]}/>}>
     <strong>{percent(stats.rate)}</strong><small>{stats.completed}/{stats.attempts}{small?' · low n':''}</small>
@@ -60,7 +62,7 @@ export function DeepLeaderboard({comparison,events,players,teams,scopeFilters,mi
   const sourceRows=useMemo(()=>events.filter(e=>!e.stall&&e.thrower&&e.thrower!=='unknown'),[events]);
   const displayRows=useMemo(()=>[
     ...[{id:'all',label:'All locations'},...zones].map(z=>{const stats=z.id==='all'?baseline:baseline.zones[z.id];return {rowType:'Scope baseline',player:'All throwers in scope',zone:z.label,attempts:stats.attempts,completed:stats.completed,completionRate:stats.rate,wilson95Low:stats.lower,wilson95High:stats.upper};}),
-    ...matching.flatMap((p,index)=>[{...p,id:'all',label:'All locations'},...zones.map(z=>p.zones.find(s=>s.id===z.id))].map(z=>({rowType:'Player',rank:index+1,player:p.name,team:p.teamLabel,zone:z.label,attempts:z.attempts,completed:z.completed,completionRate:z.rate,wilson95Low:z.lower,wilson95High:z.upper,huckShareOfThrows:p.huckShare,meetsZoneMinimum:z.attempts>=Number(minimum)}))),
+    ...matching.flatMap((p,index)=>[{...p,id:'all',label:'All locations'},...zones.map(z=>p.zones.find(s=>s.id===z.id))].map(z=>({rowType:'Player',rank:index+1,player:p.name,team:p.teamLabel,zone:z.label,attempts:z.attempts,completed:z.completed,completionRate:z.rate,overallCompletionRate:p.rate,differenceFromOverall:z.rate===null?null:z.rate-p.rate,scopeLocationRate:(z.id==='all'?baseline:baseline.zones[z.id]).rate,wilson95Low:z.lower,wilson95High:z.upper,huckShareOfThrows:p.huckShare,meetsZoneMinimum:z.attempts>=Number(minimum)}))),
   ],[matching,zones,baseline,minimum]);
   const zoneLabel=zoneId==='all'?'All locations':ZONES.find(z=>z.id===zoneId)?.label;
   const unmapped=comparison.reduce((sum,p)=>sum+p.unmappedReleases,0);
@@ -77,7 +79,7 @@ export function DeepLeaderboard({comparison,events,players,teams,scopeFilters,mi
     <DataComponent id="ufa-deep-comparison" queryId="events" kind="custom" title="Huck completion by release zone" sourceRows={sourceRows} displayRows={displayRows}
       scopeFilters={[...scopeFilters,{field:'thrower',label:'Player minimum',value:`${playerMinimum} huck attempts across all locations`},{field:'tx',label:'Rank location',value:zoneLabel},{field:'id',label:'Zone minimum',value:`${minimum} attempts in the ranked zone`},{field:'complete',label:'Completion filter',value:qualityLabel},{field:sort==='rate'?'complete':'id',label:'Rank by',value:sort==='rate'?'Completion rate':'Huck attempts (volume)'},{field:'thrower',label:'Search',value:search||'All players'}]}
       description="Players must meet the total huck minimum and the completion-rate filter in the ranked location. Choosing a release zone also requires the zone minimum there; other cells retain all counts. Rank by completion rate or attempts in the chosen location; tied completion rates use more attempts, then player ID. The baseline pools every named thrower in the team, phase and line scope, before minimums, completion filtering and search. It changes with the ranked zone, team, season phase and line. Huck share divides a player’s hucks by non-stall throws with usable endpoints. Colors use the same 0–100% completion scale. These are observed results, not difficulty-adjusted player ratings.">
-      <div className="ufa-deep-board-caption"><p>Select a zone heading to rank it. Select a player for receiving maps and pass sequences.</p><span data-reviewed-rows>{zoneLabel} · {matching.length} player{matching.length===1?'':'s'}</span></div>
+      <div className="ufa-deep-board-caption"><p>Select a zone heading to rank it. Inspect a cell to compare with the player’s overall rate; select a player for field maps.</p><span data-reviewed-rows>{zoneLabel} · {matching.length} player{matching.length===1?'':'s'}</span></div>
       <p className="ufa-deep-filter-explainer" data-reviewed-rows><strong>{qualityLabel}</strong> in {zoneLabel.toLowerCase()}. The attempt minimum sets the sample size; completion measures success.{sort==='attempts'?' Volume sorting orders only the players who pass these filters.':''}</p>
       <div className="ufa-deep-board-key"><span><i className="ufa-deep-key-gradient"/>0 → 100% completion</span><span><i className="ufa-deep-key-small"/>Below {minimum} attempts</span><span>Each cell: completion % · completed/attempted</span></div>
       <div ref={matrixRef} className="ufa-deep-matrix-scroll" tabIndex={0} aria-label="Deep thrower leaderboard; scroll horizontally to compare all field zones" data-chart-interaction-root data-reviewed-rows>
@@ -91,7 +93,7 @@ export function DeepLeaderboard({comparison,events,players,teams,scopeFilters,mi
           </tr>
           {shown.map((p,index)=><tr key={p.id} data-selected={p.id===selectedPlayer}>
             <th scope="row" className="ufa-deep-player-column"><button className="ufa-deep-player-link" onClick={()=>onInspect(p.id,zoneId==='all'?null:zoneId)} aria-label={`View ${p.name} profile`}><span className="ufa-deep-place">{currentPage*pageSize+index+1}</span><Face id={p.id} name={p.name}/><span>{p.name}<small>{p.teamLabel} · {percent(p.huckShare)} hucks</small></span></button></th>
-            {[{...p,id:'all',label:'All locations'},...zones.map(z=>p.zones.find(s=>s.id===z.id))].map(z=><td key={z.id} className={zoneId===z.id?'is-ranked':''}><RateCell stats={z} minimum={z.id==='all'?Number(playerMinimum):Number(minimum)} name={p.name} zone={z.label} onInspect={()=>onInspect(p.id,z.id==='all'?null:z.id)}/></td>)}
+            {[{...p,id:'all',label:'All locations'},...zones.map(z=>p.zones.find(s=>s.id===z.id))].map(z=><td key={z.id} className={zoneId===z.id?'is-ranked':''}><RateCell stats={z} minimum={z.id==='all'?Number(playerMinimum):Number(minimum)} name={p.name} zone={z.label} overallRate={z.id==='all'?null:p.rate} scopeRate={(z.id==='all'?baseline:baseline.zones[z.id]).rate} onInspect={()=>onInspect(p.id,z.id==='all'?null:z.id)}/></td>)}
           </tr>)}
           </tbody>
         </table>

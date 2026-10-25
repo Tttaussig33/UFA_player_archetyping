@@ -28,7 +28,7 @@ export function DeepSetups({model,links,name,scopeFilters,minimum,zoneId,onZoneC
             <td className="ufa-num"><strong>{percent(row.huckShare)}</strong><small>{int(row.attempts)} / {int(row.nextThrows)} throws</small></td>
             <td className="ufa-num"><strong>{percent(row.rate)}</strong><small>{int(row.completed)} / {int(row.attempts)} hucks completed</small>
               {row.attempts>0&&<span className="ufa-deep-setup-interval">95% interval: {percent(row.lower)}–{percent(row.upper)}{row.attempts<minimum?' · small sample':''}</span>}</td>
-            <td>{row.id!=='all'&&<Button disabled={!row.attempts} aria-label={`Inspect ${row.label.toLowerCase()} hucks`} onClick={()=>onInspect({kind:'setup',setupId:row.id,zoneId})}>Inspect {int(row.attempts)} hucks</Button>}</td>
+            <td>{row.id!=='all'&&<Button disabled={!row.attempts} aria-label={`Inspect ${row.label.toLowerCase()} hucks`} onClick={()=>onInspect({kind:'setup',setupId:row.id,zoneId})}>Inspect {int(row.attempts)} huck{row.attempts===1?'':'s'}</Button>}</td>
           </tr>)}</tbody>
         </table>
       </div>

@@ -1,0 +1,30 @@
+{
+  "checkedOn": "2026-10-24",
+  "method": "Read-only SELECT executed through the user's open DBeaver connection. Values transcribed from the displayed result grid.",
+  "connection": "Existing Supabase session pooler connection; database postgres",
+  "query": "live-season-coverage.sql",
+  "tablesSuccessfullyQueried": ["prod.games", "prod.throws"],
+  "rows": [
+    {"season": 2012, "listed_games": 65, "games_with_throws": 0, "throws": 0},
+    {"season": 2013, "listed_games": 101, "games_with_throws": 0, "throws": 0},
+    {"season": 2014, "listed_games": 126, "games_with_throws": 0, "throws": 0},
+    {"season": 2015, "listed_games": 185, "games_with_throws": 0, "throws": 0},
+    {"season": 2016, "listed_games": 193, "games_with_throws": 0, "throws": 0},
+    {"season": 2017, "listed_games": 179, "games_with_throws": 0, "throws": 0},
+    {"season": 2018, "listed_games": 171, "games_with_throws": 0, "throws": 0},
+    {"season": 2019, "listed_games": 135, "games_with_throws": 0, "throws": 0},
+    {"season": 2021, "listed_games": 134, "games_with_throws": 134, "throws": 71856},
+    {"season": 2022, "listed_games": 160, "games_with_throws": 160, "throws": 84993},
+    {"season": 2023, "listed_games": 155, "games_with_throws": 155, "throws": 84712},
+    {"season": 2024, "listed_games": 155, "games_with_throws": 155, "throws": 85964},
+    {"season": 2025, "listed_games": 155, "games_with_throws": 155, "throws": 84316},
+    {"season": 2026, "listed_games": 145, "games_with_throws": 142, "throws": 78847}
+  ],
+  "caveats": [
+    "Access was verified for games and throws only; other schemas and tables were not permission-tested.",
+    "Season totals include all phases. These are source row counts, not counts after huck or outcome filtering.",
+    "This joins throw counts to listed games. Orphan throw GameIDs and duplicate game identifiers were not separately audited in this access check.",
+    "Summed returned throw count is 490688, matching the October 12 export manifest count. Equality of counts does not establish equality of row contents.",
+    "This check did not refresh the website's dataset or rerun the release-zone study across seasons."
+  ]
+}

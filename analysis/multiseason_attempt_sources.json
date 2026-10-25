@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "historical-attempt-prediction",
+      "title": "Does player history help anticipate hucks?",
+      "queries": [
+        {
+          "id": "historical-huck-attempt-prediction",
+          "source": {
+            "label": "Shown Space database exports",
+            "tables": [
+              "prod.throws",
+              "prod.games",
+              "prod.players"
+            ],
+            "files": [
+              {
+                "label": "throws.csv \u2014 October 12 snapshot"
+              },
+              {
+                "label": "games.csv \u2014 October 12 snapshot"
+              },
+              {
+                "label": "players.csv \u2014 October 12 snapshot"
+              },
+              {
+                "label": "multiseason_release_validation.py"
+              }
+            ],
+            "caveats": [
+              "Computation uses the October 12 export; October 24 live season counts match but row contents were not refetched.",
+              "These are exploratory historical checks, including a previously inspected 2026 season. Associations do not establish a causal benefit from changing release location.",
+              "An error reduction is not a percentage-point increase in completion or proof of defensive value.",
+              "Earlier-year models overlap in training data and players. Game- and player-resampling do not capture all crossed dependence.",
+              "Personal zone interactions gave no reliable additional improvement."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "validation",
+                "title": "Independent recalculation",
+                "detail": "A separate csv-reader implementation matched all 22,386 huck attempts, 13,836 completions, the 48 selected player-zone pairs, and the 2026 counts of 139/201 versus 438/660."
+              },
+              {
+                "kind": "source",
+                "title": "Source coverage",
+                "detail": "SHA-256 hashes matched the recorded export manifest. Game and throw counts matched the saved live query for every season. No duplicate game/throw keys or orphan GameIDs were found."
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "Prediction improvement",
+                "definition": "Relative reduction in Brier prediction error after adding player history to a league model of release zone and depth. Positive values indicate more accurate predictions of whether a pass is a huck."
+              }
+            ],
+            "filters": [
+              "Phase: regular season",
+              "Release depth: Y20 to less than Y60",
+              "Passes: located, named, nonstall",
+              "Eligibility: at least 40 historical hucks within the release-depth window",
+              "Training: only seasons earlier than each evaluated year"
+            ]
+          },
+          "reportingPeriod": "Expanding 2021 onward history predicts 2023\u20132026 separately",
+          "rows": [
+            {
+              "test_year": 2023,
+              "players": 11,
+              "passes": 2157,
+              "hucks": 224,
+              "league_error": 0.09368825949816643,
+              "player_error": 0.09115734067291031,
+              "error_reduction_pct": 2.7014258123833312,
+              "ci_low_pct": 0.5194721290216191,
+              "ci_high_pct": 5.039315472742003
+            },
+            {
+              "test_year": 2024,
+              "players": 31,
+              "passes": 5149,
+              "hucks": 467,
+              "league_error": 0.08217519965028465,
+              "player_error": 0.08132086717306022,
+              "error_reduction_pct": 1.039647583285761,
+              "ci_low_pct": 0.024241661650640758,
+              "ci_high_pct": 2.08068628063614
+            },
+            {
+              "test_year": 2025,
+              "players": 35,
+              "passes": 5260,
+              "hucks": 544,
+              "league_error": 0.09329976725613821,
+              "player_error": 0.08956580553657713,
+              "error_reduction_pct": 4.002112576883662,
+              "ci_low_pct": 2.135161564569695,
+              "ci_high_pct": 6.061528054318396
+            },
+            {
+              "test_year": 2026,
+              "players": 44,
+              "passes": 6173,
+              "hucks": 590,
+              "league_error": 0.08651453375224753,
+              "player_error": 0.08379024834571311,
+              "error_reduction_pct": 3.148933813058488,
+              "ci_low_pct": 1.7066415979470015,
+              "ci_high_pct": 4.708225914623277
+            }
+          ],
+          "columns": [
+            {
+              "field": "test_year",
+              "label": "Test season"
+            },
+            {
+              "field": "players",
+              "label": "Players"
+            },
+            {
+              "field": "passes",
+              "label": "Passes"
+            },
+            {
+              "field": "hucks",
+              "label": "Huck attempts"
+            },
+            {
+              "field": "league_error",
+              "label": "League geometry Brier"
+            },
+            {
+              "field": "player_error",
+              "label": "Add player history Brier"
+            },
+            {
+              "field": "error_reduction_pct",
+              "label": "Error reduction (%)"
+            },
+            {
+              "field": "ci_low_pct",
+              "label": "95% game interval low (%)"
+            },
+            {
+              "field": "ci_high_pct",
+              "label": "95% game interval high (%)"
+            }
+          ],
+          "methods": [
+            {
+              "language": "python",
+              "code": "class AdditiveLogistic:\n    \"\"\"Penalized binomial model fitted on exact aggregated sufficient statistics.\n\n    Independent zero-centered log-odds penalties; intercept unpenalized.\n    Player lambda=2.5, shared features lambda=1, personal cell lambda=5.\n    These fixed penalties are not optimized on held-out seasons. At p=.5,\n    a cell penalty of 5 is roughly the curvature of 20 prior observations.\n    Block Newton updates are exact within disjoint levels of each factor.\n    \"\"\"\n    def __init__(self, features):\n        self.features = features\n\n    @staticmethod\n    def sigmoid(x):\n        return 1 / (1 + np.exp(-np.clip(x, -30, 30)))\n\n    def fit(self, frame, outcome):\n        a = frame.groupby(self.features, observed=True)[outcome].agg(['sum', 'size']).reset_index()\n        successes, n = a['sum'].to_numpy(float), a['size'].to_numpy(float)\n        self.maps, self.betas, codes = {}, {}, {}\n        for feature in self.features:\n            labels = sorted(a[feature].unique())\n            self.maps[feature] = {v: i for i, v in enumerate(labels)}\n            codes[feature] = a[feature].map(self.maps[feature]).to_numpy(int)\n            self.betas[feature] = np.zeros(len(labels))\n        rate = successes.sum() / n.sum()\n        self.intercept = float(np.log(rate / (1 - rate)))\n        eta = np.full(len(a), self.intercept)\n        for iteration in range(5000):\n            prob = self.sigmoid(eta)\n            delta = np.clip((successes - n * prob).sum() / (n * prob * (1 - prob)).sum(), -1, 1)\n            self.intercept += delta\n            eta += delta\n            max_delta = abs(delta)\n            for feature in self.features:\n                idx, beta = codes[feature], self.betas[feature]\n                penalty = 2.5 if feature == 'player' else 5.0 if feature == 'cell' else 1.0\n                prob = self.sigmoid(eta)\n                gradient = np.bincount(idx, weights=successes - n * prob, minlength=len(beta)) - penalty * beta\n                hessian = np.bincount(idx, weights=n * prob * (1 - prob), minlength=len(beta)) + penalty\n                delta = np.clip(gradient / hessian, -1, 1)\n                beta += delta\n                eta += delta[idx]\n                max_delta = max(max_delta, float(np.max(np.abs(delta))))\n                # Optimize the otherwise redundant feature/intercept shift.\n                # This leaves fitted logits unchanged and minimizes the penalty\n                # along that direction, substantially accelerating convergence.\n                center = float(beta.mean())\n                beta -= center\n                self.intercept += center\n            if max_delta < 1e-7:\n                break\n        self.iterations = iteration + 1\n        self.max_delta = float(max_delta)\n        assert max_delta < 1e-5, ('Model convergence', self.features, max_delta)\n        return self\n\n    def predict(self, frame):\n        eta = np.full(len(frame), self.intercept)\n        for feature in self.features:\n            indices = frame[feature].map(self.maps[feature]).fillna(-1).to_numpy(int)\n            known = indices >= 0\n            eta[known] += self.betas[feature][indices[known]]\n        return self.sigmoid(eta)\n\ndef prediction_test(train, test, outcome='complete', detail=True, min_hucks=40):\n    past_hucks = train.groupby('player').huck.sum()\n    eligible = set(past_hucks[past_hucks >= min_hucks].index)\n    test = test[test.player.isin(eligible)].copy()\n    geometry = ['distanceBand', 'gainBand', 'targetEndzone'] if outcome == 'complete' else ['releaseDepth']\n    specs = {'leagueGeometry': ['zone'] + geometry,\n             'player': ['player'], 'sharedZone': ['player', 'zone'],\n             'personalZone': ['player', 'zone', 'cell'],\n             'sharedGeometry': ['player', 'zone'] + geometry,\n             'personalGeometry': ['player', 'zone'] + geometry + ['cell']}\n    y = test[outcome].to_numpy(float)\n    losses, models, fits = {}, {}, {}\n    for label, features in specs.items():\n        model = AdditiveLogistic(features).fit(train, outcome)\n        pred = model.predict(test)\n        losses[label] = (pred - y) ** 2\n        models[label] = {'brier': float(losses[label].mean()),\n                         'logLoss': float(-(y * np.log(pred) + (1-y) * np.log1p(-pred)).mean()),\n                         'meanPrediction': float(pred.mean()), 'iterations': model.iterations,\n                         'maxParameterChange': model.max_delta}\n        fits[label] = model\n    result = {'minimumHistoricalHucks': min_hucks, 'eligiblePastPlayers': len(eligible), 'testPlayers': test.player.nunique(),\n              'testGames': test.game.nunique(), 'testEvents': len(test), 'testSuccesses': int(y.sum()),\n              'observedRate': float(y.mean()), 'models': models, 'comparisons': {}}\n    for a, b in [('sharedGeometry', 'leagueGeometry'), ('sharedZone', 'player'), ('personalZone', 'sharedZone'),\n                 ('sharedGeometry', 'sharedZone'), ('personalGeometry', 'sharedGeometry')]:\n        dif = losses[a] - losses[b]\n        result['comparisons'][a + 'Minus' + b[0].upper() + b[1:]] = {\n            'gameBootstrap': cluster_ci(dif, test.game.to_numpy()),\n            'playerBootstrap': cluster_ci(dif, test.player.to_numpy()),\n            'relativeErrorChangePct': float(100 * dif.mean() / losses[b].mean())}\n    if detail:\n        # Examples selected for coverage, not how favorable their test result is.\n        rows = []\n        all_pred = {k: model.predict(test) for k, model in fits.items()}\n        test['personalPrediction'] = all_pred['personalGeometry']\n        test['sharedPrediction'] = all_pred['sharedGeometry']\n        for (player, zone), z in test.groupby(['player', 'zone']):\n            rows.append({'player': player, 'zone': zone, 'events': len(z), 'successes': int(z[outcome].sum()),\n                         'sharedPrediction': float(z.sharedPrediction.mean()),\n                         'personalPrediction': float(z.personalPrediction.mean())})\n        result['testCells'] = rows\n    return result\n"
+            },
+            {
+              "language": "calculation",
+              "code": "Relative error reduction = 100 \u00d7 (league Brier \u2212 player-history Brier) / league Brier.\n2026: 100 \u00d7 (0.08651453375224753 \u2212 0.08379024834571311) / 0.08651453375224753 = 3.1489%.\n95% game-bootstrap interval for reduction: 1.71% to 4.71%. Player-bootstrap interval also excludes zero."
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "Four chronological checks; excludes 2022 because only one eligible player was evaluated."
+          }
+        }
+      ]
+    }
+  ]
+}
