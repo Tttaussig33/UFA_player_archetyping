@@ -306,6 +306,55 @@ The final command executes both studies and rebuilds the existing notebook with
 embedded figures. It requires Python with numpy/pandas and Node; no database
 connection is needed.
 
+### Offensive passing-profile viability
+
+The executed [passing-profile notebook](analysis/passing_profile_validation.ipynb)
+tests a broader research direction using ordinary passes as well as hucks:
+**Which players have similar recorded offensive tendencies, and where do they
+differ?** This October 26 pilot compares early and later regular-season profiles,
+keeping playing style separate from effectiveness.
+
+Nine traits cover pass choices, release locations, completed-catch locations and
+throw/catch involvement balance. Scaling uses earlier data only, with equal
+weight for those four groups. Completion rate, aEC, team identity and absolute
+event counts are not similarity features. The primary 2026 test requires 100
+throws and 100 completed catches in each period, across at least three games
+per role; it evaluates 43 players against 81 earlier-qualified candidates.
+
+On average, a later profile resembles its own earlier profile more than 90.9%
+of other candidates (95% team-bootstrap interval 86.9–94.0%; random baseline
+50%). The same player is the closest match for 10/43 players (23.3%, versus
+1.2% random). A within-team comparison also supports individual persistence:
+23/32 match themselves first, versus a 20.9% random expectation among their
+qualified teammates. The 50-event sensitivity includes 146 players and yields
+a similar 90.5% average self-similarity percentile. Earlier seasons and a
+2025→2026 check also show persistence, with overlapping players and data.
+
+An exploratory follow-up selected five similar players from other teams using
+early profiles. Those peers averaged the 69.9th later-similarity percentile in
+the primary sample (random expectation: 50th). This supports testing a comparison
+tool, **not** claiming that players are interchangeable or that discrete
+archetypes exist. The test selects frequently involved players and contains no
+off-disc movement, playing-time exposure or lineup replacement outcomes.
+
+The source is still the October 12 CSV snapshot; no live refresh was performed.
+Actual game timestamps, including a rescheduled game, determine the split.
+An independent CSV-reader audit reconciles 72,601 eligible 2026 events, 72,590
+named throws, 67,820 named completed catches, all primary profiles, the similarity
+rankings and the selected peers. The website is unchanged by this research pilot.
+
+```sh
+python3 analysis/passing_profile_validation.py
+python3 analysis/passing_profile_checks.py
+python3 analysis/build_passing_profile_notebook.py
+```
+
+The last command reruns the study and checks, saves the executed notebook with
+two embedded figures, and generates a local HTML review under
+`/tmp/ufa-profile-review/`. Python with numpy/pandas and the original local CSVs
+are required. The aggregate results are in
+`analysis/passing_profile_validation.json`; raw CSVs remain excluded from Git.
+
 - `src/content/dashboard/`: authored React, field geometry, ranking logic and CSS.
 - `src/data.json`: reviewed data and provenance snapshot.
 - `tools/import_database_exports.py`: preserve and select dated local CSV exports.
