@@ -11,6 +11,7 @@ from copy import deepcopy
 from pathlib import Path
 from datetime import datetime, timezone
 from database_exports import load_bundle
+from player_profiles import add_player_profiles
 
 ROOT = Path(__file__).resolve().parents[1]
 TEAM_NAMES = {
@@ -299,6 +300,7 @@ def build():
     add_connection_metadata(snapshot)
     add_radial_metadata(snapshot)
     add_deep_thrower_metadata(snapshot)
+    add_player_profiles(snapshot)
     (ROOT/'src/data.json').write_text(json.dumps(snapshot,separators=(',',':'),allow_nan=False))
     print(json.dumps(stats,indent=2))
 

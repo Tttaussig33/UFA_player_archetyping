@@ -5,6 +5,12 @@ throw and receive the disc. This first version recreates the field-zone/player-b
 concept in [Shown Space’s Kings of the Field](https://www.instagram.com/p/Danlzl5SoUs/)
 for **all 22 teams in the 2026 season**.
 
+## Terminology
+
+Use **throwing location** or **throwing locations**, rather than “release
+location(s),” in future explanations, reports and interface labels. This means
+the position on the field from which a player throws the disc.
+
 ## Open the project
 
 Double-click **Open UFA player archetyping.command**. It starts a local-only web
@@ -21,6 +27,8 @@ Then open <http://127.0.0.1:4173>.
 
 ## Explore
 
+- **Player styles** compares 230 qualifying 2026 players using passing choices, throwing locations, completed-catch locations and disc involvement. Search the directory and select a player; the five closest style matches default to other teams. Select a candidate to compare all nine traits and recorded passing outcomes. This tab deliberately uses the **regular season and all lines**; the phase/line selections on other tabs are retained but do not apply here. The team filter limits the player directory, while the candidate pool stays league-wide.
+- Player-style matching uses equal weights for four trait groups and a frozen 2025 reference scale. Outcomes never enter the distance. The separate **versus geometry expectation** comparison is our research model, not Shown Space CPOE or aEC. **What the research supports** includes the historical checks and their uncertainty. Similar-player candidates are not validated replacements.
 - Use the **sun/moon icon** above any tab to switch between light and dark mode. The icon shows the mode you can switch to, and your choice is saved between visits. The separate theme picker has been removed.
 - Choose any team or **League leaders** in the left rail.
 - The default is the full available **regular season**, with both O-line and D-line events.
@@ -69,7 +77,47 @@ zone spans y = 110–120. The field width is 53.3 yards.
 
 This is a later 2026 snapshot, so it is **not a promise to reproduce the July 10
 post’s historical rankings**. This version supplies the spatial exploration layer;
-it does not yet assign learned player-archetype or clustering labels.
+the Player styles tab now tests broad groupings, but does not assign fixed archetype labels.
+
+## Archetype and replacement pilot
+
+The executed [research notebook](analysis/archetype_candidate_validation.ipynb)
+documents the first tests of discrete style groups, repeatable passing performance,
+and cross-team comparison candidates. The saved results and implementations are
+`analysis/archetype_candidate_validation.json` and `.py`.
+
+- Both 2024→2025 and 2025→2026 tests prefer two broad groups over 3–6 groups.
+  These mainly describe relative backfield/upfield activity; they are not deep-thrower
+  versus short-pass archetypes. In the 2026 test, 126/146 players (86.3%) remained in
+  the same group across halves. Chance-adjusted agreement was 0.524, below the
+  chosen 0.60 pilot threshold; 2025 also missed it. The cutoff is a research choice,
+  not proof that useful archetypes cannot exist.
+- Adding prior-year player passing-performance offsets to a geometry + prior-team
+  baseline reduced later Brier error by only 0.058% in 2025 and increased it by
+  0.020% in 2026. Game- and player-bootstrap intervals include zero. This simple
+  model has not validated a transferable passing rating; this is not evidence
+  that player skill is unimportant.
+- As a concrete style/performance distinction, Alex Atkins's nearest cross-team
+  match is Henry Goldenberg. Their recorded regular-season huck completions are
+  28/35 and 7/16 respectively. Differences in difficulty and the smaller sample
+  still matter. No lineup replacement intervention or outcome was tested.
+
+Reproduce with Python + NumPy/pandas (no live database connection):
+
+```sh
+python3 analysis/archetype_candidate_validation.py
+python3 analysis/archetype_candidate_checks.py
+python3 analysis/build_archetype_candidate_notebook.py
+python3 tools/player_profiles.py
+```
+
+The notebook executes every cell and embeds two SVG figures. Its default uses
+the saved full model result and reruns independent CSV/numerical checks; set
+`RECOMPUTE=True` in the notebook to rerun all models and bootstraps there.
+The profile importer verifies source hashes, and the normal dataset rebuild
+attaches these queries when the same reviewed export/season is selected. New
+source exports require rerunning the study before attaching its results. All
+existing event, radial and connection queries remain separate.
 
 ## Data and metric definitions
 
