@@ -272,6 +272,40 @@ pass records, including flight and downfield distance, with a matching CSV expor
 Run `node --test tools/connections.test.mjs` for huck thresholds, attribution,
 grouping, link-detail scope, empty scopes and reconciliation across all teams.
 
+### Historical huck validation
+
+`analysis/multiseason_release_validation.ipynb` contains the executed 2021–2026
+release-zone analysis and the October 25 incoming-pass follow-up. The latter
+tests whether a verified preceding pass improves later-season huck-attempt
+forecasts beyond player history and release position. The primary 2026 cohort
+has 6,173 passes, 590 hucks and 44 players with at least 40 earlier hucks in the
+Y20–60 release window. Training uses only earlier seasons; the already-inspected
+2026 season is an exploratory temporal check, not an untouched external test.
+
+Adding direction reduces Brier prediction error by 0.65% versus player/position.
+After controlling for whether a preceding pass is classifiable, the direction
+increment is 0.37%, with a 95% game-bootstrap interval of −0.13% to +0.88%.
+Earlier seasons and a broader cohort support a small general tendency, but
+personal setup interactions do not establish additional predictive value.
+These are relative prediction-error reductions, not completion-rate changes or
+proof that a defensive tactic prevents goals. Prior-pass directions describe
+disc movement; they do not identify upline routes or dead-disc situations.
+
+The follow-up lives in `analysis/huck_setup_validation.py` and its aggregate JSON.
+`analysis/huck_setup_checks.py` independently reconciles 72,590 2026 passes with
+the website's sequence logic and tests ambiguous links and target leakage.
+The source CSVs remain local under `data/database-exports/2026-10-12/`.
+
+```sh
+python3 analysis/huck_setup_validation.py
+python3 analysis/huck_setup_checks.py --node /absolute/path/to/node
+UFA_NODE=/absolute/path/to/node python3 analysis/build_multiseason_notebook.py
+```
+
+The final command executes both studies and rebuilds the existing notebook with
+embedded figures. It requires Python with numpy/pandas and Node; no database
+connection is needed.
+
 - `src/content/dashboard/`: authored React, field geometry, ranking logic and CSS.
 - `src/data.json`: reviewed data and provenance snapshot.
 - `tools/import_database_exports.py`: preserve and select dated local CSV exports.

@@ -93,6 +93,7 @@ def load_data():
     t['zone'] = assign_zones(t.tx, t.ty)
     t['player'] = t.Thrower
     t['game'] = t.GameID
+    t['throwID'] = t.throw_sig_id
     t['team'] = np.where(t.is_home_team.str.lower() == 'true', t.HomeTeamID, t.AwayTeamID)
     assert p.groupby('PlayerID').full_name.nunique().max() == 1
     names = p.drop_duplicates('PlayerID').set_index('PlayerID').full_name.to_dict()
@@ -135,7 +136,7 @@ def load_data():
             'analysisThrows': len(kept), 'analysisGames': kept.game.nunique(),
             'hucks': int(kept.huck.sum()), 'completedHucks': int((kept.huck & kept.complete).sum()),
         })
-    d = t.loc[use, ['season', 'game', 'player', 'team', 'zone', 'complete', 'huck', 'distance', 'gain', 'tx', 'ty', 'rx', 'ry']].copy()
+    d = t.loc[use, ['season', 'game', 'throwID', 'player', 'team', 'zone', 'complete', 'huck', 'distance', 'gain', 'tx', 'ty', 'rx', 'ry']].copy()
     d['cell'] = d.player + '|' + d.zone
     d['distanceBand'] = pd.cut(d.distance, [0, 40, 50, 60, 70, 80, np.inf], right=True).astype(str)
     d['gainBand'] = pd.cut(d.gain, [-np.inf, 30, 40, 50, 60, 70, np.inf], right=True).astype(str)

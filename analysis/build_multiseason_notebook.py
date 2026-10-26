@@ -15,19 +15,27 @@ import uuid
 
 HERE = Path(__file__).resolve().parent
 cells = []
+existing_path = HERE / 'multiseason_release_validation.ipynb'
+existing_ids = {''.join(c['source']).strip(): c['id'] for c in json.loads(existing_path.read_text()).get('cells', [])} if existing_path.exists() else {}
+
+
+def cell_id(text):
+    return existing_ids.get(text.strip(), uuid.uuid5(uuid.NAMESPACE_URL, 'ufa-analysis:' + text.strip()).hex[:8])
 
 
 def md(text):
-    cells.append({'cell_type': 'markdown', 'id': uuid.uuid4().hex[:8], 'metadata': {}, 'source': text.strip().splitlines(True)})
+    cells.append({'cell_type': 'markdown', 'id': cell_id(text), 'metadata': {}, 'source': text.strip().splitlines(True)})
 
 
 def code(text):
-    cells.append({'cell_type': 'code', 'id': uuid.uuid4().hex[:8], 'metadata': {}, 'source': text.strip().splitlines(True),
+    cells.append({'cell_type': 'code', 'id': cell_id(text), 'metadata': {}, 'source': text.strip().splitlines(True),
                   'execution_count': None, 'outputs': []})
 
 
-md('''# Do deep throwers have dependable “best zones”?
+md('''# Deep throwing: zones, player history and incoming passes
 ## tl;dr
+**October 25 follow-up: viable as a modest scouting model, not yet as dependable individual setup archetypes.** In the main 2026 sample, adding incoming-pass direction reduced Brier prediction error by 0.65% beyond player history and release position. After accounting for whether a prior pass was classifiable, direction alone added 0.37%, with a 95% game-bootstrap interval of −0.13% to +0.88%. At a fixed top-fifth scouting budget, the simpler and direction models identified 236 and 240 of 590 hucks respectively. This is a small practical gain.
+
 Across 22,386 regular-season hucks in the 2021–2026 export, this test does **not establish reliable player-specific best release zones**.
 
 Among 48 testable players, the average chosen-zone advantage fell from **12.7 percentage points in 2021–2025 to 0.7 points in 2026**. The 2026 player-bootstrap interval is **−9.1 to +10.2 points**. Personalized zone effects did not improve held-out completion prediction beyond shared zone and coarse throw geometry.
@@ -190,15 +198,96 @@ for s in result['studies'][1:]:
         'Add player history Brier':round(p['models']['sharedGeometry']['brier'],6),
         'Add personal zone Brier':round(p['models']['personalGeometry']['brier'],6)})
 pd.DataFrame(attempt_rows)''')
-md('''**Interpretation:** The 2026 improvement is modest but survives both game- and player-level resampling. The broader 10-prior-huck cohort gives a 2.0% error reduction across 17,586 passes by 188 players. More detailed personal-zone terms add no dependable benefit. The evidence supports general player propensity plus shared field context better than unique player-zone archetypes.
+md('''**Interpretation:** The 2026 improvement is modest but survives both game- and player-level resampling. The broader 10-prior-huck cohort gives a 2.0% error reduction across 17,586 passes by 188 players. More detailed personal-zone terms add no dependable benefit. The evidence supports general player propensity plus shared field context better than unique player-zone archetypes.''')
+
+md('''### 4. Does the preceding pass add useful information?
+**Decision:** Is incoming-pass information strong enough to support coaching-oriented deep-thrower scouting?
+
+The primary new comparison adds forward/lateral/backward direction to a baseline that already knows the player, release position, and whether an incoming direction is classifiable. This isolates direction from simply knowing a player had a recorded preceding pass. Unknown setups include first throws of a possession; they are not all recording errors.
+
+Both models score exactly the same later-season throws. Training uses all earlier regular-season players in the release window; the main test requires at least 40 earlier hucks in that window. The 2026 test contains 6,173 passes, 590 hucks and 44 players across 127 games. Prediction inputs exclude the current pass's target and outcome.
+
+Prior passes must be completed, non-stall, received by the current thrower, and linked by unique consecutive throw orders and increasing event sequences within the same game, team, quarter, point and possession. Directions describe disc movement; they do not identify cutting routes or dead-disc state. The model is conditional on the recorded release point, not a forecast of where a player will move after catching.
+
+The primary comparison, model variants, thresholds and sensitivity checks were set in the analysis script before these new results were inspected. The 2026 season was examined in previous work, so this remains exploratory temporal validation. Error reductions below are relative reductions in Brier loss, not increases in huck completion percentage.''')
+
+code('''import os
+import huck_setup_validation as setup_study
+import huck_setup_checks as setup_checks
+if RERUN_ANALYSIS:
+    with contextlib.redirect_stdout(io.StringIO()):
+        setups = setup_study.run()
+else:
+    setups = json.loads((project / 'analysis/huck_setup_validation.json').read_text())
+setup_primary = setups['studies'][-1]
+node = os.environ.get('UFA_NODE', 'node')
+validation = setup_checks.check(node=node)
+print('All 72,590 eligible 2026 regular-season passes matched the website sequence logic, including 61,777 verified links.')
+print('Primary cohort and baseline prediction error match the prior study exactly.')''')
+
+code('''direction_plot_rows = []
+for fold in setups['studies']:
+    comparison = fold['comparisons']['directionVsAvailability']
+    baseline = fold['models']['availability']['brier']
+    lo,hi = comparison['gameBootstrap']['ci95']
+    direction_plot_rows.append(dict(label=str(fold['testSeason']),
+        mean=comparison['relativeErrorReductionPct'], low=100*lo/baseline, high=100*hi/baseline))
+interval_figure(direction_plot_rows, 'Incremental value of incoming-pass direction',
+    'Brier-error reduction beyond player, position and prior-pass availability (%)',
+    'Source: Oct 12 export · 2023–2026 test seasons · 95% game-bootstrap intervals')''')
+
+md('''**Interpretation:** Direction has a positive point estimate in all four checks, but the gain is small. Both game- and player-bootstrap intervals exclude zero in 2024 and 2025; neither does in 2023 or the main 2026 comparison. The 2026 direction-only increment is 0.37% (game interval −0.13% to +0.88%; player interval −0.15% to +0.81%). The combined direction-and-availability model improves 0.65% over the original player/position baseline, with both intervals above zero. That combined gain should not all be attributed to direction.''')
+
+code('''setup_rates = pd.DataFrame(setup_primary['incomingRates'])
+setup_rates['Observed huck share'] = setup_rates.huckRate.map(lambda x: f'{x:.1%}')
+setup_rates.rename(columns={'direction':'Preceding disc direction','passes':'Next passes','hucks':'Hucks'})[
+    ['Preceding disc direction','Next passes','Hucks','Observed huck share']]''')
+
+md('''These are descriptive rates in the 44-player 2026 test cohort: 220/1,636 after a forward pass (13.4%), 286/3,149 after a lateral pass (9.1%), 21/487 after a backward pass (4.3%), and 63/901 with an unclassified setup (7.0%). Player and field-position mix differ between rows; the prediction comparison above, rather than this raw difference, tests added information. The 901 unclassified setups remain in the analysis.''')
+
+code('''scouting_rows=[]
+for label,name in [('leaguePosition','Field position'), ('playerPosition','Add player history'),
+                   ('availability','Add prior-pass availability'), ('direction','Add incoming direction')]:
+    m=setup_primary['models'][label]; top=m['topFifth']
+    scouting_rows.append({'Model':name,'Passes flagged':top['passes'],'Hucks identified':top['hucks'],
+        'Share of 590 hucks':f"{top['shareOfAllHucks']:.1%}", 'Brier error':round(m['brier'],6)})
+pd.DataFrame(scouting_rows)''')
+
+md('''**Practical size:** Flagging 1,235 passes under each model identifies 236 hucks with player history and position versus 240 after adding direction: a net gain of four identified hucks out of 590. The models can flag different passes. This is a retrospective ranking check, not a validated in-game alert threshold or an estimate of goals prevented. Player history contributes substantially more to this ranking than the direction feature.''')
+
+code('''sensitivity_rows=[]
+labels={'lowerHistoricalFloor':'10 earlier hucks', 'recentHistory':'2024–2025 history',
+        'knownDirectionsOnly':'Known direction only', 'finerReleasePosition':'5×5-yard release grid',
+        'teamAdjustment':'Adjust for team'}
+for label,fold in setups['sensitivities'].items():
+    c=fold['comparisons']['directionVsAvailability']; base=fold['models']['availability']['brier']
+    lo,hi=c['gameBootstrap']['ci95']
+    sensitivity_rows.append({'Check':labels[label],'Players':fold['testPlayers'],'Passes':fold['testPasses'],
+        'Error reduction (%)':round(c['relativeErrorReductionPct'],2),
+        'Game interval (%)':f'{100*lo/base:.2f} to {100*hi/base:.2f}'})
+pd.DataFrame(sensitivity_rows)''')
+
+md('''The broader 10-prior-huck cohort (188 players, 17,586 passes) shows a small 0.52% direction increment with both cluster intervals above zero. Finer 5×5-yard release controls, team adjustment, and a known-direction-only sample retain small but uncertain 2026 gains. Using only 2024–2025 history leaves 10 eligible players and gives an uncertain negative point estimate; its different cohort limits comparison.
+
+More detailed incoming geometry and individual player-by-direction terms did not establish an additional Brier improvement: their intervals include zero in every 2023–2026 check. These secondary analyses were not adjusted for multiple comparisons. They do not justify a claim that a given player has a dependable personal setup archetype.''')
+
+code('''pd.DataFrame(setup_primary['models']['direction']['calibration']).assign(
+    prediction=lambda f:f.prediction.map(lambda x:f'{x:.1%}'),
+    observed=lambda f:f.observed.map(lambda x:f'{x:.1%}'))[
+    ['low','high','passes','hucks','prediction','observed']].rename(columns={
+        'low':'Probability band lower','high':'Probability band upper','passes':'Passes','hucks':'Hucks',
+        'prediction':'Mean predicted','observed':'Observed huck share'})''')
+
+md('''Probability calibration is shown for inspection, with fixed bands and sample counts. Small upper-probability bands should not be treated as precise individual-player forecasts. This test predicts huck attempts among recorded throws, not catch-to-huck probabilities or huck success.
 
 ## Takeaways
 - Keep the current field maps as descriptive scouting summaries, with attempts and completions visible. Avoid labeling the highest observed box a validated personal strength.
 - Prioritize the question **“Who is likely to huck from this field position?”** using player history plus general field patterns. This can prioritize film review and prepare defenders to anticipate deep attempts.
+- Incoming direction is a modest additional scouting clue. Show counts and raw tendencies, but retain player history and field position as the core of the forecast.
+- The evidence does not yet support dependable personalized setup archetypes. More complex setup features did not establish additional predictive value; a future season or newly collected film labels would be a stronger next validation than further tuning on 2026.
 - Do not infer that denying a particular box will reduce goals, or that a completion percentage captures thrower skill alone. Those coaching claims need additional evidence.
-- A subsequent validation could examine recent team roles and incoming-pass setups. That is a next question, not a result of this analysis.
 
-All computations, exclusions, model specifications, sensitivity checks and per-player results are saved in `analysis/multiseason_release_validation.py` and `.json`. The independent count check is `analysis/multiseason_release_checks.py`. This notebook executes without database access given the three original CSVs and Python with numpy and pandas.''')
+Original zone computations and per-player results are in `analysis/multiseason_release_validation.py` and `.json`; incoming-pass extensions are in `analysis/huck_setup_validation.py` and `.json`. Checks are `multiseason_release_checks.py` and `huck_setup_checks.py`. This notebook executes without database access given the three original CSVs, Python with numpy and pandas, and Node for the independent website reconciliation. Set `UFA_NODE` to an absolute Node path if Node is not on PATH.''')
 
 
 def execute():
