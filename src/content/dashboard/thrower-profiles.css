@@ -1,0 +1,25 @@
+.ufa-style-views{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.ufa-throwers{min-width:0}
+.ufa-thrower-controls{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.ufa-thrower-search{display:grid;gap:6px;font-size:12px;color:var(--secondary);width:280px;max-width:100%}
+.ufa-thrower-search input{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:8px;min-width:0;width:100%;padding:10px 12px}
+.ufa-thrower-selected{display:flex;align-items:center;gap:12px;margin:8px 0 16px}
+.ufa-thrower-selected h3{font-size:20px;font-weight:600;margin:0 0 5px;letter-spacing:-.3px}
+.ufa-thrower-selected p{font-size:12px;color:var(--secondary);margin:0}
+.ufa-thrower-observations{border-left:2px solid var(--chart-1);padding-left:12px;margin-bottom:22px}
+.ufa-thrower-observations p{font-size:12px;line-height:1.65;margin:6px 0}
+.ufa-thrower-observations span{color:var(--secondary)}
+.ufa-thrower-legend{display:flex;gap:10px 20px;flex-wrap:wrap;font-size:12px;margin-bottom:16px}
+.ufa-thrower-legend span{display:flex;gap:7px;align-items:center}
+.ufa-thrower-legend i{width:9px;height:9px;border-radius:50%;background:var(--chart-1)}
+.ufa-thrower-legend span+span i{background:var(--chart-2)}
+.ufa-thrower-bar-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 12px;margin:14px 0;font-size:12px}
+.ufa-thrower-bar-values{display:flex;gap:14px;text-align:right;font-variant-numeric:tabular-nums}
+.ufa-thrower-bar-values b{font-weight:600;color:var(--chart-1)}
+.ufa-thrower-bar-values>span{color:var(--chart-2)}
+.ufa-thrower-bars{grid-column:1/-1;display:flex;flex-direction:column;gap:3px;background:var(--surface-raised);border-radius:3px;overflow:hidden}
+.ufa-thrower-bars i{display:block;height:6px;border-radius:2px;background:var(--chart-1)}
+.ufa-thrower-bars i+i{background:var(--chart-2)}
+.ufa-thrower-details{margin:22px 0 14px;border-top:1px solid var(--border);padding-top:14px}
+.ufa-thrower-details>summary{font-size:13px;cursor:pointer;margin-bottom:12px}
+@media(max-width:760px){.ufa-thrower-controls{align-items:start}.ufa-thrower-search{width:100%}.ufa-thrower-selected h3{font-size:18px}.ufa-thrower-bar-row{font-size:11px}.ufa-thrower-observations p{font-size:11px}}

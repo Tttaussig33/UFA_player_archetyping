@@ -1,0 +1,16 @@
+.ufa-contributions{min-width:0}
+.ufa-contribution-role{display:flex;flex-wrap:wrap;margin-bottom:10px}
+.ufa-contribution-definition{font-size:13px;line-height:1.6;color:var(--secondary);margin:0 0 20px}
+.ufa-contribution-controls{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.ufa-contribution-explanation{font-size:12px;line-height:1.7;max-width:960px;color:var(--secondary);margin:0 0 24px}
+.ufa-contribution-explanation strong{color:var(--text);font-weight:500}
+.ufa-contribution-player-row{margin:16px 0 20px}
+.ufa-contribution-player-label,.ufa-contribution-player-result{display:flex;justify-content:space-between;gap:12px;font-size:12px;line-height:1.5;font-variant-numeric:tabular-nums}
+.ufa-contribution-player-label strong,.ufa-contribution-player-result b{font-weight:500}
+.ufa-contribution-share-track{height:9px;background:var(--surface-raised);border-radius:3px;position:relative;margin:8px 0}
+.ufa-contribution-share-track i{display:block;height:100%;background:var(--chart-1);border-radius:3px}
+.ufa-contribution-share-track b{position:absolute;width:2px;height:15px;top:-3px;background:var(--text);opacity:.65}
+.ufa-contribution-player-row>small{display:block;font-size:11px;color:var(--secondary);line-height:1.6;margin-top:4px}
+.ufa-contribution-finding{font-size:14px;line-height:1.65;max-width:1000px;margin:0 0 18px}
+.ufa-contribution-study>summary{font-size:13px;cursor:pointer;margin-bottom:12px}
+@media(max-width:760px){.ufa-contribution-role{max-width:100%;overflow:auto}.ufa-contribution-controls{align-items:start}.ufa-contribution-player-result{flex-wrap:wrap;gap:4px 12px}.ufa-contribution-finding{font-size:13px}}

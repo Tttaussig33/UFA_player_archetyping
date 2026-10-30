@@ -1,5 +1,7 @@
 import React,{useMemo,useState} from 'react';
-import {Button,DataComponent,DataTable,Dropdown,SortableItem,SortableRegion} from '../../data-app-public.jsx';
+import {Button,DataComponent,DataTable,Dropdown,SegmentedControl,SortableItem,SortableRegion} from '../../data-app-public.jsx';
+import {ThrowerProfiles} from './ThrowerProfiles.jsx';
+import {OffensiveContributions} from './OffensiveContributions.jsx';
 import {Face} from './Field.jsx';
 import {cleanProfileSearch,rankStyleCandidates,comparisonRows} from './profile-model.js';
 import './player-profiles.css';
@@ -19,7 +21,15 @@ const profileColumns=[
   {field:'catchY',label:'Avg. catching location',renderCell:v=>`${dec(v)} yd`},
 ];
 
-export function PlayerProfiles({queries,team,teamName,onOpenFieldGuide}) {
+export function PlayerProfiles(props) {
+  const [view,setView]=useState('contributions');
+  return <div>
+    <div className="ufa-style-views"><SegmentedControl value={view} onChange={setView} options={[{value:'contributions',label:'Contributions'},{value:'throwing',label:'Throwing profiles'},{value:'matches',label:'Style matches'}]}/></div>
+    {view==='contributions'?<OffensiveContributions {...props}/>:view==='throwing'?<ThrowerProfiles {...props}/>:<StyleMatches {...props}/>}
+  </div>;
+}
+
+function StyleMatches({queries,team,teamName,onOpenFieldGuide}) {
   const profiles=queries.playerProfiles?.rows||[],reference=queries.profileReference?.rows||[],study=queries.profileStudy?.rows||[];
   const [selectedId,setSelectedId]=useState('aatkins'),[candidateId,setCandidateId]=useState(null);
   const [search,setSearch]=useState(''),[pool,setPool]=useState('other');

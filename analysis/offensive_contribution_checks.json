@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-30T23:09:30.969402+00:00",
+  "resultSha256": "736896ec52a1b7411511e5946655936259720b400d6456abf3619fbb0f86e69e",
+  "eligiblePlayers": 249,
+  "playerRoleRows": 747,
+  "halfRoleRows": 1494,
+  "baselines": 3,
+  "intervalsRecomputed": 1,
+  "passed": true
+}
