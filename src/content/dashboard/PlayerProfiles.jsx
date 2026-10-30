@@ -19,7 +19,7 @@ const profileColumns=[
   {field:'catchY',label:'Avg. catching location',renderCell:v=>`${dec(v)} yd`},
 ];
 
-export function PlayerProfiles({queries,team,teamName}) {
+export function PlayerProfiles({queries,team,teamName,onOpenFieldGuide}) {
   const profiles=queries.playerProfiles?.rows||[],reference=queries.profileReference?.rows||[],study=queries.profileStudy?.rows||[];
   const [selectedId,setSelectedId]=useState('aatkins'),[candidateId,setCandidateId]=useState(null);
   const [search,setSearch]=useState(''),[pool,setPool]=useState('other');
@@ -79,6 +79,7 @@ export function PlayerProfiles({queries,team,teamName}) {
               </div>
             </React.Fragment>)}
             <p className="ufa-profile-note">Location scale: 0–120 yd, attacking toward 120. Share scale: 0–100%. Longer bars do not mean better.</p>
+            <Button onClick={onOpenFieldGuide}>See directions on a field</Button>
           </div>:<p className="ufa-profile-note">Select an eligible player to compare.</p>}
         </DataComponent>
       </SortableItem>

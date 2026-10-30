@@ -59,6 +59,16 @@ or the SVG export provides a larger view. Green lines are completions; red lines
 are turnovers/drops; purple lines are Callahan interceptions. These are **disc-flight
 vectors, not tracked player movement**.
 
+**Field guide**, available from every tab and beside the Player styles comparisons,
+opens an interactive, to-scale field. Move the thrower or disc destination by
+dragging, clicking the field, or using the arrow keys (Shift moves five yards).
+Two 45° examples and a compact angle/gain/flight readout explain direction.
+Definitions and the strict huck thresholds are under **How to read it**.
+The guide is an illustration, not an observed pass or an edit to the source data.
+Exact 45° boundaries belong to the sideways category, matching Player styles.
+Its coordinate-based angle is separate from the source-recorded throw angle
+used by the Shown Space radial reproduction.
+
 ## Relationship to the reference
 
 The Instagram post was inspected directly, including its animated vectors and the

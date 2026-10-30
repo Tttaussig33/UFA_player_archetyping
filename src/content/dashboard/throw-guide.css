@@ -1,0 +1,32 @@
+.ufa-throw-guide{color:var(--text);font-size:13px;line-height:1.5}
+.ufa-guide-intro{color:var(--secondary);margin:0 0 12px;text-align:center}
+.ufa-guide-examples{display:flex;gap:8px;justify-content:center}
+.ufa-guide-examples button{font-size:12px}
+.ufa-guide-examples button[aria-pressed=true]{border-color:var(--chart-1);background:color-mix(in srgb,var(--chart-1) 10%,var(--surface))}
+.ufa-guide-field{display:block;width:100%;height:clamp(270px,48vh,370px);margin:12px auto 0;touch-action:none;user-select:none;overflow:visible}
+.ufa-guide-field text{font-family:inherit;fill:var(--text)}
+.ufa-guide-end-label{font-size:16px;font-weight:600}
+.ufa-guide-zone-label{font-size:14px;fill:var(--secondary)!important}
+.ufa-guide-grass{fill:var(--surface-raised)}
+.ufa-guide-cone{fill:color-mix(in srgb,var(--chart-1) 12%,transparent)}
+.ufa-guide-goal,.ufa-guide-outline{fill:none;stroke:var(--secondary);stroke-width:1.3}
+.ufa-guide-axis{stroke:var(--secondary);stroke-width:1;stroke-dasharray:3 5;opacity:.65}
+.ufa-guide-boundary{stroke:var(--secondary);stroke-width:1;stroke-dasharray:5 4;opacity:.45}
+.ufa-guide-flight-line{stroke:var(--chart-1);color:var(--chart-1);stroke-width:3.5}
+.ufa-guide-angle-arc{fill:none;stroke:var(--chart-1);stroke-width:2.5}
+.ufa-guide-angle-label{font-size:17px;font-weight:600;paint-order:stroke;stroke:var(--surface);stroke-width:3px}
+.ufa-guide-handle{cursor:grab;outline:none}
+.ufa-guide-handle:active{cursor:grabbing}
+.ufa-guide-hit{fill:transparent;stroke:transparent;stroke-width:2}
+.ufa-guide-handle:focus-visible .ufa-guide-hit{stroke:var(--text)}
+.ufa-guide-start{fill:var(--surface);stroke:var(--text);stroke-width:2}
+.ufa-guide-end{fill:var(--chart-1);stroke:var(--text);stroke-width:1.2}
+.ufa-guide-handle-label{font-size:13px;font-weight:700;fill:var(--text)!important;paint-order:stroke;stroke:var(--surface);stroke-width:2px;pointer-events:none}
+.ufa-guide-readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:12px 0;border-top:1px solid var(--border);text-align:center}
+.ufa-guide-readout dt{font-size:12px;color:var(--secondary)}
+.ufa-guide-readout dd{font-size:22px;line-height:1.5;margin:0;font-variant-numeric:tabular-nums}
+.ufa-guide-readout small{display:block;font-size:10px;line-height:1.3;color:var(--secondary)}
+.ufa-guide-details{color:var(--secondary);font-size:11px;margin-top:6px}
+.ufa-guide-details summary{cursor:pointer;width:fit-content}
+.ufa-guide-details p{margin:10px 0 0}
+@media(max-width:480px){.ufa-guide-readout{gap:6px}.ufa-guide-readout dd{font-size:20px}.ufa-guide-field{height:clamp(250px,43vh,340px)}}
