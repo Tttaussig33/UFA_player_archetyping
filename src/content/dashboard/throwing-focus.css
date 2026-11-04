@@ -18,7 +18,8 @@
 @media(max-width:850px){.ufa-focus-season{gap:20px;grid-template-columns:repeat(3,minmax(0,1fr))}.ufa-focus-identity{grid-column:1/-1}.ufa-focus-length{grid-template-columns:80px minmax(0,1fr) 32px;gap:10px}}
 @media(max-width:620px){.ufa-throwing-focus>h2{font-size:21px}.ufa-focus-season{gap:16px}.ufa-focus-source-stat>strong{font-size:27px}.ufa-focus-wheel-wrap{max-width:330px}.ufa-focus-length{padding:14px 4px}}
 
-/* Side-by-side long-throw comparison. Field coordinates and scales match. */
+/* Side-by-side throw comparison. Field coordinates and scales match. */
+.ufa-throw-distance-options{flex-wrap:wrap;max-width:100%}
 .ufa-long-comparison{--long-complete:light-dark(#21806d,#62c7ae);--long-incomplete:light-dark(#b15b2b,#f2a573)}
 .ufa-long-pickers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin:0 0 24px}.ufa-long-pickers>div{width:100%;min-width:0}
 .ufa-long-definition{margin:2px 0 14px}.ufa-long-legend{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;font-size:12px;margin:0 0 24px;color:var(--secondary)}.ufa-long-legend>span{display:flex;align-items:center;gap:7px}.ufa-long-legend i{display:block;width:22px;border-top:2px solid var(--long-complete)}.ufa-long-legend .ufa-long-key-incomplete{border-top:2px dashed var(--long-incomplete)}

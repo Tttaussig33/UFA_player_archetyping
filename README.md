@@ -35,6 +35,10 @@ Then open <http://127.0.0.1:4173>.
   including drops. Dots mark throwing locations; arrows end at recorded targets.
   Hover for a throw's game, target and length; use **Highlight this throw** to keep
   it emphasized, then **Clear highlight**. The table is optional under **Throw records**.
+- Choose **0–10, 10–20, 20–30, 30–40, or 40+ yards**, or **Hucks**. Distance
+  bands include the lower boundary and exclude the upper: exactly 10 yards belongs
+  to 10–20. Both fields, counts, completion rates and records follow the same filter.
+  Whole-season aEC and LC remain unchanged.
 - **40+ yards** includes straight-line endpoint distances of at least 40 yards in
   any direction. **Hucks** requires both distance strictly over 40 yards and forward
   gain strictly over 30 yards. All non-stall attempts count, including unnamed targets.
