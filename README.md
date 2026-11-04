@@ -28,15 +28,18 @@ Then open <http://127.0.0.1:4173>.
 ## Explore
 
 - **Throwing profiles:** search any of the 747 named throwers with recorded 2026
-  passes. The two season figures are Shown Space's original **thrower aEC** and
-  **lag contribution**, including playoffs and all lines. They stay fixed when
+  passes. The season row shows Shown Space's original **thrower aEC** and
+  **lag contribution**, plus **Completion %** from completed / attempted passes
+  in the export, including playoffs and all lines. Drops are incomplete; this
+  keeps the existing completion calculation, not the adjusted leaderboard CP%. They stay fixed when
   selecting a group of throws. There is no minimum-attempt qualification or
   custom player-quality score.
 - Choose **Throw length** or **Throw direction**. Bars/slices show how many throws
   the player attempted, including incompletions. Select a length directly, or a
-  direction followed by **Show results**, for its completion rate, completed / attempted
-  count and total source throwing aEC. **Show all** clears the selection. Expand
-  **Inspect these throws** for the exact records.
+  direction followed by **Inspect throws**, to filter the throw records.
+  **Show all throws** clears the selection. Completion for a length or direction
+  is available on hover; the season row stays fixed. Expand **Inspect these throws**
+  for the exact records and individual aEC values.
 - Length means straight-line distance between recorded throw and target locations.
   The four display ranges are 0–<10, 10–<20, 20–<40 and 40+ yards; these are not
   learned archetypes or the huck definition. Direction keeps Shown Space's twelve
