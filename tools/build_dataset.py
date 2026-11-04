@@ -14,6 +14,7 @@ from database_exports import load_bundle
 from player_profiles import add_player_profiles
 from thrower_profiles import add_thrower_profiles
 from offensive_contributions import add_offensive_contributions
+from throwing_focus import add_throwing_focus
 
 ROOT = Path(__file__).resolve().parents[1]
 TEAM_NAMES = {
@@ -305,6 +306,7 @@ def build():
     add_player_profiles(snapshot)
     add_thrower_profiles(snapshot)
     add_offensive_contributions(snapshot)
+    add_throwing_focus(snapshot)
     (ROOT/'src/data.json').write_text(json.dumps(snapshot,separators=(',',':'),allow_nan=False))
     print(json.dumps(stats,indent=2))
 

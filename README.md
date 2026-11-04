@@ -1,9 +1,9 @@
 # UFA player archetyping
 
-An interactive starting point for studying UFA player roles through where players
-throw and receive the disc. This first version recreates the field-zone/player-box
-concept in [Shown Space’s Kings of the Field](https://www.instagram.com/p/Danlzl5SoUs/)
-for **all 22 teams in the 2026 season**.
+Explore one practical question: **What does this player tend to throw, and how
+successful are those throws?** The main throwing profile uses original Shown
+Space aEC and lag contribution, plus pass counts and completion rates. The
+original field-zone map and passing connections remain available for all 22 teams.
 
 ## Terminology
 
@@ -27,47 +27,43 @@ Then open <http://127.0.0.1:4173>.
 
 ## Explore
 
-- **Player styles** compares 230 qualifying 2026 players using passing choices, throwing locations, completed-catch locations and disc involvement. Search the directory and select a player; the five closest style matches default to other teams. Select a candidate to compare all nine traits and recorded passing outcomes. This tab deliberately uses the **regular season and all lines**; the phase/line selections on other tabs are retained but do not apply here. The team filter limits the player directory, while the candidate pool stays league-wide.
-- Player-style matching uses equal weights for four trait groups and a frozen 2025 reference scale. Outcomes never enter the distance. The separate **versus geometry expectation** comparison is our research model, not Shown Space CPOE or aEC. **What the research supports** includes the historical checks and their uncertainty. Similar-player candidates are not validated replacements.
-- Use the **sun/moon icon** above any tab to switch between light and dark mode. The icon shows the mode you can switch to, and your choice is saved between visits. The separate theme picker has been removed.
-- Choose any team or **League leaders** in the left rail.
-- The default is the full available **regular season**, with both O-line and D-line events.
-- **Original** is the default field view: receivers in the attacking end zone, throwers in midfield, and Callahans in the bottom panel, matching the first Instagram adaptation.
-- Switch to **Thrower aEC / Receiver aEC** above the field to use release locations or catch/drop locations across all 12 boxes. Both metrics include the bottom (own) end zone.
-- **Overall aEC** is the fourth view. It adds each player’s thrower and receiver aEC in the same box and ranks players by that sum, across all 12 boxes. The detail panel shows both role totals; vectors, records, and CSV exports identify throwing versus receiving contributions.
-- Each box shows its selected metric’s leader. Select a box for every recorded vector for that player in that zone.
-- In the full-field views, the **Bottom end zone** menu can show **Callahan aEC** separately; choose the field metric again to return to ordinary throws or receptions. Original always uses Callahans at the bottom.
-- **Player boxes** restores the full portrait map; **Disc vectors** shows the selected player’s events.
-- **Play zones** automatically cycles the 12 zones. Selecting a player or zone stops the tour.
-- The zone ranking lets you inspect other players, including the full list beyond the first seven.
-- Filter to completed passes or turnovers/drops; inspect the underlying event records below the field.
-- **Save field SVG** exports the current field, including embedded portraits. **Export events** saves exactly the displayed player/zone/outcome event population to CSV.
-- Open the earlier [possession browser](https://tttaussig33.github.io/frisbee-analytics/) from the sidebar.
-- **Throw radials** shows a searchable player’s throwing and receiving direction diagrams. It shares the team, season-phase and line filters with Field views and Connections. **Hucks only** uses the same distance thresholds as Connections; **Completed passes** excludes unsuccessful events.
-- Radials default to **All recorded (original)** and twelve 30° buckets, matching `prod.get_player_throw_directions`. To compare with Shown Space’s 2026 profile, choose **All 2026**, **All lines**, and **All passes**. All recorded includes stalls and unsuccessful named targets, so receiving totals are not necessarily completed catches.
-- Original radial scaling fits each diagram to its own largest bucket; **Shared percentage** gives both roles the same percentage scale. Hover or focus a wedge for exact counts and shares. Select it and choose **Inspect passes** to open its underlying events; CSV export follows that selection.
-- **Deep throwers** opens on a leaderboard: one player per row, release zones across columns, and completion rates with completed/attempted counts. Click a zone heading or use **Rank location** to rank players there. **Rank by** switches between completion rate and attempt volume. Team selection is a compact filter on this tab; the other tabs retain their team rail. The selected team, season phase and line apply throughout.
-- Select a player to open their detailed profile; **Back to leaderboard** restores the comparison. The paired fields show **where they receive** and **where they release successful hucks**. Receiving defaults to verified catches immediately before a huck; **All catches** includes every completed reception. Release maps can show completion rate or attempt count. Cells display counts as well as rates; zone areas differ, so counts are not a spatial density.
-- **Player minimum** requires total hucks across all locations. Ranking a specific zone also requires **Zone minimum** attempts there. Small-sample cells remain hatched, and no-attempt cells show a dash. The scope baseline includes all named throwers before minimums and search. The player minimum affects only the leaderboard; the zone minimum also controls profile-map shading and the highest-observed-zone summary.
-- **Completion filter** defaults to at least the scope average in the ranked location. Use 70%, 80%, or Any completion rate to change it. Attempt count is a sample/volume measure; it does not identify better throwers by itself. The baseline precedes all eligibility filters and search.
-- Release-zone tooltips compare completion with the player’s overall rate, with differences in percentage points. Leaderboard cells also show the pooled rate for all throwers in that location. The profile leads with location results; comparisons describe outcomes without establishing that location caused them.
-- In a player profile, expand **Explore incoming pass direction** for **What happens after the incoming pass?**, which compares forward, lateral and backward prior passes. **Huck choice** uses all located next throws as its denominator; **Huck completion** uses only huck attempts. Filter by release location and inspect each group’s original passes. Unclassified setups remain separate.
-- Select a field zone, then its **Inspect** action, to examine individual hucks below. **The pass before the huck** draws verified preceding passes and actual hucks, with pagination, original records and a CSV export containing event IDs and coordinates. Unmatched hucks remain included without a guessed setup.
+- **Throwing profiles:** search any of the 747 named throwers with recorded 2026
+  passes. The two season figures are Shown Space's original **thrower aEC** and
+  **lag contribution**, including playoffs and all lines. They stay fixed when
+  selecting a group of throws. There is no minimum-attempt qualification or
+  custom player-quality score.
+- Choose **Throw length** or **Throw direction**. Bars/slices show how many throws
+  the player attempted, including incompletions. Select a length directly, or a
+  direction followed by **Show results**, for its completion rate, completed / attempted
+  count and total source throwing aEC. **Show all** clears the selection. Expand
+  **Inspect these throws** for the exact records.
+- Length means straight-line distance between recorded throw and target locations.
+  The four display ranges are 0–<10, 10–<20, 20–<40 and 40+ yards; these are not
+  learned archetypes or the huck definition. Direction keeps Shown Space's twelve
+  30-degree bins, with forward up and positive 90° left. Stationary passes have no
+  spatial direction and are omitted only from the direction view. Stalls are omitted
+  from both charts, but retained in source season aEC.
+- **Connections:** search a player, then explore incoming and outgoing partners.
+  Filter to all passes or hucks, and to completed passes or all attempts. The team,
+  season-phase and line controls apply here and in Field views.
+- **Field views:** choose a team or League leaders. **Original** preserves the
+  Instagram layout; **Thrower aEC**, **Receiver aEC** and **Overall aEC** use all
+  twelve boxes. Select a box to see its players, disc vectors and records. The
+  bottom panel can show Callahans separately. Field SVG and event CSV exports
+  follow the selected view.
+- Use the **sun/moon icon** to switch light and dark mode. Source definitions,
+  evidence and original rows remain accessible from each section's menu.
 
-The field is deliberately compact enough to see all zones at once. **Enlarge field**, browser zoom
-or the SVG export provides a larger view. Green lines are completions; red lines
-are turnovers/drops; purple lines are Callahan interceptions. These are **disc-flight
-vectors, not tracked player movement**.
+Throwing profiles covers the **full available 2026 season including playoffs**.
+The other tabs' team, phase and line filters do not silently restrict that profile.
+The previous contribution categories, similarity scores, research diagnostics and
+separate deep-thrower/radial pages are removed from navigation. Old radial and
+deep-thrower tab links open the simpler profile; historical code and evidence are
+retained for reproducibility.
 
-**Field guide**, available from every tab and beside the Player styles comparisons,
-opens an interactive, to-scale field. Move the thrower or disc destination by
-dragging, clicking the field, or using the arrow keys (Shift moves five yards).
-Two 45° examples and a compact angle/gain/flight readout explain direction.
-Definitions and the strict huck thresholds are under **How to read it**.
-The guide is an illustration, not an observed pass or an edit to the source data.
-Exact 45° boundaries belong to the sideways category, matching Player styles.
-Its coordinate-based angle is separate from the source-recorded throw angle
-used by the Shown Space radial reproduction.
+**Field guide**, available in Field views and Connections, explains throwing
+location, forward gain, straight-line distance and the huck thresholds with an
+interactive illustration. Disc-flight vectors do not show tracked player movement.
 
 ## Relationship to the reference
 
@@ -87,9 +83,9 @@ zone spans y = 110–120. The field width is 53.3 yards.
 
 This is a later 2026 snapshot, so it is **not a promise to reproduce the July 10
 post’s historical rankings**. This version supplies the spatial exploration layer;
-the Player styles tab now tests broad groupings, but does not assign fixed archetype labels.
+historical grouping studies remain in the repository, not in the simplified profile.
 
-## Archetype and replacement pilot
+## Historical archetype and replacement pilot
 
 The executed [research notebook](analysis/archetype_candidate_validation.ipynb)
 documents the first tests of discrete style groups, repeatable passing performance,
@@ -130,6 +126,26 @@ source exports require rerunning the study before attaching its results. All
 existing event, radial and connection queries remain separate.
 
 ## Data and metric definitions
+
+The simple throwing profile's original season totals are preserved in
+`data/source-api/leaderboard-2026-2026-11-03.json`, retrieved from Shown Space's
+2026 public leaderboard. `tools/throwing_focus.py` imports `thrower_aec` and
+`lag_contribution` without recalculating either and records the endpoint, capture
+time and file hash. All 747 imported aEC totals reconcile to the event export,
+including stalls, within 1e-7. Eight players have different attempt counts in the
+summary and export; five also differ in completion counts. The page discloses
+those differences for the selected player and uses individual exported records
+for the charts. LC remains a season total; it is never invented for a pass group.
+
+Rebuild those source summaries with `python3 tools/throwing_focus.py`. Verify the
+source reconciliation, length boundaries, direction orientation, missing-data
+handling and every player's plotted groups with
+`node --test tools/throwing-focus.test.mjs`. The normal dataset rebuild also
+attaches these summaries.
+
+The following radial details document the **historical reproduction**. The new
+Throw direction view uses the same bins but positions them in their actual field
+direction and removes zero-distance throws.
 
 Radial grouping is preserved in `data/database-metadata/2026-10-12/`, including
 the read-only database function and Alex Atkins verification output. His full
@@ -261,6 +277,11 @@ these five CSV exports. The separate Throw radials implementation uses the verif
 database function and display convention described above.
 
 ## Development
+
+The active simplified profile is `src/content/dashboard/ThrowingFocus.jsx`, with
+`throwing-focus-model.js` and `throwing-focus.css`. Historical deep-thrower,
+contribution and style-matching modules remain on disk but are not mounted by the
+current navigation. The sections below retain their methods for reproducibility.
 
 ### Deep thrower profiles
 
