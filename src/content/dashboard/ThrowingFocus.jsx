@@ -1,4 +1,4 @@
-import React,{useMemo,useState} from 'react';
+import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {Button,ChartMark,ChartTooltip,DataComponent,DataTable,Dropdown,SegmentedControl,SortableItem,SortableRegion} from '../../data-app-public.jsx';
 import {Face} from './Field.jsx';
 import {focusDirectory,focusModel,directionSlice,directionHit,throwLength} from './throwing-focus-model.js';
@@ -11,14 +11,27 @@ export function ThrowingFocus({queries}) {
   const summaries=queries.shownSpaceThrowers?.rows||[],events=queries.events?.rows||[];
   const players=queries.players?.rows||[];
   const [playerId,setPlayerId]=useState('aatkins'),[view,setView]=useState('length'),[selection,setSelection]=useState(null);
+  const [recordsOpen,setRecordsOpen]=useState(false),[recordsRequest,setRecordsRequest]=useState(0);
+  const recordsRef=useRef(null),recordsFilterRef=useRef(null);
   const directory=useMemo(()=>focusDirectory(summaries),[summaries]);
   const player=summaries.find(r=>r.id===playerId)||directory[0];
   const model=useMemo(()=>focusModel(events,player?.id,view,selection),[events,player,view,selection]);
   const names=useMemo(()=>Object.fromEntries(players.map(p=>[p.id,p.name])),[players]);
   const records=useMemo(()=>model.rows.map(e=>({id:e.id,game:e.game,receiver:names[e.receiver]||'Unrecorded target',
     length:throwLength(e),outcome:e.complete?'Complete':e.drop?'Drop':'Incomplete',throwerAec:e.throwAec})),[model.rows,names]);
-  const changePlayer=id=>{setPlayerId(id);setSelection(null);};
-  const changeView=v=>{setView(v);setSelection(null);};
+  const changePlayer=id=>{setPlayerId(id);setSelection(null);setRecordsOpen(false);};
+  const changeView=v=>{setView(v);setSelection(null);setRecordsOpen(false);};
+  const inspectThrows=id=>{setSelection(id);setRecordsOpen(true);setRecordsRequest(n=>n+1);};
+  useEffect(()=>{
+    if(!recordsOpen||!recordsRequest)return;
+    const frame=requestAnimationFrame(()=>{
+      const details=recordsRef.current;
+      if(!details?.open)return;
+      (recordsFilterRef.current||details).scrollIntoView({block:'start',behavior:'auto'});
+      details.querySelector('summary')?.focus({preventScroll:true});
+    });
+    return()=>cancelAnimationFrame(frame);
+  },[recordsOpen,recordsRequest]);
   const selectedLabel=model.selected?.label||(view==='length'?'All throw lengths':'All recorded directions');
   const max=Math.max(1,...model.groups.map(g=>g.attempts));
   const scope=[{label:'Player',value:player?.name||'None'},{label:'Season',value:'2026 including playoffs · all lines'}];
@@ -48,16 +61,16 @@ export function ThrowingFocus({queries}) {
         <DataComponent id="ufa-throwing-explorer" queryId="events" kind="custom" title="Throwing tendencies"
           sourceRows={model.eligible} displayRows={model.displayRows}
           scopeFilters={[...scope,{label:'View',value:view==='length'?'Throw length':'Throw direction'},{label:'Throw records',value:selectedLabel}]}
-          description="The chart counts physical throws in the preserved October 12 export, including incompletions and drops, excluding stalls. Select a bar directly, or a direction slice followed by Inspect throws, to filter the records below. Completion % in the season stats stays fixed. Group completion is available on hover; drops count as incomplete. Individual aEC values remain in the throw records. Lag contribution is available only as a season total. Length ranges include their lower edge and exclude their upper edge. Direction uses the source’s twelve 30-degree bins, drawn with attack forward and 90° left. Longer bars/slices mean more attempts, not better results. The outer radius represents the busiest direction. Source inspection includes all plotted groups; selected throws are in the expandable records below."
+          description="The chart counts physical throws in the preserved October 12 export, including incompletions and drops, excluding stalls. Select a bar directly, or a direction slice followed by Inspect throws, to open the matching records below. Completion % in the season stats stays fixed. Group completion is available on hover; drops count as incomplete. Individual aEC values remain in the throw records. Lag contribution is available only as a season total. Length ranges include their lower edge and exclude their upper edge. Direction uses the source’s twelve 30-degree bins, drawn with attack forward and 90° left. Longer bars/slices mean more attempts, not better results. The outer radius represents the busiest direction. Source inspection includes all plotted groups; selected throws are in the expandable records below."
           headerControls={<SegmentedControl value={view} onChange={changeView} options={[{value:'length',label:'Throw length'},{value:'direction',label:'Throw direction'}]}/>}
         >
           <div className="ufa-focus-explore" data-reviewed-rows>
             <div className="ufa-focus-pattern">
               <h3>What do they tend to throw?</h3>
-              <p className="ufa-focus-note">{count(model.eligible.length)} throws · {view==='length'?'Select a length to filter the throw records.':'Longer slices mean more throws. Select a slice, then Inspect throws.'}</p>
+              <p className="ufa-focus-note">{count(model.eligible.length)} throws · {view==='length'?'Select a length to see its throws.':'Longer slices mean more throws. Select a slice, then Inspect throws.'}</p>
               {view==='length'?<div className="ufa-focus-lengths">
                 {model.groups.map(g=><button type="button" key={g.id} className="ufa-focus-length" aria-pressed={selection===g.id} disabled={!g.attempts}
-                  onClick={()=>setSelection(selection===g.id?null:g.id)} aria-label={`${g.label}, ${g.attempts} throws. Inspect throws.`} title={`${g.label} · ${percent(g.completion)} complete`}>
+                  onClick={()=>inspectThrows(g.id)} aria-controls="ufa-focus-throw-records" aria-expanded={selection===g.id&&recordsOpen} aria-label={`${g.label}, ${g.attempts} throws. Inspect throws.`} title={`${g.label} · ${percent(g.completion)} complete`}>
                   <span>{g.label}</span><span className="ufa-focus-length-track"><i style={{width:`${g.attempts/max*100}%`}}/></span><strong>{count(g.attempts)}</strong>
                 </button>)}
                 <p className="ufa-focus-note">Length is the straight-line distance from throw to target. Ranges are in yards.</p>
@@ -70,7 +83,7 @@ export function ThrowingFocus({queries}) {
                   {model.groups.map(g=><ChartMark key={g.id} className="ufa-focus-direction" style={{clipPath:directionHit(g.startAngle,g.endAngle)}}
                     disabled={!g.attempts} aria-label={`${g.label}, ${g.startAngle} to ${g.endAngle} degrees, ${g.attempts} throws`} aria-pressed={selection===g.id}
                     context={{kind:'chart',chartType:'radial',label:g.label,value:g.attempts,row:model.displayRows.find(r=>r.id===g.id),
-                      actions:[{label:'Inspect throws',onSelect:()=>setSelection(g.id)}]}}
+                      actions:[{label:'Inspect throws',onSelect:()=>inspectThrows(g.id)}]}}
                     tooltip={<ChartTooltip active label={g.label} headerValue={`${g.attempts} throws`} details={[{label:'Completion %',value:percent(g.completion)},{label:'Direction',value:`${g.startAngle}° to <${g.endAngle}°`}]} />}>
                     <svg viewBox="0 0 360 360" aria-hidden="true"><path className="ufa-focus-direction-outline" d={directionSlice(g.startAngle,g.endAngle,144)}/>{g.attempts>0&&<path className="ufa-focus-direction-fill" d={directionSlice(g.startAngle,g.endAngle,12+132*g.attempts/max)}/>}</svg>
                   </ChartMark>)}
@@ -80,8 +93,8 @@ export function ThrowingFocus({queries}) {
             </div>
           </div>
           {(player.recordedAttempts!==player.sourceAttempts||player.recordedCompletions!==player.sourceCompletions)&&<p className="ufa-focus-note" data-reviewed-rows>Our export has {player.recordedCompletions} completions / {player.recordedAttempts} attempts; Shown Space’s season summary has {player.sourceCompletions} / {player.sourceAttempts}. The explorer uses the individual exported throws.</p>}
-          {model.selected&&<div className="ufa-focus-record-filter" data-reviewed-rows><span>{selectedLabel} · {count(model.rows.length)} throws</span><Button onClick={()=>setSelection(null)}>Show all throws</Button></div>}
-          <details className="ufa-focus-records"><summary>Inspect these throws</summary>
+          {model.selected&&<div ref={recordsFilterRef} className="ufa-focus-record-filter" data-reviewed-rows><span>{selectedLabel} · {count(model.rows.length)} throws</span><Button onClick={()=>inspectThrows(null)} aria-controls="ufa-focus-throw-records">Show all throws</Button></div>}
+          <details id="ufa-focus-throw-records" ref={recordsRef} className="ufa-focus-records" open={recordsOpen} onToggle={event=>setRecordsOpen(event.currentTarget.open)}><summary>{recordsOpen?`${player.name} · ${selectedLabel}`:'Inspect these throws'}</summary>
             <div data-reviewed-rows><DataTable key={`${player.id}:${view}:${selection}`} rows={records} searchable={false} columns={[
               {field:'game',label:'Game'},{field:'receiver',label:'Thrown to'},{field:'length',label:'Length (yards)',renderCell:v=>value(v)},
               {field:'outcome',label:'Result'},{field:'throwerAec',label:'Thrower aEC',renderCell:v=>Number.isFinite(v)?v.toFixed(3):'—'},

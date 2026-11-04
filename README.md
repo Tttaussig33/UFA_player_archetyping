@@ -36,8 +36,8 @@ Then open <http://127.0.0.1:4173>.
   custom player-quality score.
 - Choose **Throw length** or **Throw direction**. Bars/slices show how many throws
   the player attempted, including incompletions. Select a length directly, or a
-  direction followed by **Inspect throws**, to filter the throw records.
-  **Show all throws** clears the selection. Completion for a length or direction
+  direction followed by **Inspect throws**, to open the matching throw records and scroll to them.
+  **Show all throws** opens the full list and clears the selection. Completion for a length or direction
   is available on hover; the season row stays fixed. Expand **Inspect these throws**
   for the exact records and individual aEC values.
 - Length means straight-line distance between recorded throw and target locations.
