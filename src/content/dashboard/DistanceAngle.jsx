@@ -5,13 +5,14 @@ import {focusDirectory,throwLength,directionPoint,directionSlice,directionHit} f
 import {averageAngleLabel,distanceAngleModel,directionDisplayRows,directionScale,validDistanceRange} from './distance-angle-model.js';
 import {distanceAngleLeague,indexPlayerThrows} from './player-finder-model.js';
 import {PlayerFinder} from './PlayerFinder.jsx';
+import {AverageDirectionArrow} from './AverageDirectionArrow.jsx';
 import './distance-angle.css';
 
 const percent=n=>Number.isFinite(n)?`${(n*100).toFixed(1).replace(/\.0$/,'')}%`:'—';
 const decimal=n=>Number.isFinite(n)?n.toFixed(1):'—';
 const count=n=>n.toLocaleString();
 
-function DirectionProfile({player,model,scale,names,slot,rangeLabel,highlightDirection}) {
+function DirectionProfile({player,model,scale,names,rangeLabel,highlightDirection}) {
   const [selected,setSelected]=useState(null),[inspectRequest,setInspectRequest]=useState(0),[open,setOpen]=useState(false);
   const recordsRef=useRef(null);
   const group=model.groups.find(g=>g.id===selected),recordEvents=group?.rows||model.rows;
@@ -28,7 +29,6 @@ function DirectionProfile({player,model,scale,names,slot,rangeLabel,highlightDir
     });
     return()=>cancelAnimationFrame(frame);
   },[inspectRequest,open]);
-  const meanPoint=Number.isFinite(model.averageAngle)?directionPoint(model.averageAngle,116):null;
   return <article className="ufa-angle-player" aria-label={`${player.name} distance and angle`} data-reviewed-rows>
     <div className="ufa-focus-identity"><Face id={player.id} name={player.name}/><div><h3>{player.name}</h3><p>{player.teamName}</p></div></div>
     <dl className="ufa-angle-stats">
@@ -50,7 +50,7 @@ function DirectionProfile({player,model,scale,names,slot,rangeLabel,highlightDir
         context={{kind:'chart',chartType:'radial',label:g.label,value:g.count,row:displayRows[g.index],actions:[{label:'Inspect throws',onSelect:()=>inspect(g.id)}]}}
         tooltip={<ChartTooltip active label={g.label} headerValue={`${g.count} throws`} details={[{label:'Share of directions',value:percent(g.share)},{label:'Completion %',value:percent(g.count?g.completed/g.count:null)}]}/>}
       ><svg viewBox="0 0 360 360" aria-hidden="true"><path className="ufa-angle-slice-boundary" d={directionSlice(g.startAngle,g.endAngle,144)}/>{g.count>0&&<path className={`ufa-angle-slice-fill${model.leaders.some(l=>l.id===g.id)?' is-leading':''}`} d={directionSlice(g.startAngle,g.endAngle,12+132*g.share/scale)}/>}</svg></ChartMark>)}
-      {meanPoint&&<svg className="ufa-angle-mean" viewBox="0 0 360 360" aria-hidden="true"><defs><marker id={`ufa-angle-mean-${slot}`} viewBox="0 0 8 8" refX="7" refY="4" markerWidth="3.5" markerHeight="3.5" orient="auto"><path d="M0 0L8 4L0 8Z"/></marker></defs><line x1="180" y1="180" x2={meanPoint[0]} y2={meanPoint[1]} markerEnd={`url(#ufa-angle-mean-${slot})`}/><circle cx="180" cy="180" r="4"/></svg>}
+      <div className="ufa-angle-mean"><AverageDirectionArrow angle={model.averageAngle}/></div>
       {!model.directional.length&&<p className="ufa-angle-empty">{model.count?'These throws have no usable angle.':'No throws in this range.'}</p>}
     </div>
     <div className="ufa-angle-common"><span>Most common {model.leaders.length>1?'directions':'direction'}</span><strong>{model.leaders.length?model.leaders.map(g=>g.label).join(' / '):'—'}</strong>{model.leaders.length>0&&<small>{model.leaders[0].count} throws{model.leaders.length>1?' each · tied':''} · {percent(model.leaders[0].share)}{model.leaders.length>1?' each':''}</small>}</div>
@@ -117,8 +117,8 @@ export function DistanceAngle({queries}) {
             <p className="ufa-angle-range-note" data-reviewed-rows><strong>{rangeLabel} · All directions</strong> · Counts and averages use this range. Includes completed and incomplete throws.{highlightDirection!=='all'&&<> The finder’s {firstModel.groups[Number(highlightDirection)].label} direction is outlined.</>}</p>
             <div className="ufa-angle-legend"><span><i/>Throw frequency</span><span><i className="ufa-angle-mean-key"/>Average direction</span><span className="ufa-focus-note">Angles start at straight downfield (0°).</span></div>
             <div className="ufa-angle-profiles">
-              <DirectionProfile key={`first:${first.id}:${min}:${max}`} player={first} model={firstModel} scale={scale} names={names} slot="first" rangeLabel={rangeLabel} highlightDirection={highlightDirection}/>
-              <DirectionProfile key={`second:${second.id}:${min}:${max}`} player={second} model={secondModel} scale={scale} names={names} slot="second" rangeLabel={rangeLabel} highlightDirection={highlightDirection}/>
+              <DirectionProfile key={`first:${first.id}:${min}:${max}`} player={first} model={firstModel} scale={scale} names={names} rangeLabel={rangeLabel} highlightDirection={highlightDirection}/>
+              <DirectionProfile key={`second:${second.id}:${min}:${max}`} player={second} model={secondModel} scale={scale} names={names} rangeLabel={rangeLabel} highlightDirection={highlightDirection}/>
             </div>
             <p className="ufa-focus-note ufa-angle-reading">Each slice covers 30°. Longer slices mean a larger share of throws in this range; the outer ring is {percent(scale)} on both charts. The average can fall between frequently used directions.</p>
           </>}

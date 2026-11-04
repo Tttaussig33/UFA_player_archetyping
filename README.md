@@ -53,8 +53,10 @@ Then open <http://127.0.0.1:4173>.
   The diagrams show twelve 30° direction ranges: forward is up (0°), left and right
   are 90°, and backward is 180°. Both diagrams use the same frequency scale. Bright
   slices identify the most frequent direction ranges, preserving ties; the purple
-  arrow shows the average direction. Select a slice and **Inspect throws** to open
-  its underlying records. Average distance is the arithmetic mean of endpoint
+  arrow points to the average direction on the outer ring, labeled at its tip.
+  The dashed vertical guide marks straight forward; arrow length does not encode
+  distance or frequency. Small finder arrows use the same orientation. Select a
+  slice and **Inspect throws** to open its underlying records. Average distance is the arithmetic mean of endpoint
   distances; average angle is a circular mean with one equal vote per throw, so
   359° and 1° average to forward. Zero-distance throws have no direction and are
   excluded from angle calculations; exactly opposing directions may have no single

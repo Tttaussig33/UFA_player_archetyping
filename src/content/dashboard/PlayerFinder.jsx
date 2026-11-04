@@ -2,6 +2,7 @@ import React,{useMemo,useState} from 'react';
 import {Button,DataComponent,DataTable,Dropdown,SegmentedControl,SortableItem,SortableRegion} from '../../data-app-public.jsx';
 import {averageAngleLabel,directionLabel} from './distance-angle-model.js';
 import {findPlayers,finderEvidence} from './player-finder-model.js';
+import {AverageDirectionArrow} from './AverageDirectionArrow.jsx';
 import './player-finder.css';
 
 const percentage=value=>Number.isFinite(value)?`${(100*value).toFixed(1)}%`:'—';
@@ -11,7 +12,7 @@ const sortLabels={closest:'Closest arrow',attempts:'Most throws',share:'Highest 
 
 function AverageArrow({angle,gap}) {
   const label=averageAngleLabel(angle);
-  return <div className="ufa-finder-arrow-cell"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="18"/><line className="ufa-finder-axis" x1="21" y1="3" x2="21" y2="39"/><g transform={`rotate(${-angle} 21 21)`}><line x1="21" y1="31" x2="21" y2="10"/><path d="M17 14L21 8L25 14"/></g></svg><span>{label.replace(' of forward','')}<small>{gap.toFixed(1)}° apart</small></span></div>;
+  return <div className="ufa-finder-arrow-cell"><AverageDirectionArrow angle={angle} compact/><span>{label.replace(' of forward','')}<small>{gap.toFixed(1)}° apart</small></span></div>;
 }
 
 export function PlayerFinder({league,reference,secondId,rangeLabel,validRange,onCompare,onClearComparisonFocus,onDirectionChange}) {

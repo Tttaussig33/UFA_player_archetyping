@@ -1,0 +1,8 @@
+.ufa-average-arrow{display:block;width:100%;height:100%;overflow:visible;pointer-events:none}
+.ufa-average-arrow-shaft{stroke:var(--chart-2);stroke-width:3;stroke-linecap:round}
+.ufa-average-arrow-head,.ufa-average-arrow-origin{fill:var(--chart-2)}
+.ufa-average-arrow-forward{stroke:var(--secondary);stroke-width:1;stroke-dasharray:3 4;opacity:.7}
+.ufa-average-arrow-label{fill:var(--chart-2);font-family:inherit;font-size:12px;font-weight:500;stroke:var(--background);stroke-width:4;stroke-linejoin:round;paint-order:stroke fill}
+.ufa-average-arrow-ring{fill:none;stroke:var(--border-strong);stroke-width:6}
+.ufa-average-arrow.is-compact .ufa-average-arrow-shaft{stroke-width:15}
+.ufa-average-arrow.is-compact .ufa-average-arrow-forward{stroke-width:5;stroke-dasharray:14 18}
