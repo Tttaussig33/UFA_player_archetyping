@@ -46,6 +46,20 @@ Then open <http://127.0.0.1:4173>.
 - For 40+ yards, Atkins has **58 attempts, 49 complete (84.5%)**, or 10.5% of 551
   passes. Nissen has **22 attempts, 16 complete (72.7%)**, or 4.9% of 446 passes.
   Under the stricter huck definition they have 45/53 and 15/20, respectively.
+- **Distance & angle:** compare any two players at a shared distance range, starting
+  with 15–20 yards. Enter a narrower band (for example, 15 to under 16), or choose
+  **All distances** for whole-season averages. The lower boundary is included and
+  the upper boundary excluded. Both complete and incomplete non-stall throws count.
+  The diagrams show twelve 30° direction ranges: forward is up (0°), left and right
+  are 90°, and backward is 180°. Both diagrams use the same frequency scale. Bright
+  slices identify the most frequent direction ranges, preserving ties; the purple
+  arrow shows the average direction. Select a slice and **Inspect throws** to open
+  its underlying records. Average distance is the arithmetic mean of endpoint
+  distances; average angle is a circular mean with one equal vote per throw, so
+  359° and 1° average to forward. Zero-distance throws have no direction and are
+  excluded from angle calculations; exactly opposing directions may have no single
+  average. The average need not be a commonly used direction, so the distribution
+  stays visible alongside it. These angles describe disc travel, not throwing technique.
 - Expand **Shown Space season stats** for original **thrower aEC**, **lag contribution**
   and whole-season **Completion %**. These remain fixed when changing throw type.
   Season completion uses completed / non-stall attempts in the export, including
@@ -62,8 +76,9 @@ Then open <http://127.0.0.1:4173>.
 - Use the **sun/moon icon** to switch light and dark mode. Source definitions,
   evidence and original rows remain accessible from each section's menu.
 
-Throwing profiles covers the **full available 2026 season including playoffs**.
-The other tabs' team, phase and line filters do not silently restrict that profile.
+Throwing profiles and Distance & angle cover the **full available 2026 season
+including playoffs**. The other tabs' team, phase and line filters do not silently
+restrict either comparison.
 The previous contribution categories, similarity scores, research diagnostics and
 separate deep-thrower/radial pages are removed from navigation. Old radial and
 deep-thrower tab links open the simpler profile; historical code and evidence are
@@ -148,7 +163,10 @@ for the charts. LC remains a season total; it is never invented for a pass group
 Rebuild those source summaries with `python3 tools/throwing_focus.py`. Verify the
 source reconciliation, length boundaries, direction orientation, missing-data
 handling and every player's plotted long throws with
-`node --test tools/long-throws.test.mjs tools/throwing-focus.test.mjs`. The normal dataset rebuild also
+`node --test tools/long-throws.test.mjs tools/throwing-focus.test.mjs tools/distance-angle.test.mjs`.
+Distance-and-angle checks include circular averaging, strict range boundaries,
+zero-distance handling, all-player reconciliation, and source-angle agreement
+with endpoint geometry for every positive-distance non-stall throw. The normal dataset rebuild also
 attaches these summaries.
 
 The following radial details document the **historical reproduction**. The archived
