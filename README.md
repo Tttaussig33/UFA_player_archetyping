@@ -60,6 +60,23 @@ Then open <http://127.0.0.1:4173>.
   excluded from angle calculations; exactly opposing directions may have no single
   average. The average need not be a commonly used direction, so the distribution
   stays visible alongside it. These angles describe disc travel, not throwing technique.
+- **Find players**, inside Distance & angle, combines the distance range with
+  angle, team, and minimum-throw filters. **Similar arrows** finds players whose
+  average direction is within a selectable number of degrees of Player 1's arrow.
+  It starts at 15° and 20 throws in the distance range; these are adjustable browsing
+  settings, not statistical qualifications or fixed archetypes. Results show small
+  purple arrows and the angular difference. At 15–20 yards, Jacob Cowan and Andrew
+  Roy are the closest qualifying arrows to Atkins; matching an average does not
+  establish a matching full distribution.
+- **Throws by direction** instead filters individual passes by distance and one
+  30° direction range together. Rank the matching players by attempt count,
+  frequency (**matching attempts / all non-stall attempts**), or completion
+  (**matching completions / matching attempts**). The team filter uses the player
+  directory's season team. Search the results and select **Compare** to load Player 2
+  without changing Player 1. The comparison retains all directions at the selected
+  distance, with the finder direction outlined. **Back to player finder** returns
+  to the same filters and results. All finder controls are local to the tab and reset
+  on reload; season aEC/LC are not recalculated or used as similarity scores.
 - Expand **Shown Space season stats** for original **thrower aEC**, **lag contribution**
   and whole-season **Completion %**. These remain fixed when changing throw type.
   Season completion uses completed / non-stall attempts in the export, including
@@ -163,9 +180,10 @@ for the charts. LC remains a season total; it is never invented for a pass group
 Rebuild those source summaries with `python3 tools/throwing_focus.py`. Verify the
 source reconciliation, length boundaries, direction orientation, missing-data
 handling and every player's plotted long throws with
-`node --test tools/long-throws.test.mjs tools/throwing-focus.test.mjs tools/distance-angle.test.mjs`.
+`node --test tools/long-throws.test.mjs tools/throwing-focus.test.mjs tools/distance-angle.test.mjs tools/player-finder.test.mjs`.
 Distance-and-angle checks include circular averaging, strict range boundaries,
-zero-distance handling, all-player reconciliation, and source-angle agreement
+zero-distance handling, all-player reconciliation, joint finder filters and rate
+denominators, circular matching across the 0°/360° boundary, and source-angle agreement
 with endpoint geometry for every positive-distance non-stall throw. The normal dataset rebuild also
 attaches these summaries.
 
