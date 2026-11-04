@@ -1,8 +1,9 @@
 # UFA player archetyping
 
 Explore one practical question: **What does this player tend to throw, and how
-successful are those throws?** The main throwing profile uses original Shown
-Space aEC and lag contribution, plus pass counts and completion rates. The
+successful are those throws?** The main throwing profile compares two players'
+long throws on matching fields, with attempt counts and completion rates. Original
+Shown Space aEC and lag contribution remain in expandable season stats. The
 original field-zone map and passing connections remain available for all 22 teams.
 
 ## Terminology
@@ -27,25 +28,29 @@ Then open <http://127.0.0.1:4173>.
 
 ## Explore
 
-- **Throwing profiles:** search any of the 747 named throwers with recorded 2026
-  passes. The season row shows Shown Space's original **thrower aEC** and
-  **lag contribution**, plus **Completion %** from completed / attempted passes
-  in the export, including playoffs and all lines. Drops are incomplete; this
-  keeps the existing completion calculation, not the adjusted leaderboard CP%. They stay fixed when
-  selecting a group of throws. There is no minimum-attempt qualification or
-  custom player-quality score.
-- Choose **Throw length** or **Throw direction**. Bars/slices show how many throws
-  the player attempted, including incompletions. Select a length directly, or a
-  direction followed by **Inspect throws**, to open the matching throw records and scroll to them.
-  **Show all throws** opens the full list and clears the selection. Completion for a length or direction
-  is available on hover; the season row stays fixed. Expand **Inspect these throws**
-  for the exact records and individual aEC values.
-- Length means straight-line distance between recorded throw and target locations.
-  The four display ranges are 0–<10, 10–<20, 20–<40 and 40+ yards; these are not
-  learned archetypes or the huck definition. Direction keeps Shown Space's twelve
-  30-degree bins, with forward up and positive 90° left. Stationary passes have no
-  spatial direction and are omitted only from the direction view. Stalls are omitted
-  from both charts, but retained in source season aEC.
+- **Throwing profiles:** independently search two of the 747 named throwers with
+  recorded 2026 passes. Alex Atkins and Jacques Nissen are the starting comparison.
+  The two fields show **every matching attempt** on the same physical scale, attacking
+  to the right. Solid teal arrows are complete; dashed orange arrows are incomplete,
+  including drops. Dots mark throwing locations; arrows end at recorded targets.
+  Hover for a throw's game, target and length; use **Highlight this throw** to keep
+  it emphasized, then **Clear highlight**. The table is optional under **Throw records**.
+- **40+ yards** includes straight-line endpoint distances of at least 40 yards in
+  any direction. **Hucks** requires both distance strictly over 40 yards and forward
+  gain strictly over 30 yards. All non-stall attempts count, including unnamed targets.
+  The attempt count and completion percentage cover exactly the plotted throws.
+  The smaller **% of all throws** divides that count by all of the player's non-stall
+  passes, making frequency comparable when players have different season volume.
+  No minimum-attempt qualification or custom quality score is applied; these are
+  descriptive results, not adjusted for throw difficulty.
+- For 40+ yards, Atkins has **58 attempts, 49 complete (84.5%)**, or 10.5% of 551
+  passes. Nissen has **22 attempts, 16 complete (72.7%)**, or 4.9% of 446 passes.
+  Under the stricter huck definition they have 45/53 and 15/20, respectively.
+- Expand **Shown Space season stats** for original **thrower aEC**, **lag contribution**
+  and whole-season **Completion %**. These remain fixed when changing throw type.
+  Season completion uses completed / non-stall attempts in the export, including
+  drops as incomplete; it is not the adjusted leaderboard CP% field. LC is available
+  only as a season total and is not assigned to these long-throw subsets.
 - **Connections:** search a player, then explore incoming and outgoing partners.
   Filter to all passes or hucks, and to completed passes or all attempts. The team,
   season-phase and line controls apply here and in Field views.
@@ -142,11 +147,11 @@ for the charts. LC remains a season total; it is never invented for a pass group
 
 Rebuild those source summaries with `python3 tools/throwing_focus.py`. Verify the
 source reconciliation, length boundaries, direction orientation, missing-data
-handling and every player's plotted groups with
-`node --test tools/throwing-focus.test.mjs`. The normal dataset rebuild also
+handling and every player's plotted long throws with
+`node --test tools/long-throws.test.mjs tools/throwing-focus.test.mjs`. The normal dataset rebuild also
 attaches these summaries.
 
-The following radial details document the **historical reproduction**. The new
+The following radial details document the **historical reproduction**. The archived
 Throw direction view uses the same bins but positions them in their actual field
 direction and removes zero-distance throws.
 
@@ -281,8 +286,10 @@ database function and display convention described above.
 
 ## Development
 
-The active simplified profile is `src/content/dashboard/ThrowingFocus.jsx`, with
-`throwing-focus-model.js` and `throwing-focus.css`. Historical deep-thrower,
+The active comparison is `src/content/dashboard/ThrowingFocus.jsx`, with
+`long-throws-model.js` and `throwing-focus.css`. The shared strict huck definition
+comes from `connections-model.js`. The previous length/direction explorer is
+preserved in `ThrowingPatterns.jsx` and `throwing-focus-model.js`. Historical deep-thrower,
 contribution and style-matching modules remain on disk but are not mounted by the
 current navigation. The sections below retain their methods for reproducibility.
 
