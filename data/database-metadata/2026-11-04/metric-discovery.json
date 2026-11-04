@@ -1,0 +1,1277 @@
+{
+  "metric_functions": [
+    {
+      "nspname": "prod",
+      "proname": "refresh_metric_percentile_lookup",
+      "arguments": "p_season text"
+    },
+    {
+      "nspname": "prod",
+      "proname": "get_player_season_games",
+      "arguments": "p_player_id character varying, p_year integer"
+    }
+  ],
+  "columns": [
+    {
+      "table_name": "player_game_stats",
+      "column_name": "GameID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "PlayerID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "full_name",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "FirstName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "LastName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "TeamID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "JerseyNumber",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Year",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Assists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Goals",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "HockeyAssists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Completions",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "ThrowAttempts",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Throwaways",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Stalls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "CallahansThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "YardsReceived",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "YardsThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Catches",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Drops",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Blocks",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Callahans",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "Pulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "OBPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "RecordedPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "RecordedPullsHangtime",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "OPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "OPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "DPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "DPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "SecondsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "lag_contribution",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "xcp",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "cpoe_completions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "cpoe_attempts",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "cpoe",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "throws_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "thrower_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "receiver_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "offensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "offensive_possessions_involved",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "offensive_possessions_scored",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "defensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "defensive_possessions_stopped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "team_total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "player_impact",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "total_possession_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "player_impact_possession",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "hucks_thrown",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "hucks_completed",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "hucks_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "hucks_caught",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "connections",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "huck_completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "huck_attempt_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "OE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "DE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "turnovers",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "win_probability_added",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_game_stats",
+      "column_name": "insert_timestamp",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "PlayerID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "full_name",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "FirstName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "LastName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "TeamID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Year",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Assists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Goals",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "HockeyAssists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Completions",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "ThrowAttempts",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Throwaways",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Stalls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "CallahansThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "YardsReceived",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "YardsThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Catches",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Drops",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Blocks",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Callahans",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "Pulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "OBPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "RecordedPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "RecordedPullsHangtime",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "OPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "OPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "DPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "DPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "SecondsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "games_played",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "offensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "defensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "offensive_possessions_involved",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "offensive_possessions_scored",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "defensive_possessions_stopped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "total_possession_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "cpoe_completions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "cpoe_attempts",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "hucks_thrown",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "hucks_completed",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "hucks_caught",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "hucks_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "throws_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "lag_contribution",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "handler",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "offense",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "xcp",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "thrower_ec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "thrower_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "receiver_ec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "receiver_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "total_points",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "OE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "DE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "cpoe",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "team_total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "player_impact",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "player_impact_possession",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "connections",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "huck_completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "huck_attempt_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats",
+      "column_name": "insert_timestamp",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "GameID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "PlayerID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "full_name",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "FirstName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "LastName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "TeamID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "JerseyNumber",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Year",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Assists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Goals",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "HockeyAssists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Completions",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "ThrowAttempts",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Throwaways",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Stalls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "CallahansThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "YardsReceived",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "YardsThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Catches",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Drops",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Blocks",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Callahans",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "Pulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "OBPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "RecordedPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "RecordedPullsHangtime",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "OPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "OPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "DPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "DPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "SecondsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "lag_contribution",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "xcp",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "cpoe_completions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "cpoe_attempts",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "cpoe",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "throws_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "thrower_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "receiver_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "offensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "offensive_possessions_involved",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "offensive_possessions_scored",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "defensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "defensive_possessions_stopped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "team_total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "player_impact",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "total_possession_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "player_impact_possession",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "hucks_thrown",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "hucks_completed",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "hucks_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "hucks_caught",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "connections",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "huck_completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "huck_attempt_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "OE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "DE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "turnovers",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "win_probability_added",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_game",
+      "column_name": "insert_timestamp",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "PlayerID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "full_name",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "FirstName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "LastName",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "TeamID",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Year",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Assists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Goals",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "HockeyAssists",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Completions",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "ThrowAttempts",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Throwaways",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Stalls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "CallahansThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "YardsReceived",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "YardsThrown",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Catches",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Drops",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Blocks",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Callahans",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "Pulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "OBPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "RecordedPulls",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "RecordedPullsHangtime",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "OPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "OPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "DPointsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "DPointsScored",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "SecondsPlayed",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "games_played",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "offensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "defensive_possessions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "offensive_possessions_involved",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "offensive_possessions_scored",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "defensive_possessions_stopped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "total_possession_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "cpoe_completions",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "cpoe_attempts",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "hucks_thrown",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "hucks_completed",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "hucks_caught",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "hucks_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "throws_dropped",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "lag_contribution",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "handler",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "offense",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "xcp",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "thrower_ec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "thrower_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "receiver_ec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "receiver_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "total_points",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "OE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "DE",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "cpoe",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "team_total_aec",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "player_impact",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "player_impact_possession",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "connections",
+      "data_type": "text"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "huck_completion_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "huck_attempt_percentage",
+      "data_type": "double precision"
+    },
+    {
+      "table_name": "player_stats_season",
+      "column_name": "insert_timestamp",
+      "data_type": "text"
+    }
+  ],
+  "metric_comments": null
+}

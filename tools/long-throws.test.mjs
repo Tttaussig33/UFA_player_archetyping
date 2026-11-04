@@ -1,11 +1,53 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {longThrowsModel,longThrowRecords,fieldPoint,throwHitArea,LONG_FIELD} from '../src/content/dashboard/long-throws-model.js';
+import {longThrowsModel,longThrowRecords,fieldPoint,throwHitArea,throwExpectation,throwExpectationSummary,LONG_FIELD} from '../src/content/dashboard/long-throws-model.js';
 
 const data=JSON.parse(fs.readFileSync(new URL('../src/data.json',import.meta.url)));
 const events=data.queries.events.rows,players=data.queries.shownSpaceThrowers.rows;
 const pass=(id,rx,ry,extra={})=>({id,thrower:'p',tx:0,ty:0,rx,ry,complete:true,...extra});
+const close=(actual,expected)=>assert.ok(Math.abs(actual-expected)<1e-9,`${actual} != ${expected}`);
+
+test('filtered and per-throw CPOE use source cp, credit drops, and never fabricate per-throw LC',()=>{
+  const rows=[pass('complete',0,50,{cp:.8,cpoe:.2}),pass('drop',0,50,{cp:.6,cpoe:1,complete:false,drop:true}),pass('incomplete',0,50,{cp:.9,cpoe:-.9,complete:false})];
+  const model=longThrowsModel(rows,'p');
+  close(model.cpoe,-.1);
+  close(model.completion,1/3);
+  close(model.expectedCompletion,2.3/3);
+  assert.equal(model.scoredAttempts,3);
+  const records=longThrowRecords(model,{name:'P',teamName:'Team'},{});
+  for(const [index,expected] of [.2,.4,-.9].entries()){
+    close(records[index].cpoe,expected);
+    assert.equal(records[index].lagContribution,null);
+  }
+  assert.equal(throwExpectation({...rows[0],cp:null}).cpoe,null);
+  assert.equal(throwExpectation({...rows[0],stall:true}).cpoe,null);
+  const missing=throwExpectationSummary([rows[0],pass('no-model',0,50,{cp:null,complete:false})]);
+  close(missing.cpoe,-.3); // Official aggregate convention: all outcomes minus mean available cp.
+  assert.equal(missing.missingExpectation,1);
+  assert.equal(throwExpectationSummary([]).cpoe,null);
+  assert.equal(throwExpectationSummary([pass('unscored',0,50)]).cpoe,null);
+});
+
+test('CPOE and expected completion reproduce all 5,383 available source player-game comparisons',()=>{
+  const reference=JSON.parse(fs.readFileSync(new URL('../data/database-metadata/2026-11-04/player-stats-game-2026.json',import.meta.url))).rows;
+  const byGamePlayer=new Map();
+  for(const e of events){
+    if(e.stall||!e.thrower)continue;
+    const key=JSON.stringify([e.game,e.thrower]);
+    if(!byGamePlayer.has(key))byGamePlayer.set(key,[]);
+    byGamePlayer.get(key).push(e);
+  }
+  let compared=0;
+  for(const r of reference){
+    const source=byGamePlayer.get(JSON.stringify([r.GameID,r.PlayerID]));
+    if(!source?.length)continue;
+    const summary=throwExpectationSummary(source);
+    if(summary.expectedCompletion===null)continue;
+    close(summary.expectedCompletion,r.xcp);close(summary.cpoe,r.cpoe);compared++;
+  }
+  assert.equal(compared,5383);
+});
 
 test('distance bands have no gaps or double counts at 0, 10, 20, 30 and 40 yards',()=>{
   const rows=[pass('zero',0,0),pass('below-ten',0,9.999),pass('ten',0,10),pass('nineteen',0,-19),

@@ -1,4 +1,4 @@
-import React,{useMemo,useState} from 'react';
+import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {Button,ChartMark,ChartTooltip,DataComponent,DataTable,Dropdown,SegmentedControl,SortableItem,SortableRegion} from '../../data-app-public.jsx';
 import {Face} from './Field.jsx';
 import {focusDirectory} from './throwing-focus-model.js';
@@ -7,6 +7,7 @@ import './throwing-focus.css';
 
 const count=n=>n.toLocaleString(),percent=n=>Number.isFinite(n)?`${(n*100).toFixed(1).replace(/\.0$/,'')}%`:'—';
 const value=n=>Number.isFinite(n)?n.toFixed(1):'Unavailable';
+const points=n=>{if(!Number.isFinite(n))return '—';const rounded=Number((n*100).toFixed(1));return `${rounded>0?'+':''}${rounded.toFixed(1)} pp`;};
 const outcome=e=>e.complete?'complete':'incomplete';
 
 function ThrowVector({event,prefix}) {
@@ -19,6 +20,15 @@ function ThrowVector({event,prefix}) {
 
 function LongThrowField({model,player,names,slot,filter}) {
   const [focused,setFocused]=useState(null);
+  const selectionRef=useRef(null);
+  useEffect(()=>{
+    if(!focused)return;
+    const frame=requestAnimationFrame(()=>{
+      selectionRef.current?.scrollIntoView({block:'nearest',behavior:'auto'});
+      selectionRef.current?.focus({preventScroll:true});
+    });
+    return()=>cancelAnimationFrame(frame);
+  },[focused]);
   const prefix=`ufa-long-${slot}`,selected=model.rows.find(e=>e.id===focused);
   const records=useMemo(()=>longThrowRecords(model,player,names),[model,player,names]);
   const byId=useMemo(()=>new Map(records.map(r=>[r.id,r])),[records]);
@@ -30,6 +40,8 @@ function LongThrowField({model,player,names,slot,filter}) {
     <dl className="ufa-long-stats">
       <div><dt>Attempts</dt><dd>{count(model.attempts)}</dd><p>{percent(model.share)} of all throws</p></div>
       <div><dt>Completion %</dt><dd>{percent(model.completion)}</dd><p>{count(model.completed)} completed</p></div>
+      <div><dt>CPOE</dt><dd className="ufa-long-metric">{points(model.cpoe)}</dd><p>Selected throws</p></div>
+      <div><dt>Lag contribution</dt><dd>{value(player.lagContribution)}</dd><p>Whole season</p></div>
     </dl>
     <div className={`ufa-long-field${selected?' has-selection':''}`} data-chart-interaction-root role="group" aria-label={`${player.name}: all ${model.attempts} attempts · ${filter.label}`}>
       <svg viewBox={viewBox} aria-hidden="true" className="ufa-long-field-base">
@@ -51,19 +63,30 @@ function LongThrowField({model,player,names,slot,filter}) {
         return <ChartMark key={e.id} className="ufa-long-mark" style={{clipPath:throwHitArea(e)}} aria-label={`${label}, ${row.outcome.toLowerCase()}, ${value(row.length)} yards, ${e.game}`}
           context={{kind:'chart',chartType:'scatter',label,value:row.length,row,
             actions:[{label:'Highlight this throw',onSelect:()=>setFocused(e.id)}]}}
-          tooltip={<ChartTooltip active label={label} headerValue={`${row.outcome} · ${value(row.length)} yd`} details={[{label:'Game',value:e.game},{label:'Forward gain',value:`${value(row.forwardGain)} yd`}]} />}>
+          tooltip={<ChartTooltip active label={label} headerValue={`${row.outcome} · ${value(row.length)} yd`} details={[{label:'Expected completion',value:percent(row.expectedCompletion)},{label:'CPOE',value:points(row.cpoe)},{label:'Lag contribution',value:'Not provided per throw'},{label:'Game',value:e.game},{label:'Forward gain',value:`${value(row.forwardGain)} yd`}]} />}>
           <svg viewBox={viewBox} aria-hidden="true"><ThrowVector event={e} prefix={prefix}/></svg>
         </ChartMark>;
       })}
       {selected&&<svg className="ufa-long-selected" viewBox={viewBox} aria-hidden="true"><ThrowVector event={selected} prefix={prefix}/></svg>}
       {!model.attempts&&<p className="ufa-long-empty">No throws recorded for {filter.label.toLowerCase()}.</p>}
     </div>
-    {selectedRecord&&<div className="ufa-long-selection"><p>{selectedRecord.receiver} · {selectedRecord.outcome} · {value(selectedRecord.length)} yd<br/><span>{selectedRecord.game}</span></p><Button onClick={()=>setFocused(null)}>Clear highlight</Button></div>}
+    {selectedRecord&&<div ref={selectionRef} tabIndex={-1} className="ufa-long-selection" role="region" aria-label={`${player.name} selected throw`}>
+      <div className="ufa-long-selection-header"><p>{selectedRecord.receiver} · {selectedRecord.outcome} · {value(selectedRecord.length)} yd<br/><span>{selectedRecord.game}</span></p><Button onClick={()=>setFocused(null)}>Clear highlight</Button></div>
+      <dl className="ufa-long-throw-metrics">
+        <div><dt>Expected completion</dt><dd>{percent(selectedRecord.expectedCompletion)}</dd></div>
+        <div><dt>CPOE</dt><dd>{points(selectedRecord.cpoe)}</dd></div>
+        <div><dt>Lag contribution</dt><dd className="ufa-long-unavailable">Not provided per throw</dd></div>
+      </dl>
+      {selected?.drop&&<p className="ufa-focus-note">This was dropped. CPOE gives the thrower completion credit; actual completion counts it as incomplete.</p>}
+    </div>}
+    {model.missingExpectation>0&&<p className="ufa-focus-note">Expected-completion data is available for {count(model.scoredAttempts)} of {count(model.attempts)} throws.</p>}
     {model.missingLocations>0&&<p className="ufa-focus-note">{count(model.missingLocations)} throws lack coordinates and cannot be classified or plotted.</p>}
     <details className="ufa-focus-records"><summary>Throw records ({count(model.attempts)})</summary>
       <DataTable rows={records} searchable={false} columns={[
         {field:'game',label:'Game'},{field:'receiver',label:'Thrown to'},
         {field:'length',label:'Length (yd)',renderCell:value},{field:'outcome',label:'Result'},
+        {field:'expectedCompletion',label:'Expected completion',renderCell:percent},
+        {field:'cpoe',label:'CPOE',renderCell:points},
       ]} caption={`${player.name} · ${filter.label}`}/>
     </details>
   </article>;
@@ -93,14 +116,15 @@ export function ThrowingFocus({queries}) {
     </div>
     <SortableRegion id="ufa:throwing-focus" variant="stack" authoredRevision={1} authoredOrder={['ufa-throwing-explorer','ufa-throwing-season']} label="Throwing comparison">
       <SortableItem id="ufa-throwing-explorer" label="Throws by distance" kind="custom">
-        <DataComponent id="ufa-throwing-explorer" queryId="events" kind="custom" title="Throws by distance"
-          sourceRows={sourceRows} displayRows={displayRows}
+        <DataComponent id="ufa-throwing-explorer" queryId="events" queryIds={['events','shownSpaceThrowers']} kind="custom" title="Throws by distance"
+          sourceRowsByQuery={{events:sourceRows,shownSpaceThrowers:selectedPlayers}} displayRows={displayRows}
           scopeFilters={[...scope,{label:'Throw type',value:type==='hucks'?'Hucks (>40 yards and >30 yards forward)':`${filter.label} (≥${filter.min}${Number.isFinite(filter.max)?` and <${filter.max}`:''} yards)`}]}
-          description="Both fields show every qualifying attempt by the selected players on identical scales, attacking toward Y=120, shown to the right. Solid lines are complete and dashed lines incomplete, including drops and unnamed targets. Dots mark throwing locations; arrows end at recorded target locations. Lines connect endpoints, not tracked flight paths or player movement. Attempts and completion percentage cover exactly the plotted throws. Share of all throws divides qualifying attempts by all of that player’s non-stall attempts, so it describes frequency rather than just season volume. Source inspection includes all non-stall passes for both players to preserve these denominators; displayed rows contain only the plotted throws. Hover to highlight a throw; click for the shared action menu. These descriptive rates are not adjusted for throw difficulty."
+          description="Both fields show every qualifying attempt by the selected players on identical scales, attacking toward Y=120, shown to the right. Solid lines are complete and dashed lines incomplete, including drops and unnamed targets. Dots mark throwing locations; arrows end at recorded target locations. Lines connect endpoints, not tracked flight paths or player movement. Attempts, completion percentage and CPOE cover the selected throws. CPOE is (completed or dropped attempts) / attempts minus the mean available source cp, matching the source player-game calculation; drops receive thrower credit. Individual CPOE is credited outcome minus cp, not the raw cpoe field, which is 1 on drops. Lag contribution comes from shownSpaceThrowers and remains a whole-season total. The database has no per-throw LC field; a next-throw aEC reconstruction failed reconciliation with official totals, so no filtered or per-throw LC is inferred. Share of all throws divides qualifying attempts by all of that player’s non-stall attempts, so it describes frequency rather than just season volume. Source inspection includes all non-stall passes for both players to preserve these denominators; displayed rows contain only the plotted throws. Hover to highlight a throw; click for the shared action menu. Completion percentage is unadjusted; CPOE compares credited outcomes with the source model’s expected completion probabilities."
           headerControls={<SegmentedControl ariaLabel="Throw distance or hucks" className="ufa-throw-distance-options" value={type} onChange={setType} options={THROW_TYPES.map(option=>({value:option.id,label:option.label}))}/>}
         >
           <p className="ufa-focus-note ufa-long-definition">{type==='hucks'?'Hucks travel over 40 yards and gain over 30 yards forward.':type==='long'?'40+ yards is the straight-line distance from thrower to target, in any direction.':`${filter.label} includes ${filter.min} and excludes ${filter.max}. Distance is measured in a straight line from thrower to target, in any direction.`}</p>
           <div className="ufa-long-legend"><span><i className="ufa-long-key-complete"/>Complete</span><span><i className="ufa-long-key-incomplete"/>Incomplete</span><span className="ufa-focus-note">Dot = throwing location · Arrow = target · Hover to inspect</span></div>
+          <p className="ufa-focus-note ufa-long-metric-note">CPOE is completion above expected, in percentage points (pp); it credits recorded drops to the thrower. Lag contribution is the whole-season total; per-throw LC is unavailable.</p>
           <div className="ufa-long-fields">
             <LongThrowField key={`first:${first.id}:${type}`} model={firstModel} player={first} names={names} slot="first" filter={filter}/>
             <LongThrowField key={`second:${second.id}:${type}`} model={secondModel} player={second} names={names} slot="second" filter={filter}/>

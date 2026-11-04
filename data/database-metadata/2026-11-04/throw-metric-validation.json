@@ -1,0 +1,26 @@
+{
+  "source": "prod.player_stats_game",
+  "checkedAt": "2026-11-04T16:04:05.186238+00:00",
+  "playerGameRows": 5631,
+  "sourceGames": 142,
+  "cpoe": {
+    "compared": 5383,
+    "matched": 5383,
+    "xcpMatched": 5383,
+    "gamesWithMissingCp": 7,
+    "formula": "(complete or dropped attempts)/all non-stall attempts - mean available cp",
+    "individualFormula": "(1 for complete or dropped, otherwise 0) - cp; missing cp stays null",
+    "rawFieldWarning": "Stored per-throw cpoe is 1 on recorded drops. Do not average it."
+  },
+  "lagContribution": {
+    "perThrowColumnAvailable": false,
+    "seasonPlayers": 747,
+    "seasonTotalsMatchingGameSource": 747,
+    "candidate": "Sum next raw aEC over uniquely verified possession-adjacent passes",
+    "verifiedLinks": 67168,
+    "compared": 5383,
+    "candidateMatches": 2961,
+    "decision": "Rejected: does not reproduce all official LC totals. Keep original season LC; filtered and per-throw LC remain unavailable."
+  },
+  "sourceRowsChanged": false
+}

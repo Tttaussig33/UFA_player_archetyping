@@ -1,0 +1,5 @@
+[{"relname":"player_game_stats","relkind":"r","definition":null},
+ {"relname":"player_stats","relkind":"r","definition":null},
+ {"relname":"player_stats_game","relkind":"r","definition":null},
+ {"relname":"player_stats_season","relkind":"r","definition":null},
+ {"relname":"throws","relkind":"r","definition":null}]

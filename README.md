@@ -47,6 +47,21 @@ Then open <http://127.0.0.1:4173>.
   passes, making frequency comparable when players have different season volume.
   No minimum-attempt qualification or custom quality score is applied; these are
   descriptive results, not adjusted for throw difficulty.
+- **CPOE** follows the selected distance or huck filter and is shown in percentage
+  points: credited completion rate minus the mean available Shown Space `cp`.
+  Recorded drops receive thrower credit; actual completion still treats drops as
+  incomplete. Hover or highlight a throw for its expected completion and CPOE.
+  The raw per-throw `cpoe` column is 1 on drops and is not averaged.
+- **Lag contribution** in the top bar is explicitly **whole season**. All 747
+  original totals match the database game totals. Per-throw LC is not provided in
+  the available throw data; a next-aEC reconstruction failed reconciliation, so
+  per-throw and filtered LC remain unavailable. We need the exact source attribution
+  rule or a per-throw export before adding them.
+- Metric validation: `python3 tools/validate_throw_metrics.py` reproduces all
+  5,383 comparable player-game CPOE/xCP values from the November 4 read-only capture.
+  Expected-completion values are missing on 18 non-stall throws; affected filters
+  disclose coverage and retain the source aggregate convention. This verification
+  does not refresh or alter the underlying October 12 throw snapshot.
 - For 40+ yards, Atkins has **58 attempts, 49 complete (84.5%)**, or 10.5% of 551
   passes. Nissen has **22 attempts, 16 complete (72.7%)**, or 4.9% of 446 passes.
   Under the stricter huck definition they have 45/53 and 15/20, respectively.

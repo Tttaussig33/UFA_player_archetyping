@@ -1,0 +1,1 @@
+SELECT json_agg(t) FROM (SELECT "GameID", "PlayerID", "ThrowAttempts", "Completions", throws_dropped, xcp, cpoe, cpoe_attempts, cpoe_completions, lag_contribution, thrower_aec, insert_timestamp FROM prod.player_stats_game WHERE left("GameID",4)='2026' ORDER BY "GameID", "PlayerID") t;

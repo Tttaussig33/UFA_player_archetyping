@@ -9,6 +9,22 @@ export const THROW_TYPES=[
   {id:'hucks',label:'Hucks'},
 ];
 
+export function throwExpectation(event) {
+  const expectedCompletion=Number.isFinite(event.cp)?event.cp:null;
+  // Shown Space credits recorded drops to the thrower. Its raw cpoe field is
+  // 1 on drops, so derive the residual from cp rather than averaging that field.
+  const cpoe=expectedCompletion!==null&&!event.stall?(event.complete||event.drop?1:0)-expectedCompletion:null;
+  return {expectedCompletion,cpoe,lagContribution:null};
+}
+
+export function throwExpectationSummary(rows) {
+  const passes=rows.filter(e=>!e.stall),scored=passes.filter(e=>Number.isFinite(e.cp));
+  const expectedCompletion=scored.length?scored.reduce((sum,e)=>sum+e.cp,0)/scored.length:null;
+  const credited=passes.filter(e=>e.complete||e.drop).length;
+  return {expectedCompletion,cpoe:passes.length&&expectedCompletion!==null?credited/passes.length-expectedCompletion:null,
+    scoredAttempts:scored.length,missingExpectation:passes.length-scored.length};
+}
+
 // All distance bands keep drops and unnamed targets. Stalls are not physical throws.
 export function longThrowsModel(events,playerId,type='long') {
   const band=THROW_TYPES.find(option=>option.id===type);
@@ -21,6 +37,7 @@ export function longThrowsModel(events,playerId,type='long') {
   const completed=rows.filter(e=>e.complete).length;
   return {allPasses,rows,completed,attempts:rows.length,
     completion:rows.length?completed/rows.length:null,
+    ...throwExpectationSummary(rows),
     share:allPasses.length?rows.length/allPasses.length:null,
     missingLocations:allPasses.length-located.length};
 }
@@ -51,6 +68,6 @@ export function longThrowRecords(model,player,names) {
   return model.rows.map(e=>({id:e.id,player:player.name,team:player.teamName,game:e.game,
     receiver:names[e.receiver]||'Unrecorded target',
     length:passGeometry(e).distance,forwardGain:passGeometry(e).gain,
-    outcome:e.complete?'Complete':e.drop?'Drop':'Incomplete',
+    outcome:e.complete?'Complete':e.drop?'Drop':'Incomplete',...throwExpectation(e),
     throwingX:e.tx,throwingY:e.ty,targetX:e.rx,targetY:e.ry}));
 }
