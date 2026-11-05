@@ -20,4 +20,9 @@ __pycache__/
 # Full database exports are preserved locally; manifests and import tools are tracked.
 data/database-exports/**/*.csv
 
+# Throw- and possession-level research extracts remain local.
+research/oline_possessions/*.csv
+research/dead_disc_study/raw_events/
+research/huck_timing_study/oline_regains/throw_cohort.csv
+
 # Keep dist/: the documented launcher opens this ready-to-use build.

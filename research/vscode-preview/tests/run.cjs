@@ -3,7 +3,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const names = ['UFA-dead-disc-first-pass', 'UFA-pull-centering', 'UFA-oline-regain-hucking', 'UFA-possession-review'];
-const expected = [[6, 7], [22], [22], [5]];
+const expected = [[6, 7], [22], [3, 3, 3, 3, 5, 22, 3, 3, 4, 7], [5]];
+const expectedCharts = [2, 1, 6, 1];
 const directory = path.resolve(__dirname, '../../previews');
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 async function waitFor(read, label) {
@@ -31,7 +32,7 @@ exports.run = async function () {
       const result = await waitFor(() => api.previewDiagnostics()[uri.toString()], 'rendered report ' + name);
       assert.equal(result.error, undefined);
       assert.deepEqual(result.tableRows, expected[index]);
-      assert.equal(result.chartCount, index === 1 || index === 3 ? 1 : 2);
+      assert.equal(result.chartCount, expectedCharts[index]);
       results.push({name, kind, editor:'ufa.researchPreview', ...result});
       await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
     }

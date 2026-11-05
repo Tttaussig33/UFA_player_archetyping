@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-05",
+  "status": "Exploratory retrospective specification, written before inspecting this expanded analysis; earlier huck results were already known.",
+  "question": "How do receiving teams change their play on their second and later possessions within the same point?",
+  "scope": "2026 final regular-season games in the preserved ShownSpace export and audited public UFA events. Team began point receiving, whether it eventually holds or is broken.",
+  "comparisons": ["First vs second vs third-or-later team possession", "Within-team opening vs all subsequent possessions"],
+  "main_filter": "Exclude possessions containing recorded team timeout events 3 or 5. Preserve their original possession numbers. Keep injury and penalty events as flags; exclude entire points with timeouts or injuries only in sensitivity analyses.",
+  "physical_throws": "Retain every actual attempted throw including centering, drops and throwaways. Stalls and Callahan catches can end a zero-throw possession.",
+  "metrics": [
+    "Mean and median throws, separately in possessions ending in goals and turnovers",
+    "Goals divided by resolved goal-or-turnover possessions; period-ending possessions listed separately",
+    "Huck attempts per physical throw",
+    "Possessions containing any huck and containing a huck within their first three throws",
+    "Huck choice at throw 1, throws 2–3, throws 4–6, and throws 7+",
+    "Actual huck catches per attempt, drops separately, and recorded expected completion",
+    "Scoring after a completed huck as a descriptive continuation result",
+    "Association of prior point activity with early hucking on subsequent possessions"
+  ],
+  "huck_definition": "Straight-line distance >40 yards and forward gain >30 yards. Repeat principal comparisons using >40 forward yards.",
+  "huck_possession_eligibility": "For the main huck comparisons retain starts at least 40 yards from the attacking goal line: first recorded throwing Y <=60 on the 120-yard coordinate system. This is a transparent working definition of sufficient room to huck, not a discovered optimum. Repeat with Y <=50 and Y <=70, and unrestricted as sensitivity checks. Do not apply this exclusion to scoring or possession throw counts.",
+  "starting_location": "First recorded throwing or stall location; actual location where possession was won is not observed for every gain. Coordinate adjustments must describe this proxy accurately.",
+  "adjustment": "Descriptive regression standardization using starting longitudinal and lateral position, team, opponent, quarter and raw point-start period time where available. Additional within-game and common-field-region sensitivity checks. No chosen-throw endpoint, future outcome, or eventual hold as a pre-choice control.",
+  "uncertainty": "Whole-game bootstrap for observed estimates and differences. Regression covariance clustered by game. Team comparisons have only 11–12 games; use team game-count t references and Holm correction both within each 22-team metric family and across all 132 team contrasts. This is a pragmatic small-sample precaution, not exact finite-sample inference. Apply Holm to 16 principal league contrasts and six team-heterogeneity tests. Report effects and uncertainty; no p-value-driven selection of outcomes or teams.",
+  "amendment_2026_11_05": "After inspecting initial results, added throws-2–3 and exact-third-possession checks; separately report second-to-third-or-later contrasts as exploratory. Changed actual-catch adjustment from fixed logit(CP) offset to a fitted logit(CP) covariate because production training target/calibration to actual catches is unverified. Preserve the original offset model as sensitivity. Added correction across all 132 team contrasts so searching six metrics does not overstate team evidence.",
+  "selection": "All opening possessions define the baseline. A matched subset of points that reach a regain is outcome-selected and cannot define a scoring baseline. Later throw stages include only surviving possessions.",
+  "interpretation": "Fewer throws describes fewer passing actions. Early hucking can fit the impatience hypothesis but cannot demonstrate fatigue, intent or that hucking causes better scoring. Receiving-team role is not proof of unchanged personnel."
+}

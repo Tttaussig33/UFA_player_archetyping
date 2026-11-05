@@ -1,0 +1,262 @@
+{
+  "source_receiving_points": 5781,
+  "included_points": 5752,
+  "excluded_points": [
+    {
+      "point_id": "2026-04-25-DC-BOS|home|429",
+      "reasons": [
+        "unclosed_point_at_end_of_source"
+      ]
+    },
+    {
+      "point_id": "2026-04-26-ORE-OAK|away|253",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-04-26-ORE-OAK|away|382",
+      "reasons": [
+        "unclosed_point_at_end_of_source"
+      ]
+    },
+    {
+      "point_id": "2026-05-02-SLC-OAK|home|20",
+      "reasons": [
+        "missing_point_end_before_next_start"
+      ]
+    },
+    {
+      "point_id": "2026-05-08-ATL-LV|home|118",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-05-08-ATL-LV|home|135",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-05-29-DC-TOR|home|164",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-05-29-DC-TOR|home|338",
+      "reasons": [
+        "gain_without_recorded_own_loss",
+        "throw_ordinal_mismatch"
+      ]
+    },
+    {
+      "point_id": "2026-05-29-PIT-NY|away|326",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-05-30-CAR-ATL|away|200",
+      "reasons": [
+        "gain_without_recorded_own_loss",
+        "throw_ordinal_mismatch"
+      ]
+    },
+    {
+      "point_id": "2026-05-30-CAR-ATL|away|222",
+      "reasons": [
+        "gain_without_recorded_own_loss",
+        "throw_ordinal_mismatch"
+      ]
+    },
+    {
+      "point_id": "2026-05-30-SD-OAK|home|0",
+      "reasons": [
+        "duplicate_opening_context",
+        "missing_point_end_before_next_start"
+      ]
+    },
+    {
+      "point_id": "2026-05-30-SD-OAK|home|6",
+      "reasons": [
+        "duplicate_opening_context"
+      ]
+    },
+    {
+      "point_id": "2026-05-31-MIN-MAD|home|219",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-05-31-SEA-ATX|away|0",
+      "reasons": [
+        "opponent_score_while_own_possession_active",
+        "unhandled_event_7"
+      ]
+    },
+    {
+      "point_id": "2026-05-31-SEA-ATX|away|222",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-06-05-CAR-DC|away|348",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-06-05-COL-SLC|home|393",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-06-12-BOS-NY|away|313",
+      "reasons": [
+        "attempt_without_possession_start"
+      ]
+    },
+    {
+      "point_id": "2026-06-13-HTX-CAR|away|8",
+      "reasons": [
+        "missing_or_changed_export_attempt"
+      ]
+    },
+    {
+      "point_id": "2026-06-19-PHI-MTL|home|170",
+      "reasons": [
+        "gain_without_recorded_own_loss"
+      ]
+    },
+    {
+      "point_id": "2026-06-19-TOR-ORE|away|332",
+      "reasons": [
+        "gain_without_recorded_own_loss"
+      ]
+    },
+    {
+      "point_id": "2026-06-27-MAD-IND|home|116",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-06-27-OAK-SLC|away|330",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-07-18-IND-TOR|home|54",
+      "reasons": [
+        "attempt_without_possession_start",
+        "missing_point_end_before_next_start"
+      ]
+    },
+    {
+      "point_id": "2026-07-18-IND-TOR|away|171",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    },
+    {
+      "point_id": "2026-07-18-LV-SD|away|96",
+      "reasons": [
+        "attempt_without_possession_start"
+      ]
+    },
+    {
+      "point_id": "2026-07-18-MTL-BOS|home|433",
+      "reasons": [
+        "unclosed_point_at_end_of_source"
+      ]
+    },
+    {
+      "point_id": "2026-07-19-IND-PIT|home|314",
+      "reasons": [
+        "opponent_score_while_own_possession_active"
+      ]
+    }
+  ],
+  "checks": {
+    "missing_games": 1,
+    "included_points": 5752,
+    "stalls": 51,
+    "point_error_unclosed_point_at_end_of_source": 3,
+    "point_error_opponent_score_while_own_possession_active": 14,
+    "point_error_missing_point_end_before_next_start": 3,
+    "point_error_throw_ordinal_mismatch": 3,
+    "point_error_gain_without_recorded_own_loss": 5,
+    "point_error_duplicate_opening_context": 2,
+    "point_error_unhandled_event_7": 1,
+    "point_error_attempt_without_possession_start": 3,
+    "point_error_missing_or_changed_export_attempt": 1
+  },
+  "games": 131,
+  "teams": 22,
+  "possessions": 7173,
+  "physical_throws": 52997,
+  "outcomes": {
+    "goal": 3545,
+    "turnover": 3395,
+    "period_end": 233
+  },
+  "zero_throw_outcomes": {
+    "period_end": 100,
+    "goal": 8,
+    "turnover": 2
+  },
+  "score_reconciliation": {
+    "team_streams_checked": 262,
+    "mismatches": [
+      {
+        "game": "2026-05-30-SD-OAK",
+        "side": "home",
+        "own_event_goals": 22,
+        "opponent_event_goals": 16,
+        "final_own_score": 23,
+        "final_opponent_score": 17
+      },
+      {
+        "game": "2026-06-19-PHI-MTL",
+        "side": "away",
+        "own_event_goals": 18,
+        "opponent_event_goals": 24,
+        "final_own_score": 18,
+        "final_opponent_score": 25
+      },
+      {
+        "game": "2026-07-18-DC-ATL",
+        "side": "home",
+        "own_event_goals": 22,
+        "opponent_event_goals": 25,
+        "final_own_score": 22,
+        "final_opponent_score": 24
+      },
+      {
+        "game": "2026-07-18-MTL-BOS",
+        "side": "away",
+        "own_event_goals": 10,
+        "opponent_event_goals": 26,
+        "final_own_score": 11,
+        "final_opponent_score": 25
+      }
+    ]
+  },
+  "timeouts": {
+    "possessions_containing_timeout": 146,
+    "later_possessions_after_timeout": 238
+  },
+  "prior_activity_missing_regains": 503,
+  "inputs": {
+    "throws": "10fbc9e30efe263bbfdf626a182afd28e7bacc5bc2326f97232e404d02621025",
+    "games": "1fba1f00bff914bd89e358d9cce145767c63c7027945c73957190c527adafef6",
+    "teams": "b3f20513df39890b86655770225d6bb9da471d05818f77c73365c94d171523b4"
+  },
+  "raw_source_receipt_sha256": "8dac3360b036748d781632e6ad790a56086d5ca279ba5708ebb692bc9c50f687"
+}

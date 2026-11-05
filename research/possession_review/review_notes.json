@@ -1,22 +1,23 @@
 {
   "updatedAt": "2026-11-05",
-  "status": "Exploratory planning and selected-possession review; no new league-wide rates calculated in this review.",
+  "status": "Expanded subsequent-possession analysis completed and independently reconciled; A, C, D and E retain user-reviewed tactical interpretations.",
   "agreedScope": {
     "question": "How does a receiving team's play differ on its opening possession versus its later possessions within the same point?",
     "unit": "Team possessions within receiving points. Point-start O-line role does not establish unchanged personnel after substitutions.",
     "throwCounts": "Keep every actual throw, including centering passes and incomplete attempts. Count attempts ending in goals and turnovers separately; stalls and dropped pulls are not physical throws but may end a possession.",
     "huckTiming": "Keep throw 1 separate and examine throws 2\u20133, 4\u20136, and 7+ using the original numbering. Do not delete or renumber centering passes.",
     "centeringReview": "Review concrete examples; no blanket setup-pass rule or league-wide tactical labels are adopted.",
-    "huckOutcomes": "Proposed comparison: actual catches divided by huck attempts on opening versus regained team possessions. Drops are incompletions for this measure and should be reported separately; this differs from ShownSpace thrower-credit CPOE.",
+    "huckOutcomes": "Actual catches divided by huck attempts are now compared across first, second, and third-or-later team possessions. Drops are incomplete for this measure and reported separately from drop-credited CPOE.",
     "scoring": "Possession goals before another turnover, not eventual point holds. Compare starting locations and retain near-end-zone possessions for scoring.",
-    "fieldPosition": "For huck comparisons, exclude starts where the chosen huck definition is physically impossible and show the rule. Compare similar starting positions; do not apply that exclusion to scoring or throw counts.",
-    "timeouts": "Requested main comparison excludes possessions containing recorded timeouts while preserving original possession numbers. This has not yet replaced the older whole-point timeout-or-injury sensitivity analysis.",
+    "fieldPosition": "Main huck comparison requires a first recorded throwing location at least 40 yards from the attacking goal line, with 30-yard, 50-yard and unrestricted sensitivity checks. Scoring and throw counts retain all locations.",
+    "timeouts": "Main analysis excludes possessions containing recorded timeouts, without renumbering. A sensitivity check additionally excludes whole points containing timeout or injury markers.",
     "notActive": [
       "Average throw distance as an outcome",
       "Forward yards per throw as an outcome",
       "aEC per attempt",
       "Personalized CP model development"
-    ]
+    ],
+    "centralHypothesis": "Subsequent receiving-team possessions may show more willingness to huck and fewer throws before ending. The study tests the behavior; impatience is a motivating explanation, not a measured variable."
   },
   "interpretationLimits": [
     "Fewer throws means fewer passing actions, not necessarily less elapsed playing time.",
@@ -25,8 +26,8 @@
     "A completed huck and a scored possession are different outcomes.",
     "Use all opening possessions for the scoring baseline, not only opening possessions in points with a later regain.",
     "Starting location, team, opponent, game context and changes in personnel may contribute to differences; observational results cannot identify fatigue or impatience.",
-    "Existing huck cohorts excluded zero-throw possessions and whole points with dropped pulls. They need a separate terminal-outcome audit before use as a scoring denominator.",
-    "Team and league comparisons need uncertainty, game-level dependence and multiple comparisons handled explicitly; team aggregation does not guarantee statistical significance."
+    "Team and league comparisons need uncertainty, game-level dependence and multiple comparisons handled explicitly; team aggregation does not guarantee statistical significance.",
+    "The expanded cohort audits zero-throw and period-ending possessions; unknown locations are omitted only from location-restricted or adjusted comparisons."
   ],
   "source": {
     "game": "2026-04-24-ATL-HTX",
@@ -36,7 +37,8 @@
     "preservedRawPath": "/Users/teddytaussig/.codex/worktrees/fbf6/UFA_player_archetyping/research/dead_disc_study/raw_events/2026-04-24-ATL-HTX.json",
     "pullDefinition": "https://www.docs.ufastats.com/events",
     "rules": "https://watchufa.com/sites/default/files/UFA%20Rule%20Book%202026.pdf",
-    "selection": "Purposive examples for interpretation, not a representative sample or a test of team tendencies."
+    "selection": "Purposive examples for interpretation, not a representative sample or a test of team tendencies.",
+    "localArchiveCopy": "../dead_disc_study/raw_events/2026-04-24-ATL-HTX.json"
   },
   "examples": [
     {
@@ -98,7 +100,8 @@
         22,
         23
       ],
-      "question": "Is throw 3 a later swing/reset rather than an opening setup pass?"
+      "question": "Is throw 3 a later swing/reset rather than an opening setup pass?",
+      "reviewStatus": "The example is not a centering pass; moving inward is insufficient to label centering."
     },
     {
       "id": "D",
@@ -126,7 +129,8 @@
         234,
         235
       ],
-      "question": "Thirteen throws, no hucks, then a turnover. Compare with case E in the same point."
+      "question": "Thirteen throws, no hucks, then a turnover. Compare with case E in the same point.",
+      "reviewStatus": "The first throw is a centering pass. All 13 physical throws remain in the possession count."
     },
     {
       "id": "E",
@@ -144,14 +148,9 @@
         238,
         239
       ],
-      "question": "The opening huck is completed, but this possession ends in a turnover on throw 3."
+      "question": "The opening huck is completed, but this possession ends in a turnover on throw 3.",
+      "reviewStatus": "The first throw is not a centering pass; it is a huck."
     }
-  ],
-  "remainingWork": [
-    "User interpretation of other ambiguous start sequences as needed; case A has been reviewed.",
-    "Define and validate possession-ending outcomes including zero-throw and period-end cases.",
-    "Validate possession-level timeout flags and eligibility rules.",
-    "Estimate team comparisons of possession lengths, scoring and actual huck completion with uncertainty."
   ],
   "userReview": [
     {
@@ -161,6 +160,36 @@
       "decision": "First pass by Ryan Flick to Austin Taylor is setup; Taylor's next throw starts the attack.",
       "retainedThrowCount": 5,
       "appliesTo": "This example only; no automatic label for other opening passes."
+    },
+    {
+      "case": "C",
+      "reviewer": "Teddy",
+      "date": "2026-11-05",
+      "decision": "The example is not a centering pass; moving inward is insufficient to label centering.",
+      "centering": false,
+      "appliesTo": "This example only; no automatic classification of other possessions."
+    },
+    {
+      "case": "D",
+      "reviewer": "Teddy",
+      "date": "2026-11-05",
+      "decision": "The first throw is a centering pass. All 13 physical throws remain in the possession count.",
+      "centering": true,
+      "appliesTo": "This example only; no automatic classification of other possessions."
+    },
+    {
+      "case": "E",
+      "reviewer": "Teddy",
+      "date": "2026-11-05",
+      "decision": "The first throw is not a centering pass; it is a huck.",
+      "centering": false,
+      "appliesTo": "This example only; no automatic classification of other possessions."
     }
+  ],
+  "completedAnalysis": "../oline_possessions/results.json",
+  "validation": "../oline_possessions/validation.json",
+  "followUpOptions": [
+    "Review further concrete opening-pass examples before proposing an automatic setup-pass rule.",
+    "Use the team patterns to select film examples; test any resulting explanation on additional data."
   ]
 }

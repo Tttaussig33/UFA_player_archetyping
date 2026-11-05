@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-05T20:10:08.657Z",
-  "vscodeVersion": "1.144.1",
+  "checkedAt": "2026-11-05T20:54:39.722Z",
+  "vscodeVersion": "1.145.0",
   "passed": true,
   "results": [
     {
@@ -61,23 +61,49 @@
       "name": "UFA-oline-regain-hucking",
       "kind": "tsx",
       "editor": "ufa.researchPreview",
-      "title": "Hucking after an O-line regains possession",
+      "title": "How O-lines change after regaining possession",
       "tableRows": [
-        22
+        3,
+        3,
+        3,
+        3,
+        5,
+        22,
+        3,
+        3,
+        4,
+        7
       ],
-      "chartCount": 2,
-      "selectors": []
+      "chartCount": 6,
+      "selectors": [
+        "observed",
+        "early_huck",
+        "hustle"
+      ]
     },
     {
       "name": "UFA-oline-regain-hucking",
       "kind": "html",
       "editor": "ufa.researchPreview",
-      "title": "Hucking after an O-line regains possession",
+      "title": "How O-lines change after regaining possession",
       "tableRows": [
-        22
+        3,
+        3,
+        3,
+        3,
+        5,
+        22,
+        3,
+        3,
+        4,
+        7
       ],
-      "chartCount": 2,
-      "selectors": []
+      "chartCount": 6,
+      "selectors": [
+        "observed",
+        "early_huck",
+        "hustle"
+      ]
     },
     {
       "name": "UFA-possession-review",

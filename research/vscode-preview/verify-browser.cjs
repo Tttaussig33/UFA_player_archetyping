@@ -44,18 +44,34 @@ async function verify(page, name, choice) {
     assert.deepEqual(actual.bars.map(b => b.value), sorted.map(t => Number((100 * t.leader_share).toFixed(1))));
     assert(actual.text.includes(data.counts[choice].toLocaleString() + ' qualifying receptions'));
   } else if (name.includes('oline-regain')) {
-    const pct = x => (100*x).toFixed(2)+'%';
-    const signed = x => (x>0?'+':'')+x.toFixed(2);
+    const pct = x => (100*x).toFixed(1)+'%';
+    const signed = x => (x>0?'+':'')+x.toFixed(1);
+    const range = (v,s) => v.map(x=>(s*x).toFixed(1)).join(' to ');
     const sorted = [...data.teams].sort((a,b) => a.team_name.localeCompare(b.team_name));
-    assert.deepEqual(actual.rows[0], sorted.map(t => [t.team_name, t.opening.hucks+' / '+t.opening.n.toLocaleString(), pct(t.opening.rate), t.regained.hucks+' / '+t.regained.n.toLocaleString(), pct(t.regained.rate), signed(t.difference_pp)]));
-    assert.deepEqual(actual.bars.map(b => b.value), data.stages.flatMap(s => [Number((100*s.opening.rate).toFixed(2)), Number((100*s.regained.rate).toFixed(2))]));
-    assert.equal(await page.locator('circle').count(), 22);
-    assert.equal(actual.charts, 2);
-    assert(actual.text.includes('4.96%') && actual.text.includes('5.49%'));
+    const [scoreView, metric, teamId] = await page.locator('select').evaluateAll(ss => ss.map(s => s.value));
+    const count = metric.startsWith('throws'), scale = count?1:100;
+    const groupText = g => !g.n || g.estimate==null?'— (0)':(count?g.estimate.toFixed(1):pct(g.estimate))+' ('+g.n.toLocaleString()+')';
+    assert.deepEqual(actual.rows[5], sorted.map(t => {
+      const c=metric==='huck_completion'?t.metrics.huck_completion.first_vs_all_subsequent.differences[0]:data.team_changes[metric].teams.find(c=>c.team===t.team);
+      return [t.team_name+(t.games===11?' *':''),...t.metrics[metric].groups.map(groupText),`${signed(c.difference*scale)} [${range(c.ci95,scale)}]`];
+    }));
+    const val=(g,c=false)=>Number((g.estimate*(c?1:100)).toFixed(1));
+    const team=data.teams.find(t=>t.team===teamId);
+    const scores=scoreView==='observed'?data.league.scoring.groups:data.adjusted.scoring.groups;
+    const expectedBars=[...data.league.early_huck.groups.map(g=>val(g)),
+      ...data.throw_windows.flatMap(w=>[val(w.groups[0]),val(w.groups[1])]),
+      ...[0,1,2].flatMap(i=>[val(data.league.throws_goal.groups[i],true),val(data.league.throws_turnover.groups[i],true)]),
+      ...scores.map(g=>val(g)),...team.metrics[metric].groups.filter(g=>g.n>0&&g.estimate!=null).map(g=>val(g,count)),
+      ...data.league.huck_completion.groups.map(g=>val(g))];
+    assert.deepEqual(actual.bars.map(b=>b.value),expectedBars);
+    assert.equal(actual.charts,6);
+    assert(actual.text.includes('11.5%')&&actual.text.includes('20.9%'));
   } else {
     const c = data.cases.find(c => c.id === choice);
     assert.deepEqual(actual.rows[0], c.throws.map(t => [String(t.n), t.from+' → '+t.to, t.outcome+(t.huck?' · Huck':'')]));
     assert.equal(actual.charts, 1);
+    if (['C','E'].includes(choice)) assert(actual.text.toLowerCase().includes('not a centering pass'));
+    if (choice==='D') assert(actual.text.includes('Your review: throw 1 is a centering pass'));
     assert.equal(await page.locator('[data-throw-number]').count(), c.throws.length);
     for (const focus of ['all', String(c.throws.at(-1).n), '1']) {
       await page.locator('select').nth(1).selectOption(focus);
@@ -85,14 +101,32 @@ async function verify(page, name, choice) {
         if (choice) await firstSelect.selectOption(choice);
         results.push(await verify(page, name, choice));
       }
+      if (name.includes('oline-regain')) {
+        const metrics=await page.locator('select').nth(1).locator('option').evaluateAll(ns=>ns.map(n=>n.value));
+        const teams=await page.locator('select').nth(2).locator('option').evaluateAll(ns=>ns.map(n=>n.value));
+        for (const metric of metrics) {
+          await page.locator('select').nth(1).selectOption(metric);
+          for (const team of teams) {
+            await page.locator('select').nth(2).selectOption(team);
+            results.push({...await verify(page,name,null),metric,team});
+          }
+        }
+        await page.locator('select').nth(1).selectOption('early_huck');
+        await page.locator('select').nth(2).selectOption('hustle');
+      }
       if (options.length) await firstSelect.selectOption(options[0]);
-      const summary = page.locator('summary');
+      const summary = page.locator('summary').first();
       if (await summary.count()) {
         await summary.click();
-        assert.equal(await page.locator('details').getAttribute('open'), '');
+        assert.equal(await page.locator('details').first().getAttribute('open'), '');
         assert(await page.getByText('UFA', {exact:false}).count() > 0);
       }
       await page.screenshot({path:path.join(output, name + '-wide.png'), fullPage:true});
+      if (name.includes('oline-regain')) {
+        for (const id of ['league','teams','huck-outcomes','paper']) {
+          await page.locator('#'+id).screenshot({path:path.join(output,name+'-'+id+'-wide.png')});
+        }
+      }
       await page.setViewportSize({width:420,height:800});
       await page.emulateMedia({colorScheme:'dark'});
       await page.waitForTimeout(150);

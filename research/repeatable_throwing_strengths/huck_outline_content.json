@@ -1,45 +1,46 @@
 {
-  "title": "Hucking after an offensive line regains possession",
+  "title": "Offensive possessions after a regain",
   "delivery_path": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/UFA_hucking_research_outline.docx",
   "sections": [
     [
       "Research question",
       [
-        "Are UFA teams more likely to huck after their O-line loses and regains possession than on the opening possession of a receiving point? I will establish each team's usual opening-possession huck rate, then compare it with that team's rate after regaining the disc within a point. The comparison includes points ending in either a hold or a break."
+        "How does a UFA team's approach change when its O-line loses the disc and regains possession during the same point? I will compare each team's first, second, and third or later possessions, using the team that received the pull to define the O-line. I am interested in whether subsequent possessions involve fewer throws, earlier hucks, or different scoring rates. The comparison will include receiving points that end in either a hold or a break."
       ]
     ],
     [
-      "Research goal and hypothesis",
+      "Research goal and approach",
       [
-        "I want to test whether recovering the disc is associated with a change in a team's deep-throwing tendency. My hypothesis is that hucks make up a larger share of passes after a regain, particularly early in the new possession. A finding of little change or less hucking would also answer the question. My observations about long points motivate the study, but the data cannot establish whether players feel tired or impatient."
+        "My hypothesis is that teams become more willing to attack deep after losing and recovering the disc, so subsequent possessions may involve fewer passing actions. I will also test my initial expectation that scoring becomes less likely. These ideas come from playing and watching ultimate, but I want to measure the patterns before drawing conclusions about why they happen. This is an exploratory study; the data cannot establish whether players feel impatient or tired.",
+        "I will use the preserved ShownSpace throw data and UFA event records for 131 available games from the 2026 regular season. I will reconstruct each receiving team's possessions within a point and retain every actual throw, including centering passes. I will compare throws before goals and before turnovers, the share of possessions with a huck in the first three throws, hucks later in the possession, actual huck completion, and possession scoring. I will examine throws two and three separately because the opening pass can be setup after a pull.",
+        "I will remove possessions containing timeouts without changing their original possession numbers. For hucking, I will leave out possessions starting less than 40 yards from the attacking goal line and check whether other reasonable cutoffs change the findings. Those starts will remain in scoring and throw-count comparisons. I will account for starting location and recorded game context, compare each team with its own opening behavior, and report sample sizes and uncertainty. Testing many teams can produce chance findings, so I will account for the number of comparisons."
       ]
     ],
     [
       "Value for coaches",
       [
-        "An offensive coach could see whether the team's choices after a turnover match its intended approach, then identify points for film review or transition practice. An opposing coach could look for teams that attack deep soon after recovering the disc. I will show attempt counts and uncertainty so a small sample is not treated as a reliable tendency. The study measures throwing choices; it does not establish whether hucking more improves scoring."
+        "Coaches could use this study to compare their opening offensive plan with their choices after winning the disc back. An opposing coach could identify teams that tend to look deep in the first few throws after a regain. Separating huck timing, huck completion, and scoring would help show whether a team changes its approach and whether its results also change. The findings would identify situations worth reviewing on film or practicing, without treating a small sample as a settled tendency."
       ]
     ]
   ],
   "source_notes": [],
   "metadata": {
-    "status": "Three-section outline containing only the research question, goal and hypothesis, and value for coaches, at the user's request.",
+    "status": "Three-section exploratory outline aligned with subsequent O-line possession analysis.",
     "updated_at": "2026-11-05",
     "sources": [
-      "../huck_timing_study/oline_regains/analysis_design.json",
-      "../huck_timing_study/oline_regains/results.json",
-      "../huck_timing_study/oline_regains/cohort_audit.json",
-      "../huck_timing_study/oline_regains/validation.json",
-      "../huck_timing_study/timing_audit.json"
+      "../oline_possessions/analysis_design.json",
+      "../oline_possessions/results.json",
+      "../oline_possessions/cohort_audit.json",
+      "../oline_possessions/validation.json"
     ],
     "user_choices": [
-      "team huck frequency after an O-line regain is the current focus",
-      "establish each team's opening-possession behavior before comparing regains",
-      "emphasize the research question, purpose, coaching value, and available supporting data",
-      "keep clean holds, recovery rates, and broader scoring patterns as later extensions",
-      "use plain descriptive section headings instead of what I want to study wording",
-      "retain first-person numbered outline and generous heading spacing",
-      "Remove sections four onward and retain sections one, two, and three only"
+      "Compare subsequent O-line possessions within the same point",
+      "Treat throw counts, hucking and scoring as related parts of changes in approach",
+      "Keep every actual throw, including setup passes",
+      "Remove timeout possessions and preserve numbering",
+      "Exclude near-goal starts for hucking only",
+      "Retain only three numbered sections, first-person writing, Times New Roman 12 pt single-spaced with separated headings",
+      "Record manual reviews: A setup; D centering; C and E not centering"
     ],
     "formatting": {
       "font": "Times New Roman",
