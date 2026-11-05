@@ -1,0 +1,1556 @@
+{
+  "executed_at": "2026-11-05T02:38:45.889100+00:00",
+  "scope": "2026 regular season, 131 of 132 games in the preserved ShownSpace export",
+  "missing_game": "2026-07-18-PIT-CHI",
+  "definition": "Within the first receiving possession after a raw Start O Point event (type 2), select the earliest completed pass with abs(ReceiverX) < abs(ThrowerX). It may occur after another pass. Stop at a goal, turnover, possession change or period/point boundary. One selected pass per receiving possession.",
+  "centering_measure": "Reduction in absolute lateral distance from field centerline (yards). Geometry is an operational proxy, not a video-confirmed tactical label. A cross-field pass qualifies only if it finishes closer to center.",
+  "denominator": "The leader share is that player\u2019s selected centering receptions divided by all selected centering receptions for the team. It is not a share of every pull or every reception.",
+  "team_assignment": "Game home/away team from the throw source side; roster is used only for display name.",
+  "checks": {
+    "matched_source_throws": 72661,
+    "receiving_point_start_markers": 5781,
+    "unmatched_source_throws": 2
+  },
+  "excluded_sequences": [
+    {
+      "id": "2026-05-30-SD-OAK:home:0",
+      "TeamID": "spiders",
+      "errors": [
+        "duplicate_opening_point_context"
+      ]
+    },
+    {
+      "id": "2026-05-30-SD-OAK:home:6",
+      "TeamID": "spiders",
+      "errors": [
+        "duplicate_opening_point_context"
+      ]
+    },
+    {
+      "id": "2026-06-13-HTX-CAR:away:8",
+      "TeamID": "havoc",
+      "errors": [
+        "unmatched_source_attempt"
+      ]
+    }
+  ],
+  "duplicate_opening_contexts": [
+    {
+      "context": [
+        "2026-05-30-SD-OAK",
+        "home",
+        "1",
+        "1"
+      ],
+      "sequence_ids": [
+        "2026-05-30-SD-OAK:home:0",
+        "2026-05-30-SD-OAK:home:6"
+      ]
+    }
+  ],
+  "coverage_totals": {
+    "receiving_point_starts": 5781,
+    "verified_opening_possessions": 5729,
+    "excluded_unreliable_sequences": 3,
+    "no_recorded_initial_attempt": 49
+  },
+  "selected_counts": {
+    "any_inward": 5194,
+    "at_least_5_yards": 4741,
+    "any_inward_excluding_hucks": 5104
+  },
+  "primary_pass_ordinal_counts": {
+    "1": 3676,
+    "4": 172,
+    "3": 512,
+    "2": 744,
+    "6": 20,
+    "5": 69,
+    "7": 1
+  },
+  "primary_selected_hucks": 116,
+  "leader_changes": {
+    "at_least_5_yards": [
+      "DC Breeze",
+      "New York Empire"
+    ],
+    "any_inward_excluding_hucks": []
+  },
+  "teams": {
+    "any_inward": [
+      {
+        "TeamID": "hustle",
+        "team": "Atlanta Hustle",
+        "abbrev": "ATL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "ataylor",
+            "name": "Austin Taylor",
+            "count": 107
+          }
+        ],
+        "leader_count": 107,
+        "qualifying_centering_passes": 224,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.47767857142857145,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 247,
+          "no_recorded_initial_attempt": 4
+        }
+      },
+      {
+        "TeamID": "sol",
+        "team": "Austin Sol",
+        "abbrev": "ATX",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "khenke",
+            "name": "Kyle Henke",
+            "count": 52
+          }
+        ],
+        "leader_count": 52,
+        "qualifying_centering_passes": 221,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.23529411764705882,
+        "coverage": {
+          "receiving_point_starts": 236,
+          "verified_opening_possessions": 235,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "glory",
+        "team": "Boston Glory",
+        "abbrev": "BOS",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "rdinger",
+            "name": "Ryan Dinger",
+            "count": 84
+          }
+        ],
+        "leader_count": 84,
+        "qualifying_centering_passes": 199,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.4221105527638191,
+        "coverage": {
+          "receiving_point_starts": 212,
+          "verified_opening_possessions": 209,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "flyers",
+        "team": "Carolina Flyers",
+        "abbrev": "CAR",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jlouie",
+            "name": "Jacob Louie",
+            "count": 64
+          }
+        ],
+        "leader_count": 64,
+        "qualifying_centering_passes": 210,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3047619047619048,
+        "coverage": {
+          "receiving_point_starts": 229,
+          "verified_opening_possessions": 225,
+          "no_recorded_initial_attempt": 4
+        }
+      },
+      {
+        "TeamID": "union",
+        "team": "Chicago Union",
+        "abbrev": "CHI",
+        "games": 11,
+        "leaders": [
+          {
+            "PlayerID": "pjanas",
+            "name": "Pawel Janas",
+            "count": 104
+          }
+        ],
+        "leader_count": 104,
+        "qualifying_centering_passes": 231,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.45021645021645024,
+        "coverage": {
+          "receiving_point_starts": 254,
+          "verified_opening_possessions": 252,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "apex",
+        "team": "Colorado Apex",
+        "abbrev": "COL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "telliott",
+            "name": "Timothy Elliott",
+            "count": 125
+          }
+        ],
+        "leader_count": 125,
+        "qualifying_centering_passes": 281,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.44483985765124556,
+        "coverage": {
+          "receiving_point_starts": 311,
+          "verified_opening_possessions": 309,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "breeze",
+        "team": "DC Breeze",
+        "abbrev": "DC",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jnissen",
+            "name": "Jacques Nissen",
+            "count": 65
+          }
+        ],
+        "leader_count": 65,
+        "qualifying_centering_passes": 241,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2697095435684647,
+        "coverage": {
+          "receiving_point_starts": 259,
+          "verified_opening_possessions": 256,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "havoc",
+        "team": "Houston Havoc",
+        "abbrev": "HTX",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "xfuzat",
+            "name": "Xavier Fuzat",
+            "count": 35
+          }
+        ],
+        "leader_count": 35,
+        "qualifying_centering_passes": 266,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.13157894736842105,
+        "coverage": {
+          "receiving_point_starts": 299,
+          "verified_opening_possessions": 298,
+          "excluded_unreliable_sequences": 1
+        }
+      },
+      {
+        "TeamID": "alleycats",
+        "team": "Indianapolis AlleyCats",
+        "abbrev": "IND",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jmast",
+            "name": "Jonathan Mast",
+            "count": 62
+          }
+        ],
+        "leader_count": 62,
+        "qualifying_centering_passes": 230,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.26956521739130435,
+        "coverage": {
+          "receiving_point_starts": 263,
+          "verified_opening_possessions": 261,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "radicals",
+        "team": "Madison Radicals",
+        "abbrev": "MAD",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "imccosky",
+            "name": "Ian McCosky",
+            "count": 47
+          }
+        ],
+        "leader_count": 47,
+        "qualifying_centering_passes": 233,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2017167381974249,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 250,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "windchill",
+        "team": "Minnesota Wind Chill",
+        "abbrev": "MIN",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "glarson",
+            "name": "Gordon Larson",
+            "count": 48
+          }
+        ],
+        "leader_count": 48,
+        "qualifying_centering_passes": 208,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.23076923076923078,
+        "coverage": {
+          "receiving_point_starts": 216,
+          "verified_opening_possessions": 214,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "royal",
+        "team": "Montreal Royal",
+        "abbrev": "MTL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jbrissett",
+            "name": "Jakob Brissette",
+            "count": 68
+          }
+        ],
+        "leader_count": 68,
+        "qualifying_centering_passes": 231,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2943722943722944,
+        "coverage": {
+          "receiving_point_starts": 270,
+          "verified_opening_possessions": 267,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "empire",
+        "team": "New York Empire",
+        "abbrev": "NY",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "srueschem",
+            "name": "Solomon Rueschemeyer-Bailey",
+            "count": 49
+          }
+        ],
+        "leader_count": 49,
+        "qualifying_centering_passes": 218,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.22477064220183487,
+        "coverage": {
+          "receiving_point_starts": 229,
+          "verified_opening_possessions": 229
+        }
+      },
+      {
+        "TeamID": "spiders",
+        "team": "Oakland Spiders",
+        "abbrev": "OAK",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "dritthale",
+            "name": "Daniel Ritthaler",
+            "count": 61
+          }
+        ],
+        "leader_count": 61,
+        "qualifying_centering_passes": 189,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.32275132275132273,
+        "coverage": {
+          "receiving_point_starts": 216,
+          "verified_opening_possessions": 211,
+          "no_recorded_initial_attempt": 3,
+          "excluded_unreliable_sequences": 2
+        }
+      },
+      {
+        "TeamID": "steel",
+        "team": "Oregon Steel",
+        "abbrev": "ORE",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "dbarram",
+            "name": "David Barram",
+            "count": 42
+          }
+        ],
+        "leader_count": 42,
+        "qualifying_centering_passes": 265,
+        "unattributed_centering_passes": 1,
+        "leader_share": 0.15849056603773584,
+        "coverage": {
+          "receiving_point_starts": 306,
+          "verified_opening_possessions": 305,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "phoenix",
+        "team": "Philadelphia Phoenix",
+        "abbrev": "PHI",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "ebeidlers",
+            "name": "Ezra Beidler-Shenk",
+            "count": 99
+          }
+        ],
+        "leader_count": 99,
+        "qualifying_centering_passes": 301,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3289036544850498,
+        "coverage": {
+          "receiving_point_starts": 333,
+          "verified_opening_possessions": 331,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "thunderbirds",
+        "team": "Pittsburgh Thunderbirds",
+        "abbrev": "PIT",
+        "games": 11,
+        "leaders": [
+          {
+            "PlayerID": "whoffenka",
+            "name": "Will Hoffenkamp",
+            "count": 68
+          }
+        ],
+        "leader_count": 68,
+        "qualifying_centering_passes": 276,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2463768115942029,
+        "coverage": {
+          "receiving_point_starts": 320,
+          "verified_opening_possessions": 314,
+          "no_recorded_initial_attempt": 6
+        }
+      },
+      {
+        "TeamID": "shred",
+        "team": "Salt Lake Shred",
+        "abbrev": "SLC",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "myorgason",
+            "name": "McKay Yorgason",
+            "count": 86
+          }
+        ],
+        "leader_count": 86,
+        "qualifying_centering_passes": 236,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3644067796610169,
+        "coverage": {
+          "receiving_point_starts": 254,
+          "verified_opening_possessions": 252,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "growlers",
+        "team": "San Diego Growlers",
+        "abbrev": "SD",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "bvandeuse",
+            "name": "Brandon Van Deusen",
+            "count": 77
+          }
+        ],
+        "leader_count": 77,
+        "qualifying_centering_passes": 235,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3276595744680851,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 250,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "cascades",
+        "team": "Seattle Cascades",
+        "abbrev": "SEA",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "slofink",
+            "name": "Spencer Lofink",
+            "count": 67
+          }
+        ],
+        "leader_count": 67,
+        "qualifying_centering_passes": 220,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.30454545454545456,
+        "coverage": {
+          "receiving_point_starts": 245,
+          "verified_opening_possessions": 243,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "rush",
+        "team": "Toronto Rush",
+        "abbrev": "TOR",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "rpoloz",
+            "name": "Ryan Poloz",
+            "count": 54
+          }
+        ],
+        "leader_count": 54,
+        "qualifying_centering_passes": 219,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2465753424657534,
+        "coverage": {
+          "receiving_point_starts": 252,
+          "verified_opening_possessions": 249,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "bighorns",
+        "team": "Vegas Bighorns",
+        "abbrev": "LV",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "cgarrison",
+            "name": "Connor Garrison",
+            "count": 39
+          }
+        ],
+        "leader_count": 39,
+        "qualifying_centering_passes": 260,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.15,
+        "coverage": {
+          "receiving_point_starts": 324,
+          "verified_opening_possessions": 322,
+          "no_recorded_initial_attempt": 2
+        }
+      }
+    ],
+    "at_least_5_yards": [
+      {
+        "TeamID": "hustle",
+        "team": "Atlanta Hustle",
+        "abbrev": "ATL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "ataylor",
+            "name": "Austin Taylor",
+            "count": 83
+          }
+        ],
+        "leader_count": 83,
+        "qualifying_centering_passes": 209,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.39712918660287083,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 247,
+          "no_recorded_initial_attempt": 4
+        }
+      },
+      {
+        "TeamID": "sol",
+        "team": "Austin Sol",
+        "abbrev": "ATX",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "khenke",
+            "name": "Kyle Henke",
+            "count": 49
+          }
+        ],
+        "leader_count": 49,
+        "qualifying_centering_passes": 202,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.24257425742574257,
+        "coverage": {
+          "receiving_point_starts": 236,
+          "verified_opening_possessions": 235,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "glory",
+        "team": "Boston Glory",
+        "abbrev": "BOS",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "rdinger",
+            "name": "Ryan Dinger",
+            "count": 71
+          }
+        ],
+        "leader_count": 71,
+        "qualifying_centering_passes": 183,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3879781420765027,
+        "coverage": {
+          "receiving_point_starts": 212,
+          "verified_opening_possessions": 209,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "flyers",
+        "team": "Carolina Flyers",
+        "abbrev": "CAR",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jlouie",
+            "name": "Jacob Louie",
+            "count": 52
+          }
+        ],
+        "leader_count": 52,
+        "qualifying_centering_passes": 201,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.25870646766169153,
+        "coverage": {
+          "receiving_point_starts": 229,
+          "verified_opening_possessions": 225,
+          "no_recorded_initial_attempt": 4
+        }
+      },
+      {
+        "TeamID": "union",
+        "team": "Chicago Union",
+        "abbrev": "CHI",
+        "games": 11,
+        "leaders": [
+          {
+            "PlayerID": "pjanas",
+            "name": "Pawel Janas",
+            "count": 77
+          }
+        ],
+        "leader_count": 77,
+        "qualifying_centering_passes": 205,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.375609756097561,
+        "coverage": {
+          "receiving_point_starts": 254,
+          "verified_opening_possessions": 252,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "apex",
+        "team": "Colorado Apex",
+        "abbrev": "COL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "telliott",
+            "name": "Timothy Elliott",
+            "count": 107
+          }
+        ],
+        "leader_count": 107,
+        "qualifying_centering_passes": 259,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.41312741312741313,
+        "coverage": {
+          "receiving_point_starts": 311,
+          "verified_opening_possessions": 309,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "breeze",
+        "team": "DC Breeze",
+        "abbrev": "DC",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "aroy",
+            "name": "Andrew Roy",
+            "count": 57
+          }
+        ],
+        "leader_count": 57,
+        "qualifying_centering_passes": 228,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.25,
+        "coverage": {
+          "receiving_point_starts": 259,
+          "verified_opening_possessions": 256,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "havoc",
+        "team": "Houston Havoc",
+        "abbrev": "HTX",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "xfuzat",
+            "name": "Xavier Fuzat",
+            "count": 32
+          }
+        ],
+        "leader_count": 32,
+        "qualifying_centering_passes": 238,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.13445378151260504,
+        "coverage": {
+          "receiving_point_starts": 299,
+          "verified_opening_possessions": 298,
+          "excluded_unreliable_sequences": 1
+        }
+      },
+      {
+        "TeamID": "alleycats",
+        "team": "Indianapolis AlleyCats",
+        "abbrev": "IND",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jmast",
+            "name": "Jonathan Mast",
+            "count": 51
+          }
+        ],
+        "leader_count": 51,
+        "qualifying_centering_passes": 208,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.24519230769230768,
+        "coverage": {
+          "receiving_point_starts": 263,
+          "verified_opening_possessions": 261,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "radicals",
+        "team": "Madison Radicals",
+        "abbrev": "MAD",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "imccosky",
+            "name": "Ian McCosky",
+            "count": 43
+          }
+        ],
+        "leader_count": 43,
+        "qualifying_centering_passes": 219,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.1963470319634703,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 250,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "windchill",
+        "team": "Minnesota Wind Chill",
+        "abbrev": "MIN",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "glarson",
+            "name": "Gordon Larson",
+            "count": 49
+          }
+        ],
+        "leader_count": 49,
+        "qualifying_centering_passes": 197,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.24873096446700507,
+        "coverage": {
+          "receiving_point_starts": 216,
+          "verified_opening_possessions": 214,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "royal",
+        "team": "Montreal Royal",
+        "abbrev": "MTL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jbrissett",
+            "name": "Jakob Brissette",
+            "count": 48
+          }
+        ],
+        "leader_count": 48,
+        "qualifying_centering_passes": 203,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.23645320197044334,
+        "coverage": {
+          "receiving_point_starts": 270,
+          "verified_opening_possessions": 267,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "empire",
+        "team": "New York Empire",
+        "abbrev": "NY",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "aatkins",
+            "name": "Alex Atkins",
+            "count": 39
+          },
+          {
+            "PlayerID": "srueschem",
+            "name": "Solomon Rueschemeyer-Bailey",
+            "count": 39
+          }
+        ],
+        "leader_count": 39,
+        "qualifying_centering_passes": 207,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.18840579710144928,
+        "coverage": {
+          "receiving_point_starts": 229,
+          "verified_opening_possessions": 229
+        }
+      },
+      {
+        "TeamID": "spiders",
+        "team": "Oakland Spiders",
+        "abbrev": "OAK",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "dritthale",
+            "name": "Daniel Ritthaler",
+            "count": 47
+          }
+        ],
+        "leader_count": 47,
+        "qualifying_centering_passes": 172,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.27325581395348836,
+        "coverage": {
+          "receiving_point_starts": 216,
+          "verified_opening_possessions": 211,
+          "no_recorded_initial_attempt": 3,
+          "excluded_unreliable_sequences": 2
+        }
+      },
+      {
+        "TeamID": "steel",
+        "team": "Oregon Steel",
+        "abbrev": "ORE",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "dbarram",
+            "name": "David Barram",
+            "count": 41
+          }
+        ],
+        "leader_count": 41,
+        "qualifying_centering_passes": 240,
+        "unattributed_centering_passes": 1,
+        "leader_share": 0.17083333333333334,
+        "coverage": {
+          "receiving_point_starts": 306,
+          "verified_opening_possessions": 305,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "phoenix",
+        "team": "Philadelphia Phoenix",
+        "abbrev": "PHI",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "ebeidlers",
+            "name": "Ezra Beidler-Shenk",
+            "count": 72
+          }
+        ],
+        "leader_count": 72,
+        "qualifying_centering_passes": 269,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.26765799256505574,
+        "coverage": {
+          "receiving_point_starts": 333,
+          "verified_opening_possessions": 331,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "thunderbirds",
+        "team": "Pittsburgh Thunderbirds",
+        "abbrev": "PIT",
+        "games": 11,
+        "leaders": [
+          {
+            "PlayerID": "whoffenka",
+            "name": "Will Hoffenkamp",
+            "count": 56
+          }
+        ],
+        "leader_count": 56,
+        "qualifying_centering_passes": 251,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.22310756972111553,
+        "coverage": {
+          "receiving_point_starts": 320,
+          "verified_opening_possessions": 314,
+          "no_recorded_initial_attempt": 6
+        }
+      },
+      {
+        "TeamID": "shred",
+        "team": "Salt Lake Shred",
+        "abbrev": "SLC",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "myorgason",
+            "name": "McKay Yorgason",
+            "count": 78
+          }
+        ],
+        "leader_count": 78,
+        "qualifying_centering_passes": 218,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3577981651376147,
+        "coverage": {
+          "receiving_point_starts": 254,
+          "verified_opening_possessions": 252,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "growlers",
+        "team": "San Diego Growlers",
+        "abbrev": "SD",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "bvandeuse",
+            "name": "Brandon Van Deusen",
+            "count": 63
+          }
+        ],
+        "leader_count": 63,
+        "qualifying_centering_passes": 217,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2903225806451613,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 250,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "cascades",
+        "team": "Seattle Cascades",
+        "abbrev": "SEA",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "slofink",
+            "name": "Spencer Lofink",
+            "count": 53
+          }
+        ],
+        "leader_count": 53,
+        "qualifying_centering_passes": 199,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2663316582914573,
+        "coverage": {
+          "receiving_point_starts": 245,
+          "verified_opening_possessions": 243,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "rush",
+        "team": "Toronto Rush",
+        "abbrev": "TOR",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "rpoloz",
+            "name": "Ryan Poloz",
+            "count": 42
+          }
+        ],
+        "leader_count": 42,
+        "qualifying_centering_passes": 187,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.22459893048128343,
+        "coverage": {
+          "receiving_point_starts": 252,
+          "verified_opening_possessions": 249,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "bighorns",
+        "team": "Vegas Bighorns",
+        "abbrev": "LV",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "cgarrison",
+            "name": "Connor Garrison",
+            "count": 30
+          }
+        ],
+        "leader_count": 30,
+        "qualifying_centering_passes": 229,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.13100436681222707,
+        "coverage": {
+          "receiving_point_starts": 324,
+          "verified_opening_possessions": 322,
+          "no_recorded_initial_attempt": 2
+        }
+      }
+    ],
+    "any_inward_excluding_hucks": [
+      {
+        "TeamID": "hustle",
+        "team": "Atlanta Hustle",
+        "abbrev": "ATL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "ataylor",
+            "name": "Austin Taylor",
+            "count": 107
+          }
+        ],
+        "leader_count": 107,
+        "qualifying_centering_passes": 222,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.481981981981982,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 247,
+          "no_recorded_initial_attempt": 4
+        }
+      },
+      {
+        "TeamID": "sol",
+        "team": "Austin Sol",
+        "abbrev": "ATX",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "khenke",
+            "name": "Kyle Henke",
+            "count": 52
+          }
+        ],
+        "leader_count": 52,
+        "qualifying_centering_passes": 218,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.23853211009174313,
+        "coverage": {
+          "receiving_point_starts": 236,
+          "verified_opening_possessions": 235,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "glory",
+        "team": "Boston Glory",
+        "abbrev": "BOS",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "rdinger",
+            "name": "Ryan Dinger",
+            "count": 85
+          }
+        ],
+        "leader_count": 85,
+        "qualifying_centering_passes": 195,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.4358974358974359,
+        "coverage": {
+          "receiving_point_starts": 212,
+          "verified_opening_possessions": 209,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "flyers",
+        "team": "Carolina Flyers",
+        "abbrev": "CAR",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jlouie",
+            "name": "Jacob Louie",
+            "count": 64
+          }
+        ],
+        "leader_count": 64,
+        "qualifying_centering_passes": 208,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3076923076923077,
+        "coverage": {
+          "receiving_point_starts": 229,
+          "verified_opening_possessions": 225,
+          "no_recorded_initial_attempt": 4
+        }
+      },
+      {
+        "TeamID": "union",
+        "team": "Chicago Union",
+        "abbrev": "CHI",
+        "games": 11,
+        "leaders": [
+          {
+            "PlayerID": "pjanas",
+            "name": "Pawel Janas",
+            "count": 106
+          }
+        ],
+        "leader_count": 106,
+        "qualifying_centering_passes": 228,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.4649122807017544,
+        "coverage": {
+          "receiving_point_starts": 254,
+          "verified_opening_possessions": 252,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "apex",
+        "team": "Colorado Apex",
+        "abbrev": "COL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "telliott",
+            "name": "Timothy Elliott",
+            "count": 124
+          }
+        ],
+        "leader_count": 124,
+        "qualifying_centering_passes": 278,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.4460431654676259,
+        "coverage": {
+          "receiving_point_starts": 311,
+          "verified_opening_possessions": 309,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "breeze",
+        "team": "DC Breeze",
+        "abbrev": "DC",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jnissen",
+            "name": "Jacques Nissen",
+            "count": 65
+          }
+        ],
+        "leader_count": 65,
+        "qualifying_centering_passes": 236,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2754237288135593,
+        "coverage": {
+          "receiving_point_starts": 259,
+          "verified_opening_possessions": 256,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "havoc",
+        "team": "Houston Havoc",
+        "abbrev": "HTX",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "xfuzat",
+            "name": "Xavier Fuzat",
+            "count": 35
+          }
+        ],
+        "leader_count": 35,
+        "qualifying_centering_passes": 264,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.13257575757575757,
+        "coverage": {
+          "receiving_point_starts": 299,
+          "verified_opening_possessions": 298,
+          "excluded_unreliable_sequences": 1
+        }
+      },
+      {
+        "TeamID": "alleycats",
+        "team": "Indianapolis AlleyCats",
+        "abbrev": "IND",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jmast",
+            "name": "Jonathan Mast",
+            "count": 62
+          }
+        ],
+        "leader_count": 62,
+        "qualifying_centering_passes": 224,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2767857142857143,
+        "coverage": {
+          "receiving_point_starts": 263,
+          "verified_opening_possessions": 261,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "radicals",
+        "team": "Madison Radicals",
+        "abbrev": "MAD",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "imccosky",
+            "name": "Ian McCosky",
+            "count": 47
+          }
+        ],
+        "leader_count": 47,
+        "qualifying_centering_passes": 229,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.2052401746724891,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 250,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "windchill",
+        "team": "Minnesota Wind Chill",
+        "abbrev": "MIN",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "glarson",
+            "name": "Gordon Larson",
+            "count": 48
+          }
+        ],
+        "leader_count": 48,
+        "qualifying_centering_passes": 208,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.23076923076923078,
+        "coverage": {
+          "receiving_point_starts": 216,
+          "verified_opening_possessions": 214,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "royal",
+        "team": "Montreal Royal",
+        "abbrev": "MTL",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "jbrissett",
+            "name": "Jakob Brissette",
+            "count": 69
+          }
+        ],
+        "leader_count": 69,
+        "qualifying_centering_passes": 229,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.30131004366812225,
+        "coverage": {
+          "receiving_point_starts": 270,
+          "verified_opening_possessions": 267,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "empire",
+        "team": "New York Empire",
+        "abbrev": "NY",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "srueschem",
+            "name": "Solomon Rueschemeyer-Bailey",
+            "count": 49
+          }
+        ],
+        "leader_count": 49,
+        "qualifying_centering_passes": 214,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.22897196261682243,
+        "coverage": {
+          "receiving_point_starts": 229,
+          "verified_opening_possessions": 229
+        }
+      },
+      {
+        "TeamID": "spiders",
+        "team": "Oakland Spiders",
+        "abbrev": "OAK",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "dritthale",
+            "name": "Daniel Ritthaler",
+            "count": 60
+          }
+        ],
+        "leader_count": 60,
+        "qualifying_centering_passes": 182,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.32967032967032966,
+        "coverage": {
+          "receiving_point_starts": 216,
+          "verified_opening_possessions": 211,
+          "no_recorded_initial_attempt": 3,
+          "excluded_unreliable_sequences": 2
+        }
+      },
+      {
+        "TeamID": "steel",
+        "team": "Oregon Steel",
+        "abbrev": "ORE",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "dbarram",
+            "name": "David Barram",
+            "count": 42
+          }
+        ],
+        "leader_count": 42,
+        "qualifying_centering_passes": 259,
+        "unattributed_centering_passes": 1,
+        "leader_share": 0.16216216216216217,
+        "coverage": {
+          "receiving_point_starts": 306,
+          "verified_opening_possessions": 305,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "phoenix",
+        "team": "Philadelphia Phoenix",
+        "abbrev": "PHI",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "ebeidlers",
+            "name": "Ezra Beidler-Shenk",
+            "count": 98
+          }
+        ],
+        "leader_count": 98,
+        "qualifying_centering_passes": 294,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3333333333333333,
+        "coverage": {
+          "receiving_point_starts": 333,
+          "verified_opening_possessions": 331,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "thunderbirds",
+        "team": "Pittsburgh Thunderbirds",
+        "abbrev": "PIT",
+        "games": 11,
+        "leaders": [
+          {
+            "PlayerID": "whoffenka",
+            "name": "Will Hoffenkamp",
+            "count": 68
+          }
+        ],
+        "leader_count": 68,
+        "qualifying_centering_passes": 274,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.24817518248175183,
+        "coverage": {
+          "receiving_point_starts": 320,
+          "verified_opening_possessions": 314,
+          "no_recorded_initial_attempt": 6
+        }
+      },
+      {
+        "TeamID": "shred",
+        "team": "Salt Lake Shred",
+        "abbrev": "SLC",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "myorgason",
+            "name": "McKay Yorgason",
+            "count": 86
+          }
+        ],
+        "leader_count": 86,
+        "qualifying_centering_passes": 231,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.3722943722943723,
+        "coverage": {
+          "receiving_point_starts": 254,
+          "verified_opening_possessions": 252,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "growlers",
+        "team": "San Diego Growlers",
+        "abbrev": "SD",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "bvandeuse",
+            "name": "Brandon Van Deusen",
+            "count": 77
+          }
+        ],
+        "leader_count": 77,
+        "qualifying_centering_passes": 233,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.33047210300429186,
+        "coverage": {
+          "receiving_point_starts": 251,
+          "verified_opening_possessions": 250,
+          "no_recorded_initial_attempt": 1
+        }
+      },
+      {
+        "TeamID": "cascades",
+        "team": "Seattle Cascades",
+        "abbrev": "SEA",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "slofink",
+            "name": "Spencer Lofink",
+            "count": 65
+          }
+        ],
+        "leader_count": 65,
+        "qualifying_centering_passes": 212,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.30660377358490565,
+        "coverage": {
+          "receiving_point_starts": 245,
+          "verified_opening_possessions": 243,
+          "no_recorded_initial_attempt": 2
+        }
+      },
+      {
+        "TeamID": "rush",
+        "team": "Toronto Rush",
+        "abbrev": "TOR",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "rpoloz",
+            "name": "Ryan Poloz",
+            "count": 54
+          }
+        ],
+        "leader_count": 54,
+        "qualifying_centering_passes": 212,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.25471698113207547,
+        "coverage": {
+          "receiving_point_starts": 252,
+          "verified_opening_possessions": 249,
+          "no_recorded_initial_attempt": 3
+        }
+      },
+      {
+        "TeamID": "bighorns",
+        "team": "Vegas Bighorns",
+        "abbrev": "LV",
+        "games": 12,
+        "leaders": [
+          {
+            "PlayerID": "cgarrison",
+            "name": "Connor Garrison",
+            "count": 38
+          }
+        ],
+        "leader_count": 38,
+        "qualifying_centering_passes": 254,
+        "unattributed_centering_passes": 0,
+        "leader_share": 0.14960629921259844,
+        "coverage": {
+          "receiving_point_starts": 324,
+          "verified_opening_possessions": 322,
+          "no_recorded_initial_attempt": 2
+        }
+      }
+    ]
+  },
+  "sources": {
+    "export_manifest": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/data/database-exports/2026-10-12/manifest.json",
+    "raw_events_receipt": "/Users/teddytaussig/.codex/worktrees/fbf6/UFA_player_archetyping/research/dead_disc_study/raw_events/source_receipt.json",
+    "event_documentation": "https://www.docs.ufastats.com/events"
+  },
+  "limitations": [
+    "One regular-season game missing: Chicago and Pittsburgh have 11 games, other teams 12.",
+    "No minimum throwing distance, no CP filter, no skill inference. Dropped passes are not completed receptions.",
+    "The full first receiving possession is searched, including passes after a timeout or foul; the first centering pass may occur later than a pull play.",
+    "Sequences with conflicting metadata, missing source attempts, or unknown completed-pass geometry are excluded rather than skipping to a later pass.",
+    "Two opening sequences share the same Oakland point context on May 30; both are excluded because the genuine sequence cannot be established from these records alone."
+  ]
+}

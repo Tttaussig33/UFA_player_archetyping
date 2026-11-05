@@ -1,0 +1,164 @@
+{
+  "central_question": "How do throw number within a possession and earlier turnovers within the point relate to huck frequency and completion, and how do these patterns vary across teams and players?",
+  "analysis_structure": {
+    "primary": [
+      "Huck choice rate conditional on having a recorded throw opportunity",
+      "Actual completion conditional on attempting a huck"
+    ],
+    "context_axes": [
+      "Throw ordinal within the current possession",
+      "Team began point receiving or pulling",
+      "First versus later attacking possession for that team",
+      "Only turnovers preceding the throw",
+      "Release location and other verified pre-throw game context"
+    ],
+    "comparison_units": [
+      "League patterns",
+      "Team differences",
+      "Individual differences within teams where data support them"
+    ],
+    "extensions_retained": [
+      "Stability of tendencies and results across games or seasons",
+      "Whether previous player performance improves future CP predictions"
+    ],
+    "interpretation": "Observational associations; eagerness, impatience, fatigue, and receiver openness are not directly measured."
+  },
+  "metrics": [
+    {
+      "name": "Huck choice frequency",
+      "role": "primary behavior outcome",
+      "grain": "eligible throw",
+      "measure": "Huck attempts divided by all eligible throws in the same team/player/context/stage.",
+      "availability": "Derived from validated source order and coordinates.",
+      "limits": "Not the same as the distribution of hucks across stages. Raw counts and rates depend on release location and opportunities. Define coordinate eligibility consistently for numerator and denominator."
+    },
+    {
+      "name": "Actual completion and drops",
+      "role": "primary huck outcome",
+      "grain": "huck attempt",
+      "fields": [
+        "turnover",
+        "DroppedThrow",
+        "source_event_type"
+      ],
+      "measure": "Caught hucks divided by all eligible hucks; drops remain incompletions. Report drop count separately.",
+      "availability": "Present in export and checked against source events."
+    },
+    {
+      "name": "CP and credited CPOE",
+      "role": "recorded difficulty and credited throwing outcome",
+      "grain": "huck attempt aggregated over identical CP-covered cohort",
+      "fields": [
+        "cp",
+        "turnover",
+        "DroppedThrow"
+      ],
+      "measure": "Mean CP; CPOE in percentage points = 100 * mean(complete-or-drop minus CP).",
+      "availability": "CP present for all 3507 initial qualifying hucks. Drop treatment supported by Braden and saved official aggregate validation.",
+      "limits": "Never average stored per-throw cpoe, whose drop rows can equal 1. CP and credited CPOE must not be conflated with actual catch rate. Does not observe receiver openness or defense. For choice models, CP of the chosen throw is not a pre-choice description of all available alternatives."
+    },
+    {
+      "name": "Throw geometry and field value",
+      "role": "describe the attempted hucks and explain outcome differences",
+      "grain": "throw",
+      "fields": [
+        "ThrowerX",
+        "ThrowerY",
+        "ReceiverX",
+        "ReceiverY",
+        "throw_distance",
+        "throw_angle",
+        "x_diff",
+        "y_diff",
+        "fv_thrower",
+        "fv_receiver",
+        "fv_opponent"
+      ],
+      "availability": "Present in export. Validate interpretation and outcome-related endpoint errors.",
+      "limits": "Release location can contextualize huck choice. Receiver/landing coordinates describe the realized throw, not receiver separation at release. Do not control a choice model for information determined by the chosen throw."
+    },
+    {
+      "name": "Scoring and cumulative contribution",
+      "role": "supporting outcomes",
+      "grain": "throw and validated possession",
+      "fields": [
+        "source_event_type",
+        "aec"
+      ],
+      "measure": "Huck assists from type 19; total thrower aEC with recorded drops contributing zero to the thrower. Eventual possession score requires an independently validated terminal-event join.",
+      "availability": "Throw-level assists and aEC available; possession-scoring derivation pending.",
+      "limits": "Total aEC describes accumulated contribution and must be accompanied by attempt counts. aEC per attempt is excluded by user preference. Do not use eventual scoring or aEC as a pre-throw control."
+    },
+    {
+      "name": "Lag contribution player impact and efficiency",
+      "role": "background role/context summaries",
+      "grain": "player-game or player-season in captured schema",
+      "fields": [
+        "lag_contribution",
+        "player_impact",
+        "player_impact_possession",
+        "OE",
+        "DE",
+        "SecondsPlayed"
+      ],
+      "availability": "Aggregate columns exist in saved live metadata. Captured result rows cover only a subset; complete current values are not newly queried.",
+      "limits": "A proposed per-throw lag-contribution reconstruction failed prior validation. Do not label aggregate totals as early/late huck metrics. OE/DE and impact definitions and denominators must be verified before interpretation."
+    },
+    {
+      "name": "Win probability and WPA",
+      "role": "optional situational context requiring definition review",
+      "grain": "win_prob at throw level; win_probability_added at aggregate level",
+      "fields": [
+        "win_prob",
+        "win_probability_added"
+      ],
+      "availability": "Per-throw win_prob exists; WPA is listed in aggregate metadata.",
+      "limits": "A win-probability level is not win probability added. No verified per-huck WPA attribution available from this export."
+    },
+    {
+      "name": "ETV Decision Score and stored ec",
+      "role": "deferred pending verified implementation and semantics",
+      "grain": "unverified for timing study",
+      "fields": [
+        "ec"
+      ],
+      "availability": "ec is stored. ETV and Decision Score appear in the manuscript but are not native columns in the inspected throw export or aggregate inventory.",
+      "limits": "Do not relabel ec as ETV or imply that a decision-score grid observes actual open receivers."
+    }
+  ],
+  "sources": {
+    "timing_audit": "/Users/teddytaussig/.codex/worktrees/fbf6/UFA_player_archetyping/research/huck_timing_study/timing_audit.json",
+    "metric_inventory": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/data/database-metadata/2026-11-04/metric-discovery.json",
+    "metric_validation": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/data/database-metadata/2026-11-04/throw-metric-validation.json",
+    "manuscript": "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/submission/JSDSS_manuscript.docx"
+  },
+  "working_assumptions": [
+    "2026 excluded from CP-model training, as directed by user; exact production lineage and tuning membership not verified."
+  ],
+  "no_live_query_this_turn": true,
+  "pre_analysis_requirements": [
+    "Resolve/exclude four hucks lacking confirmed stage or point role.",
+    "Validate all-throw denominators and consistent coordinate eligibility.",
+    "Account for field position when comparing choice rates.",
+    "Handle point-start role versus subsequent personnel changes.",
+    "Use complete-CP cohorts consistently for credited CPOE.",
+    "Verify elapsed-time semantics before any seconds-based analysis.",
+    "Choose reporting groups based on support before inspecting outcome differences.",
+    "Do not condition tendency analysis on eventual dirty hold or break."
+  ],
+  "active_focus": {
+    "set_by_user": "2026-11-05",
+    "question": "Do receiving teams huck more frequently after losing and regaining the disc than on their opening possession?",
+    "primary_comparison": "Hucks per physical throw on opening versus regained receiving-team possessions, with each team compared to its own baseline.",
+    "secondary": "Throw order within those possessions and whether a possession contains any huck.",
+    "later_work": [
+      "Huck completion and CP/CPOE outcomes",
+      "Individual throwers within teams",
+      "Timeout effects",
+      "Personalized completion probability"
+    ],
+    "results": "oline_regains/results.json",
+    "status": "Historical initial huck analysis. Current broader possession-comparison decisions are in ../possession_review/review_notes.json; no new estimates yet."
+  },
+  "current_discussion": "../possession_review/review_notes.json"
+}

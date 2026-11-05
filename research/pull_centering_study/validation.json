@@ -1,0 +1,57 @@
+{
+  "independent_database_metadata_check": {
+    "any_inward": {
+      "independent_database_order_matches": 5194,
+      "unique_opening_possessions": 5194,
+      "team_maximum_counts_verified": 22
+    },
+    "at_least_5_yards": {
+      "independent_database_order_matches": 4741,
+      "unique_opening_possessions": 4741,
+      "team_maximum_counts_verified": 22
+    },
+    "any_inward_excluding_hucks": {
+      "independent_database_order_matches": 5104,
+      "unique_opening_possessions": 5104,
+      "team_maximum_counts_verified": 22
+    }
+  },
+  "timing": {
+    "primary_on_first_throw": 3676,
+    "primary_on_second_throw": 744,
+    "primary_within_first_three_throws": 4932,
+    "primary_after_three_throws": 262
+  },
+  "unattributed_primary_receptions": 1,
+  "exclusions": [
+    {
+      "id": "2026-05-30-SD-OAK:home:0",
+      "TeamID": "spiders",
+      "errors": [
+        "duplicate_opening_point_context"
+      ]
+    },
+    {
+      "id": "2026-05-30-SD-OAK:home:6",
+      "TeamID": "spiders",
+      "errors": [
+        "duplicate_opening_point_context"
+      ]
+    },
+    {
+      "id": "2026-06-13-HTX-CAR:away:8",
+      "TeamID": "havoc",
+      "errors": [
+        "unmatched_source_attempt"
+      ]
+    }
+  ],
+  "qualifications": "Raw-event selection independently matches selection by stored opening-possession metadata and throw ordinal. This validates computation, not the tactical interpretation of centering.",
+  "native_canvas_preview": "Not yet verified in the app.",
+  "canvas_data_check": {
+    "embedded_team_variants_match_reviewed_results": true,
+    "teams_in_each_variant": 22,
+    "chart_value_axis": "0 to 100 percent",
+    "native_render_and_interactions_verified": false
+  }
+}

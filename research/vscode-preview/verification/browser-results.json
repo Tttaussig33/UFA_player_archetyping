@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-11-05T20:13:22.926Z",
+  "passed": true,
+  "results": [
+    {
+      "name": "UFA-dead-disc-first-pass",
+      "choice": "all_recorded_markers",
+      "title": "UFA throws after recorded stoppage events",
+      "rows": [
+        6,
+        7
+      ],
+      "charts": 2,
+      "barValuesVerified": 11
+    },
+    {
+      "name": "UFA-dead-disc-first-pass",
+      "choice": "team_timeout",
+      "title": "UFA throws after recorded stoppage events",
+      "rows": [
+        11,
+        3
+      ],
+      "charts": 2,
+      "barValuesVerified": 12
+    },
+    {
+      "name": "UFA-dead-disc-first-pass",
+      "choice": "team_timeout_or_injury",
+      "title": "UFA throws after recorded stoppage events",
+      "rows": [
+        11,
+        3
+      ],
+      "charts": 2,
+      "barValuesVerified": 13
+    },
+    {
+      "name": "UFA-pull-centering",
+      "choice": "any_inward",
+      "title": "Who receives the first centering pass?",
+      "rows": [
+        22
+      ],
+      "charts": 1,
+      "barValuesVerified": 22
+    },
+    {
+      "name": "UFA-pull-centering",
+      "choice": "at_least_5_yards",
+      "title": "Who receives the first centering pass?",
+      "rows": [
+        22
+      ],
+      "charts": 1,
+      "barValuesVerified": 22
+    },
+    {
+      "name": "UFA-oline-regain-hucking",
+      "choice": null,
+      "title": "Hucking after an O-line regains possession",
+      "rows": [
+        22
+      ],
+      "charts": 2,
+      "barValuesVerified": 8
+    },
+    {
+      "name": "UFA-possession-review",
+      "choice": "A",
+      "title": "Review these possessions",
+      "rows": [
+        5
+      ],
+      "charts": 1,
+      "barValuesVerified": 0
+    },
+    {
+      "name": "UFA-possession-review",
+      "choice": "B",
+      "title": "Review these possessions",
+      "rows": [
+        3
+      ],
+      "charts": 1,
+      "barValuesVerified": 0
+    },
+    {
+      "name": "UFA-possession-review",
+      "choice": "C",
+      "title": "Review these possessions",
+      "rows": [
+        7
+      ],
+      "charts": 1,
+      "barValuesVerified": 0
+    },
+    {
+      "name": "UFA-possession-review",
+      "choice": "D",
+      "title": "Review these possessions",
+      "rows": [
+        13
+      ],
+      "charts": 1,
+      "barValuesVerified": 0
+    },
+    {
+      "name": "UFA-possession-review",
+      "choice": "E",
+      "title": "Review these possessions",
+      "rows": [
+        3
+      ],
+      "charts": 1,
+      "barValuesVerified": 0
+    }
+  ],
+  "javascriptErrors": [],
+  "externalRequests": [],
+  "checkedViewports": [
+    "1200px light",
+    "420px dark"
+  ]
+}

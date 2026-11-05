@@ -1,0 +1,111 @@
+{
+  "checkedAt": "2026-11-05T20:10:08.657Z",
+  "vscodeVersion": "1.144.1",
+  "passed": true,
+  "results": [
+    {
+      "name": "UFA-dead-disc-first-pass",
+      "kind": "tsx",
+      "editor": "ufa.researchPreview",
+      "title": "UFA throws after recorded stoppage events",
+      "tableRows": [
+        6,
+        7
+      ],
+      "chartCount": 2,
+      "selectors": [
+        "all_recorded_markers"
+      ]
+    },
+    {
+      "name": "UFA-dead-disc-first-pass",
+      "kind": "html",
+      "editor": "ufa.researchPreview",
+      "title": "UFA throws after recorded stoppage events",
+      "tableRows": [
+        6,
+        7
+      ],
+      "chartCount": 2,
+      "selectors": [
+        "all_recorded_markers"
+      ]
+    },
+    {
+      "name": "UFA-pull-centering",
+      "kind": "tsx",
+      "editor": "ufa.researchPreview",
+      "title": "Who receives the first centering pass?",
+      "tableRows": [
+        22
+      ],
+      "chartCount": 1,
+      "selectors": [
+        "any_inward"
+      ]
+    },
+    {
+      "name": "UFA-pull-centering",
+      "kind": "html",
+      "editor": "ufa.researchPreview",
+      "title": "Who receives the first centering pass?",
+      "tableRows": [
+        22
+      ],
+      "chartCount": 1,
+      "selectors": [
+        "any_inward"
+      ]
+    },
+    {
+      "name": "UFA-oline-regain-hucking",
+      "kind": "tsx",
+      "editor": "ufa.researchPreview",
+      "title": "Hucking after an O-line regains possession",
+      "tableRows": [
+        22
+      ],
+      "chartCount": 2,
+      "selectors": []
+    },
+    {
+      "name": "UFA-oline-regain-hucking",
+      "kind": "html",
+      "editor": "ufa.researchPreview",
+      "title": "Hucking after an O-line regains possession",
+      "tableRows": [
+        22
+      ],
+      "chartCount": 2,
+      "selectors": []
+    },
+    {
+      "name": "UFA-possession-review",
+      "kind": "tsx",
+      "editor": "ufa.researchPreview",
+      "title": "Review these possessions",
+      "tableRows": [
+        5
+      ],
+      "chartCount": 1,
+      "selectors": [
+        "A",
+        "1"
+      ]
+    },
+    {
+      "name": "UFA-possession-review",
+      "kind": "html",
+      "editor": "ufa.researchPreview",
+      "title": "Review these possessions",
+      "tableRows": [
+        5
+      ],
+      "chartCount": 1,
+      "selectors": [
+        "A",
+        "1"
+      ]
+    }
+  ]
+}

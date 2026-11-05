@@ -1,0 +1,23 @@
+{
+  "check": {
+    "overflow": "false",
+    "labels": 8,
+    "axes": 2,
+    "svgWidth": 788
+  },
+  "toggled": 4,
+  "narrow": {
+    "overflow": "false",
+    "labels": 8,
+    "scrollWidth": 328,
+    "clientWidth": 328
+  },
+  "receiptLoaded": true,
+  "errors": [],
+  "canvas": "SDK props reviewed; host canvas rendering and TypeScript check unavailable.",
+  "finalNarrowCheck": {
+    "overflow": "false",
+    "ticks": 3,
+    "labels": 8
+  }
+}

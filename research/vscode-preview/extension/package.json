@@ -1,0 +1,27 @@
+{
+  "name": "research-preview",
+  "displayName": "UFA Research Preview",
+  "description": "Open UFA research reports and possession examples directly as interactive previews in VS Code.",
+  "version": "0.1.1",
+  "publisher": "local-ufa",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Visualization"],
+  "main": "./extension.cjs",
+  "activationEvents": ["onCustomEditor:ufa.researchPreview"],
+  "capabilities": { "untrustedWorkspaces": { "supported": true }, "virtualWorkspaces": true },
+  "contributes": {
+    "customEditors": [{
+      "viewType": "ufa.researchPreview",
+      "displayName": "UFA Research Preview",
+      "priority": "default",
+      "selector": [
+        { "filenamePattern": "UFA-dead-disc-first-pass.canvas.tsx" },
+        { "filenamePattern": "UFA-pull-centering.canvas.tsx" },
+        { "filenamePattern": "UFA-oline-regain-hucking.canvas.tsx" },
+        { "filenamePattern": "UFA-possession-review.canvas.tsx" },
+        { "filenamePattern": "*.ufa.html" }
+      ]
+    }]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,39 @@
+:root {
+  color-scheme: light dark;
+  --report-bg: var(--vscode-editor-background, light-dark(#ffffff, #181818));
+  --report-text: var(--vscode-editor-foreground, light-dark(#202124, #eeeeee));
+  --report-muted: var(--vscode-descriptionForeground, light-dark(#62676d, #b4b8be));
+  --report-border: var(--vscode-panel-border, light-dark(#dfe2e6, #3b3e43));
+  --report-fill: light-dark(#f5f6f7, #25272a);
+  --report-accent: var(--vscode-textLink-foreground, light-dark(#1769aa, #77b7ed));
+}
+* { box-sizing: border-box; }
+.vscode-light { color-scheme: light; }
+.vscode-dark, .vscode-high-contrast { color-scheme: dark; }
+body { margin: 0; background: var(--report-bg); color: var(--report-text); font-family: var(--vscode-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif); font-size: 15px; line-height: 1.5; }
+h1,h2,p { margin: 0; }
+h1 { font-size: 24px; font-weight: 650; line-height: 1.25; }
+h2 { font-size: 19px; font-weight: 600; line-height: 1.3; }
+a { color: var(--report-accent); }
+select { font: inherit; padding: 8px 10px; background: var(--report-bg); color: var(--report-text); border: 1px solid var(--report-border); border-radius: 3px; max-width: 100%; }
+select:focus-visible, summary:focus-visible { outline: 2px solid var(--report-accent); outline-offset: 3px; }
+.ufa-stack { display: flex; flex-direction: column; min-width: 0; }
+.ufa-grid { display: grid; min-width: 0; }
+.ufa-small { font-size: 13px; }
+.ufa-secondary { color: var(--report-muted); }
+.ufa-table-wrap { max-width: 100%; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { min-width: 90px; }
+td:first-child { min-width: 140px; }
+th, td { padding: 9px 11px; border-bottom: 1px solid var(--report-border); vertical-align: top; }
+th { font-weight: 600; text-align: left; }
+table.striped tbody tr:nth-child(even) { background: var(--report-fill); }
+.ufa-chart { width: 100%; min-width: 0; overflow-x: auto; }
+.ufa-chart svg { display: block; }
+.ufa-chart text { font-size: 12px; font-family: inherit; fill: var(--report-text); }
+.ufa-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; margin-bottom: 8px; }
+.ufa-legend > span { display: inline-flex; align-items: center; gap: 6px; }
+.ufa-legend i { display: inline-block; width: 10px; height: 10px; }
+summary { cursor: pointer; }
+details { border-top: 1px solid var(--report-border); padding-top: 15px; }
+@media print { :root { color-scheme: light; --report-bg: #fff; --report-text: #111; --report-muted: #555; --report-border: #ddd; --report-fill: #f6f6f6; --report-accent: #1769aa; } details { break-inside: avoid; } .ufa-table-wrap, .ufa-chart { overflow: visible; } }

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UFA pull centering</title><style>:root {
+  color-scheme: light dark;
+  --report-bg: var(--vscode-editor-background, light-dark(#ffffff, #181818));
+  --report-text: var(--vscode-editor-foreground, light-dark(#202124, #eeeeee));
+  --report-muted: var(--vscode-descriptionForeground, light-dark(#62676d, #b4b8be));
+  --report-border: var(--vscode-panel-border, light-dark(#dfe2e6, #3b3e43));
+  --report-fill: light-dark(#f5f6f7, #25272a);
+  --report-accent: var(--vscode-textLink-foreground, light-dark(#1769aa, #77b7ed));
+}
+* { box-sizing: border-box; }
+.vscode-light { color-scheme: light; }
+.vscode-dark, .vscode-high-contrast { color-scheme: dark; }
+body { margin: 0; background: var(--report-bg); color: var(--report-text); font-family: var(--vscode-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif); font-size: 15px; line-height: 1.5; }
+h1,h2,p { margin: 0; }
+h1 { font-size: 24px; font-weight: 650; line-height: 1.25; }
+h2 { font-size: 19px; font-weight: 600; line-height: 1.3; }
+a { color: var(--report-accent); }
+select { font: inherit; padding: 8px 10px; background: var(--report-bg); color: var(--report-text); border: 1px solid var(--report-border); border-radius: 3px; max-width: 100%; }
+select:focus-visible, summary:focus-visible { outline: 2px solid var(--report-accent); outline-offset: 3px; }
+.ufa-stack { display: flex; flex-direction: column; min-width: 0; }
+.ufa-grid { display: grid; min-width: 0; }
+.ufa-small { font-size: 13px; }
+.ufa-secondary { color: var(--report-muted); }
+.ufa-table-wrap { max-width: 100%; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { min-width: 90px; }
+td:first-child { min-width: 140px; }
+th, td { padding: 9px 11px; border-bottom: 1px solid var(--report-border); vertical-align: top; }
+th { font-weight: 600; text-align: left; }
+table.striped tbody tr:nth-child(even) { background: var(--report-fill); }
+.ufa-chart { width: 100%; min-width: 0; overflow-x: auto; }
+.ufa-chart svg { display: block; }
+.ufa-chart text { font-size: 12px; font-family: inherit; fill: var(--report-text); }
+.ufa-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; margin-bottom: 8px; }
+.ufa-legend > span { display: inline-flex; align-items: center; gap: 6px; }
+.ufa-legend i { display: inline-block; width: 10px; height: 10px; }
+summary { cursor: pointer; }
+details { border-top: 1px solid var(--report-border); padding-top: 15px; }
+@media print { :root { color-scheme: light; --report-bg: #fff; --report-text: #111; --report-muted: #555; --report-border: #ddd; --report-fill: #f6f6f6; --report-accent: #1769aa; } details { break-inside: avoid; } .ufa-table-wrap, .ufa-chart { overflow: visible; } }
+</style></head><body><main id="ufa-report"></main><script>/* Portable display adapter for the three UFA reports. No external resources. */
+(() => {
+  'use strict';
+  const SVG = 'http://www.w3.org/2000/svg';
+  const svgTags = new Set(['svg', 'g', 'rect', 'line', 'circle', 'text', 'title', 'path', 'polygon', 'polyline', 'ellipse']);
+  const unitless = new Set(['opacity', 'fontWeight', 'lineHeight', 'flex', 'flexGrow', 'flexShrink', 'order', 'zIndex']);
+  const theme = {
+    text: {primary:'var(--report-text)', secondary:'var(--report-muted)', tertiary:'var(--report-muted)', link:'var(--report-accent)'},
+    accent: {primary:'var(--report-accent)'},
+    stroke: {tertiary:'var(--report-border)'}
+  };
+  let app, cursor = 0, scheduled = false;
+  const states = [], cleanups = [], mounted = [];
+  const host = typeof acquireVsCodeApi === 'function' ? acquireVsCodeApi() : null;
+
+  function append(node, children) {
+    for (const child of children.flat(Infinity)) {
+      if (child == null || typeof child === 'boolean') continue;
+      node.appendChild(child instanceof Node ? child : document.createTextNode(String(child)));
+    }
+  }
+
+  function h(tag, props, ...children) {
+    props = props || {};
+    if (typeof tag === 'function') return tag({...props, children});
+    const svg = svgTags.has(tag);
+    const el = svg ? document.createElementNS(SVG, tag) : document.createElement(tag);
+    for (const [key, value] of Object.entries(props)) {
+      if (key === 'key' || key === 'children' || value == null) continue;
+      if (key === 'style') {
+        for (const [name, setting] of Object.entries(value)) {
+          el.style[name] = typeof setting === 'number' && !unitless.has(name) ? setting + 'px' : setting;
+        }
+      } else if (/^on[A-Z]/.test(key)) {
+        el.addEventListener(key.slice(2).toLowerCase(), value);
+      } else if (key === 'className') {
+        el.setAttribute('class', value);
+      } else if (typeof value === 'boolean') {
+        if (value) el.setAttribute(key, '');
+      } else {
+        const name = svg && !['viewBox', 'preserveAspectRatio'].includes(key)
+          ? key.replace(/[A-Z]/g, c => '-' + c.toLowerCase()) : key;
+        el.setAttribute(name, value);
+      }
+    }
+    append(el, children);
+    return el;
+  }
+
+  const Stack = ({gap = 12, style, children}) => h('div', {className:'ufa-stack', style:{gap, ...style}}, children);
+  const Grid = ({columns, gap = 16, style, children}) => h('div', {className:'ufa-grid', style:{gridTemplateColumns:columns, gap, ...style}}, children);
+  const H1 = ({children, style}) => h('h1', {style}, children);
+  const H2 = ({children, style}) => h('h2', {style}, children);
+  const Text = ({children, size, tone, weight, style}) => h('p', {
+    className:[size === 'small' ? 'ufa-small' : '', tone === 'secondary' ? 'ufa-secondary' : ''].join(' '),
+    style:{...(weight === 'semibold' ? {fontWeight:600} : {}), ...style}
+  }, children);
+
+  function Select({value, onChange, options, style}) {
+    const select = h('select', {style, onChange:event => onChange(event.target.value)},
+      options.map(option => h('option', {value:option.value}, option.label)));
+    select.value = value;
+    return select;
+  }
+
+  function Table({headers, rows, columnAlign = [], striped}) {
+    return h('div', {className:'ufa-table-wrap', tabIndex:0, role:'region', 'aria-label':headers.join(', ')},
+      h('table', {className:striped ? 'striped' : ''},
+        h('thead', {}, h('tr', {}, headers.map((label, i) => h('th', {scope:'col', style:{textAlign:columnAlign[i] || 'left'}}, label)))),
+        h('tbody', {}, rows.map(row => h('tr', {}, row.map((cell, i) => h('td', {style:{textAlign:columnAlign[i] || 'left'}}, cell)))))));
+  }
+
+  function useState(initial) {
+    const index = cursor++;
+    if (!(index in states)) states[index] = typeof initial === 'function' ? initial() : initial;
+    return [states[index], value => {
+      states[index] = typeof value === 'function' ? value(states[index]) : value;
+      if (!scheduled) {
+        scheduled = true;
+        queueMicrotask(() => { scheduled = false; paint(); });
+      }
+    }];
+  }
+
+  function BarChart({horizontal = false, categories, series, height = 300, showValues = false, yMax, valueSuffix = ''}) {
+    const colors = series.map(s => s.tone === 'neutral' ? 'var(--report-muted)' : 'var(--report-accent)');
+    const container = h('div', {className:'ufa-chart'});
+    if (series.length > 1) container.appendChild(h('div', {className:'ufa-legend'}, series.map((s, i) =>
+      h('span', {}, h('i', {style:{background:colors[i]}}), s.name))));
+    const holder = h('div', {});
+    container.appendChild(holder);
+    const format = value => Number(value.toFixed(3)).toLocaleString() + valueSuffix;
+
+    function draw() {
+      const longest = Math.max(...categories.map(c => String(c).length));
+      const labelWidth = horizontal ? Math.max(62, longest * 6.7 + 16) : 54;
+      const width = Math.max(container.clientWidth, horizontal ? labelWidth + 220 : 550);
+      const margin = {left:labelWidth, right:horizontal ? 62 : 20, top:24, bottom:38};
+      const innerW = width - margin.left - margin.right;
+      const innerH = height - margin.top - margin.bottom;
+      const values = series.flatMap(s => s.data);
+      const low = Math.min(0, ...values);
+      const high = yMax ?? Math.max(1, ...values) * 1.15;
+      const range = high - low;
+      const x = v => margin.left + (v - low) / range * innerW;
+      const y = v => margin.top + (high - v) / range * innerH;
+      const svg = h('svg', {width, height, viewBox:`0 0 ${width} ${height}`, role:'img', 'aria-label':series.map(s => s.name).join(' and ')});
+      for (let i = 0; i <= 4; i++) {
+        const value = low + range * i / 4;
+        if (horizontal) {
+          svg.appendChild(h('line', {x1:x(value), x2:x(value), y1:margin.top, y2:height - margin.bottom, stroke:'var(--report-border)'}));
+          svg.appendChild(h('text', {x:x(value), y:height - 14, textAnchor:'middle'}, format(value)));
+        } else {
+          svg.appendChild(h('line', {x1:margin.left, x2:width - margin.right, y1:y(value), y2:y(value), stroke:'var(--report-border)'}));
+          svg.appendChild(h('text', {x:margin.left - 8, y:y(value) + 4, textAnchor:'end'}, format(value)));
+        }
+      }
+      const stride = (horizontal ? innerH : innerW) / categories.length;
+      const barSize = Math.min(horizontal ? 25 : 62, stride * 0.65 / series.length);
+      categories.forEach((category, index) => {
+        const center = (horizontal ? margin.top : margin.left) + stride * (index + 0.5);
+        svg.appendChild(horizontal
+          ? h('text', {x:margin.left - 10, y:center + 4, textAnchor:'end'}, category)
+          : h('text', {x:center, y:height - 14, textAnchor:'middle'}, category));
+        series.forEach((s, j) => {
+          const value = Number(s.data[index]);
+          const offset = center - (barSize * series.length) / 2 + j * barSize;
+          const rect = horizontal
+            ? h('rect', {x:Math.min(x(0), x(value)), y:offset, width:Math.abs(x(value) - x(0)), height:barSize - 2, fill:colors[j]})
+            : h('rect', {x:offset, y:Math.min(y(0), y(value)), width:barSize - 3, height:Math.abs(y(value) - y(0)), fill:colors[j]});
+          rect.setAttribute('data-value', String(value));
+          rect.setAttribute('data-category', String(category));
+          rect.setAttribute('data-series', s.name);
+          rect.appendChild(h('title', {}, `${category} · ${s.name}: ${format(value)}`));
+          svg.appendChild(rect);
+          if (showValues) svg.appendChild(horizontal
+            ? h('text', {x:x(value) + (value >= 0 ? 6 : -6), y:offset + barSize / 2 + 3, textAnchor:value >= 0 ? 'start' : 'end'}, format(value))
+            : h('text', {x:offset + (barSize - 3) / 2, y:y(value) - 7, textAnchor:'middle'}, format(value)));
+        });
+      });
+      holder.replaceChildren(svg);
+    }
+    mounted.push(() => {
+      draw();
+      const observer = new ResizeObserver(draw);
+      observer.observe(container);
+      cleanups.push(() => observer.disconnect());
+    });
+    return container;
+  }
+
+  function paint() {
+    cleanups.splice(0).forEach(fn => fn());
+    cursor = 0;
+    const selectedIndex = Array.from(document.querySelectorAll('select')).indexOf(document.activeElement);
+    const openDetails = Array.from(document.querySelectorAll('details')).map(el => el.open);
+    const root = document.getElementById('ufa-report');
+    root.replaceChildren(h(app, {}));
+    mounted.splice(0).forEach(fn => fn());
+    document.querySelectorAll('details').forEach((el, i) => { if (openDetails[i]) el.open = true; });
+    if (selectedIndex >= 0) document.querySelectorAll('select')[selectedIndex]?.focus({preventScroll:true});
+    document.title = document.querySelector('h1')?.textContent || document.title;
+    host?.postMessage({
+      type:'ufa-preview-ready', title:document.title,
+      tableRows:Array.from(document.querySelectorAll('tbody')).map(el => el.rows.length),
+      chartCount:document.querySelectorAll('svg').length,
+      selectors:Array.from(document.querySelectorAll('select')).map(el => el.value)
+    });
+  }
+
+  window.UFAPreview = {h, Stack, Grid, H1, H2, Text, Select, Table, BarChart,
+    useState, useHostTheme:() => theme, render:component => { app = component; paint(); }};
+})();
+</script><script>(() => { const { h, BarChart, H1, H2, Select, Stack, Table, Text, useHostTheme, useState } = window.UFAPreview;
+"use strict";
+const DATA = { "teams": { "any_inward": [{ "TeamID": "hustle", "team": "Atlanta Hustle", "abbrev": "ATL", "games": 12, "leaders": [{ "PlayerID": "ataylor", "name": "Austin Taylor", "count": 107 }], "leader_count": 107, "qualifying_centering_passes": 224, "unattributed_centering_passes": 0, "leader_share": 0.47767857142857145, "coverage": { "receiving_point_starts": 251, "verified_opening_possessions": 247, "no_recorded_initial_attempt": 4 } }, { "TeamID": "sol", "team": "Austin Sol", "abbrev": "ATX", "games": 12, "leaders": [{ "PlayerID": "khenke", "name": "Kyle Henke", "count": 52 }], "leader_count": 52, "qualifying_centering_passes": 221, "unattributed_centering_passes": 0, "leader_share": 0.23529411764705882, "coverage": { "receiving_point_starts": 236, "verified_opening_possessions": 235, "no_recorded_initial_attempt": 1 } }, { "TeamID": "glory", "team": "Boston Glory", "abbrev": "BOS", "games": 12, "leaders": [{ "PlayerID": "rdinger", "name": "Ryan Dinger", "count": 84 }], "leader_count": 84, "qualifying_centering_passes": 199, "unattributed_centering_passes": 0, "leader_share": 0.4221105527638191, "coverage": { "receiving_point_starts": 212, "verified_opening_possessions": 209, "no_recorded_initial_attempt": 3 } }, { "TeamID": "flyers", "team": "Carolina Flyers", "abbrev": "CAR", "games": 12, "leaders": [{ "PlayerID": "jlouie", "name": "Jacob Louie", "count": 64 }], "leader_count": 64, "qualifying_centering_passes": 210, "unattributed_centering_passes": 0, "leader_share": 0.3047619047619048, "coverage": { "receiving_point_starts": 229, "verified_opening_possessions": 225, "no_recorded_initial_attempt": 4 } }, { "TeamID": "union", "team": "Chicago Union", "abbrev": "CHI", "games": 11, "leaders": [{ "PlayerID": "pjanas", "name": "Pawel Janas", "count": 104 }], "leader_count": 104, "qualifying_centering_passes": 231, "unattributed_centering_passes": 0, "leader_share": 0.45021645021645024, "coverage": { "receiving_point_starts": 254, "verified_opening_possessions": 252, "no_recorded_initial_attempt": 2 } }, { "TeamID": "apex", "team": "Colorado Apex", "abbrev": "COL", "games": 12, "leaders": [{ "PlayerID": "telliott", "name": "Timothy Elliott", "count": 125 }], "leader_count": 125, "qualifying_centering_passes": 281, "unattributed_centering_passes": 0, "leader_share": 0.44483985765124556, "coverage": { "receiving_point_starts": 311, "verified_opening_possessions": 309, "no_recorded_initial_attempt": 2 } }, { "TeamID": "breeze", "team": "DC Breeze", "abbrev": "DC", "games": 12, "leaders": [{ "PlayerID": "jnissen", "name": "Jacques Nissen", "count": 65 }], "leader_count": 65, "qualifying_centering_passes": 241, "unattributed_centering_passes": 0, "leader_share": 0.2697095435684647, "coverage": { "receiving_point_starts": 259, "verified_opening_possessions": 256, "no_recorded_initial_attempt": 3 } }, { "TeamID": "havoc", "team": "Houston Havoc", "abbrev": "HTX", "games": 12, "leaders": [{ "PlayerID": "xfuzat", "name": "Xavier Fuzat", "count": 35 }], "leader_count": 35, "qualifying_centering_passes": 266, "unattributed_centering_passes": 0, "leader_share": 0.13157894736842105, "coverage": { "receiving_point_starts": 299, "verified_opening_possessions": 298, "excluded_unreliable_sequences": 1 } }, { "TeamID": "alleycats", "team": "Indianapolis AlleyCats", "abbrev": "IND", "games": 12, "leaders": [{ "PlayerID": "jmast", "name": "Jonathan Mast", "count": 62 }], "leader_count": 62, "qualifying_centering_passes": 230, "unattributed_centering_passes": 0, "leader_share": 0.26956521739130435, "coverage": { "receiving_point_starts": 263, "verified_opening_possessions": 261, "no_recorded_initial_attempt": 2 } }, { "TeamID": "radicals", "team": "Madison Radicals", "abbrev": "MAD", "games": 12, "leaders": [{ "PlayerID": "imccosky", "name": "Ian McCosky", "count": 47 }], "leader_count": 47, "qualifying_centering_passes": 233, "unattributed_centering_passes": 0, "leader_share": 0.2017167381974249, "coverage": { "receiving_point_starts": 251, "verified_opening_possessions": 250, "no_recorded_initial_attempt": 1 } }, { "TeamID": "windchill", "team": "Minnesota Wind Chill", "abbrev": "MIN", "games": 12, "leaders": [{ "PlayerID": "glarson", "name": "Gordon Larson", "count": 48 }], "leader_count": 48, "qualifying_centering_passes": 208, "unattributed_centering_passes": 0, "leader_share": 0.23076923076923078, "coverage": { "receiving_point_starts": 216, "verified_opening_possessions": 214, "no_recorded_initial_attempt": 2 } }, { "TeamID": "royal", "team": "Montreal Royal", "abbrev": "MTL", "games": 12, "leaders": [{ "PlayerID": "jbrissett", "name": "Jakob Brissette", "count": 68 }], "leader_count": 68, "qualifying_centering_passes": 231, "unattributed_centering_passes": 0, "leader_share": 0.2943722943722944, "coverage": { "receiving_point_starts": 270, "verified_opening_possessions": 267, "no_recorded_initial_attempt": 3 } }, { "TeamID": "empire", "team": "New York Empire", "abbrev": "NY", "games": 12, "leaders": [{ "PlayerID": "srueschem", "name": "Solomon Rueschemeyer-Bailey", "count": 49 }], "leader_count": 49, "qualifying_centering_passes": 218, "unattributed_centering_passes": 0, "leader_share": 0.22477064220183487, "coverage": { "receiving_point_starts": 229, "verified_opening_possessions": 229 } }, { "TeamID": "spiders", "team": "Oakland Spiders", "abbrev": "OAK", "games": 12, "leaders": [{ "PlayerID": "dritthale", "name": "Daniel Ritthaler", "count": 61 }], "leader_count": 61, "qualifying_centering_passes": 189, "unattributed_centering_passes": 0, "leader_share": 0.32275132275132273, "coverage": { "receiving_point_starts": 216, "verified_opening_possessions": 211, "no_recorded_initial_attempt": 3, "excluded_unreliable_sequences": 2 } }, { "TeamID": "steel", "team": "Oregon Steel", "abbrev": "ORE", "games": 12, "leaders": [{ "PlayerID": "dbarram", "name": "David Barram", "count": 42 }], "leader_count": 42, "qualifying_centering_passes": 265, "unattributed_centering_passes": 1, "leader_share": 0.15849056603773584, "coverage": { "receiving_point_starts": 306, "verified_opening_possessions": 305, "no_recorded_initial_attempt": 1 } }, { "TeamID": "phoenix", "team": "Philadelphia Phoenix", "abbrev": "PHI", "games": 12, "leaders": [{ "PlayerID": "ebeidlers", "name": "Ezra Beidler-Shenk", "count": 99 }], "leader_count": 99, "qualifying_centering_passes": 301, "unattributed_centering_passes": 0, "leader_share": 0.3289036544850498, "coverage": { "receiving_point_starts": 333, "verified_opening_possessions": 331, "no_recorded_initial_attempt": 2 } }, { "TeamID": "thunderbirds", "team": "Pittsburgh Thunderbirds", "abbrev": "PIT", "games": 11, "leaders": [{ "PlayerID": "whoffenka", "name": "Will Hoffenkamp", "count": 68 }], "leader_count": 68, "qualifying_centering_passes": 276, "unattributed_centering_passes": 0, "leader_share": 0.2463768115942029, "coverage": { "receiving_point_starts": 320, "verified_opening_possessions": 314, "no_recorded_initial_attempt": 6 } }, { "TeamID": "shred", "team": "Salt Lake Shred", "abbrev": "SLC", "games": 12, "leaders": [{ "PlayerID": "myorgason", "name": "McKay Yorgason", "count": 86 }], "leader_count": 86, "qualifying_centering_passes": 236, "unattributed_centering_passes": 0, "leader_share": 0.3644067796610169, "coverage": { "receiving_point_starts": 254, "verified_opening_possessions": 252, "no_recorded_initial_attempt": 2 } }, { "TeamID": "growlers", "team": "San Diego Growlers", "abbrev": "SD", "games": 12, "leaders": [{ "PlayerID": "bvandeuse", "name": "Brandon Van Deusen", "count": 77 }], "leader_count": 77, "qualifying_centering_passes": 235, "unattributed_centering_passes": 0, "leader_share": 0.3276595744680851, "coverage": { "receiving_point_starts": 251, "verified_opening_possessions": 250, "no_recorded_initial_attempt": 1 } }, { "TeamID": "cascades", "team": "Seattle Cascades", "abbrev": "SEA", "games": 12, "leaders": [{ "PlayerID": "slofink", "name": "Spencer Lofink", "count": 67 }], "leader_count": 67, "qualifying_centering_passes": 220, "unattributed_centering_passes": 0, "leader_share": 0.30454545454545456, "coverage": { "receiving_point_starts": 245, "verified_opening_possessions": 243, "no_recorded_initial_attempt": 2 } }, { "TeamID": "rush", "team": "Toronto Rush", "abbrev": "TOR", "games": 12, "leaders": [{ "PlayerID": "rpoloz", "name": "Ryan Poloz", "count": 54 }], "leader_count": 54, "qualifying_centering_passes": 219, "unattributed_centering_passes": 0, "leader_share": 0.2465753424657534, "coverage": { "receiving_point_starts": 252, "verified_opening_possessions": 249, "no_recorded_initial_attempt": 3 } }, { "TeamID": "bighorns", "team": "Vegas Bighorns", "abbrev": "LV", "games": 12, "leaders": [{ "PlayerID": "cgarrison", "name": "Connor Garrison", "count": 39 }], "leader_count": 39, "qualifying_centering_passes": 260, "unattributed_centering_passes": 0, "leader_share": 0.15, "coverage": { "receiving_point_starts": 324, "verified_opening_possessions": 322, "no_recorded_initial_attempt": 2 } }], "at_least_5_yards": [{ "TeamID": "hustle", "team": "Atlanta Hustle", "abbrev": "ATL", "games": 12, "leaders": [{ "PlayerID": "ataylor", "name": "Austin Taylor", "count": 83 }], "leader_count": 83, "qualifying_centering_passes": 209, "unattributed_centering_passes": 0, "leader_share": 0.39712918660287083, "coverage": { "receiving_point_starts": 251, "verified_opening_possessions": 247, "no_recorded_initial_attempt": 4 } }, { "TeamID": "sol", "team": "Austin Sol", "abbrev": "ATX", "games": 12, "leaders": [{ "PlayerID": "khenke", "name": "Kyle Henke", "count": 49 }], "leader_count": 49, "qualifying_centering_passes": 202, "unattributed_centering_passes": 0, "leader_share": 0.24257425742574257, "coverage": { "receiving_point_starts": 236, "verified_opening_possessions": 235, "no_recorded_initial_attempt": 1 } }, { "TeamID": "glory", "team": "Boston Glory", "abbrev": "BOS", "games": 12, "leaders": [{ "PlayerID": "rdinger", "name": "Ryan Dinger", "count": 71 }], "leader_count": 71, "qualifying_centering_passes": 183, "unattributed_centering_passes": 0, "leader_share": 0.3879781420765027, "coverage": { "receiving_point_starts": 212, "verified_opening_possessions": 209, "no_recorded_initial_attempt": 3 } }, { "TeamID": "flyers", "team": "Carolina Flyers", "abbrev": "CAR", "games": 12, "leaders": [{ "PlayerID": "jlouie", "name": "Jacob Louie", "count": 52 }], "leader_count": 52, "qualifying_centering_passes": 201, "unattributed_centering_passes": 0, "leader_share": 0.25870646766169153, "coverage": { "receiving_point_starts": 229, "verified_opening_possessions": 225, "no_recorded_initial_attempt": 4 } }, { "TeamID": "union", "team": "Chicago Union", "abbrev": "CHI", "games": 11, "leaders": [{ "PlayerID": "pjanas", "name": "Pawel Janas", "count": 77 }], "leader_count": 77, "qualifying_centering_passes": 205, "unattributed_centering_passes": 0, "leader_share": 0.375609756097561, "coverage": { "receiving_point_starts": 254, "verified_opening_possessions": 252, "no_recorded_initial_attempt": 2 } }, { "TeamID": "apex", "team": "Colorado Apex", "abbrev": "COL", "games": 12, "leaders": [{ "PlayerID": "telliott", "name": "Timothy Elliott", "count": 107 }], "leader_count": 107, "qualifying_centering_passes": 259, "unattributed_centering_passes": 0, "leader_share": 0.41312741312741313, "coverage": { "receiving_point_starts": 311, "verified_opening_possessions": 309, "no_recorded_initial_attempt": 2 } }, { "TeamID": "breeze", "team": "DC Breeze", "abbrev": "DC", "games": 12, "leaders": [{ "PlayerID": "aroy", "name": "Andrew Roy", "count": 57 }], "leader_count": 57, "qualifying_centering_passes": 228, "unattributed_centering_passes": 0, "leader_share": 0.25, "coverage": { "receiving_point_starts": 259, "verified_opening_possessions": 256, "no_recorded_initial_attempt": 3 } }, { "TeamID": "havoc", "team": "Houston Havoc", "abbrev": "HTX", "games": 12, "leaders": [{ "PlayerID": "xfuzat", "name": "Xavier Fuzat", "count": 32 }], "leader_count": 32, "qualifying_centering_passes": 238, "unattributed_centering_passes": 0, "leader_share": 0.13445378151260504, "coverage": { "receiving_point_starts": 299, "verified_opening_possessions": 298, "excluded_unreliable_sequences": 1 } }, { "TeamID": "alleycats", "team": "Indianapolis AlleyCats", "abbrev": "IND", "games": 12, "leaders": [{ "PlayerID": "jmast", "name": "Jonathan Mast", "count": 51 }], "leader_count": 51, "qualifying_centering_passes": 208, "unattributed_centering_passes": 0, "leader_share": 0.24519230769230768, "coverage": { "receiving_point_starts": 263, "verified_opening_possessions": 261, "no_recorded_initial_attempt": 2 } }, { "TeamID": "radicals", "team": "Madison Radicals", "abbrev": "MAD", "games": 12, "leaders": [{ "PlayerID": "imccosky", "name": "Ian McCosky", "count": 43 }], "leader_count": 43, "qualifying_centering_passes": 219, "unattributed_centering_passes": 0, "leader_share": 0.1963470319634703, "coverage": { "receiving_point_starts": 251, "verified_opening_possessions": 250, "no_recorded_initial_attempt": 1 } }, { "TeamID": "windchill", "team": "Minnesota Wind Chill", "abbrev": "MIN", "games": 12, "leaders": [{ "PlayerID": "glarson", "name": "Gordon Larson", "count": 49 }], "leader_count": 49, "qualifying_centering_passes": 197, "unattributed_centering_passes": 0, "leader_share": 0.24873096446700507, "coverage": { "receiving_point_starts": 216, "verified_opening_possessions": 214, "no_recorded_initial_attempt": 2 } }, { "TeamID": "royal", "team": "Montreal Royal", "abbrev": "MTL", "games": 12, "leaders": [{ "PlayerID": "jbrissett", "name": "Jakob Brissette", "count": 48 }], "leader_count": 48, "qualifying_centering_passes": 203, "unattributed_centering_passes": 0, "leader_share": 0.23645320197044334, "coverage": { "receiving_point_starts": 270, "verified_opening_possessions": 267, "no_recorded_initial_attempt": 3 } }, { "TeamID": "empire", "team": "New York Empire", "abbrev": "NY", "games": 12, "leaders": [{ "PlayerID": "aatkins", "name": "Alex Atkins", "count": 39 }, { "PlayerID": "srueschem", "name": "Solomon Rueschemeyer-Bailey", "count": 39 }], "leader_count": 39, "qualifying_centering_passes": 207, "unattributed_centering_passes": 0, "leader_share": 0.18840579710144928, "coverage": { "receiving_point_starts": 229, "verified_opening_possessions": 229 } }, { "TeamID": "spiders", "team": "Oakland Spiders", "abbrev": "OAK", "games": 12, "leaders": [{ "PlayerID": "dritthale", "name": "Daniel Ritthaler", "count": 47 }], "leader_count": 47, "qualifying_centering_passes": 172, "unattributed_centering_passes": 0, "leader_share": 0.27325581395348836, "coverage": { "receiving_point_starts": 216, "verified_opening_possessions": 211, "no_recorded_initial_attempt": 3, "excluded_unreliable_sequences": 2 } }, { "TeamID": "steel", "team": "Oregon Steel", "abbrev": "ORE", "games": 12, "leaders": [{ "PlayerID": "dbarram", "name": "David Barram", "count": 41 }], "leader_count": 41, "qualifying_centering_passes": 240, "unattributed_centering_passes": 1, "leader_share": 0.17083333333333334, "coverage": { "receiving_point_starts": 306, "verified_opening_possessions": 305, "no_recorded_initial_attempt": 1 } }, { "TeamID": "phoenix", "team": "Philadelphia Phoenix", "abbrev": "PHI", "games": 12, "leaders": [{ "PlayerID": "ebeidlers", "name": "Ezra Beidler-Shenk", "count": 72 }], "leader_count": 72, "qualifying_centering_passes": 269, "unattributed_centering_passes": 0, "leader_share": 0.26765799256505574, "coverage": { "receiving_point_starts": 333, "verified_opening_possessions": 331, "no_recorded_initial_attempt": 2 } }, { "TeamID": "thunderbirds", "team": "Pittsburgh Thunderbirds", "abbrev": "PIT", "games": 11, "leaders": [{ "PlayerID": "whoffenka", "name": "Will Hoffenkamp", "count": 56 }], "leader_count": 56, "qualifying_centering_passes": 251, "unattributed_centering_passes": 0, "leader_share": 0.22310756972111553, "coverage": { "receiving_point_starts": 320, "verified_opening_possessions": 314, "no_recorded_initial_attempt": 6 } }, { "TeamID": "shred", "team": "Salt Lake Shred", "abbrev": "SLC", "games": 12, "leaders": [{ "PlayerID": "myorgason", "name": "McKay Yorgason", "count": 78 }], "leader_count": 78, "qualifying_centering_passes": 218, "unattributed_centering_passes": 0, "leader_share": 0.3577981651376147, "coverage": { "receiving_point_starts": 254, "verified_opening_possessions": 252, "no_recorded_initial_attempt": 2 } }, { "TeamID": "growlers", "team": "San Diego Growlers", "abbrev": "SD", "games": 12, "leaders": [{ "PlayerID": "bvandeuse", "name": "Brandon Van Deusen", "count": 63 }], "leader_count": 63, "qualifying_centering_passes": 217, "unattributed_centering_passes": 0, "leader_share": 0.2903225806451613, "coverage": { "receiving_point_starts": 251, "verified_opening_possessions": 250, "no_recorded_initial_attempt": 1 } }, { "TeamID": "cascades", "team": "Seattle Cascades", "abbrev": "SEA", "games": 12, "leaders": [{ "PlayerID": "slofink", "name": "Spencer Lofink", "count": 53 }], "leader_count": 53, "qualifying_centering_passes": 199, "unattributed_centering_passes": 0, "leader_share": 0.2663316582914573, "coverage": { "receiving_point_starts": 245, "verified_opening_possessions": 243, "no_recorded_initial_attempt": 2 } }, { "TeamID": "rush", "team": "Toronto Rush", "abbrev": "TOR", "games": 12, "leaders": [{ "PlayerID": "rpoloz", "name": "Ryan Poloz", "count": 42 }], "leader_count": 42, "qualifying_centering_passes": 187, "unattributed_centering_passes": 0, "leader_share": 0.22459893048128343, "coverage": { "receiving_point_starts": 252, "verified_opening_possessions": 249, "no_recorded_initial_attempt": 3 } }, { "TeamID": "bighorns", "team": "Vegas Bighorns", "abbrev": "LV", "games": 12, "leaders": [{ "PlayerID": "cgarrison", "name": "Connor Garrison", "count": 30 }], "leader_count": 30, "qualifying_centering_passes": 229, "unattributed_centering_passes": 0, "leader_share": 0.13100436681222707, "coverage": { "receiving_point_starts": 324, "verified_opening_possessions": 322, "no_recorded_initial_attempt": 2 } }] }, "counts": { "any_inward": 5194, "at_least_5_yards": 4741, "any_inward_excluding_hucks": 5104 }, "coverage": { "receiving_point_starts": 5781, "verified_opening_possessions": 5729, "excluded_unreliable_sequences": 3, "no_recorded_initial_attempt": 49 }, "timing": { "primary_on_first_throw": 3676, "primary_on_second_throw": 744, "primary_within_first_three_throws": 4932, "primary_after_three_throws": 262 }, "unattributed": [{ "team": "Oregon Steel", "count": 1 }], "source": { "export_manifest": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/data/database-exports/2026-10-12/manifest.json", "raw_events_receipt": "/Users/teddytaussig/.codex/worktrees/fbf6/UFA_player_archetyping/research/dead_disc_study/raw_events/source_receipt.json", "event_documentation": "https://www.docs.ufastats.com/events" }, "executed_at": "2026-11-05T02:38:45.889100+00:00", "leader_changes": { "at_least_5_yards": ["DC Breeze", "New York Empire"], "any_inward_excluding_hucks": [] } };
+const OPTIONS = [
+    { value: "any_inward", label: "First pass that moves closer to center" },
+    { value: "at_least_5_yards", label: "First pass that moves at least 5 yards closer to center" }
+];
+const pct = (n) => (100 * n).toFixed(1) + "%";
+function PullCentering() {
+    const theme = useHostTheme();
+    const [definition, setDefinition] = useState("any_inward");
+    const teams = DATA.teams[definition];
+    const sorted = [...teams].sort((a, b) => b.leader_share - a.leader_share || a.team.localeCompare(b.team));
+    const stricter = definition === "at_least_5_yards";
+    const count = DATA.counts[definition];
+    const tied = teams.some(t => t.leaders.length > 1);
+    return h(Stack, { gap: 26, style: { padding: 22, color: theme.text.primary, maxWidth: 1080, margin: "0 auto" } },
+        h(Stack, { gap: 8 },
+            h(H1, null, "Who receives the first centering pass?"),
+            h(Text, null, "2026 UFA regular season \u00B7 All 22 teams \u00B7 131 of 132 games"),
+            h(Text, { tone: "secondary" }, "Follow the receiving team's opening possession after the pull. Count its first completed pass that finishes closer to the centerline, even if another pass comes first. One reception per qualifying possession.")),
+        h(Stack, { gap: 10 },
+            h("label", { style: { fontSize: 14 } },
+                "Centering definition",
+                h(Select, { value: definition, onChange: setDefinition, options: OPTIONS, style: { display: "block", marginTop: 8, width: "100%" } })),
+            h(Text, { weight: "semibold" },
+                count.toLocaleString(),
+                " qualifying receptions \u00B7 ",
+                stricter ? "At least 5 yards of inward movement" : "Any inward movement"),
+            h(Text, { size: "small", tone: "secondary" }, stricter
+                ? "Search each opening possession again for its earliest pass meeting the 5-yard threshold. This can select a different pass and recipient, and some possessions no longer qualify."
+                : "Any decrease in lateral distance from the centerline qualifies. This includes small movements and inward-moving long throws; it does not require the receiver to reach the middle.")),
+        h(Stack, { gap: 10 },
+            h(H2, null, "Leading recipient on each team"),
+            h(Text, { size: "small" }, "Receptions = the player's count / the team's qualifying count. Share uses that team count, including any unnamed recipient. These are observed receiving frequencies."),
+            h(Table, { headers: ["Team", "Leading recipient", "Player / team receptions", "Share"], rows: teams.map(t => [
+                    t.team + (t.games === 11 ? " *" : ""),
+                    t.leaders.map(p => p.name).join(" / ") + (t.leaders.length > 1 ? " (tie)" : ""),
+                    t.leader_count + " / " + t.qualifying_centering_passes + (t.leaders.length > 1 ? " each" : ""),
+                    pct(t.leader_share) + (t.leaders.length > 1 ? " each" : "")
+                ]), columnAlign: ["left", "left", "right", "right"], framed: true, striped: true }),
+            h(Text, { size: "small", tone: "secondary" },
+                "* Chicago and Pittsburgh have 11 recorded games; other teams have 12. Pittsburgh at Chicago on July 18 is missing. ",
+                tied ? "Tied players are listed together; the count and share apply to each player individually." : ""),
+            h(Text, { size: "small", tone: "secondary" }, "Source: preserved ShownSpace export dated October 12, 2026, joined to UFA recorded events captured November 4. Counts cover the 2026 regular season.")),
+        h(Stack, { gap: 10 },
+            h(H2, null, "How concentrated is each team's centering?"),
+            h(Text, { size: "small" }, "Vertical axis: team. Horizontal axis: the leading recipient's share of qualifying centering receptions (%). Larger values mean more of that team's first centering receptions go to one player."),
+            h(BarChart, { horizontal: true, categories: sorted.map(t => t.abbrev + (t.games === 11 ? " *" : "")), series: [{ name: "Leading recipient's share", data: sorted.map(t => Number((100 * t.leader_share).toFixed(1))), tone: "info" }], height: 720, showValues: true, beginAtZero: true, yMax: 100, valueSuffix: "%" }),
+            h(Text, { size: "small", tone: "secondary" },
+                OPTIONS.find(o => o.value === definition).label,
+                " \u00B7 2026 regular season, 131 games \u00B7 ShownSpace throws joined to UFA events. Where tied, a bar shows one co-leader's share, not their combined share.")),
+        h(Stack, { gap: 10 },
+            h(H2, null, "Does the definition change the answer?"),
+            h(Text, null, "Twenty teams retain the same leader under the 5-yard threshold. DC changes from Jacques Nissen to Andrew Roy. New York changes from Solomon Rueschemeyer-Bailey alone to a tie with Alex Atkins. Removing hucks leaves all 22 primary team leaders unchanged."),
+            h(Text, null,
+                "The primary definition finds ",
+                pct(DATA.timing.primary_on_first_throw / DATA.counts.any_inward),
+                " of selected receptions on the first throw and ",
+                pct(DATA.timing.primary_within_first_three_throws / DATA.counts.any_inward),
+                " within the first three. The remaining ",
+                DATA.timing.primary_after_three_throws,
+                " happen later in the opening possession.")),
+        h("details", null,
+            h("summary", { style: { cursor: "pointer", fontSize: 16, fontWeight: 600 } }, "Method, coverage and limits"),
+            h(Stack, { gap: 12, style: { marginTop: 16 } },
+                h(Text, { size: "small" }, "Receiving possessions start at a recorded Start O Point event. Search only the initial possession, stopping at a goal, turnover, possession change, or point/period boundary. Completed receptions include no credit for drops. Timeouts and fouls within that possession do not reset the search."),
+                h(Text, { size: "small" }, "Inward movement is the reduction in absolute lateral distance from the centerline, measured in yards. A pass crossing the field qualifies only if it finishes closer to center. This geometry identifies a candidate centering action; it does not establish the intended play or the receiver's route."),
+                h(Text, { size: "small" },
+                    DATA.coverage.receiving_point_starts.toLocaleString(),
+                    " recorded receiving-point starts yield ",
+                    DATA.coverage.verified_opening_possessions.toLocaleString(),
+                    " usable opening sequences. Forty-nine have no recorded initial attempt. Three sequences are excluded: two share the same Oakland point context on May 30, and one Houston sequence has a mismatch between the export and the captured events."),
+                h(Text, { size: "small" }, "Oregon has one selected reception without a named receiver. It remains in Oregon's team denominator but is not assigned to a player. Player teams come from the game and event side, so roster changes do not move a reception to a different team."),
+                h(Text, { size: "small" }, "All selected throws were independently checked against the export's possession order, and all team leader counts and shares were recomputed. The huck sensitivity excludes throws over 40 yards in flight with over 30 yards of forward gain, following this project's existing definition."),
+                h(Text, { size: "small" }, "These totals measure receiving frequency across available games. They do not adjust for attendance or offensive playing time and do not rank throwing ability. Centering intent would need a video check before this operational definition becomes a paper claim."),
+                h(Text, { size: "small" },
+                    h("a", { href: "https://www.docs.ufastats.com/events", style: { color: theme.text.link } }, "UFA event documentation"),
+                    " \u00B7 Analysis: November 4, 2026 (Eastern time)."))));
+}
+
+window.UFAPreview.render(PullCentering); })();</script></body></html>

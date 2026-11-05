@@ -1,0 +1,204 @@
+{
+  "checks": {
+    "matched_source_throws": 72661,
+    "receiving_point_start_markers": 5781,
+    "unmatched_source_throws": 2
+  },
+  "coverage": {
+    "receiving_point_starts": 5781,
+    "verified_opening_possessions": 5729,
+    "excluded_unreliable_sequences": 3,
+    "no_recorded_initial_attempt": 49
+  },
+  "selected": {
+    "any_inward": 5194,
+    "at_least_5_yards": 4741,
+    "any_inward_excluding_hucks": 5104
+  },
+  "leader_changes": {
+    "at_least_5_yards": [
+      "DC Breeze",
+      "New York Empire"
+    ],
+    "any_inward_excluding_hucks": []
+  },
+  "primary_selected_hucks": 116,
+  "leaders": [
+    {
+      "team": "Atlanta Hustle",
+      "players": "Austin Taylor",
+      "count_each": 107,
+      "team_centering_passes": 224,
+      "share_each": 0.47767857142857145,
+      "games": 12
+    },
+    {
+      "team": "Austin Sol",
+      "players": "Kyle Henke",
+      "count_each": 52,
+      "team_centering_passes": 221,
+      "share_each": 0.23529411764705882,
+      "games": 12
+    },
+    {
+      "team": "Boston Glory",
+      "players": "Ryan Dinger",
+      "count_each": 84,
+      "team_centering_passes": 199,
+      "share_each": 0.4221105527638191,
+      "games": 12
+    },
+    {
+      "team": "Carolina Flyers",
+      "players": "Jacob Louie",
+      "count_each": 64,
+      "team_centering_passes": 210,
+      "share_each": 0.3047619047619048,
+      "games": 12
+    },
+    {
+      "team": "Chicago Union",
+      "players": "Pawel Janas",
+      "count_each": 104,
+      "team_centering_passes": 231,
+      "share_each": 0.45021645021645024,
+      "games": 11
+    },
+    {
+      "team": "Colorado Apex",
+      "players": "Timothy Elliott",
+      "count_each": 125,
+      "team_centering_passes": 281,
+      "share_each": 0.44483985765124556,
+      "games": 12
+    },
+    {
+      "team": "DC Breeze",
+      "players": "Jacques Nissen",
+      "count_each": 65,
+      "team_centering_passes": 241,
+      "share_each": 0.2697095435684647,
+      "games": 12
+    },
+    {
+      "team": "Houston Havoc",
+      "players": "Xavier Fuzat",
+      "count_each": 35,
+      "team_centering_passes": 266,
+      "share_each": 0.13157894736842105,
+      "games": 12
+    },
+    {
+      "team": "Indianapolis AlleyCats",
+      "players": "Jonathan Mast",
+      "count_each": 62,
+      "team_centering_passes": 230,
+      "share_each": 0.26956521739130435,
+      "games": 12
+    },
+    {
+      "team": "Madison Radicals",
+      "players": "Ian McCosky",
+      "count_each": 47,
+      "team_centering_passes": 233,
+      "share_each": 0.2017167381974249,
+      "games": 12
+    },
+    {
+      "team": "Minnesota Wind Chill",
+      "players": "Gordon Larson",
+      "count_each": 48,
+      "team_centering_passes": 208,
+      "share_each": 0.23076923076923078,
+      "games": 12
+    },
+    {
+      "team": "Montreal Royal",
+      "players": "Jakob Brissette",
+      "count_each": 68,
+      "team_centering_passes": 231,
+      "share_each": 0.2943722943722944,
+      "games": 12
+    },
+    {
+      "team": "New York Empire",
+      "players": "Solomon Rueschemeyer-Bailey",
+      "count_each": 49,
+      "team_centering_passes": 218,
+      "share_each": 0.22477064220183487,
+      "games": 12
+    },
+    {
+      "team": "Oakland Spiders",
+      "players": "Daniel Ritthaler",
+      "count_each": 61,
+      "team_centering_passes": 189,
+      "share_each": 0.32275132275132273,
+      "games": 12
+    },
+    {
+      "team": "Oregon Steel",
+      "players": "David Barram",
+      "count_each": 42,
+      "team_centering_passes": 265,
+      "share_each": 0.15849056603773584,
+      "games": 12
+    },
+    {
+      "team": "Philadelphia Phoenix",
+      "players": "Ezra Beidler-Shenk",
+      "count_each": 99,
+      "team_centering_passes": 301,
+      "share_each": 0.3289036544850498,
+      "games": 12
+    },
+    {
+      "team": "Pittsburgh Thunderbirds",
+      "players": "Will Hoffenkamp",
+      "count_each": 68,
+      "team_centering_passes": 276,
+      "share_each": 0.2463768115942029,
+      "games": 11
+    },
+    {
+      "team": "Salt Lake Shred",
+      "players": "McKay Yorgason",
+      "count_each": 86,
+      "team_centering_passes": 236,
+      "share_each": 0.3644067796610169,
+      "games": 12
+    },
+    {
+      "team": "San Diego Growlers",
+      "players": "Brandon Van Deusen",
+      "count_each": 77,
+      "team_centering_passes": 235,
+      "share_each": 0.3276595744680851,
+      "games": 12
+    },
+    {
+      "team": "Seattle Cascades",
+      "players": "Spencer Lofink",
+      "count_each": 67,
+      "team_centering_passes": 220,
+      "share_each": 0.30454545454545456,
+      "games": 12
+    },
+    {
+      "team": "Toronto Rush",
+      "players": "Ryan Poloz",
+      "count_each": 54,
+      "team_centering_passes": 219,
+      "share_each": 0.2465753424657534,
+      "games": 12
+    },
+    {
+      "team": "Vegas Bighorns",
+      "players": "Connor Garrison",
+      "count_each": 39,
+      "team_centering_passes": 260,
+      "share_each": 0.15,
+      "games": 12
+    }
+  ]
+}

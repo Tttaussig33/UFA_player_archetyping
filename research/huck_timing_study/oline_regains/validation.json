@@ -1,0 +1,13 @@
+{
+  "checked_throw_rows": 52997,
+  "source_flags_ordinals_distance_and_huck_definition_match": true,
+  "team_totals_reconcile": true,
+  "possession_denominators_reconcile": true,
+  "independent_first_three_bootstrap_ci95_pp": [
+    1.312650487619823,
+    2.9386327880449468
+  ],
+  "excluded_points": 29,
+  "excluded_raw_attempts": 114,
+  "new_live_database_queries": false
+}

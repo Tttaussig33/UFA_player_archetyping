@@ -1,0 +1,52 @@
+{
+  "title": "Hucking after an offensive line regains possession",
+  "delivery_path": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/UFA_hucking_research_outline.docx",
+  "sections": [
+    [
+      "Research question",
+      [
+        "Are UFA teams more likely to huck after their O-line loses and regains possession than on the opening possession of a receiving point? I will establish each team's usual opening-possession huck rate, then compare it with that team's rate after regaining the disc within a point. The comparison includes points ending in either a hold or a break."
+      ]
+    ],
+    [
+      "Research goal and hypothesis",
+      [
+        "I want to test whether recovering the disc is associated with a change in a team's deep-throwing tendency. My hypothesis is that hucks make up a larger share of passes after a regain, particularly early in the new possession. A finding of little change or less hucking would also answer the question. My observations about long points motivate the study, but the data cannot establish whether players feel tired or impatient."
+      ]
+    ],
+    [
+      "Value for coaches",
+      [
+        "An offensive coach could see whether the team's choices after a turnover match its intended approach, then identify points for film review or transition practice. An opposing coach could look for teams that attack deep soon after recovering the disc. I will show attempt counts and uncertainty so a small sample is not treated as a reliable tendency. The study measures throwing choices; it does not establish whether hucking more improves scoring."
+      ]
+    ]
+  ],
+  "source_notes": [],
+  "metadata": {
+    "status": "Three-section outline containing only the research question, goal and hypothesis, and value for coaches, at the user's request.",
+    "updated_at": "2026-11-05",
+    "sources": [
+      "../huck_timing_study/oline_regains/analysis_design.json",
+      "../huck_timing_study/oline_regains/results.json",
+      "../huck_timing_study/oline_regains/cohort_audit.json",
+      "../huck_timing_study/oline_regains/validation.json",
+      "../huck_timing_study/timing_audit.json"
+    ],
+    "user_choices": [
+      "team huck frequency after an O-line regain is the current focus",
+      "establish each team's opening-possession behavior before comparing regains",
+      "emphasize the research question, purpose, coaching value, and available supporting data",
+      "keep clean holds, recovery rates, and broader scoring patterns as later extensions",
+      "use plain descriptive section headings instead of what I want to study wording",
+      "retain first-person numbered outline and generous heading spacing",
+      "Remove sections four onward and retain sections one, two, and three only"
+    ],
+    "formatting": {
+      "font": "Times New Roman",
+      "point_size": 12,
+      "line_spacing": "single",
+      "heading_space_before_pt": 18,
+      "heading_space_after_pt": 8
+    }
+  }
+}

@@ -1,0 +1,657 @@
+{
+  "2026-04-24-ATL-HTX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-04-24-ATL-HTX",
+    "sha256": "78987b3d01b327e1df4d65fd7d9dc346f6376e493eb4a568c5d88681eadcd4f8",
+    "retrieved_at": "2026-11-05T02:03:42.659679+00:00"
+  },
+  "2026-04-24-CAR-SD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-04-24-CAR-SD",
+    "sha256": "5b428b7d5fc142160e8632aa45090f4bc0cc488f88bfed2fbbc9484b4a1b1c85",
+    "retrieved_at": "2026-11-05T02:03:42.675717+00:00"
+  },
+  "2026-04-25-ATL-ATX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-04-25-ATL-ATX",
+    "sha256": "fadf897c61d1d28b5092690d4b1097077956175f9fc001d7a6ca87772118061e",
+    "retrieved_at": "2026-11-05T02:03:42.709401+00:00"
+  },
+  "2026-04-25-CAR-LV": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-04-25-CAR-LV",
+    "sha256": "8a84c6033c5b3971e2be0374706de4b006d24154e2792a77bbfa49b8810e3243",
+    "retrieved_at": "2026-11-05T02:03:42.637235+00:00"
+  },
+  "2026-04-25-DC-BOS": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-04-25-DC-BOS",
+    "sha256": "0e348d82b7ad220f2f6860a9c16955e51fefd8d3cc9253861bfcd73acb48c23e",
+    "retrieved_at": "2026-11-05T02:03:42.817246+00:00"
+  },
+  "2026-04-26-ORE-OAK": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-04-26-ORE-OAK",
+    "sha256": "02034c40c8a95cf26903979574b84d7f79ae24729febe3c6d30658b6774716a2",
+    "retrieved_at": "2026-11-05T02:03:42.888014+00:00"
+  },
+  "2026-05-01-ORE-SLC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-01-ORE-SLC",
+    "sha256": "ecebf87b7954ab7ab6adab77a565660a83d4e14c6db5f62d116279f83e14b03c",
+    "retrieved_at": "2026-11-05T02:03:42.912760+00:00"
+  },
+  "2026-05-01-TOR-NY": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-01-TOR-NY",
+    "sha256": "8b467d3398f32d2b10f6881046eb9dcfd7bcebd53aed3a7fc7cc111dee0c5944",
+    "retrieved_at": "2026-11-05T02:03:43.035854+00:00"
+  },
+  "2026-05-02-ATX-HTX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-02-ATX-HTX",
+    "sha256": "781ce4db4e2fe757febea645544cff85a154dfccf6182aaeddbfe1c556ab649d",
+    "retrieved_at": "2026-11-05T02:03:43.050348+00:00"
+  },
+  "2026-05-02-CHI-MIN": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-02-CHI-MIN",
+    "sha256": "9b85a8ab633e570f98675e3bdcda19e48dc0bfc127f1dce1e194e9057de389a4",
+    "retrieved_at": "2026-11-05T02:03:43.085635+00:00"
+  },
+  "2026-05-02-COL-SEA": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-02-COL-SEA",
+    "sha256": "c43a6ef0749334b913d1a3b803fa4cd8d6969fc590567f31949e919c73501378",
+    "retrieved_at": "2026-11-05T02:03:43.124997+00:00"
+  },
+  "2026-05-02-MTL-BOS": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-02-MTL-BOS",
+    "sha256": "24d2be89ddd469d13ee577c77189844f18a39b0accb1276412f08d46cb1b00eb",
+    "retrieved_at": "2026-11-05T02:03:43.229850+00:00"
+  },
+  "2026-05-02-SLC-OAK": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-02-SLC-OAK",
+    "sha256": "5320605a81bfc280c61e8a99663b9f4a2f4c7768e93d9e831def58d155703df7",
+    "retrieved_at": "2026-11-05T02:03:43.235606+00:00"
+  },
+  "2026-05-02-TOR-PHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-02-TOR-PHI",
+    "sha256": "04a9553fd93e132b059911f9beaaeac69f7a0b3b53e72be6ca9a36513b4e2309",
+    "retrieved_at": "2026-11-05T02:03:43.287215+00:00"
+  },
+  "2026-05-03-COL-ORE": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-03-COL-ORE",
+    "sha256": "a79f9f30bfd43a10c5a2608de9277e5b21e6e328c5f82f1a39d51a112faf9117",
+    "retrieved_at": "2026-11-05T02:03:43.326056+00:00"
+  },
+  "2026-05-03-MTL-DC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-03-MTL-DC",
+    "sha256": "cc3acd0f5dcc4e058cdfc9edd3202d38098a56b2dbdb6b402ef085dc2f0b4b67",
+    "retrieved_at": "2026-11-05T02:03:43.422230+00:00"
+  },
+  "2026-05-08-ATL-LV": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-08-ATL-LV",
+    "sha256": "b79f13c20545ee72b630fc3b90221284c13153517cfb01c2e18263f39b07599d",
+    "retrieved_at": "2026-11-05T02:03:43.431905+00:00"
+  },
+  "2026-05-09-ATL-SD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-ATL-SD",
+    "sha256": "90431fc1a306ac81f3d3ec3d1517c25a35834d1256b972b568a7168e4c1d6ac8",
+    "retrieved_at": "2026-11-05T02:03:43.479774+00:00"
+  },
+  "2026-05-09-HTX-ATX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-HTX-ATX",
+    "sha256": "6c4c80360e958a825e1c76ead9cd296819a5db7845de4bfe11a3c428e6dc6994",
+    "retrieved_at": "2026-11-05T02:03:43.521482+00:00"
+  },
+  "2026-05-09-MAD-IND": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-MAD-IND",
+    "sha256": "6b7a95e51eb270acc5ac51f3a0ba142c037d98aecbffecba1c7aaf97eb2fc180",
+    "retrieved_at": "2026-11-05T02:03:43.594270+00:00"
+  },
+  "2026-05-09-MTL-TOR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-MTL-TOR",
+    "sha256": "ee0c4bbe21cf5921df1dccfc9fac1b7590e45b92739493887ca5a4f9f69456ca",
+    "retrieved_at": "2026-11-05T02:03:43.611564+00:00"
+  },
+  "2026-05-09-OAK-SEA": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-OAK-SEA",
+    "sha256": "926a7ffaea49f55cd40c507774ed479760eb3c8ae08a9a28bcd918dcf25f6fbe",
+    "retrieved_at": "2026-11-05T02:03:43.718040+00:00"
+  },
+  "2026-05-09-PHI-CAR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-PHI-CAR",
+    "sha256": "d352bb40aea3ce1f105d533e402dd4f04ea044718391ef7ef1ab2b76ea33985d",
+    "retrieved_at": "2026-11-05T02:03:43.742984+00:00"
+  },
+  "2026-05-09-SLC-COL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-SLC-COL",
+    "sha256": "e27af8c4cf161855e2f4e635637d3ec92d94c8f0f20b98f88c1f6ccbe2dd4f1c",
+    "retrieved_at": "2026-11-05T02:03:43.803680+00:00"
+  },
+  "2026-05-10-DC-NY": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-10-DC-NY",
+    "sha256": "4b858495d552ffd8b6b3ed23c254350446a73ade5d7e000d1c28725f8794c005",
+    "retrieved_at": "2026-11-05T02:03:43.821596+00:00"
+  },
+  "2026-05-10-MTL-PIT": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-10-MTL-PIT",
+    "sha256": "8081f97ee220ba083569e835d79818ef29c8b9c810a0763693bb8a9227728240",
+    "retrieved_at": "2026-11-05T02:03:43.934093+00:00"
+  },
+  "2026-05-10-OAK-ORE": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-10-OAK-ORE",
+    "sha256": "1446c90e7fbc896e6326bd770e0ea0ecbd1ac8d5536368c1d32616881a274981",
+    "retrieved_at": "2026-11-05T02:03:43.939270+00:00"
+  },
+  "2026-05-15-COL-DC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-15-COL-DC",
+    "sha256": "8f3baed158599f44d20ad2348ede98f44a6e2ab264479baf0bd34d696dd66187",
+    "retrieved_at": "2026-11-05T02:03:43.976444+00:00"
+  },
+  "2026-05-15-LV-HTX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-15-LV-HTX",
+    "sha256": "56ad083f8e3ab38c6bd56b8ead7c4bfb8c62670c49618743e00bbc8695f70235",
+    "retrieved_at": "2026-11-05T02:03:43.990128+00:00"
+  },
+  "2026-05-15-MAD-PIT": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-15-MAD-PIT",
+    "sha256": "d7f931613375a0119dbee3f429e9c961f944c0bf936005e7445c155e55d35f55",
+    "retrieved_at": "2026-11-05T02:03:44.134655+00:00"
+  },
+  "2026-05-15-MIN-IND": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-15-MIN-IND",
+    "sha256": "8c91c48ea56ccf8c5f5853e5fcf159bea5980810197e3218ccb61339b2326fec",
+    "retrieved_at": "2026-11-05T02:03:44.128415+00:00"
+  },
+  "2026-05-16-BOS-MTL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-16-BOS-MTL",
+    "sha256": "9ed04fa32b1f4776c83d6d4cd6bafc31d14556c9080785f1c6d8457bc05d8e9f",
+    "retrieved_at": "2026-11-05T02:03:44.193667+00:00"
+  },
+  "2026-05-16-CAR-ATL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-16-CAR-ATL",
+    "sha256": "82b66f951885bacfeee48deef9eb9cd8b0627120325d3749b88d5a1a474db658",
+    "retrieved_at": "2026-11-05T02:03:44.195438+00:00"
+  },
+  "2026-05-16-COL-NY": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-16-COL-NY",
+    "sha256": "889f54cd4ca7e23f918e90d0c2d876cb13bec9fdf4016327dd303808d4c987f5",
+    "retrieved_at": "2026-11-05T02:03:44.321944+00:00"
+  },
+  "2026-05-16-LV-ATX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-16-LV-ATX",
+    "sha256": "eac8fa6105f84fac4176f3a832e0f05dc48758b6988992bf3414cf07a25c05d3",
+    "retrieved_at": "2026-11-05T02:03:44.323435+00:00"
+  },
+  "2026-05-16-MIN-CHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-16-MIN-CHI",
+    "sha256": "7e947c0dfcfc3419f4ddeb454c890eb347f41d4c0f9a428213840e6022daf9df",
+    "retrieved_at": "2026-11-05T02:03:44.382059+00:00"
+  },
+  "2026-05-16-SEA-ORE": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-16-SEA-ORE",
+    "sha256": "c56e3322158fd21f8b3ec09bcb88fd361e5aa7b02ad9f8f4aade2cf672112cff",
+    "retrieved_at": "2026-11-05T02:03:44.358810+00:00"
+  },
+  "2026-05-17-SD-OAK": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-17-SD-OAK",
+    "sha256": "443e7be62c1ec4692991d96e9168a913fd350b3bbd9ef1c7d0adf813530fd214",
+    "retrieved_at": "2026-11-05T02:03:44.531792+00:00"
+  },
+  "2026-05-23-ATL-CAR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-23-ATL-CAR",
+    "sha256": "1d1c2377cc848d5237d4f4c48793a9f0c9d64e9840b7ea1930a36c36c2fbbd0e",
+    "retrieved_at": "2026-11-05T02:03:44.537128+00:00"
+  },
+  "2026-05-23-NY-DC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-23-NY-DC",
+    "sha256": "0a5c97e83d3678367ddfea138886380b529fe10394ae528886c66297b902fa91",
+    "retrieved_at": "2026-11-05T02:03:44.553551+00:00"
+  },
+  "2026-05-23-SD-LV": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-23-SD-LV",
+    "sha256": "ad040c2def118073404b7598f5f78ebafc8b23d6cfa1df505a37f28530add087",
+    "retrieved_at": "2026-11-05T02:03:44.591752+00:00"
+  },
+  "2026-05-23-TOR-MTL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-23-TOR-MTL",
+    "sha256": "f6ed3803035276ac2ff0c84da0ed76be22f71de08aea760b9ec5da200b319dae",
+    "retrieved_at": "2026-11-05T02:03:44.701684+00:00"
+  },
+  "2026-05-24-PHI-BOS": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-24-PHI-BOS",
+    "sha256": "319b23af775d82e528124d2ebaa9ee6c10fa9a0e6263378449b933ee3946345d",
+    "retrieved_at": "2026-11-05T02:03:44.741876+00:00"
+  },
+  "2026-05-29-CHI-IND": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-29-CHI-IND",
+    "sha256": "93342bbba2aae9f70794f42d57a1e0c4c472afb9a043c061bfe29e215838e384",
+    "retrieved_at": "2026-11-05T02:03:44.729172+00:00"
+  },
+  "2026-05-29-DC-TOR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-29-DC-TOR",
+    "sha256": "3897c7cc093f29a91d9f5a9772ad5cc612ca63dbee3dc97faba7b80b48783f56",
+    "retrieved_at": "2026-11-05T02:03:44.771781+00:00"
+  },
+  "2026-05-29-ORE-COL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-29-ORE-COL",
+    "sha256": "08c012f7890faf54884608d7078ecd2ea150d6e2d742bc9a95bd3926a3a5a30e",
+    "retrieved_at": "2026-11-05T02:03:44.880115+00:00"
+  },
+  "2026-05-29-PIT-NY": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-29-PIT-NY",
+    "sha256": "08d15824e534b84ba0d035c7c8c64262def804ad6f6888755370611aebe02067",
+    "retrieved_at": "2026-11-05T02:03:44.916562+00:00"
+  },
+  "2026-05-30-CAR-ATL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-30-CAR-ATL",
+    "sha256": "99fab6726ca93f3aea35ca9f93468261216f4b4541ab22ee5c9a5d8048e94428",
+    "retrieved_at": "2026-11-05T02:03:44.942451+00:00"
+  },
+  "2026-05-30-DC-MTL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-30-DC-MTL",
+    "sha256": "6b31f20fa85f3e6363ee48afd9543e76f32241c226331fcd681c4fe06a10a811",
+    "retrieved_at": "2026-11-05T02:03:44.981859+00:00"
+  },
+  "2026-05-30-ORE-SLC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-30-ORE-SLC",
+    "sha256": "4d9d46fa22f6e5e12a93a117f85e2f1ccd7cf45e1626099ce4bf70cfa8515079",
+    "retrieved_at": "2026-11-05T02:03:45.047477+00:00"
+  },
+  "2026-05-30-PIT-PHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-30-PIT-PHI",
+    "sha256": "e4d88de2f475c9e72ee4a4241601cf45eed6b489246ae501a9eace6986cffcb3",
+    "retrieved_at": "2026-11-05T02:03:45.093243+00:00"
+  },
+  "2026-05-30-SD-OAK": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-30-SD-OAK",
+    "sha256": "009e6fa8596fcad49af621be982cc241ed375262a44238f466d82c3f8956a8d8",
+    "retrieved_at": "2026-11-05T02:03:45.146943+00:00"
+  },
+  "2026-05-30-SEA-HTX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-30-SEA-HTX",
+    "sha256": "d8a673caa3ec275617214502e682954fa44d02e31eb30f0fcc15dc739e17fb68",
+    "retrieved_at": "2026-11-05T02:03:45.155790+00:00"
+  },
+  "2026-05-31-BOS-TOR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-31-BOS-TOR",
+    "sha256": "44cb20af077771bbe70741416627bf5559b9aea9707136137092a998008c3d02",
+    "retrieved_at": "2026-11-05T02:03:45.242766+00:00"
+  },
+  "2026-05-31-MIN-MAD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-31-MIN-MAD",
+    "sha256": "12e722d608e4e390a22dec9afa4234c3876087c49eb8d01bac4af53972b4dcc8",
+    "retrieved_at": "2026-11-05T02:03:45.286267+00:00"
+  },
+  "2026-05-31-SEA-ATX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-31-SEA-ATX",
+    "sha256": "492573189cbca61659c1936fe02973c3738c8e4b656d2e0212ae9102b37880b3",
+    "retrieved_at": "2026-11-05T02:03:45.337463+00:00"
+  },
+  "2026-06-05-ATX-SD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-05-ATX-SD",
+    "sha256": "2f45872d2a63af1f6c35ed996caeb9171311fc22f8bf3c11a78f470cfcb4f127",
+    "retrieved_at": "2026-11-05T02:03:45.340824+00:00"
+  },
+  "2026-06-05-CAR-DC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-05-CAR-DC",
+    "sha256": "0f5a71334edc167fe1a258c825c6c35be9f9ec47aa9b12b24e1b4081c86e2a30",
+    "retrieved_at": "2026-11-05T02:03:45.421020+00:00"
+  },
+  "2026-06-05-COL-SLC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-05-COL-SLC",
+    "sha256": "fa118e3b8ef8e085a9600a0291ff3496c9448481c5b22dbb60aeecfb742ea6e1",
+    "retrieved_at": "2026-11-05T02:03:45.543182+00:00"
+  },
+  "2026-06-05-MAD-CHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-05-MAD-CHI",
+    "sha256": "670756a258577c24b5901d8246c2c0bf65c98fa69204ea4ac0ac0ccd890ca02e",
+    "retrieved_at": "2026-11-05T02:03:45.603072+00:00"
+  },
+  "2026-06-05-NY-BOS": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-05-NY-BOS",
+    "sha256": "9b38bbcecf3979262d3c32c1a835512943ac8ee4213dc02d057c310eb47545d2",
+    "retrieved_at": "2026-11-05T02:03:45.605055+00:00"
+  },
+  "2026-06-06-ATX-LV": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-06-ATX-LV",
+    "sha256": "09b823364cdbb55a7aa8d44bfaf744134c9e59b433f502c8900a75983f435e60",
+    "retrieved_at": "2026-11-05T02:03:45.624227+00:00"
+  },
+  "2026-06-06-BOS-PHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-06-BOS-PHI",
+    "sha256": "3d5f93621fa135b4bd382f436ae0c76906c369233203718f3ef61ed7ec50046e",
+    "retrieved_at": "2026-11-05T02:03:45.714712+00:00"
+  },
+  "2026-06-06-CAR-PIT": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-06-CAR-PIT",
+    "sha256": "91bc670c2cc64e3668db5b149cb8fe4d4055be35e1f3bf2e76a2b361838c26e5",
+    "retrieved_at": "2026-11-05T02:03:45.774393+00:00"
+  },
+  "2026-06-06-COL-OAK": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-06-COL-OAK",
+    "sha256": "712c90dc7854aa80bf4027f03feefa948ee9807d196bca57881fe3c0499301e5",
+    "retrieved_at": "2026-11-05T02:03:45.808635+00:00"
+  },
+  "2026-06-06-IND-MIN": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-06-IND-MIN",
+    "sha256": "a65ab7651c42b9ec43df8287b4b541bddd33ed9101fd214c3338dcb6d8a90e82",
+    "retrieved_at": "2026-11-05T02:03:45.791319+00:00"
+  },
+  "2026-06-06-NY-MTL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-06-NY-MTL",
+    "sha256": "6888d845ec39f55b175a5ad6c8a605fa40f61abca9ed8187dc479ea45f95f1db",
+    "retrieved_at": "2026-11-05T02:03:45.911452+00:00"
+  },
+  "2026-06-12-BOS-NY": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-12-BOS-NY",
+    "sha256": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+    "retrieved_at": "2026-11-05T02:03:45.957763+00:00"
+  },
+  "2026-06-12-HTX-ATL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-12-HTX-ATL",
+    "sha256": "b96ce7e7de5882da1cd67bb5d4d4790b28d102c5b3a74de0b0e1396d3c1a37a6",
+    "retrieved_at": "2026-11-05T02:03:45.972300+00:00"
+  },
+  "2026-06-12-MIN-OAK": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-12-MIN-OAK",
+    "sha256": "b83fb09af461507c63a68ae5e5a5eb55d0bb3a3da7cc2eb63fc7fb1b214c3117",
+    "retrieved_at": "2026-11-05T02:03:46.014410+00:00"
+  },
+  "2026-06-12-SLC-ORE": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-12-SLC-ORE",
+    "sha256": "55539c1df04ef5469cf300e1c333d2a050372a0976df4b37f8ca30c5e33815e7",
+    "retrieved_at": "2026-11-05T02:03:46.127031+00:00"
+  },
+  "2026-06-13-BOS-DC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-13-BOS-DC",
+    "sha256": "1e76a4003eefc614673a3d149a1009663929a9c8fa04c098362932a3cbddf57b",
+    "retrieved_at": "2026-11-05T02:03:46.152413+00:00"
+  },
+  "2026-06-13-HTX-CAR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-13-HTX-CAR",
+    "sha256": "0e67c0ebf47fa29b89d0a905350a44ff6832037d93f0f7b0898874ea01f19400",
+    "retrieved_at": "2026-11-05T02:03:46.179461+00:00"
+  },
+  "2026-06-13-MIN-LV": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-13-MIN-LV",
+    "sha256": "659c59e1c5285c05a203d448fcbc4468a2f85a263e88766996f24bfd9af4ead4",
+    "retrieved_at": "2026-11-05T02:03:46.204397+00:00"
+  },
+  "2026-06-13-MTL-PHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-13-MTL-PHI",
+    "sha256": "e86239fc5c0ebe4ead2624f2787e7f25d6c298748d2e2391e4690ff99c92fae9",
+    "retrieved_at": "2026-11-05T02:03:46.333528+00:00"
+  },
+  "2026-06-13-PIT-TOR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-13-PIT-TOR",
+    "sha256": "85857e3851bc43cd802e2097b8160f051bbd16bf3ad29df9ea6dea36cbd0e25f",
+    "retrieved_at": "2026-11-05T02:03:46.347806+00:00"
+  },
+  "2026-06-13-SD-COL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-13-SD-COL",
+    "sha256": "da2c6fc0a1feeddc4497c5e32c4589e0123200012b9929ce45ca1e99bad301f7",
+    "retrieved_at": "2026-11-05T02:03:46.399266+00:00"
+  },
+  "2026-06-13-SLC-SEA": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-13-SLC-SEA",
+    "sha256": "5ceb8bab36bc7fe45e5c644e3ac069054e8893a032b99b69cdc81ebb97bb187f",
+    "retrieved_at": "2026-11-05T02:03:46.405395+00:00"
+  },
+  "2026-06-14-CHI-PIT": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-14-CHI-PIT",
+    "sha256": "353ea7ffbc0549b5a83a1b3c67025235c1176c9a6afa76c1816bf0065d4faa2d",
+    "retrieved_at": "2026-11-05T02:03:46.516845+00:00"
+  },
+  "2026-06-14-IND-MAD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-14-IND-MAD",
+    "sha256": "04b0d29386f23b814b74601911b879a7ed48026dc862751e9a4cc0dda2c4831c",
+    "retrieved_at": "2026-11-05T02:03:46.552690+00:00"
+  },
+  "2026-06-18-SLC-MAD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-18-SLC-MAD",
+    "sha256": "c5c41c53f0757d0f0121302f744aea8726ecca2acd90f04dd718ea737161e51b",
+    "retrieved_at": "2026-11-05T02:03:46.587493+00:00"
+  },
+  "2026-06-19-LV-ATL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-19-LV-ATL",
+    "sha256": "7231085d5e9864f555d63bfa7134eeadd03d1ce5208e2526331bb84277d77ab3",
+    "retrieved_at": "2026-11-05T02:03:46.585712+00:00"
+  },
+  "2026-06-19-PHI-MTL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-19-PHI-MTL",
+    "sha256": "9594905115dee9961cbfdda058d7250dcdcc0ac5b8b628029d1355de18de6c79",
+    "retrieved_at": "2026-11-05T02:03:46.685529+00:00"
+  },
+  "2026-06-19-SD-ATX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-19-SD-ATX",
+    "sha256": "36b559e91f55e972bb2fe9f46964438418e8dca58d44698bdf287667f73444de",
+    "retrieved_at": "2026-11-05T02:03:46.752888+00:00"
+  },
+  "2026-06-19-SLC-MIN": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-19-SLC-MIN",
+    "sha256": "b4741a9a9ca898adf0ca04553f1c8210e2eda172564f94b6e4383278a6418102",
+    "retrieved_at": "2026-11-05T02:03:46.762989+00:00"
+  },
+  "2026-06-19-TOR-ORE": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-19-TOR-ORE",
+    "sha256": "f498a4087a1f2056a17b493b4b103c2639330ed7f0c8ff0becd6b974ea7e8337",
+    "retrieved_at": "2026-11-05T02:03:46.779343+00:00"
+  },
+  "2026-06-20-CHI-IND": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-20-CHI-IND",
+    "sha256": "0e4b8f1c4fe1a13dce6673d30b26d96ed12822baad8e4017fd926a44b1d7cc20",
+    "retrieved_at": "2026-11-05T02:03:46.848889+00:00"
+  },
+  "2026-06-20-LV-CAR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-20-LV-CAR",
+    "sha256": "320d7d700284642200b948a42903ecb84f9ef280b77ce32fbce0db859d8e9859",
+    "retrieved_at": "2026-11-05T02:03:46.936856+00:00"
+  },
+  "2026-06-20-PHI-BOS": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-20-PHI-BOS",
+    "sha256": "42df7f70b491e85de38a636b52bf84554b955070f1058cb47e72fd0aa36a29e8",
+    "retrieved_at": "2026-11-05T02:03:46.976225+00:00"
+  },
+  "2026-06-20-SD-HTX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-20-SD-HTX",
+    "sha256": "f06b32c67dcb099ee0bcab72a10ebd5a5e01e0cf19b41f03678570039a0efba1",
+    "retrieved_at": "2026-11-05T02:03:46.970305+00:00"
+  },
+  "2026-06-20-TOR-SEA": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-20-TOR-SEA",
+    "sha256": "b15a9d9fd0e15650baf1d3d0837eae3a6ee1cc5550583a953f97852dca626660",
+    "retrieved_at": "2026-11-05T02:03:47.021769+00:00"
+  },
+  "2026-06-21-MAD-CHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-21-MAD-CHI",
+    "sha256": "bb2d567217408e7bd4c43f65b4586fe5288ad4158ee6ccca3ba4697c4381c06f",
+    "retrieved_at": "2026-11-05T02:03:47.137200+00:00"
+  },
+  "2026-06-26-ATL-CAR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-26-ATL-CAR",
+    "sha256": "846d0ace710e7b9e56ca04753f2d20d3ead65b3db151b34a0c71218310951ef0",
+    "retrieved_at": "2026-11-05T02:03:47.161777+00:00"
+  },
+  "2026-06-26-HTX-LV": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-26-HTX-LV",
+    "sha256": "53d5dc1d834951442169c7fcaa3a253bc9c5b120bb88f0cd133cadd5e6d517c2",
+    "retrieved_at": "2026-11-05T02:03:47.173549+00:00"
+  },
+  "2026-06-26-OAK-COL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-26-OAK-COL",
+    "sha256": "d2e317b20b549ad3137d1cfe151f3da704e7a77db82e0ef8d0ed17997515b39e",
+    "retrieved_at": "2026-11-05T02:03:47.198955+00:00"
+  },
+  "2026-06-26-ORE-SEA": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-26-ORE-SEA",
+    "sha256": "d4bdc774dd08330cd6fae78d850fca79d30e4a4bb08598770b364f857d384094",
+    "retrieved_at": "2026-11-05T02:03:47.326160+00:00"
+  },
+  "2026-06-27-HTX-SD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-27-HTX-SD",
+    "sha256": "984e13f70b50a1646ffd8f0818172a40e76f438d0b54e231c60434283d928c6d",
+    "retrieved_at": "2026-11-05T02:03:47.347546+00:00"
+  },
+  "2026-06-27-MAD-IND": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-27-MAD-IND",
+    "sha256": "7797d16f0f117570e434e80cf01280ad7b5941155b2a63398e1ea253171fd1cb",
+    "retrieved_at": "2026-11-05T02:03:47.370574+00:00"
+  },
+  "2026-06-27-OAK-SLC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-27-OAK-SLC",
+    "sha256": "a54357baca5ff646defff545ecd313b3c7368e44bc1255423104cea6c86b4291",
+    "retrieved_at": "2026-11-05T02:03:47.375660+00:00"
+  },
+  "2026-07-01-NY-PHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-01-NY-PHI",
+    "sha256": "530e4ae106384efe5dfb2d64a244b740f64bff6e18cc2ce9f99f9c7356fdd591",
+    "retrieved_at": "2026-11-05T02:03:47.488955+00:00"
+  },
+  "2026-07-03-CHI-MIN": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-03-CHI-MIN",
+    "sha256": "8e61a21c31e0590dbe38fc8b16ae8a589ef568f0d5640a2fa2c0e452e9693605",
+    "retrieved_at": "2026-11-05T02:03:47.534591+00:00"
+  },
+  "2026-07-03-DC-PHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-03-DC-PHI",
+    "sha256": "ae0d658ecab07b1fd48ddbfa755c0ae7e3e237ee07485416c7a6c8ef1fbb05de",
+    "retrieved_at": "2026-11-05T02:03:47.551967+00:00"
+  },
+  "2026-07-03-IND-MAD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-03-IND-MAD",
+    "sha256": "068dc276b9432212a0c0eb7306a00cde3fa22ae39371faef1d856feeefa3255d",
+    "retrieved_at": "2026-11-05T02:03:47.571848+00:00"
+  },
+  "2026-07-03-SEA-COL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-03-SEA-COL",
+    "sha256": "143b35ee3e2bb0ef2315021f09c5348efc22806a6f2d30b23f46a072074a4c3b",
+    "retrieved_at": "2026-11-05T02:03:47.651647+00:00"
+  },
+  "2026-07-04-LV-SD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-04-LV-SD",
+    "sha256": "e6029431dca83674d378b01185be66e517d730b2f95619a384da98a116b55c39",
+    "retrieved_at": "2026-11-05T02:03:47.729626+00:00"
+  },
+  "2026-07-04-SEA-SLC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-04-SEA-SLC",
+    "sha256": "a6fde3ebfbfca953a86494f897f12bdc1304772b1f9b922a7ec5f34a37b99bad",
+    "retrieved_at": "2026-11-05T02:03:47.828945+00:00"
+  },
+  "2026-07-05-IND-CHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-05-IND-CHI",
+    "sha256": "fe5eecfdda7fe2eb279001a8d3f0b4ceb7cfec751c1a12bc856df05754227cff",
+    "retrieved_at": "2026-11-05T02:03:47.917031+00:00"
+  },
+  "2026-07-05-MIN-PIT": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-05-MIN-PIT",
+    "sha256": "5d9a25ad4fbc1185a9b3e490fb19b9befdc035616997b8e2c02d7712d3bdae71",
+    "retrieved_at": "2026-11-05T02:03:47.931485+00:00"
+  },
+  "2026-07-05-TOR-MTL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-05-TOR-MTL",
+    "sha256": "55f973b2d47a2afb583db323d96b67e5a0739d7a4ccebccefe1d80389f386688",
+    "retrieved_at": "2026-11-05T02:03:47.943617+00:00"
+  },
+  "2026-07-10-ATX-CAR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-10-ATX-CAR",
+    "sha256": "aab476ad043a71f77bfc010315353b8a5d5e807d8fd010164666cff5ebe1d62c",
+    "retrieved_at": "2026-11-05T02:03:48.022933+00:00"
+  },
+  "2026-07-10-NY-CHI": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-10-NY-CHI",
+    "sha256": "8b6e94ad3f4167ec15cc078998d1b51c2d9f5e7db641d93cd4dfe70519fd8725",
+    "retrieved_at": "2026-11-05T02:03:48.152314+00:00"
+  },
+  "2026-07-10-PIT-MAD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-10-PIT-MAD",
+    "sha256": "494c3cd3abd3ec2dab8f48b84ba8b86c8a00ff50d0728036559464b100cee1bc",
+    "retrieved_at": "2026-11-05T02:03:48.142728+00:00"
+  },
+  "2026-07-10-SEA-ORE": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-10-SEA-ORE",
+    "sha256": "24af821e2142021c6c4c5c6234d8f77af2a4f9aedf94ada6b37079a9efd22fad",
+    "retrieved_at": "2026-11-05T02:03:48.162380+00:00"
+  },
+  "2026-07-11-ATX-ATL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-11-ATX-ATL",
+    "sha256": "59f6baea043ed8b579ad6f8c9483d16176375bc1c476c16f87b6b90d380b6ecd",
+    "retrieved_at": "2026-11-05T02:03:48.212057+00:00"
+  },
+  "2026-07-11-BOS-MIN": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-11-BOS-MIN",
+    "sha256": "b35088efb4e86a039bfa705d65a4dd1d39f3340a694c8fcf0424b8dd7b75a225",
+    "retrieved_at": "2026-11-05T02:03:48.340485+00:00"
+  },
+  "2026-07-11-PHI-DC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-11-PHI-DC",
+    "sha256": "acbef538c490499f5af594ef77a2ef381b1fc18bc9245cbeb0f590b0936a0b31",
+    "retrieved_at": "2026-11-05T02:03:48.330586+00:00"
+  },
+  "2026-07-11-PIT-IND": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-11-PIT-IND",
+    "sha256": "40402cdaf4c0687561eddbb6935be5a253d3eb3fe9e5b97bd7a7bf0439ad92c0",
+    "retrieved_at": "2026-11-05T02:03:48.361928+00:00"
+  },
+  "2026-07-12-NY-TOR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-12-NY-TOR",
+    "sha256": "b507e75e23820ea532f7d99074d8844ebad347fe887ae48132ce3162e2b5d683",
+    "retrieved_at": "2026-11-05T02:03:48.389525+00:00"
+  },
+  "2026-07-17-ATX-HTX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-17-ATX-HTX",
+    "sha256": "37a70a67bf93cc898eaba519e7c0d09ac08cde0f4cfc64b105073d392f3a7057",
+    "retrieved_at": "2026-11-05T02:03:48.499265+00:00"
+  },
+  "2026-07-17-CHI-MAD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-17-CHI-MAD",
+    "sha256": "cf23ee827ccd9537b832f989d5504931bcdfec3ca6ac58d7a7f13b94ff45d35a",
+    "retrieved_at": "2026-11-05T02:03:48.533134+00:00"
+  },
+  "2026-07-17-OAK-SLC": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-17-OAK-SLC",
+    "sha256": "44c7e3f5b82292ca90c1e47a87af3ee18b400fc15dc096359dc6a2e7f5c70938",
+    "retrieved_at": "2026-11-05T02:03:48.542899+00:00"
+  },
+  "2026-07-17-PHI-NY": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-17-PHI-NY",
+    "sha256": "7d6257b58332324ef09879ce04bec11aed2326989cd78c855567a48b2681f286",
+    "retrieved_at": "2026-11-05T02:03:48.602144+00:00"
+  },
+  "2026-07-18-DC-ATL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-18-DC-ATL",
+    "sha256": "afea7eeafda9864805929e47eaa38ce9989574223e5b392191d091f9dc875593",
+    "retrieved_at": "2026-11-05T02:03:48.703031+00:00"
+  },
+  "2026-07-18-HTX-ATX": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-18-HTX-ATX",
+    "sha256": "8fb9644bfa1bf926f5e87674be5cf920043b77d3b46f70b4779173dd27f32eb6",
+    "retrieved_at": "2026-11-05T02:03:48.737426+00:00"
+  },
+  "2026-07-18-IND-TOR": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-18-IND-TOR",
+    "sha256": "04d91018f53e1d86c1c4cdbb3a2dc5c61dbd3fb8403d99fe6c86814a5b71386d",
+    "retrieved_at": "2026-11-05T02:03:48.711432+00:00"
+  },
+  "2026-07-18-LV-SD": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-18-LV-SD",
+    "sha256": "562e711dcb168bb33d052c0d419f3eaa26be573d6e8869c035b6af33e5a0ada1",
+    "retrieved_at": "2026-11-05T02:03:48.806345+00:00"
+  },
+  "2026-07-18-MTL-BOS": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-18-MTL-BOS",
+    "sha256": "d901e11a9b02df600996a68703bec2e3b0bb2777ce3ac48da76c7757de9debad",
+    "retrieved_at": "2026-11-05T02:03:48.897157+00:00"
+  },
+  "2026-07-18-OAK-COL": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-18-OAK-COL",
+    "sha256": "7479942eaaf1eeb6b5202213d3094a1f0194a3674480eb58bb3dcde2d1c49f3e",
+    "retrieved_at": "2026-11-05T02:03:48.937377+00:00"
+  },
+  "2026-07-18-ORE-SEA": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-18-ORE-SEA",
+    "sha256": "31c0851e79fe95ba44cd2b8d1d466e4f90986d97f44cddc70a09c4e9a1d33c1a",
+    "retrieved_at": "2026-11-05T02:03:48.921682+00:00"
+  },
+  "2026-07-19-IND-PIT": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-19-IND-PIT",
+    "sha256": "5176cee6c11cc9db704673a9f8b2af5bba813c8ad5a90fdbcc820952a3a036b8",
+    "retrieved_at": "2026-11-05T02:03:48.990332+00:00"
+  },
+  "2026-07-19-MAD-MIN": {
+    "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-07-19-MAD-MIN",
+    "sha256": "61d07cb582ba8f5a8bc9198b7ac43d09695ca7198a1750f1bd04fe5416e23c25",
+    "retrieved_at": "2026-11-05T02:03:49.078479+00:00"
+  }
+}

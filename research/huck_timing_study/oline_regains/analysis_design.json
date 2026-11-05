@@ -1,0 +1,23 @@
+{
+  "question": "Do receiving teams huck more often after losing and regaining possession than on their opening possession?",
+  "primary": "Huck attempts / all physical throws, receiving-start points, opening versus all regained attacking possessions.",
+  "huck": "Euclidean flight distance >40 yards and forward gain >30 yards.",
+  "sensitivity": [
+    "First regained possession only",
+    "First three throws only",
+    "Opening and first regain from the same points",
+    "No timeout/injury marker anywhere in point",
+    "Official UFA >40 forward yards definition"
+  ],
+  "secondary": "Possessions with at least one huck / possessions with at least one physical throw.",
+  "adjustment": "Among release Y <90 yards where the defined huck has sufficient forward field space, logistic regression of huck choice on regained status, release-Y natural cubic spline with fixed 15-yard knots from 0 to 90, absolute release-X and its square, and team indicators. Additional sensitivity includes log throw ordinal and its square.",
+  "uncertainty": {
+    "whole_game_bootstrap_draws": 10000,
+    "seed": 20261105,
+    "team_intervals": "Exploratory, only 11 or 12 game clusters per team; no multiple-testing-adjusted ranking."
+  },
+  "scope": "2026 final regular season in preserved export; one game missing. Exploratory retrospective analysis.",
+  "post_result_checks": [
+    "First-three-throw comparison repeated with the official >40-forward-yard huck definition."
+  ]
+}

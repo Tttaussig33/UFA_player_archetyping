@@ -1,0 +1,38 @@
+{
+  "exportedAt": "2026-11-05T20:12:55.223Z",
+  "note": "Presentation conversion only. The TSX source and embedded research data are copied without changes.",
+  "reports": [
+    {
+      "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-dead-disc-first-pass.canvas.tsx",
+      "sourceSha256": "1d1a492f306b9059aaf0295eb38955678e34e842d456264e181d09744f47cc9f",
+      "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-dead-disc-first-pass.canvas.tsx",
+      "reportSha256": "1d1a492f306b9059aaf0295eb38955678e34e842d456264e181d09744f47cc9f",
+      "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-dead-disc-first-pass.ufa.html",
+      "htmlSha256": "d783f96cfc2837d3b962d1d0b9d9b1d7310a385f3100afeaffb90a5d450f9c7f"
+    },
+    {
+      "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-pull-centering.canvas.tsx",
+      "sourceSha256": "e500f845c3733e98edeba84408919dd0fcbe3d6ee297492d89fbd4fc7a8ab75b",
+      "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-pull-centering.canvas.tsx",
+      "reportSha256": "e500f845c3733e98edeba84408919dd0fcbe3d6ee297492d89fbd4fc7a8ab75b",
+      "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-pull-centering.ufa.html",
+      "htmlSha256": "96aff1f2c4aea28803a2f2849f82493ced0f30059b2fe01832b660da9faa716c"
+    },
+    {
+      "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-oline-regain-hucking.canvas.tsx",
+      "sourceSha256": "5fc0a37fc7f21f06ed5177067ed0637835ea13fcc6e8a20d0b4da5d8c5e810b1",
+      "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-oline-regain-hucking.canvas.tsx",
+      "reportSha256": "5fc0a37fc7f21f06ed5177067ed0637835ea13fcc6e8a20d0b4da5d8c5e810b1",
+      "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-oline-regain-hucking.ufa.html",
+      "htmlSha256": "adb265f19e45e56463b24ea6067d64c8f825a5b0cd54c922d01b980f05377f53"
+    },
+    {
+      "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-possession-review.canvas.tsx",
+      "sourceSha256": "11d3b7f1a75e87a3963ddfe65452bd061405aecc3917c65f48cbae646f766387",
+      "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-possession-review.canvas.tsx",
+      "reportSha256": "11d3b7f1a75e87a3963ddfe65452bd061405aecc3917c65f48cbae646f766387",
+      "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-possession-review.ufa.html",
+      "htmlSha256": "6f061c61fa56f448957f730aa497107bfb94a708c807deefde6cd5229c056bb7"
+    }
+  ]
+}

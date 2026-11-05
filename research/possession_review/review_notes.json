@@ -1,0 +1,166 @@
+{
+  "updatedAt": "2026-11-05",
+  "status": "Exploratory planning and selected-possession review; no new league-wide rates calculated in this review.",
+  "agreedScope": {
+    "question": "How does a receiving team's play differ on its opening possession versus its later possessions within the same point?",
+    "unit": "Team possessions within receiving points. Point-start O-line role does not establish unchanged personnel after substitutions.",
+    "throwCounts": "Keep every actual throw, including centering passes and incomplete attempts. Count attempts ending in goals and turnovers separately; stalls and dropped pulls are not physical throws but may end a possession.",
+    "huckTiming": "Keep throw 1 separate and examine throws 2\u20133, 4\u20136, and 7+ using the original numbering. Do not delete or renumber centering passes.",
+    "centeringReview": "Review concrete examples; no blanket setup-pass rule or league-wide tactical labels are adopted.",
+    "huckOutcomes": "Proposed comparison: actual catches divided by huck attempts on opening versus regained team possessions. Drops are incompletions for this measure and should be reported separately; this differs from ShownSpace thrower-credit CPOE.",
+    "scoring": "Possession goals before another turnover, not eventual point holds. Compare starting locations and retain near-end-zone possessions for scoring.",
+    "fieldPosition": "For huck comparisons, exclude starts where the chosen huck definition is physically impossible and show the rule. Compare similar starting positions; do not apply that exclusion to scoring or throw counts.",
+    "timeouts": "Requested main comparison excludes possessions containing recorded timeouts while preserving original possession numbers. This has not yet replaced the older whole-point timeout-or-injury sensitivity analysis.",
+    "notActive": [
+      "Average throw distance as an outcome",
+      "Forward yards per throw as an outcome",
+      "aEC per attempt",
+      "Personalized CP model development"
+    ]
+  },
+  "interpretationLimits": [
+    "Fewer throws means fewer passing actions, not necessarily less elapsed playing time.",
+    "A huck may reduce the throws needed to advance, but it can also be followed by more passes or a turnover; the relationship must be measured.",
+    "Throws 2\u20133 and 4\u20136 describe opportunities among possessions that survived to those throws; they are not automatically comparable initiation stages.",
+    "A completed huck and a scored possession are different outcomes.",
+    "Use all opening possessions for the scoring baseline, not only opening possessions in points with a later regain.",
+    "Starting location, team, opponent, game context and changes in personnel may contribute to differences; observational results cannot identify fatigue or impatience.",
+    "Existing huck cohorts excluded zero-throw possessions and whole points with dropped pulls. They need a separate terminal-outcome audit before use as a scoring denominator.",
+    "Team and league comparisons need uncertainty, game-level dependence and multiple comparisons handled explicitly; team aggregation does not guarantee statistical significance."
+  ],
+  "source": {
+    "game": "2026-04-24-ATL-HTX",
+    "url": "https://shownspace.com/game-center/2026-04-24-ATL-HTX",
+    "sourceDescription": "ShownSpace export preserved October 12, 2026; UFA event capture. Checked against live ShownSpace play-by-play November 5, 2026.",
+    "rawSha256": "78987b3d01b327e1df4d65fd7d9dc346f6376e493eb4a568c5d88681eadcd4f8",
+    "preservedRawPath": "/Users/teddytaussig/.codex/worktrees/fbf6/UFA_player_archetyping/research/dead_disc_study/raw_events/2026-04-24-ATL-HTX.json",
+    "pullDefinition": "https://www.docs.ufastats.com/events",
+    "rules": "https://watchufa.com/sites/default/files/UFA%20Rule%20Book%202026.pdf",
+    "selection": "Purposive examples for interpretation, not a representative sample or a test of team tendencies."
+  },
+  "examples": [
+    {
+      "id": "A",
+      "title": "Opening pass toward the middle",
+      "team": "Atlanta Hustle",
+      "quarter": 1,
+      "point": 3,
+      "teamPossession": 1,
+      "sourceCue": "Q1 \u00b7 1\u20131 \u00b7 Possession 1 \u00b7 5 plays",
+      "physicalThrows": 5,
+      "sourceSide": "away",
+      "pointStartIndex": 7,
+      "sourceEventIndices": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "question": "Does throw 1 look like setup before the deep attack on throw 2?",
+      "reviewStatus": "Reviewed: first throw is setup; both first and second throws retained."
+    },
+    {
+      "id": "B",
+      "title": "Opening from the brick location",
+      "team": "Atlanta Hustle",
+      "quarter": 3,
+      "point": 1,
+      "teamPossession": 1,
+      "sourceCue": "Q3 \u00b7 9\u201317 \u00b7 Possession 1 \u00b7 3 plays",
+      "physicalThrows": 3,
+      "sourceSide": "away",
+      "pointStartIndex": 188,
+      "sourceEventIndices": [
+        189,
+        191,
+        192
+      ],
+      "question": "Here the disc starts at the brick location, with no earlier centering pass."
+    },
+    {
+      "id": "C",
+      "title": "Moving inward after two upfield passes",
+      "team": "Atlanta Hustle",
+      "quarter": 1,
+      "point": 5,
+      "teamPossession": 1,
+      "sourceCue": "Q1 \u00b7 2\u20132 \u00b7 Possession 1 \u00b7 7 plays",
+      "physicalThrows": 7,
+      "sourceSide": "away",
+      "pointStartIndex": 16,
+      "sourceEventIndices": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "question": "Is throw 3 a later swing/reset rather than an opening setup pass?"
+    },
+    {
+      "id": "D",
+      "title": "Houston before losing the disc",
+      "team": "Houston Havoc",
+      "quarter": 3,
+      "point": 5,
+      "teamPossession": 1,
+      "sourceCue": "Q3 \u00b7 9\u201321 \u00b7 Possession 1 \u00b7 13 plays",
+      "physicalThrows": 13,
+      "sourceSide": "home",
+      "pointStartIndex": 221,
+      "sourceEventIndices": [
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        233,
+        234,
+        235
+      ],
+      "question": "Thirteen throws, no hucks, then a turnover. Compare with case E in the same point."
+    },
+    {
+      "id": "E",
+      "title": "Houston after regaining the disc",
+      "team": "Houston Havoc",
+      "quarter": 3,
+      "point": 5,
+      "teamPossession": 2,
+      "sourceCue": "Q3 \u00b7 9\u201321 \u00b7 Possession 3 \u00b7 3 plays",
+      "physicalThrows": 3,
+      "sourceSide": "home",
+      "pointStartIndex": 221,
+      "sourceEventIndices": [
+        237,
+        238,
+        239
+      ],
+      "question": "The opening huck is completed, but this possession ends in a turnover on throw 3."
+    }
+  ],
+  "remainingWork": [
+    "User interpretation of other ambiguous start sequences as needed; case A has been reviewed.",
+    "Define and validate possession-ending outcomes including zero-throw and period-end cases.",
+    "Validate possession-level timeout flags and eligibility rules.",
+    "Estimate team comparisons of possession lengths, scoring and actual huck completion with uncertainty."
+  ],
+  "userReview": [
+    {
+      "case": "A",
+      "reviewer": "Teddy",
+      "date": "2026-11-05",
+      "decision": "First pass by Ryan Flick to Austin Taylor is setup; Taylor's next throw starts the attack.",
+      "retainedThrowCount": 5,
+      "appliesTo": "This example only; no automatic label for other opening passes."
+    }
+  ]
+}

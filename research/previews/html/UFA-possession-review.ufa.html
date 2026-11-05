@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UFA possession review</title><style>:root {
+  color-scheme: light dark;
+  --report-bg: var(--vscode-editor-background, light-dark(#ffffff, #181818));
+  --report-text: var(--vscode-editor-foreground, light-dark(#202124, #eeeeee));
+  --report-muted: var(--vscode-descriptionForeground, light-dark(#62676d, #b4b8be));
+  --report-border: var(--vscode-panel-border, light-dark(#dfe2e6, #3b3e43));
+  --report-fill: light-dark(#f5f6f7, #25272a);
+  --report-accent: var(--vscode-textLink-foreground, light-dark(#1769aa, #77b7ed));
+}
+* { box-sizing: border-box; }
+.vscode-light { color-scheme: light; }
+.vscode-dark, .vscode-high-contrast { color-scheme: dark; }
+body { margin: 0; background: var(--report-bg); color: var(--report-text); font-family: var(--vscode-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif); font-size: 15px; line-height: 1.5; }
+h1,h2,p { margin: 0; }
+h1 { font-size: 24px; font-weight: 650; line-height: 1.25; }
+h2 { font-size: 19px; font-weight: 600; line-height: 1.3; }
+a { color: var(--report-accent); }
+select { font: inherit; padding: 8px 10px; background: var(--report-bg); color: var(--report-text); border: 1px solid var(--report-border); border-radius: 3px; max-width: 100%; }
+select:focus-visible, summary:focus-visible { outline: 2px solid var(--report-accent); outline-offset: 3px; }
+.ufa-stack { display: flex; flex-direction: column; min-width: 0; }
+.ufa-grid { display: grid; min-width: 0; }
+.ufa-small { font-size: 13px; }
+.ufa-secondary { color: var(--report-muted); }
+.ufa-table-wrap { max-width: 100%; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { min-width: 90px; }
+td:first-child { min-width: 140px; }
+th, td { padding: 9px 11px; border-bottom: 1px solid var(--report-border); vertical-align: top; }
+th { font-weight: 600; text-align: left; }
+table.striped tbody tr:nth-child(even) { background: var(--report-fill); }
+.ufa-chart { width: 100%; min-width: 0; overflow-x: auto; }
+.ufa-chart svg { display: block; }
+.ufa-chart text { font-size: 12px; font-family: inherit; fill: var(--report-text); }
+.ufa-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; margin-bottom: 8px; }
+.ufa-legend > span { display: inline-flex; align-items: center; gap: 6px; }
+.ufa-legend i { display: inline-block; width: 10px; height: 10px; }
+summary { cursor: pointer; }
+details { border-top: 1px solid var(--report-border); padding-top: 15px; }
+@media print { :root { color-scheme: light; --report-bg: #fff; --report-text: #111; --report-muted: #555; --report-border: #ddd; --report-fill: #f6f6f6; --report-accent: #1769aa; } details { break-inside: avoid; } .ufa-table-wrap, .ufa-chart { overflow: visible; } }
+</style></head><body><main id="ufa-report"></main><script>/* Portable display adapter for the three UFA reports. No external resources. */
+(() => {
+  'use strict';
+  const SVG = 'http://www.w3.org/2000/svg';
+  const svgTags = new Set(['svg', 'g', 'rect', 'line', 'circle', 'text', 'title', 'path', 'polygon', 'polyline', 'ellipse']);
+  const unitless = new Set(['opacity', 'fontWeight', 'lineHeight', 'flex', 'flexGrow', 'flexShrink', 'order', 'zIndex']);
+  const theme = {
+    text: {primary:'var(--report-text)', secondary:'var(--report-muted)', tertiary:'var(--report-muted)', link:'var(--report-accent)'},
+    accent: {primary:'var(--report-accent)'},
+    stroke: {tertiary:'var(--report-border)'}
+  };
+  let app, cursor = 0, scheduled = false;
+  const states = [], cleanups = [], mounted = [];
+  const host = typeof acquireVsCodeApi === 'function' ? acquireVsCodeApi() : null;
+
+  function append(node, children) {
+    for (const child of children.flat(Infinity)) {
+      if (child == null || typeof child === 'boolean') continue;
+      node.appendChild(child instanceof Node ? child : document.createTextNode(String(child)));
+    }
+  }
+
+  function h(tag, props, ...children) {
+    props = props || {};
+    if (typeof tag === 'function') return tag({...props, children});
+    const svg = svgTags.has(tag);
+    const el = svg ? document.createElementNS(SVG, tag) : document.createElement(tag);
+    for (const [key, value] of Object.entries(props)) {
+      if (key === 'key' || key === 'children' || value == null) continue;
+      if (key === 'style') {
+        for (const [name, setting] of Object.entries(value)) {
+          el.style[name] = typeof setting === 'number' && !unitless.has(name) ? setting + 'px' : setting;
+        }
+      } else if (/^on[A-Z]/.test(key)) {
+        el.addEventListener(key.slice(2).toLowerCase(), value);
+      } else if (key === 'className') {
+        el.setAttribute('class', value);
+      } else if (typeof value === 'boolean') {
+        if (value) el.setAttribute(key, '');
+      } else {
+        const name = svg && !['viewBox', 'preserveAspectRatio'].includes(key)
+          ? key.replace(/[A-Z]/g, c => '-' + c.toLowerCase()) : key;
+        el.setAttribute(name, value);
+      }
+    }
+    append(el, children);
+    return el;
+  }
+
+  const Stack = ({gap = 12, style, children}) => h('div', {className:'ufa-stack', style:{gap, ...style}}, children);
+  const Grid = ({columns, gap = 16, style, children}) => h('div', {className:'ufa-grid', style:{gridTemplateColumns:columns, gap, ...style}}, children);
+  const H1 = ({children, style}) => h('h1', {style}, children);
+  const H2 = ({children, style}) => h('h2', {style}, children);
+  const Text = ({children, size, tone, weight, style}) => h('p', {
+    className:[size === 'small' ? 'ufa-small' : '', tone === 'secondary' ? 'ufa-secondary' : ''].join(' '),
+    style:{...(weight === 'semibold' ? {fontWeight:600} : {}), ...style}
+  }, children);
+
+  function Select({value, onChange, options, style}) {
+    const select = h('select', {style, onChange:event => onChange(event.target.value)},
+      options.map(option => h('option', {value:option.value}, option.label)));
+    select.value = value;
+    return select;
+  }
+
+  function Table({headers, rows, columnAlign = [], striped}) {
+    return h('div', {className:'ufa-table-wrap', tabIndex:0, role:'region', 'aria-label':headers.join(', ')},
+      h('table', {className:striped ? 'striped' : ''},
+        h('thead', {}, h('tr', {}, headers.map((label, i) => h('th', {scope:'col', style:{textAlign:columnAlign[i] || 'left'}}, label)))),
+        h('tbody', {}, rows.map(row => h('tr', {}, row.map((cell, i) => h('td', {style:{textAlign:columnAlign[i] || 'left'}}, cell)))))));
+  }
+
+  function useState(initial) {
+    const index = cursor++;
+    if (!(index in states)) states[index] = typeof initial === 'function' ? initial() : initial;
+    return [states[index], value => {
+      states[index] = typeof value === 'function' ? value(states[index]) : value;
+      if (!scheduled) {
+        scheduled = true;
+        queueMicrotask(() => { scheduled = false; paint(); });
+      }
+    }];
+  }
+
+  function BarChart({horizontal = false, categories, series, height = 300, showValues = false, yMax, valueSuffix = ''}) {
+    const colors = series.map(s => s.tone === 'neutral' ? 'var(--report-muted)' : 'var(--report-accent)');
+    const container = h('div', {className:'ufa-chart'});
+    if (series.length > 1) container.appendChild(h('div', {className:'ufa-legend'}, series.map((s, i) =>
+      h('span', {}, h('i', {style:{background:colors[i]}}), s.name))));
+    const holder = h('div', {});
+    container.appendChild(holder);
+    const format = value => Number(value.toFixed(3)).toLocaleString() + valueSuffix;
+
+    function draw() {
+      const longest = Math.max(...categories.map(c => String(c).length));
+      const labelWidth = horizontal ? Math.max(62, longest * 6.7 + 16) : 54;
+      const width = Math.max(container.clientWidth, horizontal ? labelWidth + 220 : 550);
+      const margin = {left:labelWidth, right:horizontal ? 62 : 20, top:24, bottom:38};
+      const innerW = width - margin.left - margin.right;
+      const innerH = height - margin.top - margin.bottom;
+      const values = series.flatMap(s => s.data);
+      const low = Math.min(0, ...values);
+      const high = yMax ?? Math.max(1, ...values) * 1.15;
+      const range = high - low;
+      const x = v => margin.left + (v - low) / range * innerW;
+      const y = v => margin.top + (high - v) / range * innerH;
+      const svg = h('svg', {width, height, viewBox:`0 0 ${width} ${height}`, role:'img', 'aria-label':series.map(s => s.name).join(' and ')});
+      for (let i = 0; i <= 4; i++) {
+        const value = low + range * i / 4;
+        if (horizontal) {
+          svg.appendChild(h('line', {x1:x(value), x2:x(value), y1:margin.top, y2:height - margin.bottom, stroke:'var(--report-border)'}));
+          svg.appendChild(h('text', {x:x(value), y:height - 14, textAnchor:'middle'}, format(value)));
+        } else {
+          svg.appendChild(h('line', {x1:margin.left, x2:width - margin.right, y1:y(value), y2:y(value), stroke:'var(--report-border)'}));
+          svg.appendChild(h('text', {x:margin.left - 8, y:y(value) + 4, textAnchor:'end'}, format(value)));
+        }
+      }
+      const stride = (horizontal ? innerH : innerW) / categories.length;
+      const barSize = Math.min(horizontal ? 25 : 62, stride * 0.65 / series.length);
+      categories.forEach((category, index) => {
+        const center = (horizontal ? margin.top : margin.left) + stride * (index + 0.5);
+        svg.appendChild(horizontal
+          ? h('text', {x:margin.left - 10, y:center + 4, textAnchor:'end'}, category)
+          : h('text', {x:center, y:height - 14, textAnchor:'middle'}, category));
+        series.forEach((s, j) => {
+          const value = Number(s.data[index]);
+          const offset = center - (barSize * series.length) / 2 + j * barSize;
+          const rect = horizontal
+            ? h('rect', {x:Math.min(x(0), x(value)), y:offset, width:Math.abs(x(value) - x(0)), height:barSize - 2, fill:colors[j]})
+            : h('rect', {x:offset, y:Math.min(y(0), y(value)), width:barSize - 3, height:Math.abs(y(value) - y(0)), fill:colors[j]});
+          rect.setAttribute('data-value', String(value));
+          rect.setAttribute('data-category', String(category));
+          rect.setAttribute('data-series', s.name);
+          rect.appendChild(h('title', {}, `${category} · ${s.name}: ${format(value)}`));
+          svg.appendChild(rect);
+          if (showValues) svg.appendChild(horizontal
+            ? h('text', {x:x(value) + (value >= 0 ? 6 : -6), y:offset + barSize / 2 + 3, textAnchor:value >= 0 ? 'start' : 'end'}, format(value))
+            : h('text', {x:offset + (barSize - 3) / 2, y:y(value) - 7, textAnchor:'middle'}, format(value)));
+        });
+      });
+      holder.replaceChildren(svg);
+    }
+    mounted.push(() => {
+      draw();
+      const observer = new ResizeObserver(draw);
+      observer.observe(container);
+      cleanups.push(() => observer.disconnect());
+    });
+    return container;
+  }
+
+  function paint() {
+    cleanups.splice(0).forEach(fn => fn());
+    cursor = 0;
+    const selectedIndex = Array.from(document.querySelectorAll('select')).indexOf(document.activeElement);
+    const openDetails = Array.from(document.querySelectorAll('details')).map(el => el.open);
+    const root = document.getElementById('ufa-report');
+    root.replaceChildren(h(app, {}));
+    mounted.splice(0).forEach(fn => fn());
+    document.querySelectorAll('details').forEach((el, i) => { if (openDetails[i]) el.open = true; });
+    if (selectedIndex >= 0) document.querySelectorAll('select')[selectedIndex]?.focus({preventScroll:true});
+    document.title = document.querySelector('h1')?.textContent || document.title;
+    host?.postMessage({
+      type:'ufa-preview-ready', title:document.title,
+      tableRows:Array.from(document.querySelectorAll('tbody')).map(el => el.rows.length),
+      chartCount:document.querySelectorAll('svg').length,
+      selectors:Array.from(document.querySelectorAll('select')).map(el => el.value)
+    });
+  }
+
+  window.UFAPreview = {h, Stack, Grid, H1, H2, Text, Select, Table, BarChart,
+    useState, useHostTheme:() => theme, render:component => { app = component; paint(); }};
+})();
+</script><script>(() => { const { h, H1, H2, Select, Stack, Table, Text, useHostTheme, useState } = window.UFAPreview;
+"use strict";
+const DATA = { "game": "2026-04-24-ATL-HTX", "url": "https://shownspace.com/game-center/2026-04-24-ATL-HTX", "source": "ShownSpace export preserved October 12, 2026; UFA event capture. Checked against live ShownSpace play-by-play November 5, 2026.", "rawSha256": "78987b3d01b327e1df4d65fd7d9dc346f6376e493eb4a568c5d88681eadcd4f8", "selection": "Purposive examples for interpretation, not a representative sample or a test of team tendencies.", "cases": [{ "id": "A", "title": "Opening pass toward the middle", "team": "Atlanta Hustle", "quarter": 1, "point": 3, "ownPossession": 1, "sourceSide": "away", "pointStartIndex": 7, "start": "In-bounds pull", "prompt": "Your review: throw 1 is setup; throw 2 starts the attack. Both throws remain in the full-possession count.", "sourceCue": "Q1 · 1–1 · Possession 1 · 5 plays", "throws": [{ "n": 1, "from": "Ryan Flick", "to": "Austin Taylor", "xy": [-17.74, 18.81, -3.01, 17.38], "outcome": "Complete", "huck": false, "sourceIndex": 8, "before": [] }, { "n": 2, "from": "Austin Taylor", "to": "Brett Hulsmeyer", "xy": [-3.01, 17.38, 6.88, 86.72], "outcome": "Complete", "huck": true, "sourceIndex": 9, "before": [] }, { "n": 3, "from": "Brett Hulsmeyer", "to": "Hayden Austin-Knab", "xy": [6.88, 86.72, 19.98, 87.61], "outcome": "Complete", "huck": false, "sourceIndex": 10, "before": [] }, { "n": 4, "from": "Hayden Austin-Knab", "to": "Brett Hulsmeyer", "xy": [19.98, 87.61, 8.66, 86.79], "outcome": "Complete", "huck": false, "sourceIndex": 11, "before": [] }, { "n": 5, "from": "Brett Hulsmeyer", "to": "Austin Taylor", "xy": [8.66, 86.79, 14.45, 103.77], "outcome": "Goal", "huck": false, "sourceIndex": 12, "before": [] }], "userReview": { "reviewer": "Teddy", "date": "2026-11-05", "setupThrow": 1, "firstAttackingThrow": 2, "basis": "User interpretation of this recorded example; not film-validated or applied to other possessions." } }, { "id": "B", "title": "Opening from the brick location", "team": "Atlanta Hustle", "quarter": 3, "point": 1, "ownPossession": 1, "sourceSide": "away", "pointStartIndex": 188, "start": "Out-of-bounds pull; first throw at (0, 40)", "prompt": "Here the disc starts at the brick location, with no earlier centering pass.", "sourceCue": "Q3 · 9–17 · Possession 1 · 3 plays", "throws": [{ "n": 1, "from": "Austin Taylor", "to": "Ryan Flick", "xy": [0, 40, -9.83, 38.79], "outcome": "Complete", "huck": false, "sourceIndex": 189, "before": [] }, { "n": 2, "from": "Ryan Flick", "to": "Hayden Austin-Knab", "xy": [-9.83, 48.79, -11.26, 62.24], "outcome": "Complete", "huck": false, "sourceIndex": 191, "before": [17] }, { "n": 3, "from": "Hayden Austin-Knab", "to": "Alec Wilson Holliday", "xy": [-11.26, 62.24, -2.12, 115.15], "outcome": "Goal", "huck": true, "sourceIndex": 192, "before": [] }] }, { "id": "C", "title": "Moving inward after two upfield passes", "team": "Atlanta Hustle", "quarter": 1, "point": 5, "ownPossession": 1, "sourceSide": "away", "pointStartIndex": 16, "start": "In-bounds pull", "prompt": "Is throw 3 a later swing/reset rather than an opening setup pass?", "sourceCue": "Q1 · 2–2 · Possession 1 · 7 plays", "throws": [{ "n": 1, "from": "Hayden Austin-Knab", "to": "Ryan Flick", "xy": [-12.21, 17.25, -15.42, 29.11], "outcome": "Complete", "huck": false, "sourceIndex": 17, "before": [] }, { "n": 2, "from": "Ryan Flick", "to": "Sean Connole", "xy": [-15.42, 29.11, -18.28, 41.79], "outcome": "Complete", "huck": false, "sourceIndex": 18, "before": [] }, { "n": 3, "from": "Sean Connole", "to": "Ryan Flick", "xy": [-18.28, 41.79, -4.1, 36.47], "outcome": "Complete", "huck": false, "sourceIndex": 19, "before": [] }, { "n": 4, "from": "Ryan Flick", "to": "Hayden Austin-Knab", "xy": [-4.1, 36.47, 5.59, 35.31], "outcome": "Complete", "huck": false, "sourceIndex": 20, "before": [] }, { "n": 5, "from": "Hayden Austin-Knab", "to": "Jeremy Langdon", "xy": [5.59, 35.31, 9, 39.54], "outcome": "Complete", "huck": false, "sourceIndex": 21, "before": [] }, { "n": 6, "from": "Jeremy Langdon", "to": "Sean Connole", "xy": [9, 39.54, 13.57, 48.47], "outcome": "Complete", "huck": false, "sourceIndex": 22, "before": [] }, { "n": 7, "from": "Sean Connole", "to": "Austin Taylor", "xy": [13.57, 48.47, -9.83, 110.45], "outcome": "Goal", "huck": true, "sourceIndex": 23, "before": [] }] }, { "id": "D", "title": "Houston before losing the disc", "team": "Houston Havoc", "quarter": 3, "point": 5, "ownPossession": 1, "sourceSide": "home", "pointStartIndex": 221, "start": "In-bounds pull", "prompt": "Thirteen throws, no hucks, then a turnover. Compare with case E in the same point.", "sourceCue": "Q3 · 9–21 · Possession 1 · 13 plays", "throws": [{ "n": 1, "from": "Mark Turner", "to": "Jimmy Zuraw", "xy": [-12.59, 2.45, -1.14, 14.72], "outcome": "Complete", "huck": false, "sourceIndex": 222, "before": [] }, { "n": 2, "from": "Jimmy Zuraw", "to": "Mark Baldauf", "xy": [-1.14, 14.72, 12.22, 15.45], "outcome": "Complete", "huck": false, "sourceIndex": 223, "before": [] }, { "n": 3, "from": "Mark Baldauf", "to": "Jimmy Zuraw", "xy": [12.22, 15.45, -4.23, 9.54], "outcome": "Complete", "huck": false, "sourceIndex": 224, "before": [] }, { "n": 4, "from": "Jimmy Zuraw", "to": "Mark Turner", "xy": [-4.23, 9.54, -16.22, 17.18], "outcome": "Complete", "huck": false, "sourceIndex": 225, "before": [] }, { "n": 5, "from": "Mark Turner", "to": "Mark Baldauf", "xy": [-16.22, 17.18, -0.05, 8.54], "outcome": "Complete", "huck": false, "sourceIndex": 226, "before": [] }, { "n": 6, "from": "Mark Baldauf", "to": "Mark Turner", "xy": [-0.05, 8.54, -14.5, 13.18], "outcome": "Complete", "huck": false, "sourceIndex": 227, "before": [] }, { "n": 7, "from": "Mark Turner", "to": "Noah Furrh", "xy": [-14.5, 13.18, 2.13, 16.63], "outcome": "Complete", "huck": false, "sourceIndex": 228, "before": [] }, { "n": 8, "from": "Noah Furrh", "to": "Emmanuel Bilolo", "xy": [2.13, 16.63, -23.4, 26.36], "outcome": "Complete", "huck": false, "sourceIndex": 229, "before": [] }, { "n": 9, "from": "Emmanuel Bilolo", "to": "Mark Turner", "xy": [-23.4, 26.36, -15.31, 11], "outcome": "Complete", "huck": false, "sourceIndex": 230, "before": [] }, { "n": 10, "from": "Mark Turner", "to": "Mark Baldauf", "xy": [-15.31, 11, -21.49, 34.45], "outcome": "Complete", "huck": false, "sourceIndex": 231, "before": [] }, { "n": 11, "from": "Mark Baldauf", "to": "Emmanuel Bilolo", "xy": [-21.49, 44.45, -15.77, 54.45], "outcome": "Complete", "huck": false, "sourceIndex": 233, "before": [17] }, { "n": 12, "from": "Emmanuel Bilolo", "to": "Noah Furrh", "xy": [-15.77, 54.45, -21.95, 62.81], "outcome": "Complete", "huck": false, "sourceIndex": 234, "before": [] }, { "n": 13, "from": "Noah Furrh", "to": "Unrecorded target", "xy": [-21.95, 62.81, -5.87, 64], "outcome": "Throwaway", "huck": false, "sourceIndex": 235, "before": [] }] }, { "id": "E", "title": "Houston after regaining the disc", "team": "Houston Havoc", "quarter": 3, "point": 5, "ownPossession": 2, "sourceSide": "home", "pointStartIndex": 221, "start": "Regain after an opponent turnover", "prompt": "The opening huck is completed, but this possession ends in a turnover on throw 3.", "sourceCue": "Q3 · 9–21 · Possession 3 · 3 plays", "throws": [{ "n": 1, "from": "Jimmy Zuraw", "to": "Brian Gfroerer", "xy": [10.22, 21, 18.3, 76.09], "outcome": "Complete", "huck": true, "sourceIndex": 237, "before": [17] }, { "n": 2, "from": "Brian Gfroerer", "to": "Mark Baldauf", "xy": [18.3, 76.09, 19.94, 63.81], "outcome": "Complete", "huck": false, "sourceIndex": 238, "before": [] }, { "n": 3, "from": "Mark Baldauf", "to": "Mark Turner", "xy": [19.94, 63.81, 16.3, 53.09], "outcome": "Drop", "huck": false, "sourceIndex": 239, "before": [] }] }] };
+function PossessionReview() {
+    const theme = useHostTheme();
+    const [caseId, setCaseId] = useState("A");
+    const [focus, setFocus] = useState("1");
+    const item = DATA.cases.find(c => c.id === caseId) || DATA.cases[0];
+    const selected = item.throws.find(t => String(t.n) === focus);
+    const sx = (x) => 60 + (x + 26.6667) * 5;
+    const sy = (y) => 650 - y * 5;
+    const border = theme.stroke.tertiary;
+    const muted = theme.text.secondary;
+    const accent = theme.accent.primary;
+    const important = selected || item.throws[0];
+    const outcome = item.throws[item.throws.length - 1].outcome;
+    const penalties = item.throws.filter(t => t.before.includes(16) || t.before.includes(17));
+    function arrow(t) {
+        const [tx, ty, rx, ry] = t.xy;
+        const a = [sx(tx), sy(ty)], b = [sx(rx), sy(ry)];
+        const angle = Math.atan2(b[1] - a[1], b[0] - a[0]);
+        const head = [b, [b[0] - 10 * Math.cos(angle - 0.45), b[1] - 10 * Math.sin(angle - 0.45)], [b[0] - 10 * Math.cos(angle + 0.45), b[1] - 10 * Math.sin(angle + 0.45)]];
+        const active = !selected || selected.n === t.n;
+        const color = active ? accent : muted;
+        return h("g", { key: t.n, opacity: active ? 1 : 0.23, "data-throw-number": t.n },
+            h("title", null, `Throw ${t.n}: ${t.from} → ${t.to}. ${t.outcome}${t.huck ? ", huck" : ""}.`),
+            h("line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: color, strokeWidth: active ? 3 : 1.5, strokeDasharray: t.outcome === "Throwaway" || t.outcome === "Drop" || t.outcome === "Callahan" ? "7 4" : undefined }),
+            h("polygon", { points: head.map(p => p.join(",")).join(" "), fill: color }),
+            h("circle", { cx: a[0], cy: a[1], r: 3, fill: color }),
+            active && h("text", { x: a[0] + 7, y: a[1] - 7, fill: theme.text.primary, fontSize: 14, fontWeight: 600 }, t.n));
+    }
+    return h(Stack, { gap: 14 },
+        h(H1, null, "Review these possessions"),
+        h(Text, null, "Atlanta at Houston \u00B7 April 24, 2026. Five selected examples to discuss opening passes and play after regaining the disc."),
+        h("label", { style: { display: "grid", gap: 6 } },
+            h("span", { style: { color: muted, fontSize: 13 } }, "Choose a recorded possession"),
+            h(Select, { value: caseId, onChange: value => { setCaseId(value); setFocus("1"); }, options: DATA.cases.map(c => ({ value: c.id, label: c.id + " · " + c.title })) })),
+        h(H2, null,
+            item.id,
+            " \u00B7 ",
+            item.title),
+        h(Text, null,
+            item.team,
+            " \u00B7 Q",
+            item.quarter,
+            ", point ",
+            item.point,
+            " \u00B7 Team possession ",
+            item.ownPossession,
+            " \u00B7 ",
+            item.throws.length,
+            " throws \u00B7 Ends in ",
+            outcome.toLowerCase()),
+        h(Text, { size: "small", tone: "secondary" },
+            item.start,
+            ". Every recorded physical throw is retained; no centering pass has been removed."),
+        h("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap: 24, alignItems: "start" } },
+            h("section", null,
+                h("label", { style: { display: "grid", gap: 6 } },
+                    h("span", { style: { color: muted, fontSize: 13 } }, "Highlight a throw"),
+                    h(Select, { value: focus, onChange: setFocus, options: [{ value: "all", label: "All throws" }, ...item.throws.map(t => ({ value: String(t.n), label: `Throw ${t.n} · ${t.outcome}${t.huck ? " · Huck" : ""}` }))] })),
+                h("svg", { viewBox: "0 0 390 710", style: { width: "100%", maxHeight: 590 }, role: "img", "aria-label": `Recorded throwing locations for case ${item.id}. Attacking upward. Horizontal coordinates are yards from the centerline; vertical coordinates are yards from the back of the defended end zone.` },
+                    h("title", null,
+                        "Recorded throw locations \u00B7 ",
+                        item.team,
+                        " \u00B7 Q",
+                        item.quarter,
+                        ", point ",
+                        item.point),
+                    h("rect", { x: 60, y: 50, width: 266.667, height: 600, fill: "none", stroke: muted }),
+                    h("rect", { x: 60, y: 50, width: 266.667, height: 100, fill: accent, opacity: 0.06 }),
+                    h("rect", { x: 60, y: 550, width: 266.667, height: 100, fill: accent, opacity: 0.06 }),
+                    [0, 20, 40, 60, 80, 100, 120].map(y => h("g", { key: y },
+                        h("line", { x1: 60, x2: 326.667, y1: sy(y), y2: sy(y), stroke: y === 20 || y === 100 ? muted : border }),
+                        h("text", { x: 49, y: sy(y) + 5, textAnchor: "end", fontSize: 13, fill: muted }, y))),
+                    h("line", { x1: sx(0), x2: sx(0), y1: 50, y2: 650, stroke: border, strokeDasharray: "4 5" }),
+                    h("text", { x: 193, y: 24, textAnchor: "middle", fill: theme.text.primary, fontSize: 14 }, "Attack \u2191 \u00B7 goal line at 100 yd"),
+                    h("text", { transform: "translate(15 350) rotate(-90)", textAnchor: "middle", fontSize: 12, fill: muted }, "Yards from defended back line"),
+                    h("text", { x: 193, y: 700, textAnchor: "middle", fontSize: 12, fill: muted }, "Yards from centerline"),
+                    [-20, 0, 20].map(x => h("text", { key: x, x: sx(x), y: 674, textAnchor: "middle", fill: muted, fontSize: 13 }, x)),
+                    item.id === "B" && h("g", null,
+                        h("circle", { cx: sx(0), cy: sy(40), r: 6, fill: "none", stroke: muted }),
+                        h("text", { x: sx(0) + 10, y: sy(40) + 18, fill: muted, fontSize: 12 }, "Brick location")),
+                    item.throws.filter(t => !selected || t.n !== selected.n).map(arrow),
+                    selected && arrow(selected)),
+                h(Text, { size: "small", tone: "secondary" }, "Solid: completed pass. Dashed: incomplete attempt. Arrows connect recorded start and endpoint; they do not show flight paths or player movement.")),
+            h("section", null,
+                h(Text, { weight: "semibold" }, item.prompt),
+                h(Text, null, selected ? `Throw ${selected.n}: ${selected.from} → ${selected.to}. ${selected.outcome}${selected.huck ? " · Huck" : ""}.` : "All recorded throws are shown."),
+                h(Table, { headers: ["Throw", "Thrower → receiver / target", "Result"], rows: item.throws.map(t => [String(t.n), t.from + " → " + t.to, t.outcome + (t.huck ? " · Huck" : "")]), columnAlign: ["right", "left", "left"] }),
+                penalties.length > 0 && h(Text, { size: "small", tone: "secondary" },
+                    "Recorded penalty before throw",
+                    penalties.length > 1 ? "s" : "",
+                    " ",
+                    penalties.map(t => t.n).join(", "),
+                    ". Any awarded movement is not counted as a throw."),
+                h(Text, { size: "small", tone: "secondary" },
+                    "ShownSpace locator: Play-by-Play \u2192 ",
+                    item.sourceCue,
+                    ". The site's possession numbering includes both teams; our team possession number counts only the receiving team's turns with the disc."),
+                h("a", { href: DATA.url, target: "_blank", rel: "noreferrer", style: { color: theme.text.link } }, "Open the original game in ShownSpace"))),
+        h("details", { style: { borderTop: "1px solid " + border, paddingTop: 12 } },
+            h("summary", { style: { cursor: "pointer", color: muted } }, "Sources and limits"),
+            h(Text, { size: "small" }, DATA.source),
+            h(Text, { size: "small" }, DATA.selection),
+            h(Text, { size: "small" }, "Huck labels use the existing study rule: more than 40 yards in straight-line distance and more than 30 yards toward the attacking end zone. These labels do not establish throw difficulty or receiver openness."),
+            h(Text, { size: "small" }, "A brick location plus an out-of-bounds pull is compatible with a brick restart; the raw record has no explicit brick-choice field. An in-bounds flag does not identify whether the pull was caught or picked up."),
+            h(Text, { size: "small" },
+                "Source event indices (",
+                item.sourceSide,
+                "): ",
+                item.throws.map(t => t.sourceIndex).join(", "),
+                ". Point-start index: ",
+                item.pointStartIndex,
+                ". These are data-based reconstructions, not film-reviewed tactical labels.")));
+}
+
+window.UFAPreview.render(PossessionReview); })();</script></body></html>

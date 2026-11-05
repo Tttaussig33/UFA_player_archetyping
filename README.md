@@ -12,13 +12,33 @@ Use **throwing location** or **throwing locations**, rather than “release
 location(s),” in future explanations, reports and interface labels. This means
 the position on the field from which a player throws the disc.
 
-## Open the project
+## Open the research reports in VS Code
 
-Double-click **Open UFA player archetyping.command**. It starts a local-only web
-server and opens the explorer. Keep its Terminal window open while using it;
-Control-C stops the server. Python 3 is the only requirement for opening the built app.
+Open any of these files from `research/previews/` in VS Code. The locally installed
+**UFA Research Preview** extension displays the report automatically, including
+its charts, tables and dropdowns. No command launcher or server is needed.
 
-Alternatively, from this folder:
+- [Throws after stoppages](research/previews/UFA-dead-disc-first-pass.canvas.tsx)
+- [Pull centering](research/previews/UFA-pull-centering.canvas.tsx)
+- [Full team comparison: hucking after an O-line regains possession](research/previews/UFA-oline-regain-hucking.canvas.tsx)
+- [Recorded possessions for review](research/previews/UFA-possession-review.canvas.tsx)
+
+Portable browser copies are in `research/previews/html/`; double-click an HTML
+file to view it in a browser. The original TSX reports also work in VS Code.
+To see source code instead, right-click the editor tab and choose
+**Reopen Editor With → Text Editor**.
+
+The research scripts, saved results, and checks are under `research/`. The current
+discussion decisions and the exact examples for review are recorded in
+`research/possession_review/review_notes.json`. These distinguish completed
+analyses from proposed comparisons; the Word outline retains its requested three
+sections. Full database CSV exports remain local. Preserved raw game events and
+large intermediate cohorts remain in the research checkout; their source receipts
+and the analysis code are included here.
+
+## Open the earlier player explorer
+
+The separate player explorer is still available. From this folder:
 
 ```sh
 python3 -m http.server 4173 --bind 127.0.0.1 --directory dist

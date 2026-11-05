@@ -1,0 +1,43 @@
+{
+  "cohort_player_checks": [
+    {
+      "cohort": "team_timeout",
+      "players_verified": 129,
+      "source_events_rejoined": 611,
+      "max_aec_recompute_error": 0
+    },
+    {
+      "cohort": "team_timeout_or_injury",
+      "players_verified": 230,
+      "source_events_rejoined": 851,
+      "max_aec_recompute_error": 0
+    },
+    {
+      "cohort": "all_recorded_markers",
+      "players_verified": 495,
+      "source_events_rejoined": 2377,
+      "max_aec_recompute_error": 0
+    }
+  ],
+  "cached_assist_aggregate_comparison": {
+    "compared": 1152,
+    "mismatches": [],
+    "mismatch_count": 0,
+    "qualification": "Cached API aggregate records may differ by capture date; this checks Goal-event counting, not dead-disc event semantics."
+  },
+  "classification_not_video_validated": true,
+  "canvas": {
+    "path": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-dead-disc-first-pass.canvas.tsx",
+    "sha256": "864fe567122a7841f5e8a77821ded4a6e69c2888745d45c334d5ac853f21f548",
+    "all_displayed_rows_reconciled_to_results": true,
+    "sdk_exports_and_props_checked_against_declarations": true,
+    "native_render_check": "Not performed; open_in_codex returned queued. No native Canvas diagnostic tool available.",
+    "typecheck": "No standalone TypeScript compiler available; not claimed."
+  },
+  "missing_game_recheck": {
+    "url": "https://shownspace.com/api/games/2026-07-18-PIT-CHI",
+    "date": "2026-11-04",
+    "throws": 0,
+    "blocks": 0
+  }
+}

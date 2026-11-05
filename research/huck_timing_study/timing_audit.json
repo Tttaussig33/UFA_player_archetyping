@@ -1,0 +1,712 @@
+{
+  "status": "Availability audit only; no timing-outcome comparison or player ranking performed.",
+  "scope": {
+    "season": 2026,
+    "competition": "final regular-season games",
+    "export_rows": 72663,
+    "games_with_export_rows": 131,
+    "raw_games": 131,
+    "missing_game": "2026-07-18-PIT-CHI"
+  },
+  "sources": {
+    "export_manifest": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/data/database-exports/2026-10-12/manifest.json",
+    "raw_receipt": "/Users/teddytaussig/.codex/worktrees/fbf6/UFA_player_archetyping/research/dead_disc_study/raw_events/source_receipt.json",
+    "metric_schema_receipt": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/data/database-metadata/2026-11-04/metric-discovery.json",
+    "note": "Preserved exports, raw captures, and saved live metadata; no new live database query."
+  },
+  "field_coverage": {
+    "PointStartTime": 72645,
+    "time_left": 72645,
+    "game_time_left": 72645,
+    "source_timestamp": 66780,
+    "derived_sort_timestamp": 72663,
+    "possession_num": 72663,
+    "possession_throw": 72663
+  },
+  "sort_timestamp_imputed": {
+    "true": 5883,
+    "false": 66780
+  },
+  "raw_attempt_fields": {
+    "events": 72665,
+    "time": 0,
+    "timestamp": 66782
+  },
+  "clock_spacing": {
+    "segments_with_at_least_three_export_rows": 7912,
+    "segments_with_equal_clock_spacing": 6757,
+    "rows_in_equal_spacing_segments": 56812,
+    "equal_spacing_segments_with_complete_raw_timestamps": 6046,
+    "equal_clock_spacing_but_unequal_raw_timestamp_gaps": 5984
+  },
+  "pointstarttime_changes_within_point_side": 955,
+  "pointstarttime_changes_within_possession_group": 525,
+  "clock_example": {
+    "game": "2026-06-14-CHI-PIT",
+    "side": "home",
+    "quarter": 1,
+    "point": 3,
+    "rows": [
+      {
+        "source_side_idx": "33",
+        "possession_throw": "1.0",
+        "PointStartTime": "488.0",
+        "time_left": "488.0",
+        "game_time_left": "2648.0",
+        "source_timestamp": "1781460790",
+        "sort_timestamp_imputed": "false"
+      },
+      {
+        "source_side_idx": "34",
+        "possession_throw": "2.0",
+        "PointStartTime": "488.0",
+        "time_left": "481.5",
+        "game_time_left": "2641.5",
+        "source_timestamp": "1781460792",
+        "sort_timestamp_imputed": "false"
+      },
+      {
+        "source_side_idx": "35",
+        "possession_throw": "3.0",
+        "PointStartTime": "488.0",
+        "time_left": "475.0",
+        "game_time_left": "2635.0",
+        "source_timestamp": "1781460795",
+        "sort_timestamp_imputed": "false"
+      },
+      {
+        "source_side_idx": "36",
+        "possession_throw": "4.0",
+        "PointStartTime": "488.0",
+        "time_left": "468.5",
+        "game_time_left": "2628.5",
+        "source_timestamp": "1781460798",
+        "sort_timestamp_imputed": "false"
+      },
+      {
+        "source_side_idx": "37",
+        "possession_throw": "5.0",
+        "PointStartTime": "488.0",
+        "time_left": "462.0",
+        "game_time_left": "2622.0",
+        "source_timestamp": "1781460800",
+        "sort_timestamp_imputed": "false"
+      },
+      {
+        "source_side_idx": "38",
+        "possession_throw": "6.0",
+        "PointStartTime": "488.0",
+        "time_left": "455.5",
+        "game_time_left": "2615.5",
+        "source_timestamp": "1781460803",
+        "sort_timestamp_imputed": "false"
+      },
+      {
+        "source_side_idx": "39",
+        "possession_throw": "7.0",
+        "PointStartTime": "488.0",
+        "time_left": "449.0",
+        "game_time_left": "2609.0",
+        "source_timestamp": "1781460806",
+        "sort_timestamp_imputed": "false"
+      },
+      {
+        "source_side_idx": "40",
+        "possession_throw": "8.0",
+        "PointStartTime": "488.0",
+        "time_left": "442.5",
+        "game_time_left": "2602.5",
+        "source_timestamp": "1781460815",
+        "sort_timestamp_imputed": "false"
+      }
+    ],
+    "point_start_source_time": 232,
+    "next_point_start_source_time": 284,
+    "inference": "52 clock seconds divided among 8 throws gives exactly 6.5 seconds per stored step; raw timestamp gaps are unequal. Strong evidence of interpolation, not a verified production formula."
+  },
+  "pointstarttime_reset_example": {
+    "game": "2026-06-14-CHI-PIT",
+    "side": "home",
+    "quarter": 1,
+    "point": 4,
+    "raw_index": 51,
+    "event_type": 3,
+    "source_time": 339,
+    "stored_before": 436,
+    "stored_after": 381,
+    "interpretation": "Stored PointStartTime changes at a timeout within the same point and possession; it is not always the original point start."
+  },
+  "export_ordinal_checks": {
+    "export_possession_groups": 10331,
+    "groups_sequential_from_one": 10324,
+    "rows_in_sequential_groups": 72600
+  },
+  "nonsequential_export_groups": [
+    {
+      "context": [
+        "2026-05-29-DC-TOR",
+        "home",
+        "4",
+        "3",
+        "2"
+      ],
+      "ordinals": [
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        17.0
+      ]
+    },
+    {
+      "context": [
+        "2026-05-30-SD-OAK",
+        "home",
+        "1",
+        "1",
+        "1"
+      ],
+      "ordinals": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        11.0,
+        12.0
+      ]
+    },
+    {
+      "context": [
+        "2026-05-02-MTL-BOS",
+        "home",
+        "1",
+        "11",
+        "2"
+      ],
+      "ordinals": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0
+      ]
+    },
+    {
+      "context": [
+        "2026-06-06-CAR-PIT",
+        "away",
+        "1",
+        "2",
+        "7"
+      ],
+      "ordinals": [
+        4.0,
+        5.0,
+        6.0,
+        7.0
+      ]
+    },
+    {
+      "context": [
+        "2026-06-13-HTX-CAR",
+        "away",
+        "1",
+        "3",
+        "1"
+      ],
+      "ordinals": [
+        1.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0
+      ]
+    },
+    {
+      "context": [
+        "2026-05-30-CAR-ATL",
+        "away",
+        "3",
+        "1",
+        "2"
+      ],
+      "ordinals": [
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        11.0,
+        12.0,
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        17.0,
+        18.0,
+        19.0
+      ]
+    },
+    {
+      "context": [
+        "2026-05-30-CAR-ATL",
+        "away",
+        "3",
+        "2",
+        "2"
+      ],
+      "ordinals": [
+        12.0,
+        13.0
+      ]
+    }
+  ],
+  "independent_raw_sequence_checks": {
+    "matched_export_rows": 72661,
+    "rows_with_explicit_source_possession_start": 72611,
+    "rows_matching_source_throw_ordinal": 72584,
+    "rows_with_raw_point_role": 72577,
+    "point_role_matches_start_on_offense": 72577,
+    "point_turnovers_match_export_possession_num": 72577,
+    "unmatched_export_rows": 2
+  },
+  "ordinal_mismatch_examples": [
+    {
+      "key": [
+        "2026-05-29-DC-TOR",
+        "home",
+        "355"
+      ],
+      "stored": 16.0,
+      "source_ordinal": 4
+    },
+    {
+      "key": [
+        "2026-05-29-DC-TOR",
+        "home",
+        "356"
+      ],
+      "stored": 17.0,
+      "source_ordinal": 5
+    },
+    {
+      "key": [
+        "2026-05-29-DC-TOR",
+        "home",
+        "352"
+      ],
+      "stored": 13.0,
+      "source_ordinal": 1
+    },
+    {
+      "key": [
+        "2026-05-29-DC-TOR",
+        "home",
+        "353"
+      ],
+      "stored": 14.0,
+      "source_ordinal": 2
+    },
+    {
+      "key": [
+        "2026-05-29-DC-TOR",
+        "home",
+        "354"
+      ],
+      "stored": 15.0,
+      "source_ordinal": 3
+    },
+    {
+      "key": [
+        "2026-06-06-CAR-PIT",
+        "away",
+        "32"
+      ],
+      "stored": 4.0,
+      "source_ordinal": 1
+    },
+    {
+      "key": [
+        "2026-06-06-CAR-PIT",
+        "away",
+        "33"
+      ],
+      "stored": 5.0,
+      "source_ordinal": 2
+    },
+    {
+      "key": [
+        "2026-06-06-CAR-PIT",
+        "away",
+        "34"
+      ],
+      "stored": 6.0,
+      "source_ordinal": 3
+    },
+    {
+      "key": [
+        "2026-06-06-CAR-PIT",
+        "away",
+        "35"
+      ],
+      "stored": 7.0,
+      "source_ordinal": 4
+    },
+    {
+      "key": [
+        "2026-05-30-CAR-ATL",
+        "away",
+        "205"
+      ],
+      "stored": 4.0,
+      "source_ordinal": 1
+    }
+  ],
+  "huck_stage_support": {
+    "qualifying_hucks": 3507,
+    "hucks_with_verified_source_start": 3504,
+    "hucks_with_matching_source_ordinal": 3503,
+    "hucks_with_raw_timestamp": 3223,
+    "hucks_with_raw_point_role": 3503,
+    "hucks_after_potential_lineup_change": 291
+  },
+  "huck_point_context_support": {
+    "receiving_first_attacking_possession": 2269,
+    "pulling_first_attacking_possession": 684,
+    "receiving_later_attacking_possession": 401,
+    "pulling_later_attacking_possession": 149
+  },
+  "huck_ordinal_counts_matching_raw_source": {
+    "1": 329,
+    "2": 429,
+    "3": 515,
+    "4": 436,
+    "5": 400,
+    "6": 312,
+    "7": 262,
+    "8": 220,
+    "9": 154,
+    "10": 117,
+    "11": 77,
+    "12": 69,
+    "13": 58,
+    "14": 43,
+    "15": 13,
+    "16": 21,
+    "17": 12,
+    "18": 6,
+    "19": 6,
+    "20": 4,
+    "21": 3,
+    "22": 3,
+    "23": 1,
+    "24": 4,
+    "25": 2,
+    "28": 2,
+    "29": 1,
+    "30": 3,
+    "37": 1
+  },
+  "aggregate_table_columns": {
+    "player_game_stats": [
+      "GameID",
+      "PlayerID",
+      "full_name",
+      "FirstName",
+      "LastName",
+      "TeamID",
+      "JerseyNumber",
+      "Year",
+      "Assists",
+      "Goals",
+      "HockeyAssists",
+      "Completions",
+      "ThrowAttempts",
+      "Throwaways",
+      "Stalls",
+      "CallahansThrown",
+      "YardsReceived",
+      "YardsThrown",
+      "Catches",
+      "Drops",
+      "Blocks",
+      "Callahans",
+      "Pulls",
+      "OBPulls",
+      "RecordedPulls",
+      "RecordedPullsHangtime",
+      "OPointsPlayed",
+      "OPointsScored",
+      "DPointsPlayed",
+      "DPointsScored",
+      "SecondsPlayed",
+      "lag_contribution",
+      "xcp",
+      "cpoe_completions",
+      "cpoe_attempts",
+      "cpoe",
+      "throws_dropped",
+      "thrower_aec",
+      "receiver_aec",
+      "total_aec",
+      "offensive_possessions",
+      "offensive_possessions_involved",
+      "offensive_possessions_scored",
+      "defensive_possessions",
+      "defensive_possessions_stopped",
+      "completion_percentage",
+      "team_total_aec",
+      "player_impact",
+      "total_possession_aec",
+      "player_impact_possession",
+      "hucks_thrown",
+      "hucks_completed",
+      "hucks_dropped",
+      "hucks_caught",
+      "connections",
+      "huck_completion_percentage",
+      "huck_attempt_percentage",
+      "OE",
+      "DE",
+      "turnovers",
+      "win_probability_added",
+      "insert_timestamp"
+    ],
+    "player_stats": [
+      "PlayerID",
+      "full_name",
+      "FirstName",
+      "LastName",
+      "TeamID",
+      "Year",
+      "Assists",
+      "Goals",
+      "HockeyAssists",
+      "Completions",
+      "ThrowAttempts",
+      "Throwaways",
+      "Stalls",
+      "CallahansThrown",
+      "YardsReceived",
+      "YardsThrown",
+      "Catches",
+      "Drops",
+      "Blocks",
+      "Callahans",
+      "Pulls",
+      "OBPulls",
+      "RecordedPulls",
+      "RecordedPullsHangtime",
+      "OPointsPlayed",
+      "OPointsScored",
+      "DPointsPlayed",
+      "DPointsScored",
+      "SecondsPlayed",
+      "games_played",
+      "offensive_possessions",
+      "defensive_possessions",
+      "offensive_possessions_involved",
+      "offensive_possessions_scored",
+      "defensive_possessions_stopped",
+      "total_possession_aec",
+      "cpoe_completions",
+      "cpoe_attempts",
+      "hucks_thrown",
+      "hucks_completed",
+      "hucks_caught",
+      "hucks_dropped",
+      "throws_dropped",
+      "lag_contribution",
+      "handler",
+      "offense",
+      "xcp",
+      "thrower_ec",
+      "thrower_aec",
+      "receiver_ec",
+      "receiver_aec",
+      "total_points",
+      "OE",
+      "DE",
+      "completion_percentage",
+      "cpoe",
+      "total_aec",
+      "team_total_aec",
+      "player_impact",
+      "player_impact_possession",
+      "connections",
+      "huck_completion_percentage",
+      "huck_attempt_percentage",
+      "insert_timestamp"
+    ],
+    "player_stats_game": [
+      "GameID",
+      "PlayerID",
+      "full_name",
+      "FirstName",
+      "LastName",
+      "TeamID",
+      "JerseyNumber",
+      "Year",
+      "Assists",
+      "Goals",
+      "HockeyAssists",
+      "Completions",
+      "ThrowAttempts",
+      "Throwaways",
+      "Stalls",
+      "CallahansThrown",
+      "YardsReceived",
+      "YardsThrown",
+      "Catches",
+      "Drops",
+      "Blocks",
+      "Callahans",
+      "Pulls",
+      "OBPulls",
+      "RecordedPulls",
+      "RecordedPullsHangtime",
+      "OPointsPlayed",
+      "OPointsScored",
+      "DPointsPlayed",
+      "DPointsScored",
+      "SecondsPlayed",
+      "lag_contribution",
+      "xcp",
+      "cpoe_completions",
+      "cpoe_attempts",
+      "cpoe",
+      "throws_dropped",
+      "thrower_aec",
+      "receiver_aec",
+      "total_aec",
+      "offensive_possessions",
+      "offensive_possessions_involved",
+      "offensive_possessions_scored",
+      "defensive_possessions",
+      "defensive_possessions_stopped",
+      "completion_percentage",
+      "team_total_aec",
+      "player_impact",
+      "total_possession_aec",
+      "player_impact_possession",
+      "hucks_thrown",
+      "hucks_completed",
+      "hucks_dropped",
+      "hucks_caught",
+      "connections",
+      "huck_completion_percentage",
+      "huck_attempt_percentage",
+      "OE",
+      "DE",
+      "turnovers",
+      "win_probability_added",
+      "insert_timestamp"
+    ],
+    "player_stats_season": [
+      "PlayerID",
+      "full_name",
+      "FirstName",
+      "LastName",
+      "TeamID",
+      "Year",
+      "Assists",
+      "Goals",
+      "HockeyAssists",
+      "Completions",
+      "ThrowAttempts",
+      "Throwaways",
+      "Stalls",
+      "CallahansThrown",
+      "YardsReceived",
+      "YardsThrown",
+      "Catches",
+      "Drops",
+      "Blocks",
+      "Callahans",
+      "Pulls",
+      "OBPulls",
+      "RecordedPulls",
+      "RecordedPullsHangtime",
+      "OPointsPlayed",
+      "OPointsScored",
+      "DPointsPlayed",
+      "DPointsScored",
+      "SecondsPlayed",
+      "games_played",
+      "offensive_possessions",
+      "defensive_possessions",
+      "offensive_possessions_involved",
+      "offensive_possessions_scored",
+      "defensive_possessions_stopped",
+      "total_possession_aec",
+      "cpoe_completions",
+      "cpoe_attempts",
+      "hucks_thrown",
+      "hucks_completed",
+      "hucks_caught",
+      "hucks_dropped",
+      "throws_dropped",
+      "lag_contribution",
+      "handler",
+      "offense",
+      "xcp",
+      "thrower_ec",
+      "thrower_aec",
+      "receiver_ec",
+      "receiver_aec",
+      "total_points",
+      "OE",
+      "DE",
+      "completion_percentage",
+      "cpoe",
+      "total_aec",
+      "team_total_aec",
+      "player_impact",
+      "player_impact_possession",
+      "connections",
+      "huck_completion_percentage",
+      "huck_attempt_percentage",
+      "insert_timestamp"
+    ]
+  },
+  "decisions": [
+    "Use source-validated throw ordinal to measure progression within a possession.",
+    "Do not treat stored time_left or game_time_left as measured per-throw clocks.",
+    "Do not subtract PointStartTime blindly; it can reset within a point.",
+    "Raw timestamps are not verified active playing seconds; recording delay, clock stoppages, and missingness remain unresolved.",
+    "Separate receiving-pull possessions from possessions beginning after an opponent turnover.",
+    "Track whether the team started the point receiving or pulling, its attacking-possession number, and only turnovers that preceded the throw.",
+    "Include receiving-team possessions after regaining the disc whether the point eventually ends in a hold or a break.",
+    "Point-start role is not a claim that the original seven players remain on the field after timeouts or injuries.",
+    "Huck choice rate requires all eligible player throws at that stage as the denominator.",
+    "Keep point age distinct from possession age; verified seconds can be added later."
+  ],
+  "unresolved": [
+    "Exact production derivation of time_left and PointStartTime.",
+    "Whether raw timestamp records action time or stat-entry time, and how stopped-clock intervals should be removed.",
+    "Resolve/exclude mismatched source ordinals before outcome analysis; stage-support counts are provisional.",
+    "No observed receiver openness, defensive force, fatigue, or impatience."
+  ]
+}

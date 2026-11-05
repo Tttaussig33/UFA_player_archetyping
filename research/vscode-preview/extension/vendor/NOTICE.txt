@@ -1,0 +1,4 @@
+TypeScript compiler, version 6.0.3
+Copyright Microsoft Corporation. Apache License 2.0.
+Copied from the locally installed Microsoft VS Code TypeScript extension.
+https://github.com/microsoft/TypeScript
