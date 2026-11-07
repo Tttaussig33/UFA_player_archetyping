@@ -47,12 +47,12 @@ async function verify(page, name, choice) {
     const pct = x => (100*x).toFixed(1)+'%';
     const signed = x => (x>0?'+':'')+x.toFixed(1);
     const range = (v,s) => v.map(x=>(s*x).toFixed(1)).join(' to ');
-    const sorted = [...data.teams].sort((a,b) => a.team_name.localeCompare(b.team_name));
-    const [scoreView, metric, teamId] = await page.locator('select').evaluateAll(ss => ss.map(s => s.value));
+    const [scoreView, pool, metric, teamId] = await page.locator('select').evaluateAll(ss => ss.map(s => s.value));
+    const sorted = data.teams.filter(t=>pool==='all'||data.follow_up.playoff_team_ids.includes(t.team)).sort((a,b) => a.team_name.localeCompare(b.team_name));
     const count = metric.startsWith('throws'), scale = count?1:100;
     const groupText = g => !g.n || g.estimate==null?'— (0)':(count?g.estimate.toFixed(1):pct(g.estimate))+' ('+g.n.toLocaleString()+')';
     assert.deepEqual(actual.rows[5], sorted.map(t => {
-      const c=metric==='huck_completion'?t.metrics.huck_completion.first_vs_all_subsequent.differences[0]:data.team_changes[metric].teams.find(c=>c.team===t.team);
+      const c=data.team_changes[metric]?data.team_changes[metric].teams.find(c=>c.team===t.team):t.metrics[metric].first_vs_all_subsequent.differences[0];
       return [t.team_name+(t.games===11?' *':''),...t.metrics[metric].groups.map(groupText),`${signed(c.difference*scale)} [${range(c.ci95,scale)}]`];
     }));
     const val=(g,c=false)=>Number((g.estimate*(c?1:100)).toFixed(1));
@@ -62,9 +62,16 @@ async function verify(page, name, choice) {
       ...data.throw_windows.flatMap(w=>[val(w.groups[0]),val(w.groups[1])]),
       ...[0,1,2].flatMap(i=>[val(data.league.throws_goal.groups[i],true),val(data.league.throws_turnover.groups[i],true)]),
       ...scores.map(g=>val(g)),...team.metrics[metric].groups.filter(g=>g.n>0&&g.estimate!=null).map(g=>val(g,count)),
-      ...data.league.huck_completion.groups.map(g=>val(g))];
+      ...data.league.huck_completion.groups.map(g=>val(g)),...data.follow_up.break_league.groups.map(g=>val(g))];
     assert.deepEqual(actual.bars.map(b=>b.value),expectedBars);
-    assert.equal(actual.charts,6);
+    assert.equal(actual.charts,7);
+    assert.equal(await page.locator('[data-axis-x]').count(),7);
+    assert.equal(await page.locator('[data-axis-y]').count(),7);
+    assert.equal(await page.locator('select').nth(3).locator('option').count(),pool==='all'?22:12);
+    assert.deepEqual(actual.rows[6], [...data.follow_up.playoff_summary].sort((a,b)=>a.team_name.localeCompare(b.team_name)).map(t=>[t.team_name,...['throws_goal','throws_turnover','scoring','early_huck'].map(k=>{
+      const m=t.metrics[k];return `${k.startsWith('throws')?m.first.toFixed(1):pct(m.first)} (${m.first_n}) → ${k.startsWith('throws')?m.subsequent.toFixed(1):pct(m.subsequent)} (${m.subsequent_n})`;
+    })]));
+    assert(actual.text.includes('It does not adjust for which passes are centering passes.'));
     assert(actual.text.includes('11.5%')&&actual.text.includes('20.9%'));
   } else {
     const c = data.cases.find(c => c.id === choice);
@@ -102,17 +109,22 @@ async function verify(page, name, choice) {
         results.push(await verify(page, name, choice));
       }
       if (name.includes('oline-regain')) {
-        const metrics=await page.locator('select').nth(1).locator('option').evaluateAll(ns=>ns.map(n=>n.value));
-        const teams=await page.locator('select').nth(2).locator('option').evaluateAll(ns=>ns.map(n=>n.value));
-        for (const metric of metrics) {
-          await page.locator('select').nth(1).selectOption(metric);
-          for (const team of teams) {
-            await page.locator('select').nth(2).selectOption(team);
-            results.push({...await verify(page,name,null),metric,team});
+        const metrics=await page.locator('select').nth(2).locator('option').evaluateAll(ns=>ns.map(n=>n.value));
+        for (const pool of ['playoffs','all']) {
+          await page.locator('select').nth(1).selectOption(pool);
+          const teams=await page.locator('select').nth(3).locator('option').evaluateAll(ns=>ns.map(n=>n.value));
+          for (const metric of metrics) {
+            await page.locator('select').nth(2).selectOption(metric);
+            for (const team of teams) {
+              await page.locator('select').nth(3).selectOption(team);
+              results.push({...await verify(page,name,null),pool,metric,team});
+            }
           }
         }
-        await page.locator('select').nth(1).selectOption('early_huck');
-        await page.locator('select').nth(2).selectOption('hustle');
+        await page.locator('select').nth(3).selectOption('hustle');
+        await page.locator('select').nth(1).selectOption('playoffs');
+        assert.equal(await page.locator('select').nth(3).inputValue(),'spiders','Non-playoff selection must reset when switching to playoff teams');
+        await page.locator('select').nth(2).selectOption('throws_goal');
       }
       if (options.length) await firstSelect.selectOption(options[0]);
       const summary = page.locator('summary').first();
@@ -123,7 +135,7 @@ async function verify(page, name, choice) {
       }
       await page.screenshot({path:path.join(output, name + '-wide.png'), fullPage:true});
       if (name.includes('oline-regain')) {
-        for (const id of ['league','teams','huck-outcomes','paper']) {
+        for (const id of ['league','teams','huck-outcomes','breaks','paper']) {
           await page.locator('#'+id).screenshot({path:path.join(output,name+'-'+id+'-wide.png')});
         }
       }

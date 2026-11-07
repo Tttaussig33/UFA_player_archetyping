@@ -3,8 +3,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const names = ['UFA-dead-disc-first-pass', 'UFA-pull-centering', 'UFA-oline-regain-hucking', 'UFA-possession-review'];
-const expected = [[6, 7], [22], [3, 3, 3, 3, 5, 22, 3, 3, 4, 7], [5]];
-const expectedCharts = [2, 1, 6, 1];
+const expected = [[6, 7], [22], [3, 3, 3, 3, 5, 12, 12, 3, 3, 3, 3, 4, 7], [5]];
+const expectedCharts = [2, 1, 7, 1];
 const directory = path.resolve(__dirname, '../../previews');
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 async function waitFor(read, label) {

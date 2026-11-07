@@ -119,4 +119,63 @@ def validate():
     (ROOT/'validation.json').write_text(json.dumps(out,indent=2)+'\n')
     print(json.dumps(out,indent=2))
 
-if __name__=='__main__':validate()
+def validate_followup():
+    f=json.loads((ROOT/'follow_up_20261106.json').read_text())
+    for name,digest in f['inputs'].items():
+        path=ROOT/name if name!='games.csv' else ROOT.parents[1]/'data/database-exports/2026-10-12/games.csv'
+        assert hashlib.sha256(path.read_bytes()).hexdigest()==digest
+    raw_cache={};point_end={};rows=[]
+    p=read(ROOT/'possessions.csv')
+    for x in p:
+        if x['has_timeout']=='True' or x['outcome']!='turnover':continue
+        gid,side,idx=x['point_id'].rsplit('|',2)
+        if gid not in raw_cache:raw_cache[gid]=json.loads((RAW/(gid+'.json')).read_text())['data']
+        es=raw_cache[gid][side+'Events']
+        if x['point_id'] not in point_end:
+            end=next(i for i in range(int(idx)+1,len(es)) if es[i]['type'] in {12,15,19,23,28,29,30,31,32,33})
+            point_end[x['point_id']]=end
+        end=point_end[x['point_id']];terminal=es[end]['type']
+        assert (terminal in {12,15,19,23})==(x['point_end']=='goal')
+        if terminal in {28,29,30,31,32,33}:continue
+        broken=int(terminal in {15,23})
+        assert broken==1-int(x['point_hold'])
+        last=int(x['end_idx'])
+        signal=next((e['type'] for e in es[last+1:end+1] if e['type'] in {11,12,13,14,15,19,23}),None)
+        immediate=int(es[last]['type']==23 or signal==15)
+        assert immediate<=broken
+        rows.append({'stage':int(x['stage']),'team':x['team'],'broken':broken,'immediate':immediate})
+    for team in [None]+[t['team'] for t in f['break_teams']]:
+        result=f['break_league'] if team is None else next(t for t in f['break_teams'] if t['team']==team)
+        for g in result['groups']:
+            rr=[x for x in rows if x['stage']==g['stage'] and (team is None or x['team']==team)]
+            assert len(rr)==g['n'] and sum(x['broken'] for x in rr)==g['sum']
+            if rr:assert math.isclose(sum(x['broken'] for x in rr)/len(rr),g['estimate'],abs_tol=1e-12)
+    for c in f['break_outcome_counts']:
+        rr=[x for x in rows if x['stage']==c['stage']]
+        assert sum(x['immediate'] for x in rr)==c['break_before_regain']
+    for team in f['playoff_summary']:
+        for metric in ['throws_goal','throws_turnover','scoring','early_huck']:
+            pp=[x for x in p if x['team']==team['team'] and x['has_timeout']=='False']
+            if metric=='throws_goal':pp=[x for x in pp if x['outcome']=='goal']
+            elif metric=='throws_turnover':pp=[x for x in pp if x['outcome']=='turnover']
+            elif metric=='scoring':pp=[x for x in pp if x['outcome'] in ['goal','turnover']]
+            else:pp=[x for x in pp if x['first_y'] and float(x['first_y'])<=60]
+            target='throws' if metric.startswith('throws') else 'goal' if metric=='scoring' else 'early_huck'
+            for label in ['first','subsequent']:
+                subset=[x for x in pp if (int(x['own_possession'])==1)==(label=='first')]
+                assert len(subset)==team['metrics'][metric][label+'_n']
+                assert math.isclose(sum(float(x[target]) for x in subset)/len(subset),team['metrics'][metric][label],abs_tol=1e-12)
+    out={'date':'2026-11-06','passed':True,'checks':[
+      'All follow-up input hashes match preserved sources.',
+      'Every league and team break numerator independently agrees with the raw point-ending event.',
+      'Immediate breaks independently checked against opponent-goal and regain events after each turnover.',
+      'Every playoff summary mean, rate and denominator independently recalculated from possessions.',
+      'Period-ending points are excluded from resolved break rates, not counted as breaks.'],
+      'resolved_point_turnovers':len(rows),'playoff_teams':len(f['playoff_summary']),
+      'follow_up_sha256':hashlib.sha256((ROOT/'follow_up_20261106.json').read_bytes()).hexdigest()}
+    (ROOT/'follow_up_validation.json').write_text(json.dumps(out,indent=2)+'\n')
+    print(json.dumps(out,indent=2))
+
+if __name__=='__main__':
+    validate()
+    if (ROOT/'follow_up_20261106.json').exists():validate_followup()

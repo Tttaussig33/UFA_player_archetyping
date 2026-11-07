@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-06",
+  "passed": true,
+  "checks": [
+    "All follow-up input hashes match preserved sources.",
+    "Every league and team break numerator independently agrees with the raw point-ending event.",
+    "Immediate breaks independently checked against opponent-goal and regain events after each turnover.",
+    "Every playoff summary mean, rate and denominator independently recalculated from possessions.",
+    "Period-ending points are excluded from resolved break rates, not counted as breaks."
+  ],
+  "resolved_point_turnovers": 2998,
+  "playoff_teams": 12,
+  "follow_up_sha256": "292f584920bd0c8508cbfd675afb1f13325f3e556104c1d87596179d7c3591dc"
+}

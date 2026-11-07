@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-05T20:54:39.722Z",
+  "checkedAt": "2026-11-07T01:08:13.467Z",
   "vscodeVersion": "1.145.0",
   "passed": true,
   "results": [
@@ -68,17 +68,21 @@
         3,
         3,
         5,
-        22,
+        12,
+        12,
+        3,
+        3,
         3,
         3,
         4,
         7
       ],
-      "chartCount": 6,
+      "chartCount": 7,
       "selectors": [
         "observed",
-        "early_huck",
-        "hustle"
+        "playoffs",
+        "throws_goal",
+        "spiders"
       ]
     },
     {
@@ -92,17 +96,21 @@
         3,
         3,
         5,
-        22,
+        12,
+        12,
+        3,
+        3,
         3,
         3,
         4,
         7
       ],
-      "chartCount": 6,
+      "chartCount": 7,
       "selectors": [
         "observed",
-        "early_huck",
-        "hustle"
+        "playoffs",
+        "throws_goal",
+        "spiders"
       ]
     },
     {

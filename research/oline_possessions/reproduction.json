@@ -8,9 +8,10 @@
   ],
   "local_data_note": "Full exports and event archives remain local and are excluded from Git. Captured input hashes and aggregate results are committed.",
   "steps": [
-    "Use an environment with requirements.txt, then run build_cohort.py, analyze.py, validate.py, and build_report.py from this directory.",
+    "Use an environment with requirements.txt, then run build_cohort.py, analyze.py, follow_up.py, validate.py, and build_report.py from this directory.",
     "Use research/vscode-preview/export-reports.cjs with the native canvas directory to refresh the portable reports.",
     "Run research/vscode-preview/verify-browser.cjs and the VS Code extension test suite for rendered-output verification."
   ],
-  "design": "Exploratory specification and explicit amendments are in analysis_design.json. Prior-opponent activity requires exact source-event reconciliation; ambiguous contexts are missing rather than zero."
+  "design": "Exploratory specification and explicit amendments are in analysis_design.json. Prior-opponent activity requires exact source-event reconciliation; ambiguous contexts are missing rather than zero.",
+  "follow_up_note": "The November 6 request adds an independently verified playoff-team view and outcomes after receiving-team turnovers. These descriptive additions do not refit the November 5 models."
 }

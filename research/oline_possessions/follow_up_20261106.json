@@ -1,0 +1,3305 @@
+{
+  "date": "2026-11-06",
+  "scope": "Regular-season tendencies of all teams, with a view limited to the 12 teams that qualified for the 2026 playoffs. Playoff games identify membership only; they are not added to the tendency sample.",
+  "playoff_source": {
+    "url": "https://watchufa.com/league/news/2026-ufa-playoff-teams",
+    "title": "12 Playoff Teams Are Set For 2026",
+    "published": "2026-07-13",
+    "accessed": "2026-11-06",
+    "verification": "Exact team-ID set agrees with all 11 finalized 2026 playoff games in the preserved export."
+  },
+  "playoff_team_ids": [
+    "alleycats",
+    "breeze",
+    "cascades",
+    "empire",
+    "flyers",
+    "glory",
+    "growlers",
+    "radicals",
+    "shred",
+    "sol",
+    "spiders",
+    "windchill"
+  ],
+  "playoff_teams": [
+    {
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats"
+    },
+    {
+      "team": "breeze",
+      "team_name": "DC Breeze"
+    },
+    {
+      "team": "cascades",
+      "team_name": "Seattle Cascades"
+    },
+    {
+      "team": "empire",
+      "team_name": "New York Empire"
+    },
+    {
+      "team": "flyers",
+      "team_name": "Carolina Flyers"
+    },
+    {
+      "team": "glory",
+      "team_name": "Boston Glory"
+    },
+    {
+      "team": "growlers",
+      "team_name": "San Diego Growlers"
+    },
+    {
+      "team": "radicals",
+      "team_name": "Madison Radicals"
+    },
+    {
+      "team": "shred",
+      "team_name": "Salt Lake Shred"
+    },
+    {
+      "team": "sol",
+      "team_name": "Austin Sol"
+    },
+    {
+      "team": "spiders",
+      "team_name": "Oakland Spiders"
+    },
+    {
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill"
+    }
+  ],
+  "break_definition": "Among receiving-team possessions that end in a turnover, an eventual break means the opponent ultimately scores before that same point ends. Points ending with the period are listed separately and excluded from the resolved-point rate.",
+  "break_filter": "Exclude the turnover possession if it contains a timeout. Later recoveries and point outcomes are followed through even if a timeout occurs later. Excluding every point with a timeout is a separate sensitivity.",
+  "break_unit": "One receiving-team turnover. A point with multiple turnovers can contribute to multiple possession stages; uncertainty resamples whole games.",
+  "break_adjustment": "Observed associations only. No new break model or playoff-only significance search. Turnover location, opponent strength and game situation may differ.",
+  "break_league": {
+    "groups": [
+      {
+        "stage": 1,
+        "name": "First",
+        "n": 2491,
+        "sum": 1761.0,
+        "estimate": 0.706945002007226,
+        "median": 1.0,
+        "ci95": [
+          0.6858999121980494,
+          0.7277035238103766
+        ],
+        "games": 131
+      },
+      {
+        "stage": 2,
+        "name": "Second",
+        "n": 405,
+        "sum": 274.0,
+        "estimate": 0.6765432098765433,
+        "median": 1.0,
+        "ci95": [
+          0.6325447834645669,
+          0.7202234922245687
+        ],
+        "games": 121
+      },
+      {
+        "stage": 3,
+        "name": "Third or later",
+        "n": 102,
+        "sum": 84.0,
+        "estimate": 0.8235294117647058,
+        "median": 1.0,
+        "ci95": [
+          0.74,
+          0.9069767441860465
+        ],
+        "games": 56
+      }
+    ],
+    "games": 131,
+    "differences": [
+      {
+        "from": 1,
+        "to": 2,
+        "difference": -0.030401792130682725,
+        "ci95": [
+          -0.06799853883115359,
+          0.007286504774956735
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "difference": 0.11658440975747986,
+        "ci95": [
+          0.03274349788013581,
+          0.19993008195123368
+        ]
+      }
+    ],
+    "first_vs_all_subsequent": {
+      "groups": [
+        {
+          "stage": 0,
+          "name": "First",
+          "n": 2491,
+          "sum": 1761.0,
+          "estimate": 0.706945002007226,
+          "median": 1.0,
+          "ci95": [
+            0.6860648625941068,
+            0.7276697102024613
+          ],
+          "games": 131
+        },
+        {
+          "stage": 1,
+          "name": "All subsequent",
+          "n": 507,
+          "sum": 358.0,
+          "estimate": 0.7061143984220908,
+          "median": 1.0,
+          "ci95": [
+            0.6649118141097424,
+            0.7488608356737547
+          ],
+          "games": 121
+        }
+      ],
+      "games": 131,
+      "differences": [
+        {
+          "from": 0,
+          "to": 1,
+          "difference": -0.0008306035851352034,
+          "ci95": [
+            -0.036294523929855715,
+            0.036927116396411885
+          ]
+        }
+      ]
+    }
+  },
+  "break_before_regain_league": {
+    "groups": [
+      {
+        "stage": 1,
+        "name": "First",
+        "n": 2491,
+        "sum": 1475.0,
+        "estimate": 0.5921316740264954,
+        "median": 1.0,
+        "ci95": [
+          0.5693398060370425,
+          0.6147385838383344
+        ],
+        "games": 131
+      },
+      {
+        "stage": 2,
+        "name": "Second",
+        "n": 405,
+        "sum": 210.0,
+        "estimate": 0.5185185185185185,
+        "median": 1.0,
+        "ci95": [
+          0.4685133363237984,
+          0.5699751908396946
+        ],
+        "games": 121
+      },
+      {
+        "stage": 3,
+        "name": "Third or later",
+        "n": 102,
+        "sum": 63.0,
+        "estimate": 0.6176470588235294,
+        "median": 1.0,
+        "ci95": [
+          0.5277723097112861,
+          0.7272727272727273
+        ],
+        "games": 56
+      }
+    ],
+    "games": 131,
+    "differences": [
+      {
+        "from": 1,
+        "to": 2,
+        "difference": -0.07361315550797687,
+        "ci95": [
+          -0.12267353258629103,
+          -0.023532988445376754
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "difference": 0.02551538479703408,
+        "ci95": [
+          -0.06470261882045136,
+          0.132450862033889
+        ]
+      }
+    ]
+  },
+  "break_teams": [
+    {
+      "team": "alleycats",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 109,
+          "sum": 75.0,
+          "estimate": 0.6880733944954128,
+          "median": 1.0,
+          "ci95": [
+            0.6194584913611462,
+            0.7475728155339806
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 14,
+          "sum": 11.0,
+          "estimate": 0.7857142857142857,
+          "median": 1.0,
+          "ci95": [
+            0.5454545454545454,
+            1.0
+          ],
+          "games": 7
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 4,
+          "sum": 4.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 4
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": 0.09764089121887287,
+          "ci95": [
+            -0.09931211154534332,
+            0.26086956521739135
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.3119266055045872,
+          "ci95": [
+            0.2524271844660194,
+            0.3789320388349511
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 109,
+            "sum": 75.0,
+            "estimate": 0.6880733944954128,
+            "median": 1.0,
+            "ci95": [
+              0.62,
+              0.7477477477477478
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 18,
+            "sum": 15.0,
+            "estimate": 0.8333333333333334,
+            "median": 1.0,
+            "ci95": [
+              0.6153846153846154,
+              1.0
+            ],
+            "games": 7
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.14525993883792054,
+            "ci95": [
+              -0.03313146997929605,
+              0.26852824463118563
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "apex",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 150,
+          "sum": 119.0,
+          "estimate": 0.7933333333333333,
+          "median": 1.0,
+          "ci95": [
+            0.7232704402515723,
+            0.8614457831325302
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 27,
+          "sum": 23.0,
+          "estimate": 0.8518518518518519,
+          "median": 1.0,
+          "ci95": [
+            0.7272727272727273,
+            1.0
+          ],
+          "games": 11
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 8,
+          "sum": 8.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 6
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": 0.058518518518518525,
+          "ci95": [
+            -0.06785543523797379,
+            0.1939416553595658
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.20666666666666667,
+          "ci95": [
+            0.13855421686746983,
+            0.2767295597484277
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 150,
+            "sum": 119.0,
+            "estimate": 0.7933333333333333,
+            "median": 1.0,
+            "ci95": [
+              0.7246319753509072,
+              0.8639469387755101
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 35,
+            "sum": 31.0,
+            "estimate": 0.8857142857142857,
+            "median": 1.0,
+            "ci95": [
+              0.775,
+              1.0
+            ],
+            "games": 11
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.09238095238095234,
+            "ci95": [
+              -0.01587301587301582,
+              0.19951371092675438
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "bighorns",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 204,
+          "sum": 168.0,
+          "estimate": 0.8235294117647058,
+          "median": 1.0,
+          "ci95": [
+            0.7374301675977654,
+            0.889795918367347
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 46,
+          "sum": 37.0,
+          "estimate": 0.8043478260869565,
+          "median": 1.0,
+          "ci95": [
+            0.6764705882352942,
+            0.9333333333333333
+          ],
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 26,
+          "sum": 21.0,
+          "estimate": 0.8076923076923077,
+          "median": 1.0,
+          "ci95": [
+            0.6981022378236068,
+            1.0
+          ],
+          "games": 8
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.019181585677749302,
+          "ci95": [
+            -0.09931984898116941,
+            0.08330907235990839
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": -0.015837104072398134,
+          "ci95": [
+            -0.11986321279033288,
+            0.17647801544860361
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 204,
+            "sum": 168.0,
+            "estimate": 0.8235294117647058,
+            "median": 1.0,
+            "ci95": [
+              0.7362637362637363,
+              0.8909952606635071
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 72,
+            "sum": 58.0,
+            "estimate": 0.8055555555555556,
+            "median": 1.0,
+            "ci95": [
+              0.7,
+              0.9464285714285714
+            ],
+            "games": 12
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.017973856209150263,
+            "ci95": [
+              -0.09059831789630576,
+              0.09111861190879054
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "breeze",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 97,
+          "sum": 65.0,
+          "estimate": 0.6701030927835051,
+          "median": 1.0,
+          "ci95": [
+            0.5769230769230769,
+            0.7682958921694479
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 11,
+          "sum": 7.0,
+          "estimate": 0.6363636363636364,
+          "median": 1.0,
+          "ci95": [
+            0.3333333333333333,
+            0.8571428571428571
+          ],
+          "games": 7
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 3,
+          "sum": 3.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 1
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.03373945641986875,
+          "ci95": [
+            -0.3466708860759494,
+            0.20489590019255435
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.3298969072164949,
+          "ci95": [
+            0.2654460899404009,
+            0.43013565891472855
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 97,
+            "sum": 65.0,
+            "estimate": 0.6701030927835051,
+            "median": 1.0,
+            "ci95": [
+              0.574468085106383,
+              0.7701281240113885
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 14,
+            "sum": 10.0,
+            "estimate": 0.7142857142857143,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.8888888888888888
+            ],
+            "games": 7
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.044182621502209196,
+            "ci95": [
+              -0.3477483609847471,
+              0.2719145246838025
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "cascades",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 95,
+          "sum": 62.0,
+          "estimate": 0.6526315789473685,
+          "median": 1.0,
+          "ci95": [
+            0.5308641975308642,
+            0.7345132743362832
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 13,
+          "sum": 10.0,
+          "estimate": 0.7692307692307693,
+          "median": 1.0,
+          "ci95": [
+            0.5625,
+            1.0
+          ],
+          "games": 8
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 0,
+          "sum": 0.0,
+          "estimate": null,
+          "median": null,
+          "ci95": null,
+          "games": 0
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": 0.11659919028340082,
+          "ci95": [
+            -0.08666666666666667,
+            0.3936170212765957
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": null,
+          "ci95": null
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 95,
+            "sum": 62.0,
+            "estimate": 0.6526315789473685,
+            "median": 1.0,
+            "ci95": [
+              0.526867572156197,
+              0.7333333333333333
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 13,
+            "sum": 10.0,
+            "estimate": 0.7692307692307693,
+            "median": 1.0,
+            "ci95": [
+              0.5625,
+              1.0
+            ],
+            "games": 8
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.11659919028340082,
+            "ci95": [
+              -0.08853605421585445,
+              0.3917525773195877
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "empire",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 61,
+          "sum": 39.0,
+          "estimate": 0.639344262295082,
+          "median": 1.0,
+          "ci95": [
+            0.5285646900269542,
+            0.726027397260274
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 11,
+          "sum": 8.0,
+          "estimate": 0.7272727272727273,
+          "median": 1.0,
+          "ci95": [
+            0.5714285714285714,
+            1.0
+          ],
+          "games": 7
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 1,
+          "sum": 0.0,
+          "estimate": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "games": 1
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": 0.08792846497764528,
+          "ci95": [
+            -0.053033568443051154,
+            0.4
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": -0.639344262295082,
+          "ci95": [
+            -0.7096774193548387,
+            -0.5272727272727272
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 61,
+            "sum": 39.0,
+            "estimate": 0.639344262295082,
+            "median": 1.0,
+            "ci95": [
+              0.5238095238095238,
+              0.7272727272727273
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 12,
+            "sum": 8.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "games": 7
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.02732240437158462,
+            "ci95": [
+              -0.12484021244584625,
+              0.39663793103448153
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "flyers",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 66,
+          "sum": 43.0,
+          "estimate": 0.6515151515151515,
+          "median": 1.0,
+          "ci95": [
+            0.5,
+            0.782608695652174
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 13,
+          "sum": 7.0,
+          "estimate": 0.5384615384615384,
+          "median": 1.0,
+          "ci95": [
+            0.2857142857142857,
+            0.8
+          ],
+          "games": 9
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 4,
+          "sum": 3.0,
+          "estimate": 0.75,
+          "median": 1.0,
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "games": 3
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.11305361305361306,
+          "ci95": [
+            -0.3229308005427408,
+            0.11111111111111116
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.09848484848484851,
+          "ci95": [
+            -0.7538461538461538,
+            0.47058823529411764
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 66,
+            "sum": 43.0,
+            "estimate": 0.6515151515151515,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.7816144200626959
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 17,
+            "sum": 10.0,
+            "estimate": 0.5882352941176471,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.8181818181818182
+            ],
+            "games": 9
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.06327985739750441,
+            "ci95": [
+              -0.31482621784345927,
+              0.16390350877192958
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "glory",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 73,
+          "sum": 44.0,
+          "estimate": 0.6027397260273972,
+          "median": 1.0,
+          "ci95": [
+            0.5076923076923077,
+            0.6951219512195121
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 11,
+          "sum": 5.0,
+          "estimate": 0.45454545454545453,
+          "median": 0.0,
+          "ci95": [
+            0.2,
+            0.7272727272727273
+          ],
+          "games": 6
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 1,
+          "sum": 1.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 1
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.1481942714819427,
+          "ci95": [
+            -0.42064039408867,
+            0.09727011494252889
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.3972602739726028,
+          "ci95": [
+            0.32530120481927716,
+            0.49397590361445787
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 73,
+            "sum": 44.0,
+            "estimate": 0.6027397260273972,
+            "median": 1.0,
+            "ci95": [
+              0.5079365079365079,
+              0.6964285714285714
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 12,
+            "sum": 6.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.21428571428571427,
+              0.75
+            ],
+            "games": 6
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.10273972602739723,
+            "ci95": [
+              -0.408140243902439,
+              0.12727272727272732
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "growlers",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 98,
+          "sum": 61.0,
+          "estimate": 0.6224489795918368,
+          "median": 1.0,
+          "ci95": [
+            0.5052604449267499,
+            0.7272727272727273
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 14,
+          "sum": 8.0,
+          "estimate": 0.5714285714285714,
+          "median": 1.0,
+          "ci95": [
+            0.3333333333333333,
+            0.8
+          ],
+          "games": 7
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 1,
+          "sum": 1.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 1
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.05102040816326536,
+          "ci95": [
+            -0.24189063948100092,
+            0.1348784914909356
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.37755102040816324,
+          "ci95": [
+            0.26881720430107525,
+            0.47152266563347517
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 98,
+            "sum": 61.0,
+            "estimate": 0.6224489795918368,
+            "median": 1.0,
+            "ci95": [
+              0.5053735144312393,
+              0.7254901960784313
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 15,
+            "sum": 9.0,
+            "estimate": 0.6,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.8333333333333334
+            ],
+            "games": 7
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.022448979591836782,
+            "ci95": [
+              -0.23810671256454385,
+              0.1661348497194179
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "havoc",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 168,
+          "sum": 123.0,
+          "estimate": 0.7321428571428571,
+          "median": 1.0,
+          "ci95": [
+            0.6449227688787185,
+            0.8
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 26,
+          "sum": 16.0,
+          "estimate": 0.6153846153846154,
+          "median": 1.0,
+          "ci95": [
+            0.36,
+            0.8438100961538453
+          ],
+          "games": 11
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 9,
+          "sum": 5.0,
+          "estimate": 0.5555555555555556,
+          "median": 1.0,
+          "ci95": [
+            0.2,
+            0.8333333333333334
+          ],
+          "games": 7
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.11675824175824168,
+          "ci95": [
+            -0.3301626425217974,
+            0.07502548476145943
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": -0.17658730158730152,
+          "ci95": [
+            -0.48809873949579835,
+            0.06293136601374211
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 168,
+            "sum": 123.0,
+            "estimate": 0.7321428571428571,
+            "median": 1.0,
+            "ci95": [
+              0.6410256410256411,
+              0.797979797979798
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 35,
+            "sum": 21.0,
+            "estimate": 0.6,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.8285714285714286
+            ],
+            "games": 11
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.13214285714285712,
+            "ci95": [
+              -0.3485838779956427,
+              0.0638702038702039
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "hustle",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 95,
+          "sum": 63.0,
+          "estimate": 0.6631578947368421,
+          "median": 1.0,
+          "ci95": [
+            0.5466666666666666,
+            0.7685185185185185
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 10,
+          "sum": 6.0,
+          "estimate": 0.6,
+          "median": 1.0,
+          "ci95": [
+            0.3,
+            1.0
+          ],
+          "games": 7
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 2,
+          "sum": 2.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 2
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.06315789473684208,
+          "ci95": [
+            -0.35,
+            0.26632246376811564
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.33684210526315794,
+          "ci95": [
+            0.23478260869565215,
+            0.4492753623188406
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 95,
+            "sum": 63.0,
+            "estimate": 0.6631578947368421,
+            "median": 1.0,
+            "ci95": [
+              0.5454545454545454,
+              0.7652196095829636
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 12,
+            "sum": 8.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.3076923076923077,
+              1.0
+            ],
+            "games": 7
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.0035087719298245723,
+            "ci95": [
+              -0.3347082542694497,
+              0.29126485545674574
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "phoenix",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 161,
+          "sum": 135.0,
+          "estimate": 0.8385093167701864,
+          "median": 1.0,
+          "ci95": [
+            0.7744300266796023,
+            0.8950617283950617
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 20,
+          "sum": 18.0,
+          "estimate": 0.9,
+          "median": 1.0,
+          "ci95": [
+            0.7619047619047619,
+            1.0
+          ],
+          "games": 9
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 5,
+          "sum": 3.0,
+          "estimate": 0.6,
+          "median": 1.0,
+          "ci95": [
+            0.3333333333333333,
+            1.0
+          ],
+          "games": 3
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": 0.06149068322981366,
+          "ci95": [
+            -0.06321802806202248,
+            0.18181818181818177
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": -0.23850931677018639,
+          "ci95": [
+            -0.4901067056656917,
+            0.2089292461741924
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 161,
+            "sum": 135.0,
+            "estimate": 0.8385093167701864,
+            "median": 1.0,
+            "ci95": [
+              0.7746425923964841,
+              0.8961038961038961
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 25,
+            "sum": 21.0,
+            "estimate": 0.84,
+            "median": 1.0,
+            "ci95": [
+              0.7307692307692307,
+              1.0
+            ],
+            "games": 9
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.0014906832298136052,
+            "ci95": [
+              -0.09540306088517939,
+              0.14265231092436972
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "radicals",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 103,
+          "sum": 68.0,
+          "estimate": 0.6601941747572816,
+          "median": 1.0,
+          "ci95": [
+            0.553392894030159,
+            0.7457661850514031
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 22,
+          "sum": 15.0,
+          "estimate": 0.6818181818181818,
+          "median": 1.0,
+          "ci95": [
+            0.4995689655172418,
+            0.8421052631578947
+          ],
+          "games": 9
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 2,
+          "sum": 2.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 2
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": 0.021624007060900174,
+          "ci95": [
+            -0.12375069502363087,
+            0.1681818181818182
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.3398058252427184,
+          "ci95": [
+            0.2543859649122807,
+            0.44677752530468917
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 103,
+            "sum": 68.0,
+            "estimate": 0.6601941747572816,
+            "median": 1.0,
+            "ci95": [
+              0.5542168674698795,
+              0.7454585326953748
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 24,
+            "sum": 17.0,
+            "estimate": 0.7083333333333334,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.8620689655172413
+            ],
+            "games": 9
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.04813915857605178,
+            "ci95": [
+              -0.10402439618824784,
+              0.19605759257701885
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "royal",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 124,
+          "sum": 90.0,
+          "estimate": 0.7258064516129032,
+          "median": 1.0,
+          "ci95": [
+            0.638095238095238,
+            0.8048832162050433
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 23,
+          "sum": 16.0,
+          "estimate": 0.6956521739130435,
+          "median": 1.0,
+          "ci95": [
+            0.6153846153846154,
+            0.8333333333333334
+          ],
+          "games": 10
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 10,
+          "sum": 10.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 4
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.03015427769985979,
+          "ci95": [
+            -0.11427298974609842,
+            0.11923128342245991
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.27419354838709675,
+          "ci95": [
+            0.19491525423728817,
+            0.36111111111111116
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 124,
+            "sum": 90.0,
+            "estimate": 0.7258064516129032,
+            "median": 1.0,
+            "ci95": [
+              0.6403508771929824,
+              0.8045112781954887
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 33,
+            "sum": 26.0,
+            "estimate": 0.7878787878787878,
+            "median": 1.0,
+            "ci95": [
+              0.6666666666666666,
+              0.8888888888888888
+            ],
+            "games": 10
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.0620723362658846,
+            "ci95": [
+              -0.03316355281980143,
+              0.16447368421052633
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "rush",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 104,
+          "sum": 62.0,
+          "estimate": 0.5961538461538461,
+          "median": 1.0,
+          "ci95": [
+            0.49,
+            0.6952380952380952
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 24,
+          "sum": 13.0,
+          "estimate": 0.5416666666666666,
+          "median": 1.0,
+          "ci95": [
+            0.29411764705882354,
+            0.75
+          ],
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 8,
+          "sum": 7.0,
+          "estimate": 0.875,
+          "median": 1.0,
+          "ci95": [
+            0.5714285714285714,
+            1.0
+          ],
+          "games": 7
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.054487179487179516,
+          "ci95": [
+            -0.24838360564167014,
+            0.10259713465041324
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.27884615384615385,
+          "ci95": [
+            -0.060736038601487054,
+            0.4912318511796732
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 104,
+            "sum": 62.0,
+            "estimate": 0.5961538461538461,
+            "median": 1.0,
+            "ci95": [
+              0.49,
+              0.696969696969697
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 32,
+            "sum": 20.0,
+            "estimate": 0.625,
+            "median": 1.0,
+            "ci95": [
+              0.3793103448275862,
+              0.813953488372093
+            ],
+            "games": 12
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.028846153846153855,
+            "ci95": [
+              -0.18326407723104735,
+              0.17926108601335264
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "shred",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 105,
+          "sum": 70.0,
+          "estimate": 0.6666666666666666,
+          "median": 1.0,
+          "ci95": [
+            0.5490136298421808,
+            0.7666666666666667
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 14,
+          "sum": 8.0,
+          "estimate": 0.5714285714285714,
+          "median": 1.0,
+          "ci95": [
+            0.3076923076923077,
+            0.8571428571428571
+          ],
+          "games": 8
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 6,
+          "sum": 3.0,
+          "estimate": 0.5,
+          "median": 0.5,
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "games": 4
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.09523809523809523,
+          "ci95": [
+            -0.3285000262715427,
+            0.17056536796536795
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": -0.16666666666666663,
+          "ci95": [
+            -0.696078431372549,
+            0.33720930232558144
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 105,
+            "sum": 70.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.55,
+              0.7666666666666667
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 20,
+            "sum": 11.0,
+            "estimate": 0.55,
+            "median": 1.0,
+            "ci95": [
+              0.2777777777777778,
+              0.8666666666666667
+            ],
+            "games": 8
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.11666666666666659,
+            "ci95": [
+              -0.3555587701384162,
+              0.18261229607925905
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "sol",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 81,
+          "sum": 49.0,
+          "estimate": 0.6049382716049383,
+          "median": 1.0,
+          "ci95": [
+            0.4810126582278481,
+            0.7307692307692307
+          ],
+          "games": 11
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 11,
+          "sum": 4.0,
+          "estimate": 0.36363636363636365,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.6153846153846154
+          ],
+          "games": 7
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 0,
+          "sum": 0.0,
+          "estimate": null,
+          "median": null,
+          "ci95": null,
+          "games": 0
+        }
+      ],
+      "games": 11,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.24130190796857465,
+          "ci95": [
+            -0.5540540540540541,
+            -0.0246079027355624
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": null,
+          "ci95": null
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 81,
+            "sum": 49.0,
+            "estimate": 0.6049382716049383,
+            "median": 1.0,
+            "ci95": [
+              0.47944492009132417,
+              0.7307692307692307
+            ],
+            "games": 11
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 11,
+            "sum": 4.0,
+            "estimate": 0.36363636363636365,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.6153846153846154
+            ],
+            "games": 7
+          }
+        ],
+        "games": 11,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.24130190796857465,
+            "ci95": [
+              -0.5652238612836439,
+              -0.020547531599497033
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "spiders",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 67,
+          "sum": 29.0,
+          "estimate": 0.43283582089552236,
+          "median": 0.0,
+          "ci95": [
+            0.2982362821948488,
+            0.5901639344262295
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 13,
+          "sum": 2.0,
+          "estimate": 0.15384615384615385,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.36363636363636365
+          ],
+          "games": 8
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 1,
+          "sum": 0.0,
+          "estimate": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "games": 1
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.2789896670493685,
+          "ci95": [
+            -0.43283582089552236,
+            -0.15606884057971024
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": -0.43283582089552236,
+          "ci95": [
+            -0.5636363636363636,
+            -0.2878787878787879
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 67,
+            "sum": 29.0,
+            "estimate": 0.43283582089552236,
+            "median": 0.0,
+            "ci95": [
+              0.29850746268656714,
+              0.5918556311413451
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 14,
+            "sum": 2.0,
+            "estimate": 0.14285714285714285,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.3333333333333333
+            ],
+            "games": 8
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.2899786780383795,
+            "ci95": [
+              -0.4295138888888889,
+              -0.16969696969696973
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "steel",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 164,
+          "sum": 117.0,
+          "estimate": 0.7134146341463414,
+          "median": 1.0,
+          "ci95": [
+            0.6165366245803187,
+            0.7888902847571189
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 33,
+          "sum": 25.0,
+          "estimate": 0.7575757575757576,
+          "median": 1.0,
+          "ci95": [
+            0.6060606060606061,
+            0.9166666666666666
+          ],
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 7,
+          "sum": 7.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 5
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": 0.04416112342941614,
+          "ci95": [
+            -0.057353803759931384,
+            0.17621013177621703
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.28658536585365857,
+          "ci95": [
+            0.21108738135120048,
+            0.38353903626992
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 164,
+            "sum": 117.0,
+            "estimate": 0.7134146341463414,
+            "median": 1.0,
+            "ci95": [
+              0.6187050359712231,
+              0.7865853658536586
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 40,
+            "sum": 32.0,
+            "estimate": 0.8,
+            "median": 1.0,
+            "ci95": [
+              0.6862745098039216,
+              0.9285714285714286
+            ],
+            "games": 12
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": 0.08658536585365861,
+            "ci95": [
+              0.008121948561087585,
+              0.1925362354368226
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "thunderbirds",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 161,
+          "sum": 134.0,
+          "estimate": 0.8322981366459627,
+          "median": 1.0,
+          "ci95": [
+            0.7602739726027398,
+            0.8932584269662921
+          ],
+          "games": 11
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 21,
+          "sum": 17.0,
+          "estimate": 0.8095238095238095,
+          "median": 1.0,
+          "ci95": [
+            0.6153846153846154,
+            1.0
+          ],
+          "games": 8
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 2,
+          "sum": 2.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 1
+        }
+      ],
+      "games": 11,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.022774327122153215,
+          "ci95": [
+            -0.177356412966878,
+            0.14138702460850117
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.16770186335403725,
+          "ci95": [
+            0.10160427807486627,
+            0.2222222222222222
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 161,
+            "sum": 134.0,
+            "estimate": 0.8322981366459627,
+            "median": 1.0,
+            "ci95": [
+              0.7588591342626559,
+              0.8941798941798942
+            ],
+            "games": 11
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 23,
+            "sum": 19.0,
+            "estimate": 0.8260869565217391,
+            "median": 1.0,
+            "ci95": [
+              0.6190476190476191,
+              1.0
+            ],
+            "games": 8
+          }
+        ],
+        "games": 11,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.006211180124223614,
+            "ci95": [
+              -0.17228956228956233,
+              0.14619977362761746
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "union",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 128,
+          "sum": 102.0,
+          "estimate": 0.796875,
+          "median": 1.0,
+          "ci95": [
+            0.688395652173913,
+            0.8768115942028986
+          ],
+          "games": 11
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 19,
+          "sum": 13.0,
+          "estimate": 0.6842105263157895,
+          "median": 1.0,
+          "ci95": [
+            0.5263157894736842,
+            0.9
+          ],
+          "games": 9
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 2,
+          "sum": 2.0,
+          "estimate": 1.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "games": 2
+        }
+      ],
+      "games": 11,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.11266447368421051,
+          "ci95": [
+            -0.23259394863971522,
+            0.07179487179487176
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.203125,
+          "ci95": [
+            0.12213740458015265,
+            0.3014403706688154
+          ]
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 128,
+            "sum": 102.0,
+            "estimate": 0.796875,
+            "median": 1.0,
+            "ci95": [
+              0.6904709228824273,
+              0.8760330578512396
+            ],
+            "games": 11
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 21,
+            "sum": 15.0,
+            "estimate": 0.7142857142857143,
+            "median": 1.0,
+            "ci95": [
+              0.56,
+              0.9090909090909091
+            ],
+            "games": 9
+          }
+        ],
+        "games": 11,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.0825892857142857,
+            "ci95": [
+              -0.1776867724751738,
+              0.07837335743547268
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "team": "windchill",
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 77,
+          "sum": 43.0,
+          "estimate": 0.5584415584415584,
+          "median": 1.0,
+          "ci95": [
+            0.463768115942029,
+            0.6455696202531646
+          ],
+          "games": 12
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 9,
+          "sum": 5.0,
+          "estimate": 0.5555555555555556,
+          "median": 1.0,
+          "ci95": [
+            0.16666666666666666,
+            0.8888888888888888
+          ],
+          "games": 8
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 0,
+          "sum": 0.0,
+          "estimate": null,
+          "median": null,
+          "ci95": null,
+          "games": 0
+        }
+      ],
+      "games": 12,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.0028860028860028253,
+          "ci95": [
+            -0.39499857305936076,
+            0.34091810966810954
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": null,
+          "ci95": null
+        }
+      ],
+      "first_vs_all_subsequent": {
+        "groups": [
+          {
+            "stage": 0,
+            "name": "First",
+            "n": 77,
+            "sum": 43.0,
+            "estimate": 0.5584415584415584,
+            "median": 1.0,
+            "ci95": [
+              0.4625,
+              0.6451612903225806
+            ],
+            "games": 12
+          },
+          {
+            "stage": 1,
+            "name": "All subsequent",
+            "n": 9,
+            "sum": 5.0,
+            "estimate": 0.5555555555555556,
+            "median": 1.0,
+            "ci95": [
+              0.16666666666666666,
+              0.8888888888888888
+            ],
+            "games": 8
+          }
+        ],
+        "games": 12,
+        "differences": [
+          {
+            "from": 0,
+            "to": 1,
+            "difference": -0.0028860028860028253,
+            "ci95": [
+              -0.4048507295173962,
+              0.34075448953860826
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "break_outcome_counts": [
+    {
+      "stage": 1,
+      "turnovers": 2774,
+      "resolved_points": 2491,
+      "period_ending_points": 283,
+      "break_before_regain": 1475,
+      "regain_then_break": 286,
+      "eventual_hold": 730,
+      "regain_again": 1016
+    },
+    {
+      "stage": 2,
+      "turnovers": 451,
+      "resolved_points": 405,
+      "period_ending_points": 46,
+      "break_before_regain": 210,
+      "regain_then_break": 64,
+      "eventual_hold": 131,
+      "regain_again": 195
+    },
+    {
+      "stage": 3,
+      "turnovers": 106,
+      "resolved_points": 102,
+      "period_ending_points": 4,
+      "break_before_regain": 63,
+      "regain_then_break": 21,
+      "eventual_hold": 18,
+      "regain_again": 39
+    }
+  ],
+  "playoff_summary": [
+    {
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "metrics": {
+        "throws_goal": {
+          "first": 8.785714285714286,
+          "first_n": 126,
+          "subsequent": 6.151515151515151,
+          "subsequent_n": 33
+        },
+        "throws_turnover": {
+          "first": 6.217054263565892,
+          "first_n": 129,
+          "subsequent": 4.05,
+          "subsequent_n": 20
+        },
+        "scoring": {
+          "first": 0.49411764705882355,
+          "first_n": 255,
+          "subsequent": 0.6226415094339622,
+          "subsequent_n": 53
+        },
+        "early_huck": {
+          "first": 0.16796875,
+          "first_n": 256,
+          "subsequent": 0.14285714285714285,
+          "subsequent_n": 35
+        },
+        "break_after_turnover": {
+          "first": 0.6880733944954128,
+          "first_n": 109,
+          "subsequent": 0.8333333333333334,
+          "subsequent_n": 18
+        }
+      }
+    },
+    {
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "metrics": {
+        "throws_goal": {
+          "first": 9.377777777777778,
+          "first_n": 135,
+          "subsequent": 6.064516129032258,
+          "subsequent_n": 31
+        },
+        "throws_turnover": {
+          "first": 6.055555555555555,
+          "first_n": 108,
+          "subsequent": 3.4,
+          "subsequent_n": 15
+        },
+        "scoring": {
+          "first": 0.5555555555555556,
+          "first_n": 243,
+          "subsequent": 0.6739130434782609,
+          "subsequent_n": 46
+        },
+        "early_huck": {
+          "first": 0.0931174089068826,
+          "first_n": 247,
+          "subsequent": 0.30303030303030304,
+          "subsequent_n": 33
+        },
+        "break_after_turnover": {
+          "first": 0.6701030927835051,
+          "first_n": 97,
+          "subsequent": 0.7142857142857143,
+          "subsequent_n": 14
+        }
+      }
+    },
+    {
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "metrics": {
+        "throws_goal": {
+          "first": 9.8828125,
+          "first_n": 128,
+          "subsequent": 5.696969696969697,
+          "subsequent_n": 33
+        },
+        "throws_turnover": {
+          "first": 7.125,
+          "first_n": 104,
+          "subsequent": 6.6,
+          "subsequent_n": 15
+        },
+        "scoring": {
+          "first": 0.5517241379310345,
+          "first_n": 232,
+          "subsequent": 0.6875,
+          "subsequent_n": 48
+        },
+        "early_huck": {
+          "first": 0.14937759336099585,
+          "first_n": 241,
+          "subsequent": 0.06896551724137931,
+          "subsequent_n": 29
+        },
+        "break_after_turnover": {
+          "first": 0.6526315789473685,
+          "first_n": 95,
+          "subsequent": 0.7692307692307693,
+          "subsequent_n": 13
+        }
+      }
+    },
+    {
+      "team": "empire",
+      "team_name": "New York Empire",
+      "metrics": {
+        "throws_goal": {
+          "first": 9.864516129032259,
+          "first_n": 155,
+          "subsequent": 5.190476190476191,
+          "subsequent_n": 21
+        },
+        "throws_turnover": {
+          "first": 6.119402985074627,
+          "first_n": 67,
+          "subsequent": 5.833333333333333,
+          "subsequent_n": 12
+        },
+        "scoring": {
+          "first": 0.6981981981981982,
+          "first_n": 222,
+          "subsequent": 0.6363636363636364,
+          "subsequent_n": 33
+        },
+        "early_huck": {
+          "first": 0.07964601769911504,
+          "first_n": 226,
+          "subsequent": 0.2727272727272727,
+          "subsequent_n": 22
+        },
+        "break_after_turnover": {
+          "first": 0.639344262295082,
+          "first_n": 61,
+          "subsequent": 0.6666666666666666,
+          "subsequent_n": 12
+        }
+      }
+    },
+    {
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "metrics": {
+        "throws_goal": {
+          "first": 10.26241134751773,
+          "first_n": 141,
+          "subsequent": 5.826086956521739,
+          "subsequent_n": 23
+        },
+        "throws_turnover": {
+          "first": 5.701298701298701,
+          "first_n": 77,
+          "subsequent": 4.15,
+          "subsequent_n": 20
+        },
+        "scoring": {
+          "first": 0.6467889908256881,
+          "first_n": 218,
+          "subsequent": 0.5348837209302325,
+          "subsequent_n": 43
+        },
+        "early_huck": {
+          "first": 0.1278538812785388,
+          "first_n": 219,
+          "subsequent": 0.36,
+          "subsequent_n": 25
+        },
+        "break_after_turnover": {
+          "first": 0.6515151515151515,
+          "first_n": 66,
+          "subsequent": 0.5882352941176471,
+          "subsequent_n": 17
+        }
+      }
+    },
+    {
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "metrics": {
+        "throws_goal": {
+          "first": 10.950413223140496,
+          "first_n": 121,
+          "subsequent": 6.777777777777778,
+          "subsequent_n": 27
+        },
+        "throws_turnover": {
+          "first": 7.3,
+          "first_n": 80,
+          "subsequent": 5.833333333333333,
+          "subsequent_n": 12
+        },
+        "scoring": {
+          "first": 0.6019900497512438,
+          "first_n": 201,
+          "subsequent": 0.6923076923076923,
+          "subsequent_n": 39
+        },
+        "early_huck": {
+          "first": 0.12,
+          "first_n": 200,
+          "subsequent": 0.16,
+          "subsequent_n": 25
+        },
+        "break_after_turnover": {
+          "first": 0.6027397260273972,
+          "first_n": 73,
+          "subsequent": 0.5,
+          "subsequent_n": 12
+        }
+      }
+    },
+    {
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "metrics": {
+        "throws_goal": {
+          "first": 8.875968992248062,
+          "first_n": 129,
+          "subsequent": 4.394736842105263,
+          "subsequent_n": 38
+        },
+        "throws_turnover": {
+          "first": 6.672566371681416,
+          "first_n": 113,
+          "subsequent": 4.411764705882353,
+          "subsequent_n": 17
+        },
+        "scoring": {
+          "first": 0.5330578512396694,
+          "first_n": 242,
+          "subsequent": 0.6909090909090909,
+          "subsequent_n": 55
+        },
+        "early_huck": {
+          "first": 0.1799163179916318,
+          "first_n": 239,
+          "subsequent": 0.24324324324324326,
+          "subsequent_n": 37
+        },
+        "break_after_turnover": {
+          "first": 0.6224489795918368,
+          "first_n": 98,
+          "subsequent": 0.6,
+          "subsequent_n": 15
+        }
+      }
+    },
+    {
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "metrics": {
+        "throws_goal": {
+          "first": 11.176,
+          "first_n": 125,
+          "subsequent": 5.085714285714285,
+          "subsequent_n": 35
+        },
+        "throws_turnover": {
+          "first": 7.036036036036036,
+          "first_n": 111,
+          "subsequent": 4.222222222222222,
+          "subsequent_n": 27
+        },
+        "scoring": {
+          "first": 0.5296610169491526,
+          "first_n": 236,
+          "subsequent": 0.5645161290322581,
+          "subsequent_n": 62
+        },
+        "early_huck": {
+          "first": 0.058091286307053944,
+          "first_n": 241,
+          "subsequent": 0.19047619047619047,
+          "subsequent_n": 42
+        },
+        "break_after_turnover": {
+          "first": 0.6601941747572816,
+          "first_n": 103,
+          "subsequent": 0.7083333333333334,
+          "subsequent_n": 24
+        }
+      }
+    },
+    {
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "metrics": {
+        "throws_goal": {
+          "first": 8.850746268656716,
+          "first_n": 134,
+          "subsequent": 5.416666666666667,
+          "subsequent_n": 36
+        },
+        "throws_turnover": {
+          "first": 6.290909090909091,
+          "first_n": 110,
+          "subsequent": 4.428571428571429,
+          "subsequent_n": 21
+        },
+        "scoring": {
+          "first": 0.5491803278688525,
+          "first_n": 244,
+          "subsequent": 0.631578947368421,
+          "subsequent_n": 57
+        },
+        "early_huck": {
+          "first": 0.10699588477366255,
+          "first_n": 243,
+          "subsequent": 0.1891891891891892,
+          "subsequent_n": 37
+        },
+        "break_after_turnover": {
+          "first": 0.6666666666666666,
+          "first_n": 105,
+          "subsequent": 0.55,
+          "subsequent_n": 20
+        }
+      }
+    },
+    {
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "metrics": {
+        "throws_goal": {
+          "first": 10.203125,
+          "first_n": 128,
+          "subsequent": 6.875,
+          "subsequent_n": 32
+        },
+        "throws_turnover": {
+          "first": 6.769230769230769,
+          "first_n": 91,
+          "subsequent": 3.9285714285714284,
+          "subsequent_n": 14
+        },
+        "scoring": {
+          "first": 0.5844748858447488,
+          "first_n": 219,
+          "subsequent": 0.6956521739130435,
+          "subsequent_n": 46
+        },
+        "early_huck": {
+          "first": 0.07555555555555556,
+          "first_n": 225,
+          "subsequent": 0.0967741935483871,
+          "subsequent_n": 31
+        },
+        "break_after_turnover": {
+          "first": 0.6049382716049383,
+          "first_n": 81,
+          "subsequent": 0.36363636363636365,
+          "subsequent_n": 11
+        }
+      }
+    },
+    {
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "metrics": {
+        "throws_goal": {
+          "first": 9.2015503875969,
+          "first_n": 129,
+          "subsequent": 6.722222222222222,
+          "subsequent_n": 36
+        },
+        "throws_turnover": {
+          "first": 6.025316455696203,
+          "first_n": 79,
+          "subsequent": 4.866666666666666,
+          "subsequent_n": 15
+        },
+        "scoring": {
+          "first": 0.6201923076923077,
+          "first_n": 208,
+          "subsequent": 0.7058823529411765,
+          "subsequent_n": 51
+        },
+        "early_huck": {
+          "first": 0.11538461538461539,
+          "first_n": 208,
+          "subsequent": 0.13513513513513514,
+          "subsequent_n": 37
+        },
+        "break_after_turnover": {
+          "first": 0.43283582089552236,
+          "first_n": 67,
+          "subsequent": 0.14285714285714285,
+          "subsequent_n": 14
+        }
+      }
+    },
+    {
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "metrics": {
+        "throws_goal": {
+          "first": 9.923076923076923,
+          "first_n": 117,
+          "subsequent": 7.212121212121212,
+          "subsequent_n": 33
+        },
+        "throws_turnover": {
+          "first": 8.67816091954023,
+          "first_n": 87,
+          "subsequent": 4.2,
+          "subsequent_n": 10
+        },
+        "scoring": {
+          "first": 0.5735294117647058,
+          "first_n": 204,
+          "subsequent": 0.7674418604651163,
+          "subsequent_n": 43
+        },
+        "early_huck": {
+          "first": 0.0821256038647343,
+          "first_n": 207,
+          "subsequent": 0.25,
+          "subsequent_n": 32
+        },
+        "break_after_turnover": {
+          "first": 0.5584415584415584,
+          "first_n": 77,
+          "subsequent": 0.5555555555555556,
+          "subsequent_n": 9
+        }
+      }
+    }
+  ],
+  "break_sensitivities": {
+    "exclude_whole_timeout_points": {
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 2045,
+          "sum": 1448.0,
+          "estimate": 0.7080684596577017,
+          "median": 1.0,
+          "ci95": [
+            0.6847875232172489,
+            0.7305674773485932
+          ],
+          "games": 131
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 269,
+          "sum": 184.0,
+          "estimate": 0.6840148698884758,
+          "median": 1.0,
+          "ci95": [
+            0.6303610026495607,
+            0.7387774600285973
+          ],
+          "games": 107
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 58,
+          "sum": 50.0,
+          "estimate": 0.8620689655172413,
+          "median": 1.0,
+          "ci95": [
+            0.7692307692307693,
+            0.9545454545454546
+          ],
+          "games": 36
+        }
+      ],
+      "games": 131,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.02405358976922589,
+          "ci95": [
+            -0.06958656456753949,
+            0.024546052904260623
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.15400050585953962,
+          "ci95": [
+            0.06526531360098312,
+            0.24495784624560507
+          ]
+        }
+      ]
+    },
+    "include_period_ending_points_as_no_break": {
+      "groups": [
+        {
+          "stage": 1,
+          "name": "First",
+          "n": 2774,
+          "sum": 1761.0,
+          "estimate": 0.6348233597692863,
+          "median": 1.0,
+          "ci95": [
+            0.6149668387064602,
+            0.6551724137931034
+          ],
+          "games": 131
+        },
+        {
+          "stage": 2,
+          "name": "Second",
+          "n": 451,
+          "sum": 274.0,
+          "estimate": 0.6075388026607539,
+          "median": 1.0,
+          "ci95": [
+            0.5668789808917197,
+            0.6482777567260325
+          ],
+          "games": 123
+        },
+        {
+          "stage": 3,
+          "name": "Third or later",
+          "n": 106,
+          "sum": 84.0,
+          "estimate": 0.7924528301886793,
+          "median": 1.0,
+          "ci95": [
+            0.7042217591261857,
+            0.8773633038120908
+          ],
+          "games": 58
+        }
+      ],
+      "games": 131,
+      "differences": [
+        {
+          "from": 1,
+          "to": 2,
+          "difference": -0.027284557108532392,
+          "ci95": [
+            -0.06190939480354964,
+            0.007735779021531405
+          ]
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "difference": 0.15762947041939301,
+          "ci95": [
+            0.07054384566027022,
+            0.24011598833636175
+          ]
+        }
+      ]
+    }
+  },
+  "scoring_denominators": {
+    "groups": [
+      {
+        "stage": 1,
+        "name": "First",
+        "n": 5535,
+        "sum": 2761.0,
+        "estimate": 0.4988256549232159,
+        "median": 0.0,
+        "ci95": [
+          0.4800726195523895,
+          0.5172355870579268
+        ],
+        "games": 131
+      },
+      {
+        "stage": 2,
+        "name": "Second",
+        "n": 1032,
+        "sum": 581.0,
+        "estimate": 0.562984496124031,
+        "median": 1.0,
+        "ci95": [
+          0.5298799116330885,
+          0.5967907715161452
+        ],
+        "games": 131
+      },
+      {
+        "stage": 3,
+        "name": "Third or later",
+        "n": 232,
+        "sum": 126.0,
+        "estimate": 0.5431034482758621,
+        "median": 1.0,
+        "ci95": [
+          0.4806445361340335,
+          0.6137615356220006
+        ],
+        "games": 97
+      }
+    ],
+    "games": 131,
+    "differences": [
+      {
+        "from": 1,
+        "to": 2,
+        "difference": 0.06415884120081511,
+        "ci95": [
+          0.02931962806745542,
+          0.0987979278447656
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "difference": 0.0442777933526462,
+        "ci95": [
+          -0.019484087972180483,
+          0.11524294316521876
+        ]
+      }
+    ],
+    "first_vs_all_subsequent": {
+      "groups": [
+        {
+          "stage": 0,
+          "name": "First",
+          "n": 5535,
+          "sum": 2761.0,
+          "estimate": 0.4988256549232159,
+          "median": 0.0,
+          "ci95": [
+            0.47991144018254717,
+            0.5174094348750564
+          ],
+          "games": 131
+        },
+        {
+          "stage": 1,
+          "name": "All subsequent",
+          "n": 1264,
+          "sum": 707.0,
+          "estimate": 0.5593354430379747,
+          "median": 1.0,
+          "ci95": [
+            0.5263987391646966,
+            0.5928632454820676
+          ],
+          "games": 131
+        }
+      ],
+      "games": 131,
+      "differences": [
+        {
+          "from": 0,
+          "to": 1,
+          "difference": 0.06050978811475877,
+          "ci95": [
+            0.027367787262297355,
+            0.09414870386010736
+          ]
+        }
+      ]
+    }
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Nov 5 input hashes unchanged.",
+      "Playoff membership matches official UFA list and exported playoff games.",
+      "For each resolved-point turnover, immediate break + regain then break + eventual hold = 1.",
+      "Every eventual hold after a turnover includes a subsequent recorded regain.",
+      "Timeout filtering does not remove later recovery events from the point-outcome classification."
+    ],
+    "method": "Descriptive follow-up with 10,000 whole-game bootstrap samples; seed 20261106."
+  },
+  "inputs": {
+    "results.json": "3b19faee878a9f8c01dec57a2fc2c90cf074c35326cd43fc5f4189dac0a157fb",
+    "possessions.csv": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7",
+    "games.csv": "1fba1f00bff914bd89e358d9cce145767c63c7027945c73957190c527adafef6"
+  }
+}

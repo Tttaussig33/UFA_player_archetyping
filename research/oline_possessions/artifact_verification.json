@@ -1,22 +1,23 @@
 {
-  "checked_at": "2026-11-05",
+  "checked_at": "2026-11-06",
   "passed": true,
   "report": "research/previews/UFA-oline-regain-hucking.canvas.tsx",
   "visual_checks": [
-    "League early-huck chart and throw-number follow-up",
-    "Goal and turnover throw counts",
-    "Observed and adjusted scoring controls",
-    "All-team table and selected-team chart",
-    "Huck outcomes and caveat about conditional scoring",
-    "Narrow dark-theme layout and contained horizontal chart/table scrolling"
+    "Direct horizontal and vertical axis labels on all seven plots",
+    "Clear first-versus-second scoring denominators and same-point example",
+    "Playoff-team default, all-team option, eight measures, and 12-team side-by-side summary",
+    "Raw versus adjusted early-huck explanation and explicit unresolved centering distinction",
+    "Break outcomes after turnovers, with counts and period-end exclusions",
+    "Wide light and narrow dark layouts with contained chart/table scrolling"
   ],
-  "interaction_checks": "Browser verification covers all 7 measures across 22 teams plus both scoring views; all four reports render as TSX and HTML in real VS Code.",
+  "interaction_checks": "Browser checks passed for all eight measures in both the 12-team and 22-team views, both scoring views, and resetting an excluded team when changing the filter; all four TSX and four HTML files render in real VS Code.",
   "outline": {
     "path": "research/UFA_hucking_research_outline.docx",
     "pages": 1,
     "font": "Times New Roman, 12 pt",
     "spacing": "Single; headings 18 pt before and 8 pt after",
     "sections": 3,
-    "rendered_page_review": "Passed"
+    "rendered_page_review": "Passed",
+    "reviewed_on": "2026-11-05 (unchanged in this revision)"
   }
 }
