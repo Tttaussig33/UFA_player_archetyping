@@ -1,0 +1,7294 @@
+{
+  "date": "2026-11-09",
+  "definition": "Exact own-team possession number within the receiving point. Third excludes fourth and later. Timeout exclusions never renumber possessions.",
+  "scope": "Same preserved 2026 regular-season cohort, timeout exclusion, metric denominators and huck eligibility as the original analysis.",
+  "uncertainty": "First and second retain the reviewed original intervals. Exact-third intervals resample whole games 10000 times, seed 20261109; intervals are omitted when fewer than two games contribute. No models or significance tests are refitted.",
+  "possession_counts": {
+    "1": 5676,
+    "2": 1104,
+    "3": 204
+  },
+  "fourth_or_later_not_in_third": 43,
+  "teams": [
+    {
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 126,
+            "sum": 1107.0,
+            "estimate": 8.785714285714286,
+            "median": 8.0,
+            "ci95": [
+              7.864864864864865,
+              9.731035931614024
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 29,
+            "sum": 189.0,
+            "estimate": 6.517241379310345,
+            "median": 7.0,
+            "ci95": [
+              5.25,
+              8.08
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 14.0,
+            "estimate": 3.5,
+            "median": 3.0,
+            "ci95": [
+              1.0,
+              6.6
+            ],
+            "games": 4
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 129,
+            "sum": 802.0,
+            "estimate": 6.217054263565892,
+            "median": 5.0,
+            "ci95": [
+              5.258326612903226,
+              7.3571592398427255
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 16,
+            "sum": 67.0,
+            "estimate": 4.1875,
+            "median": 4.0,
+            "ci95": [
+              3.0,
+              5.625
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 14.0,
+            "estimate": 3.5,
+            "median": 2.5,
+            "ci95": [
+              1.0,
+              7.0
+            ],
+            "games": 4
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 255,
+            "sum": 126.0,
+            "estimate": 0.49411764705882355,
+            "median": 0.0,
+            "ci95": [
+              0.3959993288590604,
+              0.6017316017316018
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 45,
+            "sum": 29.0,
+            "estimate": 0.6444444444444445,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.8095238095238095
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 8,
+            "sum": 4.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.16666666666666666,
+              0.8333333333333334
+            ],
+            "games": 7
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 256,
+            "sum": 43.0,
+            "estimate": 0.16796875,
+            "median": 0.0,
+            "ci95": [
+              0.11646586345381527,
+              0.22184076682316106
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 29,
+            "sum": 5.0,
+            "estimate": 0.1724137931034483,
+            "median": 0.0,
+            "ci95": [
+              0.06666666666666667,
+              0.2916666666666667
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 6
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1921,
+            "sum": 143.0,
+            "estimate": 0.07444039562727746,
+            "median": 0.0,
+            "ci95": [
+              0.06246973633292364,
+              0.08639597678916829
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 185,
+            "sum": 14.0,
+            "estimate": 0.07567567567567568,
+            "median": 0.0,
+            "ci95": [
+              0.04608294930875576,
+              0.11229946524064172
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 26,
+            "sum": 3.0,
+            "estimate": 0.11538461538461539,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.2
+            ],
+            "games": 6
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 256,
+            "sum": 141.0,
+            "estimate": 0.55078125,
+            "median": 1.0,
+            "ci95": [
+              0.488,
+              0.6166666666666667
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 29,
+            "sum": 14.0,
+            "estimate": 0.4827586206896552,
+            "median": 0.0,
+            "ci95": [
+              0.3333333333333333,
+              0.64
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 3.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 6
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 143,
+            "sum": 88.0,
+            "estimate": 0.6153846153846154,
+            "median": 1.0,
+            "ci95": [
+              0.496551724137931,
+              0.7266187050359713
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 14,
+            "sum": 7.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.2222222222222222,
+              0.8
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 2.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 3
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 109,
+            "sum": 75.0,
+            "estimate": 0.6880733944954128,
+            "median": 1.0,
+            "ci95": [
+              0.6194584913611462,
+              0.7475728155339806
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 14,
+            "sum": 11.0,
+            "estimate": 0.7857142857142857,
+            "median": 1.0,
+            "ci95": [
+              0.5454545454545454,
+              1.0
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 4.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 4
+          }
+        ]
+      }
+    },
+    {
+      "team": "apex",
+      "team_name": "Colorado Apex",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 135,
+            "sum": 1208.0,
+            "estimate": 8.948148148148148,
+            "median": 8.0,
+            "ci95": [
+              8.293223684210526,
+              9.724144718979092
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 148.0,
+            "estimate": 5.92,
+            "median": 6.0,
+            "ci95": [
+              3.9130434782608696,
+              7.6923076923076925
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 19.0,
+            "estimate": 4.75,
+            "median": 2.0,
+            "ci95": [
+              1.0,
+              7.5
+            ],
+            "games": 3
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 167,
+            "sum": 1029.0,
+            "estimate": 6.161676646706587,
+            "median": 5.0,
+            "ci95": [
+              5.518061658398299,
+              6.819455227743271
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 32,
+            "sum": 129.0,
+            "estimate": 4.03125,
+            "median": 3.0,
+            "ci95": [
+              3.176470588235294,
+              4.904761904761905
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 9,
+            "sum": 37.0,
+            "estimate": 4.111111111111111,
+            "median": 3.0,
+            "ci95": [
+              2.7777777777777777,
+              5.666666666666667
+            ],
+            "games": 7
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 302,
+            "sum": 135.0,
+            "estimate": 0.4470198675496689,
+            "median": 0.0,
+            "ci95": [
+              0.3785469790571328,
+              0.5202702702702703
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 57,
+            "sum": 25.0,
+            "estimate": 0.43859649122807015,
+            "median": 0.0,
+            "ci95": [
+              0.3170731707317073,
+              0.5344827586206896
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 13,
+            "sum": 4.0,
+            "estimate": 0.3076923076923077,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.5714285714285714
+            ],
+            "games": 8
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 304,
+            "sum": 35.0,
+            "estimate": 0.11513157894736842,
+            "median": 0.0,
+            "ci95": [
+              0.08999913494809689,
+              0.14193548387096774
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 43,
+            "sum": 9.0,
+            "estimate": 0.20930232558139536,
+            "median": 0.0,
+            "ci95": [
+              0.10256410256410256,
+              0.3333333333333333
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 9,
+            "sum": 4.0,
+            "estimate": 0.4444444444444444,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.7142857142857143
+            ],
+            "games": 7
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2240,
+            "sum": 121.0,
+            "estimate": 0.054017857142857145,
+            "median": 0.0,
+            "ci95": [
+              0.04462386069754771,
+              0.06480162784632722
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 205,
+            "sum": 19.0,
+            "estimate": 0.09268292682926829,
+            "median": 0.0,
+            "ci95": [
+              0.05857693467526104,
+              0.1322314049586777
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 52,
+            "sum": 5.0,
+            "estimate": 0.09615384615384616,
+            "median": 0.0,
+            "ci95": [
+              0.022727272727272728,
+              0.21212121212121213
+            ],
+            "games": 7
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 304,
+            "sum": 121.0,
+            "estimate": 0.3980263157894737,
+            "median": 0.0,
+            "ci95": [
+              0.33974358974358976,
+              0.45763124587277126
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 43,
+            "sum": 19.0,
+            "estimate": 0.4418604651162791,
+            "median": 0.0,
+            "ci95": [
+              0.2857142857142857,
+              0.6
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 9,
+            "sum": 5.0,
+            "estimate": 0.5555555555555556,
+            "median": 1.0,
+            "ci95": [
+              0.2,
+              0.8333333333333334
+            ],
+            "games": 7
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 121,
+            "sum": 67.0,
+            "estimate": 0.5537190082644629,
+            "median": 1.0,
+            "ci95": [
+              0.4862202499667598,
+              0.6386554621848739
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 19,
+            "sum": 10.0,
+            "estimate": 0.5263157894736842,
+            "median": 1.0,
+            "ci95": [
+              0.3,
+              0.7142857142857143
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 2.0,
+            "estimate": 0.4,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.8888888888888888
+            ],
+            "games": 4
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 150,
+            "sum": 119.0,
+            "estimate": 0.7933333333333333,
+            "median": 1.0,
+            "ci95": [
+              0.7232704402515723,
+              0.8614457831325302
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 27,
+            "sum": 23.0,
+            "estimate": 0.8518518518518519,
+            "median": 1.0,
+            "ci95": [
+              0.7272727272727273,
+              1.0
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 7.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 6
+          }
+        ]
+      }
+    },
+    {
+      "team": "bighorns",
+      "team_name": "Vegas Bighorns",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 97,
+            "sum": 782.0,
+            "estimate": 8.061855670103093,
+            "median": 7.0,
+            "ci95": [
+              7.159570613629356,
+              8.818240093240092
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 26,
+            "sum": 137.0,
+            "estimate": 5.269230769230769,
+            "median": 6.0,
+            "ci95": [
+              3.7333333333333334,
+              6.809523809523809
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 25.0,
+            "estimate": 5.0,
+            "median": 4.0,
+            "ci95": [
+              1.0,
+              8.714285714285714
+            ],
+            "games": 4
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 223,
+            "sum": 1217.0,
+            "estimate": 5.457399103139013,
+            "median": 4.0,
+            "ci95": [
+              5.0,
+              5.90566037735849
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 51,
+            "sum": 196.0,
+            "estimate": 3.843137254901961,
+            "median": 3.0,
+            "ci95": [
+              3.150893215576074,
+              4.629649758454106
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 17,
+            "sum": 35.0,
+            "estimate": 2.0588235294117645,
+            "median": 1.0,
+            "ci95": [
+              1.375,
+              3.5714285714285716
+            ],
+            "games": 8
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 320,
+            "sum": 97.0,
+            "estimate": 0.303125,
+            "median": 0.0,
+            "ci95": [
+              0.2491086159174268,
+              0.3591353812858817
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 77,
+            "sum": 26.0,
+            "estimate": 0.33766233766233766,
+            "median": 0.0,
+            "ci95": [
+              0.23376623376623376,
+              0.4342105263157895
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 22,
+            "sum": 5.0,
+            "estimate": 0.22727272727272727,
+            "median": 0.0,
+            "ci95": [
+              0.07142857142857142,
+              0.45
+            ],
+            "games": 9
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 317,
+            "sum": 41.0,
+            "estimate": 0.12933753943217666,
+            "median": 0.0,
+            "ci95": [
+              0.09120495564706123,
+              0.18612204938540192
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 61,
+            "sum": 11.0,
+            "estimate": 0.18032786885245902,
+            "median": 0.0,
+            "ci95": [
+              0.08473979470040582,
+              0.3064516129032258
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 16,
+            "sum": 2.0,
+            "estimate": 0.125,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.375
+            ],
+            "games": 7
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2007,
+            "sum": 132.0,
+            "estimate": 0.06576980568011959,
+            "median": 0.0,
+            "ci95": [
+              0.05370586108595495,
+              0.07739443526883155
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 297,
+            "sum": 23.0,
+            "estimate": 0.07744107744107744,
+            "median": 0.0,
+            "ci95": [
+              0.04155124653739612,
+              0.12136167996541013
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 54,
+            "sum": 5.0,
+            "estimate": 0.09259259259259259,
+            "median": 0.0,
+            "ci95": [
+              0.041666666666666664,
+              0.17391304347826086
+            ],
+            "games": 7
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 317,
+            "sum": 131.0,
+            "estimate": 0.41324921135646686,
+            "median": 0.0,
+            "ci95": [
+              0.33876221498371334,
+              0.4820359281437126
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 61,
+            "sum": 22.0,
+            "estimate": 0.36065573770491804,
+            "median": 0.0,
+            "ci95": [
+              0.2,
+              0.5254460303300622
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 16,
+            "sum": 5.0,
+            "estimate": 0.3125,
+            "median": 0.0,
+            "ci95": [
+              0.09090909090909091,
+              0.5294117647058824
+            ],
+            "games": 7
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 132,
+            "sum": 73.0,
+            "estimate": 0.553030303030303,
+            "median": 1.0,
+            "ci95": [
+              0.4482758620689655,
+              0.6458333333333334
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 23,
+            "sum": 12.0,
+            "estimate": 0.5217391304347826,
+            "median": 1.0,
+            "ci95": [
+              0.3939393939393939,
+              0.7058823529411765
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 2.0,
+            "estimate": 0.4,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 204,
+            "sum": 168.0,
+            "estimate": 0.8235294117647058,
+            "median": 1.0,
+            "ci95": [
+              0.7374301675977654,
+              0.889795918367347
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 46,
+            "sum": 37.0,
+            "estimate": 0.8043478260869565,
+            "median": 1.0,
+            "ci95": [
+              0.6764705882352942,
+              0.9333333333333333
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 17,
+            "sum": 14.0,
+            "estimate": 0.8235294117647058,
+            "median": 1.0,
+            "ci95": [
+              0.72,
+              1.0
+            ],
+            "games": 8
+          }
+        ]
+      }
+    },
+    {
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 135,
+            "sum": 1266.0,
+            "estimate": 9.377777777777778,
+            "median": 9.0,
+            "ci95": [
+              8.680548469387755,
+              10.136818157414366
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 28,
+            "sum": 182.0,
+            "estimate": 6.5,
+            "median": 6.0,
+            "ci95": [
+              5.387034739454094,
+              7.863636363636363
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 6.0,
+            "estimate": 2.0,
+            "median": 2.0,
+            "ci95": [
+              1.0,
+              3.0
+            ],
+            "games": 3
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 108,
+            "sum": 654.0,
+            "estimate": 6.055555555555555,
+            "median": 5.5,
+            "ci95": [
+              5.344827586206897,
+              6.949161102550933
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 12,
+            "sum": 36.0,
+            "estimate": 3.0,
+            "median": 2.0,
+            "ci95": [
+              2.22202380952381,
+              4.3
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 3.0,
+            "estimate": 1.5,
+            "median": 1.5,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 243,
+            "sum": 135.0,
+            "estimate": 0.5555555555555556,
+            "median": 1.0,
+            "ci95": [
+              0.47435897435897434,
+              0.6363636363636364
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 40,
+            "sum": 28.0,
+            "estimate": 0.7,
+            "median": 1.0,
+            "ci95": [
+              0.5813953488372093,
+              0.8387096774193549
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 3.0,
+            "estimate": 0.6,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              1.0
+            ],
+            "games": 3
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 247,
+            "sum": 23.0,
+            "estimate": 0.0931174089068826,
+            "median": 0.0,
+            "ci95": [
+              0.05179282868525897,
+              0.13853132161955686
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 9.0,
+            "estimate": 0.3,
+            "median": 0.0,
+            "ci95": [
+              0.2,
+              0.4482758620689655
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 1.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1938,
+            "sum": 81.0,
+            "estimate": 0.04179566563467492,
+            "median": 0.0,
+            "ci95": [
+              0.03533557052282913,
+              0.04910744079398977
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 176,
+            "sum": 12.0,
+            "estimate": 0.06818181818181818,
+            "median": 0.0,
+            "ci95": [
+              0.05172413793103448,
+              0.09558823529411764
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 1.0,
+            "estimate": 0.3333333333333333,
+            "median": 0.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 247,
+            "sum": 81.0,
+            "estimate": 0.32793522267206476,
+            "median": 0.0,
+            "ci95": [
+              0.2901960784313726,
+              0.3661417322834646
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 12.0,
+            "estimate": 0.4,
+            "median": 0.0,
+            "ci95": [
+              0.2857142857142857,
+              0.5217391304347826
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 1.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 81,
+            "sum": 50.0,
+            "estimate": 0.6172839506172839,
+            "median": 1.0,
+            "ci95": [
+              0.5487804878048781,
+              0.6933333333333334
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 12,
+            "sum": 5.0,
+            "estimate": 0.4166666666666667,
+            "median": 0.0,
+            "ci95": [
+              0.16666666666666666,
+              0.7142857142857143
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 97,
+            "sum": 65.0,
+            "estimate": 0.6701030927835051,
+            "median": 1.0,
+            "ci95": [
+              0.5769230769230769,
+              0.7682958921694479
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 11,
+            "sum": 7.0,
+            "estimate": 0.6363636363636364,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.8571428571428571
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 2.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ]
+      }
+    },
+    {
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 128,
+            "sum": 1265.0,
+            "estimate": 9.8828125,
+            "median": 9.0,
+            "ci95": [
+              8.67478729438457,
+              11.352975914775358
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 179.0,
+            "estimate": 5.966666666666667,
+            "median": 5.0,
+            "ci95": [
+              4.620648604269294,
+              7.333333333333333
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 9.0,
+            "estimate": 3.0,
+            "median": 2.0,
+            "ci95": [
+              2.0,
+              3.5
+            ],
+            "games": 2
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 104,
+            "sum": 741.0,
+            "estimate": 7.125,
+            "median": 6.0,
+            "ci95": [
+              6.061941439965039,
+              8.209110549943883
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 15,
+            "sum": 99.0,
+            "estimate": 6.6,
+            "median": 6.0,
+            "ci95": [
+              4.714285714285714,
+              8.571428571428571
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 232,
+            "sum": 128.0,
+            "estimate": 0.5517241379310345,
+            "median": 1.0,
+            "ci95": [
+              0.48262210236918407,
+              0.6342592592592593
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 45,
+            "sum": 30.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.8085106382978723
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 3.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 241,
+            "sum": 36.0,
+            "estimate": 0.14937759336099585,
+            "median": 0.0,
+            "ci95": [
+              0.10900473933649289,
+              0.1821561338289963
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 28,
+            "sum": 2.0,
+            "estimate": 0.07142857142857142,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.16129032258064516
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2091,
+            "sum": 96.0,
+            "estimate": 0.04591104734576758,
+            "median": 0.0,
+            "ci95": [
+              0.03799472295514512,
+              0.05386888175407263
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 191,
+            "sum": 6.0,
+            "estimate": 0.031413612565445025,
+            "median": 0.0,
+            "ci95": [
+              0.006172839506172839,
+              0.0625
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 1.0,
+            "estimate": 0.16666666666666666,
+            "median": 0.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 241,
+            "sum": 95.0,
+            "estimate": 0.3941908713692946,
+            "median": 0.0,
+            "ci95": [
+              0.3499948559670782,
+              0.4311611039275901
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 28,
+            "sum": 6.0,
+            "estimate": 0.21428571428571427,
+            "median": 0.0,
+            "ci95": [
+              0.05256578947368427,
+              0.391304347826087
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 96,
+            "sum": 74.0,
+            "estimate": 0.7708333333333334,
+            "median": 1.0,
+            "ci95": [
+              0.71,
+              0.8461538461538461
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 6,
+            "sum": 4.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.1111111111111111,
+              1.0
+            ],
+            "games": 4
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 95,
+            "sum": 62.0,
+            "estimate": 0.6526315789473685,
+            "median": 1.0,
+            "ci95": [
+              0.5308641975308642,
+              0.7345132743362832
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 13,
+            "sum": 10.0,
+            "estimate": 0.7692307692307693,
+            "median": 1.0,
+            "ci95": [
+              0.5625,
+              1.0
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ]
+      }
+    },
+    {
+      "team": "empire",
+      "team_name": "New York Empire",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 155,
+            "sum": 1529.0,
+            "estimate": 9.864516129032259,
+            "median": 9.0,
+            "ci95": [
+              9.139781942692379,
+              10.822266666666666
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 19,
+            "sum": 95.0,
+            "estimate": 5.0,
+            "median": 4.0,
+            "ci95": [
+              3.764705882352941,
+              6.75
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 3.0,
+            "estimate": 3.0,
+            "median": 3.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 67,
+            "sum": 410.0,
+            "estimate": 6.119402985074627,
+            "median": 6.0,
+            "ci95": [
+              5.526315789473684,
+              6.92
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 11,
+            "sum": 55.0,
+            "estimate": 5.0,
+            "median": 4.0,
+            "ci95": [
+              3.5,
+              7.75
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 15.0,
+            "estimate": 15.0,
+            "median": 15.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 222,
+            "sum": 155.0,
+            "estimate": 0.6981981981981982,
+            "median": 1.0,
+            "ci95": [
+              0.6084866352201258,
+              0.7935779816513762
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 19.0,
+            "estimate": 0.6333333333333333,
+            "median": 1.0,
+            "ci95": [
+              0.45,
+              0.8275862068965517
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 1.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 226,
+            "sum": 18.0,
+            "estimate": 0.07964601769911504,
+            "median": 0.0,
+            "ci95": [
+              0.05472636815920398,
+              0.1038961038961039
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 20,
+            "sum": 6.0,
+            "estimate": 0.3,
+            "median": 0.0,
+            "ci95": [
+              0.07142857142857142,
+              0.47058823529411764
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 2
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1957,
+            "sum": 88.0,
+            "estimate": 0.044966785896780784,
+            "median": 0.0,
+            "ci95": [
+              0.037937575472963905,
+              0.051609688957752975
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 117,
+            "sum": 12.0,
+            "estimate": 0.10256410256410256,
+            "median": 0.0,
+            "ci95": [
+              0.057692307692307696,
+              0.1487603305785124
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 20,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 2
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 226,
+            "sum": 88.0,
+            "estimate": 0.3893805309734513,
+            "median": 0.0,
+            "ci95": [
+              0.33329875518672203,
+              0.4424778761061947
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 20,
+            "sum": 12.0,
+            "estimate": 0.6,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.8181818181818182
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 2
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 88,
+            "sum": 68.0,
+            "estimate": 0.7727272727272727,
+            "median": 1.0,
+            "ci95": [
+              0.6571428571428571,
+              0.8860759493670886
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 12,
+            "sum": 8.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.45454545454545453,
+              1.0
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 61,
+            "sum": 39.0,
+            "estimate": 0.639344262295082,
+            "median": 1.0,
+            "ci95": [
+              0.5285646900269542,
+              0.726027397260274
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 11,
+            "sum": 8.0,
+            "estimate": 0.7272727272727273,
+            "median": 1.0,
+            "ci95": [
+              0.5714285714285714,
+              1.0
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": null,
+            "games": 1
+          }
+        ]
+      }
+    },
+    {
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 141,
+            "sum": 1447.0,
+            "estimate": 10.26241134751773,
+            "median": 8.0,
+            "ci95": [
+              9.210516781083143,
+              11.16234172077922
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 17,
+            "sum": 109.0,
+            "estimate": 6.411764705882353,
+            "median": 4.0,
+            "ci95": [
+              3.631414473684211,
+              10.823774509803918
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 23.0,
+            "estimate": 4.6,
+            "median": 2.0,
+            "ci95": [
+              1.1666666666666667,
+              12.75
+            ],
+            "games": 4
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 77,
+            "sum": 439.0,
+            "estimate": 5.701298701298701,
+            "median": 5.0,
+            "ci95": [
+              4.9382523148148145,
+              6.371828358208955
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 15,
+            "sum": 52.0,
+            "estimate": 3.466666666666667,
+            "median": 3.0,
+            "ci95": [
+              2.6153846153846154,
+              4.75
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 26.0,
+            "estimate": 6.5,
+            "median": 6.0,
+            "ci95": [
+              1.0,
+              12.5
+            ],
+            "games": 4
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 218,
+            "sum": 141.0,
+            "estimate": 0.6467889908256881,
+            "median": 1.0,
+            "ci95": [
+              0.5736040609137056,
+              0.714975845410628
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 32,
+            "sum": 17.0,
+            "estimate": 0.53125,
+            "median": 1.0,
+            "ci95": [
+              0.38461538461538464,
+              0.6785714285714286
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 9,
+            "sum": 5.0,
+            "estimate": 0.5555555555555556,
+            "median": 1.0,
+            "ci95": [
+              0.25,
+              0.8
+            ],
+            "games": 6
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 219,
+            "sum": 28.0,
+            "estimate": 0.1278538812785388,
+            "median": 0.0,
+            "ci95": [
+              0.08438025092416265,
+              0.17894736842105263
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 18,
+            "sum": 8.0,
+            "estimate": 0.4444444444444444,
+            "median": 0.0,
+            "ci95": [
+              0.2,
+              0.6190476190476191
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 1.0,
+            "estimate": 0.16666666666666666,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.4
+            ],
+            "games": 5
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1906,
+            "sum": 93.0,
+            "estimate": 0.04879328436516264,
+            "median": 0.0,
+            "ci95": [
+              0.0402410781972287,
+              0.05993728676364901
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 79,
+            "sum": 11.0,
+            "estimate": 0.13924050632911392,
+            "median": 0.0,
+            "ci95": [
+              0.06944100660066008,
+              0.23529411764705882
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 46,
+            "sum": 2.0,
+            "estimate": 0.043478260869565216,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.16666666666666666
+            ],
+            "games": 5
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 219,
+            "sum": 93.0,
+            "estimate": 0.4246575342465753,
+            "median": 0.0,
+            "ci95": [
+              0.36213814389101745,
+              0.49029126213592233
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 18,
+            "sum": 11.0,
+            "estimate": 0.6111111111111112,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.7916666666666666
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 2.0,
+            "estimate": 0.3333333333333333,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.6666666666666666
+            ],
+            "games": 5
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 93,
+            "sum": 60.0,
+            "estimate": 0.6451612903225806,
+            "median": 1.0,
+            "ci95": [
+              0.524390243902439,
+              0.7362637362637363
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 11,
+            "sum": 4.0,
+            "estimate": 0.36363636363636365,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.7857142857142857
+            ],
+            "games": 6
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 1.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 66,
+            "sum": 43.0,
+            "estimate": 0.6515151515151515,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.782608695652174
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 13,
+            "sum": 7.0,
+            "estimate": 0.5384615384615384,
+            "median": 1.0,
+            "ci95": [
+              0.2857142857142857,
+              0.8
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 2.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 3
+          }
+        ]
+      }
+    },
+    {
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 121,
+            "sum": 1325.0,
+            "estimate": 10.950413223140496,
+            "median": 12.0,
+            "ci95": [
+              9.699807692307692,
+              12.200040322580644
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 21,
+            "sum": 129.0,
+            "estimate": 6.142857142857143,
+            "median": 5.0,
+            "ci95": [
+              4.809523809523809,
+              7.923214285714284
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 54.0,
+            "estimate": 9.0,
+            "median": 9.0,
+            "ci95": [
+              4.25,
+              15.308333333333351
+            ],
+            "games": 5
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 80,
+            "sum": 584.0,
+            "estimate": 7.3,
+            "median": 5.0,
+            "ci95": [
+              6.151162790697675,
+              8.945502392344498
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 11,
+            "sum": 59.0,
+            "estimate": 5.363636363636363,
+            "median": 4.0,
+            "ci95": [
+              2.75,
+              9.0
+            ],
+            "games": 6
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 11.0,
+            "estimate": 11.0,
+            "median": 11.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 201,
+            "sum": 121.0,
+            "estimate": 0.6019900497512438,
+            "median": 1.0,
+            "ci95": [
+              0.5162790697674419,
+              0.6813780362891425
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 32,
+            "sum": 21.0,
+            "estimate": 0.65625,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.8387096774193549
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 6.0,
+            "estimate": 0.8571428571428571,
+            "median": 1.0,
+            "ci95": [
+              0.625,
+              1.0
+            ],
+            "games": 5
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 200,
+            "sum": 24.0,
+            "estimate": 0.12,
+            "median": 0.0,
+            "ci95": [
+              0.06435643564356436,
+              0.1755338609237156
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 20,
+            "sum": 3.0,
+            "estimate": 0.15,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.35294117647058826
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 1.0,
+            "estimate": 0.2,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.8
+            ],
+            "games": 4
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1911,
+            "sum": 69.0,
+            "estimate": 0.03610675039246468,
+            "median": 0.0,
+            "ci95": [
+              0.028078791135132834,
+              0.045378262122791065
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 115,
+            "sum": 6.0,
+            "estimate": 0.05217391304347826,
+            "median": 0.0,
+            "ci95": [
+              0.01219327420546933,
+              0.10810810810810811
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 45,
+            "sum": 2.0,
+            "estimate": 0.044444444444444446,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.5
+            ],
+            "games": 4
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 200,
+            "sum": 68.0,
+            "estimate": 0.34,
+            "median": 0.0,
+            "ci95": [
+              0.2744129782445612,
+              0.4020618556701031
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 20,
+            "sum": 6.0,
+            "estimate": 0.3,
+            "median": 0.0,
+            "ci95": [
+              0.0625,
+              0.5911363636363604
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 2.0,
+            "estimate": 0.4,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 69,
+            "sum": 50.0,
+            "estimate": 0.7246376811594203,
+            "median": 1.0,
+            "ci95": [
+              0.6,
+              0.85
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 6,
+            "sum": 6.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 4
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 2.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 73,
+            "sum": 44.0,
+            "estimate": 0.6027397260273972,
+            "median": 1.0,
+            "ci95": [
+              0.5076923076923077,
+              0.6951219512195121
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 11,
+            "sum": 5.0,
+            "estimate": 0.45454545454545453,
+            "median": 0.0,
+            "ci95": [
+              0.2,
+              0.7272727272727273
+            ],
+            "games": 6
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ]
+      }
+    },
+    {
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 129,
+            "sum": 1145.0,
+            "estimate": 8.875968992248062,
+            "median": 8.0,
+            "ci95": [
+              7.658322368421053,
+              10.272727272727273
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 32,
+            "sum": 154.0,
+            "estimate": 4.8125,
+            "median": 4.0,
+            "ci95": [
+              4.057103174603174,
+              5.561013719512194
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 13.0,
+            "estimate": 2.1666666666666665,
+            "median": 2.0,
+            "ci95": [
+              1.0,
+              3.3333333333333335
+            ],
+            "games": 5
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 113,
+            "sum": 754.0,
+            "estimate": 6.672566371681416,
+            "median": 6.0,
+            "ci95": [
+              5.363636363636363,
+              7.896324786324786
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 16,
+            "sum": 69.0,
+            "estimate": 4.3125,
+            "median": 3.5,
+            "ci95": [
+              3.230769230769231,
+              5.235294117647059
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 6.0,
+            "estimate": 6.0,
+            "median": 6.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 242,
+            "sum": 129.0,
+            "estimate": 0.5330578512396694,
+            "median": 1.0,
+            "ci95": [
+              0.4743083003952569,
+              0.5929241849595832
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 48,
+            "sum": 32.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5227272727272727,
+              0.8125
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 6.0,
+            "estimate": 0.8571428571428571,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "games": 6
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 239,
+            "sum": 43.0,
+            "estimate": 0.1799163179916318,
+            "median": 0.0,
+            "ci95": [
+              0.12396694214876033,
+              0.2336478941619128
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 34,
+            "sum": 8.0,
+            "estimate": 0.23529411764705882,
+            "median": 0.0,
+            "ci95": [
+              0.11904761904761904,
+              0.375
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 1.0,
+            "estimate": 0.3333333333333333,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 3
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1856,
+            "sum": 105.0,
+            "estimate": 0.056573275862068964,
+            "median": 0.0,
+            "ci95": [
+              0.04311132566331642,
+              0.07512423175428136
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 185,
+            "sum": 15.0,
+            "estimate": 0.08108108108108109,
+            "median": 0.0,
+            "ci95": [
+              0.046511627906976744,
+              0.1232876712328767
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 13,
+            "sum": 1.0,
+            "estimate": 0.07692307692307693,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.3333333333333333
+            ],
+            "games": 3
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 239,
+            "sum": 105.0,
+            "estimate": 0.4393305439330544,
+            "median": 0.0,
+            "ci95": [
+              0.35742254733218587,
+              0.5209321868282196
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 34,
+            "sum": 15.0,
+            "estimate": 0.4411764705882353,
+            "median": 0.0,
+            "ci95": [
+              0.2682926829268293,
+              0.6206896551724138
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 1.0,
+            "estimate": 0.3333333333333333,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 3
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 105,
+            "sum": 74.0,
+            "estimate": 0.7047619047619048,
+            "median": 1.0,
+            "ci95": [
+              0.6283185840707964,
+              0.7899159663865546
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 15,
+            "sum": 10.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.4117647058823529,
+              0.9166666666666666
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 98,
+            "sum": 61.0,
+            "estimate": 0.6224489795918368,
+            "median": 1.0,
+            "ci95": [
+              0.5052604449267499,
+              0.7272727272727273
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 14,
+            "sum": 8.0,
+            "estimate": 0.5714285714285714,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              0.8
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ]
+      }
+    },
+    {
+      "team": "havoc",
+      "team_name": "Houston Havoc",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 104,
+            "sum": 1152.0,
+            "estimate": 11.076923076923077,
+            "median": 9.0,
+            "ci95": [
+              10.0,
+              12.074820273184757
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 33,
+            "sum": 201.0,
+            "estimate": 6.090909090909091,
+            "median": 4.0,
+            "ci95": [
+              4.53328125,
+              7.787878787878788
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 27.0,
+            "estimate": 4.5,
+            "median": 5.0,
+            "ci95": [
+              2.75,
+              7.0
+            ],
+            "games": 5
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 188,
+            "sum": 1201.0,
+            "estimate": 6.388297872340425,
+            "median": 5.0,
+            "ci95": [
+              5.763873792270532,
+              7.190199184694866
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 29,
+            "sum": 148.0,
+            "estimate": 5.103448275862069,
+            "median": 3.0,
+            "ci95": [
+              3.7584051724137937,
+              6.166666666666667
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 8,
+            "sum": 23.0,
+            "estimate": 2.875,
+            "median": 2.0,
+            "ci95": [
+              1.0,
+              4.25
+            ],
+            "games": 7
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 292,
+            "sum": 104.0,
+            "estimate": 0.3561643835616438,
+            "median": 0.0,
+            "ci95": [
+              0.28478910821063463,
+              0.44705982734390687
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 62,
+            "sum": 33.0,
+            "estimate": 0.532258064516129,
+            "median": 1.0,
+            "ci95": [
+              0.44642857142857145,
+              0.6129032258064516
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 14,
+            "sum": 6.0,
+            "estimate": 0.42857142857142855,
+            "median": 0.0,
+            "ci95": [
+              0.2,
+              0.6153846153846154
+            ],
+            "games": 8
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 294,
+            "sum": 29.0,
+            "estimate": 0.09863945578231292,
+            "median": 0.0,
+            "ci95": [
+              0.06481314948041567,
+              0.1423487544483986
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 50,
+            "sum": 13.0,
+            "estimate": 0.26,
+            "median": 0.0,
+            "ci95": [
+              0.1111111111111111,
+              0.42
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 10,
+            "sum": 5.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.16666666666666666,
+              0.8181818181818182
+            ],
+            "games": 6
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2356,
+            "sum": 130.0,
+            "estimate": 0.055178268251273345,
+            "median": 0.0,
+            "ci95": [
+              0.04476447103447169,
+              0.06529539289109415
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 305,
+            "sum": 17.0,
+            "estimate": 0.05573770491803279,
+            "median": 0.0,
+            "ci95": [
+              0.0241681718409564,
+              0.0995030770319021
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 39,
+            "sum": 6.0,
+            "estimate": 0.15384615384615385,
+            "median": 0.0,
+            "ci95": [
+              0.034482758620689655,
+              0.35
+            ],
+            "games": 6
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 294,
+            "sum": 126.0,
+            "estimate": 0.42857142857142855,
+            "median": 0.0,
+            "ci95": [
+              0.3517436848436247,
+              0.5
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 50,
+            "sum": 17.0,
+            "estimate": 0.34,
+            "median": 0.0,
+            "ci95": [
+              0.16981132075471697,
+              0.5111240310077517
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 10,
+            "sum": 5.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.16666666666666666,
+              0.8333333333333334
+            ],
+            "games": 6
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 130,
+            "sum": 74.0,
+            "estimate": 0.5692307692307692,
+            "median": 1.0,
+            "ci95": [
+              0.4838709677419355,
+              0.6666666666666666
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 17,
+            "sum": 10.0,
+            "estimate": 0.5882352941176471,
+            "median": 1.0,
+            "ci95": [
+              0.4,
+              0.8125
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 4.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.2,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 168,
+            "sum": 123.0,
+            "estimate": 0.7321428571428571,
+            "median": 1.0,
+            "ci95": [
+              0.6449227688787185,
+              0.8
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 26,
+            "sum": 16.0,
+            "estimate": 0.6153846153846154,
+            "median": 1.0,
+            "ci95": [
+              0.36,
+              0.8438100961538453
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 8,
+            "sum": 5.0,
+            "estimate": 0.625,
+            "median": 1.0,
+            "ci95": [
+              0.2,
+              1.0
+            ],
+            "games": 7
+          }
+        ]
+      }
+    },
+    {
+      "team": "hustle",
+      "team_name": "Atlanta Hustle",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 143,
+            "sum": 1511.0,
+            "estimate": 10.566433566433567,
+            "median": 10.0,
+            "ci95": [
+              9.422061688311688,
+              11.778732673764562
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 154.0,
+            "estimate": 6.16,
+            "median": 5.0,
+            "ci95": [
+              4.555555555555555,
+              7.777777777777778
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 29.0,
+            "estimate": 7.25,
+            "median": 7.0,
+            "ci95": [
+              2.0,
+              10.0
+            ],
+            "games": 3
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 100,
+            "sum": 734.0,
+            "estimate": 7.34,
+            "median": 6.0,
+            "ci95": [
+              6.4124816176470585,
+              8.444509803921568
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 10,
+            "sum": 51.0,
+            "estimate": 5.1,
+            "median": 5.0,
+            "ci95": [
+              3.4610139860139864,
+              7.714285714285714
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 3.0,
+            "estimate": 1.5,
+            "median": 1.5,
+            "ci95": [
+              1.0,
+              2.0
+            ],
+            "games": 2
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 243,
+            "sum": 143.0,
+            "estimate": 0.588477366255144,
+            "median": 1.0,
+            "ci95": [
+              0.5060716550412175,
+              0.6682692307692307
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 35,
+            "sum": 25.0,
+            "estimate": 0.7142857142857143,
+            "median": 1.0,
+            "ci95": [
+              0.5453896103896104,
+              0.8571428571428571
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 4.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 5
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 247,
+            "sum": 26.0,
+            "estimate": 0.10526315789473684,
+            "median": 0.0,
+            "ci95": [
+              0.07258064516129033,
+              0.14537645174209046
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 24,
+            "sum": 5.0,
+            "estimate": 0.20833333333333334,
+            "median": 0.0,
+            "ci95": [
+              0.043478260869565216,
+              0.4166666666666667
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 3
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2260,
+            "sum": 96.0,
+            "estimate": 0.04247787610619469,
+            "median": 0.0,
+            "ci95": [
+              0.034653233581785146,
+              0.05249880051674664
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 168,
+            "sum": 12.0,
+            "estimate": 0.07142857142857142,
+            "median": 0.0,
+            "ci95": [
+              0.04419686382840429,
+              0.10191082802547771
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 25,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 3
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 247,
+            "sum": 95.0,
+            "estimate": 0.38461538461538464,
+            "median": 0.0,
+            "ci95": [
+              0.32341967887368506,
+              0.4565242207663291
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 24,
+            "sum": 12.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.3333333333333333,
+              0.6521739130434783
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 3
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 96,
+            "sum": 65.0,
+            "estimate": 0.6770833333333334,
+            "median": 1.0,
+            "ci95": [
+              0.5978260869565217,
+              0.7450980392156863
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 12,
+            "sum": 7.0,
+            "estimate": 0.5833333333333334,
+            "median": 1.0,
+            "ci95": [
+              0.2222222222222222,
+              0.8421052631578947
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 95,
+            "sum": 63.0,
+            "estimate": 0.6631578947368421,
+            "median": 1.0,
+            "ci95": [
+              0.5466666666666666,
+              0.7685185185185185
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 10,
+            "sum": 6.0,
+            "estimate": 0.6,
+            "median": 1.0,
+            "ci95": [
+              0.3,
+              1.0
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 2.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ]
+      }
+    },
+    {
+      "team": "phoenix",
+      "team_name": "Philadelphia Phoenix",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 126,
+            "sum": 1191.0,
+            "estimate": 9.452380952380953,
+            "median": 9.0,
+            "ci95": [
+              8.68938882063882,
+              10.354866047020229
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 23,
+            "sum": 198.0,
+            "estimate": 8.608695652173912,
+            "median": 8.0,
+            "ci95": [
+              6.157793522267206,
+              11.368421052631579
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 6.0,
+            "estimate": 3.0,
+            "median": 3.0,
+            "ci95": [
+              3.0,
+              3.0
+            ],
+            "games": 2
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 184,
+            "sum": 1082.0,
+            "estimate": 5.880434782608695,
+            "median": 5.0,
+            "ci95": [
+              5.4265385419570675,
+              6.415311291213851
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 24,
+            "sum": 103.0,
+            "estimate": 4.291666666666667,
+            "median": 4.0,
+            "ci95": [
+              2.5238095238095237,
+              6.357142857142857
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 9.0,
+            "estimate": 2.25,
+            "median": 2.0,
+            "ci95": [
+              1.0,
+              4.0
+            ],
+            "games": 3
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 310,
+            "sum": 126.0,
+            "estimate": 0.4064516129032258,
+            "median": 0.0,
+            "ci95": [
+              0.33554817275747506,
+              0.46036697124669196
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 47,
+            "sum": 23.0,
+            "estimate": 0.48936170212765956,
+            "median": 0.0,
+            "ci95": [
+              0.3333333333333333,
+              0.6666666666666666
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 2.0,
+            "estimate": 0.3333333333333333,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 5
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 314,
+            "sum": 36.0,
+            "estimate": 0.11464968152866242,
+            "median": 0.0,
+            "ci95": [
+              0.07210031347962383,
+              0.167750067769043
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 41,
+            "sum": 3.0,
+            "estimate": 0.07317073170731707,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.16129032258064516
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 2.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2284,
+            "sum": 142.0,
+            "estimate": 0.06217162872154115,
+            "median": 0.0,
+            "ci95": [
+              0.0515058926233086,
+              0.07232302097694018
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 292,
+            "sum": 16.0,
+            "estimate": 0.0547945205479452,
+            "median": 0.0,
+            "ci95": [
+              0.036585365853658534,
+              0.08
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 2.0,
+            "estimate": 0.4,
+            "median": 0.0,
+            "ci95": [
+              0.25,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 314,
+            "sum": 140.0,
+            "estimate": 0.445859872611465,
+            "median": 0.0,
+            "ci95": [
+              0.3728813559322034,
+              0.5099337748344371
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 41,
+            "sum": 16.0,
+            "estimate": 0.3902439024390244,
+            "median": 0.0,
+            "ci95": [
+              0.2558139534883721,
+              0.5263157894736842
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 2.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 142,
+            "sum": 85.0,
+            "estimate": 0.5985915492957746,
+            "median": 1.0,
+            "ci95": [
+              0.4899328859060403,
+              0.695364238410596
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 16,
+            "sum": 9.0,
+            "estimate": 0.5625,
+            "median": 1.0,
+            "ci95": [
+              0.2857142857142857,
+              0.9
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 2
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 161,
+            "sum": 135.0,
+            "estimate": 0.8385093167701864,
+            "median": 1.0,
+            "ci95": [
+              0.7744300266796023,
+              0.8950617283950617
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 20,
+            "sum": 18.0,
+            "estimate": 0.9,
+            "median": 1.0,
+            "ci95": [
+              0.7619047619047619,
+              1.0
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 3.0,
+            "estimate": 0.75,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "games": 3
+          }
+        ]
+      }
+    },
+    {
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 125,
+            "sum": 1397.0,
+            "estimate": 11.176,
+            "median": 10.0,
+            "ci95": [
+              10.270778917910448,
+              12.16194368131868
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 28,
+            "sum": 132.0,
+            "estimate": 4.714285714285714,
+            "median": 4.0,
+            "ci95": [
+              3.357142857142857,
+              6.172413793103448
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 46.0,
+            "estimate": 6.571428571428571,
+            "median": 6.0,
+            "ci95": [
+              3.0,
+              9.4
+            ],
+            "games": 6
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 111,
+            "sum": 781.0,
+            "estimate": 7.036036036036036,
+            "median": 6.0,
+            "ci95": [
+              6.061839890595413,
+              8.158343253968253
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 98.0,
+            "estimate": 3.92,
+            "median": 3.0,
+            "ci95": [
+              3.0,
+              4.925992063492062
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 16.0,
+            "estimate": 8.0,
+            "median": 8.0,
+            "ci95": [
+              2.0,
+              14.0
+            ],
+            "games": 2
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 236,
+            "sum": 125.0,
+            "estimate": 0.5296610169491526,
+            "median": 1.0,
+            "ci95": [
+              0.47325011022927693,
+              0.5985408000418596
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 53,
+            "sum": 28.0,
+            "estimate": 0.5283018867924528,
+            "median": 1.0,
+            "ci95": [
+              0.41379310344827586,
+              0.6530612244897959
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 9,
+            "sum": 7.0,
+            "estimate": 0.7777777777777778,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "games": 7
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 241,
+            "sum": 14.0,
+            "estimate": 0.058091286307053944,
+            "median": 0.0,
+            "ci95": [
+              0.030042918454935622,
+              0.08527131782945736
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 36,
+            "sum": 8.0,
+            "estimate": 0.2222222222222222,
+            "median": 0.0,
+            "ci95": [
+              0.07894736842105263,
+              0.3684210526315789
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 6
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2196,
+            "sum": 72.0,
+            "estimate": 0.03278688524590164,
+            "median": 0.0,
+            "ci95": [
+              0.024267279461737123,
+              0.04176693073002498
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 173,
+            "sum": 17.0,
+            "estimate": 0.09826589595375723,
+            "median": 0.0,
+            "ci95": [
+              0.05194652046067141,
+              0.16176470588235295
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 46,
+            "sum": 1.0,
+            "estimate": 0.021739130434782608,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.08695652173913043
+            ],
+            "games": 6
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 241,
+            "sum": 71.0,
+            "estimate": 0.2946058091286307,
+            "median": 0.0,
+            "ci95": [
+              0.22744652406417112,
+              0.35547092013888887
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 36,
+            "sum": 16.0,
+            "estimate": 0.4444444444444444,
+            "median": 0.0,
+            "ci95": [
+              0.25639534883720927,
+              0.631578947368421
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 1.0,
+            "estimate": 0.16666666666666666,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.5
+            ],
+            "games": 6
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 72,
+            "sum": 48.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5609756097560976,
+              0.7924528301886793
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 17,
+            "sum": 11.0,
+            "estimate": 0.6470588235294118,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.8125
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 103,
+            "sum": 68.0,
+            "estimate": 0.6601941747572816,
+            "median": 1.0,
+            "ci95": [
+              0.553392894030159,
+              0.7457661850514031
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 22,
+            "sum": 15.0,
+            "estimate": 0.6818181818181818,
+            "median": 1.0,
+            "ci95": [
+              0.4995689655172418,
+              0.8421052631578947
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 2.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ]
+      }
+    },
+    {
+      "team": "royal",
+      "team_name": "Montreal Royal",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 121,
+            "sum": 1092.0,
+            "estimate": 9.024793388429751,
+            "median": 8.0,
+            "ci95": [
+              8.074074074074074,
+              9.943548387096774
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 26,
+            "sum": 145.0,
+            "estimate": 5.576923076923077,
+            "median": 4.5,
+            "ci95": [
+              3.9,
+              7.473746867167919
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 22.0,
+            "estimate": 4.4,
+            "median": 4.0,
+            "ci95": [
+              3.0,
+              6.5
+            ],
+            "games": 3
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 140,
+            "sum": 869.0,
+            "estimate": 6.207142857142857,
+            "median": 5.0,
+            "ci95": [
+              5.3499709302325575,
+              7.276932773109244
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 27,
+            "sum": 120.0,
+            "estimate": 4.444444444444445,
+            "median": 3.0,
+            "ci95": [
+              3.5238095238095237,
+              5.315789473684211
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 15.0,
+            "estimate": 3.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              6.0
+            ],
+            "games": 5
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 261,
+            "sum": 121.0,
+            "estimate": 0.46360153256704983,
+            "median": 0.0,
+            "ci95": [
+              0.36329588014981273,
+              0.5610707617112417
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 53,
+            "sum": 26.0,
+            "estimate": 0.49056603773584906,
+            "median": 0.0,
+            "ci95": [
+              0.35714285714285715,
+              0.6363636363636364
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 10,
+            "sum": 5.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              0.7
+            ],
+            "games": 6
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 256,
+            "sum": 30.0,
+            "estimate": 0.1171875,
+            "median": 0.0,
+            "ci95": [
+              0.0859375,
+              0.15476190476190477
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 40,
+            "sum": 7.0,
+            "estimate": 0.175,
+            "median": 0.0,
+            "ci95": [
+              0.06666666666666667,
+              0.26
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 1.0,
+            "estimate": 0.14285714285714285,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.375
+            ],
+            "games": 5
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1922,
+            "sum": 103.0,
+            "estimate": 0.05359001040582726,
+            "median": 0.0,
+            "ci95": [
+              0.04570170529117844,
+              0.06232468894032006
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 221,
+            "sum": 17.0,
+            "estimate": 0.07692307692307693,
+            "median": 0.0,
+            "ci95": [
+              0.04938271604938271,
+              0.10843373493975904
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 32,
+            "sum": 1.0,
+            "estimate": 0.03125,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.125
+            ],
+            "games": 5
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 256,
+            "sum": 103.0,
+            "estimate": 0.40234375,
+            "median": 0.0,
+            "ci95": [
+              0.3346456692913386,
+              0.466403162055336
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 40,
+            "sum": 17.0,
+            "estimate": 0.425,
+            "median": 0.0,
+            "ci95": [
+              0.2894736842105263,
+              0.5652173913043478
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 1.0,
+            "estimate": 0.14285714285714285,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.4
+            ],
+            "games": 5
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 103,
+            "sum": 55.0,
+            "estimate": 0.5339805825242718,
+            "median": 1.0,
+            "ci95": [
+              0.4090909090909091,
+              0.6770917338709677
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 17,
+            "sum": 9.0,
+            "estimate": 0.5294117647058824,
+            "median": 1.0,
+            "ci95": [
+              0.2,
+              0.8
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 124,
+            "sum": 90.0,
+            "estimate": 0.7258064516129032,
+            "median": 1.0,
+            "ci95": [
+              0.638095238095238,
+              0.8048832162050433
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 23,
+            "sum": 16.0,
+            "estimate": 0.6956521739130435,
+            "median": 1.0,
+            "ci95": [
+              0.6153846153846154,
+              0.8333333333333334
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 4.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 4
+          }
+        ]
+      }
+    },
+    {
+      "team": "rush",
+      "team_name": "Toronto Rush",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 121,
+            "sum": 1077.0,
+            "estimate": 8.900826446280991,
+            "median": 8.0,
+            "ci95": [
+              8.160689484126985,
+              9.671765110749593
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 150.0,
+            "estimate": 5.0,
+            "median": 4.5,
+            "ci95": [
+              3.8371124031007753,
+              6.346195652173912
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 9,
+            "sum": 43.0,
+            "estimate": 4.777777777777778,
+            "median": 3.0,
+            "ci95": [
+              1.875,
+              8.5
+            ],
+            "games": 6
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 116,
+            "sum": 687.0,
+            "estimate": 5.922413793103448,
+            "median": 5.0,
+            "ci95": [
+              5.349591522614255,
+              6.455373214285714
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 136.0,
+            "estimate": 5.44,
+            "median": 5.0,
+            "ci95": [
+              4.333333333333333,
+              7.062604166666665
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 35.0,
+            "estimate": 5.0,
+            "median": 3.0,
+            "ci95": [
+              2.0,
+              8.401428571428552
+            ],
+            "games": 7
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 237,
+            "sum": 121.0,
+            "estimate": 0.510548523206751,
+            "median": 1.0,
+            "ci95": [
+              0.4390216311665379,
+              0.5780625712400264
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 55,
+            "sum": 30.0,
+            "estimate": 0.5454545454545454,
+            "median": 1.0,
+            "ci95": [
+              0.4473684210526316,
+              0.6521739130434783
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 16,
+            "sum": 9.0,
+            "estimate": 0.5625,
+            "median": 1.0,
+            "ci95": [
+              0.3,
+              0.7692307692307693
+            ],
+            "games": 10
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 243,
+            "sum": 41.0,
+            "estimate": 0.16872427983539096,
+            "median": 0.0,
+            "ci95": [
+              0.12345679012345678,
+              0.22018348623853212
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 38,
+            "sum": 10.0,
+            "estimate": 0.2631578947368421,
+            "median": 0.0,
+            "ci95": [
+              0.1935483870967742,
+              0.35294117647058826
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 14,
+            "sum": 5.0,
+            "estimate": 0.35714285714285715,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.6666666666666666
+            ],
+            "games": 9
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1775,
+            "sum": 111.0,
+            "estimate": 0.06253521126760564,
+            "median": 0.0,
+            "ci95": [
+              0.054723502304147464,
+              0.07003907669535467
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 222,
+            "sum": 15.0,
+            "estimate": 0.06756756756756757,
+            "median": 0.0,
+            "ci95": [
+              0.04058915926997108,
+              0.10222222222222223
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 76,
+            "sum": 9.0,
+            "estimate": 0.11842105263157894,
+            "median": 0.0,
+            "ci95": [
+              0.03333333333333333,
+              0.29411764705882354
+            ],
+            "games": 9
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 243,
+            "sum": 108.0,
+            "estimate": 0.4444444444444444,
+            "median": 0.0,
+            "ci95": [
+              0.3849130036630037,
+              0.4956896551724138
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 38,
+            "sum": 15.0,
+            "estimate": 0.39473684210526316,
+            "median": 0.0,
+            "ci95": [
+              0.24242424242424243,
+              0.5926215277777773
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 14,
+            "sum": 9.0,
+            "estimate": 0.6428571428571429,
+            "median": 1.0,
+            "ci95": [
+              0.2727272727272727,
+              0.9230769230769231
+            ],
+            "games": 9
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 111,
+            "sum": 69.0,
+            "estimate": 0.6216216216216216,
+            "median": 1.0,
+            "ci95": [
+              0.5327102803738317,
+              0.6991885200806895
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 15,
+            "sum": 11.0,
+            "estimate": 0.7333333333333333,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.9230769230769231
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 9,
+            "sum": 6.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.3333333333333333,
+              1.0
+            ],
+            "games": 5
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 104,
+            "sum": 62.0,
+            "estimate": 0.5961538461538461,
+            "median": 1.0,
+            "ci95": [
+              0.49,
+              0.6952380952380952
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 24,
+            "sum": 13.0,
+            "estimate": 0.5416666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.29411764705882354,
+              0.75
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 6.0,
+            "estimate": 0.8571428571428571,
+            "median": 1.0,
+            "ci95": [
+              0.5555555555555556,
+              1.0
+            ],
+            "games": 7
+          }
+        ]
+      }
+    },
+    {
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 134,
+            "sum": 1186.0,
+            "estimate": 8.850746268656716,
+            "median": 9.0,
+            "ci95": [
+              8.111868686868686,
+              9.574812155833463
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 142.0,
+            "estimate": 4.733333333333333,
+            "median": 4.5,
+            "ci95": [
+              3.7058823529411766,
+              5.75
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 31.0,
+            "estimate": 7.75,
+            "median": 2.5,
+            "ci95": [
+              1.0,
+              13.0
+            ],
+            "games": 3
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 110,
+            "sum": 692.0,
+            "estimate": 6.290909090909091,
+            "median": 5.0,
+            "ci95": [
+              5.401477272727273,
+              7.01587619047619
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 15,
+            "sum": 68.0,
+            "estimate": 4.533333333333333,
+            "median": 3.0,
+            "ci95": [
+              2.5714285714285716,
+              7.666666666666667
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 16.0,
+            "estimate": 4.0,
+            "median": 3.5,
+            "ci95": [
+              1.0,
+              7.2
+            ],
+            "games": 4
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 244,
+            "sum": 134.0,
+            "estimate": 0.5491803278688525,
+            "median": 1.0,
+            "ci95": [
+              0.47509578544061304,
+              0.6329113924050633
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 45,
+            "sum": 30.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5263157894736842,
+              0.7857522796352578
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 8,
+            "sum": 4.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              0.8333333333333334
+            ],
+            "games": 6
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 243,
+            "sum": 26.0,
+            "estimate": 0.10699588477366255,
+            "median": 0.0,
+            "ci95": [
+              0.06140350877192982,
+              0.1593625498007968
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 7.0,
+            "estimate": 0.23333333333333334,
+            "median": 0.0,
+            "ci95": [
+              0.10714285714285714,
+              0.37037037037037035
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 4
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1880,
+            "sum": 81.0,
+            "estimate": 0.04308510638297872,
+            "median": 0.0,
+            "ci95": [
+              0.0342002980023361,
+              0.054906542056074766
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 169,
+            "sum": 13.0,
+            "estimate": 0.07692307692307693,
+            "median": 0.0,
+            "ci95": [
+              0.04938133200465039,
+              0.11320754716981132
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 39,
+            "sum": 1.0,
+            "estimate": 0.02564102564102564,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.12
+            ],
+            "games": 4
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 243,
+            "sum": 81.0,
+            "estimate": 0.3333333333333333,
+            "median": 0.0,
+            "ci95": [
+              0.27530364372469635,
+              0.39330543933054396
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 13.0,
+            "estimate": 0.43333333333333335,
+            "median": 0.0,
+            "ci95": [
+              0.3076923076923077,
+              0.5384615384615384
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 1.0,
+            "estimate": 0.25,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 81,
+            "sum": 57.0,
+            "estimate": 0.7037037037037037,
+            "median": 1.0,
+            "ci95": [
+              0.6,
+              0.8235294117647058
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 13,
+            "sum": 9.0,
+            "estimate": 0.6923076923076923,
+            "median": 1.0,
+            "ci95": [
+              0.4117647058823529,
+              1.0
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 105,
+            "sum": 70.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.5490136298421808,
+              0.7666666666666667
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 14,
+            "sum": 8.0,
+            "estimate": 0.5714285714285714,
+            "median": 1.0,
+            "ci95": [
+              0.3076923076923077,
+              0.8571428571428571
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 2.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 4
+          }
+        ]
+      }
+    },
+    {
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 128,
+            "sum": 1306.0,
+            "estimate": 10.203125,
+            "median": 9.0,
+            "ci95": [
+              9.099273299370692,
+              11.339847264977504
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 149.0,
+            "estimate": 5.96,
+            "median": 5.0,
+            "ci95": [
+              4.416666666666667,
+              7.218836805555554
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 71.0,
+            "estimate": 10.142857142857142,
+            "median": 10.0,
+            "ci95": [
+              3.4,
+              15.333333333333334
+            ],
+            "games": 6
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 91,
+            "sum": 616.0,
+            "estimate": 6.769230769230769,
+            "median": 5.0,
+            "ci95": [
+              6.037037037037037,
+              7.686607286149895
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 14,
+            "sum": 55.0,
+            "estimate": 3.9285714285714284,
+            "median": 3.5,
+            "ci95": [
+              2.857142857142857,
+              4.945833333333313
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 219,
+            "sum": 128.0,
+            "estimate": 0.5844748858447488,
+            "median": 1.0,
+            "ci95": [
+              0.5242718446601942,
+              0.6403940886699507
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 39,
+            "sum": 25.0,
+            "estimate": 0.6410256410256411,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.7777777777777778
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 7.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 6
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 225,
+            "sum": 17.0,
+            "estimate": 0.07555555555555556,
+            "median": 0.0,
+            "ci95": [
+              0.05240174672489083,
+              0.09691629955947137
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 2.0,
+            "estimate": 0.08,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.2222222222222222
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 1.0,
+            "estimate": 0.16666666666666666,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.6
+            ],
+            "games": 5
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1934,
+            "sum": 77.0,
+            "estimate": 0.03981385729058945,
+            "median": 0.0,
+            "ci95": [
+              0.032327359080998146,
+              0.047644569621954846
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 158,
+            "sum": 6.0,
+            "estimate": 0.0379746835443038,
+            "median": 0.0,
+            "ci95": [
+              0.0072992700729927005,
+              0.0962962962962963
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 69,
+            "sum": 1.0,
+            "estimate": 0.014492753623188406,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.10714285714285714
+            ],
+            "games": 5
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 225,
+            "sum": 77.0,
+            "estimate": 0.3422222222222222,
+            "median": 0.0,
+            "ci95": [
+              0.2863636363636364,
+              0.3959415992360657
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 6.0,
+            "estimate": 0.24,
+            "median": 0.0,
+            "ci95": [
+              0.05555555555555555,
+              0.45454545454545453
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 1.0,
+            "estimate": 0.16666666666666666,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.6
+            ],
+            "games": 5
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 77,
+            "sum": 54.0,
+            "estimate": 0.7012987012987013,
+            "median": 1.0,
+            "ci95": [
+              0.597398088023088,
+              0.8028169014084507
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 6,
+            "sum": 1.0,
+            "estimate": 0.16666666666666666,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.5
+            ],
+            "games": 4
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 81,
+            "sum": 49.0,
+            "estimate": 0.6049382716049383,
+            "median": 1.0,
+            "ci95": [
+              0.4810126582278481,
+              0.7307692307692307
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 11,
+            "sum": 4.0,
+            "estimate": 0.36363636363636365,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.6153846153846154
+            ],
+            "games": 7
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ]
+      }
+    },
+    {
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 129,
+            "sum": 1187.0,
+            "estimate": 9.2015503875969,
+            "median": 9.0,
+            "ci95": [
+              7.8999662162162165,
+              10.638680066621243
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 25,
+            "sum": 142.0,
+            "estimate": 5.68,
+            "median": 5.0,
+            "ci95": [
+              4.894736842105263,
+              6.523872180451127
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 10,
+            "sum": 97.0,
+            "estimate": 9.7,
+            "median": 8.0,
+            "ci95": [
+              5.0,
+              15.25
+            ],
+            "games": 7
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 79,
+            "sum": 476.0,
+            "estimate": 6.025316455696203,
+            "median": 5.0,
+            "ci95": [
+              4.5,
+              7.533352272727273
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 14,
+            "sum": 71.0,
+            "estimate": 5.071428571428571,
+            "median": 4.5,
+            "ci95": [
+              3.75,
+              6.6
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 2.0,
+            "estimate": 2.0,
+            "median": 2.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 208,
+            "sum": 129.0,
+            "estimate": 0.6201923076923077,
+            "median": 1.0,
+            "ci95": [
+              0.5402843601895735,
+              0.7019230769230769
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 39,
+            "sum": 25.0,
+            "estimate": 0.6410256410256411,
+            "median": 1.0,
+            "ci95": [
+              0.48717948717948717,
+              0.78125
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 11,
+            "sum": 10.0,
+            "estimate": 0.9090909090909091,
+            "median": 1.0,
+            "ci95": [
+              0.7272727272727273,
+              1.0
+            ],
+            "games": 7
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 208,
+            "sum": 24.0,
+            "estimate": 0.11538461538461539,
+            "median": 0.0,
+            "ci95": [
+              0.07853403141361257,
+              0.15384615384615385
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 29,
+            "sum": 5.0,
+            "estimate": 0.1724137931034483,
+            "median": 0.0,
+            "ci95": [
+              0.047619047619047616,
+              0.28
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 8,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 6
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1656,
+            "sum": 49.0,
+            "estimate": 0.029589371980676328,
+            "median": 0.0,
+            "ci95": [
+              0.021449195439045183,
+              0.03946633528650118
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 190,
+            "sum": 9.0,
+            "estimate": 0.04736842105263158,
+            "median": 0.0,
+            "ci95": [
+              0.014385919835560127,
+              0.08264462809917356
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 86,
+            "sum": 2.0,
+            "estimate": 0.023255813953488372,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.09090909090909091
+            ],
+            "games": 6
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 208,
+            "sum": 49.0,
+            "estimate": 0.23557692307692307,
+            "median": 0.0,
+            "ci95": [
+              0.1782178217821782,
+              0.28959593183067617
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 29,
+            "sum": 9.0,
+            "estimate": 0.3103448275862069,
+            "median": 0.0,
+            "ci95": [
+              0.10526315789473684,
+              0.4864864864864865
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 8,
+            "sum": 2.0,
+            "estimate": 0.25,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.5714285714285714
+            ],
+            "games": 6
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 49,
+            "sum": 39.0,
+            "estimate": 0.7959183673469388,
+            "median": 1.0,
+            "ci95": [
+              0.6969561688311688,
+              0.8723404255319149
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 9,
+            "sum": 6.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.4444444444444444,
+              1.0
+            ],
+            "games": 5
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 2.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 67,
+            "sum": 29.0,
+            "estimate": 0.43283582089552236,
+            "median": 0.0,
+            "ci95": [
+              0.2982362821948488,
+              0.5901639344262295
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 13,
+            "sum": 2.0,
+            "estimate": 0.15384615384615385,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.36363636363636365
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": null,
+            "games": 1
+          }
+        ]
+      }
+    },
+    {
+      "team": "steel",
+      "team_name": "Oregon Steel",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 110,
+            "sum": 932.0,
+            "estimate": 8.472727272727273,
+            "median": 8.0,
+            "ci95": [
+              7.859782403473992,
+              9.26316985645933
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 39,
+            "sum": 198.0,
+            "estimate": 5.076923076923077,
+            "median": 4.0,
+            "ci95": [
+              4.51512987012987,
+              5.694474637681159
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 34.0,
+            "estimate": 4.857142857142857,
+            "median": 4.0,
+            "ci95": [
+              3.3333333333333335,
+              7.142857142857143
+            ],
+            "games": 5
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 187,
+            "sum": 1162.0,
+            "estimate": 6.213903743315508,
+            "median": 5.0,
+            "ci95": [
+              5.614983744394619,
+              6.946434523809524
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 35,
+            "sum": 189.0,
+            "estimate": 5.4,
+            "median": 5.0,
+            "ci95": [
+              4.194345238095238,
+              7.555637254901959
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 33.0,
+            "estimate": 5.5,
+            "median": 6.0,
+            "ci95": [
+              3.5,
+              7.333333333333333
+            ],
+            "games": 5
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 297,
+            "sum": 110.0,
+            "estimate": 0.37037037037037035,
+            "median": 0.0,
+            "ci95": [
+              0.3006993006993007,
+              0.4396036231518392
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 74,
+            "sum": 39.0,
+            "estimate": 0.527027027027027,
+            "median": 1.0,
+            "ci95": [
+              0.42857142857142855,
+              0.6329113924050633
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 13,
+            "sum": 7.0,
+            "estimate": 0.5384615384615384,
+            "median": 1.0,
+            "ci95": [
+              0.2727272727272727,
+              0.75
+            ],
+            "games": 8
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 295,
+            "sum": 29.0,
+            "estimate": 0.09830508474576272,
+            "median": 0.0,
+            "ci95": [
+              0.06802721088435375,
+              0.1286773806057076
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 56,
+            "sum": 14.0,
+            "estimate": 0.25,
+            "median": 0.0,
+            "ci95": [
+              0.14634146341463414,
+              0.3285763209393346
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 11,
+            "sum": 2.0,
+            "estimate": 0.18181818181818182,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.4166666666666667
+            ],
+            "games": 7
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2092,
+            "sum": 127.0,
+            "estimate": 0.0607074569789675,
+            "median": 0.0,
+            "ci95": [
+              0.052169892802781156,
+              0.06915799675651871
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 328,
+            "sum": 23.0,
+            "estimate": 0.0701219512195122,
+            "median": 0.0,
+            "ci95": [
+              0.046357615894039736,
+              0.0944055944055944
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 63,
+            "sum": 4.0,
+            "estimate": 0.06349206349206349,
+            "median": 0.0,
+            "ci95": [
+              0.027777777777777776,
+              0.11764705882352941
+            ],
+            "games": 7
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 295,
+            "sum": 127.0,
+            "estimate": 0.43050847457627117,
+            "median": 0.0,
+            "ci95": [
+              0.375886524822695,
+              0.4818861368496079
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 56,
+            "sum": 23.0,
+            "estimate": 0.4107142857142857,
+            "median": 0.0,
+            "ci95": [
+              0.2978723404255319,
+              0.5084745762711864
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 11,
+            "sum": 4.0,
+            "estimate": 0.36363636363636365,
+            "median": 0.0,
+            "ci95": [
+              0.14285714285714285,
+              0.6666666666666666
+            ],
+            "games": 7
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 127,
+            "sum": 78.0,
+            "estimate": 0.6141732283464567,
+            "median": 1.0,
+            "ci95": [
+              0.5153846153846153,
+              0.7321428571428571
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 23,
+            "sum": 19.0,
+            "estimate": 0.8260869565217391,
+            "median": 1.0,
+            "ci95": [
+              0.6153846153846154,
+              1.0
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 3.0,
+            "estimate": 0.75,
+            "median": 1.0,
+            "ci95": [
+              0.2,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 164,
+            "sum": 117.0,
+            "estimate": 0.7134146341463414,
+            "median": 1.0,
+            "ci95": [
+              0.6165366245803187,
+              0.7888902847571189
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 33,
+            "sum": 25.0,
+            "estimate": 0.7575757575757576,
+            "median": 1.0,
+            "ci95": [
+              0.6060606060606061,
+              0.9166666666666666
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 6,
+            "sum": 6.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 5
+          }
+        ]
+      }
+    },
+    {
+      "team": "thunderbirds",
+      "team_name": "Pittsburgh Thunderbirds",
+      "games": 11,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 134,
+            "sum": 1269.0,
+            "estimate": 9.470149253731343,
+            "median": 9.0,
+            "ci95": [
+              8.683773395721925,
+              10.33339552238806
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 23,
+            "sum": 140.0,
+            "estimate": 6.086956521739131,
+            "median": 5.0,
+            "ci95": [
+              4.7368421052631575,
+              7.8096560846560825
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 10.0,
+            "estimate": 2.5,
+            "median": 3.0,
+            "ci95": [
+              2.0,
+              4.0
+            ],
+            "games": 3
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 173,
+            "sum": 931.0,
+            "estimate": 5.381502890173411,
+            "median": 4.0,
+            "ci95": [
+              4.923459576138147,
+              5.860007352941176
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 23,
+            "sum": 90.0,
+            "estimate": 3.9130434782608696,
+            "median": 2.0,
+            "ci95": [
+              2.4615384615384617,
+              6.705882352941177
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 6.0,
+            "estimate": 6.0,
+            "median": 6.0,
+            "ci95": null,
+            "games": 1
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 307,
+            "sum": 134.0,
+            "estimate": 0.4364820846905538,
+            "median": 0.0,
+            "ci95": [
+              0.35029642880304374,
+              0.5197368421052632
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 46,
+            "sum": 23.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.29411764705882354,
+              0.7272727272727273
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 4.0,
+            "estimate": 0.8,
+            "median": 1.0,
+            "ci95": [
+              0.2,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 312,
+            "sum": 32.0,
+            "estimate": 0.10256410256410256,
+            "median": 0.0,
+            "ci95": [
+              0.06020066889632107,
+              0.14733542319749215
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 34,
+            "sum": 10.0,
+            "estimate": 0.29411764705882354,
+            "median": 0.0,
+            "ci95": [
+              0.18518518518518517,
+              0.40540540540540543
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 1.0,
+            "estimate": 0.25,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.8
+            ],
+            "games": 4
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2240,
+            "sum": 132.0,
+            "estimate": 0.05892857142857143,
+            "median": 0.0,
+            "ci95": [
+              0.048853368056749294,
+              0.06892103534728115
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 192,
+            "sum": 14.0,
+            "estimate": 0.07291666666666667,
+            "median": 0.0,
+            "ci95": [
+              0.04593594504939785,
+              0.11429116684841867
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 16,
+            "sum": 3.0,
+            "estimate": 0.1875,
+            "median": 0.0,
+            "ci95": [
+              0.03571428571428571,
+              0.4
+            ],
+            "games": 4
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 312,
+            "sum": 131.0,
+            "estimate": 0.4198717948717949,
+            "median": 0.0,
+            "ci95": [
+              0.35202492211838005,
+              0.48695793337097687
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 34,
+            "sum": 14.0,
+            "estimate": 0.4117647058823529,
+            "median": 0.0,
+            "ci95": [
+              0.3235294117647059,
+              0.5217391304347826
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 3.0,
+            "estimate": 0.75,
+            "median": 1.0,
+            "ci95": [
+              0.2,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 132,
+            "sum": 71.0,
+            "estimate": 0.5378787878787878,
+            "median": 1.0,
+            "ci95": [
+              0.44914821860947773,
+              0.6223810957254665
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 14,
+            "sum": 5.0,
+            "estimate": 0.35714285714285715,
+            "median": 0.0,
+            "ci95": [
+              0.13333333333333333,
+              0.6363636363636364
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 3,
+            "sum": 3.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 3
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 161,
+            "sum": 134.0,
+            "estimate": 0.8322981366459627,
+            "median": 1.0,
+            "ci95": [
+              0.7602739726027398,
+              0.8932584269662921
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 21,
+            "sum": 17.0,
+            "estimate": 0.8095238095238095,
+            "median": 1.0,
+            "ci95": [
+              0.6153846153846154,
+              1.0
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 1,
+            "sum": 1.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": null,
+            "games": 1
+          }
+        ]
+      }
+    },
+    {
+      "team": "union",
+      "team_name": "Chicago Union",
+      "games": 11,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 102,
+            "sum": 1144.0,
+            "estimate": 11.215686274509803,
+            "median": 11.0,
+            "ci95": [
+              10.23635077186964,
+              12.360496041563582
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 18,
+            "sum": 180.0,
+            "estimate": 10.0,
+            "median": 11.5,
+            "ci95": [
+              6.769230769230769,
+              13.142857142857142
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 5,
+            "sum": 31.0,
+            "estimate": 6.2,
+            "median": 5.0,
+            "ci95": [
+              3.5555555555555554,
+              10.5
+            ],
+            "games": 4
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 140,
+            "sum": 1011.0,
+            "estimate": 7.2214285714285715,
+            "median": 6.0,
+            "ci95": [
+              6.446789377009031,
+              8.065053978408637
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 21,
+            "sum": 114.0,
+            "estimate": 5.428571428571429,
+            "median": 4.0,
+            "ci95": [
+              3.869565217391304,
+              7.6
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 7.0,
+            "estimate": 3.5,
+            "median": 3.5,
+            "ci95": [
+              3.0,
+              4.0
+            ],
+            "games": 2
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 242,
+            "sum": 102.0,
+            "estimate": 0.4214876033057851,
+            "median": 0.0,
+            "ci95": [
+              0.35294117647058826,
+              0.488
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 39,
+            "sum": 18.0,
+            "estimate": 0.46153846153846156,
+            "median": 0.0,
+            "ci95": [
+              0.2972972972972973,
+              0.6216216216216216
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 7,
+            "sum": 5.0,
+            "estimate": 0.7142857142857143,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 249,
+            "sum": 29.0,
+            "estimate": 0.11646586345381527,
+            "median": 0.0,
+            "ci95": [
+              0.07782101167315175,
+              0.15589619771863114
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 32,
+            "sum": 3.0,
+            "estimate": 0.09375,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.21052631578947367
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 1.0,
+            "estimate": 0.25,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 3
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 2175,
+            "sum": 99.0,
+            "estimate": 0.04551724137931035,
+            "median": 0.0,
+            "ci95": [
+              0.03772703694476639,
+              0.05330578512396694
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 261,
+            "sum": 9.0,
+            "estimate": 0.034482758620689655,
+            "median": 0.0,
+            "ci95": [
+              0.016597510373443983,
+              0.0625
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 20,
+            "sum": 2.0,
+            "estimate": 0.1,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.3333333333333333
+            ],
+            "games": 3
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 249,
+            "sum": 99.0,
+            "estimate": 0.39759036144578314,
+            "median": 0.0,
+            "ci95": [
+              0.3377178742310321,
+              0.4500046125461254
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 32,
+            "sum": 9.0,
+            "estimate": 0.28125,
+            "median": 0.0,
+            "ci95": [
+              0.14814814814814814,
+              0.4
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 2.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 3
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 99,
+            "sum": 50.0,
+            "estimate": 0.5050505050505051,
+            "median": 1.0,
+            "ci95": [
+              0.4268252032520325,
+              0.576585239085239
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 9,
+            "sum": 5.0,
+            "estimate": 0.5555555555555556,
+            "median": 1.0,
+            "ci95": [
+              0.18181818181818182,
+              1.0
+            ],
+            "games": 6
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 1.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 128,
+            "sum": 102.0,
+            "estimate": 0.796875,
+            "median": 1.0,
+            "ci95": [
+              0.688395652173913,
+              0.8768115942028986
+            ],
+            "games": 11
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 19,
+            "sum": 13.0,
+            "estimate": 0.6842105263157895,
+            "median": 1.0,
+            "ci95": [
+              0.5263157894736842,
+              0.9
+            ],
+            "games": 9
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 2.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 2
+          }
+        ]
+      }
+    },
+    {
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "games": 12,
+      "metrics": {
+        "throws_goal": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 117,
+            "sum": 1161.0,
+            "estimate": 9.923076923076923,
+            "median": 9.0,
+            "ci95": [
+              8.794392523364486,
+              11.360934558493948
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 29,
+            "sum": 206.0,
+            "estimate": 7.103448275862069,
+            "median": 7.0,
+            "ci95": [
+              5.48,
+              9.0
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 32.0,
+            "estimate": 8.0,
+            "median": 10.5,
+            "ci95": [
+              0.0,
+              11.0
+            ],
+            "games": 4
+          }
+        ],
+        "throws_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 87,
+            "sum": 755.0,
+            "estimate": 8.67816091954023,
+            "median": 7.0,
+            "ci95": [
+              7.220747545137789,
+              10.043490205446727
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 10,
+            "sum": 42.0,
+            "estimate": 4.2,
+            "median": 3.5,
+            "ci95": [
+              2.888888888888889,
+              5.142857142857143
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ],
+        "scoring": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 204,
+            "sum": 117.0,
+            "estimate": 0.5735294117647058,
+            "median": 1.0,
+            "ci95": [
+              0.5,
+              0.6381909547738693
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 39,
+            "sum": 29.0,
+            "estimate": 0.7435897435897436,
+            "median": 1.0,
+            "ci95": [
+              0.6153846153846154,
+              0.8604651162790697
+            ],
+            "games": 12
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 4,
+            "sum": 4.0,
+            "estimate": 1.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "games": 4
+          }
+        ],
+        "early_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 207,
+            "sum": 17.0,
+            "estimate": 0.0821256038647343,
+            "median": 0.0,
+            "ci95": [
+              0.046292735042735046,
+              0.1210762331838565
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 8.0,
+            "estimate": 0.26666666666666666,
+            "median": 0.0,
+            "ci95": [
+              0.125,
+              0.4482758620689655
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 2
+          }
+        ],
+        "huck_share": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 1935,
+            "sum": 85.0,
+            "estimate": 0.04392764857881137,
+            "median": 0.0,
+            "ci95": [
+              0.03412042971372765,
+              0.055027612076478494
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 196,
+            "sum": 15.0,
+            "estimate": 0.07653061224489796,
+            "median": 0.0,
+            "ci95": [
+              0.050780754282994923,
+              0.12096774193548387
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 21,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 2
+          }
+        ],
+        "any_huck": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 207,
+            "sum": 85.0,
+            "estimate": 0.4106280193236715,
+            "median": 0.0,
+            "ci95": [
+              0.33157894736842103,
+              0.4951467979835698
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 30,
+            "sum": 15.0,
+            "estimate": 0.5,
+            "median": 0.5,
+            "ci95": [
+              0.35294117647058826,
+              0.65625
+            ],
+            "games": 11
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 2,
+            "sum": 0.0,
+            "estimate": 0.0,
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "games": 2
+          }
+        ],
+        "huck_completion": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 85,
+            "sum": 61.0,
+            "estimate": 0.7176470588235294,
+            "median": 1.0,
+            "ci95": [
+              0.6404382022471911,
+              0.7866666666666666
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 15,
+            "sum": 10.0,
+            "estimate": 0.6666666666666666,
+            "median": 1.0,
+            "ci95": [
+              0.36363636363636365,
+              0.8888888888888888
+            ],
+            "games": 10
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ],
+        "break_after_turnover": [
+          {
+            "stage": 1,
+            "name": "First",
+            "n": 77,
+            "sum": 43.0,
+            "estimate": 0.5584415584415584,
+            "median": 1.0,
+            "ci95": [
+              0.463768115942029,
+              0.6455696202531646
+            ],
+            "games": 12
+          },
+          {
+            "stage": 2,
+            "name": "Second",
+            "n": 9,
+            "sum": 5.0,
+            "estimate": 0.5555555555555556,
+            "median": 1.0,
+            "ci95": [
+              0.16666666666666666,
+              0.8888888888888888
+            ],
+            "games": 8
+          },
+          {
+            "stage": 3,
+            "name": "Third",
+            "n": 0,
+            "sum": 0.0,
+            "estimate": null,
+            "median": null,
+            "ci95": null,
+            "games": 0
+          }
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "groups_checked": 528,
+    "checks": [
+      "All displayed exact-stage counts, sums, means, rates and game counts independently reconciled with CSV.",
+      "First and second estimates and intervals preserved from existing reviewed results.",
+      "Third uses own_possession == 3; fourth and later excluded; original numbers retained after timeout filtering."
+    ]
+  },
+  "inputs": {
+    "results.json": "3b19faee878a9f8c01dec57a2fc2c90cf074c35326cd43fc5f4189dac0a157fb",
+    "follow_up_20261106.json": "292f584920bd0c8508cbfd675afb1f13325f3e556104c1d87596179d7c3591dc",
+    "possessions.csv": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7",
+    "throws.csv": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc"
+  }
+}

@@ -13,7 +13,7 @@ const pct = (v:number) => (100*v).toFixed(1)+"%";
 const number = (v:number) => v.toLocaleString();
 const signed = (v:number) => (v>0?"+":"")+v.toFixed(1);
 const range = (v:number[], scale=1) => v.map(x=>(scale*x).toFixed(1)).join(" to ");
-const SOURCE = "Source: preserved ShownSpace export and UFA event sequences · 2026 regular season · November 5 analysis with November 6 follow-ups.";
+const SOURCE = "Source: preserved ShownSpace export and UFA event sequences · 2026 regular season · November 5 analysis, November 6 follow-ups and November 9 exact-possession tables.";
 const metrics:Record<string,{label:string;unit:string;count:boolean;denominator:string;explain:string}> = {
   early_huck:{label:"Huck in the first 3 throws",unit:"% of eligible possessions",count:false,denominator:"possessions",explain:"The share of possessions with at least one huck in their first three actual throws. Retains possessions that end before throw three. Starts must be at least 40 yards from the attacking goal line."},
   throws_goal:{label:"Throws before a goal",unit:"mean throws per goal possession",count:true,denominator:"goal possessions",explain:"The average number of physical throws in possessions that end in a goal. Every actual throw counts, including setup passes. All starting locations are included."},
@@ -54,6 +54,9 @@ export default function OLineRegainHucking() {
   const [teamId,setTeamId]=useState("spiders");
   const [teamPool,setTeamPool]=useState("playoffs");
   const [scoringView,setScoringView]=useState("observed");
+  const [tablePossession,setTablePossession]=useState("1");
+  const tableStage=Number(tablePossession);
+  const tableStageLabel=tablePossession==="all"?"Comparison":({"1":"First possession","2":"Second possession","3":"Third possession"} as Record<string,string>)[tablePossession];
   const teams=DATA.teams.filter((t:any)=>teamPool==="all"||DATA.follow_up.playoff_team_ids.includes(t.team)).sort((a:any,b:any)=>a.team_name.localeCompare(b.team_name));
   const team=teams.find((t:any)=>t.team===teamId)||teams[0];
   const spec=metrics[metric];
@@ -68,8 +71,9 @@ export default function OLineRegainHucking() {
   const linkStyle={color:theme.text.link};
   return <Stack gap={28} style={{padding:22,maxWidth:1100,margin:"0 auto",color:theme.text.primary}}>
     <Stack gap={10}>
-      <H1>How O-lines change after regaining possession</H1>
+      <H1>O-line offense after turnovers</H1>
       <Text>2026 UFA regular season · 22 teams · 131 of 132 games · exploratory research</Text>
+      <Text>After turning the disc over and getting it back, does an O-line change how it attacks, and how do its chances of scoring compare with its opening opportunity?</Text>
       <Text><strong>The clearest change is earlier hucking and fewer throws.</strong> On a team's second possession, a huck appears in the first three throws more often than on its first possession. Fewer throws remain apparent after accounting for starting location. Scoring does not clearly fall after a regain.</Text>
       <Text>Example: Atlanta receives the pull, turns it over, then wins it back. Atlanta's opening chance is its first possession; its next chance with the disc is its second possession, all during the same point. We include points Atlanta eventually wins (holds) and loses (is broken). Looking only at holds would leave out unsuccessful points.</Text>
       <div style={{display:"flex",gap:18,flexWrap:"wrap",fontSize:14}}>
@@ -87,7 +91,7 @@ export default function OLineRegainHucking() {
 
     <section id="league" style={sectionStyle}>
       <Stack gap={12}>
-        <H2>1. Hucks come earlier after a regain</H2>
+        <H2>1. Hucks come earlier after getting the disc back</H2>
         <Text>A huck occurs in the first three throws in <strong>{pct(early[0].estimate)}</strong> of first possessions, <strong>{pct(early[1].estimate)}</strong> of second possessions, and <strong>{pct(early[2].estimate)}</strong> of third-or-later possessions.</Text>
         <SingleChart groups={early} label="Huck within first 3 throws" yLabel="Early-huck possessions (%)" max={30}/>
         <Text>The observed increase is <strong>{signed(100*(early[1].estimate-early[0].estimate))} percentage points</strong> from first to second possessions, and {signed(100*(early[2].estimate-early[0].estimate))} from first to third or later. These are differences between the percentages shown in the bars, calculated before rounding.</Text>
@@ -124,7 +128,7 @@ export default function OLineRegainHucking() {
 
     <section style={sectionStyle}>
       <Stack gap={12}>
-        <H2>3. Scoring does not clearly decrease after a regain</H2>
+        <H2>3. Scoring does not clearly decrease on later opportunities</H2>
         <Text><strong>What the denominator means:</strong> {number(rawScore[0].sum)} of {number(rawScore[0].n)} first possessions score ({pct(rawScore[0].estimate)}). Among teams that reach a second possession, {number(rawScore[1].sum)} of {number(rawScore[1].n)} second possessions score ({pct(rawScore[1].estimate)}). Each denominator contains possessions ending in a goal or turnover. Teams that are broken before recovering the disc cannot contribute a second possession.</Text>
         <Text>Combining second and all later possessions gives {pct(DATA.league.scoring.first_vs_all_subsequent.groups[1].estimate)} ({number(DATA.league.scoring.first_vs_all_subsequent.groups[1].sum)}/{number(DATA.league.scoring.first_vs_all_subsequent.groups[1].n)}). These are conditional scoring chances after reaching that possession, not the share of all receiving points that score later. Individual teams can differ from the league average.</Text>
         <Text>The observed scoring rate is {pct(rawScore[0].estimate)} on first possessions and {pct(rawScore[1].estimate)} on second possessions. But regained possessions often start closer to the goal. Accounting for starting location and game context brings the estimates to roughly 51% for both.</Text>
@@ -159,16 +163,21 @@ export default function OLineRegainHucking() {
         <div data-selected-team-chart={team.team} data-selected-metric={metric}><SingleChart groups={team.metrics[metric].groups} label={spec.label} yLabel={spec.count?"Mean number of throws":metric==="huck_share"?"Throws that are hucks (%)":metric==="huck_completion"?"Hucks completed (%)":metric==="break_after_turnover"?"Turnovers followed by a break (%)":"Possessions (%)"} count={spec.count} max={spec.count?undefined:metric==="huck_share"?20:metric==="early_huck"?60:100}/></div>
         <Text>{modeled?"Adjusting for recorded context, this":"In the observed data, this"} team's change from first to <strong>all subsequent possessions combined</strong> is {signed(change.difference*(spec.count?1:100))} {spec.count?"throws":"percentage points"} (95% range {range(change.ci95,spec.count?1:100)}). That estimate uses {number(change.subsequent_n)} subsequent {spec.denominator} across {change.games} games.</Text>
         <Text size="small" tone="secondary">{SOURCE} Bars are observed values. The change combines second and later possessions to avoid splitting already-small team samples. {modeled?"The original model includes all 22 teams; changing this view does not refit the model or remove centering passes.":"This comparison uses observed rates and whole-game bootstrap ranges; it is not adjusted for context."}</Text>
-        <Text weight="semibold">{teamPool==="playoffs"?"12 playoff teams":"All 22 teams"} · {spec.label.toLowerCase()}</Text>
-        <Text size="small">Each rate or mean is followed by its number of {spec.denominator} in parentheses. The last column compares first with all subsequent possessions {modeled?"after context adjustment":"without adjustment"}; pp means percentage points. A range crossing zero includes no change.</Text>
-        <div data-team-table="true"><Table headers={["Team",`First (${spec.count?"mean":"%"}; n)`,`Second (${spec.count?"mean":"%"}; n)`,`Third+ (${spec.count?"mean":"%"}; n)`,`${modeled?"Adjusted":"Observed"} change (${spec.count?"throws":"pp"}); 95% range`]}
-          rows={teams.map((t:any)=>{const c=modeled?DATA.team_changes[metric].teams.find((v:any)=>v.team===t.team):t.metrics[metric].first_vs_all_subsequent.differences[0];return [t.team_name+(t.games===11?" *":""),...t.metrics[metric].groups.map((g:Estimate)=>groupText(g,spec.count)),`${signed(c.difference*(spec.count?1:100))} [${range(c.ci95,spec.count?1:100)}]`];})} columnAlign={["left","right","right","right","right"]}/></div>
-        <Text size="small" tone="secondary">* Chicago and Pittsburgh have 11 available games; other teams have 12. These 95% ranges are individual intervals, not simultaneous guarantees across all teams. Multiple-comparison corrections are applied to the tests in the methods section; no early-huck team contrast clears the correction across all 132 team-by-measure comparisons.</Text>
-        <details><summary>Playoff teams side by side: first versus all subsequent possessions</summary><Stack gap={12} style={{marginTop:14}}>
-          <Text>Each cell reads first → subsequent, with sample sizes in parentheses. Subsequent combines the second and all later possessions. These are observed means and rates. Goal and turnover throw counts keep all starting locations; early-huck rates use starts at least 40 yards from the attacking goal line.</Text>
-          <div data-playoff-summary="true"><Table headers={["Playoff team","Throws before goal (mean; n)","Throws before turnover (mean; n)","Possession scoring (%; n)","Early huck (%; n)"]}
-            rows={[...DATA.follow_up.playoff_summary].sort((a:any,b:any)=>a.team_name.localeCompare(b.team_name)).map((t:any)=>[t.team_name,...["throws_goal","throws_turnover","scoring","early_huck"].map(k=>{const m=t.metrics[k];return `${k.startsWith("throws")?m.first.toFixed(1):pct(m.first)} (${m.first_n}) → ${k.startsWith("throws")?m.subsequent.toFixed(1):pct(m.subsequent)} (${m.subsequent_n})`;})])} columnAlign={["left","right","right","right","right"]}/></div>
-          <Text size="small" tone="secondary">This is the full predefined playoff subset, including teams whose changes differ from the league result. It is not a new search for statistically significant playoff-only effects.</Text>
+        <label style={{display:"grid",gap:6,maxWidth:450}}><span>Possession shown in tables</span><Select value={tablePossession} onChange={setTablePossession} options={[{value:"1",label:"First possession"},{value:"2",label:"Second possession"},{value:"3",label:"Third possession"},{value:"all",label:"Compare first, second and third or later"}]}/></label>
+        <Text size="small">This selector changes both tables below. Third possession means exactly the third opportunity for the receiving team, excluding fourth and later opportunities. The comparison option and charts retain the original third-or-later grouping.</Text>
+        <Text weight="semibold">{teamPool==="playoffs"?"12 playoff teams":"All 22 teams"} · {tableStageLabel} · {spec.label.toLowerCase()}</Text>
+        <Text size="small">Each rate or mean is followed by its number of {spec.denominator} in parentheses. {tablePossession==="all"?`The last column compares first with all subsequent possessions ${modeled?"after context adjustment":"without adjustment"}; pp means percentage points. A range crossing zero includes no change.`:"Values are observed, without adjustment for field position. The uncertainty range is based on resampling games; an interval is not shown for an exact-third estimate from fewer than two games."}</Text>
+        <div data-team-table="true" data-possession-filter={tablePossession}>{tablePossession==="all"?<Table headers={["Team",`First (${spec.count?"mean":"%"}; n)`,`Second (${spec.count?"mean":"%"}; n)`,`Third+ (${spec.count?"mean":"%"}; n)`,`${modeled?"Adjusted":"Observed"} change (${spec.count?"throws":"pp"}); 95% range`]}
+          rows={teams.map((t:any)=>{const c=modeled?DATA.team_changes[metric].teams.find((v:any)=>v.team===t.team):t.metrics[metric].first_vs_all_subsequent.differences[0];return [t.team_name+(t.games===11?" *":""),...t.metrics[metric].groups.map((g:Estimate)=>groupText(g,spec.count)),`${signed(c.difference*(spec.count?1:100))} [${range(c.ci95,spec.count?1:100)}]`];})} columnAlign={["left","right","right","right","right"]}/>
+          :<Table headers={["Team",`${tableStageLabel} (${spec.count?"mean throws":"%"}; n)`,"95% uncertainty range"]}
+            rows={teams.map((t:any)=>{const g=t.exact_metrics[metric][tableStage-1];return [t.team_name+(t.games===11?" *":""),groupText(g,spec.count),g.ci95?range(g.ci95,spec.count?1:100)+(spec.count?" throws":"% "):"—"];})} columnAlign={["left","right","right"]}/>}</div>
+        <Text size="small" tone="secondary">{SOURCE} * Chicago and Pittsburgh have 11 available games; other teams have 12. A dash with (0) means there are no qualifying observations. Third-possession samples can be very small. These 95% ranges are individual intervals, not simultaneous guarantees across all teams. Multiple-comparison corrections remain attached to the original tests in the methods section; filtering does not run new significance tests.</Text>
+        <details><summary>Team statistics across measures</summary><Stack gap={12} style={{marginTop:14}}>
+          <Text weight="semibold">{teamPool==="playoffs"?"12 playoff teams":"All 22 teams"} · {tablePossession==="all"?"First versus all subsequent possessions":tableStageLabel}</Text>
+          <Text>{tablePossession==="all"?"Each cell reads first → subsequent, with sample sizes in parentheses. Subsequent combines the second and all later possessions.":`Each cell shows ${tableStageLabel.toLowerCase()} statistics, with sample sizes in parentheses.`} These are observed means and rates. Goal and turnover throw counts keep all starting locations; early-huck rates use starts at least 40 yards from the attacking goal line.</Text>
+          <div data-playoff-summary="true" data-possession-filter={tablePossession}><Table headers={["Team","Throws before goal (mean; n)","Throws before turnover (mean; n)","Possession scoring (%; n)","Early huck (%; n)"]}
+            rows={teams.map((t:any)=>[t.team_name+(t.games===11?" *":""),...["throws_goal","throws_turnover","scoring","early_huck"].map(k=>{if(tablePossession!=="all")return groupText(t.exact_metrics[k][tableStage-1],k.startsWith("throws"));const gs=t.metrics[k].groups;const n=gs[1].n+gs[2].n;const later={stage:2,n,estimate:n?(gs[1].sum+gs[2].sum)/n:null,ci95:null};return `${groupText(gs[0],k.startsWith("throws"))} → ${groupText(later,k.startsWith("throws"))}`;})])} columnAlign={["left","right","right","right","right"]}/></div>
+          <Text size="small" tone="secondary">The team and possession filters above apply to this table. {tablePossession==="all"?"Select a single possession to see its observed uncertainty ranges in the table above.":"Use the measure selector for the matching uncertainty ranges in the table above."}</Text>
         </Stack></details>
       </Stack>
     </section>
@@ -209,7 +218,7 @@ export default function OLineRegainHucking() {
     <section id="paper" style={sectionStyle}>
       <Stack gap={12}>
         <H2>A clearer research direction</H2>
-        <Text><strong>Question:</strong> How does a receiving team's approach change on subsequent possessions within the same point, and how do those changes relate to scoring?</Text>
+        <Text><strong>Question:</strong> After turning the disc over and getting it back, does an O-line change how it attacks, and how do its chances of scoring compare with its opening opportunity?</Text>
         <Text><strong>Working finding:</strong> Second possessions involve fewer passing actions and more hucking in the first few throws, even after accounting for recorded field and game context. The evidence does not show a corresponding decrease in possession scoring. Teams differ most clearly in the size of their early-hucking change.</Text>
         <Text><strong>What remains unresolved:</strong> The size of the change varies by team, and later regains do not show a clear progressive rise beyond the second possession. Centering and other opening structures have not been fully separated from attacking throws. The results describe observed choices and outcomes; they do not establish fatigue or impatience as the cause.</Text>
         <Text><strong>Use for coaches:</strong> Compare your team's opening plan with its first few choices after winning the disc back. For an opponent, identify whether giving the disc back tends to be followed by an immediate deep look. Use the team counts to decide which patterns deserve film review, and keep huck timing separate from huck execution and scoring.</Text>
@@ -243,9 +252,13 @@ export default function OLineRegainHucking() {
 def main():
     result = json.loads((ROOT/'results.json').read_text())
     result['follow_up'] = json.loads((ROOT/'follow_up_20261106.json').read_text())
+    result['possession_filters'] = json.loads((ROOT/'possession_filters.json').read_text())
+    for name,digest in result['possession_filters']['inputs'].items():
+        assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest, 'Re-run possession_filters.py after changing its inputs.'
     assert result['follow_up']['inputs']['results.json']==hashlib.sha256((ROOT/'results.json').read_bytes()).hexdigest(), 'Re-run follow_up.py after changing the main results.'
     for team in result['teams']:
         team['metrics']['break_after_turnover']=next(x for x in result['follow_up']['break_teams'] if x['team']==team['team'])
+        team['exact_metrics']=next(x for x in result['possession_filters']['teams'] if x['team']==team['team'])['metrics']
     result['audit'] = json.loads((ROOT/'cohort_audit.json').read_text())
     labels = {'all_possessions_including_timeouts':'Keep timeout possessions',
       'exclude_whole_timeout_or_injury_points':'Remove whole points with timeouts/injuries',

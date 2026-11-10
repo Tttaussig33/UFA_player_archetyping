@@ -5,7 +5,8 @@ const {pathToFileURL} = require('node:url');
 const {chromium} = require('/Users/teddytaussig/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const preview = path.resolve(__dirname, '../previews');
 const output = path.join(__dirname, 'verification');
-const names = ['UFA-dead-disc-first-pass', 'UFA-pull-centering', 'UFA-oline-regain-hucking', 'UFA-possession-review'];
+const reportArgument = process.argv.find(x => x.startsWith('--report='));
+const names = reportArgument ? [reportArgument.slice('--report='.length)] : ['UFA-dead-disc-first-pass', 'UFA-pull-centering', 'UFA-oline-regain-hucking', 'UFA-possession-review'];
 function dataFor(name) {
   const source = fs.readFileSync(path.join(preview, name + '.canvas.tsx'), 'utf8');
   const line = source.split('\n').find(line => /^const DATA\b/.test(line));
@@ -47,13 +48,17 @@ async function verify(page, name, choice) {
     const pct = x => (100*x).toFixed(1)+'%';
     const signed = x => (x>0?'+':'')+x.toFixed(1);
     const range = (v,s) => v.map(x=>(s*x).toFixed(1)).join(' to ');
-    const [scoreView, pool, metric, teamId] = await page.locator('select').evaluateAll(ss => ss.map(s => s.value));
+    const [scoreView, pool, metric, teamId, tablePossession] = await page.locator('select').evaluateAll(ss => ss.map(s => s.value));
     const sorted = data.teams.filter(t=>pool==='all'||data.follow_up.playoff_team_ids.includes(t.team)).sort((a,b) => a.team_name.localeCompare(b.team_name));
     const count = metric.startsWith('throws'), scale = count?1:100;
-    const groupText = g => !g.n || g.estimate==null?'— (0)':(count?g.estimate.toFixed(1):pct(g.estimate))+' ('+g.n.toLocaleString()+')';
+    const groupText = (g, isCount=count) => !g.n || g.estimate==null?'— (0)':(isCount?g.estimate.toFixed(1):pct(g.estimate))+' ('+g.n.toLocaleString()+')';
     assert.deepEqual(actual.rows[5], sorted.map(t => {
+      if (tablePossession !== 'all') {
+        const g=t.exact_metrics[metric][Number(tablePossession)-1];
+        return [t.team_name+(t.games===11?' *':''),groupText(g),g.ci95?range(g.ci95,scale)+(count?' throws':'% '):'—'];
+      }
       const c=data.team_changes[metric]?data.team_changes[metric].teams.find(c=>c.team===t.team):t.metrics[metric].first_vs_all_subsequent.differences[0];
-      return [t.team_name+(t.games===11?' *':''),...t.metrics[metric].groups.map(groupText),`${signed(c.difference*scale)} [${range(c.ci95,scale)}]`];
+      return [t.team_name+(t.games===11?' *':''),...t.metrics[metric].groups.map(g=>groupText(g)),`${signed(c.difference*scale)} [${range(c.ci95,scale)}]`];
     }));
     const val=(g,c=false)=>Number((g.estimate*(c?1:100)).toFixed(1));
     const team=data.teams.find(t=>t.team===teamId);
@@ -68,9 +73,14 @@ async function verify(page, name, choice) {
     assert.equal(await page.locator('[data-axis-x]').count(),7);
     assert.equal(await page.locator('[data-axis-y]').count(),7);
     assert.equal(await page.locator('select').nth(3).locator('option').count(),pool==='all'?22:12);
-    assert.deepEqual(actual.rows[6], [...data.follow_up.playoff_summary].sort((a,b)=>a.team_name.localeCompare(b.team_name)).map(t=>[t.team_name,...['throws_goal','throws_turnover','scoring','early_huck'].map(k=>{
-      const m=t.metrics[k];return `${k.startsWith('throws')?m.first.toFixed(1):pct(m.first)} (${m.first_n}) → ${k.startsWith('throws')?m.subsequent.toFixed(1):pct(m.subsequent)} (${m.subsequent_n})`;
+    assert.deepEqual(actual.rows[6], sorted.map(t=>[t.team_name+(t.games===11?' *':''),...['throws_goal','throws_turnover','scoring','early_huck'].map(k=>{
+      if(tablePossession!=='all')return groupText(t.exact_metrics[k][Number(tablePossession)-1],k.startsWith('throws'));
+      const gs=t.metrics[k].groups,n=gs[1].n+gs[2].n;
+      return `${groupText(gs[0],k.startsWith('throws'))} → ${groupText({n,estimate:n?(gs[1].sum+gs[2].sum)/n:null},k.startsWith('throws'))}`;
     })]));
+    assert.equal(await page.locator('[data-team-table]').getAttribute('data-possession-filter'), tablePossession);
+    assert.equal(await page.locator('[data-playoff-summary]').getAttribute('data-possession-filter'), tablePossession);
+    assert.equal(actual.title, 'O-line offense after turnovers');
     assert(actual.text.includes('It does not adjust for which passes are centering passes.'));
     assert(actual.text.includes('11.5%')&&actual.text.includes('20.9%'));
   } else {
@@ -115,6 +125,11 @@ async function verify(page, name, choice) {
           const teams=await page.locator('select').nth(3).locator('option').evaluateAll(ns=>ns.map(n=>n.value));
           for (const metric of metrics) {
             await page.locator('select').nth(2).selectOption(metric);
+            for (const stage of ['1','2','3','all']) {
+              await page.locator('select').nth(4).selectOption(stage);
+              results.push({...await verify(page,name,null),pool,metric,tablePossession:stage});
+            }
+            await page.locator('select').nth(4).selectOption('1');
             for (const team of teams) {
               await page.locator('select').nth(3).selectOption(team);
               results.push({...await verify(page,name,null),pool,metric,team});
@@ -125,6 +140,14 @@ async function verify(page, name, choice) {
         await page.locator('select').nth(1).selectOption('playoffs');
         assert.equal(await page.locator('select').nth(3).inputValue(),'spiders','Non-playoff selection must reset when switching to playoff teams');
         await page.locator('select').nth(2).selectOption('throws_goal');
+        const details=page.locator('details').filter({has:page.locator('summary',{hasText:'Team statistics across measures'})});
+        await details.locator('summary').click();
+        for (const stage of ['1','2','3','all']) {
+          await page.locator('select').nth(4).selectOption(stage);
+          await verify(page,name,null);
+          await page.locator('#teams').screenshot({path:path.join(output,name+'-possession-'+stage+'.png')});
+        }
+        await page.locator('select').nth(4).selectOption('1');
       }
       if (options.length) await firstSelect.selectOption(options[0]);
       const summary = page.locator('summary').first();
@@ -149,7 +172,7 @@ async function verify(page, name, choice) {
     assert.deepEqual(errors, []);
     assert.deepEqual(externalRequests, []);
     const report = {checkedAt:new Date().toISOString(), passed:true, results, javascriptErrors:errors, externalRequests, checkedViewports:['1200px light','420px dark']};
-    fs.writeFileSync(path.join(output, 'browser-results.json'), JSON.stringify(report, null, 2));
-    console.log(JSON.stringify(report, null, 2));
+    fs.writeFileSync(path.join(output, reportArgument?'possession-filter-browser-results.json':'browser-results.json'), JSON.stringify(report, null, 2));
+    console.log(JSON.stringify({passed:report.passed,statesChecked:results.length,javascriptErrors:errors,externalRequests,checkedViewports:report.checkedViewports}, null, 2));
   } finally { await browser.close(); }
 })().catch(e => { console.error(e); process.exitCode = 1; });

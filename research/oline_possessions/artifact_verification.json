@@ -19,5 +19,26 @@
     "sections": 3,
     "rendered_page_review": "Passed",
     "reviewed_on": "2026-11-05 (unchanged in this revision)"
+  },
+  "revision_2026_11_09": {
+    "passed": true,
+    "title": "O-line offense after turnovers",
+    "changes": [
+      "Possession selector applies to both team tables for the playoff or full-league view.",
+      "First and second retain original reviewed results; third is exact own_possession 3, excluding fourth or later.",
+      "Original grouped comparison remains available.",
+      "Introduction title and research question updated in the same Google Doc and local Word copy."
+    ],
+    "data_checks": "528 team-by-metric-by-possession groups independently reconciled with CSV; numerator, denominator, estimate and game count agree.",
+    "browser_checks": "338 rendered states passed, covering all eight measures, both team pools, all table filters and retained chart interactions; zero JavaScript errors or network requests.",
+    "visual_checks": [
+      "Desktop exact-third table and multi-measure summary readable.",
+      "420px dark tables retain readable labels and scroll within the page.",
+      "Revised Word and Google Docs introduction fits one page; references remain on a separate page."
+    ],
+    "native_vscode": "The existing preview extension and runtime are unchanged. The Nov 6 native VS Code checks were not rerun; this revision was checked in the same portable HTML renderer.",
+    "source_checks": "Input hashes verified; no database refresh or model refit.",
+    "google_doc": "https://docs.google.com/document/d/1uJ3p_nYBJmIT4h4R_z0WLg_DZD0kgsFoOwCuPgLvLUs",
+    "report_sha256": "6e18cb5d928c7d3788aa18c10a1f13585e9e914089798f15b84b74c9dcaf3d59"
   }
 }

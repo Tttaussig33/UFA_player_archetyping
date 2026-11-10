@@ -5,13 +5,20 @@ directly as rendered reports through the local **UFA Research Preview** extensio
 
 - `UFA-dead-disc-first-pass.canvas.tsx` — throws after recorded stoppages.
 - `UFA-pull-centering.canvas.tsx` — each team's most frequent centering recipient.
-- `UFA-oline-regain-hucking.canvas.tsx` — first, second, and later O-line possessions: throw counts, huck timing, catches, scoring, and breaks after turnovers. The team view defaults to the 12 playoff teams and can show all 22.
+- `UFA-oline-regain-hucking.canvas.tsx` — **O-line offense after turnovers**: throw counts, huck timing, catches, scoring, and breaks after turnovers. The team view defaults to the 12 playoff teams and can show all 22. **Possession shown in tables** selects first, second, or exact third possessions in both team tables. The comparison option retains the original first / second / third-or-later view.
 - `UFA-possession-review.canvas.tsx` — five recorded possessions, with a field view and throw-by-throw controls for discussion.
 
 Dropdowns, tables, charts and expandable methods work without a server or terminal.
 The dead-disc and pull-centering reports retain their earlier research snapshots.
 The O-line report was expanded on November 5–6, 2026 using the preserved data;
 its calculation and validation files are in `research/oline_possessions/`.
+On November 9, the team tables gained exact-possession filters. Third means
+`own_possession == 3`, excluding the 43 fourth-or-later possessions. The 204
+third possessions retain their original numbering after timeout exclusions.
+The filters use the existing metric eligibility rules; sample sizes differ
+by measure. `possession_filters.py` and `possession_filters.json` preserve the
+calculations and independent numerator/denominator checks. This addition
+does not refit the original models or change the grouped league charts.
 The possession review reconstructs selected examples from the
 same export and raw event records, checked against ShownSpace's play-by-play.
 Opening a preview does not query or refresh the database. The examples are selected
