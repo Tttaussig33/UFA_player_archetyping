@@ -19,6 +19,13 @@ The filters use the existing metric eligibility rules; sample sizes differ
 by measure. `possession_filters.py` and `possession_filters.json` preserve the
 calculations and independent numerator/denominator checks. This addition
 does not refit the original models or change the grouped league charts.
+On November 10, the league early-huck comparison was parked in a closed review
+section pending decisions about comparable starting locations and centering
+passes. Its original bars remain available. A separate chart explains the
+saved model estimates behind the +7.1 percentage-point comparison; no model
+was refitted. Team early-huck figures are also marked as parked. A check using
+all known starting locations shows why the whole-possession huck rate depends
+on whether near-goal starts are included.
 The possession review reconstructs selected examples from the
 same export and raw event records, checked against ShownSpace's play-by-play.
 Opening a preview does not query or refresh the database. The examples are selected

@@ -64,14 +64,15 @@ async function verify(page, name, choice) {
     const team=data.teams.find(t=>t.team===teamId);
     const scores=scoreView==='observed'?data.league.scoring.groups:data.adjusted.scoring.groups;
     const expectedBars=[...data.league.early_huck.groups.map(g=>val(g)),
+      ...data.adjusted.early_huck.groups.slice(0,2).map(g=>val(g)),
       ...data.throw_windows.flatMap(w=>[val(w.groups[0]),val(w.groups[1])]),
       ...[0,1,2].flatMap(i=>[val(data.league.throws_goal.groups[i],true),val(data.league.throws_turnover.groups[i],true)]),
       ...scores.map(g=>val(g)),...team.metrics[metric].groups.filter(g=>g.n>0&&g.estimate!=null).map(g=>val(g,count)),
       ...data.league.huck_completion.groups.map(g=>val(g)),...data.follow_up.break_league.groups.map(g=>val(g))];
     assert.deepEqual(actual.bars.map(b=>b.value),expectedBars);
-    assert.equal(actual.charts,7);
-    assert.equal(await page.locator('[data-axis-x]').count(),7);
-    assert.equal(await page.locator('[data-axis-y]').count(),7);
+    assert.equal(actual.charts,8);
+    assert.equal(await page.locator('[data-axis-x]').count(),8);
+    assert.equal(await page.locator('[data-axis-y]').count(),8);
     assert.equal(await page.locator('select').nth(3).locator('option').count(),pool==='all'?22:12);
     assert.deepEqual(actual.rows[6], sorted.map(t=>[t.team_name+(t.games===11?' *':''),...['throws_goal','throws_turnover','scoring','early_huck'].map(k=>{
       if(tablePossession!=='all')return groupText(t.exact_metrics[k][Number(tablePossession)-1],k.startsWith('throws'));
@@ -81,8 +82,12 @@ async function verify(page, name, choice) {
     assert.equal(await page.locator('[data-team-table]').getAttribute('data-possession-filter'), tablePossession);
     assert.equal(await page.locator('[data-playoff-summary]').getAttribute('data-possession-filter'), tablePossession);
     assert.equal(actual.title, 'O-line offense after turnovers');
-    assert(actual.text.includes('It does not adjust for which passes are centering passes.'));
-    assert(actual.text.includes('11.5%')&&actual.text.includes('20.9%'));
+    const parkedText=await page.locator('[data-early-huck-review]').textContent();
+    assert(parkedText.includes('It does not adjust for which passes are centering passes.'));
+    assert(parkedText.includes('11.5%')&&parkedText.includes('20.9%'));
+    assert(parkedText.includes('11.7%')&&parkedText.includes('18.8%'));
+    assert(parkedText.includes('39.4%')&&parkedText.includes('29.8%'));
+    assert(actual.text.includes('Early-huck comparison — parked'));
   } else {
     const c = data.cases.find(c => c.id === choice);
     assert.deepEqual(actual.rows[0], c.throws.map(t => [String(t.n), t.from+' → '+t.to, t.outcome+(t.huck?' · Huck':'')]));
@@ -111,7 +116,12 @@ async function verify(page, name, choice) {
       page.on('pageerror', e => errors.push(String(e)));
       page.on('request', r => { if (/^https?:/.test(r.url())) externalRequests.push(r.url()); });
       await page.goto(pathToFileURL(path.join(preview, 'html', name + '.ufa.html')).href);
-      await page.waitForSelector('svg');
+      await page.waitForSelector('svg:visible', {timeout:7000});
+      if (name.includes('oline-regain')) {
+        assert.equal(await page.locator('[data-early-huck-review]').getAttribute('open'),null);
+        assert.equal(await page.locator('[data-recorded-early-chart] svg').isVisible(),false);
+        assert.equal(await page.locator('[data-modeled-early-chart] svg').isVisible(),false);
+      }
       const firstSelect = page.locator('select').first();
       const options = await page.locator('select').count() ? await firstSelect.locator('option').evaluateAll(nodes => nodes.map(n => n.value)) : [];
       for (const choice of options.length ? options : [null]) {

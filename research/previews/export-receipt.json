@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-11-09T23:11:03.885Z",
+  "exportedAt": "2026-11-11T04:35:45.608Z",
   "note": "Presentation conversion only. The TSX source and embedded research data are copied without changes.",
   "reports": [
     {
@@ -20,11 +20,11 @@
     },
     {
       "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-oline-regain-hucking.canvas.tsx",
-      "sourceSha256": "6e18cb5d928c7d3788aa18c10a1f13585e9e914089798f15b84b74c9dcaf3d59",
+      "sourceSha256": "2ef0b21f42b313bb966e7c02449d6096193f90a4d56146f2c8f917a38127de56",
       "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-oline-regain-hucking.canvas.tsx",
-      "reportSha256": "6e18cb5d928c7d3788aa18c10a1f13585e9e914089798f15b84b74c9dcaf3d59",
+      "reportSha256": "2ef0b21f42b313bb966e7c02449d6096193f90a4d56146f2c8f917a38127de56",
       "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-oline-regain-hucking.ufa.html",
-      "htmlSha256": "b629164d22b22d5694c1ef9ef21310c37da1b4a393fc78b0b2cafa1c87bf26e6"
+      "htmlSha256": "a871522135dd3066e38440e26d7e8d93e3c169a32f303747d27c204fcbd0a0d9"
     },
     {
       "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-possession-review.canvas.tsx",

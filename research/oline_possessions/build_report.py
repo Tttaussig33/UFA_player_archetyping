@@ -1,5 +1,6 @@
 """Refresh the existing self-contained report from reviewed aggregate results."""
 from pathlib import Path
+import csv
 import hashlib
 import json
 
@@ -15,7 +16,7 @@ const signed = (v:number) => (v>0?"+":"")+v.toFixed(1);
 const range = (v:number[], scale=1) => v.map(x=>(scale*x).toFixed(1)).join(" to ");
 const SOURCE = "Source: preserved ShownSpace export and UFA event sequences · 2026 regular season · November 5 analysis, November 6 follow-ups and November 9 exact-possession tables.";
 const metrics:Record<string,{label:string;unit:string;count:boolean;denominator:string;explain:string}> = {
-  early_huck:{label:"Huck in the first 3 throws",unit:"% of eligible possessions",count:false,denominator:"possessions",explain:"The share of possessions with at least one huck in their first three actual throws. Retains possessions that end before throw three. Starts must be at least 40 yards from the attacking goal line."},
+  early_huck:{label:"Huck within the first 3 throws (parked)",unit:"% of eligible possessions",count:false,denominator:"possessions",explain:"This comparison is parked while we review starting locations and centering passes. The saved figures count possessions with at least one huck in their first three actual throws, including those ending before throw three. Starts must be at least 40 yards from the attacking goal line."},
   throws_goal:{label:"Throws before a goal",unit:"mean throws per goal possession",count:true,denominator:"goal possessions",explain:"The average number of physical throws in possessions that end in a goal. Every actual throw counts, including setup passes. All starting locations are included."},
   throws_turnover:{label:"Throws before a turnover",unit:"mean throws per turnover possession",count:true,denominator:"turnover possessions",explain:"The average number of physical throws in possessions that end in a turnover, including the final incomplete throw. A stall adds no physical throw. All starting locations are included."},
   scoring:{label:"Possession scoring rate",unit:"% of resolved possessions",count:false,denominator:"resolved possessions",explain:"Goals divided by possessions ending in a goal or turnover. Period-ending possessions are listed separately. Near-goal starts remain included."},
@@ -64,6 +65,8 @@ export default function OLineRegainHucking() {
   const observedComparison=modeled?null:team.metrics[metric].first_vs_all_subsequent;
   const change=modeled?DATA.team_changes[metric].teams.find((t:any)=>t.team===team.team):{...observedComparison.differences[0],subsequent_n:observedComparison.groups[1].n,games:observedComparison.games};
   const early=DATA.league.early_huck.groups;
+  const earlyModel=DATA.adjusted.early_huck;
+  const startingReview=DATA.huck_starting_location_review.groups;
   const caught=DATA.league.huck_completion.groups;
   const rawScore=DATA.league.scoring.groups;
   const scoreGroups=scoringView==="observed"?rawScore:DATA.adjusted.scoring.groups;
@@ -74,7 +77,7 @@ export default function OLineRegainHucking() {
       <H1>O-line offense after turnovers</H1>
       <Text>2026 UFA regular season · 22 teams · 131 of 132 games · exploratory research</Text>
       <Text>After turning the disc over and getting it back, does an O-line change how it attacks, and how do its chances of scoring compare with its opening opportunity?</Text>
-      <Text><strong>The clearest change is earlier hucking and fewer throws.</strong> On a team's second possession, a huck appears in the first three throws more often than on its first possession. Fewer throws remain apparent after accounting for starting location. Scoring does not clearly fall after a regain.</Text>
+      <Text><strong>Current focus: throw counts, scoring and outcomes after turnovers.</strong> The early-huck comparison is parked while we review starting locations and opening centering passes. Its charts and calculations remain available below.</Text>
       <Text>Example: Atlanta receives the pull, turns it over, then wins it back. Atlanta's opening chance is its first possession; its next chance with the disc is its second possession, all during the same point. We include points Atlanta eventually wins (holds) and loses (is broken). Looking only at holds would leave out unsuccessful points.</Text>
       <div style={{display:"flex",gap:18,flexWrap:"wrap",fontSize:14}}>
         <a href="#league" style={linkStyle}>League results</a><a href="#teams" style={linkStyle}>Playoff teams and all teams</a><a href="#breaks" style={linkStyle}>Breaks after turnovers</a><a href="#huck-outcomes" style={linkStyle}>Huck outcomes</a><a href="#paper" style={linkStyle}>Research direction</a><a href="#methods" style={linkStyle}>Definitions and checks</a>
@@ -91,13 +94,38 @@ export default function OLineRegainHucking() {
 
     <section id="league" style={sectionStyle}>
       <Stack gap={12}>
-        <H2>1. Hucks come earlier after getting the disc back</H2>
-        <Text>A huck occurs in the first three throws in <strong>{pct(early[0].estimate)}</strong> of first possessions, <strong>{pct(early[1].estimate)}</strong> of second possessions, and <strong>{pct(early[2].estimate)}</strong> of third-or-later possessions.</Text>
-        <SingleChart groups={early} label="Huck within first 3 throws" yLabel="Early-huck possessions (%)" max={30}/>
-        <Text>The observed increase is <strong>{signed(100*(early[1].estimate-early[0].estimate))} percentage points</strong> from first to second possessions, and {signed(100*(early[2].estimate-early[0].estimate))} from first to third or later. These are differences between the percentages shown in the bars, calculated before rounding.</Text>
-        <Text>The <strong>{signed(100*DATA.adjusted.early_huck.differences[0].difference)}-point adjusted increase</strong> is a separate model comparison accounting for starting location, team, opponent, quarter and recorded point-start time (95% range {range(DATA.adjusted.early_huck.differences[0].ci95,100)}). <strong>It does not adjust for which passes are centering passes.</strong> All actual throws remain counted, so the setup structure of opening possessions can explain part of the difference.</Text>
-        <Text>However, the share with a huck anywhere in the possession is almost unchanged: {pct(DATA.league.any_huck.groups[0].estimate)} first versus {pct(DATA.league.any_huck.groups[1].estimate)} second. The evidence points to a shift toward the beginning of a possession, rather than simply more possessions containing hucks.</Text>
-        <Text size="small" tone="secondary">{SOURCE} First: {number(early[0].sum)} / {number(early[0].n)}; second: {number(early[1].sum)} / {number(early[1].n)}; third or later: {number(early[2].sum)} / {number(early[2].n)}. Third-or-later evidence is less precise.</Text>
+        <H2>1. Early-huck comparison — parked</H2>
+        <Text>We are holding this comparison out of the main findings until we settle how to compare starting locations and opening sequences.</Text>
+        <details data-early-huck-review="true"><summary>View the saved charts and where the +7.1 estimate comes from</summary><Stack gap={18} style={{marginTop:16}}>
+        <H2>Recorded hucks within the first 3 throws</H2>
+        <Text>Each bar shows the percentage of possessions containing at least one huck in throws 1–3. Only starts at least 40 yards from the attacking goal line are included. All actual throws count, including centering passes.</Text>
+        <div data-recorded-early-chart="true"><SingleChart groups={early} label="Recorded huck within first 3 throws" yLabel="Share of possessions (%)" max={30}/></div>
+        <ul style={{margin:0,paddingLeft:22,lineHeight:1.6}}>
+          <li><strong>Starting locations still differ.</strong> The 40-yard cutoff leaves room for a deep throw, but it does not put every possession in the same field area.</li>
+          <li><strong>Opening sequences differ too.</strong> A centering pass uses one of the first three throws. Opening possessions can therefore contain fewer attacking throws within this window.</li>
+        </ul>
+        <Text size="small" tone="secondary">{SOURCE} First: {number(early[0].sum)} / {number(early[0].n)}; second: {number(early[1].sum)} / {number(early[1].n)}; third or later: {number(early[2].sum)} / {number(early[2].n)}. Counts and 95% uncertainty ranges are retained below; third-or-later evidence is less precise.</Text>
+
+        <H2>Where the +7.1 percentage points comes from</H2>
+        <Text>We fitted a logistic regression for this study: a model estimating whether a possession contains a huck in its first three throws. It uses {number(earlyModel.model.n)} possessions from {earlyModel.model.games} games. ShownSpace's pass-completion predictions are not inputs to this model.</Text>
+        <ol style={{margin:0,paddingLeft:22,lineHeight:1.6}}>
+          <li><strong>Learn the relationship in the records.</strong> The model uses possession number, starting distance from goal and from the middle of the field, team, opponent, quarter, and the recorded time when the point began.</li>
+          <li><strong>Make two predictions for each included situation.</strong> Keep its starting location and game information the same. Predict once with the possession number set to first, then again with it set to second.</li>
+          <li><strong>Average each set of predictions.</strong> The resulting estimates are {pct(earlyModel.groups[0].estimate)} for first possessions and {pct(earlyModel.groups[1].estimate)} for second possessions.</li>
+        </ol>
+        <div data-modeled-early-chart="true"><LabeledBarChart categories={names.slice(0,2)} series={[{name:"Model estimate using the same recorded situations",tone:"info",data:earlyModel.groups.slice(0,2).map((g:Estimate)=>chartValue(g))}]} horizontal height={245} showValues beginAtZero yMax={30} valueSuffix="%" xLabel="Estimated share of possessions (%)" yLabel="Team possession in the same point"/></div>
+        <Text><strong>{pct(earlyModel.groups[1].estimate)} − {pct(earlyModel.groups[0].estimate)} = {signed(100*earlyModel.differences[0].difference)} percentage points.</strong> This is the model-estimated first-to-second difference, with a 95% uncertainty range of {range(earlyModel.differences[0].ci95,100)} percentage points. The bars above are predictions averaged over the same mix of situations.</Text>
+        <Text><strong>Why it remains parked:</strong> This calculation relies on the model; it does not pair actual possessions starting in the same place. Starting location is the first recorded throwing location, which may differ from where the disc was won. <strong>It does not adjust for which passes are centering passes.</strong> We still need to review starting-location overlap and decide how to treat opening setup throws before interpreting the difference as a change in attacking behavior.</Text>
+        <Text size="small" tone="secondary">{SOURCE} Saved November 5 model; no refit. The model uses time at the start of the point, not elapsed time before a later possession. First and second model estimates are shown here to explain this particular comparison; the saved third-or-later estimate remains in the research results.</Text>
+
+        <H2>Field position changes the whole-possession comparison</H2>
+        <Text>This is a separate question: did a huck occur <strong>at any point</strong> in the possession?</Text>
+        <ul style={{margin:0,paddingLeft:22,lineHeight:1.6}}>
+          <li><strong>With the 40-yard starting restriction:</strong> {pct(DATA.league.any_huck.groups[0].estimate)} of first possessions and {pct(DATA.league.any_huck.groups[1].estimate)} of second possessions contain a huck.</li>
+          <li><strong>Including all known starting locations:</strong> those rates are {pct(startingReview[0].any_huck_rate)} and {pct(startingReview[1].any_huck_rate)}. Starts within 40 yards of goal make up {pct(startingReview[0].near_goal_n/startingReview[0].known_location_n)} of first possessions versus {pct(startingReview[1].near_goal_n/startingReview[1].known_location_n)} of second possessions.</li>
+        </ul>
+        <Text>The near-equal rates apply only to the restricted sample. They do not show that teams huck equally often from all starting locations, and the early-throw comparison alone does not establish why teams change their choices.</Text>
+        <Text size="small" tone="secondary">Same preserved possession records and timeout exclusions. All-known-start counts: first {number(startingReview[0].any_huck_n)} / {number(startingReview[0].known_location_n)}; second {number(startingReview[1].any_huck_n)} / {number(startingReview[1].known_location_n)}. Unknown locations are excluded from both location comparisons.</Text>
         <details><summary>Counts, uncertainty, and the opening centering pass</summary><Stack gap={12} style={{marginTop:14}}>
           <Counts groups={early}/>
           <Text>After a caught pull, the first pass should be a centering pass in the opening sequence we are examining. Brick starts and immediate attacking throws need separate treatment. We have not automatically labeled those sequences across the league.</Text>
@@ -106,6 +134,7 @@ export default function OLineRegainHucking() {
           <H2>Huck choices by throw number</H2>
           <LabeledBarChart xLabel="Throw number within the current possession" yLabel="Throws that are hucks (%)" categories={DATA.throw_windows.map((w:any)=>w.window)} series={[{name:"First possession",tone:"neutral",data:DATA.throw_windows.map((w:any)=>chartValue(w.groups[0]))},{name:"Second possession",tone:"info",data:DATA.throw_windows.map((w:any)=>chartValue(w.groups[1]))}]} height={260} showValues beginAtZero yMax={12} valueSuffix="%"/>
           <Text size="small" tone="secondary">{SOURCE} A possession must survive long enough to enter a later throw window. This is a per-throw comparison, unlike the per-possession chart above.</Text>
+        </Stack></details>
         </Stack></details>
       </Stack>
     </section>
@@ -175,7 +204,7 @@ export default function OLineRegainHucking() {
         <details><summary>Team statistics across measures</summary><Stack gap={12} style={{marginTop:14}}>
           <Text weight="semibold">{teamPool==="playoffs"?"12 playoff teams":"All 22 teams"} · {tablePossession==="all"?"First versus all subsequent possessions":tableStageLabel}</Text>
           <Text>{tablePossession==="all"?"Each cell reads first → subsequent, with sample sizes in parentheses. Subsequent combines the second and all later possessions.":`Each cell shows ${tableStageLabel.toLowerCase()} statistics, with sample sizes in parentheses.`} These are observed means and rates. Goal and turnover throw counts keep all starting locations; early-huck rates use starts at least 40 yards from the attacking goal line.</Text>
-          <div data-playoff-summary="true" data-possession-filter={tablePossession}><Table headers={["Team","Throws before goal (mean; n)","Throws before turnover (mean; n)","Possession scoring (%; n)","Early huck (%; n)"]}
+          <div data-playoff-summary="true" data-possession-filter={tablePossession}><Table headers={["Team","Throws before goal (mean; n)","Throws before turnover (mean; n)","Possession scoring (%; n)","Early huck — parked (%; n)"]}
             rows={teams.map((t:any)=>[t.team_name+(t.games===11?" *":""),...["throws_goal","throws_turnover","scoring","early_huck"].map(k=>{if(tablePossession!=="all")return groupText(t.exact_metrics[k][tableStage-1],k.startsWith("throws"));const gs=t.metrics[k].groups;const n=gs[1].n+gs[2].n;const later={stage:2,n,estimate:n?(gs[1].sum+gs[2].sum)/n:null,ci95:null};return `${groupText(gs[0],k.startsWith("throws"))} → ${groupText(later,k.startsWith("throws"))}`;})])} columnAlign={["left","right","right","right","right"]}/></div>
           <Text size="small" tone="secondary">The team and possession filters above apply to this table. {tablePossession==="all"?"Select a single possession to see its observed uncertainty ranges in the table above.":"Use the measure selector for the matching uncertainty ranges in the table above."}</Text>
         </Stack></details>
@@ -184,7 +213,7 @@ export default function OLineRegainHucking() {
 
     <section id="huck-outcomes" style={sectionStyle}>
       <Stack gap={12}>
-        <H2>5. Huck completion is less certain than huck timing</H2>
+        <H2>5. Huck completion differences remain uncertain</H2>
         <Text>Actual catch rates are {pct(caught[0].estimate)}, {pct(caught[1].estimate)}, and {pct(caught[2].estimate)} across first, second, and third-or-later possessions. The second-possession rate is lower in this sample, but the difference is too uncertain to conclude that regain hucks are less accurate.</Text>
         <Text size="small">Drops count as incomplete in this chart.</Text>
         <SingleChart groups={caught} label="Actual huck catch rate" yLabel="Hucks completed (%)" max={100}/>
@@ -219,9 +248,9 @@ export default function OLineRegainHucking() {
       <Stack gap={12}>
         <H2>A clearer research direction</H2>
         <Text><strong>Question:</strong> After turning the disc over and getting it back, does an O-line change how it attacks, and how do its chances of scoring compare with its opening opportunity?</Text>
-        <Text><strong>Working finding:</strong> Second possessions involve fewer passing actions and more hucking in the first few throws, even after accounting for recorded field and game context. The evidence does not show a corresponding decrease in possession scoring. Teams differ most clearly in the size of their early-hucking change.</Text>
-        <Text><strong>What remains unresolved:</strong> The size of the change varies by team, and later regains do not show a clear progressive rise beyond the second possession. Centering and other opening structures have not been fully separated from attacking throws. The results describe observed choices and outcomes; they do not establish fatigue or impatience as the cause.</Text>
-        <Text><strong>Use for coaches:</strong> Compare your team's opening plan with its first few choices after winning the disc back. For an opponent, identify whether giving the disc back tends to be followed by an immediate deep look. Use the team counts to decide which patterns deserve film review, and keep huck timing separate from huck execution and scoring.</Text>
+        <Text><strong>Working finding:</strong> Second possessions involve fewer passing actions, even after accounting for recorded field and game context. The evidence does not show a corresponding decrease in possession scoring. The early-huck estimates are parked and are not part of the current working finding.</Text>
+        <Text><strong>What remains unresolved:</strong> We need to review which starting locations offer a useful first-versus-later comparison and how to identify opening centering passes. The saved huck calculations remain available for that review. These observations do not establish fatigue or impatience as the cause of a change.</Text>
+        <Text><strong>Use for coaches:</strong> Compare how many passes your team needs on its opening and later opportunities, separately for possessions ending in goals and turnovers. Use scoring, break outcomes and sample sizes to choose situations for film review. Revisit early deep looks after resolving the starting-location and setup-pass questions.</Text>
         <details><summary>Secondary check about earlier activity, separate from possession length</summary><Stack gap={12} style={{marginTop:14}}>
           <Text>This was an additional question: after a 15-throw failed possession, does a team huck early more often than after a five-throw failed possession? It is separate from the main comparison of how many throws first and subsequent possessions contain.</Text>
           <Text>Within subsequent eligible possessions, more prior own-team throws are not clearly associated with early hucking. The adjusted odds ratio for doubling (1 + the prior throw count) is {DATA.prior_activity.prior_own_throws.odds_ratio_for_doubling_one_plus_count.toFixed(2)} (95% range {range(DATA.prior_activity.prior_own_throws.or_ci95)}). A value of 1 means no estimated change in odds.</Text>
@@ -234,7 +263,7 @@ export default function OLineRegainHucking() {
     <section id="methods" style={sectionStyle}>
       <details><summary style={{fontSize:19,fontWeight:600}}>Definitions, sensitivity checks, and sources</summary><Stack gap={14} style={{marginTop:16}}>
         <Text><strong>Scope and denominators.</strong> Receiving team is the point-start role, not proof that the same seven players stayed on. Of {number(DATA.audit.source_receiving_points)} raw receiving-point starts, {number(DATA.audit.included_points)} pass sequence checks. These contain {number(DATA.audit.possessions)} possessions before removing {DATA.scope.timeout_possessions_excluded} with timeout markers. After removal, {number(DATA.scope.possessions)} remain. Numbering is preserved. There are 204 third possessions and 43 fourth-or-later possessions before field eligibility; these are grouped because later samples become small.</Text>
-        <Text><strong>Huck definition.</strong> More than 40 yards in straight-line distance and more than 30 yards of forward gain. Huck analyses require a first throwing location at least 40 yards from the attacking goal line. This working cutoff keeps comparable room to throw deep; it is not selected to maximize an effect. Scoring and throw-count comparisons retain starts near the end zone.</Text>
+        <Text><strong>Huck definition.</strong> More than 40 yards in straight-line distance and more than 30 yards of forward gain. Huck analyses require a first throwing location at least 40 yards from the attacking goal line. This working cutoff leaves room to throw deep but does not match possessions to the same field area. The early-huck comparison is parked pending review of starting locations and setup throws. Scoring and throw-count comparisons retain starts near the end zone.</Text>
         <Text><strong>What adjustment means.</strong> Binomial models estimate scoring and huck probabilities; Poisson mean models estimate throw counts, with uncertainty clustered by game. Starting longitudinal and lateral location, team, opponent, quarter, and the recorded time at the start of the point are included. The latter is not the time at the start of each subsequent possession. Current throwing location is also included in the per-throw huck model. Estimated stages are compared using a common recorded context mix.</Text>
         <Text><strong>Uncertainty and multiple comparisons.</strong> Observed ranges use 10,000 whole-game bootstrap samples. Adjusted ranges use game-cluster covariance; within-team tests use the team's 11–12-game count for a conservative t reference. Holm corrections cover 16 principal league comparisons, six team-difference tests, and all 132 individual team-by-measure contrasts. Ranges and changes matter more than a cutoff: a p-value is not the probability that a hypothesis is true. The early-huck team-difference test has corrected p={DATA.team_changes.early_huck.heterogeneity_p_holm.toFixed(3)}; this does not establish a particular team's rank.</Text>
         <Text><strong>Checks against alternative choices.</strong> The table reports observed first-to-all-subsequent differences. The huck and throw-count direction persists when changing the huck definition, changing the starting-location cutoff, or excluding more potentially disrupted points. The magnitude of huck frequency depends on whether near-goal regains are included.</Text>
@@ -251,6 +280,23 @@ export default function OLineRegainHucking() {
 
 def main():
     result = json.loads((ROOT/'results.json').read_text())
+    possession_path = ROOT/'possessions.csv'
+    possession_hash = hashlib.sha256(possession_path.read_bytes()).hexdigest()
+    assert possession_hash == result['inputs']['possessions.csv'], 'Possession rows no longer match the reviewed results.'
+    with possession_path.open(newline='') as handle:
+        rows = [r for r in csv.DictReader(handle) if r['has_timeout']=='False' and r['first_y']]
+    start_groups = []
+    for stage in (1,2,3):
+        group = [r for r in rows if int(r['stage'])==stage]
+        eligible = [r for r in group if float(r['first_y'])<=60]
+        original = result['league']['early_huck']['groups'][stage-1]
+        assert len(eligible)==original['n'] and sum(int(r['early_huck']) for r in eligible)==original['sum']
+        hucks = sum(int(r['has_huck']) for r in group)
+        start_groups.append({'stage':stage, 'known_location_n':len(group),
+            'near_goal_n':len(group)-len(eligible), 'any_huck_n':hucks, 'any_huck_rate':hucks/len(group)})
+    result['huck_starting_location_review'] = {'groups':start_groups,
+        'source':'possessions.csv', 'source_sha256':possession_hash, 'reviewed_on':'2026-11-10',
+        'definition':'No recorded timeout; known first throwing location. Any huck counts at most once per possession, with no throw-number restriction. Near goal means first_y >60, less than 40 yards from the attacking goal line.'}
     result['follow_up'] = json.loads((ROOT/'follow_up_20261106.json').read_text())
     result['possession_filters'] = json.loads((ROOT/'possession_filters.json').read_text())
     for name,digest in result['possession_filters']['inputs'].items():

@@ -40,5 +40,24 @@
     "source_checks": "Input hashes verified; no database refresh or model refit.",
     "google_doc": "https://docs.google.com/document/d/1uJ3p_nYBJmIT4h4R_z0WLg_DZD0kgsFoOwCuPgLvLUs",
     "report_sha256": "6e18cb5d928c7d3788aa18c10a1f13585e9e914089798f15b84b74c9dcaf3d59"
+  },
+  "revision_2026_11_10": {
+    "passed": true,
+    "changes": [
+      "Parked the early-huck league chart in a closed review section; preserved its bars and results.",
+      "Removed early hucking from the main working finding; marked team early-huck measures as parked.",
+      "Added a separate model-prediction chart and an explanation of the 11.7% to 18.8% comparison.",
+      "Explained the starting-location restriction and added reproducible all-known-start huck counts."
+    ],
+    "data_checks": "Reconciled all three stage numerators and denominators with possession CSV rows. Existing embedded results, models and confidence ranges are unchanged. Added starting-location review has its own input hash and definition.",
+    "model_status": "Saved November 5 model retained; no model refit or database refresh.",
+    "browser_checks": "338 states passed; eight chart bindings, table filters, both team pools and both scoring views. Zero JavaScript errors or network requests. Parked charts are hidden by default and accessible on expansion.",
+    "visual_checks": [
+      "1200px light default view clearly parks the first chart.",
+      "Expanded comparison shows 11.7% and 18.8%, with steps and uncertainty.",
+      "420px dark horizontal model chart keeps both bars visible without horizontal scrolling."
+    ],
+    "native_vscode": "Preview extension unchanged; verified in its portable HTML renderer. Native VS Code was not rerun.",
+    "report_sha256": "2ef0b21f42b313bb966e7c02449d6096193f90a4d56146f2c8f917a38127de56"
   }
 }

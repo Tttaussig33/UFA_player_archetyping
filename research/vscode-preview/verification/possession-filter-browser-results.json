@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-09T23:11:24.203Z",
+  "checkedAt": "2026-11-11T04:35:52.115Z",
   "passed": true,
   "results": [
     {
@@ -21,8 +21,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29
+      "charts": 8,
+      "barValuesVerified": 31
     },
     {
       "name": "UFA-oline-regain-hucking",
@@ -43,8 +43,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29
+      "charts": 8,
+      "barValuesVerified": 31
     },
     {
       "name": "UFA-oline-regain-hucking",
@@ -65,8 +65,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "tablePossession": "1"
@@ -90,8 +90,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "tablePossession": "2"
@@ -115,8 +115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "tablePossession": "3"
@@ -140,8 +140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "tablePossession": "all"
@@ -165,8 +165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "sol"
@@ -190,8 +190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "glory"
@@ -215,8 +215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "flyers"
@@ -240,8 +240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "breeze"
@@ -265,8 +265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "alleycats"
@@ -290,8 +290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "radicals"
@@ -315,8 +315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "windchill"
@@ -340,8 +340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "empire"
@@ -365,8 +365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "spiders"
@@ -390,8 +390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "shred"
@@ -415,8 +415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "growlers"
@@ -440,8 +440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "early_huck",
       "team": "cascades"
@@ -465,8 +465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "tablePossession": "1"
@@ -490,8 +490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "tablePossession": "2"
@@ -515,8 +515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "tablePossession": "3"
@@ -540,8 +540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "tablePossession": "all"
@@ -565,8 +565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "sol"
@@ -590,8 +590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "glory"
@@ -615,8 +615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "flyers"
@@ -640,8 +640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "breeze"
@@ -665,8 +665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "alleycats"
@@ -690,8 +690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "radicals"
@@ -715,8 +715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "windchill"
@@ -740,8 +740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "empire"
@@ -765,8 +765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "spiders"
@@ -790,8 +790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "shred"
@@ -815,8 +815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "growlers"
@@ -840,8 +840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_goal",
       "team": "cascades"
@@ -865,8 +865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "tablePossession": "1"
@@ -890,8 +890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "tablePossession": "2"
@@ -915,8 +915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "tablePossession": "3"
@@ -940,8 +940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "tablePossession": "all"
@@ -965,8 +965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "sol"
@@ -990,8 +990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "glory"
@@ -1015,8 +1015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "flyers"
@@ -1040,8 +1040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "breeze"
@@ -1065,8 +1065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "alleycats"
@@ -1090,8 +1090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "radicals"
@@ -1115,8 +1115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "windchill"
@@ -1140,8 +1140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "empire"
@@ -1165,8 +1165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "spiders"
@@ -1190,8 +1190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "shred"
@@ -1215,8 +1215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "growlers"
@@ -1240,8 +1240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "throws_turnover",
       "team": "cascades"
@@ -1265,8 +1265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "tablePossession": "1"
@@ -1290,8 +1290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "tablePossession": "2"
@@ -1315,8 +1315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "tablePossession": "3"
@@ -1340,8 +1340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "tablePossession": "all"
@@ -1365,8 +1365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "sol"
@@ -1390,8 +1390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "glory"
@@ -1415,8 +1415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "flyers"
@@ -1440,8 +1440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "breeze"
@@ -1465,8 +1465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "alleycats"
@@ -1490,8 +1490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "radicals"
@@ -1515,8 +1515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "windchill"
@@ -1540,8 +1540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "empire"
@@ -1565,8 +1565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "spiders"
@@ -1590,8 +1590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "shred"
@@ -1615,8 +1615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "growlers"
@@ -1640,8 +1640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "scoring",
       "team": "cascades"
@@ -1665,8 +1665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "tablePossession": "1"
@@ -1690,8 +1690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "tablePossession": "2"
@@ -1715,8 +1715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "tablePossession": "3"
@@ -1740,8 +1740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "tablePossession": "all"
@@ -1765,8 +1765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "sol"
@@ -1790,8 +1790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "glory"
@@ -1815,8 +1815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "flyers"
@@ -1840,8 +1840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "breeze"
@@ -1865,8 +1865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "alleycats"
@@ -1890,8 +1890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "radicals"
@@ -1915,8 +1915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "windchill"
@@ -1940,8 +1940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "empire"
@@ -1965,8 +1965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "spiders"
@@ -1990,8 +1990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "shred"
@@ -2015,8 +2015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "growlers"
@@ -2040,8 +2040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_share",
       "team": "cascades"
@@ -2065,8 +2065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "tablePossession": "1"
@@ -2090,8 +2090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "tablePossession": "2"
@@ -2115,8 +2115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "tablePossession": "3"
@@ -2140,8 +2140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "tablePossession": "all"
@@ -2165,8 +2165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "sol"
@@ -2190,8 +2190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "glory"
@@ -2215,8 +2215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "flyers"
@@ -2240,8 +2240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "breeze"
@@ -2265,8 +2265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "alleycats"
@@ -2290,8 +2290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "radicals"
@@ -2315,8 +2315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "windchill"
@@ -2340,8 +2340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "empire"
@@ -2365,8 +2365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "spiders"
@@ -2390,8 +2390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "shred"
@@ -2415,8 +2415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "growlers"
@@ -2440,8 +2440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "any_huck",
       "team": "cascades"
@@ -2465,8 +2465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "tablePossession": "1"
@@ -2490,8 +2490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "tablePossession": "2"
@@ -2515,8 +2515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "tablePossession": "3"
@@ -2540,8 +2540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "tablePossession": "all"
@@ -2565,8 +2565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "sol"
@@ -2590,8 +2590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "glory"
@@ -2615,8 +2615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "flyers"
@@ -2640,8 +2640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "breeze"
@@ -2665,8 +2665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "alleycats"
@@ -2690,8 +2690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "radicals"
@@ -2715,8 +2715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "windchill"
@@ -2740,8 +2740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "empire"
@@ -2765,8 +2765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "spiders"
@@ -2790,8 +2790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "shred"
@@ -2815,8 +2815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "growlers"
@@ -2840,8 +2840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "huck_completion",
       "team": "cascades"
@@ -2865,8 +2865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "tablePossession": "1"
@@ -2890,8 +2890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "tablePossession": "2"
@@ -2915,8 +2915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "tablePossession": "3"
@@ -2940,8 +2940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "tablePossession": "all"
@@ -2965,8 +2965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "sol"
@@ -2990,8 +2990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "glory"
@@ -3015,8 +3015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "flyers"
@@ -3040,8 +3040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "breeze"
@@ -3065,8 +3065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "alleycats"
@@ -3090,8 +3090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "radicals"
@@ -3115,8 +3115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "windchill"
@@ -3140,8 +3140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "empire"
@@ -3165,8 +3165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "spiders"
@@ -3190,8 +3190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "shred"
@@ -3215,8 +3215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "growlers"
@@ -3240,8 +3240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "playoffs",
       "metric": "break_after_turnover",
       "team": "cascades"
@@ -3265,8 +3265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "tablePossession": "1"
@@ -3290,8 +3290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "tablePossession": "2"
@@ -3315,8 +3315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "tablePossession": "3"
@@ -3340,8 +3340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "tablePossession": "all"
@@ -3365,8 +3365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "hustle"
@@ -3390,8 +3390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "sol"
@@ -3415,8 +3415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "glory"
@@ -3440,8 +3440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "flyers"
@@ -3465,8 +3465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "union"
@@ -3490,8 +3490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "apex"
@@ -3515,8 +3515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "breeze"
@@ -3540,8 +3540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "havoc"
@@ -3565,8 +3565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "alleycats"
@@ -3590,8 +3590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "radicals"
@@ -3615,8 +3615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "windchill"
@@ -3640,8 +3640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "royal"
@@ -3665,8 +3665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "empire"
@@ -3690,8 +3690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "spiders"
@@ -3715,8 +3715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "steel"
@@ -3740,8 +3740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "phoenix"
@@ -3765,8 +3765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "thunderbirds"
@@ -3790,8 +3790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "shred"
@@ -3815,8 +3815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "growlers"
@@ -3840,8 +3840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "cascades"
@@ -3865,8 +3865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "rush"
@@ -3890,8 +3890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "early_huck",
       "team": "bighorns"
@@ -3915,8 +3915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "tablePossession": "1"
@@ -3940,8 +3940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "tablePossession": "2"
@@ -3965,8 +3965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "tablePossession": "3"
@@ -3990,8 +3990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "tablePossession": "all"
@@ -4015,8 +4015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "hustle"
@@ -4040,8 +4040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "sol"
@@ -4065,8 +4065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "glory"
@@ -4090,8 +4090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "flyers"
@@ -4115,8 +4115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "union"
@@ -4140,8 +4140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "apex"
@@ -4165,8 +4165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "breeze"
@@ -4190,8 +4190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "havoc"
@@ -4215,8 +4215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "alleycats"
@@ -4240,8 +4240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "radicals"
@@ -4265,8 +4265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "windchill"
@@ -4290,8 +4290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "royal"
@@ -4315,8 +4315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "empire"
@@ -4340,8 +4340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "spiders"
@@ -4365,8 +4365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "steel"
@@ -4390,8 +4390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "phoenix"
@@ -4415,8 +4415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "thunderbirds"
@@ -4440,8 +4440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "shred"
@@ -4465,8 +4465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "growlers"
@@ -4490,8 +4490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "cascades"
@@ -4515,8 +4515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "rush"
@@ -4540,8 +4540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_goal",
       "team": "bighorns"
@@ -4565,8 +4565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "tablePossession": "1"
@@ -4590,8 +4590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "tablePossession": "2"
@@ -4615,8 +4615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "tablePossession": "3"
@@ -4640,8 +4640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "tablePossession": "all"
@@ -4665,8 +4665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "hustle"
@@ -4690,8 +4690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "sol"
@@ -4715,8 +4715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "glory"
@@ -4740,8 +4740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "flyers"
@@ -4765,8 +4765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "union"
@@ -4790,8 +4790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "apex"
@@ -4815,8 +4815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "breeze"
@@ -4840,8 +4840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "havoc"
@@ -4865,8 +4865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "alleycats"
@@ -4890,8 +4890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "radicals"
@@ -4915,8 +4915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "windchill"
@@ -4940,8 +4940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "royal"
@@ -4965,8 +4965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "empire"
@@ -4990,8 +4990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "spiders"
@@ -5015,8 +5015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "steel"
@@ -5040,8 +5040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "phoenix"
@@ -5065,8 +5065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "thunderbirds"
@@ -5090,8 +5090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "shred"
@@ -5115,8 +5115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "growlers"
@@ -5140,8 +5140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "cascades"
@@ -5165,8 +5165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "rush"
@@ -5190,8 +5190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "throws_turnover",
       "team": "bighorns"
@@ -5215,8 +5215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "tablePossession": "1"
@@ -5240,8 +5240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "tablePossession": "2"
@@ -5265,8 +5265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "tablePossession": "3"
@@ -5290,8 +5290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "tablePossession": "all"
@@ -5315,8 +5315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "hustle"
@@ -5340,8 +5340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "sol"
@@ -5365,8 +5365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "glory"
@@ -5390,8 +5390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "flyers"
@@ -5415,8 +5415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "union"
@@ -5440,8 +5440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "apex"
@@ -5465,8 +5465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "breeze"
@@ -5490,8 +5490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "havoc"
@@ -5515,8 +5515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "alleycats"
@@ -5540,8 +5540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "radicals"
@@ -5565,8 +5565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "windchill"
@@ -5590,8 +5590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "royal"
@@ -5615,8 +5615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "empire"
@@ -5640,8 +5640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "spiders"
@@ -5665,8 +5665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "steel"
@@ -5690,8 +5690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "phoenix"
@@ -5715,8 +5715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "thunderbirds"
@@ -5740,8 +5740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "shred"
@@ -5765,8 +5765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "growlers"
@@ -5790,8 +5790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "cascades"
@@ -5815,8 +5815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "rush"
@@ -5840,8 +5840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "scoring",
       "team": "bighorns"
@@ -5865,8 +5865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "tablePossession": "1"
@@ -5890,8 +5890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "tablePossession": "2"
@@ -5915,8 +5915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "tablePossession": "3"
@@ -5940,8 +5940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "tablePossession": "all"
@@ -5965,8 +5965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "hustle"
@@ -5990,8 +5990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "sol"
@@ -6015,8 +6015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "glory"
@@ -6040,8 +6040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "flyers"
@@ -6065,8 +6065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "union"
@@ -6090,8 +6090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "apex"
@@ -6115,8 +6115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "breeze"
@@ -6140,8 +6140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "havoc"
@@ -6165,8 +6165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "alleycats"
@@ -6190,8 +6190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "radicals"
@@ -6215,8 +6215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "windchill"
@@ -6240,8 +6240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "royal"
@@ -6265,8 +6265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "empire"
@@ -6290,8 +6290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "spiders"
@@ -6315,8 +6315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "steel"
@@ -6340,8 +6340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "phoenix"
@@ -6365,8 +6365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "thunderbirds"
@@ -6390,8 +6390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "shred"
@@ -6415,8 +6415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "growlers"
@@ -6440,8 +6440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "cascades"
@@ -6465,8 +6465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "rush"
@@ -6490,8 +6490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_share",
       "team": "bighorns"
@@ -6515,8 +6515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "tablePossession": "1"
@@ -6540,8 +6540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "tablePossession": "2"
@@ -6565,8 +6565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "tablePossession": "3"
@@ -6590,8 +6590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "tablePossession": "all"
@@ -6615,8 +6615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "hustle"
@@ -6640,8 +6640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "sol"
@@ -6665,8 +6665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "glory"
@@ -6690,8 +6690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "flyers"
@@ -6715,8 +6715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "union"
@@ -6740,8 +6740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "apex"
@@ -6765,8 +6765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "breeze"
@@ -6790,8 +6790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "havoc"
@@ -6815,8 +6815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "alleycats"
@@ -6840,8 +6840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "radicals"
@@ -6865,8 +6865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "windchill"
@@ -6890,8 +6890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "royal"
@@ -6915,8 +6915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "empire"
@@ -6940,8 +6940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "spiders"
@@ -6965,8 +6965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "steel"
@@ -6990,8 +6990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "phoenix"
@@ -7015,8 +7015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "thunderbirds"
@@ -7040,8 +7040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "shred"
@@ -7065,8 +7065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "growlers"
@@ -7090,8 +7090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "cascades"
@@ -7115,8 +7115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "rush"
@@ -7140,8 +7140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "any_huck",
       "team": "bighorns"
@@ -7165,8 +7165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "tablePossession": "1"
@@ -7190,8 +7190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "tablePossession": "2"
@@ -7215,8 +7215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "tablePossession": "3"
@@ -7240,8 +7240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "tablePossession": "all"
@@ -7265,8 +7265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "huck_completion",
       "team": "hustle"
@@ -7290,8 +7290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "sol"
@@ -7315,8 +7315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "glory"
@@ -7340,8 +7340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "flyers"
@@ -7365,8 +7365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "union"
@@ -7390,8 +7390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "apex"
@@ -7415,8 +7415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "breeze"
@@ -7440,8 +7440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "havoc"
@@ -7465,8 +7465,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "alleycats"
@@ -7490,8 +7490,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "radicals"
@@ -7515,8 +7515,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "huck_completion",
       "team": "windchill"
@@ -7540,8 +7540,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "royal"
@@ -7565,8 +7565,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "huck_completion",
       "team": "empire"
@@ -7590,8 +7590,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "spiders"
@@ -7615,8 +7615,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "steel"
@@ -7640,8 +7640,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "phoenix"
@@ -7665,8 +7665,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "thunderbirds"
@@ -7690,8 +7690,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "shred"
@@ -7715,8 +7715,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "growlers"
@@ -7740,8 +7740,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "cascades"
@@ -7765,8 +7765,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "rush"
@@ -7790,8 +7790,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "huck_completion",
       "team": "bighorns"
@@ -7815,8 +7815,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "tablePossession": "1"
@@ -7840,8 +7840,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "tablePossession": "2"
@@ -7865,8 +7865,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "tablePossession": "3"
@@ -7890,8 +7890,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "tablePossession": "all"
@@ -7915,8 +7915,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "hustle"
@@ -7940,8 +7940,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "sol"
@@ -7965,8 +7965,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "glory"
@@ -7990,8 +7990,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "flyers"
@@ -8015,8 +8015,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "union"
@@ -8040,8 +8040,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "apex"
@@ -8065,8 +8065,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "breeze"
@@ -8090,8 +8090,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "havoc"
@@ -8115,8 +8115,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "alleycats"
@@ -8140,8 +8140,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "radicals"
@@ -8165,8 +8165,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "windchill"
@@ -8190,8 +8190,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "royal"
@@ -8215,8 +8215,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "empire"
@@ -8240,8 +8240,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "spiders"
@@ -8265,8 +8265,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "steel"
@@ -8290,8 +8290,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "phoenix"
@@ -8315,8 +8315,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "thunderbirds"
@@ -8340,8 +8340,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "shred"
@@ -8365,8 +8365,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "growlers"
@@ -8390,8 +8390,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 28,
+      "charts": 8,
+      "barValuesVerified": 30,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "cascades"
@@ -8415,8 +8415,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "rush"
@@ -8440,8 +8440,8 @@
         4,
         7
       ],
-      "charts": 7,
-      "barValuesVerified": 29,
+      "charts": 8,
+      "barValuesVerified": 31,
       "pool": "all",
       "metric": "break_after_turnover",
       "team": "bighorns"
