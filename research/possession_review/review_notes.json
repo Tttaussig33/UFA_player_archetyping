@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-05",
-  "status": "Expanded subsequent-possession analysis completed and independently reconciled; A, C, D and E retain user-reviewed tactical interpretations.",
+  "updatedAt": "2026-11-11",
+  "status": "Large film-review library prepared across twelve games. Five attack-start decisions remain confirmed from the earlier user film review (A, C, G, H, I). New cases await user classification; no possession metrics have been recalculated.",
   "agreedScope": {
     "question": "How does a receiving team's play differ on its opening possession versus its later possessions within the same point?",
     "unit": "Team possessions within receiving points. Point-start O-line role does not establish unchanged personnel after substitutions.",
     "throwCounts": "Keep every actual throw, including centering passes and incomplete attempts. Count attempts ending in goals and turnovers separately; stalls and dropped pulls are not physical throws but may end a possession.",
-    "huckTiming": "Keep throw 1 separate and examine throws 2\u20133, 4\u20136, and 7+ using the original numbering. Do not delete or renumber centering passes.",
+    "huckTiming": "Keep throw 1 separate and examine throws 2–3, 4–6, and 7+ using the original numbering. Do not delete or renumber centering passes.",
     "centeringReview": "Review concrete examples; no blanket setup-pass rule or league-wide tactical labels are adopted.",
     "huckOutcomes": "Actual catches divided by huck attempts are now compared across first, second, and third-or-later team possessions. Drops are incomplete for this measure and reported separately from drop-credited CPOE.",
     "scoring": "Possession goals before another turnover, not eventual point holds. Compare starting locations and retain near-end-zone possessions for scoring.",
@@ -22,7 +22,7 @@
   "interpretationLimits": [
     "Fewer throws means fewer passing actions, not necessarily less elapsed playing time.",
     "A huck may reduce the throws needed to advance, but it can also be followed by more passes or a turnover; the relationship must be measured.",
-    "Throws 2\u20133 and 4\u20136 describe opportunities among possessions that survived to those throws; they are not automatically comparable initiation stages.",
+    "Throws 2–3 and 4–6 describe opportunities among possessions that survived to those throws; they are not automatically comparable initiation stages.",
     "A completed huck and a scored possession are different outcomes.",
     "Use all opening possessions for the scoring baseline, not only opening possessions in points with a later regain.",
     "Starting location, team, opponent, game context and changes in personnel may contribute to differences; observational results cannot identify fatigue or impatience.",
@@ -43,12 +43,12 @@
   "examples": [
     {
       "id": "A",
-      "title": "Opening pass toward the middle",
+      "title": "Centering setup pass after the pull",
       "team": "Atlanta Hustle",
       "quarter": 1,
       "point": 3,
       "teamPossession": 1,
-      "sourceCue": "Q1 \u00b7 1\u20131 \u00b7 Possession 1 \u00b7 5 plays",
+      "sourceCue": "Q1 · 1–1 · Possession 1 · 5 plays",
       "physicalThrows": 5,
       "sourceSide": "away",
       "pointStartIndex": 7,
@@ -59,8 +59,8 @@
         11,
         12
       ],
-      "question": "Does throw 1 look like setup before the deep attack on throw 2?",
-      "reviewStatus": "Reviewed: first throw is setup; both first and second throws retained."
+      "question": "Resolved: first recorded throw is setup; second recorded throw starts the attack.",
+      "reviewStatus": "Your film review: throw 1 is a centering setup pass from the pull receiver; throw 2 starts the attack. Both throws remain in the full-possession count."
     },
     {
       "id": "B",
@@ -69,7 +69,7 @@
       "quarter": 3,
       "point": 1,
       "teamPossession": 1,
-      "sourceCue": "Q3 \u00b7 9\u201317 \u00b7 Possession 1 \u00b7 3 plays",
+      "sourceCue": "Q3 · 9–17 · Possession 1 · 3 plays",
       "physicalThrows": 3,
       "sourceSide": "away",
       "pointStartIndex": 188,
@@ -82,12 +82,12 @@
     },
     {
       "id": "C",
-      "title": "Moving inward after two upfield passes",
+      "title": "Upfield setup pass, not a centering pass",
       "team": "Atlanta Hustle",
       "quarter": 1,
       "point": 5,
       "teamPossession": 1,
-      "sourceCue": "Q1 \u00b7 2\u20132 \u00b7 Possession 1 \u00b7 7 plays",
+      "sourceCue": "Q1 · 2–2 · Possession 1 · 7 plays",
       "physicalThrows": 7,
       "sourceSide": "away",
       "pointStartIndex": 16,
@@ -100,8 +100,8 @@
         22,
         23
       ],
-      "question": "Is throw 3 a later swing/reset rather than an opening setup pass?",
-      "reviewStatus": "The example is not a centering pass; moving inward is insufficient to label centering."
+      "question": "Resolved: first recorded throw is setup; second recorded throw starts the attack.",
+      "reviewStatus": "Your film review: throw 1 is an upfield setup pass from the pull receiver, not a centering pass; throw 2 starts the attack. Both remain in the full-possession count."
     },
     {
       "id": "D",
@@ -110,7 +110,7 @@
       "quarter": 3,
       "point": 5,
       "teamPossession": 1,
-      "sourceCue": "Q3 \u00b7 9\u201321 \u00b7 Possession 1 \u00b7 13 plays",
+      "sourceCue": "Q3 · 9–21 · Possession 1 · 13 plays",
       "physicalThrows": 13,
       "sourceSide": "home",
       "pointStartIndex": 221,
@@ -139,7 +139,7 @@
       "quarter": 3,
       "point": 5,
       "teamPossession": 2,
-      "sourceCue": "Q3 \u00b7 9\u201321 \u00b7 Possession 3 \u00b7 3 plays",
+      "sourceCue": "Q3 · 9–21 · Possession 3 · 3 plays",
       "physicalThrows": 3,
       "sourceSide": "home",
       "pointStartIndex": 221,
@@ -184,6 +184,42 @@
       "decision": "The first throw is not a centering pass; it is a huck.",
       "centering": false,
       "appliesTo": "This example only; no automatic classification of other possessions."
+    },
+    {
+      "case": "C",
+      "reviewer": "Teddy",
+      "date": "2026-11-11",
+      "basis": "User review of the UFA.tv remastered film at approximately 8:25–8:45.",
+      "centering": false,
+      "setupThrow": 1,
+      "firstAttackingThrow": 2,
+      "pressure": "Relatively uncontested, as assessed by Teddy from the film.",
+      "decision": "The first pass is setup despite going upfield rather than toward the center. The second recorded throw is in the flow of the game and begins the attacking sequence.",
+      "pullContext": "Teddy describes the pull as very good; this is a qualitative film observation, not a database pull-quality measure."
+    },
+    {
+      "case": "A",
+      "reviewer": "Teddy",
+      "date": "2026-11-11",
+      "setupThrow": 1,
+      "firstAttackingThrow": 2,
+      "basis": "User film review of both Atlanta opening sequences in the UFA.tv remaster; latest clarification identifies the transfer from the pull receiver as setup.",
+      "centering": true,
+      "decision": "Both examples A and C begin with a setup throw. Recorded throw 2 is the first attacking throw.",
+      "rationale": "The pull receiver transfers the disc to another thrower, who then looks downfield and begins the attacking sequence. The first exchange can center the disc or go upfield."
+    },
+    {
+      "case": "C",
+      "reviewer": "Teddy",
+      "date": "2026-11-11",
+      "basis": "User film review of both Atlanta opening sequences in the UFA.tv remaster; latest clarification identifies the transfer from the pull receiver as setup.",
+      "centering": false,
+      "setupThrow": 1,
+      "firstAttackingThrow": 2,
+      "pressure": "Relatively uncontested, as assessed by Teddy from the film.",
+      "decision": "Both examples A and C begin with a setup throw. Recorded throw 2 is the first attacking throw.",
+      "pullContext": "Teddy describes the pull as very good; this is a qualitative film observation, not a database pull-quality measure.",
+      "rationale": "The pull receiver transfers the disc to another thrower, who then looks downfield and begins the attacking sequence. The first exchange can center the disc or go upfield."
     }
   ],
   "completedAnalysis": "../oline_possessions/results.json",
@@ -191,5 +227,970 @@
   "followUpOptions": [
     "Review further concrete opening-pass examples before proposing an automatic setup-pass rule.",
     "Use the team patterns to select film examples; test any resulting explanation on additional data."
-  ]
+  ],
+  "agreedScopeAsOf": "2026-11-05; later working-design changes are recorded separately below.",
+  "workingDesign2026_11_11": {
+    "fieldPosition": "Use 60+ yards to the attacking goal line and same-team nearby-location matches as the working direction.",
+    "setupRule": "Count the opening transfer from a pull receiver as setup when identified. Subsequent handler resets, confirmed brick-start first throws, and first throws after turnover recovery with play continuing are attacking throws. Keep direct attacks after the pull. Record uncertain starts separately; do not delete every opening pass.",
+    "matchingAnchor": "The existing 510-pair feasibility calculation uses the first recorded attempt location. If a post-setup attack-start location is chosen, eligibility and matching must be recalculated at that location; those 510 pairs are not validated for a post-setup analysis.",
+    "denominators": "Keep the original physical throws and full-possession scoring outcomes available. A future after-setup analysis must account separately for setup failures instead of silently dropping them.",
+    "labelsToDiscuss": [
+      "centering direction",
+      "setup versus attack",
+      "visible defensive pressure or unclear"
+    ],
+    "filmFirst": "UFA.tv subscription verified; review actual footage before changing the counting rule.",
+    "setupTerminology": "Opening setup is the transfer from a pull receiver to the thrower who initiates the offense; it need not move toward the middle. Later handler resets are attacking throws once the initial downfield looks have begun. For a confirmed brick start, count the first pass as attacking. On a subsequent possession after a turnover with play continuing, count the first pass as attacking, even if it is a short transfer inward. A direct attack after the pull needs no separate setup exchange.",
+    "classificationScope": "Film-confirmed A, C and G: setup on throw 1, attack begins on throw 2. Film-confirmed H and I: no setup, attack begins on throw 1. F remains a preliminary immediate-attack example. No league-wide automatic labeling or statistical recalculation has been performed.",
+    "brickStartExpectation": {
+      "source": "Teddy’s qualitative film-review guidance, November 11, 2026.",
+      "workingRule": "A confirmed brick restart begins attacking on the first pass; retain an exception or uncertainty flag if film contradicts that reading.",
+      "evidenceLimit": "Teddy’s “99%” expresses a strong expectation based on playing experience, not a measured prevalence from this sample."
+    },
+    "attackStartComparison": {
+      "pullTransfer": "For a confirmed completed opening setup transfer, attacking throw 1 is recorded throw 2; use the location after setup if comparing attacking starts.",
+      "brickOrTurnover": "For a confirmed brick start or a subsequent possession with play continuing after a turnover, attacking throw 1 is recorded throw 1.",
+      "directPullAttack": "Retain the first pass if the pull receiver attacks directly rather than making an opening setup transfer.",
+      "preserveOutcomes": "Keep full-possession goals, turnovers and physical-throw counts available. Setup failures must remain accounted for; do not condition overall scoring on successful setup."
+    }
+  },
+  "filmReview2026_11_11": {
+    "url": "https://www.watchufa.tv/videos/atlanta-at-houston-4-24-2026-remaster",
+    "title": "Atlanta at Houston (4/24/2026) [Remaster]",
+    "duration": "2:03:33",
+    "reviewDate": "2026-11-11",
+    "reviewMethod": "Selected paused broadcast frames inspected through subscribed UFA.tv playback and aligned with the existing event sequences. This is not a completed continuous-play or full-game coding review.",
+    "status": "Cases A and C have user-confirmed setup labels from film: throw 1 is setup and throw 2 begins the attack. D and E retain earlier user labels and preliminary film observations.",
+    "timeNote": "Windows use the remastered video timeline, not the game clock. The other upload has different timing.",
+    "selection": "The same deliberately selected examples A, C, D and E; these are for defining terms, not estimating league-wide prevalence.",
+    "clips": [
+      {
+        "start": "4:30",
+        "end": "4:55",
+        "score": "Q1 · Atlanta 1–Houston 1",
+        "observation": "Your film review: the pull receiver transfers the disc toward the middle to another thrower, who then looks downfield. This opening transfer is setup; the next throw begins the attack.",
+        "question": "Reviewed by Teddy: recorded throw 1 is setup; recorded throw 2 is the first attacking throw.",
+        "sampledSeconds": [
+          274.3,
+          280.02,
+          285.02
+        ],
+        "case": "A",
+        "reviewStatus": "User confirmed as setup from film on November 11, 2026.",
+        "userReview": {
+          "reviewer": "Teddy",
+          "date": "2026-11-11",
+          "setupThrow": 1,
+          "firstAttackingThrow": 2,
+          "basis": "User film review of both Atlanta opening sequences in the UFA.tv remaster; latest clarification identifies the transfer from the pull receiver as setup.",
+          "centering": true,
+          "decision": "Both examples A and C begin with a setup throw. Recorded throw 2 is the first attacking throw.",
+          "rationale": "The pull receiver transfers the disc to another thrower, who then looks downfield and begins the attacking sequence. The first exchange can center the disc or go upfield."
+        }
+      },
+      {
+        "start": "8:25",
+        "end": "8:50",
+        "score": "Q1 · Atlanta 2–Houston 2",
+        "observation": "Your film review: after a good pull, the pull receiver passes upfield to another thrower, who then looks downfield. The opening transfer is setup even though it does not center the disc.",
+        "question": "Reviewed by Teddy: recorded throw 1 is setup; recorded throw 2 is the first attacking throw.",
+        "sampledSeconds": [
+          505.17,
+          515.17,
+          520.18
+        ],
+        "case": "C",
+        "reviewStatus": "User confirmed as setup from film on November 11, 2026.",
+        "userReview": {
+          "reviewer": "Teddy",
+          "date": "2026-11-11",
+          "basis": "User film review of both Atlanta opening sequences in the UFA.tv remaster; latest clarification identifies the transfer from the pull receiver as setup.",
+          "centering": false,
+          "setupThrow": 1,
+          "firstAttackingThrow": 2,
+          "pressure": "Relatively uncontested, as assessed by Teddy from the film.",
+          "decision": "Both examples A and C begin with a setup throw. Recorded throw 2 is the first attacking throw.",
+          "pullContext": "Teddy describes the pull as very good; this is a qualitative film observation, not a database pull-quality measure.",
+          "rationale": "The pull receiver transfers the disc to another thrower, who then looks downfield and begins the attacking sequence. The first exchange can center the disc or go upfield."
+        }
+      },
+      {
+        "start": "1:22:45",
+        "end": "1:23:10",
+        "score": "Q3 · Atlanta 21–Houston 9 · Houston possession 1",
+        "observation": "Houston moves the disc inward from deep in its own end zone. At the sampled opening exchange, the nearby defenders have not yet reached the two handlers.",
+        "question": "You previously called throw 1 centering. Where would you mark the first attacking throw after this exchange? Compare the second possession in E.",
+        "sampledSeconds": [
+          4976.65,
+          4981.68
+        ],
+        "case": "D"
+      },
+      {
+        "start": "1:24:05",
+        "end": "1:24:50",
+        "score": "Q3 · Atlanta 21–Houston 9 · Houston possession 2",
+        "observation": "The sequence includes Atlanta’s failed end-zone attempt, Houston getting the disc back, and Houston’s first throw going deep. A defender is near the thrower before release.",
+        "question": "This first throw is an attack rather than centering. Compare the pressure and setup with D, not just its position in the throw count.",
+        "sampledSeconds": [
+          5051.7,
+          5056.73,
+          5076.75,
+          5081.75
+        ],
+        "case": "E"
+      }
+    ],
+    "artifactChecks": {
+      "portablePreviewCompiled": true,
+      "browserReview": "Updated A and C titles, film decisions, and the pull-receiver transfer definition verified in the Chrome preview; case C visually inspected. Original layout and throw controls were checked in the preceding revision.",
+      "unchangedEvidence": "Original recorded throw rows remain unchanged. Earlier user labels are retained in the review history; the latest clarification records both A and C as setup exchanges from the pull receiver.",
+      "notChecked": [
+        "Native VS Code rendering",
+        "Mobile layout",
+        "Continuous playback coding of the complete clips",
+        "Full-game or league-wide setup-pass classification"
+      ]
+    },
+    "resolvedQuestion": {
+      "cases": [
+        "A",
+        "C"
+      ],
+      "answer": "The pull receiver transfers the disc to another thrower, who then looks downfield and begins the attacking sequence. The first exchange can center the disc or go upfield. Both have setup on recorded throw 1 and attack beginning on recorded throw 2.",
+      "date": "2026-11-11"
+    },
+    "workingSetupDefinition": "Opening setup throw: a pass after receiving the pull that transfers the disc from the pull receiver to another thrower to initiate the offense. The receiving thrower then begins looking downfield. Centering is one possible direction for this exchange; it is not required."
+  },
+  "additionalFilmCases2026_11_11": {
+    "selection": "Four deliberately selected contrast cases, including three from Boston–New York. These do not estimate how common any start type is.",
+    "reviewMethod": "Selected paused broadcast frames inspected through subscribed UFA.tv playback and aligned with the existing event sequences. This is not a completed continuous-play or full-game coding review.",
+    "cases": [
+      {
+        "id": "F",
+        "title": "Atlanta attacks deep on its first throw",
+        "team": "Atlanta Hustle",
+        "quarter": 1,
+        "point": 1,
+        "ownPossession": 1,
+        "sourceSide": "away",
+        "pointStartIndex": 0,
+        "possessionId": "2026-04-24-ATL-HTX|away|0|1",
+        "start": "Opening possession after the pull",
+        "prompt": "This first recorded attempt is already a huck. A setup rule needs to allow an opening with no separate transfer to another thrower.",
+        "sourceCue": "Q1 · Atlanta 0–Houston 0 · opening throw by Austin Taylor",
+        "throws": [
+          {
+            "n": 1,
+            "from": "Austin Taylor",
+            "to": "Unknown target",
+            "xy": [
+              0.34,
+              32.38,
+              -20.12,
+              106.43
+            ],
+            "outcome": "Throwaway",
+            "huck": true,
+            "sourceIndex": 1,
+            "before": []
+          }
+        ],
+        "gameSource": {
+          "game": "2026-04-24-ATL-HTX",
+          "url": "https://shownspace.com/game-center/2026-04-24-ATL-HTX",
+          "label": "Atlanta at Houston · April 24, 2026",
+          "source": "ShownSpace export preserved October 12, 2026; UFA event capture retrieved November 5, 2026. New examples aligned with sampled UFA.tv footage November 11; not separately checked against live ShownSpace.",
+          "rawSha256": "78987b3d01b327e1df4d65fd7d9dc346f6376e493eb4a568c5d88681eadcd4f8",
+          "rawReceipt": {
+            "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-04-24-ATL-HTX",
+            "sha256": "78987b3d01b327e1df4d65fd7d9dc346f6376e493eb4a568c5d88681eadcd4f8",
+            "retrieved_at": "2026-11-05T02:03:42.659679+00:00"
+          }
+        },
+        "filmSource": {
+          "url": "https://www.watchufa.tv/videos/atlanta-at-houston-4-24-2026-remaster",
+          "title": "Atlanta at Houston (4/24/2026) [Remaster]",
+          "duration": "2:03:33",
+          "reviewDate": "2026-11-11",
+          "reviewMethod": "Selected paused broadcast frames inspected through subscribed UFA.tv playback and aligned with the existing event sequences. This is not a completed continuous-play or full-game coding review.",
+          "status": "Cases A and C have user-confirmed setup labels from film: throw 1 is setup and throw 2 begins the attack. D and E retain earlier user labels and preliminary film observations.",
+          "timeNote": "Windows use the remastered video timeline, not the game clock. The other upload has different timing.",
+          "selection": "The same deliberately selected examples A, C, D and E; these are for defining terms, not estimating league-wide prevalence."
+        },
+        "film": {
+          "start": "1:25",
+          "end": "1:55",
+          "score": "Q1 · Atlanta 0–Houston 0",
+          "observation": "The sampled footage shows the pull arriving, Taylor holding the disc, and a deep attempt. The event sequence records no pass before that huck.",
+          "question": "My preliminary reading: attack begins on recorded throw 1. No separate setup exchange is recorded. Does that fit your definition?",
+          "sampledSeconds": [
+            91.364,
+            96.376,
+            101.398
+          ],
+          "reviewStatus": "Awaiting your classification; film observations are preliminary."
+        }
+      },
+      {
+        "id": "G",
+        "title": "Boston: setup followed by handler resets",
+        "team": "Boston Glory",
+        "quarter": 1,
+        "point": 2,
+        "ownPossession": 1,
+        "sourceSide": "away",
+        "pointStartIndex": 4,
+        "possessionId": "2026-06-12-BOS-NY|away|4|1",
+        "start": "Boston’s first receiving possession of the game",
+        "prompt": "Reviewed by Teddy: Cam Levine’s first pass to Ryan Dinger is setup. Dinger looks downfield; the later short exchanges are handler resets within the attack.",
+        "sourceCue": "Q1 · Boston 0–New York 1 · opening throw by Cam Levine",
+        "throws": [
+          {
+            "n": 1,
+            "from": "Cam Levine",
+            "to": "Ryan Dinger",
+            "xy": [
+              11.48,
+              13.01,
+              2.26,
+              16.98
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 5,
+            "before": []
+          },
+          {
+            "n": 2,
+            "from": "Ryan Dinger",
+            "to": "Peter Boerth",
+            "xy": [
+              2.26,
+              16.98,
+              -5.98,
+              19.03
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 6,
+            "before": []
+          },
+          {
+            "n": 3,
+            "from": "Peter Boerth",
+            "to": "Ryan Dinger",
+            "xy": [
+              -5.98,
+              19.03,
+              0.25,
+              13.48
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 7,
+            "before": []
+          },
+          {
+            "n": 4,
+            "from": "Ryan Dinger",
+            "to": "Tobe Decraene",
+            "xy": [
+              0.25,
+              13.48,
+              -2.73,
+              27.53
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 8,
+            "before": []
+          },
+          {
+            "n": 5,
+            "from": "Tobe Decraene",
+            "to": "Ryan Dinger",
+            "xy": [
+              -2.73,
+              27.53,
+              2.16,
+              16.31
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 9,
+            "before": []
+          },
+          {
+            "n": 6,
+            "from": "Ryan Dinger",
+            "to": "Tobe Decraene",
+            "xy": [
+              2.16,
+              16.31,
+              -11.43,
+              21.76
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 10,
+            "before": []
+          },
+          {
+            "n": 7,
+            "from": "Tobe Decraene",
+            "to": "Simon Carapella",
+            "xy": [
+              -11.43,
+              21.76,
+              -0.11,
+              24.33
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 11,
+            "before": []
+          },
+          {
+            "n": 8,
+            "from": "Simon Carapella",
+            "to": "Ryan Dinger",
+            "xy": [
+              -0.11,
+              24.33,
+              9.42,
+              25.47
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 12,
+            "before": []
+          },
+          {
+            "n": 9,
+            "from": "Ryan Dinger",
+            "to": "Roan Dunkerley",
+            "xy": [
+              9.42,
+              25.47,
+              0.61,
+              36.58
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 13,
+            "before": []
+          },
+          {
+            "n": 10,
+            "from": "Roan Dunkerley",
+            "to": "Tobe Decraene",
+            "xy": [
+              0.61,
+              36.58,
+              -13.8,
+              34.68
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 14,
+            "before": []
+          },
+          {
+            "n": 11,
+            "from": "Tobe Decraene",
+            "to": "Simon Carapella",
+            "xy": [
+              -13.8,
+              34.68,
+              -14.37,
+              40.08
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 15,
+            "before": []
+          },
+          {
+            "n": 12,
+            "from": "Simon Carapella",
+            "to": "Tobe Decraene",
+            "xy": [
+              -14.37,
+              40.08,
+              -20.85,
+              65.76
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 16,
+            "before": []
+          },
+          {
+            "n": 13,
+            "from": "Tobe Decraene",
+            "to": "Albert Yuan",
+            "xy": [
+              -20.85,
+              65.76,
+              -21.58,
+              106.98
+            ],
+            "outcome": "Goal",
+            "huck": true,
+            "sourceIndex": 17,
+            "before": []
+          }
+        ],
+        "gameSource": {
+          "game": "2026-06-12-BOS-NY",
+          "url": "https://shownspace.com/game-center/2026-06-12-BOS-NY",
+          "label": "Boston at New York · June 12, 2026",
+          "source": "ShownSpace export preserved October 12, 2026; UFA event capture retrieved November 5, 2026. New examples aligned with sampled UFA.tv footage November 11; not separately checked against live ShownSpace.",
+          "rawSha256": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+          "rawReceipt": {
+            "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-12-BOS-NY",
+            "sha256": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+            "retrieved_at": "2026-11-05T02:03:45.957763+00:00"
+          }
+        },
+        "filmSource": {
+          "url": "https://www.watchufa.tv/videos/boston-at-new-york-6-12-2026-06-13-2026-02-36-21",
+          "title": "Boston at New York (6/12/2026) - 06/13/2026, 02:36:21",
+          "duration": "3:44:53",
+          "reviewDate": "2026-11-11",
+          "reviewMethod": "Selected paused broadcast frames inspected through subscribed UFA.tv playback and aligned with the existing event sequences. This is not a completed continuous-play or full-game coding review.",
+          "timeNote": "Use this upload’s video timeline. The recording includes a long pregame weather delay, so the review windows begin after 1:44:00."
+        },
+        "film": {
+          "start": "1:44:15",
+          "end": "1:44:45",
+          "score": "Q1 · Boston 0–New York 1",
+          "observation": "Your film review: the pull receiver centers to Dinger. Dinger then looks downfield, but the cutters are not open, so the handlers exchange passes. Those later passes are not additional setup throws.",
+          "question": "Reviewed by Teddy: setup ends after recorded throw 1. Recorded throw 2 is the first attacking throw, even though it is another short handler pass.",
+          "sampledSeconds": [
+            6261.5,
+            6266.5,
+            6271.5,
+            6301.5
+          ],
+          "reviewStatus": "User confirmed from film on November 11, 2026."
+        },
+        "userReview": {
+          "reviewer": "Teddy",
+          "date": "2026-11-11",
+          "basis": "User review of Boston–New York video window 1:44:15–1:44:45.",
+          "setupThrow": 1,
+          "firstAttackingThrow": 2,
+          "centering": true,
+          "decision": "Only the first pass from the pull receiver to Ryan Dinger is setup.",
+          "rationale": "Dinger looks downfield; the cutters are not open, so subsequent short passes between handlers are part of the attack, not more setup."
+        }
+      },
+      {
+        "id": "H",
+        "title": "Boston starts from the brick location",
+        "team": "Boston Glory",
+        "quarter": 1,
+        "point": 6,
+        "ownPossession": 1,
+        "sourceSide": "away",
+        "pointStartIndex": 63,
+        "possessionId": "2026-06-12-BOS-NY|away|63|1",
+        "start": "First recorded throw starts at the brick coordinates (0, 40)",
+        "prompt": "Reviewed by Teddy: Singer → Graff is attacking throw 1. No setup pass is excluded from this opening.",
+        "sourceCue": "Q1 · Boston 1–New York 4 · Boston possession 1 · opening throw by Zach Singer",
+        "throws": [
+          {
+            "n": 1,
+            "from": "Zach Singer",
+            "to": "Oscar Graff",
+            "xy": [
+              0.0,
+              40.0,
+              17.24,
+              52.33
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 64,
+            "before": []
+          },
+          {
+            "n": 2,
+            "from": "Oscar Graff",
+            "to": "Zach Singer",
+            "xy": [
+              17.24,
+              52.33,
+              2.26,
+              41.26
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 65,
+            "before": []
+          },
+          {
+            "n": 3,
+            "from": "Zach Singer",
+            "to": "Oscar Graff",
+            "xy": [
+              2.26,
+              41.26,
+              15.75,
+              45.74
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 66,
+            "before": []
+          },
+          {
+            "n": 4,
+            "from": "Oscar Graff",
+            "to": "Cam Levine",
+            "xy": [
+              15.75,
+              45.74,
+              17.65,
+              65.24
+            ],
+            "outcome": "Drop",
+            "huck": false,
+            "sourceIndex": 67,
+            "before": []
+          }
+        ],
+        "gameSource": {
+          "game": "2026-06-12-BOS-NY",
+          "url": "https://shownspace.com/game-center/2026-06-12-BOS-NY",
+          "label": "Boston at New York · June 12, 2026",
+          "source": "ShownSpace export preserved October 12, 2026; UFA event capture retrieved November 5, 2026. New examples aligned with sampled UFA.tv footage November 11; not separately checked against live ShownSpace.",
+          "rawSha256": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+          "rawReceipt": {
+            "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-12-BOS-NY",
+            "sha256": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+            "retrieved_at": "2026-11-05T02:03:45.957763+00:00"
+          }
+        },
+        "filmSource": {
+          "url": "https://www.watchufa.tv/videos/boston-at-new-york-6-12-2026-06-13-2026-02-36-21",
+          "title": "Boston at New York (6/12/2026) - 06/13/2026, 02:36:21",
+          "duration": "3:44:53",
+          "reviewDate": "2026-11-11",
+          "reviewMethod": "Selected paused broadcast frames inspected through subscribed UFA.tv playback and aligned with the existing event sequences. This is not a completed continuous-play or full-game coding review.",
+          "timeNote": "Use this upload’s video timeline. The recording includes a long pregame weather delay, so the review windows begin after 1:44:00."
+        },
+        "film": {
+          "start": "1:58:30",
+          "end": "1:59:00",
+          "score": "Q1 · Boston 1–New York 4 · Boston possession 1",
+          "observation": "Your film review: Boston takes the disc to the brick, and Singer’s first pass to Graff begins the attack. There is no opening setup transfer.",
+          "question": "Reviewed by Teddy: zero setup throws; recorded throw 1 is the first attacking throw.",
+          "sampledSeconds": [
+            7110.952,
+            7121,
+            7126
+          ],
+          "reviewStatus": "User confirmed from film on November 11, 2026.",
+          "preliminaryObservation": "The sampled footage shows Singer holding with a defender nearby before Boston’s first pass. The record starts at the brick location and the first pass goes diagonally upfield to Graff."
+        },
+        "userReview": {
+          "reviewer": "Teddy",
+          "date": "2026-11-11",
+          "setupThrow": null,
+          "setupThrowCount": 0,
+          "firstAttackingThrow": 1,
+          "basis": "User review of Boston–New York video window 1:58:30–1:59:00.",
+          "context": "Confirmed by user film review: brick restart after the pull.",
+          "decision": "The first pass from Zach Singer to Oscar Graff is an attacking throw, with no opening setup exchange.",
+          "rationale": "Teddy identifies this as a pull taken to the brick. The offense is already positioned to attack; the first pass does not transfer the disc away from a pull catcher."
+        }
+      },
+      {
+        "id": "I",
+        "title": "Boston’s first pass after a New York turnover",
+        "team": "Boston Glory",
+        "quarter": 1,
+        "point": 6,
+        "ownPossession": 2,
+        "sourceSide": "away",
+        "pointStartIndex": 63,
+        "possessionId": "2026-06-12-BOS-NY|away|63|2",
+        "start": "Boston gets the disc back in the same point as H",
+        "prompt": "Reviewed by Teddy: Graff → McDonnell is attacking throw 1. Its short distance and inward direction do not make it setup.",
+        "sourceCue": "Q1 · Boston 1–New York 4 · Boston possession 2 · opening throw by Oscar Graff",
+        "throws": [
+          {
+            "n": 1,
+            "from": "Oscar Graff",
+            "to": "Rowan McDonnell",
+            "xy": [
+              -19.77,
+              38.38,
+              -11.12,
+              40.03
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 69,
+            "before": []
+          },
+          {
+            "n": 2,
+            "from": "Rowan McDonnell",
+            "to": "Zach Singer",
+            "xy": [
+              -11.12,
+              40.03,
+              -3.81,
+              44.2
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 70,
+            "before": []
+          },
+          {
+            "n": 3,
+            "from": "Zach Singer",
+            "to": "Oscar Graff",
+            "xy": [
+              -3.81,
+              44.2,
+              15.7,
+              56.6
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 71,
+            "before": []
+          },
+          {
+            "n": 4,
+            "from": "Oscar Graff",
+            "to": "Cam Levine",
+            "xy": [
+              15.7,
+              56.6,
+              21.0,
+              79.24
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 72,
+            "before": []
+          },
+          {
+            "n": 5,
+            "from": "Cam Levine",
+            "to": "Oscar Graff",
+            "xy": [
+              21.0,
+              79.24,
+              16.93,
+              62.46
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 73,
+            "before": []
+          },
+          {
+            "n": 6,
+            "from": "Oscar Graff",
+            "to": "Cole Davis-Brand",
+            "xy": [
+              16.93,
+              62.46,
+              -0.78,
+              59.27
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 74,
+            "before": []
+          },
+          {
+            "n": 7,
+            "from": "Cole Davis-Brand",
+            "to": "Rowan McDonnell",
+            "xy": [
+              -0.78,
+              59.27,
+              -8.4,
+              68.43
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 75,
+            "before": []
+          },
+          {
+            "n": 8,
+            "from": "Rowan McDonnell",
+            "to": "Zach Singer",
+            "xy": [
+              -8.4,
+              68.43,
+              -21.58,
+              90.66
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 76,
+            "before": []
+          },
+          {
+            "n": 9,
+            "from": "Zach Singer",
+            "to": "Cole Davis-Brand",
+            "xy": [
+              -21.58,
+              90.66,
+              -2.78,
+              81.5
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 77,
+            "before": []
+          },
+          {
+            "n": 10,
+            "from": "Cole Davis-Brand",
+            "to": "Zach Singer",
+            "xy": [
+              -2.78,
+              81.5,
+              3.39,
+              84.49
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 78,
+            "before": []
+          },
+          {
+            "n": 11,
+            "from": "Zach Singer",
+            "to": "Cole Davis-Brand",
+            "xy": [
+              3.39,
+              84.49,
+              -8.45,
+              77.85
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 79,
+            "before": []
+          },
+          {
+            "n": 12,
+            "from": "Cole Davis-Brand",
+            "to": "Oscar Graff",
+            "xy": [
+              -8.45,
+              77.85,
+              -16.22,
+              72.14
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 80,
+            "before": []
+          },
+          {
+            "n": 13,
+            "from": "Oscar Graff",
+            "to": "Zach Singer",
+            "xy": [
+              -16.22,
+              72.14,
+              -20.24,
+              78.78
+            ],
+            "outcome": "Complete",
+            "huck": false,
+            "sourceIndex": 81,
+            "before": []
+          },
+          {
+            "n": 14,
+            "from": "Zach Singer",
+            "to": "Oscar Graff",
+            "xy": [
+              -20.24,
+              78.78,
+              -17.3,
+              106.41
+            ],
+            "outcome": "Goal",
+            "huck": false,
+            "sourceIndex": 82,
+            "before": []
+          }
+        ],
+        "gameSource": {
+          "game": "2026-06-12-BOS-NY",
+          "url": "https://shownspace.com/game-center/2026-06-12-BOS-NY",
+          "label": "Boston at New York · June 12, 2026",
+          "source": "ShownSpace export preserved October 12, 2026; UFA event capture retrieved November 5, 2026. New examples aligned with sampled UFA.tv footage November 11; not separately checked against live ShownSpace.",
+          "rawSha256": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+          "rawReceipt": {
+            "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-06-12-BOS-NY",
+            "sha256": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+            "retrieved_at": "2026-11-05T02:03:45.957763+00:00"
+          }
+        },
+        "filmSource": {
+          "url": "https://www.watchufa.tv/videos/boston-at-new-york-6-12-2026-06-13-2026-02-36-21",
+          "title": "Boston at New York (6/12/2026) - 06/13/2026, 02:36:21",
+          "duration": "3:44:53",
+          "reviewDate": "2026-11-11",
+          "reviewMethod": "Selected paused broadcast frames inspected through subscribed UFA.tv playback and aligned with the existing event sequences. This is not a completed continuous-play or full-game coding review.",
+          "timeNote": "Use this upload’s video timeline. The recording includes a long pregame weather delay, so the review windows begin after 1:44:00."
+        },
+        "film": {
+          "start": "1:59:10",
+          "end": "1:59:40",
+          "score": "Q1 · Boston 1–New York 4 · Boston possession 2",
+          "observation": "Your film review: after New York turns it over, Graff picks up the disc and passes quickly to McDonnell. This is continuous play with defenders present, so the short first transfer is part of the attack.",
+          "question": "Reviewed by Teddy: zero setup throws; recorded throw 1 is the first attacking throw.",
+          "sampledSeconds": [
+            7156,
+            7161,
+            7166
+          ],
+          "reviewStatus": "User confirmed from film on November 11, 2026.",
+          "preliminaryObservation": "The sampled sequence shows New York’s incomplete attempt, followed by Boston’s short first exchange and quick continuation. The first recorded pass is Graff to McDonnell, toward the middle."
+        },
+        "userReview": {
+          "reviewer": "Teddy",
+          "date": "2026-11-11",
+          "setupThrow": null,
+          "setupThrowCount": 0,
+          "firstAttackingThrow": 1,
+          "basis": "User review of Boston–New York video window 1:59:10–1:59:40.",
+          "context": "Subsequent O-line possession after the opponent turns over, with play continuing.",
+          "decision": "Oscar Graff’s first pass to Rowan McDonnell is part of the attack after the turnover, not setup.",
+          "rationale": "Play is continuing after New York’s turnover. The defense is present, and Graff picks up the disc and moves it quickly to get the offense going. A short inward pass does not make this a post-pull setup."
+        }
+      }
+    ],
+    "openQuestions": [
+      "Can the immediate deep attempt in F confirm the direct-attack exception after a pull?"
+    ],
+    "confirmedBostonBoundary": {
+      "reviewer": "Teddy",
+      "date": "2026-11-11",
+      "basis": "User review of Boston–New York video window 1:44:15–1:44:45.",
+      "setupThrow": 1,
+      "firstAttackingThrow": 2,
+      "centering": true,
+      "decision": "Only the first pass from the pull receiver to Ryan Dinger is setup.",
+      "rationale": "Dinger looks downfield; the cutters are not open, so subsequent short passes between handlers are part of the attack, not more setup."
+    },
+    "scopeLimit": "Full physical throws and possession outcomes are unchanged. Starting-location eligibility and any adjusted attacking-throw count have not been recalculated.",
+    "artifactChecks": {
+      "portablePreviewCompiled": true,
+      "browserReview": "Chrome preview rendered H with field diagram and labeled axes; G user decision and throw-2 selection verified; F and I case selection, correct game-specific film/source links, throw counts, and participant display verified. Preview left on H.",
+      "sourceValidation": "All 32 newly added physical throws match raw UFA coordinates and event types. Both raw game files match the captured source receipt hashes. Original A–E rows and user labels were preserved.",
+      "notChecked": [
+        "Native VS Code rendering",
+        "Mobile layout",
+        "Continuous-play coding of complete clips",
+        "Full-game or league-wide setup classification"
+      ],
+      "latestLabelUpdate": "Rebuilt successfully and verified in Chrome: H and I both display the user-confirmed zero-setup decision and recorded throw 1 as the first attacking throw. Updated definition is visible; case switching works. All original physical throws remain unchanged."
+    },
+    "resolvedQuestions": [
+      {
+        "case": "H",
+        "reviewer": "Teddy",
+        "date": "2026-11-11",
+        "setupThrow": null,
+        "setupThrowCount": 0,
+        "firstAttackingThrow": 1,
+        "basis": "User review of Boston–New York video window 1:58:30–1:59:00.",
+        "context": "Confirmed by user film review: brick restart after the pull.",
+        "decision": "The first pass from Zach Singer to Oscar Graff is an attacking throw, with no opening setup exchange.",
+        "rationale": "Teddy identifies this as a pull taken to the brick. The offense is already positioned to attack; the first pass does not transfer the disc away from a pull catcher."
+      },
+      {
+        "case": "I",
+        "reviewer": "Teddy",
+        "date": "2026-11-11",
+        "setupThrow": null,
+        "setupThrowCount": 0,
+        "firstAttackingThrow": 1,
+        "basis": "User review of Boston–New York video window 1:59:10–1:59:40.",
+        "context": "Subsequent O-line possession after the opponent turns over, with play continuing.",
+        "decision": "Oscar Graff’s first pass to Rowan McDonnell is part of the attack after the turnover, not setup.",
+        "rationale": "Play is continuing after New York’s turnover. The defense is present, and Graff picks up the disc and moves it quickly to get the offense going. A short inward pass does not make this a post-pull setup."
+      }
+    ]
+  },
+  "largeFilmReview2026_11_11": {
+    "request": "Gather many games and contrasting openings to refine a setup definition and test whether an event-based rule can replace some manual film review.",
+    "library": "film_library.json",
+    "recordingsAndTimingEvidence": "film_library_manifest.json",
+    "scope": {
+      "games": 12,
+      "teamsInStudyExport": 22,
+      "consecutiveFirstQuarterPossessions": 170,
+      "openingPossessions": 135,
+      "subsequentPossessions": 35,
+      "retainedOutsideQuarterExamples": 3,
+      "totalEntries": 173
+    },
+    "sampling": "Games purposefully selected for team coverage. All validated first-quarter receiving-team possessions in each game retained regardless of hucks or scoring. This is not a random league sample.",
+    "developmentAndValidation": {
+      "developmentGames": 8,
+      "developmentPossessions": 105,
+      "reservedGames": 4,
+      "reservedPossessions": 65,
+      "procedure": "Settle and record the rule using development games, then test it unchanged on the reserved games. Changing the rule after inspecting reserved classifications makes that game development material and requires replacement validation data."
+    },
+    "classificationStatus": "No new human or automatic setup labels added. Film access and timing inspection are not setup classifications.",
+    "availability": {
+      "windowsProvided": 163,
+      "outsideAvailableRecording": 7,
+      "withoutTimingWindow": [
+        "R027",
+        "R032",
+        "B"
+      ],
+      "limitations": "The Minnesota–Pittsburgh recording starts partway through Q1. Madison opening-pull footage is incomplete. Two Philadelphia subsequent possessions lack enough timestamp evidence for an estimated window. All remain visible and may be marked unclear rather than forced into a category."
+    },
+    "timingMethod": "Each recording was opened through the subscribed UFA.tv player. Selected paused frames and available transcripts were used for approximate sequence anchors. Most case windows are derived from operator timestamps, with 60 seconds of lead-in and 35 seconds afterward. Match score and players; this is not 173 independently watched clips.",
+    "spotChecks": [
+      {
+        "game": "2026-05-09-PHI-CAR",
+        "videoSeconds": 929.030123,
+        "observation": "Score Philadelphia 1–Carolina 2 at Q1 8:11 aligns with the point-four subsequent-possession sequence; not a setup classification."
+      },
+      {
+        "game": "2026-05-09-PHI-CAR",
+        "videoSeconds": 1749.6,
+        "observation": "Late-Q1 pull near video 29:09 precedes the recorded first-throw huck in point ten. Additional lead-in retained to allow identification of the start."
+      }
+    ],
+    "annotationFields": [
+      "start context",
+      "first attacking throw or unclear/mismatch",
+      "notes and corrected video time"
+    ],
+    "easierRoute": "Use event data to locate initial/subsequent possessions and candidate contexts. Derive a simple rule only after film review, then assess agreement, errors, and unclassifiable cases on separate games. Current exports do not directly encode setup, caught-pull status, or downfield looks; short-pass geometry alone is insufficient.",
+    "artifactChecks": {
+      "sourceEvents": "Every new physical throw checked against raw event type and all four coordinates; raw-file hashes match the source receipts; 173 unique possession identifiers.",
+      "existingDecisions": "A, C, G, H, I retained. Temporary interface-test edits removed.",
+      "preview": "Portable HTML compiled. Desktop UI checked for game/group filters, previous/next, original H/I decisions, unavailable-film warnings, zero-throw entry, throw selector and diagram.",
+      "persistence": "A temporary decision survived reload. A note-saving issue was repaired and a temporary note then survived reload. Both temporary edits were undone.",
+      "download": "Downloaded JSON files inspected: exactly the five original confirmed decisions, no temporary test labels or notes.",
+      "limits": "No new metrics were fitted. Reserved-game classification accuracy and later-quarter generalization remain untested."
+    }
+  }
 }

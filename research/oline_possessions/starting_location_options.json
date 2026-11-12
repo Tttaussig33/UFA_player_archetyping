@@ -1,0 +1,297 @@
+{
+  "reviewed_on": "2026-11-10",
+  "status": "Comparison options only; no final definition adopted.",
+  "source": "possessions.csv",
+  "source_sha256": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7",
+  "filters": "Exclude possessions containing recorded timeouts; retain original stage numbers. Location comparisons exclude unknown first-attempt coordinates. No goal, turnover, huck, or eventual-hold outcome used for pairing.",
+  "coordinate_definition": "Yards to attacking goal line = 100 - first_y in the preserved normalized coordinates; signed first_x retains left/right position.",
+  "stage_counts": [
+    {
+      "stage": 1,
+      "all_n": 5676,
+      "known_location_n": 5645
+    },
+    {
+      "stage": 2,
+      "all_n": 1104,
+      "known_location_n": 1043
+    },
+    {
+      "stage": 3,
+      "all_n": 247,
+      "known_location_n": 231
+    }
+  ],
+  "bands": [
+    {
+      "band": "80+ yards",
+      "groups": [
+        {
+          "stage": 1,
+          "n": 3511,
+          "within_10_yards_of_sideline_n": 624
+        },
+        {
+          "stage": 2,
+          "n": 155,
+          "within_10_yards_of_sideline_n": 58
+        },
+        {
+          "stage": 3,
+          "n": 38,
+          "within_10_yards_of_sideline_n": 13
+        }
+      ]
+    },
+    {
+      "band": "60 to under 80 yards",
+      "groups": [
+        {
+          "stage": 1,
+          "n": 1444,
+          "within_10_yards_of_sideline_n": 322
+        },
+        {
+          "stage": 2,
+          "n": 422,
+          "within_10_yards_of_sideline_n": 153
+        },
+        {
+          "stage": 3,
+          "n": 91,
+          "within_10_yards_of_sideline_n": 28
+        }
+      ]
+    },
+    {
+      "band": "40 to under 60 yards",
+      "groups": [
+        {
+          "stage": 1,
+          "n": 628,
+          "within_10_yards_of_sideline_n": 506
+        },
+        {
+          "stage": 2,
+          "n": 171,
+          "within_10_yards_of_sideline_n": 60
+        },
+        {
+          "stage": 3,
+          "n": 28,
+          "within_10_yards_of_sideline_n": 10
+        }
+      ]
+    },
+    {
+      "band": "Under 40 yards",
+      "groups": [
+        {
+          "stage": 1,
+          "n": 62,
+          "within_10_yards_of_sideline_n": 23
+        },
+        {
+          "stage": 2,
+          "n": 295,
+          "within_10_yards_of_sideline_n": 98
+        },
+        {
+          "stage": 3,
+          "n": 74,
+          "within_10_yards_of_sideline_n": 30
+        }
+      ]
+    }
+  ],
+  "illustrative_pairing": {
+    "definition": "Both starts 60+ yards from goal, same team, at most five yards difference in each coordinate; one-to-one without replacement. Other game context not yet matched.",
+    "first_n": 4955,
+    "second_n": 577,
+    "second_with_a_candidate": 534,
+    "distinct_pairs": 510,
+    "teams": [
+      {
+        "team": "alleycats",
+        "team_name": "Indianapolis AlleyCats",
+        "first_n": 242,
+        "second_n": 16,
+        "second_with_a_candidate": 15,
+        "distinct_pairs": 15
+      },
+      {
+        "team": "apex",
+        "team_name": "Colorado Apex",
+        "first_n": 282,
+        "second_n": 37,
+        "second_with_a_candidate": 37,
+        "distinct_pairs": 36
+      },
+      {
+        "team": "bighorns",
+        "team_name": "Vegas Bighorns",
+        "first_n": 266,
+        "second_n": 51,
+        "second_with_a_candidate": 50,
+        "distinct_pairs": 47
+      },
+      {
+        "team": "breeze",
+        "team_name": "DC Breeze",
+        "first_n": 225,
+        "second_n": 21,
+        "second_with_a_candidate": 21,
+        "distinct_pairs": 19
+      },
+      {
+        "team": "cascades",
+        "team_name": "Seattle Cascades",
+        "first_n": 207,
+        "second_n": 22,
+        "second_with_a_candidate": 22,
+        "distinct_pairs": 21
+      },
+      {
+        "team": "empire",
+        "team_name": "New York Empire",
+        "first_n": 205,
+        "second_n": 16,
+        "second_with_a_candidate": 14,
+        "distinct_pairs": 14
+      },
+      {
+        "team": "flyers",
+        "team_name": "Carolina Flyers",
+        "first_n": 172,
+        "second_n": 14,
+        "second_with_a_candidate": 8,
+        "distinct_pairs": 8
+      },
+      {
+        "team": "glory",
+        "team_name": "Boston Glory",
+        "first_n": 186,
+        "second_n": 14,
+        "second_with_a_candidate": 13,
+        "distinct_pairs": 12
+      },
+      {
+        "team": "growlers",
+        "team_name": "San Diego Growlers",
+        "first_n": 209,
+        "second_n": 21,
+        "second_with_a_candidate": 17,
+        "distinct_pairs": 17
+      },
+      {
+        "team": "havoc",
+        "team_name": "Houston Havoc",
+        "first_n": 252,
+        "second_n": 36,
+        "second_with_a_candidate": 32,
+        "distinct_pairs": 31
+      },
+      {
+        "team": "hustle",
+        "team_name": "Atlanta Hustle",
+        "first_n": 213,
+        "second_n": 22,
+        "second_with_a_candidate": 22,
+        "distinct_pairs": 21
+      },
+      {
+        "team": "phoenix",
+        "team_name": "Philadelphia Phoenix",
+        "first_n": 301,
+        "second_n": 34,
+        "second_with_a_candidate": 32,
+        "distinct_pairs": 31
+      },
+      {
+        "team": "radicals",
+        "team_name": "Madison Radicals",
+        "first_n": 218,
+        "second_n": 28,
+        "second_with_a_candidate": 28,
+        "distinct_pairs": 28
+      },
+      {
+        "team": "royal",
+        "team_name": "Montreal Royal",
+        "first_n": 240,
+        "second_n": 30,
+        "second_with_a_candidate": 30,
+        "distinct_pairs": 30
+      },
+      {
+        "team": "rush",
+        "team_name": "Toronto Rush",
+        "first_n": 223,
+        "second_n": 29,
+        "second_with_a_candidate": 25,
+        "distinct_pairs": 22
+      },
+      {
+        "team": "shred",
+        "team_name": "Salt Lake Shred",
+        "first_n": 209,
+        "second_n": 26,
+        "second_with_a_candidate": 24,
+        "distinct_pairs": 23
+      },
+      {
+        "team": "sol",
+        "team_name": "Austin Sol",
+        "first_n": 186,
+        "second_n": 15,
+        "second_with_a_candidate": 13,
+        "distinct_pairs": 13
+      },
+      {
+        "team": "spiders",
+        "team_name": "Oakland Spiders",
+        "first_n": 174,
+        "second_n": 24,
+        "second_with_a_candidate": 24,
+        "distinct_pairs": 23
+      },
+      {
+        "team": "steel",
+        "team_name": "Oregon Steel",
+        "first_n": 264,
+        "second_n": 47,
+        "second_with_a_candidate": 43,
+        "distinct_pairs": 36
+      },
+      {
+        "team": "thunderbirds",
+        "team_name": "Pittsburgh Thunderbirds",
+        "first_n": 278,
+        "second_n": 20,
+        "second_with_a_candidate": 19,
+        "distinct_pairs": 19
+      },
+      {
+        "team": "union",
+        "team_name": "Chicago Union",
+        "first_n": 222,
+        "second_n": 29,
+        "second_with_a_candidate": 23,
+        "distinct_pairs": 22
+      },
+      {
+        "team": "windchill",
+        "team_name": "Minnesota Wind Chill",
+        "first_n": 181,
+        "second_n": 25,
+        "second_with_a_candidate": 22,
+        "distinct_pairs": 22
+      }
+    ]
+  },
+  "limitations": [
+    "Starting coordinates do not identify setup/centering passes.",
+    "Pair feasibility alone does not establish balance in all recorded context or comparable defensive situations.",
+    "Small within-team samples and correlated possessions require appropriate uncertainty analysis before conclusions."
+  ]
+}

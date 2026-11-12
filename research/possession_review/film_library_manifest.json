@@ -1,0 +1,240 @@
+{
+  "createdOn": "2026-11-11",
+  "purpose": "Large film-review library for defining and validating opening setup, separate from the possession outcome analysis.",
+  "plannedScope": "First-quarter possessions in twelve games covering all twenty-two teams represented in the study export; original A–I examples retained. Include ordinary openings, targeted edge cases, and subsequent possessions.",
+  "selectionSeed": 20261111,
+  "labelStatus": "No new setup classifications are inferred from geometry. User-reviewed labels are retained separately.",
+  "validationDesign": "Develop the definition with the first eight games; reserve the last four games for testing the frozen rule. Film timing checks do not count as setup classification.",
+  "games": [
+    {
+      "gameId": "2026-04-24-ATL-HTX",
+      "title": "Atlanta at Houston",
+      "url": "https://www.watchufa.tv/videos/atlanta-at-houston-4-24-2026-remaster",
+      "discoverySource": "Existing film-reviewed recording",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; opening sequence located. Individual new windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "away",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1777077050,
+          "videoSeconds": 101.398,
+          "basis": "Selected opening-point frames at 1:31–1:41; first attempt is the recorded deep throw.",
+          "precision": "Approximate sequence alignment, not an exact release timestamp."
+        }
+      ],
+      "durationSeconds": 7413
+    },
+    {
+      "gameId": "2026-06-12-BOS-NY",
+      "title": "Boston at New York",
+      "url": "https://www.watchufa.tv/videos/boston-at-new-york-6-12-2026-06-13-2026-02-36-21",
+      "discoverySource": "Existing film-reviewed recording",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; opening sequence located. Individual new windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "away",
+          "sourceIndex": 5,
+          "sourceTimestamp": 1781310652,
+          "videoSeconds": 6266.5,
+          "basis": "Boston first receiving-point exchange inspected near 1:44:26; later point-six opening also located at 1:58:30.",
+          "precision": "Approximate sequence alignment, not an exact release timestamp."
+        }
+      ],
+      "durationSeconds": 13493
+    },
+    {
+      "gameId": "2026-05-09-PHI-CAR",
+      "title": "Philadelphia at Carolina",
+      "url": "https://www.watchufa.tv/carolina-flyers-2026/videos/philadelphia-at-carolina-5-9-2026-05-10-2026-01-30-31",
+      "discoverySource": "Carolina 2026 collection",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; opening sequence located. Individual new windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "home",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1778369744,
+          "videoSeconds": 509.4,
+          "basis": "Opening exchange visible at video 8:29.4, Q1 11:51, score 0–0. Transcript places opening pull around 8:24; operator timestamp alignment is approximate.",
+          "precision": "Approximate sequence alignment, not an exact release timestamp."
+        }
+      ],
+      "durationSeconds": 7091.833
+    },
+    {
+      "gameId": "2026-05-02-CHI-MIN",
+      "title": "Chicago at Minnesota",
+      "url": "https://www.watchufa.tv/minnesota-wind-chill-2026/videos/chicago-at-minnesota-5-2-2026-05-03-2026-01-12-49",
+      "discoverySource": "Minnesota 2026 collection",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; opening sequence located. Individual new windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "away",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1777763479,
+          "videoSeconds": 1473.4,
+          "basis": "Opening exchange visible at 24:33.4, Q1 11:52, score 0–0. Transcript places opening pull around 24:25; operator alignment is approximate.",
+          "precision": "Approximate sequence alignment, not an exact release timestamp."
+        }
+      ],
+      "durationSeconds": 8460.9
+    },
+    {
+      "gameId": "2026-05-09-MTL-TOR",
+      "title": "Montreal at Toronto",
+      "url": "https://www.watchufa.tv/montreal-royal-2026/videos/montreal-at-toronto-5-9-2026-05-09-2026-22-46-42",
+      "discoverySource": "Montreal 2026 collection",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; opening sequence located. Individual new windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "away",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1778357280,
+          "videoSeconds": 754.0,
+          "basis": "Puller visible preparing the opening pull at 12:34; Toronto opening exchange visible at 12:49. Home raw stream lacks timestamps; opposing pull provides an approximate anchor.",
+          "precision": "Approximate sequence alignment, not an exact release timestamp."
+        }
+      ],
+      "durationSeconds": 9986.243
+    },
+    {
+      "gameId": "2026-06-14-IND-MAD",
+      "title": "Indianapolis at Madison",
+      "url": "https://www.watchufa.tv/madison-radicals-3/videos/indianapolis-at-madison-6-14-2026-06-15-2026-00-31-54",
+      "discoverySource": "Madison 2026 collection",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; one opening sequence located. Other individual windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "home",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1781474497,
+          "videoSeconds": 666.5,
+          "basis": "Opening-point play visible at 11:06.5, stadium clock 11:49, score 0–0. Commentary says the roller pull happened during the preceding broadcast break; opening catch coverage is incomplete.",
+          "precision": "Approximate sequence alignment, not exact release timing."
+        }
+      ],
+      "durationSeconds": 9369,
+      "coverageNote": "The broadcast returns from a break after the opening pull has already happened. Later points may be fully visible; do not infer the first pull catch from missing footage."
+    },
+    {
+      "gameId": "2026-05-09-OAK-SEA",
+      "title": "Oakland at Seattle",
+      "url": "https://www.watchufa.tv/oakland-spiders-2026/videos/oakland-at-seattle-5-9-2026-05-10-2026-00-12-54",
+      "discoverySource": "Oakland 2026 collection",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; one opening sequence located. Other individual windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "home",
+          "sourceIndex": 30,
+          "sourceTimestamp": 1778364687,
+          "videoSeconds": 1015.1,
+          "basis": "Seattle opening after the score becomes Oakland 2–Seattle 1, visible near 16:55.1. Broadcast displays Q1 10:40, differing from the raw point-start clock; use score and players to identify the sequence.",
+          "precision": "Approximate sequence alignment, not exact release timing."
+        }
+      ],
+      "durationSeconds": 8000.6
+    },
+    {
+      "gameId": "2026-05-01-ORE-SLC",
+      "title": "Oregon at Salt Lake",
+      "url": "https://www.watchufa.tv/salt-lake-shred-2026/videos/oregon-at-salt-lake-5-1-2026-05-02-2026-03-01-47",
+      "discoverySource": "Salt Lake 2026 collection",
+      "group": "Definition development",
+      "recordingStatus": "Playback verified; one opening sequence located. Other individual windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "home",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1777683943,
+          "videoSeconds": 1177.5,
+          "basis": "Opening pull arriving near 19:32.5 (Q1 11:57), with the first exchange visible at 19:37.5 (Q1 11:52), score 0–0.",
+          "precision": "Approximate sequence alignment, not exact release timing."
+        }
+      ],
+      "durationSeconds": 7839.7
+    },
+    {
+      "gameId": "2026-06-06-ATX-LV",
+      "title": "Austin at Las Vegas",
+      "url": "https://www.watchufa.tv/austin-sol-2026/videos/austin-at-las-vegas-6-6-2026-06-07-2026-04-02-32",
+      "discoverySource": "Austin 2026 collection",
+      "group": "Reserved validation",
+      "recordingStatus": "Playback verified; one opening sequence located. Other individual windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "away",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1780797820,
+          "videoSeconds": 660.533333,
+          "basis": "Austin receiving the opening pull near 10:55.5 (Q1 11:58), opening exchanges underway at 11:00.5 (Q1 11:49), score 0–0.",
+          "precision": "Approximate sequence alignment, not exact release timing."
+        }
+      ],
+      "durationSeconds": 7196.8
+    },
+    {
+      "gameId": "2026-06-05-CAR-DC",
+      "title": "Carolina at DC",
+      "url": "https://www.watchufa.tv/carolina-flyers-2026/videos/carolina-at-dc-6-5-2026-06-06-2026-01-22-07",
+      "discoverySource": "Carolina 2026 collection",
+      "group": "Reserved validation",
+      "recordingStatus": "Playback verified; one opening sequence located. Other individual windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "away",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1780701024,
+          "videoSeconds": 1290,
+          "basis": "Carolina opening exchange visible at 21:30, Q1 11:53, score 0–0. Transcript places the opening pull near 21:17.",
+          "precision": "Approximate sequence alignment, not exact release timing."
+        }
+      ],
+      "durationSeconds": 8873.066667
+    },
+    {
+      "gameId": "2026-07-05-MIN-PIT",
+      "title": "Minnesota at Pittsburgh",
+      "url": "https://www.watchufa.tv/minnesota-wind-chill-2026/videos/minnesota-at-pittsburgh-7-5-2026-07-05-2026-20-30-37",
+      "discoverySource": "Minnesota 2026 collection",
+      "group": "Reserved validation",
+      "recordingStatus": "Playback verified. Recording begins partway through Q1; early points are unavailable in this recording.",
+      "anchors": [
+        {
+          "sourceSide": "away",
+          "sourceIndex": 42,
+          "sourceTimestamp": 1783275894,
+          "videoSeconds": 370.533333,
+          "basis": "Minnesota opening exchange visible at 6:10.5, score Minnesota 5–Pittsburgh 4, Q1 5:46. Transcript identifies Klane receiving and moving to Larson.",
+          "precision": "Approximate sequence alignment, not exact release timing."
+        }
+      ],
+      "coverageNote": "At video 1:05 the score is Minnesota 4–Pittsburgh 3, Q1 6:46. Earlier opening possessions are not covered by this recording.",
+      "durationSeconds": 7615.266667
+    },
+    {
+      "gameId": "2026-06-13-SD-COL",
+      "title": "San Diego at Colorado",
+      "url": "https://www.watchufa.tv/videos/san-diego-at-colorado-6-13-2026-06-14-2026-01-21-09",
+      "discoverySource": "UFA.tv search: San Diego Colorado",
+      "group": "Reserved validation",
+      "recordingStatus": "Playback verified; one opening sequence located. Other individual windows remain estimated.",
+      "anchors": [
+        {
+          "sourceSide": "home",
+          "sourceIndex": 1,
+          "sourceTimestamp": 1781392189,
+          "videoSeconds": 1194.2,
+          "basis": "Colorado opening exchange visible at 19:54.2, Q1 11:52, score 0–0.",
+          "precision": "Approximate sequence alignment, not exact release timing."
+        }
+      ],
+      "durationSeconds": 8771.6
+    }
+  ]
+}
