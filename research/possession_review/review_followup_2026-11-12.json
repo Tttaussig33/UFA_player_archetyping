@@ -1,0 +1,187 @@
+{
+  "updatedOn": "2026-11-12",
+  "policy": "Keep browser selections and notes verbatim. Clarifications, alignment checks and eligibility decisions are separate annotations. A matching setup/attack label does not settle a clip-to-possession mismatch.",
+  "clarifications": [
+    {
+      "caseId": "R003",
+      "source": "Explicit user reply in chat on 2026-11-12",
+      "answer": "Setup — change the saved label",
+      "resolution": "First throw is setup. Corrected browser export preserves the change; the earlier export remains unchanged."
+    },
+    {
+      "caseId": "R002",
+      "source": "Explicit user reply in chat on 2026-11-12",
+      "answer": "Yes — first pass is setup; note describes the second",
+      "resolution": "Keep setup1. The original note about attacking despite not going downfield describes the second pass."
+    },
+    {
+      "caseId": "R035",
+      "source": "Explicit user chat confirmation after viewing the linked ShownSpace sequences, 2026-11-12",
+      "answer": "Brandt to Klane is a centering/setup pass; attack starts on recorded throw 2.",
+      "resolution": "Brandt to Klane is a centering/setup pass; attack starts on recorded throw 2. Pull caught-versus-grounded context remains unclear.",
+      "evidenceType": "Human review with play-by-play context; not a complete film-only observation."
+    },
+    {
+      "caseId": "R077",
+      "source": "Explicit user chat confirmation after viewing the linked ShownSpace sequences, 2026-11-12",
+      "answer": "Lofink to Stoppel is the first attacking pass; attack starts on recorded throw 1.",
+      "resolution": "Lofink to Stoppel is the first attacking pass; attack starts on recorded throw 1. Pull caught-versus-grounded context remains unclear.",
+      "evidenceType": "Human review with play-by-play context; not a complete film-only observation."
+    },
+    {
+      "caseId": "R100",
+      "source": "Explicit user reply in chat on 2026-11-12",
+      "answer": "Immediate attack",
+      "resolution": "Keep attack1. The user confirmed immediate attack after a dictated note ended with an apparently contradictory phrase. The verbatim note is preserved."
+    }
+  ],
+  "checks": [
+    {
+      "caseId": "R002",
+      "category": "clarification",
+      "status": "resolved",
+      "message": "You clarified that throw 1 is setup; your note describes throw 2 as attacking even though it is not downfield."
+    },
+    {
+      "caseId": "R003",
+      "category": "clarification",
+      "status": "resolved",
+      "message": "Changed to setup after your clarification. The original note and earlier export are preserved."
+    },
+    {
+      "caseId": "R005",
+      "category": "lineup",
+      "status": "excluded_from_original_line_comparison",
+      "message": "Houston replaced all seven players during a timeout before this possession. Keep the attacking label for the definition, but do not use this possession or its goal as an original O-line result.",
+      "evidence": {
+        "gameId": "2026-04-24-ATL-HTX",
+        "side": "home",
+        "pointStartIndex": 26,
+        "timeoutLineupIndex": 34,
+        "recoveryIndex": 35,
+        "firstThrowIndex": 36,
+        "originalPlayersRemaining": 0
+      }
+    },
+    {
+      "caseId": "R035",
+      "category": "classification",
+      "status": "resolved_by_user_with_event_context",
+      "blocksAttackingCount": false,
+      "message": "Brandt to Klane is a centering/setup pass; attack starts on recorded throw 2. The broadcast omits the opening, so retain the missing-coverage note and unresolved pull-handling context.",
+      "visibilityStatus": "opening_not_shown",
+      "userObservation": "User reports that the broadcast returns after the pull has been caught or picked up; the first action cannot be seen.",
+      "reconstructionSource": "research/possession_review/opening_reconstructions_2026-11-12.json",
+      "decisionSource": "User confirmation in chat after the ShownSpace check."
+    },
+    {
+      "caseId": "R039",
+      "category": "clip_alignment",
+      "status": "needs_focused_recheck",
+      "blocksAttackingCount": true,
+      "blocksFieldPositionMatch": true,
+      "message": "Your note describes a rolled-out pull, which fits the opening of this point (R038). R039 is Chicago's later possession after a turnover. The old window included both. Recheck 33:35–34:05, looking for Cullen Baker to Dylan Nice after Minnesota loses the disc.",
+      "evidence": {
+        "gameId": "2026-05-02-CHI-MIN",
+        "side": "away",
+        "openingFirstThrowIndex": 44,
+        "openingTurnoverIndex": 52,
+        "recoveryIndex": 53,
+        "laterFirstThrowIndex": 54,
+        "oldWindowSeconds": [
+          1973,
+          2068
+        ],
+        "filmSpotChecks": [
+          {
+            "videoTime": "32:55",
+            "observation": "Broadcast still shows Chicago 3–0 Minnesota, Q1 7:46, before the intended receiving point."
+          },
+          {
+            "videoTime": "33:25",
+            "observation": "Chicago attacks on its opening possession, score 3–1, Q1 7:18."
+          },
+          {
+            "videoTime": "33:40",
+            "observation": "Minnesota attacks; broadcast says break chance, score 3–1, Q1 7:03."
+          },
+          {
+            "videoTime": "33:50",
+            "observation": "Chicago's Nice (3) and Baker (88) visible with the disc back in Chicago's offense, Q1 6:53."
+          },
+          {
+            "videoTime": "34:00",
+            "observation": "Chicago continues attacking in the same point, Q1 6:43."
+          }
+        ]
+      },
+      "replayWindow": {
+        "start": 2015,
+        "end": 2045,
+        "status": "agent_spot_checked",
+        "note": "Narrowed to the turnover and Chicago's next possession. Human classification for this specific sequence is still required; this is not a relabel."
+      }
+    },
+    {
+      "caseId": "R074",
+      "category": "start_location",
+      "status": "needs_reconciliation",
+      "blocksFieldPositionMatch": true,
+      "message": "You identified caught-pull setup even though the first recorded location is (0,40), the brick location. Keep your label; verify the film-to-record match and actual start location before field-position matching. Coordinates alone do not establish a brick restart."
+    },
+    {
+      "caseId": "R077",
+      "category": "classification",
+      "status": "resolved_by_user_with_event_context",
+      "blocksAttackingCount": false,
+      "message": "Lofink to Stoppel is the first attacking pass; attack starts on recorded throw 1. The broadcast omits the opening, so retain the missing-coverage note and unresolved pull-handling context.",
+      "visibilityStatus": "opening_not_shown",
+      "userObservation": "User reports that the broadcast returns after the pull has been caught or picked up; the first action cannot be seen.",
+      "reconstructionSource": "research/possession_review/opening_reconstructions_2026-11-12.json",
+      "decisionSource": "User confirmation in chat after the ShownSpace check."
+    },
+    {
+      "caseId": "R082",
+      "category": "clip_alignment",
+      "status": "needs_focused_recheck",
+      "blocksAttackingCount": true,
+      "blocksFieldPositionMatch": true,
+      "message": "The saved start type says pull from the sideline, but this record is Seattle’s second possession. The original broad window could show both. Recheck 28:35–29:00 for Oakland losing the disc and Seattle’s next pass, recorded as Gavin Leahy to Derek Mourad. Keep attack1 as the raw selection; the derived attacking count stays on hold until matched.",
+      "evidence": {
+        "gameId": "2026-05-09-OAK-SEA",
+        "side": "home",
+        "openingFirstThrowIndex": 75,
+        "openingTurnoverIndex": 76,
+        "recoveryIndex": 77,
+        "laterFirstThrowIndex": 78,
+        "oldWindowSeconds": [
+          1678,
+          1773
+        ],
+        "filmSpotChecks": [
+          {
+            "videoTime": "28:40",
+            "observation": "Oakland (white) attacks, score Oakland 6–2 Seattle, Q1 3:31."
+          },
+          {
+            "videoTime": "28:50",
+            "observation": "Seattle (blue) has the disc near midfield after the change of possession, Q1 3:21. Exact first-pass identities are not independently established by this still."
+          }
+        ]
+      },
+      "replayWindow": {
+        "start": 1715,
+        "end": 1740,
+        "status": "agent_spot_checked",
+        "note": "Narrowed to Oakland’s turnover and Seattle’s later possession. Confirm the sequence before using its classification; the earlier broad window remains in the original export."
+      }
+    },
+    {
+      "caseId": "R100",
+      "category": "clarification",
+      "status": "resolved",
+      "blocksAttackingCount": false,
+      "message": "User explicitly confirmed immediate attack. Preserve the original dictated note and attack1 selection."
+    }
+  ]
+}

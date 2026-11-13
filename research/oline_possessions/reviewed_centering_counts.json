@@ -1,0 +1,1744 @@
+{
+  "updatedOn": "2026-11-12",
+  "title": "Throw counts with and without confirmed centering passes",
+  "scope": {
+    "reviewed": 52,
+    "included": 45,
+    "excluded": 7,
+    "games": 11,
+    "first": 36,
+    "second": 9,
+    "thirdOrLater": 0
+  },
+  "definitions": {
+    "physical": "Every physical pass attempt, including centering and incomplete throws.",
+    "attacking": "Subtract one human-confirmed opening centering/setup pass; retain every pass in a direct opening attack or a possession after a turnover.",
+    "index": "For a confirmed setup sequence, subtract one from each following physical throw number, including huck positions.",
+    "fieldPosition": "Keep the original possession-start location; do not shift eligibility or matching to the receiving end of a centering pass.",
+    "sourceLocationLimit": "Current x/y values are the first recorded throwing location, not independently verified exact pull-catch or pickup coordinates.",
+    "setupFailures": "Keep the physical attempt and turnover. A possession ending on a failed setup can have zero attacking throws.",
+    "cohort": "Same completed film-reviewed original-line possessions in both counts, separated into goals and turnovers. Stop at the first recorded lineup change, retain original possession numbers, and omit the two individually flagged end-of-quarter examples.",
+    "scopeLimit": "A counting demonstration on deliberately selected reviews. Starts are not field-matched. These means are not league estimates or evidence of a team tendency. No inferential intervals or p-values are estimated.",
+    "uncertain": "Do not automatically subtract from unreviewed or unresolved starts."
+  },
+  "groups": {
+    "goal": [
+      {
+        "stage": 1,
+        "n": 17,
+        "games": 8,
+        "physicalTotal": 173,
+        "attackingTotal": 160,
+        "centeringPassesRemoved": 13,
+        "physicalMean": 10.176470588235293,
+        "attackingMean": 9.411764705882353,
+        "caseIds": [
+          "A",
+          "C",
+          "G",
+          "R002",
+          "R003",
+          "R006",
+          "R020",
+          "R022",
+          "R028",
+          "R029",
+          "R034",
+          "R073",
+          "R074",
+          "R116",
+          "R142",
+          "R144",
+          "R151"
+        ]
+      },
+      {
+        "stage": 2,
+        "n": 6,
+        "games": 6,
+        "physicalTotal": 46,
+        "attackingTotal": 46,
+        "centeringPassesRemoved": 0,
+        "physicalMean": 7.666666666666667,
+        "attackingMean": 7.666666666666667,
+        "caseIds": [
+          "I",
+          "R032",
+          "R101",
+          "R123",
+          "R146",
+          "R150"
+        ]
+      }
+    ],
+    "turnover": [
+      {
+        "stage": 1,
+        "n": 19,
+        "games": 9,
+        "physicalTotal": 105,
+        "attackingTotal": 96,
+        "centeringPassesRemoved": 9,
+        "physicalMean": 5.526315789473684,
+        "attackingMean": 5.052631578947368,
+        "caseIds": [
+          "H",
+          "R021",
+          "R023",
+          "R026",
+          "R030",
+          "R031",
+          "R035",
+          "R038",
+          "R040",
+          "R047",
+          "R052",
+          "R075",
+          "R076",
+          "R077",
+          "R094",
+          "R100",
+          "R102",
+          "R119",
+          "R149"
+        ]
+      },
+      {
+        "stage": 2,
+        "n": 3,
+        "games": 3,
+        "physicalTotal": 13,
+        "attackingTotal": 13,
+        "centeringPassesRemoved": 0,
+        "physicalMean": 4.333333333333333,
+        "attackingMean": 4.333333333333333,
+        "caseIds": [
+          "R027",
+          "R053",
+          "R097"
+        ]
+      }
+    ]
+  },
+  "rows": [
+    {
+      "caseId": "A",
+      "possessionId": "2026-04-24-ATL-HTX|away|7|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Atlanta Hustle",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 5,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 4,
+      "physicalHuckPositions": [
+        2
+      ],
+      "attackingHuckPositions": [
+        1
+      ],
+      "originalStartXY": [
+        -17.74,
+        18.81
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 5,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "C",
+      "possessionId": "2026-04-24-ATL-HTX|away|16|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Atlanta Hustle",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 7,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 6,
+      "physicalHuckPositions": [
+        7
+      ],
+      "attackingHuckPositions": [
+        6
+      ],
+      "originalStartXY": [
+        -12.21,
+        17.25
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 7,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "G",
+      "possessionId": "2026-06-12-BOS-NY|away|4|1",
+      "gameId": "2026-06-12-BOS-NY",
+      "team": "Boston Glory",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 13,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 12,
+      "physicalHuckPositions": [
+        13
+      ],
+      "attackingHuckPositions": [
+        12
+      ],
+      "originalStartXY": [
+        11.48,
+        13.01
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 13,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "H",
+      "possessionId": "2026-06-12-BOS-NY|away|63|1",
+      "gameId": "2026-06-12-BOS-NY",
+      "team": "Boston Glory",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 4,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 4,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        0.0,
+        40.0
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 4,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "I",
+      "possessionId": "2026-06-12-BOS-NY|away|63|2",
+      "gameId": "2026-06-12-BOS-NY",
+      "team": "Boston Glory",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 14,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 14,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -19.77,
+        38.38
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 14,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R002",
+      "possessionId": "2026-04-24-ATL-HTX|home|5|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Houston Havoc",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 5,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 4,
+      "physicalHuckPositions": [
+        4,
+        5
+      ],
+      "attackingHuckPositions": [
+        3,
+        4
+      ],
+      "originalStartXY": [
+        15.67,
+        6.18
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 5,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R003",
+      "possessionId": "2026-04-24-ATL-HTX|home|14|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Houston Havoc",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 8,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 7,
+      "physicalHuckPositions": [
+        6
+      ],
+      "attackingHuckPositions": [
+        5
+      ],
+      "originalStartXY": [
+        11.13,
+        5.36
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 8,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R005",
+      "possessionId": "2026-04-24-ATL-HTX|home|26|2",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Houston Havoc",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 2,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 2,
+      "physicalHuckPositions": [
+        1
+      ],
+      "attackingHuckPositions": [
+        1
+      ],
+      "originalStartXY": [
+        -17.22,
+        29.72
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [
+        34
+      ],
+      "physicalThrowsBeforeLineChange": 0,
+      "timeoutBefore": true,
+      "timeoutDuring": false,
+      "included": false,
+      "exclusionReasons": [
+        "Original lineup changed before this possession ended"
+      ],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R006",
+      "possessionId": "2026-04-24-ATL-HTX|away|37|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Atlanta Hustle",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 13,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 13,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -16.31,
+        30.4
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 13,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R020",
+      "possessionId": "2026-05-09-PHI-CAR|home|0|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Carolina Flyers",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 12,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 11,
+      "physicalHuckPositions": [
+        12
+      ],
+      "attackingHuckPositions": [
+        11
+      ],
+      "originalStartXY": [
+        6.95,
+        19.99
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 12,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R021",
+      "possessionId": "2026-05-09-PHI-CAR|away|3|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 2,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 2,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -21.66,
+        7.13
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 2,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R022",
+      "possessionId": "2026-05-09-PHI-CAR|away|7|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 12,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 12,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        0.0,
+        40.0
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 12,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R023",
+      "possessionId": "2026-05-09-PHI-CAR|home|22|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Carolina Flyers",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 6,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 5,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        6.61,
+        20.65
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 6,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R024",
+      "possessionId": "2026-05-09-PHI-CAR|home|22|2",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Carolina Flyers",
+      "ownPossession": 2,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 9,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 9,
+      "physicalHuckPositions": [
+        9
+      ],
+      "attackingHuckPositions": [
+        9
+      ],
+      "originalStartXY": [
+        -14.26,
+        40.56
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 1,
+      "lineChangeIndices": [
+        29
+      ],
+      "physicalThrowsBeforeLineChange": 0,
+      "timeoutBefore": true,
+      "timeoutDuring": false,
+      "included": false,
+      "exclusionReasons": [
+        "Original lineup changed before this possession ended"
+      ],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R025",
+      "possessionId": "2026-05-09-PHI-CAR|home|22|3",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Carolina Flyers",
+      "ownPossession": 3,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 16,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 16,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        9.2,
+        31.7
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [
+        29
+      ],
+      "physicalThrowsBeforeLineChange": 0,
+      "timeoutBefore": true,
+      "timeoutDuring": false,
+      "included": false,
+      "exclusionReasons": [
+        "Original lineup changed before this possession ended"
+      ],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R026",
+      "possessionId": "2026-05-09-PHI-CAR|away|35|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 3,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 2,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        19.25,
+        8.92
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 3,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R027",
+      "possessionId": "2026-05-09-PHI-CAR|away|35|2",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 2,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 6,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 6,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        19.45,
+        20.32
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 6,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R028",
+      "possessionId": "2026-05-09-PHI-CAR|away|47|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 4,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 4,
+      "physicalHuckPositions": [
+        2
+      ],
+      "attackingHuckPositions": [
+        2
+      ],
+      "originalStartXY": [
+        -8.55,
+        15.58
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 4,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R029",
+      "possessionId": "2026-05-09-PHI-CAR|home|71|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Carolina Flyers",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 23,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 22,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        4.09,
+        21.34
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 23,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R030",
+      "possessionId": "2026-05-09-PHI-CAR|away|56|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 3,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 2,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        8.54,
+        8.85
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 3,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R031",
+      "possessionId": "2026-05-09-PHI-CAR|away|61|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 9,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 9,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -26.12,
+        58.14
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 9,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R032",
+      "possessionId": "2026-05-09-PHI-CAR|away|61|2",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Philadelphia Phoenix",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 9,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 9,
+      "physicalHuckPositions": [
+        9
+      ],
+      "attackingHuckPositions": [
+        9
+      ],
+      "originalStartXY": [
+        1.75,
+        15.85
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 9,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R033",
+      "possessionId": "2026-05-09-PHI-CAR|home|115|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "team": "Carolina Flyers",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 2,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 2,
+      "physicalHuckPositions": [
+        1
+      ],
+      "attackingHuckPositions": [
+        1
+      ],
+      "originalStartXY": [
+        -5.05,
+        29.04
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 2,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": false,
+      "exclusionReasons": [
+        "Reviewed end-of-quarter example"
+      ],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R034",
+      "possessionId": "2026-05-02-CHI-MIN|away|0|1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "team": "Chicago Union",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 15,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 14,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -15.9,
+        9.09
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 15,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R035",
+      "possessionId": "2026-05-02-CHI-MIN|home|3|1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "team": "Minnesota Wind Chill",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 8,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 7,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -0.81,
+        15.61
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 8,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R038",
+      "possessionId": "2026-05-02-CHI-MIN|away|43|1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "team": "Chicago Union",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 9,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 9,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        25.82,
+        48.7
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 9,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R039",
+      "possessionId": "2026-05-02-CHI-MIN|away|43|2",
+      "gameId": "2026-05-02-CHI-MIN",
+      "team": "Chicago Union",
+      "ownPossession": 2,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 4,
+      "centeringPassesRemoved": null,
+      "attackingThrows": null,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": null,
+      "originalStartXY": [
+        1.45,
+        24.0
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 4,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": false,
+      "exclusionReasons": [
+        "Unresolved pass label or clip-to-possession match"
+      ],
+      "fieldPositionMatchHeld": true
+    },
+    {
+      "caseId": "R040",
+      "possessionId": "2026-05-02-CHI-MIN|away|59|1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "team": "Chicago Union",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 6,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 6,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        13.05,
+        17.16
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 6,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R047",
+      "possessionId": "2026-05-09-MTL-TOR|home|0|1",
+      "gameId": "2026-05-09-MTL-TOR",
+      "team": "Toronto Rush",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 6,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 5,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        0.3,
+        14.48
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 6,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R052",
+      "possessionId": "2026-05-09-MTL-TOR|away|43|1",
+      "gameId": "2026-05-09-MTL-TOR",
+      "team": "Montreal Royal",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 5,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 5,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        0.0,
+        40.0
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 5,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R053",
+      "possessionId": "2026-05-09-MTL-TOR|away|43|2",
+      "gameId": "2026-05-09-MTL-TOR",
+      "team": "Montreal Royal",
+      "ownPossession": 2,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 3,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 3,
+      "physicalHuckPositions": [
+        3
+      ],
+      "attackingHuckPositions": [
+        3
+      ],
+      "originalStartXY": [
+        0.0,
+        40.0
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 3,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R060",
+      "possessionId": "2026-05-09-MTL-TOR|home|85|1",
+      "gameId": "2026-05-09-MTL-TOR",
+      "team": "Toronto Rush",
+      "ownPossession": 1,
+      "outcome": "period_end",
+      "decision": "setup1",
+      "physicalThrows": 2,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 1,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -1.69,
+        13.59
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 2,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": false,
+      "exclusionReasons": [
+        "Reviewed end-of-quarter example",
+        "Possession did not end with a goal or turnover"
+      ],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R073",
+      "possessionId": "2026-05-09-OAK-SEA|home|0|1",
+      "gameId": "2026-05-09-OAK-SEA",
+      "team": "Seattle Cascades",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 17,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 16,
+      "physicalHuckPositions": [
+        9
+      ],
+      "attackingHuckPositions": [
+        8
+      ],
+      "originalStartXY": [
+        12.96,
+        31.09
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 17,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R074",
+      "possessionId": "2026-05-09-OAK-SEA|away|3|1",
+      "gameId": "2026-05-09-OAK-SEA",
+      "team": "Oakland Spiders",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 3,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 2,
+      "physicalHuckPositions": [
+        3
+      ],
+      "attackingHuckPositions": [
+        2
+      ],
+      "originalStartXY": [
+        0.0,
+        40.0
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 3,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": true
+    },
+    {
+      "caseId": "R075",
+      "possessionId": "2026-05-09-OAK-SEA|home|24|1",
+      "gameId": "2026-05-09-OAK-SEA",
+      "team": "Seattle Cascades",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 3,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 2,
+      "physicalHuckPositions": [
+        3
+      ],
+      "attackingHuckPositions": [
+        2
+      ],
+      "originalStartXY": [
+        15.0,
+        24.68
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 3,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R076",
+      "possessionId": "2026-05-09-OAK-SEA|home|29|1",
+      "gameId": "2026-05-09-OAK-SEA",
+      "team": "Seattle Cascades",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 10,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 9,
+      "physicalHuckPositions": [
+        8
+      ],
+      "attackingHuckPositions": [
+        7
+      ],
+      "originalStartXY": [
+        0.65,
+        10.92
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 10,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R077",
+      "possessionId": "2026-05-09-OAK-SEA|home|41|1",
+      "gameId": "2026-05-09-OAK-SEA",
+      "team": "Seattle Cascades",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 14,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 14,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        26.08,
+        44.12
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 14,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R082",
+      "possessionId": "2026-05-09-OAK-SEA|home|74|2",
+      "gameId": "2026-05-09-OAK-SEA",
+      "team": "Seattle Cascades",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 12,
+      "centeringPassesRemoved": null,
+      "attackingThrows": null,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": null,
+      "originalStartXY": [
+        -4.67,
+        52.86
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 12,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": false,
+      "exclusionReasons": [
+        "Unresolved pass label or clip-to-possession match"
+      ],
+      "fieldPositionMatchHeld": true
+    },
+    {
+      "caseId": "R094",
+      "possessionId": "2026-05-01-ORE-SLC|away|62|1",
+      "gameId": "2026-05-01-ORE-SLC",
+      "team": "Oregon Steel",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 1,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 1,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -26.06,
+        41.79
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 1,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R097",
+      "possessionId": "2026-05-01-ORE-SLC|away|70|2",
+      "gameId": "2026-05-01-ORE-SLC",
+      "team": "Oregon Steel",
+      "ownPossession": 2,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 4,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 4,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -23.81,
+        10.86
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 4,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R100",
+      "possessionId": "2026-06-06-ATX-LV|away|0|1",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Austin Sol",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 6,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 6,
+      "physicalHuckPositions": [
+        6
+      ],
+      "attackingHuckPositions": [
+        6
+      ],
+      "originalStartXY": [
+        11.8,
+        10.19
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 6,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R101",
+      "possessionId": "2026-06-06-ATX-LV|away|0|2",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Austin Sol",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 1,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 1,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        6.27,
+        98.52
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 1,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R102",
+      "possessionId": "2026-06-06-ATX-LV|home|5|1",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Vegas Bighorns",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "attack1",
+      "physicalThrows": 4,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 4,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        -0.95,
+        40.34
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 4,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R116",
+      "possessionId": "2026-06-05-CAR-DC|away|0|1",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "Carolina Flyers",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 13,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 12,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        2.04,
+        16.7
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 13,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R119",
+      "possessionId": "2026-06-05-CAR-DC|home|13|1",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "DC Breeze",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 2,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 1,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        14.1,
+        13.31
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 0,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 2,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R123",
+      "possessionId": "2026-06-05-CAR-DC|home|28|2",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "DC Breeze",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 1,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 1,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        17.19,
+        84.37
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 1,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R142",
+      "possessionId": "2026-07-05-MIN-PIT|away|41|1",
+      "gameId": "2026-07-05-MIN-PIT",
+      "team": "Minnesota Wind Chill",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 11,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 10,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        6.35,
+        13.41
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 11,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R144",
+      "possessionId": "2026-07-05-MIN-PIT|away|57|1",
+      "gameId": "2026-07-05-MIN-PIT",
+      "team": "Minnesota Wind Chill",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 7,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 7,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        0.0,
+        40.0
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 7,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R146",
+      "possessionId": "2026-07-05-MIN-PIT|home|84|2",
+      "gameId": "2026-07-05-MIN-PIT",
+      "team": "Pittsburgh Thunderbirds",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 12,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 12,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        9.64,
+        36.67
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 12,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R149",
+      "possessionId": "2026-06-13-SD-COL|home|0|1",
+      "gameId": "2026-06-13-SD-COL",
+      "team": "Colorado Apex",
+      "ownPossession": 1,
+      "outcome": "turnover",
+      "decision": "setup1",
+      "physicalThrows": 4,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 3,
+      "physicalHuckPositions": [
+        4
+      ],
+      "attackingHuckPositions": [
+        3
+      ],
+      "originalStartXY": [
+        16.91,
+        6.54
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 0,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 4,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R150",
+      "possessionId": "2026-06-13-SD-COL|home|0|2",
+      "gameId": "2026-06-13-SD-COL",
+      "team": "Colorado Apex",
+      "ownPossession": 2,
+      "outcome": "goal",
+      "decision": "attack1",
+      "physicalThrows": 9,
+      "centeringPassesRemoved": 0,
+      "attackingThrows": 9,
+      "physicalHuckPositions": [],
+      "attackingHuckPositions": [],
+      "originalStartXY": [
+        10.63,
+        70.09
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 9,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    },
+    {
+      "caseId": "R151",
+      "possessionId": "2026-06-13-SD-COL|away|8|1",
+      "gameId": "2026-06-13-SD-COL",
+      "team": "San Diego Growlers",
+      "ownPossession": 1,
+      "outcome": "goal",
+      "decision": "setup1",
+      "physicalThrows": 5,
+      "centeringPassesRemoved": 1,
+      "attackingThrows": 4,
+      "physicalHuckPositions": [
+        5
+      ],
+      "attackingHuckPositions": [
+        4
+      ],
+      "originalStartXY": [
+        -0.55,
+        22.36
+      ],
+      "startingLocationBasis": "First recorded throw; unchanged when a centering pass is removed. Exact catch/pickup coordinates are not established by this proxy.",
+      "goal": 1,
+      "pointHold": 1,
+      "lineChangeIndices": [],
+      "physicalThrowsBeforeLineChange": 5,
+      "timeoutBefore": false,
+      "timeoutDuring": false,
+      "included": true,
+      "exclusionReasons": [],
+      "fieldPositionMatchHeld": false
+    }
+  ],
+  "exclusions": {
+    "Original lineup changed before this possession ended": 3,
+    "Reviewed end-of-quarter example": 2,
+    "Unresolved pass label or clip-to-possession match": 2,
+    "Possession did not end with a goal or turnover": 1
+  },
+  "primaryExclusions": [
+    {
+      "reason": "Original lineup changed before this possession ended",
+      "n": 3
+    },
+    {
+      "reason": "Reviewed end-of-quarter example",
+      "n": 2
+    },
+    {
+      "reason": "Unresolved pass label or clip-to-possession match",
+      "n": 2
+    }
+  ],
+  "inputs": {
+    "review_audit": {
+      "path": "research/possession_review/review_batch_2026-11-12.json",
+      "sha256": "c61cbb9080c6b259cdfe48efc219f5eaf1a72ff00b8964ba78b521c9f603478a"
+    },
+    "film_library": {
+      "path": "research/possession_review/film_library.json",
+      "sha256": "91380557055070d0177e97c1cd82f696cfc0927b598dfb066e12ff96837315ba"
+    },
+    "possessions": {
+      "path": "research/oline_possessions/possessions.csv",
+      "sha256": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7"
+    },
+    "throws": {
+      "path": "research/oline_possessions/throws.csv",
+      "sha256": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc"
+    },
+    "raw_receipt": {
+      "path": "research/dead_disc_study/raw_events/source_receipt.json",
+      "sha256": "8dac3360b036748d781632e6ad790a56086d5ca279ba5708ebb692bc9c50f687"
+    }
+  },
+  "rawGameHashes": {
+    "2026-04-24-ATL-HTX": "78987b3d01b327e1df4d65fd7d9dc346f6376e493eb4a568c5d88681eadcd4f8",
+    "2026-06-12-BOS-NY": "839ab44f37f85e9263978ad1f0d98a6ed58014e17e4288aebafabfe5cc05e0c0",
+    "2026-05-09-PHI-CAR": "d352bb40aea3ce1f105d533e402dd4f04ea044718391ef7ef1ab2b76ea33985d",
+    "2026-05-02-CHI-MIN": "9b85a8ab633e570f98675e3bdcda19e48dc0bfc127f1dce1e194e9057de389a4",
+    "2026-05-09-MTL-TOR": "ee0c4bbe21cf5921df1dccfc9fac1b7590e45b92739493887ca5a4f9f69456ca",
+    "2026-05-09-OAK-SEA": "926a7ffaea49f55cd40c507774ed479760eb3c8ae08a9a28bcd918dcf25f6fbe",
+    "2026-05-01-ORE-SLC": "ecebf87b7954ab7ab6adab77a565660a83d4e14c6db5f62d116279f83e14b03c",
+    "2026-06-06-ATX-LV": "09b823364cdbb55a7aa8d44bfaf744134c9e59b433f502c8900a75983f435e60",
+    "2026-06-05-CAR-DC": "0f5a71334edc167fe1a258c825c6c35be9f9ec47aa9b12b24e1b4081c86e2a30",
+    "2026-07-05-MIN-PIT": "5d9a25ad4fbc1185a9b3e490fb19b9befdc035616997b8e2c02d7712d3bdae71",
+    "2026-06-13-SD-COL": "da2c6fc0a1feeddc4497c5e32c4589e0123200012b9929ce45ca1e99bad301f7"
+  },
+  "validation": {
+    "uniqueReviewedPossessions": true,
+    "allThrowCountsMatchRawEvents": true,
+    "huckFlagsMatchPreservedThrows": true,
+    "sameDenominatorsForBothViews": true,
+    "originalStartCoordinatesUnchanged": true,
+    "noUnreviewedLabelsInferred": true,
+    "outcomesAndPhysicalRecordsUnchanged": true
+  }
+}

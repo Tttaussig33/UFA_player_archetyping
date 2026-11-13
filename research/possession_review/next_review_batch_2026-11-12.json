@@ -1,0 +1,700 @@
+{
+  "id": "new-games-review-20261112",
+  "createdOn": "2026-11-12",
+  "title": "New games · 12 clips",
+  "status": "reviewed",
+  "purpose": "Check the current setup definition on twelve previously unreviewed sequences from four games. No setup/attack suggestions are shown.",
+  "selection": "Purposeful coverage: two openings and one later possession per game, including both teams and one opening recorded at brick coordinates. Earlier Minnesota–Pittsburgh footage is missing, so use later covered points. Windows selected before film-boundary checks; any replacement must be recorded.",
+  "caseIds": [
+    "R100",
+    "R101",
+    "R102",
+    "R116",
+    "R119",
+    "R123",
+    "R142",
+    "R144",
+    "R146",
+    "R149",
+    "R150",
+    "R151"
+  ],
+  "clips": [
+    {
+      "caseId": "R100",
+      "possessionId": "2026-06-06-ATX-LV|away|0|1",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Austin Sol",
+      "point": 1,
+      "ownPossession": 1,
+      "score": "Austin Sol 0–0 opponent",
+      "pointStartClock": "12:00",
+      "firstPass": {
+        "from": "Saaketh Palchuru",
+        "to": "Kyle Henke",
+        "sourceIndex": 1
+      },
+      "filmUrl": "https://www.watchufa.tv/austin-sol-2026/videos/austin-at-las-vegas-6-6-2026-06-07-2026-04-02-32",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-06-ATX-LV",
+      "start": 645,
+      "end": 670,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "10:01",
+        "end": "11:36",
+        "score": "Q1 · Austin Sol 0–0 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 660.5,
+        "timingSource": {
+          "side": "away",
+          "eventIndex": 1,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 654,
+          "observation": "Q1 11:59, score 0–0. Austin receiving the opening pull is visible."
+        }
+      ],
+      "cue": "Austin receives the opening pull at 0–0. Follow the first exchange.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-06-ATX-LV.json",
+        "sha256": "09b823364cdbb55a7aa8d44bfaf744134c9e59b433f502c8900a75983f435e60",
+        "side": "away",
+        "firstThrowIndex": 1
+      }
+    },
+    {
+      "caseId": "R101",
+      "possessionId": "2026-06-06-ATX-LV|away|0|2",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Austin Sol",
+      "point": 1,
+      "ownPossession": 2,
+      "score": "Austin Sol 0–0 opponent",
+      "pointStartClock": "12:00",
+      "firstPass": {
+        "from": "Reese Bowman",
+        "to": "Duncan Fitzgerald",
+        "sourceIndex": 8
+      },
+      "filmUrl": "https://www.watchufa.tv/austin-sol-2026/videos/austin-at-las-vegas-6-6-2026-06-07-2026-04-02-32",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-06-ATX-LV",
+      "start": 685,
+      "end": 700,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "10:41",
+        "end": "12:16",
+        "score": "Q1 · Austin Sol 0–0 opponent · Team possession 2",
+        "approximate": true,
+        "estimatedActionSeconds": 700.5,
+        "timingSource": {
+          "side": "away",
+          "eventIndex": 8,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 679,
+          "observation": "Q1 11:29, score 0–0. The previous long attempt ends near the end zone."
+        },
+        {
+          "videoSeconds": 689,
+          "observation": "Q1 11:18, score 0–0. Turnover transition near the end zone; Austin in white."
+        },
+        {
+          "videoSeconds": 694,
+          "observation": "Q1 11:14. Goal signal and players after the quick Austin score."
+        }
+      ],
+      "cue": "Same point, still 0–0. Watch Austin get the disc back near the end zone and make its next pass.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-06-ATX-LV.json",
+        "sha256": "09b823364cdbb55a7aa8d44bfaf744134c9e59b433f502c8900a75983f435e60",
+        "side": "away",
+        "firstThrowIndex": 8
+      }
+    },
+    {
+      "caseId": "R102",
+      "possessionId": "2026-06-06-ATX-LV|home|5|1",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Vegas Bighorns",
+      "point": 2,
+      "ownPossession": 1,
+      "score": "Vegas Bighorns 0–1 opponent",
+      "pointStartClock": "11:17",
+      "firstPass": {
+        "from": "Nayland Stuart",
+        "to": "Connor Garrison",
+        "sourceIndex": 6
+      },
+      "filmUrl": "https://www.watchufa.tv/austin-sol-2026/videos/austin-at-las-vegas-6-6-2026-06-07-2026-04-02-32",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-06-ATX-LV",
+      "start": 735,
+      "end": 765,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "11:44",
+        "end": "13:19",
+        "score": "Q1 · Vegas Bighorns 0–1 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 763.5,
+        "timingSource": {
+          "side": "home",
+          "eventIndex": 6,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 744,
+          "observation": "Q1 11:15, Austin leads 1–0. Vegas receiving near its end zone."
+        },
+        {
+          "videoSeconds": 749,
+          "observation": "Q1 11:07, Austin leads 1–0. Vegas opening exchanges are visible."
+        }
+      ],
+      "cue": "Vegas receives at 0–1. Watch the pull and the first exchanges.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-06-ATX-LV.json",
+        "sha256": "09b823364cdbb55a7aa8d44bfaf744134c9e59b433f502c8900a75983f435e60",
+        "side": "home",
+        "firstThrowIndex": 6
+      }
+    },
+    {
+      "caseId": "R116",
+      "possessionId": "2026-06-05-CAR-DC|away|0|1",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "Carolina Flyers",
+      "point": 1,
+      "ownPossession": 1,
+      "score": "Carolina Flyers 0–0 opponent",
+      "pointStartClock": "12:00",
+      "firstPass": {
+        "from": "Elijah Long",
+        "to": "Jacob Louie",
+        "sourceIndex": 1
+      },
+      "filmUrl": "https://www.watchufa.tv/carolina-flyers-2026/videos/carolina-at-dc-6-5-2026-06-06-2026-01-22-07",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-05-CAR-DC",
+      "start": 1275,
+      "end": 1310,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "20:30",
+        "end": "22:05",
+        "score": "Q1 · Carolina Flyers 0–0 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 1290,
+        "timingSource": {
+          "side": "away",
+          "eventIndex": 1,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 1286,
+          "observation": "Q1 11:57, 0–0. Opening pull coverage and defenders running downfield."
+        }
+      ],
+      "cue": "Opening point, 0–0. Follow Carolina’s first exchange after the pull.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-05-CAR-DC.json",
+        "sha256": "0f5a71334edc167fe1a258c825c6c35be9f9ec47aa9b12b24e1b4081c86e2a30",
+        "side": "away",
+        "firstThrowIndex": 1
+      }
+    },
+    {
+      "caseId": "R119",
+      "possessionId": "2026-06-05-CAR-DC|home|13|1",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "DC Breeze",
+      "point": 4,
+      "ownPossession": 1,
+      "score": "DC Breeze 1–2 opponent",
+      "pointStartClock": "9:16",
+      "firstPass": {
+        "from": "Sean Mott",
+        "to": "Andrew Roy",
+        "sourceIndex": 14
+      },
+      "filmUrl": "https://www.watchufa.tv/carolina-flyers-2026/videos/carolina-at-dc-6-5-2026-06-06-2026-01-22-07",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-05-CAR-DC",
+      "start": 1590,
+      "end": 1620,
+      "cue": "DC receives at 1–2. Follow the pull and its first pass.",
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "25:41",
+        "end": "27:16",
+        "score": "Q1 · DC Breeze 1–2 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 1601,
+        "timingSource": {
+          "side": "home",
+          "eventIndex": 14,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 1601,
+          "observation": "Q1 9:13, Carolina leads 2–1. Wide camera shows the pull arriving to DC in red."
+        }
+      ],
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-05-CAR-DC.json",
+        "sha256": "0f5a71334edc167fe1a258c825c6c35be9f9ec47aa9b12b24e1b4081c86e2a30",
+        "side": "home",
+        "firstThrowIndex": 14
+      }
+    },
+    {
+      "caseId": "R123",
+      "possessionId": "2026-06-05-CAR-DC|home|28|2",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "DC Breeze",
+      "point": 7,
+      "ownPossession": 2,
+      "score": "DC Breeze 2–4 opponent",
+      "pointStartClock": "7:41",
+      "firstPass": {
+        "from": "Sean Mott",
+        "to": "Theo Shapinsky",
+        "sourceIndex": 33
+      },
+      "filmUrl": "https://www.watchufa.tv/carolina-flyers-2026/videos/carolina-at-dc-6-5-2026-06-06-2026-01-22-07",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-05-CAR-DC",
+      "start": 1880,
+      "end": 1905,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "30:37",
+        "end": "32:12",
+        "score": "Q1 · DC Breeze 2–4 opponent · Team possession 2",
+        "approximate": true,
+        "estimatedActionSeconds": 1897,
+        "timingSource": {
+          "side": "home",
+          "eventIndex": 33,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 1881,
+          "observation": "Q1 7:08, Carolina leads 4–2. Carolina has a break chance."
+        },
+        {
+          "videoSeconds": 1901,
+          "observation": "Q1 6:53, score now Carolina 4–3 DC. DC has scored after its later possession."
+        }
+      ],
+      "cue": "DC trails 2–4. Watch Carolina lose the disc, then DC’s first pass after getting it back.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-05-CAR-DC.json",
+        "sha256": "0f5a71334edc167fe1a258c825c6c35be9f9ec47aa9b12b24e1b4081c86e2a30",
+        "side": "home",
+        "firstThrowIndex": 33
+      }
+    },
+    {
+      "caseId": "R142",
+      "possessionId": "2026-07-05-MIN-PIT|away|41|1",
+      "gameId": "2026-07-05-MIN-PIT",
+      "team": "Minnesota Wind Chill",
+      "point": 10,
+      "ownPossession": 1,
+      "score": "Minnesota Wind Chill 5–4 opponent",
+      "pointStartClock": "5:50",
+      "firstPass": {
+        "from": "Josh Klane",
+        "to": "Gordon Larson",
+        "sourceIndex": 42
+      },
+      "filmUrl": "https://www.watchufa.tv/minnesota-wind-chill-2026/videos/minnesota-at-pittsburgh-7-5-2026-07-05-2026-20-30-37",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-07-05-MIN-PIT",
+      "start": 360,
+      "end": 390,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "5:11",
+        "end": "6:46",
+        "score": "Q1 · Minnesota Wind Chill 5–4 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 370.5,
+        "timingSource": {
+          "side": "away",
+          "eventIndex": 42,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 366,
+          "observation": "Stadium scoreboard shows Minnesota 5–4 Pittsburgh, Q1 5:49. Pull in flight and receiving players are visible."
+        }
+      ],
+      "cue": "Minnesota leads 5–4. Follow the pull and the first exchange.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-07-05-MIN-PIT.json",
+        "sha256": "5d9a25ad4fbc1185a9b3e490fb19b9befdc035616997b8e2c02d7712d3bdae71",
+        "side": "away",
+        "firstThrowIndex": 42
+      }
+    },
+    {
+      "caseId": "R144",
+      "possessionId": "2026-07-05-MIN-PIT|away|57|1",
+      "gameId": "2026-07-05-MIN-PIT",
+      "team": "Minnesota Wind Chill",
+      "point": 12,
+      "ownPossession": 1,
+      "score": "Minnesota Wind Chill 6–5 opponent",
+      "pointStartClock": "2:51",
+      "firstPass": {
+        "from": "Josh Klane",
+        "to": "Greg Cousins",
+        "sourceIndex": 58
+      },
+      "filmUrl": "https://www.watchufa.tv/minnesota-wind-chill-2026/videos/minnesota-at-pittsburgh-7-5-2026-07-05-2026-20-30-37",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-07-05-MIN-PIT",
+      "start": 700,
+      "end": 740,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "11:10",
+        "end": "12:45",
+        "score": "Q1 · Minnesota Wind Chill 6–5 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 729.5,
+        "timingSource": {
+          "side": "away",
+          "eventIndex": 58,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 706,
+          "observation": "Wide camera shows teams preparing for the pull, Q1 2:51, Minnesota leads 6–5."
+        },
+        {
+          "videoSeconds": 731,
+          "observation": "Q1 2:27, Minnesota leads 6–5. The opening offense is already underway, so the window begins earlier."
+        }
+      ],
+      "cue": "Minnesota leads 6–5. Follow where the disc is put into play after the pull, then the first pass.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-07-05-MIN-PIT.json",
+        "sha256": "5d9a25ad4fbc1185a9b3e490fb19b9befdc035616997b8e2c02d7712d3bdae71",
+        "side": "away",
+        "firstThrowIndex": 58
+      }
+    },
+    {
+      "caseId": "R146",
+      "possessionId": "2026-07-05-MIN-PIT|home|84|2",
+      "gameId": "2026-07-05-MIN-PIT",
+      "team": "Pittsburgh Thunderbirds",
+      "point": 13,
+      "ownPossession": 2,
+      "score": "Pittsburgh Thunderbirds 5–7 opponent",
+      "pointStartClock": "2:06",
+      "firstPass": {
+        "from": "Will Hoffenkamp",
+        "to": "Malachi Marshall",
+        "sourceIndex": 90
+      },
+      "filmUrl": "https://www.watchufa.tv/minnesota-wind-chill-2026/videos/minnesota-at-pittsburgh-7-5-2026-07-05-2026-20-30-37",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-07-05-MIN-PIT",
+      "start": 825,
+      "end": 865,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "12:56",
+        "end": "14:31",
+        "score": "Q1 · Pittsburgh Thunderbirds 5–7 opponent · Team possession 2",
+        "approximate": true,
+        "estimatedActionSeconds": 835.5,
+        "timingSource": {
+          "side": "home",
+          "eventIndex": 90,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 836,
+          "observation": "Active play at Minnesota 7–5 Pittsburgh, Q1 1:39. Correct point confirmed; player identities are not independently established by this still."
+        },
+        {
+          "videoSeconds": 846,
+          "observation": "Same point, Q1 1:28. The window spans the transition indicated by the source sequence. Exact release timing remains for the reviewer to match."
+        }
+      ],
+      "cue": "Pittsburgh trails 5–7. Follow Minnesota’s turnover, then Pittsburgh’s next pass. The earlier Pittsburgh possession is not the one to label.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-07-05-MIN-PIT.json",
+        "sha256": "5d9a25ad4fbc1185a9b3e490fb19b9befdc035616997b8e2c02d7712d3bdae71",
+        "side": "home",
+        "firstThrowIndex": 90
+      }
+    },
+    {
+      "caseId": "R149",
+      "possessionId": "2026-06-13-SD-COL|home|0|1",
+      "gameId": "2026-06-13-SD-COL",
+      "team": "Colorado Apex",
+      "point": 1,
+      "ownPossession": 1,
+      "score": "Colorado Apex 0–0 opponent",
+      "pointStartClock": "12:00",
+      "firstPass": {
+        "from": "Seth Faris",
+        "to": "Timothy Elliott",
+        "sourceIndex": 1
+      },
+      "filmUrl": "https://www.watchufa.tv/videos/san-diego-at-colorado-6-13-2026-06-14-2026-01-21-09",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-13-SD-COL",
+      "start": 1180,
+      "end": 1205,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "18:54",
+        "end": "20:29",
+        "score": "Q1 · Colorado Apex 0–0 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 1194.2,
+        "timingSource": {
+          "side": "home",
+          "eventIndex": 1,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 1188,
+          "observation": "Q1 11:58, score 0–0. The opening pull is visible in flight toward Colorado’s receiving end."
+        }
+      ],
+      "cue": "Opening point, 0–0. Follow Colorado’s first pass after the pull.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-13-SD-COL.json",
+        "sha256": "da2c6fc0a1feeddc4497c5e32c4589e0123200012b9929ce45ca1e99bad301f7",
+        "side": "home",
+        "firstThrowIndex": 1
+      }
+    },
+    {
+      "caseId": "R150",
+      "possessionId": "2026-06-13-SD-COL|home|0|2",
+      "gameId": "2026-06-13-SD-COL",
+      "team": "Colorado Apex",
+      "point": 1,
+      "ownPossession": 2,
+      "score": "Colorado Apex 0–0 opponent",
+      "pointStartClock": "12:00",
+      "firstPass": {
+        "from": "Seth Faris",
+        "to": "Alex Piper",
+        "sourceIndex": 6
+      },
+      "filmUrl": "https://www.watchufa.tv/videos/san-diego-at-colorado-6-13-2026-06-14-2026-01-21-09",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-13-SD-COL",
+      "start": 1220,
+      "end": 1255,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "19:39",
+        "end": "21:14",
+        "score": "Q1 · Colorado Apex 0–0 opponent · Team possession 2",
+        "approximate": true,
+        "estimatedActionSeconds": 1239.2,
+        "timingSource": {
+          "side": "home",
+          "eventIndex": 6,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 1223,
+          "observation": "Q1 11:23, score 0–0. San Diego in white has a break chance."
+        },
+        {
+          "videoSeconds": 1238,
+          "observation": "Q1 11:08, still 0–0. Colorado in dark blue is back on offense."
+        }
+      ],
+      "cue": "Still 0–0. San Diego has a break chance; watch its turnover and Colorado’s next pass.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-13-SD-COL.json",
+        "sha256": "da2c6fc0a1feeddc4497c5e32c4589e0123200012b9929ce45ca1e99bad301f7",
+        "side": "home",
+        "firstThrowIndex": 6
+      }
+    },
+    {
+      "caseId": "R151",
+      "possessionId": "2026-06-13-SD-COL|away|8|1",
+      "gameId": "2026-06-13-SD-COL",
+      "team": "San Diego Growlers",
+      "point": 2,
+      "ownPossession": 1,
+      "score": "San Diego Growlers 0–1 opponent",
+      "pointStartClock": "10:32",
+      "firstPass": {
+        "from": "Matt Miller",
+        "to": "Brandon Van Deusen",
+        "sourceIndex": 9
+      },
+      "filmUrl": "https://www.watchufa.tv/videos/san-diego-at-colorado-6-13-2026-06-14-2026-01-21-09",
+      "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-13-SD-COL",
+      "start": 1320,
+      "end": 1350,
+      "timingStatus": "agent_spot_checked",
+      "originalEstimatedWindow": {
+        "start": "21:10",
+        "end": "22:45",
+        "score": "Q1 · San Diego Growlers 0–1 opponent · Team possession 1",
+        "approximate": true,
+        "estimatedActionSeconds": 1330.2,
+        "timingSource": {
+          "side": "away",
+          "eventIndex": 9,
+          "kind": "First physical throw"
+        },
+        "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+        "question": "Which recorded throw begins the attack?",
+        "reviewStatus": "Awaiting film review."
+      },
+      "filmChecks": [
+        {
+          "videoSeconds": 1328,
+          "observation": "Q1 10:29, Colorado leads 1–0. San Diego in white begins the receiving offense."
+        }
+      ],
+      "cue": "San Diego receives at 0–1. Follow the first exchange after the pull.",
+      "sourceReceipt": {
+        "path": "research/dead_disc_study/raw_events/2026-06-13-SD-COL.json",
+        "sha256": "da2c6fc0a1feeddc4497c5e32c4589e0123200012b9929ce45ca1e99bad301f7",
+        "side": "away",
+        "firstThrowIndex": 9
+      }
+    }
+  ],
+  "workingDefinitionFrozenBeforeReview": "Opening setup is the first transfer after an in-bounds pull is caught or picked up, when that transfer hands the disc to the player who starts the offense. It need not move toward the middle. If the pull receiver attacks directly, including when the defense prevents an opening transfer, recorded throw 1 is already attacking. After one confirmed setup transfer, all later passes count as attacking, including handler weaves, resets, and passes to an open handler. For a confirmed brick or sideline restart, or a later possession after a turnover, count the first pass as attacking. Bringing a turnover to the goal line or tapping it in does not create a pull setup. A failed setup attempt remains a turnover in the full-possession record; it can have zero attacking throws. Caught-versus-grounded pull handling may be unclear even when setup is clear. A penalty before the first brick-start pass does not turn that pass into setup. Use an uncertain label when the film does not settle the distinction. Opening setup is a working expectation with explicit exceptions, not a reason to remove every opening pass automatically.",
+  "definitionSourceSha256": "77f14915e0fc63587441a0f6a8d47ef48ff51027117c21b2e6bc5c38a67f365c",
+  "classificationStatus": "All twelve human reviews archived; Austin immediate attack confirmed in chat. These are fresh-game definition checks, not league prevalence or an automatic-classifier accuracy estimate. Any definition change based on them makes them development cases for that revised rule.",
+  "otherReservedCasesRemainHidden": true,
+  "rules": "Preserve all existing reviews. Keep film availability, pass sequence and setup classification separate. Do not infer setup from coordinates.",
+  "deferredForCoverage": [
+    {
+      "caseId": "R117",
+      "reason": "At 22:56 and 23:01 the broadcast shows Carolina’s sideline while the next point starts; 23:11 shows a close replay and by 23:31 DC is already attacking. Use a later DC opening with visible pull coverage for this film batch. Keep this case available for future record-assisted review.",
+      "replacementCaseId": "R119",
+      "originalSelection": {
+        "caseId": "R117",
+        "possessionId": "2026-06-05-CAR-DC|home|3|1",
+        "gameId": "2026-06-05-CAR-DC",
+        "team": "DC Breeze",
+        "point": 2,
+        "ownPossession": 1,
+        "score": "DC Breeze 0–1 opponent",
+        "pointStartClock": "11:07",
+        "firstPass": {
+          "from": "Jacques Nissen",
+          "to": "Theo Shapinsky",
+          "sourceIndex": 4
+        },
+        "filmUrl": "https://www.watchufa.tv/carolina-flyers-2026/videos/carolina-at-dc-6-5-2026-06-06-2026-01-22-07",
+        "shownSpaceUrl": "https://shownspace.com/game-center/2026-06-05-CAR-DC",
+        "start": 1335,
+        "end": 1430,
+        "timingStatus": "estimated",
+        "originalEstimatedWindow": {
+          "start": "22:15",
+          "end": "23:50",
+          "score": "Q1 · DC Breeze 0–1 opponent · Team possession 1",
+          "approximate": true,
+          "estimatedActionSeconds": 1395,
+          "timingSource": {
+            "side": "home",
+            "eventIndex": 4,
+            "kind": "First physical throw"
+          },
+          "observation": "Use the score, point-start clock, and first thrower to confirm the correct sequence. The seek window is estimated from recorded timestamps; it has not been individually checked.",
+          "question": "Which recorded throw begins the attack?",
+          "reviewStatus": "Awaiting film review."
+        },
+        "filmChecks": []
+      }
+    }
+  ],
+  "timingLimit": "Windows are navigation aids narrowed using broadcast score/clock spot checks and recorded event order. They are not downloaded or frame-exact clips. Reviewers must match the first recorded pass, especially after turnovers.",
+  "counts": {
+    "clips": 12,
+    "games": 4,
+    "teams": 8,
+    "opening": 8,
+    "later": 4,
+    "watchWindowSeconds": 360
+  },
+  "definitionTextSha256": "6a9b12592490e9aeb453a1cd699f901392fa42178498f6b927a02b1e0f56df53",
+  "completedReview": {
+    "reviewedOn": "2026-11-12",
+    "reviewed": 12,
+    "source": "research/possession_review/annotations/2026-11-12-new-games-completed-browser-export.json",
+    "sourceSha256": "53b5c58e5ab2079e11e4f55487ab694ed068ed302995cd4f8f43e6ec720812ab",
+    "decisionCounts": {
+      "setup1": 5,
+      "attack1": 7
+    },
+    "clarifications": [
+      "R100"
+    ],
+    "definitionChanged": false
+  }
+}

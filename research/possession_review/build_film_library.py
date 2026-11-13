@@ -170,10 +170,20 @@ def main():
                          'librarySelection':'Earlier deliberately selected example, outside the consecutive first-quarter batch.'})
             cases.append(case)
     assert len({c['possessionId'] for c in cases}) == len(cases)
+    archive_path = HERE / 'annotations/reviewed_decisions.json'
+    archive = json.loads(archive_path.read_text()) if archive_path.exists() else {'reviews': []}
+    saved = {r['possessionId']: r for r in archive['reviews']}
+    assert set(saved).issubset({c['possessionId'] for c in cases})
+    for case in cases:
+        if case['possessionId'] in saved:
+            assert saved[case['possessionId']]['caseId'] == case['id']
+            case['savedReview'] = copy.deepcopy(saved[case['possessionId']])
+    audit_path = HERE / 'review_batch_2026-11-12.json'
+    audit = json.loads(audit_path.read_text()) if audit_path.exists() else None
     library = {'createdOn':'2026-11-11','title':'Opening throws: large film review',
         'selection':'All validated first-quarter receiving-team possessions in twelve purposefully selected games covering the twenty-two teams in the preserved study export. Earlier A–I examples are retained. This is not a league-random sample.',
         'scopeLimit':'The definition can be explored here; classification accuracy has not been measured. Later-quarter openings and other games remain outside the consecutive batch.',
-        'workingSetupDefinition':current['workingSetupDefinition'],'games':summaries,'cases':cases,
+        'workingSetupDefinition':audit['definition'] if audit else current['workingSetupDefinition'],'games':summaries,'cases':cases,
         'counts':{'firstQuarterPossessions':sum(g['possessions'] for g in summaries),'totalCases':len(cases),
             'teams':len({c['team'] for c in cases}),'games':len(summaries),
             'subsequentFirstQuarter':sum(c['ownPossession']>1 and c.get('libraryGroup')!='Earlier examples' for c in cases),
@@ -181,6 +191,16 @@ def main():
         'sourceInputs':{'possessionsSha256':sha(ppath),'throwsSha256':sha(tpath),'rawGames':raw_evidence},
         'timingCaution':'Event timestamps are operator records, not video timestamps. Estimated seek windows are navigation aids, not verified clip boundaries. Match the scoreboard and participants; flag mismatches.',
         'simplerRoute':'Use the event stream to locate starts and distinguish initial from subsequent possessions. Test any setup rule derived from start context and throw geometry against film labels on reserved games before applying it elsewhere.'}
+    if audit:
+        library['reviewSummary'] = {k: audit[k] for k in [
+            'updatedOn', 'batchSize', 'totalArchivedDecisions', 'openingPossessions',
+            'subsequentPossessions', 'openingDecisions', 'subsequentDecisions',
+            'classificationStatus', 'simpleRuleChecks', 'scopeIssues', 'existingCohortAudit',
+            'cumulativeSummary', 'contrastingBatch', 'timeoutPolicy', 'assistedBatch']}
+        library['reviewSummary']['rows'] = audit['allReviewedRows']
+        library['reviewSummary']['source'] = {'path': str(audit_path.relative_to(ROOT)), 'sha256': sha(audit_path)}
+        library['reviewSummary']['archive'] = {'path': str(archive_path.relative_to(ROOT)), 'sha256': sha(archive_path)}
+        library['nextReview'] = audit['nextReview']
     (HERE/'film_library.json').write_text(json.dumps(library,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
     print(json.dumps(library['counts']))
 

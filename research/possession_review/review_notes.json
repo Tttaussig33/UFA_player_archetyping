@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-11",
-  "status": "Large film-review library prepared across twelve games. Five attack-start decisions remain confirmed from the earlier user film review (A, C, G, H, I). New cases await user classification; no possession metrics have been recalculated.",
+  "updatedAt": "2026-11-12",
+  "status": "Fifty-two user decisions archived, including twelve new-game reviews and the confirmed Austin immediate-attack label. Two earlier later-possession clip matches remain on hold, and R074 needs start-location reconciliation. Full-cohort recalculation remains outstanding.",
   "agreedScope": {
     "question": "How does a receiving team's play differ on its opening possession versus its later possessions within the same point?",
     "unit": "Team possessions within receiving points. Point-start O-line role does not establish unchanged personnel after substitutions.",
@@ -1191,6 +1191,496 @@
       "persistence": "A temporary decision survived reload. A note-saving issue was repaired and a temporary note then survived reload. Both temporary edits were undone.",
       "download": "Downloaded JSON files inspected: exactly the five original confirmed decisions, no temporary test labels or notes.",
       "limits": "No new metrics were fitted. Reserved-game classification accuracy and later-quarter generalization remain untested."
+    }
+  },
+  "filmReviewBatch2026_11_12": {
+    "sourceArchive": "annotations/2026-11-12-philadelphia-carolina-browser-export.json",
+    "canonicalDecisions": "annotations/reviewed_decisions.json",
+    "audit": "review_batch_2026-11-12.json",
+    "batchSize": 14,
+    "totalArchivedDecisions": 28,
+    "openingDecisions": {
+      "setup1": 5,
+      "attack1": 5
+    },
+    "subsequentDecisions": {
+      "attack1": 4
+    },
+    "definition": "Opening setup is the first transfer after an in-bounds pull is caught or picked up, when that transfer hands the disc to the player who starts the offense. It need not move toward the middle. If the pull receiver attacks directly, including when the defense prevents an opening transfer, recorded throw 1 is already attacking. After one confirmed setup transfer, all later passes count as attacking, including handler weaves, resets, and passes to an open handler. For a confirmed brick or sideline restart, or a later possession after a turnover, count the first pass as attacking. Bringing a turnover to the goal line or tapping it in does not create a pull setup. A failed setup attempt remains a turnover in the full-possession record; it can have zero attacking throws. Caught-versus-grounded pull handling may be unclear even when setup is clear. A penalty before the first brick-start pass does not turn that pass into setup. Use an uncertain label when the film does not settle the distinction. Opening setup is a working expectation with explicit exceptions, not a reason to remove every opening pass automatically.",
+    "classificationStatus": "Twenty-eight user decisions across seven games, including two development batches and earlier examples. No held-out accuracy or league-wide automatic labels.",
+    "scopeIssues": {
+      "timeout": {
+        "cases": [
+          "R023",
+          "R024",
+          "R025"
+        ],
+        "pointHold": true,
+        "openingPlayersRemainingInLaterLineup": 0,
+        "record": "Carolina home event 29 is a timeout lineup update; the seven IDs differ from home event 22. Later possessions start at home indices 30 and 40.",
+        "metricPolicyAdopted": "Keep completed possessions before a timeout substitution changes the original lineup. Exclude possessions played by replacement players from the original-line comparison; label them not applicable because of substitution, never zero or unsuccessful."
+      },
+      "lateQuarter": {
+        "caseId": "R033",
+        "pointStartSecondsRemaining": 4,
+        "status": "Flagged for a separate end-of-quarter category. No league-wide cutoff selected or applied.",
+        "clockLimit": "Point-start clock cannot identify every later possession that begins near the horn; do not substitute it for possession-start elapsed time."
+      },
+      "contextClarification": {
+        "caseId": "R020",
+        "issue": "Dropdown says grounded pull; note says caught pull. Setup decision is consistent. Keep both original fields and verify start context before using caught-versus-grounded features."
+      }
+    },
+    "existingCohortAudit": {
+      "possessions": 7173,
+      "retainedByOldWithinPossessionTimeoutFilter": 7027,
+      "retainedDespiteEarlierTimeout": 211,
+      "lineupsForThosePossessions": {
+        "changed_players": 198,
+        "same_seven": 13
+      },
+      "note": "Existing comparisons exclude timeouts within a possession but retain possessions following an earlier timeout. They describe receiving-team roles and do not isolate the original O-line personnel.",
+      "action": "Replacement-line exclusion is now adopted. Existing figures have not yet been recalculated under that policy."
+    },
+    "nextReview": {
+      "title": "Completed: nine contrasting starts",
+      "status": "complete",
+      "cases": [
+        {
+          "caseId": "R038",
+          "possessionId": "2026-05-02-CHI-MIN|away|43|1",
+          "gameId": "2026-05-02-CHI-MIN",
+          "reason": "Short inward pass from near the sideline: does the start already belong to the attack?"
+        },
+        {
+          "caseId": "R047",
+          "possessionId": "2026-05-09-MTL-TOR|home|0|1",
+          "gameId": "2026-05-09-MTL-TOR",
+          "reason": "An ordinary-looking Toronto opening: check the rule on a different team."
+        },
+        {
+          "caseId": "R052",
+          "possessionId": "2026-05-09-MTL-TOR|away|43|1",
+          "gameId": "2026-05-09-MTL-TOR",
+          "reason": "Recorded at brick coordinates: confirm the actual restart and the first attacking throw."
+        },
+        {
+          "caseId": "R053",
+          "possessionId": "2026-05-09-MTL-TOR|away|43|2",
+          "gameId": "2026-05-09-MTL-TOR",
+          "reason": "Same point, later possession, again at brick coordinates: does the film support that location?"
+        },
+        {
+          "caseId": "R060",
+          "possessionId": "2026-05-09-MTL-TOR|home|85|1",
+          "gameId": "2026-05-09-MTL-TOR",
+          "reason": "Recorded point start has four seconds left, yet the first pass is short: confirm the clock and how the attack starts."
+        },
+        {
+          "caseId": "R075",
+          "possessionId": "2026-05-09-OAK-SEA|home|24|1",
+          "gameId": "2026-05-09-OAK-SEA",
+          "reason": "Short inward Seattle opening: identify setup from the action, not direction alone."
+        },
+        {
+          "caseId": "R076",
+          "possessionId": "2026-05-09-OAK-SEA|home|29|1",
+          "gameId": "2026-05-09-OAK-SEA",
+          "reason": "Short Seattle opening moving away from the middle: could this still be setup?"
+        },
+        {
+          "caseId": "R094",
+          "possessionId": "2026-05-01-ORE-SLC|away|62|1",
+          "gameId": "2026-05-01-ORE-SLC",
+          "reason": "First pass is incomplete: was the attempted pass setup or attack? Keep the turnover either way."
+        },
+        {
+          "caseId": "R097",
+          "possessionId": "2026-05-01-ORE-SLC|away|70|2",
+          "gameId": "2026-05-01-ORE-SLC",
+          "reason": "A later Oregon possession begins with a short inward pass and includes a stoppage: inspect the transition."
+        }
+      ],
+      "games": 4,
+      "purpose": "All nine labels archived. These deliberately selected development examples refined the rule; they are not an accuracy sample. The next validation step is to test the written rule on the four reserved games."
+    },
+    "metricDesign": {
+      "physicalThrows": "Retain every actual attempt and original full-possession outcome.",
+      "attackingThrows": "For the five newly confirmed setup cases, remove only the initial transfer in a separate count. Do not label unreviewed starts automatically.",
+      "matching": "60+ yards to the attacking goal line remains the working direction. Match attack-start locations after setup where known; the older first-recorded-throw matching counts are not yet valid for that analysis.",
+      "lateQuarter": "Flag R033 and seek a contrasting late-quarter example. Define a clock rule before applying an exclusion; point-start time cannot label every later possession accurately."
+    },
+    "earlierTimeoutOptionsSuperseded": [
+      {
+        "option": "Keep completed pre-timeout possessions; separate later personnel",
+        "recommended": true,
+        "keep": "All completed pre-timeout physical throws, identified attacking throws, hucks and possession goals/turnovers.",
+        "teamOutcome": "Eventual hold/break remains observed for the receiving team; do not attribute it to the original seven after substitution.",
+        "interruptedPossession": "Do not assign a final post-substitution possession result to the original lineup. Retain earlier throws separately; an interrupted possession is not a completed short possession.",
+        "recovery": "If original players leave before a defensive recovery is resolved, code that original-line outcome as unresolved rather than failed. A later recovery still belongs to the receiving team.",
+        "limit": "Excluding post-timeout sequences still selects a subset. Report the number affected and compare whole-team results as a sensitivity check."
+      },
+      {
+        "option": "Follow the receiving team through the whole point",
+        "recommended": false,
+        "keep": "All possession stages and eventual team hold/break, with lineup-change and timeout flags.",
+        "limit": "Answers a team-management question, not repeated attempts or fatigue by the same O-line players."
+      },
+      {
+        "option": "Exclude every point with a timeout",
+        "recommended": false,
+        "keep": "Only points with no recorded timeout.",
+        "limit": "Simple secondary check, but removes valid opening possessions and changes the sample."
+      }
+    ],
+    "artifactChecksBeforeSecondBatch": {
+      "archive": "All 19 archived decisions match the original browser export verbatim; all 14 new labels and notes retained.",
+      "rawData": "All 173 original throw sequences and possession outcomes unchanged. Existing team-comparison DATA unchanged.",
+      "reproducibility": "Rerunning audit_review_batch.py and build_film_library.py reproduced the same audit, canonical archive and film library hashes.",
+      "preview": "Both affected portable HTML reports compiled. Browser confirmed 19 archived decisions, zero new browser edits, all nine next cases, four-game filtering, Next navigation, the substitution warning and readable archived notes.",
+      "download": "The rendered Download decisions link contains all 19 archived decisions with matching IDs, selections, notes and review dates.",
+      "chart": "Rendered chart labels, axes, counts and legend inspected; values 5/5 for opening possessions and 0/4 for subsequent possessions.",
+      "comparison": "Preliminary scope notice visible on the team comparison. No league-wide metrics recalculated.",
+      "limits": "New nine-case video windows remain estimated. No reserved-game accuracy test, final timeout policy, late-quarter cutoff or automatic league-wide setup classification yet."
+    },
+    "timeoutPolicy": {
+      "status": "Adopted by user on 2026-11-12; full-cohort implementation pending",
+      "unit": "The original receiving-point lineup, followed across its offensive possessions.",
+      "rule": "Keep completed possessions before a timeout substitution changes the original lineup. Exclude possessions played by replacement players from the original-line comparison; label them not applicable because of substitution, never zero or unsuccessful.",
+      "completedBeforeChange": "Keep physical throws, identified attacking throws, hucks and the observed goal or turnover from each completed original-line possession.",
+      "interruptedPossession": "If the lineup changes during a possession, preserve the earlier actions as a partial record. Do not treat that partial record as a completed possession, use it in mean completed-possession length or scoring rate, or attach a later lineup’s goal/turnover to it.",
+      "unresolvedOutcome": "An eventual hold, break or defensive recovery resolved after the original players are replaced is not applicable to the original-line outcome analysis. Do not recode it as a failed recovery or a break. Preserve the actual receiving-team outcome in the source record.",
+      "timeoutWithoutSubstitution": "A timeout alone does not establish a new lineup. Flag it separately because rest or tactical changes can still affect behavior; do not silently equate it with a replacement line.",
+      "partialSubstitution": "For the primary comparison, use the conservative implementation of the same original seven. Flag any recorded substitution, including partial changes. Stop the original-line sequence at its first lineup change; do not resume it by renumbering later possessions.",
+      "unknownLineup": "Unknown personnel remain unverified; do not assume the original seven continued.",
+      "reporting": "Report retained complete possessions, interrupted partial possessions and excluded later possessions separately. Explain that later-possession results apply only to original groups that recover the disc and remain on the field.",
+      "example": {
+        "included": [
+          "R023"
+        ],
+        "notApplicableAfterSubstitution": [
+          "R024",
+          "R025"
+        ],
+        "originalPhysicalThrows": 6,
+        "originalAttackingThrows": 5,
+        "originalPossessionOutcome": "turnover"
+      }
+    }
+  },
+  "filmReviewContrastingStarts2026_11_12": {
+    "sourceArchive": "annotations/2026-11-12-contrasting-starts-browser-export.json",
+    "canonicalDecisions": "annotations/reviewed_decisions.json",
+    "caseIds": [
+      "R038",
+      "R047",
+      "R052",
+      "R053",
+      "R060",
+      "R075",
+      "R076",
+      "R094",
+      "R097"
+    ],
+    "openingDecisions": {
+      "attack1": 3,
+      "setup1": 4
+    },
+    "subsequentDecisions": {
+      "attack1": 2
+    },
+    "contextChecks": [
+      {
+        "caseId": "R047",
+        "issue": "Setup label is clear; whether the pull was caught or grounded remains unknown. Preserve that distinction."
+      },
+      {
+        "caseId": "R052",
+        "issue": "Film note reports a brick start plus a ten-yard penalty before the first pass. Reconcile the recorded start location before using this possession in field-position matching."
+      },
+      {
+        "caseId": "R053",
+        "issue": "Film note reports retrieving a turnover and bringing it to a goal line. Verify that the recorded brick-like coordinates reflect the actual first attacking location before matching."
+      },
+      {
+        "caseId": "R060",
+        "issue": "Setup is confirmed even though the point-start record has four seconds left. The review does not independently confirm that clock; late-clock eligibility remains separate."
+      }
+    ],
+    "cumulativeSummary": {
+      "reviewedPossessions": 28,
+      "games": 7,
+      "openingPossessions": 21,
+      "subsequentPossessions": 7,
+      "openingDecisions": {
+        "setup1": 12,
+        "attack1": 9
+      },
+      "subsequentDecisions": {
+        "attack1": 7
+      },
+      "limit": "Purposefully selected definition-review examples, including cases later excluded for lineup changes. These counts are not league prevalence or eligible outcome denominators."
+    },
+    "setupRule": "Opening setup is the first transfer after an in-bounds pull is caught or picked up, when that transfer hands the disc to the player who starts the offense. It need not move toward the middle. If the pull receiver attacks directly, including when the defense prevents an opening transfer, recorded throw 1 is already attacking. After one confirmed setup transfer, all later passes count as attacking, including handler weaves, resets, and passes to an open handler. For a confirmed brick or sideline restart, or a later possession after a turnover, count the first pass as attacking. Bringing a turnover to the goal line or tapping it in does not create a pull setup. A failed setup attempt remains a turnover in the full-possession record; it can have zero attacking throws. Caught-versus-grounded pull handling may be unclear even when setup is clear. A penalty before the first brick-start pass does not turn that pass into setup. Use an uncertain label when the film does not settle the distinction. Opening setup is a working expectation with explicit exceptions, not a reason to remove every opening pass automatically.",
+    "userGuidance": "User expects opening pull possessions generally to have a setup transfer and later possessions to have none. Preserve the explicit exceptions already identified in film; do not interpret this expectation as an automatic label for every unreviewed opening.",
+    "nextStep": "Freeze the written setup rule for a check on the four reserved games. Film labels for replacement-line possessions can inform that definition even though those possessions are excluded from original-line outcomes.",
+    "methodsParagraph": "The comparison follows the lineup that begins each receiving point. Completed possessions before a substitution are retained, while possessions played after that lineup changes are excluded from the original-line comparison and recorded as not applicable. If substitutions occur during a possession, the preceding actions are retained as a partial record and are not treated as a completed possession when calculating possession length or scoring rate. Outcomes resolved only after the original players leave are not assigned to them. Exclusions and their reasons will be reported.",
+    "verification": {
+      "archive": "All 28 canonical decisions exactly match the latest browser export; both original exports remain unchanged.",
+      "sourceData": "All 173 original throw sequences and outcomes, and the existing team-chart numerical data, remain unchanged.",
+      "reproducibility": "Audit and film-library generation reproduced identical outputs.",
+      "preview": "Review page shows 28 archived decisions, zero new browser edits, completed nine-case set, the adopted exclusion policy, and saved selections/notes. Updated chart visually inspected with counts 12/9 opening and 0/7 subsequent.",
+      "build": "Both affected portable reports rebuilt; final review copy rebuilt; git diff --check passed.",
+      "limits": "The original-line cutoff is recorded for implementation. Full-cohort metrics, reserved validation and field-position reconciliation are not complete."
+    }
+  },
+  "currentOriginalLinePolicy": {
+    "status": "Adopted by user on 2026-11-12; full-cohort implementation pending",
+    "unit": "The original receiving-point lineup, followed across its offensive possessions.",
+    "rule": "Keep completed possessions before a timeout substitution changes the original lineup. Exclude possessions played by replacement players from the original-line comparison; label them not applicable because of substitution, never zero or unsuccessful.",
+    "completedBeforeChange": "Keep physical throws, identified attacking throws, hucks and the observed goal or turnover from each completed original-line possession.",
+    "interruptedPossession": "If the lineup changes during a possession, preserve the earlier actions as a partial record. Do not treat that partial record as a completed possession, use it in mean completed-possession length or scoring rate, or attach a later lineup’s goal/turnover to it.",
+    "unresolvedOutcome": "An eventual hold, break or defensive recovery resolved after the original players are replaced is not applicable to the original-line outcome analysis. Do not recode it as a failed recovery or a break. Preserve the actual receiving-team outcome in the source record.",
+    "timeoutWithoutSubstitution": "A timeout alone does not establish a new lineup. Flag it separately because rest or tactical changes can still affect behavior; do not silently equate it with a replacement line.",
+    "partialSubstitution": "For the primary comparison, use the conservative implementation of the same original seven. Flag any recorded substitution, including partial changes. Stop the original-line sequence at its first lineup change; do not resume it by renumbering later possessions.",
+    "unknownLineup": "Unknown personnel remain unverified; do not assume the original seven continued.",
+    "reporting": "Report retained complete possessions, interrupted partial possessions and excluded later possessions separately. Explain that later-possession results apply only to original groups that recover the disc and remain on the field.",
+    "example": {
+      "included": [
+        "R023"
+      ],
+      "notApplicableAfterSubstitution": [
+        "R024",
+        "R025"
+      ],
+      "originalPhysicalThrows": 6,
+      "originalAttackingThrows": 5,
+      "originalPossessionOutcome": "turnover"
+    }
+  },
+  "assistedClipReview2026_11_12": {
+    "status": "All twelve human reviews archived; focused follow-up required before use in measurement.",
+    "queuePath": "research/possession_review/assisted_clip_queue.json",
+    "queueSha256": "df8d863c6c3b1529de607d2da36d0a001ce0bd5253ee69096dcd9c4b2cf2e968",
+    "caseIds": [
+      "R002",
+      "R003",
+      "R005",
+      "R006",
+      "R034",
+      "R035",
+      "R039",
+      "R040",
+      "R073",
+      "R074",
+      "R077",
+      "R082"
+    ],
+    "games": 3,
+    "suggestionMethod": "Provisional labels from recorded context and the user-defined setup rule. No trained computer-vision classifier or calibrated confidence scores.",
+    "reviewDesign": "Predictions are shown before annotation. These assisted labels are development data, not an independent accuracy test. Reserved games are not included.",
+    "timing": "Original windows preserved in the queue and raw reviews. Separate replay windows for R039 (33:35–34:05) and R082 (28:35–29:00) narrow the later-possession sequence after agent film spot-checks; human sequence confirmation remains pending.",
+    "labels": "Forty decisions preserved, including twelve from this queue. Current batch selections are 5 setup, 5 attack and 2 unclear after the explicit R003 correction. Saved selections are not automatically validated measurement labels.",
+    "access": "Game opens on the subscribed UFA.tv page. No extension, embedding, video downloads or token handling.",
+    "checks": "Replacement page rendered. Confirm-and-next, correction-and-next, persistence after reload, undo, label/suggestion separation, export contents and hiding suggestions in reserved games passed. Temporary UI test choices were undone; all 28 previous decisions were restored exactly.",
+    "openItems": [
+      "R035 and R077: unclear film classifications",
+      "R039 and R082: recheck the later possession in the narrower window; raw labels remain unchanged",
+      "R074: reconcile caught-pull setup with the recorded brick-like start before matching field positions",
+      "Reserved-game validation and full-cohort calculation under the original-line policy"
+    ],
+    "timingCheckPath": "research/possession_review/clip_timing_checks.json",
+    "installationApproval": "User explicitly approved installing and enabling UFA Film Review for UFA.tv and embed.vhx.tv.",
+    "extensionRemoval": "Removed through Chrome UI after verifying zero saved extension reviews. The original 28 decisions remain archived.",
+    "delivery": "Existing film-review page: manual UFA.tv watch times, provisional suggestions, confirm/correct and advance, browser saving, undo and export. No automatic video control.",
+    "followupPath": "research/possession_review/review_followup_2026-11-12.json",
+    "clarifications": [
+      "R003 corrected to setup after user reply; original export preserved.",
+      "R002 remains setup; user confirmed the attacking note describes the second pass."
+    ],
+    "completionChecks": {
+      "archive": "All 40 canonical entries exactly equal the latest clarified browser export; earlier exports preserved.",
+      "predictions": "All 12 original suggestions, reasons and watch windows match the pre-clarification export; none regenerated from labels.",
+      "scope": "Unclear labels and unresolved clip matches have no derived attacking count. All four reserved games remain untouched.",
+      "lineup": "Raw events confirm zero original players in Houston R005; label and outcome eligibility remain separate.",
+      "preview": "Rebuilt and visually inspected: 40 archived, zero new browser edits, corrected raw-label chart and count axes, working case selection, narrower replay windows for R039 and R082, and R005 original-line exclusion. Final download export exactly preserves all 40 clarified reviews.",
+      "limits": "No league statistics recalculated. These assisted development labels do not establish classifier accuracy.",
+      "dictation": "Existing simulated-service regression passed, including late-event isolation and preserving an archived note on the next case. No microphone was opened.",
+      "build": "Existing portable report exporter completed; git diff --check passed. Team-chart numerical data not changed."
+    }
+  },
+  "reviewInterface2026_11_12": {
+    "request": "Make film review the focus, keep bar graphs, remove visible case codes and research explanations, retain the two start/attack questions.",
+    "interface": "Two-column review layout, readable team and possession names, prominent watch times and UFA.tv link, two answer fields, optional notes and dictation, save-and-next, and bar graphs below.",
+    "defaultSet": [
+      "R039",
+      "R082",
+      "R074",
+      "R035",
+      "R077"
+    ],
+    "dataPolicy": "Existing 40 decisions and notes retained exactly. Internal case IDs, raw sources, eligibility rules and audit flags are preserved in research files but not displayed in the review flow.",
+    "annotationMode": "Original suggestions remain in historical provenance. The redesigned interface does not display them. New reviews record the current interface and whether a suggestion was shown; prior assisted status is preserved.",
+    "playback": "Official UFA.tv page in a separate tab, with explicit manual seek time. No embedding or extension.",
+    "verification": "Portable build passed. Navigation and note display checked in Chrome; all 40 exported records match the pre-redesign export. Simulated save-and-next, dictation, persistence, export and restore checks passed.",
+    "nextStep": "Resolve the focused examples, then test a fixed definition on reserved games. The redesign does not mark the definition validated or change league metrics."
+  },
+  "missingOpeningReconstruction2026_11_12": {
+    "source": "research/possession_review/opening_reconstructions_2026-11-12.json",
+    "cases": [
+      "R035",
+      "R077"
+    ],
+    "finding": "The first recorded Minnesota pass is Brandt to Klane, followed by Klane to Coolman. Seattle begins Lofink to Stoppel. Live ShownSpace play-by-play matches the local event sequence.",
+    "policy": "Record missing broadcast coverage separately from ambiguity in a visible action. Player names and geometry may recover sequence order but do not validate setup or defensive pressure. Preserve unclear labels.",
+    "latestReviewArchive": "research/possession_review/annotations/2026-11-12-followup-browser-export.json",
+    "cohortRecalculated": false,
+    "subsequentUserConfirmation": {
+      "Minnesota": "Setup, attack starts with throw 2.",
+      "Seattle": "Immediate attack, throw 1.",
+      "source": "User chat after ShownSpace review.",
+      "pullHandling": "Caught versus grounded remains unclear; no inferred context label."
+    },
+    "verificationAtReconstruction": {
+      "rawCoordinates": "First three passes for both cases matched raw event indices and source SHA256 receipts.",
+      "liveSource": "First three pass identities and order matched both live ShownSpace Play-by-Play tables.",
+      "reviewUI": "Both optional recorded-opening sections opened and displayed the expected names, distances and source links.",
+      "preservedReviews": 40,
+      "browserBeforeAfter": "All 40 exported review objects identical before and after the presentation update.",
+      "existingChecks": "Review navigation, storage preservation and dictation simulation passed; no microphone opened.",
+      "sourceCopy": "Managed canvas and repository source are identical.",
+      "classification": "Both attacking counts remain unassigned. No league metrics recalculated."
+    },
+    "currentResolution": {
+      "R035": "Human-confirmed setup; first attacking throw 2.",
+      "R077": "Human-confirmed immediate attack; first attacking throw 1.",
+      "source": "Explicit user confirmation after reviewing ShownSpace links.",
+      "filmCoverage": "Opening action still missing from broadcast; uncertainty about pull caught versus grounded remains."
+    }
+  },
+  "activeReviewBatch": {
+    "id": "new-games-review-20261112",
+    "title": "New games · 12 clips",
+    "source": "research/possession_review/next_review_batch_2026-11-12.json",
+    "sourceSha256": "95d2ae40db4e3ef4041ea7071aba18fcfdcb03fd8af60210d10368b4aae511a0",
+    "status": "reviewed",
+    "counts": {
+      "clips": 12,
+      "games": 4,
+      "teams": 8,
+      "opening": 8,
+      "later": 4,
+      "watchWindowSeconds": 360
+    },
+    "classificationStatus": "All twelve human reviews archived; Austin immediate attack confirmed in chat. These are fresh-game definition checks, not league prevalence or an automatic-classifier accuracy estimate. Any definition change based on them makes them development cases for that revised rule.",
+    "interface": "The twelve completed new-game reviews remain selected by default. Updated answer wording preserves saved decisions, notes, dictation and previous review sets.",
+    "verification": [
+      "All four UFA.tv recordings opened through the normal signed-in player.",
+      "Windows narrowed with score/clock spot checks; source timing limitations remain explicit.",
+      "All 12 first-pass coordinate tuples matched preserved raw records and raw source hashes.",
+      "New-set navigation and the last sequence were checked in Chrome; Save is disabled before answers.",
+      "All 40 review objects were identical before and after the page update, after applying the two explicit user confirmations.",
+      "Minnesota setup and Seattle immediate attack persisted through reload and queue switching.",
+      "Progress bars show 18 opening setup labels, 12 immediate-attack opening labels and 10 immediate-attack later labels. These are saved labels, not validated league estimates.",
+      "Component checks passed for new-batch saving, separate provenance, dictation, navigation, reload, exports and restoring archived answers. No microphone used.",
+      "Completed set archived on 2026-11-12: all 52 browser review objects preserved through the wording update; Austin immediate attack explicitly confirmed. No league outcomes recalculated."
+    ],
+    "leagueMetricsRecalculated": false,
+    "reviewed": 12,
+    "totalArchivedDecisions": 52,
+    "completionSource": {
+      "reviewedOn": "2026-11-12",
+      "reviewed": 12,
+      "source": "research/possession_review/annotations/2026-11-12-new-games-completed-browser-export.json",
+      "sourceSha256": "53b5c58e5ab2079e11e4f55487ab694ed068ed302995cd4f8f43e6ec720812ab",
+      "decisionCounts": {
+        "setup1": 5,
+        "attack1": 7
+      },
+      "clarifications": [
+        "R100"
+      ],
+      "definitionChanged": false
+    }
+  },
+  "reviewChoiceWording2026_11_12": {
+    "request": "Replace throw-number choices with Immediate attack, Centering pass and Cannot tell, and make the pull-start choices explicit. Keep the rest the same.",
+    "passQuestion": "How is the first pass used?",
+    "decisionLabels": {
+      "attack1": "Immediate attack",
+      "setup1": "Centering pass",
+      "unclear": "Cannot tell"
+    },
+    "startLabels": {
+      "caught_pull": "Pull caught in bounds",
+      "grounded_pull": "Pull lands and is picked up",
+      "brick": "Pull lands out of bounds and is taken to the brick",
+      "sideline": "Roller pull goes out of bounds on the sideline"
+    },
+    "policy": "Display wording only. Stored codes, original notes, physical throws, outcomes and the existing setup definition remain unchanged; centering is not newly restricted to inward geometry. Existing sideline reviews explicitly describe rolled-out pulls.",
+    "austinClarification": "User confirmed Immediate attack; preserve attack1 and the verbatim dictated note.",
+    "verification": {
+      "build": "Portable export passed. Existing dictation and review-preservation checks passed with 52 archived reviews.",
+      "browser": "All requested option labels displayed in Chrome. Austin showed Immediate attack. Restored the last San Diego sequence with Centering pass selected.",
+      "preservation": "All 52 review objects were byte-for-byte equivalent as JSON before and after reload; no notes or decisions changed.",
+      "screenshot": "/tmp/ufa-review-labels-2026-11-12.png",
+      "leagueMetricsRecalculated": false
+    }
+  },
+  "lineupExplanation2026_11_12": {
+    "source": "User clarification in chat, 2026-11-12",
+    "rule": "Keep all original-line throws, huck attempts and the turnover before a timeout substitution. Stop the original-line comparison at the first lineup change. Do not attribute replacement-line actions or their eventual outcome to the original O-line.",
+    "pointOutcome": "A turnover means the receiving point was not a clean hold. Preserve any eventual team hold or break separately; it is not automatically an outcome of the original seven.",
+    "timeoutCaller": "The exclusion depends on the lineup change, not which team called the timeout.",
+    "chartStatus": "Copy clarified; existing league figures not recalculated.",
+    "removedCopy": [
+      "Introductory Atlanta example",
+      "Introductory huck-comparison cutoff sentence"
+    ],
+    "questionsPending": [],
+    "verification": {
+      "portableBuild": "passed",
+      "renderedCopy": "Checked the revised opening in Chrome; example and introductory huck-cutoff sentence removed.",
+      "embeddedData": "Unchanged by this copy revision.",
+      "screenshot": "/tmp/ufa-oline-clearer-timeout-policy-2026-11-12.png"
+    },
+    "resolvedBy": "currentMeasurementDecisions"
+  },
+  "currentMeasurementDecisions": {
+    "adoptedOn": "2026-11-12",
+    "source": "User answers to the three counting, starting-position and writing-workflow questions.",
+    "throwCounts": "Keep identical possession membership in two charts. First chart: every physical throw, with no centering adjustment. Second chart: subtract one only for each possession with a confirmed opening centering pass, retain the unchanged counts of possessions without one, and recompute the average over all the same possessions. Do not exclude centering-pass possessions.",
+    "huckTiming": "For a confirmed centering pass, shift all following throw numbers down one. Centering, short pass, huck becomes attacking huck number two. A direct attacking first pass remains number one.",
+    "startingPosition": "Keep the start of the full possession: pull catch or pickup, brick or sideline restart, or start after a turnover. Do not move matching or the 60-yard eligibility anchor to after the centering pass.",
+    "availableLocation": "Existing analysis records the first throwing location. Preserve it as an explicitly identified proxy for the requested start where the exact catch, pickup or restart location is not independently established.",
+    "centeringScope": "Retain the film-reviewed one-pass definition. Do not automatically remove a second short handler pass or label unseen openings. Any two-pass setup exception needs its own review.",
+    "outcomes": "Keep physical records, goals and turnovers. A failed setup may have zero attacking throws; it is still an unsuccessful full possession.",
+    "display": "Two charts ordered all physical throws then centering-adjusted counts. Both show blue for goal-ending possessions and gray for turnover-ending possessions. The height is mean throws, not outcome count or scoring rate. Identical possession membership and denominators in both charts; no outcome selector.",
+    "writing": "No separate editable document. User gives requested wording in chat; update the existing report.",
+    "nextDecision": "Choose how to summarize huck timing once the reviewed counting rule is implemented; no automatic restart of the parked first-three-throws league estimate.",
+    "nextQuestion": "Resolved: distinguish whether hucks become more frequent, happen earlier, or both. Compare any-huck possession rate and first-huck attacking ordinal, supported by the first-huck choice rate at each attacking throw.",
+    "mainHuckQuestion": "After an O-line gets the disc back, are hucks more common, do they happen earlier, or both?"
+  },
+  "reviewedCenteringComparison": {
+    "source": "research/oline_possessions/reviewed_centering_counts.json",
+    "sourceSha256": "ced7eaabf27cf8c54391fc95c5b39ef721a70518a8c9fe1a09aece8bbe3beb9c",
+    "status": "Complete: both charts show goals and turnovers together with consistent colors.",
+    "mainLeagueResultsRecalculated": false,
+    "verification": {
+      "sourceCounts": "All 52 reviewed physical-throw sequences matched raw event indices and saved throw rows. 45 eligible completed original-line possessions retained.",
+      "pairedViews": "Independent per-possession recomputation confirmed that only setup1 rows lose one throw; other rows and both denominator memberships remain identical.",
+      "startingLocation": "All original first-recorded-throw coordinates preserved.",
+      "existingLeagueData": "Original embedded league values verified identical before and after adding the reviewed comparison.",
+      "rendered": "Verified in Chrome: both charts display blue goal-ending and gray turnover-ending bars, with mean throws on the vertical axis and first/second possession on the horizontal axis. All-throw values are 10.2/7.7 for goals and 5.5/4.3 for turnovers; adjusted values are 9.4/7.7 and 5.1/4.3. Identical outcome-specific denominators shown below each chart. Outcome selector removed.",
+      "screenshot": "/tmp/ufa-goal-turnover-bars-restored-2026-11-12.png",
+      "notRun": "No separate narrow-viewport or light-theme inspection; theme rules unchanged."
+    },
+    "displayCorrection": {
+      "source": "Explicit user request to restore blue goal bars and gray turnover bars, 2026-11-12",
+      "change": "Two charts ordered all physical throws then centering-adjusted counts. Both show blue for goal-ending possessions and gray for turnover-ending possessions. The height is mean throws, not outcome count or scoring rate. Identical possession membership and denominators in both charts; no outcome selector.",
+      "countsChanged": false,
+      "membershipChanged": false,
+      "rawCountsPreserved": true
     }
   }
 }

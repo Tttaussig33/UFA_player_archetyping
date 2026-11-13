@@ -1,0 +1,322 @@
+{
+  "updatedOn": "2026-11-12",
+  "scope": "Two film openings obscured by the broadcast; reconstruct recorded action, not inferred setup labels.",
+  "rows": [
+    {
+      "caseId": "R035",
+      "possessionId": "2026-05-02-CHI-MIN|home|3|1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "team": "Minnesota Wind Chill",
+      "point": 2,
+      "quarter": 1,
+      "scoreAtPointStart": "Minnesota Wind Chill 0–1 opponent",
+      "pointStartClock": "10:57",
+      "userObservation": {
+        "source": "User chat, 2026-11-12",
+        "observation": "The broadcast returns after the pull has been caught or landed in bounds and picked up. The opening action is not visible.",
+        "visibilityStatus": "opening_not_shown",
+        "observedBy": "User; not independently rewatched in this check"
+      },
+      "recordedFirstPasses": [
+        {
+          "n": 1,
+          "from": "William Brandt",
+          "to": "Josh Klane",
+          "xy": [
+            -0.81,
+            15.61,
+            -0.1,
+            29.67
+          ],
+          "outcome": "Complete",
+          "huck": false,
+          "sourceIndex": 4,
+          "before": [],
+          "rawThrowerId": "wbrandt",
+          "rawReceiverId": "jklane",
+          "distanceYards": 14.08,
+          "forwardYards": 14.06,
+          "inwardYards": 0.71,
+          "shownSpaceRenderedRow": "-0.4%→Q1 10:57William Brandt completes a 14 yard pass to Josh Klane"
+        },
+        {
+          "n": 2,
+          "from": "Josh Klane",
+          "to": "Noah Coolman",
+          "xy": [
+            -0.1,
+            29.67,
+            15.05,
+            39.35
+          ],
+          "outcome": "Complete",
+          "huck": false,
+          "sourceIndex": 5,
+          "before": [],
+          "rawThrowerId": "jklane",
+          "rawReceiverId": "ncoolman",
+          "distanceYards": 17.98,
+          "forwardYards": 9.68,
+          "inwardYards": -14.95,
+          "shownSpaceRenderedRow": "+0.3%→Q1 10:51Josh Klane completes a 18 yard swing to Noah Coolman"
+        },
+        {
+          "n": 3,
+          "from": "Noah Coolman",
+          "to": "Josh Klane",
+          "xy": [
+            15.05,
+            39.35,
+            9.83,
+            35.22
+          ],
+          "outcome": "Complete",
+          "huck": false,
+          "sourceIndex": 6,
+          "before": [],
+          "rawThrowerId": "ncoolman",
+          "rawReceiverId": "jklane",
+          "distanceYards": 6.66,
+          "forwardYards": -4.13,
+          "inwardYards": 5.22,
+          "shownSpaceRenderedRow": "-0.2%→Q1 10:46Noah Coolman completes a 7 yard pass to Josh Klane"
+        }
+      ],
+      "pathSummary": "The first pass goes about 14 yards upfield near the middle.",
+      "sources": {
+        "rawPath": "research/dead_disc_study/raw_events/2026-05-02-CHI-MIN.json",
+        "rawSha256": "9b85a8ab633e570f98675e3bdcda19e48dc0bfc127f1dce1e194e9057de389a4",
+        "rawCaptureReceipt": {
+          "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-02-CHI-MIN",
+          "sha256": "9b85a8ab633e570f98675e3bdcda19e48dc0bfc127f1dce1e194e9057de389a4",
+          "retrieved_at": "2026-11-05T02:03:43.085635+00:00"
+        },
+        "side": "home",
+        "shownSpaceUrl": "https://shownspace.com/game-center/2026-05-02-CHI-MIN",
+        "shownSpaceCheck": "Live Play-by-Play table expanded at this score and opening possession; first three pass identities, order and rounded distances match the preserved raw-event sequence.",
+        "checkedOn": "2026-11-12",
+        "sourceIndependence": "ShownSpace and the local event capture may share the same underlying UFA records; agreement is not independent video confirmation."
+      },
+      "remainingUnknowns": [
+        "Whether the pull was caught or picked up.",
+        "Which recorded pass is the first visible one in the film."
+      ],
+      "inference": "If the visible throw is Coolman to Klane, it may be recorded throw 3 or a later Coolman-to-Klane exchange; it is not the first recorded pass.",
+      "reviewAtReconstruction": {
+        "caseId": "R035",
+        "possessionId": "2026-05-02-CHI-MIN|home|3|1",
+        "decision": "unclear",
+        "gameId": "2026-05-02-CHI-MIN",
+        "reviewedOn": "2026-11-12T23:29:09.825Z",
+        "source": "Local film review",
+        "reviewMode": "assisted",
+        "suggestion": {
+          "decision": "setup1",
+          "method": "rule-guided-event-estimate-v1",
+          "reason": "The opening pass is a 14.1-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+        },
+        "clip": {
+          "start": 1522,
+          "end": 1617,
+          "timingStatus": "estimated"
+        },
+        "response": "unresolved",
+        "context": "unclear",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "reviewRound": "opening-starts-followup-20261112"
+      },
+      "latestReview": {
+        "caseId": "R035",
+        "possessionId": "2026-05-02-CHI-MIN|home|3|1",
+        "decision": "setup1",
+        "gameId": "2026-05-02-CHI-MIN",
+        "reviewedOn": "2026-11-12T23:49:04.408Z",
+        "source": "Local film review",
+        "reviewMode": "assisted",
+        "suggestion": {
+          "decision": "setup1",
+          "method": "rule-guided-event-estimate-v1",
+          "reason": "The opening pass is a 14.1-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+        },
+        "clip": {
+          "start": 1522,
+          "end": 1617,
+          "timingStatus": "estimated"
+        },
+        "response": "confirmed",
+        "context": "unclear",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "reviewRound": "opening-starts-followup-20261112"
+      },
+      "userResolution": {
+        "source": "User chat confirmation after ShownSpace check, 2026-11-12",
+        "decision": "setup1",
+        "firstAttackingThrow": 2,
+        "filmVisibility": "Opening remains missing from broadcast; resolution uses the user’s combined review."
+      },
+      "classificationActionAtReconstruction": "Keep the human unclear decision and leave the attacking-throw count unassigned. Retain all physical throws and actual outcomes. No geometry-based relabel.",
+      "classificationAction": "Use the newly confirmed human label for attacking-throw count; retain all physical throws and actual outcomes. Do not generalize from coordinates."
+    },
+    {
+      "caseId": "R077",
+      "possessionId": "2026-05-09-OAK-SEA|home|41|1",
+      "gameId": "2026-05-09-OAK-SEA",
+      "team": "Seattle Cascades",
+      "point": 5,
+      "quarter": 1,
+      "scoreAtPointStart": "Seattle Cascades 1–3 opponent",
+      "pointStartClock": "7:30",
+      "userObservation": {
+        "source": "User chat, 2026-11-12",
+        "observation": "The broadcast returns after the pull has been caught or landed in bounds and picked up. The opening action is not visible.",
+        "visibilityStatus": "opening_not_shown",
+        "observedBy": "User; not independently rewatched in this check"
+      },
+      "recordedFirstPasses": [
+        {
+          "n": 1,
+          "from": "Spencer Lofink",
+          "to": "Nolan Stoppel",
+          "xy": [
+            26.08,
+            44.12,
+            24.18,
+            66.4
+          ],
+          "outcome": "Complete",
+          "huck": false,
+          "sourceIndex": 42,
+          "before": [],
+          "rawThrowerId": "slofink",
+          "rawReceiverId": "nstoppel",
+          "distanceYards": 22.36,
+          "forwardYards": 22.28,
+          "inwardYards": 1.9,
+          "shownSpaceRenderedRow": "+2.5%→Q1 7:30Spencer Lofink completes a 22 yard pass to Nolan Stoppel"
+        },
+        {
+          "n": 2,
+          "from": "Nolan Stoppel",
+          "to": "Marc Munoz",
+          "xy": [
+            24.18,
+            66.4,
+            20.83,
+            70.33
+          ],
+          "outcome": "Complete",
+          "huck": false,
+          "sourceIndex": 43,
+          "before": [],
+          "rawThrowerId": "nstoppel",
+          "rawReceiverId": "mmunoz",
+          "distanceYards": 5.16,
+          "forwardYards": 3.93,
+          "inwardYards": 3.35,
+          "shownSpaceRenderedRow": "+0.7%→Q1 7:29Nolan Stoppel completes a 5 yard pass to Marc Munoz"
+        },
+        {
+          "n": 3,
+          "from": "Marc Munoz",
+          "to": "Spencer Lofink",
+          "xy": [
+            20.83,
+            70.33,
+            16.24,
+            67.86
+          ],
+          "outcome": "Complete",
+          "huck": false,
+          "sourceIndex": 44,
+          "before": [],
+          "rawThrowerId": "mmunoz",
+          "rawReceiverId": "slofink",
+          "distanceYards": 5.21,
+          "forwardYards": -2.47,
+          "inwardYards": 4.59,
+          "shownSpaceRenderedRow": "0.0%→Q1 7:29Marc Munoz completes a 5 yard pass to Spencer Lofink"
+        }
+      ],
+      "pathSummary": "The first pass goes about 22 yards up the sideline.",
+      "sources": {
+        "rawPath": "research/dead_disc_study/raw_events/2026-05-09-OAK-SEA.json",
+        "rawSha256": "926a7ffaea49f55cd40c507774ed479760eb3c8ae08a9a28bcd918dcf25f6fbe",
+        "rawCaptureReceipt": {
+          "url": "https://www.backend.ufastats.com/api/v1/gameEvents?gameID=2026-05-09-OAK-SEA",
+          "sha256": "926a7ffaea49f55cd40c507774ed479760eb3c8ae08a9a28bcd918dcf25f6fbe",
+          "retrieved_at": "2026-11-05T02:03:43.718040+00:00"
+        },
+        "side": "home",
+        "shownSpaceUrl": "https://shownspace.com/game-center/2026-05-09-OAK-SEA",
+        "shownSpaceCheck": "Live Play-by-Play table expanded at this score and opening possession; first three pass identities, order and rounded distances match the preserved raw-event sequence.",
+        "checkedOn": "2026-11-12",
+        "sourceIndependence": "ShownSpace and the local event capture may share the same underlying UFA records; agreement is not independent video confirmation."
+      },
+      "remainingUnknowns": [
+        "Whether the pull was caught or picked up.",
+        "Which recorded pass is the first visible one in the film."
+      ],
+      "inference": "A pass up the sideline is compatible with an attacking pass, but direction does not establish whether it served as setup.",
+      "reviewAtReconstruction": {
+        "caseId": "R077",
+        "possessionId": "2026-05-09-OAK-SEA|home|41|1",
+        "decision": "unclear",
+        "gameId": "2026-05-09-OAK-SEA",
+        "reviewedOn": "2026-11-12T23:30:10.059Z",
+        "source": "Local film review",
+        "reviewMode": "assisted",
+        "suggestion": {
+          "decision": "attack1",
+          "method": "rule-guided-event-estimate-v1",
+          "reason": "The opening is recorded near the sideline and farther upfield. A sideline restart is plausible; confirm it from the pull."
+        },
+        "clip": {
+          "start": 1090,
+          "end": 1185,
+          "timingStatus": "estimated"
+        },
+        "response": "unresolved",
+        "context": "unclear",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "reviewRound": "opening-starts-followup-20261112"
+      },
+      "latestReview": {
+        "caseId": "R077",
+        "possessionId": "2026-05-09-OAK-SEA|home|41|1",
+        "decision": "attack1",
+        "gameId": "2026-05-09-OAK-SEA",
+        "reviewedOn": "2026-11-12T23:49:17.288Z",
+        "source": "Local film review",
+        "reviewMode": "assisted",
+        "suggestion": {
+          "decision": "attack1",
+          "method": "rule-guided-event-estimate-v1",
+          "reason": "The opening is recorded near the sideline and farther upfield. A sideline restart is plausible; confirm it from the pull."
+        },
+        "clip": {
+          "start": 1090,
+          "end": 1185,
+          "timingStatus": "estimated"
+        },
+        "response": "confirmed",
+        "context": "unclear",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "reviewRound": "opening-starts-followup-20261112"
+      },
+      "userResolution": {
+        "source": "User chat confirmation after ShownSpace check, 2026-11-12",
+        "decision": "attack1",
+        "firstAttackingThrow": 1,
+        "filmVisibility": "Opening remains missing from broadcast; resolution uses the user’s combined review."
+      },
+      "classificationActionAtReconstruction": "Keep the human unclear decision and leave the attacking-throw count unassigned. Retain all physical throws and actual outcomes. No geometry-based relabel.",
+      "classificationAction": "Use the newly confirmed human label for attacking-throw count; retain all physical throws and actual outcomes. Do not generalize from coordinates."
+    }
+  ],
+  "calculation": "For recorded endpoints (x,y) and (rx,ry), distance = sqrt((rx-x)^2 + (ry-y)^2), forward yards = ry-y, inward yards = abs(x)-abs(rx).",
+  "clockLimit": "Use sequence order, score, player identity and recorded geometry. Displayed play clocks and operator timestamps are not validated as precise per-throw elapsed time in this check."
+}

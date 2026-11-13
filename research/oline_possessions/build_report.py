@@ -72,14 +72,20 @@ export default function OLineRegainHucking() {
   const scoreGroups=scoringView==="observed"?rawScore:DATA.adjusted.scoring.groups;
   const sectionStyle={paddingTop:24,borderTop:`1px solid ${theme.stroke.tertiary}`};
   const linkStyle={color:theme.text.link};
+  const centering=DATA.reviewed_centering_counts;
+  const centeringStages=centering.groups.goal.map((g:any)=>g.stage);
+  const centeringSampleText=centeringStages.map((stage:number)=>`${names[stage-1]} possession: ${centering.groups.goal.find((g:any)=>g.stage===stage).n} goals, ${centering.groups.turnover.find((g:any)=>g.stage===stage).n} turnovers`).join(" · ");
+  const centeringAxisMax=Math.ceil(Math.max(...Object.values(centering.groups).flat().map((g:any)=>g.physicalMean))/4)*4;
   return <Stack gap={28} style={{padding:22,maxWidth:1100,margin:"0 auto",color:theme.text.primary}}>
     <Stack gap={10}>
       <H1>O-line offense after turnovers</H1>
       <Text>2026 UFA regular season · 22 teams · 131 of 132 games · exploratory research</Text>
       <Text>After turning the disc over and getting it back, does an O-line change how it attacks, and how do its chances of scoring compare with its opening opportunity?</Text>
-      <Text><strong>Current focus: throw counts, scoring and outcomes after turnovers.</strong> The early-huck comparison is parked while we review starting locations and opening centering passes. Its charts and calculations remain available below.</Text>
-      <Text>Example: Atlanta receives the pull, turns it over, then wins it back. Atlanta's opening chance is its first possession; its next chance with the disc is its second possession, all during the same point. We include points Atlanta eventually wins (holds) and loses (is broken). Looking only at holds would leave out unsuccessful points.</Text>
+      <Text><strong>Current focus: throw counts, scoring and outcomes after turnovers.</strong> The reviewed comparison shows the same possessions before and after subtracting confirmed centering passes. League-wide huck timing remains parked until more opening passes are classified and comparable starting locations are established.</Text>
+      <Text><strong>When a timeout changes the lineup.</strong> After the O-line turns the disc over, a timeout may allow its team to replace it with D-line players. We keep the original O-line’s throws and turnover, regardless of which team calls the timeout. We stop following that O-line when its lineup changes. Later throws, goals and turnovers by the replacement players do not count as the original O-line’s second or third possession.</Text>
+      <Text size="small">The turnover means the point was not a clean hold. The receiving team can still finish with a hold or a break, but we record that team result separately from the original O-line’s performance.</Text>
       <div style={{display:"flex",gap:18,flexWrap:"wrap",fontSize:14}}>
+        <a href="#centering-counts" style={linkStyle}>Centering-pass adjustment</a>
         <a href="#league" style={linkStyle}>League results</a><a href="#teams" style={linkStyle}>Playoff teams and all teams</a><a href="#breaks" style={linkStyle}>Breaks after turnovers</a><a href="#huck-outcomes" style={linkStyle}>Huck outcomes</a><a href="#paper" style={linkStyle}>Research direction</a><a href="#methods" style={linkStyle}>Definitions and checks</a>
       </div>
     </Stack>
@@ -89,7 +95,35 @@ export default function OLineRegainHucking() {
         <Text><strong>Second</strong><br/>Its first possession after losing the disc and getting it back.</Text>
         <Text><strong>Third or later</strong><br/>Its possessions after further losses and recoveries within that point.</Text>
       </div>
-      <Text size="small" tone="secondary" style={{marginTop:16}}>All physical throws are retained. Possessions containing a recorded timeout are excluded without changing their original numbers. Huck comparisons omit starts less than 40 yards from the attacking goal line; scoring and throw counts retain them.</Text>
+      <Text size="small" tone="secondary" style={{marginTop:16}}><strong>The saved league charts are preliminary.</strong> They retain their earlier timeout filters and still include some replacement players. The new comparison below applies the centering-pass and original-line rules only to the reviewed possessions.</Text>
+    </section>
+
+    <section id="centering-counts" style={sectionStyle} data-review-count-source="reviewed_centering_counts.json">
+      <Stack gap={18}>
+        <H2>Throw counts before and after the centering-pass adjustment</H2>
+        <Text><strong>Both charts contain exactly the same possessions.</strong> The first counts every throw. For the second, subtract one from a possession only if it has a confirmed centering pass, leave every other possession unchanged, and recalculate the average. No possession is removed because it has a centering pass.</Text>
+        <Text size="small"><strong>Starting location stays at the beginning of the possession.</strong> Removing a centering pass changes the throw count, not the location used to compare starts. The current records use the first throwing location, which may differ from the exact place the pull was caught or the disc was picked up.</Text>
+        <Text><strong>Blue:</strong> possessions ending in a goal. <strong>Gray:</strong> possessions ending in a turnover. Each bar shows the average number of throws in that group, not a scoring percentage or a count of goals or turnovers.</Text>
+        {(["physical","adjusted"] as const).map(view=>{
+          const adjusted=view==="adjusted";
+          return <Stack key={view} gap={10}>
+            <H2>{adjusted?"2. Same possessions, centering passes subtracted":"1. All throws, centering passes included"}</H2>
+            <LabeledBarChart categories={centeringStages.map((stage:number)=>`${names[stage-1]} possession`)}
+              series={[{name:"Ends in a goal",tone:"info",data:centering.groups.goal.map((g:any)=>Number((adjusted?g.attackingMean:g.physicalMean).toFixed(1)))},{name:"Ends in a turnover",tone:"neutral",data:centering.groups.turnover.map((g:any)=>Number((adjusted?g.attackingMean:g.physicalMean).toFixed(1)))}]}
+              height={255} showValues beginAtZero yMax={centeringAxisMax}
+              yLabel="Mean throws per possession"
+              xLabel="Possession within the point"/>
+            <Text size="small" tone="secondary">Reviewed possessions — {centeringSampleText}.</Text>
+          </Stack>;
+        })}
+        <Text size="small">Each color uses exactly the same possessions in both charts. Only confirmed centering-pass throws are subtracted in the bottom chart. Second-possession bars stay the same because those possessions have no opening centering pass.</Text>
+        <Text size="small" tone="secondary">Source: saved human review labels and preserved UFA event records · 2026 games · counted November 12, 2026. Across goals and turnovers, the sample contains {centering.scope.first} opening and {centering.scope.second} second possessions. These examples were selected for film review and are not matched by starting location. The bars describe this reviewed sample, not a league estimate or a proven first-to-second change.</Text>
+        <details><summary>Which reviews are included?</summary><Stack gap={10} style={{marginTop:12}}>
+          <Text>Of {centering.scope.reviewed} saved reviews, {centering.scope.included} completed possessions qualify. Excluded examples remain in the review archive. {centering.scope.thirdOrLater===0?"No qualifying third possession is available in this small sample.":"Third and later possessions are grouped together."}</Text>
+          <ul style={{margin:0,paddingLeft:22,lineHeight:1.6}}>{centering.primaryExclusions.map((e:any)=><li key={e.reason}>{e.reason}: {e.n}</li>)}</ul>
+          <Text>A centering-pass turnover still counts as a turnover, even if it leaves zero attacking throws. Scoring outcomes are not changed by subtracting a centering pass. Unreviewed or unresolved openings are not automatically shortened.</Text>
+        </Stack></details>
+      </Stack>
     </section>
 
     <section id="league" style={sectionStyle}>
@@ -306,6 +340,11 @@ def main():
         team['metrics']['break_after_turnover']=next(x for x in result['follow_up']['break_teams'] if x['team']==team['team'])
         team['exact_metrics']=next(x for x in result['possession_filters']['teams'] if x['team']==team['team'])['metrics']
     result['audit'] = json.loads((ROOT/'cohort_audit.json').read_text())
+    centering_path = ROOT / 'reviewed_centering_counts.json'
+    result['reviewed_centering_counts'] = json.loads(centering_path.read_text())
+    assert [g['stage'] for g in result['reviewed_centering_counts']['groups']['goal']] == [g['stage'] for g in result['reviewed_centering_counts']['groups']['turnover']], 'Align outcome groups before drawing the paired bars; missing outcomes are not zero.'
+    for source in result['reviewed_centering_counts']['inputs'].values():
+        assert hashlib.sha256((ROOT.parents[1] / source['path']).read_bytes()).hexdigest() == source['sha256'], 'Re-run reviewed_centering_counts.py after changing its inputs.'
     labels = {'all_possessions_including_timeouts':'Keep timeout possessions',
       'exclude_whole_timeout_or_injury_points':'Remove whole points with timeouts/injuries',
       'exclude_four_score_discrepancy_games':'Remove four score-discrepancy games',
