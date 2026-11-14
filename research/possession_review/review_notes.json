@@ -1559,49 +1559,11 @@
     }
   },
   "activeReviewBatch": {
-    "id": "new-games-review-20261112",
-    "title": "New games · 12 clips",
-    "source": "research/possession_review/next_review_batch_2026-11-12.json",
-    "sourceSha256": "95d2ae40db4e3ef4041ea7071aba18fcfdcb03fd8af60210d10368b4aae511a0",
-    "status": "reviewed",
-    "counts": {
-      "clips": 12,
-      "games": 4,
-      "teams": 8,
-      "opening": 8,
-      "later": 4,
-      "watchWindowSeconds": 360
-    },
-    "classificationStatus": "All twelve human reviews archived; Austin immediate attack confirmed in chat. These are fresh-game definition checks, not league prevalence or an automatic-classifier accuracy estimate. Any definition change based on them makes them development cases for that revised rule.",
-    "interface": "The twelve completed new-game reviews remain selected by default. Updated answer wording preserves saved decisions, notes, dictation and previous review sets.",
-    "verification": [
-      "All four UFA.tv recordings opened through the normal signed-in player.",
-      "Windows narrowed with score/clock spot checks; source timing limitations remain explicit.",
-      "All 12 first-pass coordinate tuples matched preserved raw records and raw source hashes.",
-      "New-set navigation and the last sequence were checked in Chrome; Save is disabled before answers.",
-      "All 40 review objects were identical before and after the page update, after applying the two explicit user confirmations.",
-      "Minnesota setup and Seattle immediate attack persisted through reload and queue switching.",
-      "Progress bars show 18 opening setup labels, 12 immediate-attack opening labels and 10 immediate-attack later labels. These are saved labels, not validated league estimates.",
-      "Component checks passed for new-batch saving, separate provenance, dictation, navigation, reload, exports and restoring archived answers. No microphone used.",
-      "Completed set archived on 2026-11-12: all 52 browser review objects preserved through the wording update; Austin immediate attack explicitly confirmed. No league outcomes recalculated."
-    ],
-    "leagueMetricsRecalculated": false,
-    "reviewed": 12,
-    "totalArchivedDecisions": 52,
-    "completionSource": {
-      "reviewedOn": "2026-11-12",
-      "reviewed": 12,
-      "source": "research/possession_review/annotations/2026-11-12-new-games-completed-browser-export.json",
-      "sourceSha256": "53b5c58e5ab2079e11e4f55487ab694ed068ed302995cd4f8f43e6ec720812ab",
-      "decisionCounts": {
-        "setup1": 5,
-        "attack1": 7
-      },
-      "clarifications": [
-        "R100"
-      ],
-      "definitionChanged": false
-    }
+    "id": "opening-pattern-review-100-20261113-v1",
+    "path": "research/possession_review/pattern_review_batch_100_2026-11-13.json",
+    "size": 100,
+    "status": "Ready for user film review",
+    "priorCompletedBatch": "opening-classifier-pilot-20261113-v2"
   },
   "reviewChoiceWording2026_11_12": {
     "request": "Replace throw-number choices with Immediate attack, Centering pass and Cannot tell, and make the pull-start choices explicit. Keep the rest the same.",
@@ -1682,5 +1644,211 @@
       "membershipChanged": false,
       "rawCountsPreserved": true
     }
+  },
+  "originalLineScoring2026_11_13": {
+    "status": "Complete for league and team possession-scoring views; other league metrics keep their earlier filters.",
+    "source": "research/oline_possessions/original_line_scoring.json",
+    "sourceSha256": "b3ce7f2ab43d756453cbf0ddb180c876d59920dbf52cff86dad70c80e3a452e3",
+    "rule": "Stop at the first recorded personnel change, incomplete lineup update, or named passer/catcher outside the opening seven. Keep completed possessions before that event; never resume or renumber the sequence.",
+    "timeoutHandling": "The earlier exclusion of possessions containing timeout events 3 or 5 remains in the main comparison. A prior timeout alone is not exclusion: later possessions count only if records still support the same seven. This is tested separately from timeout caller.",
+    "scope": {
+      "source_possessions": 7173,
+      "old_resolved": 6799,
+      "resolved": 6458,
+      "games": 131,
+      "teams": 22,
+      "removed_from_old": 341,
+      "removed_by_stage": [
+        {
+          "stage": 1,
+          "n": 60,
+          "goals": 30,
+          "line_change_n": 48,
+          "reasons": {
+            "line_changed": 48,
+            "player_not_in_opening_line": 6,
+            "opening_line_unknown": 6
+          }
+        },
+        {
+          "stage": 2,
+          "n": 189,
+          "goals": 103,
+          "line_change_n": 187,
+          "reasons": {
+            "line_changed": 186,
+            "player_not_in_opening_line": 3
+          }
+        },
+        {
+          "stage": 3,
+          "n": 92,
+          "goals": 54,
+          "line_change_n": 91,
+          "reasons": {
+            "line_changed": 90,
+            "player_not_in_opening_line": 2
+          }
+        }
+      ],
+      "period_end": 201,
+      "model_n": 6450,
+      "model_missing_context": 8,
+      "unknown_actor_possessions_retained": 12
+    },
+    "observedRates": [
+      {
+        "stage": 1,
+        "goals": 2731,
+        "possessions": 5475,
+        "rate": 0.49881278538812784
+      },
+      {
+        "stage": 2,
+        "goals": 478,
+        "possessions": 843,
+        "rate": 0.5670225385527876
+      },
+      {
+        "stage": 3,
+        "goals": 72,
+        "possessions": 140,
+        "rate": 0.5142857142857142
+      }
+    ],
+    "validation": {
+      "passed": true,
+      "everyIncludedPossessionCheckedAgainstRawLineups": true,
+      "oldCountsMinusExclusionsReconcile": true,
+      "exactTeamGroupsChecked": 66,
+      "originalPossessionNumbersPreserved": true,
+      "reviewedReplacementExamplesExcluded": true,
+      "completedOpeningsBeforeReplacementsRetained": true
+    },
+    "verification": {
+      "source": "All included possessions checked against raw lineup and named passer/catcher records; previous counts reconcile with excluded records. Original possession numbering preserved. Reviewed Houston and Carolina replacement examples excluded while completed opening possessions remain.",
+      "export": "League scoring, adjusted scoring and all 22 team scoring tables agree with the audit. Other league metric values, film-reviewed before/after counts, and the other three reports were verified unchanged.",
+      "rendered": "In-app browser checked observed/adjusted scoring, all-22-team exact-third scoring table, personnel exclusion details, field-area counts, and the finished scoring chart. Degenerate bootstrap intervals for all-goal/all-turnover small team samples are omitted and explained.",
+      "screenshot": "/tmp/ufa-original-line-scoring-2026-11-13.png",
+      "notRun": "No separate mobile viewport or light-theme inspection; no theme or layout components changed."
+    },
+    "limit": "Recorded personnel continuity is not independent film verification of every substitution. Unrecorded changes or incorrect source lineups can remain undetected."
+  },
+  "openingStartRule2026_11_13": {
+    "source": "User instruction in chat, 2026-11-13",
+    "rule": "Treat exact recorded brick starts as immediate attack. Treat sideline rollers as immediate attack when roller context is identified.",
+    "brickCoordinates": {
+      "x": 0,
+      "y": 40,
+      "numericTolerance": 1e-08
+    },
+    "scope": "Opening possessions with a physical first throw; preserve the existing 5,720-opening inventory.",
+    "classificationInventory": "research/possession_review/opening_start_rule_audit.json",
+    "calculation": "research/possession_review/opening_start_rule_audit.py",
+    "counts": {
+      "starting": 5720,
+      "exactBrickMatches": 404,
+      "filmConfirmedSidelineRollers": 3,
+      "afterBrickAndConfirmedRollers": 5313,
+      "stillUnlabeledAfterExistingReviews": 5283,
+      "ruleFilmConflicts": 1
+    },
+    "rollerAvailability": "No explicit roller flag in the preserved throws export or the captured pull event records. Do not treat all sideline locations as confirmed rollers.",
+    "conflictPolicy": "Preserve saved human decisions and separate the rule label. R074 has a saved centering label and exact brick coordinates; withhold an effective label until reconciled.",
+    "metricsRecalculated": false
+  },
+  "classificationPilot2026_11_13": {
+    "pilot": "research/possession_review/opening_classifier_pilot.json",
+    "batch": "research/possession_review/next_classifier_review_2026-11-13.json",
+    "developmentOpenings": 27,
+    "developmentGames": 10,
+    "centeringCorrect": "21 of 21",
+    "immediateAttacksCorrect": "1 of 6",
+    "interpretation": "The geometry pilot misses most no-centering cases. Do not use it to subtract opening throws across the league.",
+    "nextStep": "Use existing explicit rules and verified labels; keep geometry predictions as review suggestions. Check how unresolved centering labels could change the possession comparisons before expanding film review.",
+    "oldDraftSamplingCorrection": "Draft v1 called a game with only reviewed rollers unseen because it was absent from the geometric training set. V2 excludes all games with prior human opening labels from the new-game subset. Corrected before the new review was presented.",
+    "leagueMetricsRecalculated": false,
+    "completedPilot": {
+      "path": "research/possession_review/completed_classifier_pilot_2026-11-13.json",
+      "overall": {
+        "n": 12,
+        "correct": 10,
+        "centering": 4,
+        "centering_correct": 4,
+        "no_centering": 8,
+        "no_centering_correct": 6,
+        "false_centering": [
+          "R007",
+          "R062"
+        ],
+        "missed_centering": []
+      },
+      "completedNonRestartSubset": {
+        "n": 7,
+        "correct": 5,
+        "centering": 4,
+        "centering_correct": 4,
+        "no_centering": 3,
+        "no_centering_correct": 1,
+        "false_centering": [
+          "R007",
+          "R062"
+        ],
+        "missed_centering": []
+      }
+    },
+    "currentReviewArchive": "research/possession_review/annotations/current_reviewed_decisions.json",
+    "nextAnalysis": "research/oline_possessions/centering_sensitivity_bounds.json"
+  },
+  "currentCenteringDefinition": {
+    "version": "completed-centering-transfer-20261113",
+    "source": "User clarification in the research chat, 2026-11-13",
+    "question": "Is the first pass a centering pass?",
+    "target": "Separate opening possessions with a completed, clear centering/setup transfer from those without one. The type of non-centering throw is not the target.",
+    "labels": {
+      "setup1": "Centering pass",
+      "attack1": "No centering pass",
+      "unclear": "Cannot tell"
+    },
+    "centeringPass": "A completed, clear opening transfer that hands the disc to the player who sets the offense in motion. It need not travel toward the middle. An interception or other incomplete attempt is not a completed centering pass, even if a setup transfer was intended.",
+    "noCenteringPass": "When the pull receiver first looks for a downfield option, finds none and then resets to a handler, that reset is not a centering pass. Other visible first throws without a clear setup transfer are also no centering pass, whether resets, unders or hucks. An intercepted or incomplete opening attempt has no completed centering transfer. This does not establish that the thrower intended to attack rather than set up.",
+    "cannotTell": "The footage or record alignment is insufficient to determine whether a centering pass occurred. Missing evidence is not a negative label.",
+    "timing": "The Houston example describes a downfield search lasting a couple of seconds. This is not a fixed time threshold; recorded event timestamp gaps remain unsuitable for that rule.",
+    "counting": "Subtract exactly one opening throw only for a confirmed, completed centering transfer. Keep every attempted throw, including interceptions and drops, when no such transfer was completed. A one-throw Callahan possession remains one attempt, zero completed passes and a turnover; it must not become a zero-throw possession or be removed. Subsequent possessions receive no deduction. Keep the original starting coordinates.",
+    "restartRules": "The previously adopted brick-coordinate rule and film-confirmed sideline-roller rule remain no-centering cases, with known film/coordinate conflicts preserved. A back-end-line restart is a separate observed context, not an automatic no-centering label from coordinates alone. The Houston user label was based on noncompletion, not a universal rule about back-line starts.",
+    "compatibility": "Keep setup1 and attack1 as existing storage codes. attack1 now displays as No centering pass; it does not imply an immediate, aggressive or downfield throw.",
+    "automaticLabels": "The geometry pilot remains a frozen development diagnostic. This clarification and new film labels do not authorize automatic centering deductions in league metrics.",
+    "previousVersion": "centering-vs-no-centering-20261113",
+    "updatedOn": "2026-11-14T00:11:02Z",
+    "attemptAndOutcome": "Where visible, preserve intended setup separately from completion. The user did not settle the precise intended pass in the Houston Callahan example; do not infer intent from its outcome.",
+    "interpretationLimit": "Completed-centering status depends on the result of the first throw. It is suitable for the user-defined completed-transfer count adjustment, but comparing scoring or huck success between these label groups cannot by itself establish a difference in tactical preference. Report all-attempt results alongside adjusted counts; failed opening throws stay in the denominator.",
+    "versioning": "This supersedes the older failed-setup deduction language for future completed-transfer counts. Preserve the original 52 reviews and frozen pilot. Do not silently apply this new target to earlier classifier evaluation or league statistics.",
+    "backEndlineRuleSource": {
+      "url": "https://watchufa.com/sites/default/files/UFA%20Rule%20Book%202026.pdf",
+      "section": "6.3.1.2",
+      "interpretation": "A pull landing in bounds and rolling out the back is put into play on the back line. This rule does not say whether the next pass is centering."
+    },
+    "boundaryExamples": [
+      {
+        "caseId": "R163",
+        "gameId": "2026-06-13-SD-COL",
+        "decision": "setup1",
+        "source": "User clarification in chat, November 13, 2026",
+        "note": "The receiver was not covered by his own defender. The thrower’s mark obstructed his initial route, requiring a small maneuver, but the user still identified this as a centering pass.",
+        "scope": "One reviewed borderline example; maneuvering or some nearby defensive pressure alone does not disqualify the opening transfer. Do not automatically label all short contested throws as centering."
+      }
+    ]
+  },
+  "pilotChatConfirmations": {
+    "path": "research/possession_review/annotations/classifier-pilot-chat-confirmations.json",
+    "count": 3,
+    "alignmentChecks": 1
+  },
+  "filmReviewWorkflowPreference": {
+    "source": "User instruction in chat, November 13, 2026",
+    "afterSetFinished": "Archive the completed labels and prepare a fresh set of unreviewed possessions in the same reviewer. Do not replace the requested next set with analysis only.",
+    "currentRequestedBatchSize": 100,
+    "selectionPreference": "Emphasize borderline examples where film judgment can distinguish centering from a reset or other non-centering pass. Retain some broader examples.",
+    "display": "Keep model predictions hidden. Preserve notes, dictation, saved labels and earlier review sets."
   }
 }

@@ -1,0 +1,127 @@
+{
+  "id": "opening-classifier-pilot-20261113-v2",
+  "createdOn": "2026-11-13",
+  "status": "All 12 labels archived and evaluated",
+  "displayBatch": {
+    "id": "opening-classifier-pilot-20261113-v2",
+    "title": "Pilot · 12 clips",
+    "caseIds": [
+      "F",
+      "R007",
+      "R014",
+      "R122",
+      "R131",
+      "R105",
+      "R107",
+      "R163",
+      "R062",
+      "R064",
+      "R070",
+      "R072"
+    ],
+    "clips": [
+      {
+        "caseId": "F",
+        "start": 85,
+        "end": 115,
+        "cue": "Quarter 1, point starts with 12:00 remaining. Follow the pull and Austin Taylor's first throw. The intended receiver is not named in the record.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R007",
+        "start": 874,
+        "end": 969,
+        "cue": "Quarter 1, point starts with 5:36 remaining. Watch the pull and first two passes; match Jimmy Zuraw to Mark Turner.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R014",
+        "start": 1574,
+        "end": 1669,
+        "cue": "Continue past the previous point’s Callahan to the next pull, with Atlanta leading 8–5 (Q1, 0:20). Find Jimmy Zuraw’s first pass to Mark Turner. Your point-14 review is saved separately from the Callahan.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R122",
+        "start": 1795,
+        "end": 1890,
+        "cue": "Quarter 1, point starts with 7:41 remaining. Watch the pull and first two passes; match Jacques Nissen to Jeff Wodatch.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R131",
+        "start": 2563,
+        "end": 2658,
+        "cue": "Quarter 1, point starts with 1:47 remaining. Watch the pull and first two passes; match Sean Mott to Theo Shapinsky.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R105",
+        "start": 1003,
+        "end": 1098,
+        "cue": "Quarter 1, point starts with 8:45 remaining. Watch the pull and first two passes; match Mason Zetsch to David Snead.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R107",
+        "start": 1242,
+        "end": 1337,
+        "cue": "Quarter 1, point starts with 7:41 remaining. Watch the pull and first two passes; match Connor Garrison to Nayland Stuart.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R163",
+        "start": 2408,
+        "end": 2503,
+        "cue": "Quarter 1, point starts with 0:37 remaining. Watch the pull and first two passes; match Colin Sunde to Peter Lenz.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R062",
+        "start": 888,
+        "end": 984,
+        "cue": "Quarter 1, point starts with 9:39 remaining. Watch the pull and first two passes; match Mitchell McCarthy to Victor Luo.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R064",
+        "start": 1152,
+        "end": 1246,
+        "cue": "Quarter 1, point starts with 7:29 remaining. Watch the pull and first two passes; match Gabe Vordick to Ian McCosky.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R070",
+        "start": 1666,
+        "end": 1760,
+        "cue": "Quarter 1, point starts with 2:30 remaining. Watch the pull and first two passes; match Carter Hawkins to Jonathan Mast.",
+        "timingStatus": "estimated"
+      },
+      {
+        "caseId": "R072",
+        "start": 1914,
+        "end": 2010,
+        "cue": "Quarter 1, point starts with 0:25 remaining. Watch the pull and first two passes; match Carter Hawkins to Jake Felton.",
+        "timingStatus": "estimated"
+      }
+    ]
+  },
+  "predictionsShown": false,
+  "frozenPilot": {
+    "path": "research/possession_review/opening_classifier_pilot.json",
+    "sha256": "b6fc95f9db98c179181338ee601d5ea98333e180e242f825d9ea056b32bfe9b8"
+  },
+  "chatConfirmedReviews": 3,
+  "alignmentChecks": 1,
+  "unresolvedAlignmentChecks": 0,
+  "sampledPilotLabels": 12,
+  "definition": "research/possession_review/centering_definition.json",
+  "preservation": {
+    "archivedReviews": 52,
+    "originalArchivedReviewObjectsUnchanged": true,
+    "pastSuggestionsUnchanged": true,
+    "reviewStorageKeyUnchanged": true,
+    "storedDecisionCodesAndDictationUnchanged": true
+  },
+  "timing": "Existing estimated windows unless separately checked in the timing audit."
+}

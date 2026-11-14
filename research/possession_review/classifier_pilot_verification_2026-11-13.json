@@ -1,0 +1,41 @@
+{
+  "reviewedOn": "2026-11-13",
+  "pilotId": "opening-classifier-pilot-20261113-v2",
+  "checks": {
+    "heldOutGamesDisjoint": true,
+    "misclassificationCountsRecomputed": true,
+    "predictionsAbsentFromNewReviewForm": true,
+    "all52ArchivedReviewsPreserved": true,
+    "simulatedSaveDictationExportChecksPassed": true,
+    "threeUnrelatedReportOutputsUnchanged": true,
+    "browserNavigationChecked": true,
+    "renderedBatchAndProgressChecked": true
+  },
+  "preview": "http://127.0.0.1:8874/UFA-possession-review.ufa.html",
+  "screenshot": "/tmp/ufa-classifier-pilot-review-2026-11-13.png",
+  "filmVerification": "New playback windows remain estimates. In-app browser was not signed in to UFA.tv; recording page identity verified, individual new clips not replay-verified.",
+  "newHumanLabelsWritten": 0,
+  "automaticCenteringLabelsAppliedToLeagueMetrics": 0,
+  "pilotSha256": "b6fc95f9db98c179181338ee601d5ea98333e180e242f825d9ea056b32bfe9b8",
+  "completionRuleUpdate": {
+    "verifiedOn": "2026-11-14T00:13:24+00:00",
+    "definition": "completed-centering-transfer-20261113",
+    "savedChatClassifications": 3,
+    "sampledPilotClassifications": 2,
+    "adjacentPlayClassifications": 1,
+    "unresolvedAlignmentChecks": 0,
+    "callahanSourceFields": {
+      "source_event_type": 23,
+      "is_callahan": true,
+      "turnover": 1
+    },
+    "sourceAndArchivePreserved": true,
+    "frozenPilotPreserved": true,
+    "otherReportOutputsUnchanged": true,
+    "saveDictationExportChecksPassed": true,
+    "browserPoint14CenteringSelectionVerified": true,
+    "screenshot": "/tmp/ufa-point-14-centering-confirmed.png",
+    "independentFilmReplayPerformed": false,
+    "leagueMetricsRecalculated": false
+  }
+}

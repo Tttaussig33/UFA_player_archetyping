@@ -1,0 +1,19 @@
+{
+  "reviewedOn": "2026-11-13",
+  "timezone": "America/New_York",
+  "independentSqlGroupsChecked": 389,
+  "exhaustiveAssignmentsChecked": 16,
+  "sourceSnapshotsAndFrozenPilotPreserved": true,
+  "publishedLeagueChartsUnchanged": true,
+  "sourceDataUsed": "Preserved export and UFA event captures",
+  "browserChecks": {
+    "sanDiegoNoteSaved": true,
+    "sanDiegoCenteringLabelPreserved": true,
+    "completedBatchCounter": "12 of 12",
+    "reviewArchiveTotal": 65,
+    "resultsTableRendered": true,
+    "existingProgressBarsRendered": true,
+    "screenshot": "/tmp/ufa-completed-pilot-results-2026-11-13.png",
+    "realMicrophoneTested": false
+  }
+}

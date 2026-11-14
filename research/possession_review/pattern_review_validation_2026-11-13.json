@@ -1,0 +1,69 @@
+{
+  "batchId": "opening-pattern-review-100-20261113-v1",
+  "date": "2026-11-13",
+  "size": 100,
+  "reviewedCasesExcluded": 65,
+  "counts": {
+    "teams": 22,
+    "games": 12,
+    "byTeam": {
+      "Atlanta Hustle": 5,
+      "Austin Sol": 4,
+      "Boston Glory": 4,
+      "Carolina Flyers": 4,
+      "Chicago Union": 5,
+      "Colorado Apex": 4,
+      "DC Breeze": 5,
+      "Houston Havoc": 4,
+      "Indianapolis AlleyCats": 5,
+      "Madison Radicals": 4,
+      "Minnesota Wind Chill": 4,
+      "Montreal Royal": 5,
+      "New York Empire": 4,
+      "Oakland Spiders": 4,
+      "Oregon Steel": 5,
+      "Philadelphia Phoenix": 5,
+      "Pittsburgh Thunderbirds": 5,
+      "Salt Lake Shred": 5,
+      "San Diego Growlers": 5,
+      "Seattle Cascades": 5,
+      "Toronto Rush": 4,
+      "Vegas Bighorns": 5
+    },
+    "byQuarter": {
+      "1": 37,
+      "2": 63
+    },
+    "bySelectionGroup": {
+      "borderline_priority": 80,
+      "broader_example": 20
+    },
+    "newLibraryCases": 63
+  },
+  "allSourceInputHashesUnchanged": true,
+  "originalCaseCoresPreserved": 173,
+  "assistedReviewMetadataUnchanged": true,
+  "originalModelAndReviewArchiveUnchanged": true,
+  "otherThreeReportsUnchanged": true,
+  "passCoordinateChecksAgainstRawEvents": 787,
+  "predictionsAbsentFromVisibleBatch": true,
+  "componentTests": "Passed: new 100 selection, previous pilot, save, export, resume, navigation, required answers and simulated dictation",
+  "browserChecks": {
+    "newSet": "100 cases, 0 reviewed; first, Q2 and last examples displayed correctly",
+    "previousSet": "Completed 12-clip pilot accessible, San Diego note and centering label retained",
+    "savedReviewExport": "65 records, byte-equivalent review array before and after refresh",
+    "requiredAnswers": "Save button disabled before answering",
+    "screenshot": "/tmp/ufa-100-film-reviews-2026-11-13.png",
+    "realLabelsChangedByVerification": false,
+    "newVideoWindowsIndividuallyReplayed": false
+  },
+  "limitations": [
+    "Video windows are estimated from preserved per-game anchors, not individually replay-verified.",
+    "Targeted examples refine definitions; this is not an unbiased accuracy or prevalence sample."
+  ],
+  "artifactSha256": {
+    "research/previews/UFA-possession-review.canvas.tsx": "d992abcd5b51903dffc37dd353b4194f1951322a113219c827290e4fc99e833c",
+    "research/previews/html/UFA-possession-review.ufa.html": "16c1649d969eb709650ab0b9c434c81fe937e9d45533346f2bce2b59b6f6a4d3"
+  },
+  "status": "complete"
+}

@@ -1,0 +1,757 @@
+{
+  "id": "completed-opening-pilot-20261113",
+  "updatedOn": "2026-11-13",
+  "status": "All 12 sampled openings classified; not ready for automatic centering deductions.",
+  "definitionVersion": "completed-centering-transfer-20261113",
+  "overall": {
+    "n": 12,
+    "correct": 10,
+    "centering": 4,
+    "centering_correct": 4,
+    "no_centering": 8,
+    "no_centering_correct": 6,
+    "false_centering": [
+      "R007",
+      "R062"
+    ],
+    "missed_centering": []
+  },
+  "bySelectionGroup": {
+    "new_game_check": {
+      "n": 4,
+      "correct": 3,
+      "centering": 2,
+      "centering_correct": 2,
+      "no_centering": 2,
+      "no_centering_correct": 1,
+      "false_centering": [
+        "R062"
+      ],
+      "missed_centering": []
+    },
+    "random_available_opening": {
+      "n": 4,
+      "correct": 4,
+      "centering": 1,
+      "centering_correct": 1,
+      "no_centering": 3,
+      "no_centering_correct": 3,
+      "false_centering": [],
+      "missed_centering": []
+    },
+    "uncertain_geometry": {
+      "n": 4,
+      "correct": 3,
+      "centering": 1,
+      "centering_correct": 1,
+      "no_centering": 3,
+      "no_centering_correct": 2,
+      "false_centering": [
+        "R007"
+      ],
+      "missed_centering": []
+    }
+  },
+  "completedNonRestartSubset": {
+    "n": 7,
+    "correct": 5,
+    "centering": 4,
+    "centering_correct": 4,
+    "no_centering": 3,
+    "no_centering_correct": 1,
+    "false_centering": [
+      "R007",
+      "R062"
+    ],
+    "missed_centering": []
+  },
+  "newGameCount": 1,
+  "borderlineNoteCaseId": "R163",
+  "limitations": [
+    "Only 12 selected openings from five games; the four new-game openings all come from one game.",
+    "The batch mixes random available clips, selected near-threshold cases, and a new-game check. It does not estimate league-wide accuracy.",
+    "Two first attempts were incomplete and three were film-confirmed brick/sideline starts. Removing those easy exclusions leaves seven completed, non-restart openings.",
+    "The target was clarified during review to require a completed centering transfer. Predictions were not refit; this is a diagnostic under the clarified definition, not validation of an unchanged protocol.",
+    "The Houston point-13 Callahan was an adjacent play; the intended point 14 was separately confirmed. Only point 14 is scored in this batch."
+  ],
+  "nextStep": "Use existing explicit rules and verified labels; keep geometry predictions as review suggestions. Check how unresolved centering labels could change the possession comparisons before expanding film review.",
+  "rows": [
+    {
+      "caseId": "F",
+      "possessionId": "2026-04-24-ATL-HTX|away|0|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Atlanta Hustle",
+      "selectionGroup": "random_available_opening",
+      "frozenPrediction": "attack1",
+      "review": {
+        "caseId": "F",
+        "possessionId": "2026-04-24-ATL-HTX|away|0|1",
+        "context": "grounded_pull",
+        "gameId": "2026-04-24-ATL-HTX",
+        "reviewedOn": "2026-11-13T23:52:11.979Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "clip": {
+          "start": 85,
+          "end": 115,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "attack1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Austin Taylor",
+        "to": "Unknown target",
+        "xy": [
+          0.34,
+          32.38,
+          -20.12,
+          106.43
+        ],
+        "outcome": "Throwaway",
+        "huck": true,
+        "sourceIndex": 1,
+        "before": []
+      },
+      "sourceCompleted": false,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R007",
+      "possessionId": "2026-04-24-ATL-HTX|home|41|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Houston Havoc",
+      "selectionGroup": "uncertain_geometry",
+      "frozenPrediction": "setup1",
+      "review": {
+        "caseId": "R007",
+        "possessionId": "2026-04-24-ATL-HTX|home|41|1",
+        "gameId": "2026-04-24-ATL-HTX",
+        "context": "caught_pull",
+        "decision": "attack1",
+        "hasOpeningCenteringPass": false,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "reviewedOn": "2026-11-13T23:57:08Z",
+        "source": "Confirmed in chat",
+        "reviewMode": "manual_chat",
+        "reviewInterface": "chat",
+        "currentReviewExposesSuggestion": false,
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "reviewRound": "opening-classifier-pilot-20261113-v2",
+        "clip": {
+          "start": 874,
+          "end": 969,
+          "timingStatus": "estimated"
+        },
+        "note": "the person who is catching the pull is looking downfield, doesn't see anything for about a couple seconds, and then passes it to his other handler. Because of the fact this isn't a clear centering pass, it is not in the centering pass bucket at all.",
+        "recordMatch": "User identified the second pilot example: Houston's opening possession on point eight. The preserved first pass is Jimmy Zuraw to Mark Turner."
+      },
+      "scorable": true,
+      "correct": false,
+      "firstThrow": {
+        "n": 1,
+        "from": "Jimmy Zuraw",
+        "to": "Mark Turner",
+        "xy": [
+          0.59,
+          19.72,
+          12.31,
+          14.36
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 42,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/classifier-pilot-chat-confirmations.json",
+        "sha256": "1b0780ea971fdb27905684e81378bce33d60211d44c2246d66ea72d847d02682"
+      }
+    },
+    {
+      "caseId": "R014",
+      "possessionId": "2026-04-24-ATL-HTX|home|86|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "team": "Houston Havoc",
+      "selectionGroup": "random_available_opening",
+      "frozenPrediction": "setup1",
+      "review": {
+        "caseId": "R014",
+        "possessionId": "2026-04-24-ATL-HTX|home|86|1",
+        "gameId": "2026-04-24-ATL-HTX",
+        "context": "unclear",
+        "contextNote": "The user confirmed the first pass is centering, but did not explicitly distinguish a caught pull from a grounded pickup for this point.",
+        "decision": "setup1",
+        "hasOpeningCenteringPass": true,
+        "completedCenteringPass": true,
+        "definitionVersion": "completed-centering-transfer-20261113",
+        "reviewedOn": "2026-11-14T00:11:49Z",
+        "source": "Confirmed in chat after distinguishing the preceding Callahan",
+        "reviewMode": "manual_chat",
+        "reviewInterface": "chat",
+        "currentReviewExposesSuggestion": false,
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "reviewRound": "opening-classifier-pilot-20261113-v2",
+        "inSampledBatch": true,
+        "clip": {
+          "start": 1574,
+          "end": 1669,
+          "timingStatus": "estimated; watch the next point after the Callahan"
+        },
+        "note": "Standard centering pass on the next point after the Callahan. Jimmy Zuraw to Mark Turner; the user confirmed this is the intended point-14 opening.",
+        "userQuote": "I just read your thing and it said that the throw that I was looking at before was 0.13. And I looked at the next point where it is a standard centering pass.",
+        "recordMatch": "Houston point 14, Q1 0:20, Atlanta leads 8–5. The preserved first attempt, home event 87, is Jimmy Zuraw to Mark Turner and is complete.",
+        "counting": {
+          "physicalThrowAttempts": 5,
+          "completedPasses": 5,
+          "centeringDeduction": 1,
+          "adjustedThrowAttempts": 4,
+          "turnover": false
+        },
+        "alignmentStatus": "user_rechecked"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Jimmy Zuraw",
+        "to": "Mark Turner",
+        "xy": [
+          14.12,
+          11.63,
+          -0.69,
+          16.81
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 87,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/classifier-pilot-chat-confirmations.json",
+        "sha256": "1b0780ea971fdb27905684e81378bce33d60211d44c2246d66ea72d847d02682"
+      }
+    },
+    {
+      "caseId": "R122",
+      "possessionId": "2026-06-05-CAR-DC|home|28|1",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "DC Breeze",
+      "selectionGroup": "random_available_opening",
+      "frozenPrediction": "attack1",
+      "review": {
+        "caseId": "R122",
+        "possessionId": "2026-06-05-CAR-DC|home|28|1",
+        "context": "sideline",
+        "gameId": "2026-06-05-CAR-DC",
+        "reviewedOn": "2026-11-14T00:19:07.265Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": false,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 1795,
+          "end": 1890,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "attack1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Jacques Nissen",
+        "to": "Jeff Wodatch",
+        "xy": [
+          26.66,
+          32.81,
+          26.66,
+          69.26
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 29,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": true,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R131",
+      "possessionId": "2026-06-05-CAR-DC|home|76|1",
+      "gameId": "2026-06-05-CAR-DC",
+      "team": "DC Breeze",
+      "selectionGroup": "random_available_opening",
+      "frozenPrediction": "attack1",
+      "review": {
+        "caseId": "R131",
+        "possessionId": "2026-06-05-CAR-DC|home|76|1",
+        "context": "brick",
+        "gameId": "2026-06-05-CAR-DC",
+        "reviewedOn": "2026-11-14T00:23:17.280Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": false,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 2563,
+          "end": 2658,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "attack1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Sean Mott",
+        "to": "Theo Shapinsky",
+        "xy": [
+          -0.52,
+          39.88,
+          19.8,
+          39.95
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 77,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": true,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R105",
+      "possessionId": "2026-06-06-ATX-LV|home|23|1",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Vegas Bighorns",
+      "selectionGroup": "uncertain_geometry",
+      "frozenPrediction": "attack1",
+      "review": {
+        "caseId": "R105",
+        "possessionId": "2026-06-06-ATX-LV|home|23|1",
+        "context": "grounded_pull",
+        "gameId": "2026-06-06-ATX-LV",
+        "reviewedOn": "2026-11-14T00:24:26.878Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": false,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 1003,
+          "end": 1098,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "attack1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Mason Zetsch",
+        "to": "David Snead",
+        "xy": [
+          1.5,
+          36.48,
+          -8.61,
+          55.65
+        ],
+        "outcome": "Drop",
+        "huck": false,
+        "sourceIndex": 24,
+        "before": []
+      },
+      "sourceCompleted": false,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R107",
+      "possessionId": "2026-06-06-ATX-LV|home|31|1",
+      "gameId": "2026-06-06-ATX-LV",
+      "team": "Vegas Bighorns",
+      "selectionGroup": "uncertain_geometry",
+      "frozenPrediction": "attack1",
+      "review": {
+        "caseId": "R107",
+        "possessionId": "2026-06-06-ATX-LV|home|31|1",
+        "context": "brick",
+        "gameId": "2026-06-06-ATX-LV",
+        "reviewedOn": "2026-11-14T00:25:40.645Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": false,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 1242,
+          "end": 1337,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "attack1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Connor Garrison",
+        "to": "Nayland Stuart",
+        "xy": [
+          -1.44,
+          40.59,
+          -14.79,
+          41.2
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 32,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": true,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R163",
+      "possessionId": "2026-06-13-SD-COL|away|67|1",
+      "gameId": "2026-06-13-SD-COL",
+      "team": "San Diego Growlers",
+      "selectionGroup": "uncertain_geometry",
+      "frozenPrediction": "setup1",
+      "review": {
+        "caseId": "R163",
+        "possessionId": "2026-06-13-SD-COL|away|67|1",
+        "context": "caught_pull",
+        "gameId": "2026-06-13-SD-COL",
+        "reviewedOn": "2026-11-14T00:36:55.455Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": true,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 2408,
+          "end": 2503,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "setup1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2",
+        "note": "Borderline centering pass: the receiver was not closely covered by his own defender. The thrower’s mark obstructed his initial route, so he had to maneuver before receiving the disc. I still classify this as a centering pass."
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Colin Sunde",
+        "to": "Peter Lenz",
+        "xy": [
+          -1.98,
+          19.97,
+          12.27,
+          27.75
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 68,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R062",
+      "possessionId": "2026-06-14-IND-MAD|home|17|1",
+      "gameId": "2026-06-14-IND-MAD",
+      "team": "Madison Radicals",
+      "selectionGroup": "new_game_check",
+      "frozenPrediction": "setup1",
+      "review": {
+        "caseId": "R062",
+        "possessionId": "2026-06-14-IND-MAD|home|17|1",
+        "context": "grounded_pull",
+        "gameId": "2026-06-14-IND-MAD",
+        "reviewedOn": "2026-11-14T00:30:57.921Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": false,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 888,
+          "end": 984,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "attack1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": false,
+      "firstThrow": {
+        "n": 1,
+        "from": "Mitchell McCarthy",
+        "to": "Victor Luo",
+        "xy": [
+          25.78,
+          59.31,
+          16.77,
+          43.5
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 18,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R064",
+      "possessionId": "2026-06-14-IND-MAD|home|33|1",
+      "gameId": "2026-06-14-IND-MAD",
+      "team": "Madison Radicals",
+      "selectionGroup": "new_game_check",
+      "frozenPrediction": "attack1",
+      "review": {
+        "caseId": "R064",
+        "possessionId": "2026-06-14-IND-MAD|home|33|1",
+        "context": "grounded_pull",
+        "gameId": "2026-06-14-IND-MAD",
+        "reviewedOn": "2026-11-14T00:31:54.650Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": false,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 1152,
+          "end": 1246,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "attack1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Gabe Vordick",
+        "to": "Ian McCosky",
+        "xy": [
+          -9.28,
+          25.84,
+          -23.81,
+          31.29
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 34,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R070",
+      "possessionId": "2026-06-14-IND-MAD|away|66|1",
+      "gameId": "2026-06-14-IND-MAD",
+      "team": "Indianapolis AlleyCats",
+      "selectionGroup": "new_game_check",
+      "frozenPrediction": "setup1",
+      "review": {
+        "caseId": "R070",
+        "possessionId": "2026-06-14-IND-MAD|away|66|1",
+        "context": "grounded_pull",
+        "gameId": "2026-06-14-IND-MAD",
+        "reviewedOn": "2026-11-14T00:32:37.683Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": true,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 1666,
+          "end": 1760,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "setup1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Carter Hawkins",
+        "to": "Jonathan Mast",
+        "xy": [
+          5.38,
+          7.29,
+          9.27,
+          21.81
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 67,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    },
+    {
+      "caseId": "R072",
+      "possessionId": "2026-06-14-IND-MAD|away|78|1",
+      "gameId": "2026-06-14-IND-MAD",
+      "team": "Indianapolis AlleyCats",
+      "selectionGroup": "new_game_check",
+      "frozenPrediction": "setup1",
+      "review": {
+        "caseId": "R072",
+        "possessionId": "2026-06-14-IND-MAD|away|78|1",
+        "context": "grounded_pull",
+        "gameId": "2026-06-14-IND-MAD",
+        "reviewedOn": "2026-11-14T00:33:43.561Z",
+        "source": "Local film review",
+        "reviewMode": "manual",
+        "reviewInterface": "two-question-review",
+        "currentReviewExposesSuggestion": false,
+        "hasOpeningCenteringPass": true,
+        "definitionVersion": "centering-vs-no-centering-20261113",
+        "clip": {
+          "start": 1914,
+          "end": 2010,
+          "timingStatus": "estimated"
+        },
+        "reviewBatch": "opening-classifier-pilot-20261113-v2",
+        "decision": "setup1",
+        "reviewRound": "opening-classifier-pilot-20261113-v2"
+      },
+      "scorable": true,
+      "correct": true,
+      "firstThrow": {
+        "n": 1,
+        "from": "Carter Hawkins",
+        "to": "Jake Felton",
+        "xy": [
+          21.41,
+          17.86,
+          7.09,
+          16.22
+        ],
+        "outcome": "Complete",
+        "huck": false,
+        "sourceIndex": 79,
+        "before": []
+      },
+      "sourceCompleted": true,
+      "contextRuleApplies": false,
+      "source": {
+        "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+        "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+      }
+    }
+  ],
+  "inputs": {
+    "frozen_pilot": {
+      "path": "research/possession_review/opening_classifier_pilot.json",
+      "sha256": "b6fc95f9db98c179181338ee601d5ea98333e180e242f825d9ea056b32bfe9b8"
+    },
+    "original_archive": {
+      "path": "research/possession_review/annotations/reviewed_decisions.json",
+      "sha256": "3477ad130be67f24a08b1cdc31a526e20c05e23f07417e145b616937001623ef"
+    },
+    "browser_export": {
+      "path": "research/possession_review/annotations/2026-11-13-classifier-pilot-browser-export.json",
+      "sha256": "d7bfae281a6aecdcc2eb24259bf7f47afe569e096d36a5863bd1ff13e8946a5c"
+    },
+    "chat_confirmations": {
+      "path": "research/possession_review/annotations/classifier-pilot-chat-confirmations.json",
+      "sha256": "1b0780ea971fdb27905684e81378bce33d60211d44c2246d66ea72d847d02682"
+    },
+    "definition": {
+      "path": "research/possession_review/centering_definition.json",
+      "sha256": "1c7af10dc3ab2172306b91c8c57f580c02d11d87dcdbb2317d7a193f564d4866"
+    },
+    "inventory": {
+      "path": "research/possession_review/opening_pass_feasibility.json",
+      "sha256": "a920a68f41ec6e0e9bab4886b2c6957eb840f33ffaccdf3972e6e5587a4558cc"
+    },
+    "library": {
+      "path": "research/possession_review/film_library.json",
+      "sha256": "91380557055070d0177e97c1cd82f696cfc0927b598dfb066e12ff96837315ba"
+    }
+  },
+  "validation": {
+    "predictionsUnchanged": true,
+    "original52ReviewsUnchanged": true,
+    "all12IdsMatched": true,
+    "predictionsHiddenDuringReview": true,
+    "noModelRefit": true,
+    "noLeaguePredictedLabels": true
+  }
+}

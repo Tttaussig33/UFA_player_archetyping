@@ -1,0 +1,143 @@
+{
+  "updatedOn": "2026-11-14T00:11:49Z",
+  "pilotId": "opening-classifier-pilot-20261113-v2",
+  "policy": "Explicit user film classifications received in chat. Preserve the original 52-review archive and the predictions frozen before this pilot. Later browser edits may supersede a chat confirmation; older browser choices must not override a newer explicit chat correction. Alignment checks are audit overrides, not user classifications. Preserve browser edits in storage; newer corrected reviews can replace an audit hold. Adjacent-play observations do not count as sampled pilot labels.",
+  "reviews": [
+    {
+      "caseId": "R007",
+      "possessionId": "2026-04-24-ATL-HTX|home|41|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "context": "caught_pull",
+      "decision": "attack1",
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "reviewedOn": "2026-11-13T23:57:08Z",
+      "source": "Confirmed in chat",
+      "reviewMode": "manual_chat",
+      "reviewInterface": "chat",
+      "currentReviewExposesSuggestion": false,
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "clip": {
+        "start": 874,
+        "end": 969,
+        "timingStatus": "estimated"
+      },
+      "note": "the person who is catching the pull is looking downfield, doesn't see anything for about a couple seconds, and then passes it to his other handler. Because of the fact this isn't a clear centering pass, it is not in the centering pass bucket at all.",
+      "recordMatch": "User identified the second pilot example: Houston's opening possession on point eight. The preserved first pass is Jimmy Zuraw to Mark Turner."
+    },
+    {
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-14T00:11:02Z",
+      "reviewInterface": "chat",
+      "currentReviewExposesSuggestion": false,
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "definitionVersion": "completed-centering-transfer-20261113",
+      "caseId": "R013",
+      "possessionId": "2026-04-24-ATL-HTX|home|84|1",
+      "context": "back_endline",
+      "decision": "attack1",
+      "hasOpeningCenteringPass": false,
+      "completedCenteringPass": false,
+      "attemptedCenteringPass": null,
+      "centeringIntent": "Possible intended setup transfer, but exact intended action is unresolved. No completed transfer.",
+      "source": "User film observation in chat; matched to preserved Callahan event",
+      "reviewMode": "manual_chat",
+      "inSampledBatch": false,
+      "observedWhileReviewing": "R014",
+      "clip": {
+        "start": 1574,
+        "end": 1669,
+        "timingStatus": "estimated; includes the preceding point"
+      },
+      "note": "No completed centering pass. The opening throw was intercepted for a Callahan. Keep one throw attempt, zero completions and the Houston turnover. User saw the pull land in bounds and roll out the back of the end zone.",
+      "userQuote": "The reason why it was no centering pass is because it was intercepted by the defense. So the guy was trying to either center it or sag him, but it doesn't matter because the result of the play is a score for the offense. So it's just no centering pass. It's actually no pass, because the person who tapped the disc in threw an interception.",
+      "recordMatch": {
+        "status": "Matched by distinctive event in preserved records; no independent frame verification",
+        "quarter": 1,
+        "point": 13,
+        "pointStartClock": "0:23",
+        "sourceSide": "home",
+        "sourceEventIndex": 85,
+        "sourceEventType": 23,
+        "thrower": "Mark Turner",
+        "throwerId": "mturner",
+        "recordedStart": [
+          -9.41,
+          0.81
+        ],
+        "expectedResult": "Atlanta scores; Houston is broken",
+        "evidence": "The only type-23 event in the Houston event stream is immediately before the intended point-14 opening. Point 13 has one attempt; point 14 has five completed throws ending in a Houston goal."
+      },
+      "counting": {
+        "physicalThrowAttempts": 1,
+        "completedPasses": 0,
+        "centeringDeduction": 0,
+        "adjustedThrowAttempts": 1,
+        "turnover": true,
+        "callahan": true
+      },
+      "trainingUse": "Adjacent-play observation, not a sampled pilot evaluation case. Keep outside frozen pilot scoring."
+    },
+    {
+      "caseId": "R014",
+      "possessionId": "2026-04-24-ATL-HTX|home|86|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "context": "unclear",
+      "contextNote": "The user confirmed the first pass is centering, but did not explicitly distinguish a caught pull from a grounded pickup for this point.",
+      "decision": "setup1",
+      "hasOpeningCenteringPass": true,
+      "completedCenteringPass": true,
+      "definitionVersion": "completed-centering-transfer-20261113",
+      "reviewedOn": "2026-11-14T00:11:49Z",
+      "source": "Confirmed in chat after distinguishing the preceding Callahan",
+      "reviewMode": "manual_chat",
+      "reviewInterface": "chat",
+      "currentReviewExposesSuggestion": false,
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "inSampledBatch": true,
+      "clip": {
+        "start": 1574,
+        "end": 1669,
+        "timingStatus": "estimated; watch the next point after the Callahan"
+      },
+      "note": "Standard centering pass on the next point after the Callahan. Jimmy Zuraw to Mark Turner; the user confirmed this is the intended point-14 opening.",
+      "userQuote": "I just read your thing and it said that the throw that I was looking at before was 0.13. And I looked at the next point where it is a standard centering pass.",
+      "recordMatch": "Houston point 14, Q1 0:20, Atlanta leads 8–5. The preserved first attempt, home event 87, is Jimmy Zuraw to Mark Turner and is complete.",
+      "counting": {
+        "physicalThrowAttempts": 5,
+        "completedPasses": 5,
+        "centeringDeduction": 1,
+        "adjustedThrowAttempts": 4,
+        "turnover": false
+      },
+      "alignmentStatus": "user_rechecked"
+    }
+  ],
+  "alignmentChecks": [
+    {
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-14T00:11:02Z",
+      "reviewInterface": "chat",
+      "currentReviewExposesSuggestion": false,
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "definitionVersion": "completed-centering-transfer-20261113",
+      "caseId": "R014",
+      "possessionId": "2026-04-24-ATL-HTX|home|86|1",
+      "context": "unclear",
+      "decision": "mismatch",
+      "hasOpeningCenteringPass": null,
+      "source": "Clip-to-record alignment audit, based on the user-described Callahan",
+      "reviewMode": "alignment_audit",
+      "alignmentStatus": "resolved",
+      "matchedObservationCaseId": "R013",
+      "note": "The described Callahan belongs to Houston point 13 (Mark Turner), not this point-14 possession. The intended point 14 begins with Jimmy Zuraw to Mark Turner and ends in a Houston goal. Review after the Callahan; no centering label assigned to point 14.",
+      "correctedCue": "Continue past the previous point’s Callahan to the next pull, with Atlanta leading 8–5 (Q1, 0:20). Find Jimmy Zuraw’s first pass to Mark Turner. Your point-14 review is saved separately from the Callahan.",
+      "resolvedOn": "2026-11-14T00:11:49Z",
+      "resolution": "User separately reviewed the next point and confirmed a standard centering pass; apply that newer review. Keep this earlier mismatch audit as provenance only."
+    }
+  ]
+}

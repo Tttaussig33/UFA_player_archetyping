@@ -1,0 +1,1105 @@
+{
+  "schemaVersion": 1,
+  "libraryDate": "2026-11-11",
+  "exportedOn": "2026-11-14T00:48:09.042Z",
+  "reviews": [
+    {
+      "caseId": "F",
+      "possessionId": "2026-04-24-ATL-HTX|away|0|1",
+      "context": "grounded_pull",
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-13T23:52:11.979Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 85,
+        "end": 115,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R002",
+      "possessionId": "2026-04-24-ATL-HTX|home|5|1",
+      "context": "caught_pull",
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-12T21:47:07.460Z",
+      "source": "Local film review with provisional suggestion",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "setup1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening pass is a 22.3-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+      },
+      "clip": {
+        "start": 185,
+        "end": 210,
+        "timingStatus": "agent-spot-checked"
+      },
+      "response": "confirmed",
+      "decision": "setup1",
+      "note": "even though the attack isn't downfield, it is still an attack"
+    },
+    {
+      "caseId": "A",
+      "possessionId": "2026-04-24-ATL-HTX|away|7|1",
+      "decision": "setup1",
+      "context": "caught_pull",
+      "note": "The pull receiver transfers the disc to another thrower, who then looks downfield and begins the attacking sequence. The first exchange can center the disc or go upfield.",
+      "source": "Confirmed in chat",
+      "reviewedOn": "2026-11-11"
+    },
+    {
+      "caseId": "R003",
+      "possessionId": "2026-04-24-ATL-HTX|home|14|1",
+      "context": "caught_pull",
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-12T22:15:46.025Z",
+      "source": "Local film review with provisional suggestion",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "setup1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening pass is a 16.8-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+      },
+      "clip": {
+        "start": 355,
+        "end": 380,
+        "timingStatus": "agent-spot-checked"
+      },
+      "response": "confirmed",
+      "decision": "setup1",
+      "note": "shorter, but normal centering pass"
+    },
+    {
+      "caseId": "C",
+      "possessionId": "2026-04-24-ATL-HTX|away|16|1",
+      "decision": "setup1",
+      "context": "caught_pull",
+      "note": "The pull receiver transfers the disc to another thrower, who then looks downfield and begins the attacking sequence. The first exchange can center the disc or go upfield.",
+      "source": "Confirmed in chat",
+      "reviewedOn": "2026-11-11"
+    },
+    {
+      "caseId": "R005",
+      "possessionId": "2026-04-24-ATL-HTX|home|26|2",
+      "context": "stoppage",
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-12T21:51:21.273Z",
+      "source": "Local film review with provisional suggestion",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "attack1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "This is a later possession after a turnover. A short transfer still counts as attacking under our definition."
+      },
+      "clip": {
+        "start": 692,
+        "end": 787,
+        "timingStatus": "estimated"
+      },
+      "response": "confirmed",
+      "decision": "attack1",
+      "note": "Correct, this play comes after a timeout which is after the turnover"
+    },
+    {
+      "caseId": "R006",
+      "possessionId": "2026-04-24-ATL-HTX|away|37|1",
+      "decision": "attack1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-12T21:56:16.543Z",
+      "source": "Local film review with provisional suggestion",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "setup1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening pass is a 13.3-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+      },
+      "clip": {
+        "start": 778,
+        "end": 873,
+        "timingStatus": "estimated"
+      },
+      "response": "corrected",
+      "context": "grounded_pull",
+      "note": "hear the pull is relatively short and the thrower picks it up and then immediately starts attacking"
+    },
+    {
+      "caseId": "R007",
+      "possessionId": "2026-04-24-ATL-HTX|home|41|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "context": "caught_pull",
+      "decision": "attack1",
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "reviewedOn": "2026-11-13T23:57:08Z",
+      "source": "Confirmed in chat",
+      "reviewMode": "manual_chat",
+      "reviewInterface": "chat",
+      "currentReviewExposesSuggestion": false,
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "clip": {
+        "start": 874,
+        "end": 969,
+        "timingStatus": "estimated"
+      },
+      "note": "the person who is catching the pull is looking downfield, doesn't see anything for about a couple seconds, and then passes it to his other handler. Because of the fact this isn't a clear centering pass, it is not in the centering pass bucket at all.",
+      "recordMatch": "User identified the second pilot example: Houston's opening possession on point eight. The preserved first pass is Jimmy Zuraw to Mark Turner."
+    },
+    {
+      "caseId": "R013",
+      "possessionId": "2026-04-24-ATL-HTX|home|84|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "reviewedOn": "2026-11-14T00:11:02Z",
+      "reviewInterface": "chat",
+      "currentReviewExposesSuggestion": false,
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "definitionVersion": "completed-centering-transfer-20261113",
+      "context": "back_endline",
+      "decision": "attack1",
+      "hasOpeningCenteringPass": false,
+      "completedCenteringPass": false,
+      "attemptedCenteringPass": null,
+      "centeringIntent": "Possible intended setup transfer, but exact intended action is unresolved. No completed transfer.",
+      "source": "User film observation in chat; matched to preserved Callahan event",
+      "reviewMode": "manual_chat",
+      "inSampledBatch": false,
+      "observedWhileReviewing": "R014",
+      "clip": {
+        "start": 1574,
+        "end": 1669,
+        "timingStatus": "estimated; includes the preceding point"
+      },
+      "note": "No completed centering pass. The opening throw was intercepted for a Callahan. Keep one throw attempt, zero completions and the Houston turnover. User saw the pull land in bounds and roll out the back of the end zone.",
+      "userQuote": "The reason why it was no centering pass is because it was intercepted by the defense. So the guy was trying to either center it or sag him, but it doesn't matter because the result of the play is a score for the offense. So it's just no centering pass. It's actually no pass, because the person who tapped the disc in threw an interception.",
+      "recordMatch": {
+        "status": "Matched by distinctive event in preserved records; no independent frame verification",
+        "quarter": 1,
+        "point": 13,
+        "pointStartClock": "0:23",
+        "sourceSide": "home",
+        "sourceEventIndex": 85,
+        "sourceEventType": 23,
+        "thrower": "Mark Turner",
+        "throwerId": "mturner",
+        "recordedStart": [
+          -9.41,
+          0.81
+        ],
+        "expectedResult": "Atlanta scores; Houston is broken",
+        "evidence": "The only type-23 event in the Houston event stream is immediately before the intended point-14 opening. Point 13 has one attempt; point 14 has five completed throws ending in a Houston goal."
+      },
+      "counting": {
+        "physicalThrowAttempts": 1,
+        "completedPasses": 0,
+        "centeringDeduction": 0,
+        "adjustedThrowAttempts": 1,
+        "turnover": true,
+        "callahan": true
+      },
+      "trainingUse": "Adjacent-play observation, not a sampled pilot evaluation case. Keep outside frozen pilot scoring."
+    },
+    {
+      "caseId": "R014",
+      "possessionId": "2026-04-24-ATL-HTX|home|86|1",
+      "gameId": "2026-04-24-ATL-HTX",
+      "context": "unclear",
+      "contextNote": "The user confirmed the first pass is centering, but did not explicitly distinguish a caught pull from a grounded pickup for this point.",
+      "decision": "setup1",
+      "hasOpeningCenteringPass": true,
+      "completedCenteringPass": true,
+      "definitionVersion": "completed-centering-transfer-20261113",
+      "reviewedOn": "2026-11-14T00:11:49Z",
+      "source": "Confirmed in chat after distinguishing the preceding Callahan",
+      "reviewMode": "manual_chat",
+      "reviewInterface": "chat",
+      "currentReviewExposesSuggestion": false,
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "inSampledBatch": true,
+      "clip": {
+        "start": 1574,
+        "end": 1669,
+        "timingStatus": "estimated; watch the next point after the Callahan"
+      },
+      "note": "Standard centering pass on the next point after the Callahan. Jimmy Zuraw to Mark Turner; the user confirmed this is the intended point-14 opening.",
+      "userQuote": "I just read your thing and it said that the throw that I was looking at before was 0.13. And I looked at the next point where it is a standard centering pass.",
+      "recordMatch": "Houston point 14, Q1 0:20, Atlanta leads 8–5. The preserved first attempt, home event 87, is Jimmy Zuraw to Mark Turner and is complete.",
+      "counting": {
+        "physicalThrowAttempts": 5,
+        "completedPasses": 5,
+        "centeringDeduction": 1,
+        "adjustedThrowAttempts": 4,
+        "turnover": false
+      },
+      "alignmentStatus": "user_rechecked"
+    },
+    {
+      "caseId": "G",
+      "possessionId": "2026-06-12-BOS-NY|away|4|1",
+      "decision": "setup1",
+      "context": "caught_pull",
+      "note": "Dinger looks downfield; the cutters are not open, so subsequent short passes between handlers are part of the attack, not more setup.",
+      "source": "Confirmed in chat",
+      "reviewedOn": "2026-11-11"
+    },
+    {
+      "caseId": "H",
+      "possessionId": "2026-06-12-BOS-NY|away|63|1",
+      "decision": "attack1",
+      "context": "brick",
+      "note": "Teddy identifies this as a pull taken to the brick. The offense is already positioned to attack; the first pass does not transfer the disc away from a pull catcher.",
+      "source": "Confirmed in chat",
+      "reviewedOn": "2026-11-11"
+    },
+    {
+      "caseId": "I",
+      "possessionId": "2026-06-12-BOS-NY|away|63|2",
+      "decision": "attack1",
+      "context": "turnover",
+      "note": "Play is continuing after New York’s turnover. The defense is present, and Graff picks up the disc and moves it quickly to get the offense going. A short inward pass does not make this a post-pull setup.",
+      "source": "Confirmed in chat",
+      "reviewedOn": "2026-11-11"
+    },
+    {
+      "caseId": "R020",
+      "possessionId": "2026-05-09-PHI-CAR|home|0|1",
+      "context": "grounded_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T19:06:15.596Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "So this example is different because the offensive team is playing dominator which is essentially a handler weave. I would still denote the first throw after the caught pull a centering pass and then the second throw an attacking throw. Even though the attack throw is kind of like a second centering pass, the first pass was the first centering pass. Also the defense in this scenario is also extremely off the handlers, which isn't typical."
+    },
+    {
+      "caseId": "R021",
+      "possessionId": "2026-05-09-PHI-CAR|away|3|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:18:37.481Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "So the reason why this point is attack starts with throw 1 is because the pull was good so the centering pass wasn't available. The pull had good float and allowed the defense to run down with enough time to get set up, making the centering pass too uncomfortable to throw."
+    },
+    {
+      "caseId": "R022",
+      "possessionId": "2026-05-09-PHI-CAR|away|7|1",
+      "context": "brick",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:25:48.044Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "Here the disc is taken to the brick and because the defender is poaching off the reset handler, the first bass is to that handler which is an attacking throw and not a set up throw. But again, because the pull went out of bounds and is therefore taken to the brick mark, the first throw is always going to be an attacking throw."
+    },
+    {
+      "caseId": "R023",
+      "possessionId": "2026-05-09-PHI-CAR|home|22|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:33:17.930Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "Here even though you could say that the 3rd throw of the possesion is the first attacking throw, the first pass is a centering throw, while the second throw is again kind of punishing the player who is sitting in the lane. The player that receives the second throw is so open and it is after the centering pass so I would count it as attacking. "
+    },
+    {
+      "caseId": "R024",
+      "possessionId": "2026-05-09-PHI-CAR|home|22|2",
+      "context": "stoppage",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:55:15.877Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "So here is a very ineresting example. Oftentimes in the UFA, when a team forces a turnover like the way Philadelphia did, they will call a timeout and sub their O-line in. Consequently, the opposing team will sub their d line in, therefore this case where the o line turns it over and then the d line calls a timeout, is a case we have to look at. This is because now when carolina regains possession, it is no longer their o line on offensive but their d line. I'm think that the stats for this would only apply to throws before a turnover, and that they did not score but for these possesions they weren't technically broekn. But we will definitley have to revisit this."
+    },
+    {
+      "caseId": "R025",
+      "possessionId": "2026-05-09-PHI-CAR|home|22|3",
+      "context": "turnover",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:42:18.701Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "So since philadelphia called a timeout, they subbed in their o line and carolina subbed in their d line. As a result when a turnover happens, even though the point was originally carolina's o line point, their d line are now the players trying to score after philadelphia turned it over."
+    },
+    {
+      "caseId": "R026",
+      "possessionId": "2026-05-09-PHI-CAR|away|35|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:47:32.366Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "This is a pretty standard centering pass"
+    },
+    {
+      "caseId": "R027",
+      "possessionId": "2026-05-09-PHI-CAR|away|35|2",
+      "context": "turnover",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:50:18.216Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "Here Carolina turns it over and the person picks up the disc and brings it to the goal line, taps it in, and the first throw is an attacking throw"
+    },
+    {
+      "caseId": "R028",
+      "possessionId": "2026-05-09-PHI-CAR|away|47|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T18:59:42.110Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "Here again the pull is really good so the first throw is attacking as they are not able to get a centering pass."
+    },
+    {
+      "caseId": "R029",
+      "possessionId": "2026-05-09-PHI-CAR|home|71|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T19:03:53.143Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "So this game is interesting because each time carolina receiveson offensive, it does seem like they are completing two set up passes. However the first pass is always a centering pass. I also think one of hte reasons why they are doing two passes is because they know that Philadelphia is going to try and poach, so by getting the disc closer to the sideline, it allows them to avoid the defenders who sag in the lane when the disc is in the middle of the field."
+    },
+    {
+      "caseId": "R030",
+      "possessionId": "2026-05-09-PHI-CAR|away|56|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T19:06:59.625Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "Pretty standard centering pass"
+    },
+    {
+      "caseId": "R031",
+      "possessionId": "2026-05-09-PHI-CAR|away|61|1",
+      "context": "sideline",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T19:09:26.591Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "So here carolina purposely throws the disc so that it rolls out of bounds from the sideline so they can set up a double team. "
+    },
+    {
+      "caseId": "R032",
+      "possessionId": "2026-05-09-PHI-CAR|away|61|2",
+      "context": "turnover",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T19:11:29.843Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "Player picks up the disc and beings the second possesion. He could have brought it to the goal line, but he chose to pick it up where it landed in the endzone."
+    },
+    {
+      "caseId": "R033",
+      "possessionId": "2026-05-09-PHI-CAR|home|115|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-PHI-CAR",
+      "reviewedOn": "2026-11-12T19:13:36.221Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "So this is an end of quarter scenario where every team hucks it deep. We should probably get rid of these examples in our data, because they will heavily skew hucking numbers and throw counts, and aren't representative of the majority of o line possessions."
+    },
+    {
+      "caseId": "R034",
+      "possessionId": "2026-05-02-CHI-MIN|away|0|1",
+      "decision": "setup1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "reviewedOn": "2026-11-12T21:58:05.983Z",
+      "source": "Local film review with provisional suggestion",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "setup1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening pass is a 17.6-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+      },
+      "clip": {
+        "start": 1413,
+        "end": 1508,
+        "timingStatus": "estimated"
+      },
+      "response": "confirmed",
+      "context": "grounded_pull",
+      "note": "hear the setup is pretty normal as it is a routine centering pass"
+    },
+    {
+      "caseId": "R035",
+      "possessionId": "2026-05-02-CHI-MIN|home|3|1",
+      "decision": "setup1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "reviewedOn": "2026-11-12T23:49:04.408Z",
+      "source": "Local film review",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "setup1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening pass is a 14.1-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+      },
+      "clip": {
+        "start": 1522,
+        "end": 1617,
+        "timingStatus": "estimated"
+      },
+      "response": "confirmed",
+      "context": "unclear",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "reviewRound": "opening-starts-followup-20261112"
+    },
+    {
+      "caseId": "R038",
+      "possessionId": "2026-05-02-CHI-MIN|away|43|1",
+      "context": "sideline",
+      "gameId": "2026-05-02-CHI-MIN",
+      "reviewedOn": "2026-11-12T19:41:42.855Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "Again we have a pull that is purposely rolled out of bounds off the sideline."
+    },
+    {
+      "caseId": "R039",
+      "possessionId": "2026-05-02-CHI-MIN|away|43|2",
+      "context": "turnover",
+      "gameId": "2026-05-02-CHI-MIN",
+      "reviewedOn": "2026-11-12T23:26:28.167Z",
+      "source": "Local film review",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "attack1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "This is a later possession after a turnover. A short transfer still counts as attacking under our definition."
+      },
+      "clip": {
+        "start": 2015,
+        "end": 2045,
+        "timingStatus": "agent_spot_checked"
+      },
+      "response": "confirmed",
+      "decision": "attack1",
+      "note": "the suggestion is wrong because this is a pool that went out of balance from rolling out of the sidelines so the first throws an attack and it is not a turnover",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "reviewRound": "opening-starts-followup-20261112"
+    },
+    {
+      "caseId": "R040",
+      "possessionId": "2026-05-02-CHI-MIN|away|59|1",
+      "decision": "attack1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "reviewedOn": "2026-11-12T22:03:04.954Z",
+      "source": "Local film review with provisional suggestion",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "setup1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening pass is a 13.1-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+      },
+      "clip": {
+        "start": 2049,
+        "end": 2144,
+        "timingStatus": "estimated"
+      },
+      "response": "corrected",
+      "context": "caught_pull"
+    },
+    {
+      "caseId": "R047",
+      "possessionId": "2026-05-09-MTL-TOR|home|0|1",
+      "context": "unclear",
+      "gameId": "2026-05-09-MTL-TOR",
+      "reviewedOn": "2026-11-12T19:44:33.620Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "I can't tell whether the pull was caught or hit the ground and then was picked up. Despite that, I can tell that the first pass was a centering/setup pass"
+    },
+    {
+      "caseId": "R052",
+      "possessionId": "2026-05-09-MTL-TOR|away|43|1",
+      "context": "brick",
+      "gameId": "2026-05-09-MTL-TOR",
+      "reviewedOn": "2026-11-12T19:47:07.413Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "So the pull is initially taken to the brick but there was a foul downfield which resulted in Montreal gaining ten yards. So I would still mark this down as brick mark with first throw being attacking."
+    },
+    {
+      "caseId": "R053",
+      "possessionId": "2026-05-09-MTL-TOR|away|43|2",
+      "context": "turnover",
+      "gameId": "2026-05-09-MTL-TOR",
+      "reviewedOn": "2026-11-12T19:48:56.954Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "yeah so this one the turnover goes out of bounds so the player has to retrieve the disc and bring it to the goaline."
+    },
+    {
+      "caseId": "R060",
+      "possessionId": "2026-05-09-MTL-TOR|home|85|1",
+      "context": "grounded_pull",
+      "gameId": "2026-05-09-MTL-TOR",
+      "reviewedOn": "2026-11-12T19:50:35.478Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "Pretty standard centering pass"
+    },
+    {
+      "caseId": "R062",
+      "possessionId": "2026-06-14-IND-MAD|home|17|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-14-IND-MAD",
+      "reviewedOn": "2026-11-14T00:30:57.921Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 888,
+        "end": 984,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R064",
+      "possessionId": "2026-06-14-IND-MAD|home|33|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-14-IND-MAD",
+      "reviewedOn": "2026-11-14T00:31:54.650Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 1152,
+        "end": 1246,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R070",
+      "possessionId": "2026-06-14-IND-MAD|away|66|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-14-IND-MAD",
+      "reviewedOn": "2026-11-14T00:32:37.683Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": true,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 1666,
+        "end": 1760,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "setup1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R072",
+      "possessionId": "2026-06-14-IND-MAD|away|78|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-14-IND-MAD",
+      "reviewedOn": "2026-11-14T00:33:43.561Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": true,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 1914,
+        "end": 2010,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "setup1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R073",
+      "possessionId": "2026-05-09-OAK-SEA|home|0|1",
+      "context": "grounded_pull",
+      "gameId": "2026-05-09-OAK-SEA",
+      "reviewedOn": "2026-11-12T22:04:47.874Z",
+      "source": "Local film review with provisional suggestion",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "setup1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening pass is a 10.0-yard transfer near the receiving end. It may hand the disc to the initiator, but pressure could make it an attacking pass."
+      },
+      "clip": {
+        "start": 606,
+        "end": 701,
+        "timingStatus": "estimated"
+      },
+      "response": "confirmed",
+      "decision": "setup1"
+    },
+    {
+      "caseId": "R074",
+      "possessionId": "2026-05-09-OAK-SEA|away|3|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-OAK-SEA",
+      "reviewedOn": "2026-11-12T23:27:56.338Z",
+      "source": "Local film review",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "attack1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The record starts at brick coordinates. Check the film: coordinates alone do not confirm a brick restart."
+      },
+      "clip": {
+        "start": 776,
+        "end": 871,
+        "timingStatus": "estimated"
+      },
+      "response": "corrected",
+      "decision": "setup1",
+      "reviewRound": "opening-starts-followup-20261112",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false
+    },
+    {
+      "caseId": "R075",
+      "possessionId": "2026-05-09-OAK-SEA|home|24|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-OAK-SEA",
+      "reviewedOn": "2026-11-12T19:51:50.034Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "Centering pass here"
+    },
+    {
+      "caseId": "R076",
+      "possessionId": "2026-05-09-OAK-SEA|home|29|1",
+      "context": "caught_pull",
+      "gameId": "2026-05-09-OAK-SEA",
+      "reviewedOn": "2026-11-12T19:53:18.449Z",
+      "source": "Local film review",
+      "decision": "setup1",
+      "note": "Again standard centering pass here"
+    },
+    {
+      "caseId": "R077",
+      "possessionId": "2026-05-09-OAK-SEA|home|41|1",
+      "decision": "attack1",
+      "gameId": "2026-05-09-OAK-SEA",
+      "reviewedOn": "2026-11-12T23:49:17.288Z",
+      "source": "Local film review",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "attack1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "The opening is recorded near the sideline and farther upfield. A sideline restart is plausible; confirm it from the pull."
+      },
+      "clip": {
+        "start": 1090,
+        "end": 1185,
+        "timingStatus": "estimated"
+      },
+      "response": "confirmed",
+      "context": "unclear",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "reviewRound": "opening-starts-followup-20261112"
+    },
+    {
+      "caseId": "R082",
+      "possessionId": "2026-05-09-OAK-SEA|home|74|2",
+      "context": "turnover",
+      "gameId": "2026-05-09-OAK-SEA",
+      "reviewedOn": "2026-11-12T23:27:08.246Z",
+      "source": "Local film review",
+      "reviewMode": "assisted",
+      "suggestion": {
+        "decision": "attack1",
+        "method": "rule-guided-event-estimate-v1",
+        "reason": "This is a later possession after a turnover. A short transfer still counts as attacking under our definition."
+      },
+      "clip": {
+        "start": 1715,
+        "end": 1740,
+        "timingStatus": "agent_spot_checked"
+      },
+      "response": "confirmed",
+      "decision": "attack1",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "reviewRound": "opening-starts-followup-20261112"
+    },
+    {
+      "caseId": "R094",
+      "possessionId": "2026-05-01-ORE-SLC|away|62|1",
+      "context": "sideline",
+      "gameId": "2026-05-01-ORE-SLC",
+      "reviewedOn": "2026-11-12T19:55:14.264Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "Roller pull out to the sideline"
+    },
+    {
+      "caseId": "R097",
+      "possessionId": "2026-05-01-ORE-SLC|away|70|2",
+      "context": "turnover",
+      "gameId": "2026-05-01-ORE-SLC",
+      "reviewedOn": "2026-11-12T19:58:21.595Z",
+      "source": "Local film review",
+      "decision": "attack1",
+      "note": "Second possession after a turnover"
+    },
+    {
+      "caseId": "R100",
+      "possessionId": "2026-06-06-ATX-LV|away|0|1",
+      "context": "caught_pull",
+      "gameId": "2026-06-06-ATX-LV",
+      "reviewedOn": "2026-11-13T00:08:07.742Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 645,
+        "end": 670,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "attack1",
+      "note": "so this one is interesting because the guy catches it in balance and looks to his Saturn past Target but that centering past Target is covered so then he throws the next person therefore the first throat isn't attacking throat",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R101",
+      "possessionId": "2026-06-06-ATX-LV|away|0|2",
+      "context": "turnover",
+      "gameId": "2026-06-06-ATX-LV",
+      "reviewedOn": "2026-11-13T00:08:57.242Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 685,
+        "end": 700,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "attack1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R102",
+      "possessionId": "2026-06-06-ATX-LV|home|5|1",
+      "context": "brick",
+      "gameId": "2026-06-06-ATX-LV",
+      "reviewedOn": "2026-11-13T00:09:56.860Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 735,
+        "end": 765,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "attack1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R105",
+      "possessionId": "2026-06-06-ATX-LV|home|23|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-06-ATX-LV",
+      "reviewedOn": "2026-11-14T00:24:26.878Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 1003,
+        "end": 1098,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R107",
+      "possessionId": "2026-06-06-ATX-LV|home|31|1",
+      "context": "brick",
+      "gameId": "2026-06-06-ATX-LV",
+      "reviewedOn": "2026-11-14T00:25:40.645Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 1242,
+        "end": 1337,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R116",
+      "possessionId": "2026-06-05-CAR-DC|away|0|1",
+      "context": "caught_pull",
+      "gameId": "2026-06-05-CAR-DC",
+      "reviewedOn": "2026-11-13T00:10:30.193Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 1275,
+        "end": 1310,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "setup1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R119",
+      "possessionId": "2026-06-05-CAR-DC|home|13|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-05-CAR-DC",
+      "reviewedOn": "2026-11-13T00:10:59.656Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 1590,
+        "end": 1620,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "setup1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R122",
+      "possessionId": "2026-06-05-CAR-DC|home|28|1",
+      "context": "sideline",
+      "gameId": "2026-06-05-CAR-DC",
+      "reviewedOn": "2026-11-14T00:19:07.265Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 1795,
+        "end": 1890,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R123",
+      "possessionId": "2026-06-05-CAR-DC|home|28|2",
+      "context": "turnover",
+      "gameId": "2026-06-05-CAR-DC",
+      "reviewedOn": "2026-11-13T00:11:37.898Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 1880,
+        "end": 1905,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "attack1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R131",
+      "possessionId": "2026-06-05-CAR-DC|home|76|1",
+      "context": "brick",
+      "gameId": "2026-06-05-CAR-DC",
+      "reviewedOn": "2026-11-14T00:23:17.280Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 2563,
+        "end": 2658,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2"
+    },
+    {
+      "caseId": "R142",
+      "possessionId": "2026-07-05-MIN-PIT|away|41|1",
+      "context": "grounded_pull",
+      "gameId": "2026-07-05-MIN-PIT",
+      "reviewedOn": "2026-11-13T00:12:15.490Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 360,
+        "end": 390,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "setup1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R144",
+      "possessionId": "2026-07-05-MIN-PIT|away|57|1",
+      "context": "brick",
+      "gameId": "2026-07-05-MIN-PIT",
+      "reviewedOn": "2026-11-13T00:13:00.816Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 700,
+        "end": 740,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "attack1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R146",
+      "possessionId": "2026-07-05-MIN-PIT|home|84|2",
+      "context": "turnover",
+      "gameId": "2026-07-05-MIN-PIT",
+      "reviewedOn": "2026-11-13T00:13:48.215Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 825,
+        "end": 865,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "attack1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R149",
+      "possessionId": "2026-06-13-SD-COL|home|0|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-13-SD-COL",
+      "reviewedOn": "2026-11-13T00:14:33.025Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 1180,
+        "end": 1205,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "setup1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R150",
+      "possessionId": "2026-06-13-SD-COL|home|0|2",
+      "context": "turnover",
+      "gameId": "2026-06-13-SD-COL",
+      "reviewedOn": "2026-11-13T00:15:03.916Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 1220,
+        "end": 1255,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "attack1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R151",
+      "possessionId": "2026-06-13-SD-COL|away|8|1",
+      "context": "caught_pull",
+      "gameId": "2026-06-13-SD-COL",
+      "reviewedOn": "2026-11-13T00:16:46.301Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "clip": {
+        "start": 1320,
+        "end": 1350,
+        "timingStatus": "agent_spot_checked"
+      },
+      "reviewBatch": "new-games-review-20261112",
+      "decision": "setup1",
+      "reviewRound": "new-games-review-20261112"
+    },
+    {
+      "caseId": "R163",
+      "possessionId": "2026-06-13-SD-COL|away|67|1",
+      "context": "caught_pull",
+      "gameId": "2026-06-13-SD-COL",
+      "reviewedOn": "2026-11-14T00:36:55.455Z",
+      "source": "Local film review",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": true,
+      "definitionVersion": "centering-vs-no-centering-20261113",
+      "clip": {
+        "start": 2408,
+        "end": 2503,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "setup1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "note": "Borderline centering pass: the receiver was not closely covered by his own defender. The thrower’s mark obstructed his initial route, so he had to maneuver before receiving the disc. I still classify this as a centering pass."
+    }
+  ]
+}
