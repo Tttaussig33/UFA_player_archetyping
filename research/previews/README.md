@@ -26,6 +26,18 @@ have not all been replay-verified. Match those cues and use the wrong-play
 option or corrected-time note if needed. The saved workflow preference is to
 prepare a fresh set whenever the user reports finishing one.
 
+Use **End-of-quarter scoring attempt** to flag a clock-driven final scoring
+opportunity. Keep answering the pull and centering questions. That flag is
+separate from those labels and excludes the whole possession from typical
+O-line comparisons, regardless of its result. R184 (example 28 of the
+100-possession set), R033 and R060 are flagged. The recalculated comparison
+uses one shared exclusion registry for possession and throw denominators.
+No numerical clock cutoff has been chosen; other games still need screening.
+Before recalculating from a later review export, run
+`research/oline_possessions/import_review_exclusions.py <review-export>` and
+then the analysis pipeline. Checkbox-only choices are included in exports.
+Raw events, original possession numbers and film labels are preserved.
+
 The previous **Pilot · 12 clips** batch began with twelve
 unreviewed opening possessions across five games: four from Indianapolis–Madison (a game
 with no prior human opening labels), four randomly drawn from the other
@@ -42,6 +54,16 @@ choices. A wrong-play option remains for alignment problems. The stored
 `attack1` code is retained for compatibility and now displays as **No centering
 pass**; it does not imply speed, aggression, or a downfield throw. A reset after
 the pull catcher looks downfield and finds no option is no centering pass.
+The start selector distinguishes **Sideline start — pull stays in bounds**
+from **Sideline start — pull rolls out of bounds**. Both feed the same
+`sideline_start` group under the user's working no-centering rule; every throw
+stays counted. Original review objects remain intact, while the export adds
+an `openingStartGroups` collection with the pull outcome and any disagreement
+between a saved centering label and the rule. No numerical sideline-distance
+cutoff has been chosen, and wide coordinates alone do not assign this group.
+Later possessions and back-end-line starts remain separate. The definition
+version changed; the earlier definition is preserved under
+`research/possession_review/annotations/completed-centering-transfer-definition-20261113.json`.
 The Houston point-eight example (Jimmy Zuraw to Mark Turner) was explicitly
 confirmed this way in chat and is saved separately from the frozen pilot's
 52-review input archive. Its first throw stays counted. Current definitions
@@ -201,3 +223,36 @@ ordinary typing and device dictation. No Chrome extension is required.
 
 Implementation references: [Chrome speech recognition](https://developer.chrome.com/blog/voice-driven-web-apps-introduction-to-the-web-speech-api/)
 and the [Web Speech API specification](https://webaudio.github.io/web-speech-api/).
+
+Stationary-receiver clarification (November 13, 2026): a completed centering
+transfer must be uncontested and go to a mostly stationary receiver. Small
+catch adjustments are allowed; movement to get open or evade either defender
+is not centering. The current rule is in
+`research/possession_review/centering_definition.json`. The user explicitly
+reclassified San Diego–Colorado (all-reviewed card 74) and confirmed
+Indianapolis–Madison (new-batch card 41) as no centering. Original labels and
+notes are retained in the correction archive. Earlier positive labels require
+a consistency check before use under this version. Note, pull-context and
+clock-exclusion edits do not silently certify an old centering label; choosing
+a label or Save & next explicitly confirms it under the current rule. The
+earlier pilot and adjusted comparisons remain labeled as historical until
+revalidated; the historical evaluator refuses to overwrite newer corrections.
+
+First-option clarification (November 13, 2026): new-batch card 44 remains
+no centering because coverage made the thrower abandon the intended receiver
+and choose a second option. The current definition also requires the initial
+transfer to be immediately available. A stationary final target is insufficient
+when the thrower has already changed reads in response to defense. No fixed
+time cutoff is imposed, and hidden intent is not inferred from coordinates.
+The correction, prior browser record and definition history are preserved in
+`research/possession_review/annotations/first-option-centering-correction-20261113.json`.
+
+Sideline scope clarification (November 13, 2026): card 56 physically centers
+the disc after a fast pickup of a sideline roller. Preserve that observation
+(`observedCenteringPass: true`) separately from the study classification
+(`qualifyingCenteringPass: false`, `attack1`). Sideline exclusion is a study
+scope decision, not evidence that centering never occurs there. Keep the
+possession and its first throw. The reviewer question now explicitly says
+“for this study”; legacy completed-centering flags refer to the qualifying
+transfer, as documented in the versioned definition. No new yardage cutoff
+or blanket rule for every rolling pull was inferred.

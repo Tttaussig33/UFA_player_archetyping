@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-13",
+  "status": "complete",
+  "excludedPossessions": 3,
+  "removedSourceAttempts": 6,
+  "removedRecordedHucks": 1,
+  "preservedImmutableFiles": [
+    "research/possession_review/opening_classifier_pilot.json",
+    "research/possession_review/film_library.json",
+    "research/possession_review/pattern_review_batch_100_2026-11-13.json",
+    "research/oline_possessions/possessions.csv",
+    "research/oline_possessions/throws.csv",
+    "research/oline_possessions/points.csv"
+  ],
+  "allEightOutputsUseSameRegistry": true,
+  "independentCsvReconciliation": "validate.py passed for every league/team numerator and denominator",
+  "originalSevenChecks": "original_line_scoring.py passed",
+  "metricFlagSeparateFromPullAndCenteringLabels": true,
+  "modelClassificationRefit": false,
+  "coverage": "Known reviewed clock-driven possessions only; no automatic clock threshold; unscreened cases remain.",
+  "browserVerification": {
+    "reviewCountPreserved": 93,
+    "rawReviewsUnchanged": true,
+    "example28FlagChecked": true,
+    "example28PullLabel": "grounded_pull",
+    "example28CenteringLabel": "setup1",
+    "checkboxLayout": "visually verified after sizing fix",
+    "huckAttemptChart": "rendered and visually verified",
+    "reviewPositionRestored": "R050, 29 of 100",
+    "screenshot": "/tmp/ufa-end-of-quarter-exclusion-2026-11-13.png"
+  }
+}

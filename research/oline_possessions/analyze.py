@@ -173,10 +173,14 @@ def team_changes(d,outcome,family='binomial',context=CONTEXT):
             'note':'Field/context-adjusted first vs all subsequent possessions. Within-team t reference uses team game count minus one; Holm correction across 22 teams within this metric. Few games per team remain a limitation.'}
 
 def main():
+    import special_situations as special
     p_all=pd.read_csv(ROOT/'possessions.csv');t_all=pd.read_csv(ROOT/'throws.csv')
     points=pd.read_csv(ROOT/'points.csv')
-    p=p_all[~p_all.has_timeout].copy();t=t_all[~t_all.has_timeout].copy()
     lookup=p_all.drop_duplicates('point_id').set_index('point_id')
+    excluded_opening_points=set(p_all.loc[p_all.own_possession.eq(1)&p_all.possession_id.isin(special.excluded_ids()),'point_id'])
+    points=points.loc[~points.point_id.isin(excluded_opening_points)].copy()
+    p_all=special.filter_frame(p_all);t_all=special.filter_frame(t_all)
+    p=p_all[~p_all.has_timeout].copy();t=t_all[~t_all.has_timeout].copy()
     metrics=dataset_metrics(p,t)
     result={'scope':{'year':2026,'games':p.GameID.nunique(),'teams':p.team.nunique(),
                      'possessions':len(p),'resolved_possessions':int(p.outcome.ne('period_end').sum()),
@@ -319,7 +323,8 @@ def main():
     for row,pv in zip(all_team_tests,multipletests([r['p_value'] for r in all_team_tests],method='holm')[1]):
         row['p_holm_across_132_team_comparisons']=float(pv)
     result['environment']={'numpy':np.__version__,'pandas':pd.__version__,'scipy':scipy.__version__,'statsmodels':statsmodels.__version__,'patsy':patsy.__version__}
-    result['inputs']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['possessions.csv','throws.csv','points.csv','analysis_design.json']}
+    result['special_situation_exclusions']=special.metadata()
+    result['inputs']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['possessions.csv','throws.csv','points.csv','analysis_design.json','special_situation_exclusions.json','special_situations.py']}
     dump('results.json',result)
     print(json.dumps(clean({'adjusted':{k:v['differences'] for k,v in result['adjusted'].items()},
         'team_heterogeneity':{k:(v['heterogeneity_p'],v['heterogeneity_p_holm']) for k,v in result['team_changes'].items()},

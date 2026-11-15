@@ -14,6 +14,7 @@ import json
 import numpy as np
 import pandas as pd
 import analyze
+import special_situations as special
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
@@ -66,7 +67,7 @@ def inspect_point(events, start, end):
 def main():
     paths = {'possessions': ROOT / 'possessions.csv', 'results': ROOT / 'results.json',
              'raw_receipt': RAW / 'source_receipt.json', 'analysis': ROOT / 'analyze.py',
-             'calculation': Path(__file__)}
+             'calculation': Path(__file__), 'special_situations': special.REGISTRY, 'special_filter': ROOT / 'special_situations.py'}
     base = json.loads(paths['results'].read_text())
     assert sha(paths['possessions']) == base['inputs']['possessions.csv']
     receipt = json.loads(paths['raw_receipt'].read_text())
@@ -94,7 +95,7 @@ def main():
         start, end = int(p['start_idx']), int(p['end_idx'])
         issues = [x for x in state['issues'] if x['index'] <= end]
         first_issue = issues[0] if issues else None
-        old = p['has_timeout'] == 'False' and p['outcome'] in {'goal', 'turnover'}
+        old = p['has_timeout'] == 'False' and p['outcome'] in {'goal', 'turnover'} and p['possession_id'] not in special.excluded_ids()
         gid, side = p['point_id'].split('|')[:2]
         events = raw[gid][side + 'Events']
         assert events[end]['type'] == int(p['end_type'])
@@ -106,6 +107,7 @@ def main():
                      'team': p['team'], 'own_possession': int(p['own_possession']),
                      'stage': int(p['stage']), 'outcome': p['outcome'], 'goal': int(p['goal']),
                      'old_eligible': old, 'line_eligible': not issues,
+                     'special_situation_excluded': p['possession_id'] in special.excluded_ids(),
                      'included': old and not issues,
                      'has_timeout': p['has_timeout'] == 'True',
                      'prior_timeout': p['prior_timeout'] == 'True',
@@ -118,7 +120,7 @@ def main():
     p_all = pd.read_csv(paths['possessions'])
     by_id = {r['possession_id']: r for r in rows}
     p = p_all[p_all.possession_id.map(lambda pid: by_id[pid]['included'])].copy()
-    line_all = p_all[p_all.possession_id.map(lambda pid: by_id[pid]['line_eligible'])].copy()
+    line_all = special.filter_frame(p_all[p_all.possession_id.map(lambda pid: by_id[pid]['line_eligible'])])
     no_timeout = line_all[~line_all.has_timeout].copy()
     analyze.RNG = np.random.default_rng(20261113)
     observed = analyze.observed(p, 'goal')
@@ -216,6 +218,7 @@ def main():
                         'include_same_line_timeout_possessions': analyze.observed(line_all[line_all.outcome.isin(['goal', 'turnover'])], 'goal'),
                         'no_prior_timeouts': analyze.observed(p[~p.prior_timeout], 'goal')},
         'rows': rows,
+        'special_situation_exclusions': special.metadata(),
         'inputs': {name: {'path': str(path.relative_to(REPO)), 'sha256': sha(path)} for name, path in paths.items()},
         'rawGameHashes': {gid: receipt[gid]['sha256'] for gid in raw},
         'environment': {'numpy': np.__version__, 'pandas': pd.__version__,

@@ -1,0 +1,200 @@
+{
+  "version": "stationary-uncontested-centering-20261113",
+  "recordedOn": "2026-11-14T03:58:15.961255Z",
+  "timezone": "America/New_York",
+  "source": "User film-review clarification and small-catch-adjustment answer in the research chat, November 13, 2026.",
+  "previousDefinition": {
+    "version": "completed-centering-transfer-sideline-starts-20261113",
+    "source": "User clarification in the research chat, 2026-11-13",
+    "question": "Is there a completed centering pass?",
+    "target": "Separate opening possessions with a completed, clear centering/setup transfer from those without one. The type of non-centering throw is not the target.",
+    "labels": {
+      "setup1": "Centering pass",
+      "attack1": "No centering pass",
+      "unclear": "Cannot tell"
+    },
+    "centeringPass": "A completed, clear opening transfer that hands the disc to the player who sets the offense in motion. It need not travel toward the middle. An interception or other incomplete attempt is not a completed centering pass, even if a setup transfer was intended.",
+    "noCenteringPass": "When the pull receiver first looks for a downfield option, finds none and then resets to a handler, that reset is not a centering pass. Other visible first throws without a clear setup transfer are also no centering pass, whether resets, unders or hucks. An intercepted or incomplete opening attempt has no completed centering transfer. This does not establish that the thrower intended to attack rather than set up.",
+    "cannotTell": "The footage or record alignment is insufficient to determine whether a centering pass occurred. Missing evidence is not a negative label.",
+    "timing": "The Houston example describes a downfield search lasting a couple of seconds. This is not a fixed time threshold; recorded event timestamp gaps remain unsuitable for that rule.",
+    "counting": "Subtract exactly one opening throw only for a confirmed, completed centering transfer. Keep every attempted throw, including interceptions and drops, when no such transfer was completed. A one-throw Callahan possession remains one attempt, zero completed passes and a turnover; it must not become a zero-throw possession or be removed. Subsequent possessions receive no deduction. Keep the original starting coordinates.",
+    "restartRules": "The exact-brick rule remains no-centering, with known film/coordinate conflicts preserved. The sideline-start group now includes both in-bounds sideline pulls and sideline rollers; use the reviewer-identified context, not a new coordinate cutoff. A back-end-line restart remains separate and does not automatically determine centering.",
+    "compatibility": "Keep setup1 and attack1 as existing storage codes. attack1 now displays as No centering pass; it does not imply an immediate, aggressive or downfield throw.",
+    "automaticLabels": "The geometry pilot remains a frozen development diagnostic. This clarification and new film labels do not authorize automatic centering deductions in league metrics.",
+    "previousVersion": "completed-centering-transfer-20261113",
+    "updatedOn": "2026-11-13",
+    "attemptAndOutcome": "Where visible, preserve intended setup separately from completion. The user did not settle the precise intended pass in the Houston Callahan example; do not infer intent from its outcome.",
+    "interpretationLimit": "Completed-centering status depends on the result of the first throw. It is suitable for the user-defined completed-transfer count adjustment, but comparing scoring or huck success between these label groups cannot by itself establish a difference in tactical preference. Report all-attempt results alongside adjusted counts; failed opening throws stay in the denominator.",
+    "versioning": "This supersedes the older failed-setup deduction language for future completed-transfer counts. Preserve the original 52 reviews and frozen pilot. Do not silently apply this new target to earlier classifier evaluation or league statistics.",
+    "backEndlineRuleSource": {
+      "url": "https://watchufa.com/sites/default/files/UFA%20Rule%20Book%202026.pdf",
+      "section": "6.3.1.2",
+      "interpretation": "A pull landing in bounds and rolling out the back is put into play on the back line. This rule does not say whether the next pass is centering."
+    },
+    "boundaryExamples": [
+      {
+        "caseId": "R163",
+        "gameId": "2026-06-13-SD-COL",
+        "decision": "setup1",
+        "source": "User clarification in chat, November 13, 2026",
+        "note": "The receiver was not covered by his own defender. The thrower’s mark obstructed his initial route, requiring a small maneuver, but the user still identified this as a centering pass.",
+        "scope": "One reviewed borderline example; maneuvering or some nearby defensive pressure alone does not disqualify the opening transfer. Do not automatically label all short contested throws as centering."
+      }
+    ],
+    "timezone": "America/New_York",
+    "sidelineStartGroup": {
+      "id": "sideline_start",
+      "label": "Sideline start",
+      "scope": "Opening receiving possessions that begin at or near a sideline after the pull, including an in-bounds pull and a roller that exits at the sideline.",
+      "source": "User instruction in chat, November 13, 2026: group sideline opening possessions together even when the pull stays in bounds.",
+      "ruleLabel": "attack1",
+      "counting": "Keep the first throw; no centering-pass deduction under this working rule.",
+      "contexts": {
+        "sideline": "Pull rolls out of bounds on the sideline (existing saved code).",
+        "sideline_inbounds": "Pull stays in bounds near the sideline (caught or picked up)."
+      },
+      "evidence": "Reviewer identifies the start from film. Preserve pull outcome separately from the shared sideline-start group.",
+      "distanceCutoffYards": null,
+      "coordinatePolicy": "Do not assign this group from wide coordinates alone until near the sideline is operationally defined and checked against film.",
+      "intentPolicy": "Intent to pin the receiving team is a possible explanation; it is not required or inferred by the label.",
+      "conflictPolicy": "Preserve any film-confirmed centering label and flag disagreement with the working rule; do not overwrite it or use a disputed deduction.",
+      "scopeExclusions": [
+        "A later possession that starts on the sideline is not a pull-opening sideline start.",
+        "A back-end-line start remains a separate context."
+      ]
+    }
+  },
+  "browserExport": {
+    "path": "research/possession_review/annotations/2026-11-13-before-stationary-definition-browser-export.json",
+    "sha256": "376ddf30c87ca2b50e6fce8c48b67fec3a026f1d6cad738a01b7fb076ea6703f"
+  },
+  "reviews": [
+    {
+      "caseId": "R163",
+      "possessionId": "2026-06-13-SD-COL|away|67|1",
+      "context": "caught_pull",
+      "gameId": "2026-06-13-SD-COL",
+      "reviewedOn": "2026-11-14T03:58:15.961255Z",
+      "source": "User correction confirmed in research chat",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "definitionVersion": "stationary-uncontested-centering-20261113",
+      "clip": {
+        "start": 2408,
+        "end": 2503,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-classifier-pilot-20261113-v2",
+      "decision": "attack1",
+      "reviewRound": "opening-classifier-pilot-20261113-v2",
+      "note": "Receiver maneuvered around pressure from the thrower’s defender. User changed this from centering to no centering. This replaces the earlier exception. Small steps solely to catch an uncontested pass remain allowed.",
+      "completedCenteringPass": false,
+      "definitionConfirmedOn": "2026-11-14T03:58:15.961255Z",
+      "reviewHistory": [
+        {
+          "origin": "Previously archived review",
+          "review": {
+            "caseId": "R163",
+            "possessionId": "2026-06-13-SD-COL|away|67|1",
+            "context": "caught_pull",
+            "gameId": "2026-06-13-SD-COL",
+            "reviewedOn": "2026-11-14T00:36:55.455Z",
+            "source": "Local film review",
+            "reviewMode": "manual",
+            "reviewInterface": "two-question-review",
+            "currentReviewExposesSuggestion": false,
+            "hasOpeningCenteringPass": true,
+            "definitionVersion": "centering-vs-no-centering-20261113",
+            "clip": {
+              "start": 2408,
+              "end": 2503,
+              "timingStatus": "estimated"
+            },
+            "reviewBatch": "opening-classifier-pilot-20261113-v2",
+            "decision": "setup1",
+            "reviewRound": "opening-classifier-pilot-20261113-v2",
+            "note": "Borderline centering pass: the receiver was not closely covered by his own defender. The thrower’s mark obstructed his initial route, so he had to maneuver before receiving the disc. I still classify this as a centering pass."
+          }
+        },
+        {
+          "origin": "Browser review before definition update",
+          "review": {
+            "caseId": "R163",
+            "possessionId": "2026-06-13-SD-COL|away|67|1",
+            "context": "caught_pull",
+            "gameId": "2026-06-13-SD-COL",
+            "reviewedOn": "2026-11-14T03:52:28.306Z",
+            "source": "Local film review",
+            "reviewMode": "manual",
+            "reviewInterface": "two-question-review",
+            "currentReviewExposesSuggestion": false,
+            "hasOpeningCenteringPass": false,
+            "definitionVersion": "completed-centering-transfer-sideline-starts-20261113",
+            "clip": {
+              "start": 2408,
+              "end": 2503,
+              "timingStatus": "estimated"
+            },
+            "reviewBatch": "opening-classifier-pilot-20261113-v2",
+            "decision": "attack1",
+            "reviewRound": "opening-classifier-pilot-20261113-v2",
+            "note": "Borderline centering pass: the receiver was not closely covered by his own defender. The thrower’s mark obstructed his initial route, so he had to maneuver before receiving the disc. I still classify this as a centering pass.",
+            "completedCenteringPass": false
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "R194",
+      "possessionId": "2026-06-14-IND-MAD|home|124|1",
+      "context": "grounded_pull",
+      "gameId": "2026-06-14-IND-MAD",
+      "reviewedOn": "2026-11-14T03:58:15.961255Z",
+      "source": "User correction confirmed in research chat",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "completedCenteringPass": false,
+      "definitionVersion": "stationary-uncontested-centering-20261113",
+      "clip": {
+        "start": 2498,
+        "end": 2594,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-pattern-review-100-20261113-v1",
+      "decision": "attack1",
+      "definitionConfirmedOn": "2026-11-14T03:58:15.961255Z",
+      "note": "Receiver shifted direction and moved to receive the pass in response to incoming defensive pressure. User confirmed no centering pass, even though the pass was easy. Small steps solely to catch an uncontested pass remain allowed.",
+      "reviewHistory": [
+        {
+          "origin": "Browser review before definition update",
+          "review": {
+            "caseId": "R194",
+            "possessionId": "2026-06-14-IND-MAD|home|124|1",
+            "context": "grounded_pull",
+            "gameId": "2026-06-14-IND-MAD",
+            "reviewedOn": "2026-11-14T03:50:46.068Z",
+            "source": "Local film review",
+            "reviewMode": "manual",
+            "reviewInterface": "two-question-review",
+            "currentReviewExposesSuggestion": false,
+            "hasOpeningCenteringPass": false,
+            "completedCenteringPass": false,
+            "definitionVersion": "completed-centering-transfer-sideline-starts-20261113",
+            "clip": {
+              "start": 2498,
+              "end": 2594,
+              "timingStatus": "estimated"
+            },
+            "reviewBatch": "opening-pattern-review-100-20261113-v1",
+            "decision": "attack1"
+          }
+        }
+      ]
+    }
+  ],
+  "frozenEvaluationPolicy": "Preserve the previous pilot results; their labels predate this narrower definition."
+}

@@ -1559,11 +1559,11 @@
     }
   },
   "activeReviewBatch": {
-    "id": "opening-pattern-review-100-20261113-v1",
-    "path": "research/possession_review/pattern_review_batch_100_2026-11-13.json",
-    "size": 100,
+    "id": "opening-pattern-review-12-20261114-v1",
+    "path": "research/possession_review/next_review_batch_12_2026-11-14.json",
+    "size": 12,
     "status": "Ready for user film review",
-    "priorCompletedBatch": "opening-classifier-pilot-20261113-v2"
+    "priorCompletedBatch": "opening-pattern-review-100-20261113-v1"
   },
   "reviewChoiceWording2026_11_12": {
     "request": "Replace throw-number choices with Immediate attack, Centering pass and Cannot tell, and make the pull-start choices explicit. Keep the rest the same.",
@@ -1801,28 +1801,28 @@
     "nextAnalysis": "research/oline_possessions/centering_sensitivity_bounds.json"
   },
   "currentCenteringDefinition": {
-    "version": "completed-centering-transfer-20261113",
-    "source": "User clarification in the research chat, 2026-11-13",
-    "question": "Is the first pass a centering pass?",
-    "target": "Separate opening possessions with a completed, clear centering/setup transfer from those without one. The type of non-centering throw is not the target.",
+    "version": "fixed-location-pull-setup-centering-20261114",
+    "source": "User clarification in the research chat, November 14, 2026: changing the receiver’s originally established centering location means no centering pass, beyond movement caused by defense.",
+    "question": "Is there a centering pass for this study?",
+    "target": "Identify the qualifying setup transfer after an ordinary deep receiving pull. The binary label controls the study’s first-throw deduction; it does not inventory every pass that physically centers the disc.",
     "labels": {
       "setup1": "Centering pass",
       "attack1": "No centering pass",
       "unclear": "Cannot tell"
     },
-    "centeringPass": "A completed, clear opening transfer that hands the disc to the player who sets the offense in motion. It need not travel toward the middle. An interception or other incomplete attempt is not a completed centering pass, even if a setup transfer was intended.",
-    "noCenteringPass": "When the pull receiver first looks for a downfield option, finds none and then resets to a handler, that reset is not a centering pass. Other visible first throws without a clear setup transfer are also no centering pass, whether resets, unders or hucks. An intercepted or incomplete opening attempt has no completed centering transfer. This does not establish that the thrower intended to attack rather than set up.",
-    "cannotTell": "The footage or record alignment is insufficient to determine whether a centering pass occurred. Missing evidence is not a negative label.",
-    "timing": "The Houston example describes a downfield search lasting a couple of seconds. This is not a fixed time threshold; recorded event timestamp gaps remain unsuitable for that rule.",
+    "centeringPass": "A completed setup transfer after an ordinary non-roller, in-bounds pull received near the receiving team’s own goal-line or end-zone area, caught or picked up. The intended receiver is immediately available, mostly stationary and uncontested at the originally established centering spot. That intended receiving location must remain the same through the transfer. Small adjustments solely to catch the disc are allowed. The thrower does not change targets because of coverage, and the receiver does not move to evade either defender. A qualifying transfer need not move toward the middle. The usual deep starting area is descriptive; no new numerical location cutoff is adopted.",
+    "noCenteringPass": "No centering pass if the thrower visibly abandons the initial intended transfer because of defensive coverage and selects another receiver, even if the eventual receiver is stationary and the pass is easy. No centering pass if the receiver must cut, sprint, evade, or change direction to get open around either defender. A reset after looking downfield, an under, a huck, or an incomplete opening transfer also remains no centering pass. For the study label, a sideline-start transfer also receives No centering pass, even if it physically centers the disc immediately and uncontested. Its exclusion from the deduction is based on restart context, not on a claim that no centering action happened. All confirmed roller pulls receive No centering pass for this study, including those followed by a rapid, easy centering transfer. Preserve any observed physical centering separately. If the receiver relocates from the originally established centering spot to a different receiving location, the transfer is not qualifying centering even without defensive pressure. A small adjustment solely to catch the disc remains allowed.",
+    "cannotTell": "Use Cannot tell when the footage or record alignment does not establish the opening transfer, receiver movement, or a relevant change of target. Do not infer an unseen first read, defensive coverage or tactical intent from the final pass coordinates.",
+    "timing": "Immediate describes the visible, uninterrupted initial transfer, not a fixed number of seconds. Do not impose a timing cutoff or infer a blocked first option from recorded event timestamp gaps.",
     "counting": "Subtract exactly one opening throw only for a confirmed, completed centering transfer. Keep every attempted throw, including interceptions and drops, when no such transfer was completed. A one-throw Callahan possession remains one attempt, zero completed passes and a turnover; it must not become a zero-throw possession or be removed. Subsequent possessions receive no deduction. Keep the original starting coordinates.",
-    "restartRules": "The previously adopted brick-coordinate rule and film-confirmed sideline-roller rule remain no-centering cases, with known film/coordinate conflicts preserved. A back-end-line restart is a separate observed context, not an automatic no-centering label from coordinates alone. The Houston user label was based on noncompletion, not a universal rule about back-line starts.",
+    "restartRules": "All confirmed roller pulls are outside the centering deduction, whether they remain in bounds or roll out at a sideline or back end line. Sideline-start and brick rules remain in place. Keep the possession and every physical throw. Ordinary non-roller pulls that land and are picked up are not automatically excluded; a grounded-pull label alone does not establish a roller. A confirmed offsides restart at midfield is recorded separately and receives no centering deduction.",
     "compatibility": "Keep setup1 and attack1 as existing storage codes. attack1 now displays as No centering pass; it does not imply an immediate, aggressive or downfield throw.",
-    "automaticLabels": "The geometry pilot remains a frozen development diagnostic. This clarification and new film labels do not authorize automatic centering deductions in league metrics.",
-    "previousVersion": "centering-vs-no-centering-20261113",
-    "updatedOn": "2026-11-14T00:11:02Z",
+    "automaticLabels": "Pass endpoints and recorded timestamp gaps do not establish receiver evasion, a blocked first option or a change of read. Keep geometry predictions as frozen development evidence; do not apply this definition or league-wide deductions from coordinates alone.",
+    "previousVersion": "non-roller-pull-setup-centering-20261113",
+    "updatedOn": "2026-11-14T05:10:03.004156Z",
     "attemptAndOutcome": "Where visible, preserve intended setup separately from completion. The user did not settle the precise intended pass in the Houston Callahan example; do not infer intent from its outcome.",
     "interpretationLimit": "Completed-centering status depends on the result of the first throw. It is suitable for the user-defined completed-transfer count adjustment, but comparing scoring or huck success between these label groups cannot by itself establish a difference in tactical preference. Report all-attempt results alongside adjusted counts; failed opening throws stay in the denominator.",
-    "versioning": "This supersedes the older failed-setup deduction language for future completed-transfer counts. Preserve the original 52 reviews and frozen pilot. Do not silently apply this new target to earlier classifier evaluation or league statistics.",
+    "versioning": "Preserve physical observations separately from study eligibility and keep earlier definitions and labels. Earlier positive labels need checking for the ordinary-pull scope, an unchanged established centering location, permitted small catch adjustments, and first-option availability before use under this version. No individual possession was relabeled by this clarification. Historical analyses remain unrevalidated.",
     "backEndlineRuleSource": {
       "url": "https://watchufa.com/sites/default/files/UFA%20Rule%20Book%202026.pdf",
       "section": "6.3.1.2",
@@ -1831,13 +1831,151 @@
     "boundaryExamples": [
       {
         "caseId": "R163",
+        "possessionId": "2026-06-13-SD-COL|away|67|1",
+        "gameId": "2026-06-13-SD-COL",
+        "decision": "attack1",
+        "previousDecision": "setup1",
+        "source": "User film-review clarification and small-catch-adjustment answer in the research chat, November 13, 2026.",
+        "note": "Receiver maneuvered around pressure from the thrower’s defender. User changed this from centering to no centering. This replaces the earlier exception.",
+        "displayReference": "74 of 104 in All reviewed sequences at time of correction"
+      },
+      {
+        "caseId": "R194",
+        "possessionId": "2026-06-14-IND-MAD|home|124|1",
+        "gameId": "2026-06-14-IND-MAD",
+        "decision": "attack1",
+        "source": "User film-review clarification and small-catch-adjustment answer in the research chat, November 13, 2026.",
+        "note": "Receiver shifted direction and moved to receive the pass in response to incoming defensive pressure. User confirmed no centering pass, even though the pass was easy.",
+        "displayReference": "41 of the new 100 possessions"
+      },
+      {
+        "caseId": "R197",
+        "possessionId": "2026-06-14-IND-MAD|home|166|1",
+        "gameId": "2026-06-14-IND-MAD",
+        "decision": "attack1",
+        "source": "User clarification about card 44, Indianapolis at Madison, Q2 point 7, in the research chat on November 13, 2026.",
+        "displayReference": "44 of the new 100 possessions, Q2 point 7",
+        "note": "After picking up the pull, the thrower looks for the initial centering receiver, finds that option covered, and chooses a second receiver. The changed read makes this no centering pass, even if the final target is relatively stationary."
+      },
+      {
+        "caseId": "R088",
+        "possessionId": "2026-05-01-ORE-SLC|away|3|1",
+        "gameId": "2026-05-01-ORE-SLC",
+        "decision": "attack1",
+        "observedCenteringPass": true,
+        "qualifyingCenteringPass": false,
+        "source": "User clarification about card 56, Oregon at Salt Lake, Q1 point 2, in the research chat on November 13, 2026.",
+        "displayReference": "56 of the new 100 possessions, Q1 point 2",
+        "note": "The offense quickly retrieves a sideline roller and completes a centering transfer. The user identifies physical centering but excludes this sideline restart from the ordinary pull-setup definition. Keep the first throw and the possession."
+      }
+    ],
+    "timezone": "America/New_York",
+    "sidelineStartGroup": {
+      "id": "sideline_start",
+      "label": "Sideline start",
+      "scope": "Opening receiving possessions that begin at or near a sideline after the pull, including an in-bounds pull and a roller that exits at the sideline.",
+      "source": "User instruction in chat, November 13, 2026: group sideline opening possessions together even when the pull stays in bounds.",
+      "ruleLabel": "attack1",
+      "counting": "Keep the first throw; sideline starts do not receive the study’s centering deduction even when a centering transfer occurs.",
+      "contexts": {
+        "sideline": "Pull rolls out of bounds on the sideline (existing saved code).",
+        "sideline_inbounds": "Pull stays in bounds near the sideline (caught or picked up)."
+      },
+      "evidence": "Reviewer identifies the start from film. Preserve pull outcome separately from the shared sideline-start group.",
+      "distanceCutoffYards": null,
+      "coordinatePolicy": "Do not assign this group from wide coordinates alone until near the sideline is operationally defined and checked against film.",
+      "intentPolicy": "Intent to pin the receiving team is a possible explanation; it is not required or inferred by the label.",
+      "conflictPolicy": "Preserve earlier labels and observations; flag a setup1 study label for review against the sideline scope. An observed centering action with an attack1 study label is not a conflict.",
+      "scopeExclusions": [
+        "A later possession that starts on the sideline is not a pull-opening sideline start.",
+        "A back-end-line start remains a separate context."
+      ],
+      "ruleBasis": "study_scope"
+    },
+    "receiverMovement": {
+      "mostlyStationary": true,
+      "smallCatchAdjustmentsAllowed": true,
+      "defensiveEvasionAllowed": false,
+      "defenderScope": [
+        "thrower’s defender",
+        "receiver’s defender"
+      ],
+      "numericMovementThreshold": null,
+      "source": "User clarification in the research chat, November 14, 2026: changing the receiver’s originally established centering location means no centering pass, beyond movement caused by defense.",
+      "originalCenteringLocationMustBeRetained": true,
+      "relocationToAnotherReceivingSpotAllowed": false,
+      "relocationReasonMatters": false,
+      "interpretation": "Distinguish relocating the intended setup target from a small step solely to make the catch. Do not infer the receiver’s initial setup spot or relocation from pass endpoints alone. No yardage or time threshold has been adopted."
+    },
+    "previousBoundaryExamples": [
+      {
+        "caseId": "R163",
         "gameId": "2026-06-13-SD-COL",
         "decision": "setup1",
         "source": "User clarification in chat, November 13, 2026",
         "note": "The receiver was not covered by his own defender. The thrower’s mark obstructed his initial route, requiring a small maneuver, but the user still identified this as a centering pass.",
         "scope": "One reviewed borderline example; maneuvering or some nearby defensive pressure alone does not disqualify the opening transfer. Do not automatically label all short contested throws as centering."
       }
-    ]
+    ],
+    "throwerRead": {
+      "initialOptionImmediatelyAvailable": true,
+      "coverageDrivenTargetChangeAllowed": false,
+      "sameReceiverMovesToGetOpenAllowed": false,
+      "fixedDelayThresholdSeconds": null,
+      "evidence": "User observation of the intended option being covered and the thrower choosing a second option. Do not infer hidden intent from coordinates or a head turn alone.",
+      "source": "User clarification about card 44, Indianapolis at Madison, Q2 point 7, in the research chat on November 13, 2026."
+    },
+    "studyScope": {
+      "qualifyingContext": "Ordinary deep non-roller receiving pull, caught or picked up in bounds.",
+      "nonqualifyingContexts": [
+        "sideline",
+        "sideline_inbounds",
+        "brick",
+        "offsides_midfield"
+      ],
+      "sidelinePolicy": "Study eligibility choice; sideline centering can occur.",
+      "startLocationCutoffYards": null,
+      "backEndlinePolicy": "A confirmed roller out of the back receives no centering deduction. Coordinates alone do not establish a roller.",
+      "sampleMembership": "Keep the possession and all attempts/outcomes in the general O-line cohort subject to existing filters. This label causes no centering subtraction, not exclusion of the whole possession.",
+      "source": "User film-review clarification in the research chat, November 13, 2026: exclude centering deductions after all roller pulls and retain the possessions.",
+      "nonqualifyingPullTypes": [
+        "confirmed roller pull"
+      ],
+      "rollerPolicy": "Exclude the centering deduction after every confirmed roller pull, including in-bounds rollers. This is a study-scope choice even when a physical centering transfer occurs."
+    },
+    "fieldSemantics": {
+      "decision": "setup1 means a qualifying centering pass for this study; attack1 means no qualifying centering pass. It does not assert that the pass was aggressive or that the disc never moved toward the middle.",
+      "hasOpeningCenteringPass": "Legacy Boolean for the qualifying study label.",
+      "completedCenteringPass": "Legacy Boolean for a completed qualifying transfer; not a comprehensive observation of physical centering.",
+      "qualifyingCenteringPass": "Explicit Boolean for the study’s eligible centering transfer.",
+      "observedCenteringPass": "Optional independent film observation. Set only when explicitly established; missing means not separately annotated, not false."
+    },
+    "rollerPullScope": {
+      "ruleDecision": "attack1",
+      "qualifyingCenteringPass": false,
+      "firstThrowDeduction": 0,
+      "retainPossession": true,
+      "preservePhysicalCenteringObservation": true,
+      "appliesTo": [
+        "In-bounds rollers",
+        "Sideline out-of-bounds rollers",
+        "Back-end-line rollers"
+      ],
+      "evidenceRequired": "Confirm the roller from film or an explicit recorded pull-type indicator. Do not infer it merely from a pickup, wide coordinates, or the game containing many rollers.",
+      "notExcludedByThisRule": "A non-roller pull that lands in bounds and is picked up.",
+      "source": "User film-review clarification in the research chat, November 13, 2026: exclude centering deductions after all roller pulls and retain the possessions.",
+      "illustrativeGame": "2026-05-01-ORE-SLC"
+    },
+    "startContexts": {
+      "offsides_midfield": {
+        "code": "offsides_midfield",
+        "label": "Offsides — starts at midfield",
+        "description": "Receiving team starts at midfield following the pulling team’s offsides, as identified by the reviewer.",
+        "studyDecision": "attack1",
+        "source": "User request in the research chat, November 13, 2026: card 77, Carolina at DC, Q1 point 12; Carolina offsides and DC starts at midfield.",
+        "inferencePolicy": "Use a confirmed restart; do not infer offsides from midfield coordinates alone."
+      }
+    }
   },
   "pilotChatConfirmations": {
     "path": "research/possession_review/annotations/classifier-pilot-chat-confirmations.json",
@@ -1845,10 +1983,197 @@
     "alignmentChecks": 1
   },
   "filmReviewWorkflowPreference": {
+    "source": "User clarification in chat, November 14, 2026: Replace it with 12 next.",
+    "afterSetFinished": "Preserve completed labels. Do not automatically queue another batch; assess whether targeted review or analysis is the useful next step.",
+    "defaultBatchSize": 12,
+    "currentRequestedBatchSize": 12,
+    "selectionPreference": "Small targeted batches with difficult cases and some broader examples; prioritize reducing unnecessary manual review.",
+    "display": "Preserve notes, dictation, labels and earlier sets. Keep unvalidated predictions hidden."
+  },
+  "sidelineStartGrouping": {
+    "id": "sideline_start",
+    "label": "Sideline start",
+    "scope": "Opening receiving possessions that begin at or near a sideline after the pull, including an in-bounds pull and a roller that exits at the sideline.",
+    "source": "User instruction in chat, November 13, 2026: group sideline opening possessions together even when the pull stays in bounds.",
+    "ruleLabel": "attack1",
+    "counting": "Keep the first throw; no centering-pass deduction under this working rule.",
+    "contexts": {
+      "sideline": "Pull rolls out of bounds on the sideline (existing saved code).",
+      "sideline_inbounds": "Pull stays in bounds near the sideline (caught or picked up)."
+    },
+    "evidence": "Reviewer identifies the start from film. Preserve pull outcome separately from the shared sideline-start group.",
+    "distanceCutoffYards": null,
+    "coordinatePolicy": "Do not assign this group from wide coordinates alone until near the sideline is operationally defined and checked against film.",
+    "intentPolicy": "Intent to pin the receiving team is a possible explanation; it is not required or inferred by the label.",
+    "conflictPolicy": "Preserve any film-confirmed centering label and flag disagreement with the working rule; do not overwrite it or use a disputed deduction.",
+    "scopeExclusions": [
+      "A later possession that starts on the sideline is not a pull-opening sideline start.",
+      "A back-end-line start remains a separate context."
+    ]
+  },
+  "endOfQuarterExclusion": {
+    "date": "2026-11-13",
+    "rule": "Exclude the whole possession when identified as a clock-driven final scoring attempt at the end of a quarter. Apply regardless of goal, turnover, completion, or whether the source records a huck. Retain pull/centering labels and all original events for audit. Apply to the same comparison metrics and their denominators, including huck attempt percentage, huck timing/completion, throw counts and scoring. Never renumber later possessions.",
+    "registry": "research/oline_possessions/special_situation_exclusions.json",
+    "currentCase": "R184",
+    "currentCasePosition": 28,
+    "preserveLabels": true,
+    "clockCutoffSeconds": null,
+    "futureReviews": "Keep checkbox exclusions separate from start/centering labels. Import them into the shared registry before recalculating any metrics; they must apply to all attempts and denominators in that possession.",
+    "sourceRecordNote": "R184 is recorded as two completed short throws followed by period end; no huck is logged in that possession. The user identifies the clock-driven scenario from film. The exclusion is contextual and does not add an unrecorded huck."
+  },
+  "stationaryReceiverClarification": {
+    "updatedOn": "2026-11-14T03:58:15.961255Z",
+    "version": "stationary-uncontested-centering-20261113",
+    "source": "User film-review clarification and small-catch-adjustment answer in the research chat, November 13, 2026.",
+    "correctedCases": [
+      "R163",
+      "R194"
+    ],
+    "correctionArchive": "research/possession_review/annotations/stationary-centering-corrections-20261113.json",
+    "olderCenteringLabels": "Retain original observations; check against the stricter stationary, uncontested criterion before using a centering deduction.",
+    "geometryLimitation": "Endpoints do not show the receiver’s movement or response to defenders.",
+    "historicalResults": "The frozen pilot and existing centering sensitivity results use earlier labels and are not revalidated by this update."
+  },
+  "firstOptionClarification": {
+    "version": "uncontested-first-option-centering-20261113",
+    "updatedOn": "2026-11-14T04:10:43.891486Z",
+    "caseId": "R197",
+    "source": "User clarification about card 44, Indianapolis at Madison, Q2 point 7, in the research chat on November 13, 2026.",
+    "criterion": "A defense-driven change from the initial intended receiver to another receiver makes the first throw no centering. A stationary final receiver does not override that.",
+    "counting": "Retain the first physical throw; do not apply a centering deduction.",
+    "earlierReviews": "Keep existing labels and histories; recheck earlier positive labels before claiming they meet this extended definition.",
+    "analysisRecalculated": false
+  },
+  "sidelineCenteringScopeClarification": {
+    "source": "User clarification about card 56, Oregon at Salt Lake, Q1 point 2, in the research chat on November 13, 2026.",
+    "updatedOn": "2026-11-14T04:26:18.897976Z",
+    "version": "qualifying-pull-setup-centering-20261113",
+    "caseId": "R088",
+    "observedCenteringPass": true,
+    "qualifyingCenteringPass": false,
+    "scopeChoice": "Sideline centering can occur; the study excludes it from the ordinary pull-setup deduction.",
+    "sampleMembership": "Retain the possession and the first throw.",
+    "generalization": "Do not convert near the own goal line to an unapproved yardage threshold or infer a new rule for every rolling pull.",
+    "analysisRecalculated": false
+  },
+  "rollerPullScopeClarification": {
+    "version": "non-roller-pull-setup-centering-20261113",
+    "source": "User film-review clarification in the research chat, November 13, 2026: exclude centering deductions after all roller pulls and retain the possessions.",
+    "updatedOn": "2026-11-14T04:39:35.359714Z",
+    "decision": "All confirmed roller pulls have no qualifying centering pass for this study. Keep the full possession and first throw.",
+    "physicalObservation": "Do not erase a physically observed centering transfer; its study eligibility is a separate field.",
+    "analysisRecalculated": false
+  },
+  "gameObservations": [
+    {
+      "gameId": "2026-05-01-ORE-SLC",
+      "game": "Oregon at Salt Lake",
+      "date": "2026-05-01",
+      "recordedOn": "2026-11-14T04:39:35.359714Z",
+      "source": "User film-review clarification in the research chat, November 13, 2026: exclude centering deductions after all roller pulls and retain the possessions.",
+      "observation": "The reviewer reports many roller pulls in this game, several followed by transfers that could physically be described as centering. Quick pickups can make those transfers easy and uncontested.",
+      "interpretation": "Useful example of physical centering after a roller, which is outside the project’s qualifying pull-setup definition.",
+      "studyDecision": "Keep these possessions and every throw; assign no qualifying centering deduction to confirmed roller pulls.",
+      "futureTopic": "Roller-pull receiving tactics may be considered separately; outside the present project scope.",
+      "coverage": "Qualitative reviewer observation, not a calculated frequency or a completed game-wide audit.",
+      "knownExample": {
+        "caseId": "R088",
+        "newBatchCard": 56,
+        "possessionId": "2026-05-01-ORE-SLC|away|3|1"
+      }
+    }
+  ],
+  "offsidesMidfieldStart": {
+    "updatedOn": "2026-11-14T04:52:28.512038Z",
+    "source": "User request in the research chat, November 13, 2026: card 77, Carolina at DC, Q1 point 12; Carolina offsides and DC starts at midfield.",
+    "context": {
+      "code": "offsides_midfield",
+      "label": "Offsides — starts at midfield",
+      "description": "Receiving team starts at midfield following the pulling team’s offsides, as identified by the reviewer.",
+      "studyDecision": "attack1",
+      "source": "User request in the research chat, November 13, 2026: card 77, Carolina at DC, Q1 point 12; Carolina offsides and DC starts at midfield.",
+      "inferencePolicy": "Use a confirmed restart; do not infer offsides from midfield coordinates alone."
+    },
+    "caseId": "R129",
+    "possessionId": "2026-06-05-CAR-DC|home|70|1",
+    "decision": "attack1",
+    "firstThrowDeduction": 0,
+    "recordCoordinatesChanged": false
+  },
+  "fixedCenteringLocationClarification": {
+    "updatedOn": "2026-11-14T05:10:03.004156Z",
+    "date": "2026-11-14",
+    "timezone": "America/New_York",
+    "version": "fixed-location-pull-setup-centering-20261114",
+    "source": "User clarification in the research chat, November 14, 2026: changing the receiver’s originally established centering location means no centering pass, beyond movement caused by defense.",
+    "rule": "After the receiver establishes the centering spot, relocating to a different spot to receive the disc means no qualifying centering pass, even without defensive pressure.",
+    "exception": "Previously approved small adjustments solely to catch the disc remain allowed.",
+    "counting": "Keep the first physical throw when the intended setup location changes.",
+    "evidence": "Use film of the setup and transfer; no automatic coordinate-distance threshold.",
+    "individualLabelsChanged": false,
+    "analysisRecalculated": false
+  },
+  "completedPatternReview2026_11_14": {
+    "path": "research/possession_review/completed_pattern_review_2026-11-14.json",
+    "status": "100 reviewed, with two Cannot tell choices preserved",
+    "rawLabels": {
+      "setup1": 62,
+      "attack1": 36,
+      "unclear": 2
+    },
+    "totalArchived": 165,
+    "definitionConsistency": "Earlier positive labels are not automatically certified under the later fixed-location definition.",
+    "scopeDerivedNoCentering": [
+      {
+        "caseId": "R010",
+        "possessionId": "2026-04-24-ATL-HTX|away|76|1",
+        "rawDecision": "setup1",
+        "context": "back_endline",
+        "effectiveStudyDecision": "attack1",
+        "firstThrowDeduction": 0,
+        "basis": "User-adopted start-context scope; preserve the physical observation and the raw label."
+      },
+      {
+        "caseId": "R066",
+        "possessionId": "2026-06-14-IND-MAD|away|47|1",
+        "rawDecision": "setup1",
+        "context": "sideline_inbounds",
+        "effectiveStudyDecision": "attack1",
+        "firstThrowDeduction": 0,
+        "basis": "User-adopted start-context scope; preserve the physical observation and the raw label."
+      }
+    ],
+    "pendingClockFlags": [
+      "R199",
+      "R204",
+      "R227"
+    ],
+    "next": "Prepare 100 previously unreviewed openings, keep the completed set accessible, and provide the focused recheck queue separately."
+  },
+  "supersededFilmReviewWorkflowPreference": {
     "source": "User instruction in chat, November 13, 2026",
     "afterSetFinished": "Archive the completed labels and prepare a fresh set of unreviewed possessions in the same reviewer. Do not replace the requested next set with analysis only.",
     "currentRequestedBatchSize": 100,
     "selectionPreference": "Emphasize borderline examples where film judgment can distinguish centering from a reset or other non-centering pass. Retain some broader examples.",
     "display": "Keep model predictions hidden. Preserve notes, dictation, saved labels and earlier review sets."
+  },
+  "inactivePreparedReviewBatch": {
+    "id": "opening-pattern-review-100-20261114-v1",
+    "path": "research/possession_review/pattern_review_batch_100_2026-11-14.json",
+    "size": 100,
+    "status": "Archived candidate pool, not the active review assignment"
+  },
+  "automationStrategyProposal2026_11_14": {
+    "status": "Recommendation only; not an approved imputation method or fitted model",
+    "firstStep": "Use fixed membership and original starting-location comparisons to bound how uncertain opening centering labels can change each metric. Retain full physical counts, subtract at most one qualifying completed transfer only on opening possessions, and keep subsequent possessions unchanged.",
+    "cleaning": "Preserve raw labels and definition versions. Reconcile earlier positive labels against the final rule, separate uncertain film alignment and unknown restart context, and retain explicit end-quarter and personnel-replacement flags.",
+    "automation": "Apply confirmed restart scope rules, then evaluate any learned classifier on separately reviewed games. Geometry and logging timestamps do not establish stationary receivers or changed reads.",
+    "imputation": "If probabilities are validated on representative held-out games, consider repeated probabilistic label assignments with model and label uncertainty propagated. Never silently convert unknown to no centering or treat predictions as film observations.",
+    "reviewPolicy": "Use small targeted batches where labels can affect a conclusion; include a separate random audit before making league-wide accuracy or prevalence claims.",
+    "references": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "https://www.jstatsoft.org/article/view/v045i03"
+    ]
   }
 }

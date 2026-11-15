@@ -1677,6 +1677,24 @@
       "fieldPositionMatchHeld": false
     }
   ],
+  "special_situation_exclusions": {
+    "version": "typical-oline-special-situations-20261113",
+    "registryPath": "research/oline_possessions/special_situation_exclusions.json",
+    "registrySha256": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96",
+    "calculationSha256": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1",
+    "excludedPossessions": 3,
+    "sourceThrowsExcluded": 6,
+    "sourceHucksExcluded": 1,
+    "possessionIds": [
+      "2026-05-02-CHI-MIN|away|196|1",
+      "2026-05-09-MTL-TOR|home|85|1",
+      "2026-05-09-PHI-CAR|home|115|1"
+    ],
+    "coverage": "Known reviewed special situations only. Remaining games have not all been screened for clock-driven attacks.",
+    "rule": "Exclude the whole possession when identified as a clock-driven final scoring attempt at the end of a quarter. Apply regardless of goal, turnover, completion, or whether the source records a huck. Retain pull/centering labels and all original events for audit. Apply to the same comparison metrics and their denominators, including huck attempt percentage, huck timing/completion, throw counts and scoring. Never renumber later possessions.",
+    "rawRowsAndFilmLabelsPreserved": true,
+    "numericClockCutoffSeconds": null
+  },
   "exclusions": {
     "Original lineup changed before this possession ended": 3,
     "Reviewed end-of-quarter example": 2,
@@ -1717,6 +1735,14 @@
     "raw_receipt": {
       "path": "research/dead_disc_study/raw_events/source_receipt.json",
       "sha256": "8dac3360b036748d781632e6ad790a56086d5ca279ba5708ebb692bc9c50f687"
+    },
+    "special_situations": {
+      "path": "research/oline_possessions/special_situation_exclusions.json",
+      "sha256": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96"
+    },
+    "special_filter": {
+      "path": "research/oline_possessions/special_situations.py",
+      "sha256": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1"
     }
   },
   "rawGameHashes": {

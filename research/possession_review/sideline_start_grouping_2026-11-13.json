@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-13",
+  "definitionVersion": "completed-centering-transfer-sideline-starts-20261113",
+  "reviewCount": 74,
+  "sidelineOpenings": 6,
+  "filmRuleConflicts": 0,
+  "rows": [
+    {
+      "caseId": "R031",
+      "possessionId": "2026-05-09-PHI-CAR|away|61|1",
+      "startGroup": "sideline_start",
+      "originalContext": "sideline",
+      "observedDecision": "attack1",
+      "ruleDecision": "attack1",
+      "conflict": false,
+      "source": "annotations/2026-11-13-before-sideline-group-browser-export.json"
+    },
+    {
+      "caseId": "R038",
+      "possessionId": "2026-05-02-CHI-MIN|away|43|1",
+      "startGroup": "sideline_start",
+      "originalContext": "sideline",
+      "observedDecision": "attack1",
+      "ruleDecision": "attack1",
+      "conflict": false,
+      "source": "annotations/2026-11-13-before-sideline-group-browser-export.json"
+    },
+    {
+      "caseId": "R094",
+      "possessionId": "2026-05-01-ORE-SLC|away|62|1",
+      "startGroup": "sideline_start",
+      "originalContext": "sideline",
+      "observedDecision": "attack1",
+      "ruleDecision": "attack1",
+      "conflict": false,
+      "source": "annotations/2026-11-13-before-sideline-group-browser-export.json"
+    },
+    {
+      "caseId": "R122",
+      "possessionId": "2026-06-05-CAR-DC|home|28|1",
+      "startGroup": "sideline_start",
+      "originalContext": "sideline",
+      "observedDecision": "attack1",
+      "ruleDecision": "attack1",
+      "conflict": false,
+      "source": "annotations/2026-11-13-before-sideline-group-browser-export.json"
+    },
+    {
+      "caseId": "R169",
+      "possessionId": "2026-04-24-ATL-HTX|away|148|1",
+      "startGroup": "sideline_start",
+      "originalContext": "sideline",
+      "observedDecision": "attack1",
+      "ruleDecision": "attack1",
+      "conflict": false,
+      "source": "annotations/2026-11-13-before-sideline-group-browser-export.json"
+    },
+    {
+      "caseId": "R171",
+      "possessionId": "2026-04-24-ATL-HTX|home|173|1",
+      "startGroup": "sideline_start",
+      "originalContext": "sideline",
+      "observedDecision": "attack1",
+      "ruleDecision": "attack1",
+      "conflict": false,
+      "source": "annotations/2026-11-13-before-sideline-group-browser-export.json"
+    }
+  ],
+  "coordinateCutoff": null,
+  "leagueMetricsChanged": false,
+  "rawReviewsRewritten": false,
+  "completedPilotReevaluated": false,
+  "validation": {
+    "browserReviewObjectsUnchanged": 74,
+    "groupsVerifiedInExport": 6,
+    "newOptionVisible": true,
+    "currentSequencePreserved": true,
+    "componentTests": "Passed: grouping both contexts, retaining centering exceptions, legacy reviews, save/export, resume and dictation.",
+    "frozenModelAndSelectionPreserved": true,
+    "otherReportsUnchanged": true,
+    "screenshot": "/tmp/ufa-sideline-start-options-2026-11-13.png"
+  }
+}

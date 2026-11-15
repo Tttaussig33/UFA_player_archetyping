@@ -8,10 +8,13 @@
   ],
   "local_data_note": "Full exports and event archives remain local and are excluded from Git. Captured input hashes and aggregate results are committed.",
   "steps": [
-    "Use an environment with requirements.txt, then run build_cohort.py, analyze.py, follow_up.py, validate.py, and build_report.py from this directory.",
-    "Use research/vscode-preview/export-reports.cjs with the native canvas directory to refresh the portable reports.",
-    "Run research/vscode-preview/verify-browser.cjs and the VS Code extension test suite for rendered-output verification."
+    "Preserve the raw cohort; only rebuild it if the source events change. Film labels and special-situation decisions are separate from raw events.",
+    "After collecting a new browser export, run import_review_exclusions.py <review-export> to import explicit endOfQuarterAttempt checkbox choices. This preserves the export and centering labels.",
+    "Run analyze.py, follow_up.py, original_line_scoring.py, reviewed_centering_counts.py, starting_location_options.py, possession_filters.py, huck_attempt_percentage.py, centering_sensitivity_bounds.py, validate.py, and build_report.py with requirements.txt installed.",
+    "Refresh the existing reviewer embedded exclusion registry and sensitivity results, preserving its saved labels, batch IDs and review order.",
+    "Use research/vscode-preview/export-reports.cjs with the managed canvas directory to refresh the portable reports, then verify the affected charts and reviewer controls through the browser."
   ],
   "design": "Exploratory specification and explicit amendments are in analysis_design.json. Prior-opponent activity requires exact source-event reconciliation; ambiguous contexts are missing rather than zero.",
-  "follow_up_note": "The November 6 request adds an independently verified playoff-team view and outcomes after receiving-team turnovers. These descriptive additions do not refit the November 5 models."
+  "follow_up_note": "The November 6 request adds an independently verified playoff-team view and outcomes after receiving-team turnovers. These descriptive additions do not refit the November 5 models.",
+  "clock_exclusions": "Known reviewed clock-driven scoring possessions are excluded through special_situations.py and special_situation_exclusions.json. These are post-hoc sample refinements, not a pre-registered cutoff or a complete league-wide clock screen."
 }

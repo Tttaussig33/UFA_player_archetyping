@@ -8,6 +8,7 @@ from pathlib import Path
 import csv
 import hashlib
 import json
+import special_situations as special
 import math
 
 HERE = Path(__file__).resolve().parent
@@ -97,7 +98,7 @@ def main():
     with paths['possessions'].open() as handle:
         for p in csv.DictReader(handle):
             pid = p['possession_id']
-            if not eligibility[pid]['included']:
+            if not eligibility[pid]['included'] or pid in special.excluded_ids():
                 continue
             assert p['outcome'] in ('goal', 'turnover') and not eligibility[pid]['has_timeout']
             physical = sorted(throws.get(pid, []), key=lambda r: int(r['ordinal']))
@@ -146,6 +147,7 @@ def main():
         ],
         'sourceFreshness': 'Preserved DBeaver export and captured UFA events; no live database refresh.',
         'scopes': scopes, 'inputs': inputs,
+        'special_situation_exclusions': special.metadata(),
         'validation': {'sameCohortForBothMetrics': True, 'teamCountsReconcile': True,
                        'noLaterPossessionDeductions': True, 'sourceHashesVerified': True,
                        'sourceOutcomesAndPhysicalThrowsPreserved': True, 'noModelPredictedLabels': True},

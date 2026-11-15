@@ -1,0 +1,106 @@
+{
+  "id": "opening-definition-recheck-20261114",
+  "title": "Earlier cases · 12 checks",
+  "caseIds": [
+    "R084",
+    "R086",
+    "R014",
+    "R035",
+    "R047",
+    "R077",
+    "R109",
+    "R182",
+    "R218",
+    "R039",
+    "R082",
+    "R074"
+  ],
+  "clips": [
+    {
+      "caseId": "R084",
+      "start": 1860,
+      "end": 1955,
+      "cue": "You could not tell from the first viewing. Check whether the pull and first transfer are visible; Cannot tell remains valid. Q1 · point begins 1:55 · score 3–7 from the receiving team’s perspective",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R086",
+      "start": 1985,
+      "end": 2080,
+      "cue": "You could not tell from the first viewing. Check whether the pull and first transfer are visible; Cannot tell remains valid. Q1 · point begins 0:44 · score 7–4 from the receiving team’s perspective",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R014",
+      "start": 1574,
+      "end": 1669,
+      "cue": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule. Q1 · point begins 0:20 · score 5–8 from the receiving team’s perspective",
+      "timingStatus": "estimated; watch the next point after the Callahan"
+    },
+    {
+      "caseId": "R035",
+      "start": 1522,
+      "end": 1617,
+      "cue": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule. Q1 · point begins 10:57 · score 0–1 from the receiving team’s perspective",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R047",
+      "start": 694,
+      "end": 789,
+      "cue": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule. Q1 · point begins 12:00 · score 0–0 from the receiving team’s perspective",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R077",
+      "start": 1090,
+      "end": 1185,
+      "cue": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule. Q1 · point begins 7:30 · score 1–3 from the receiving team’s perspective",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R109",
+      "start": 1447,
+      "end": 1542,
+      "cue": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule. Q1 · point begins 5:52 · score 6–2 from the receiving team’s perspective",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R182",
+      "start": 3259,
+      "end": 3354,
+      "cue": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule. Q2 · point begins 10:31 · Minnesota Wind Chill 9–4",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R218",
+      "start": 4016,
+      "end": 4111,
+      "cue": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule. Q2 · point begins 2:21 · DC Breeze 11–12",
+      "timingStatus": "estimated"
+    },
+    {
+      "caseId": "R039",
+      "start": 2015,
+      "end": 2045,
+      "cue": "Confirm that this clip shows the later possession after the turnover, rather than the pull opening. Q1 · point begins 7:41 · score 3–1 from the receiving team’s perspective",
+      "timingStatus": "agent_spot_checked"
+    },
+    {
+      "caseId": "R082",
+      "start": 1715,
+      "end": 1740,
+      "cue": "Confirm that this clip shows the later possession after the turnover, rather than the pull opening. Q1 · point begins 3:45 · score 2–6 from the receiving team’s perspective",
+      "timingStatus": "agent_spot_checked"
+    },
+    {
+      "caseId": "R074",
+      "start": 776,
+      "end": 871,
+      "cue": "Reconcile the observed caught-pull start with the recorded brick-like starting position. Q1 · point begins 10:51 · score 0–1 from the receiving team’s perspective",
+      "timingStatus": "estimated"
+    }
+  ],
+  "purpose": "Resolve unclear film or start context and two earlier clip alignments; this is separate from the 100 fresh openings.",
+  "definitionVersion": "fixed-location-pull-setup-centering-20261114"
+}

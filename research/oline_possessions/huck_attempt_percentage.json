@@ -18,7 +18,7 @@
     "unit": "Throw attempts by the original seven receiving-point players, grouped by their own first, second, or later possession within that point.",
     "lineup": "Retain actions strictly before the audited first personnel change or uncertain/contradictory lineup record. Keep pre-change attempts even when a replacement line finishes the possession. Preserve original possession numbers.",
     "timeout": "A timeout alone does not delete an attempt. Retain original-seven actions before the cutoff, including before a timeout/substitution and after same-seven timeouts. The earlier exclusion of timeout-containing possessions is retained as a sensitivity check.",
-    "periodEnd": "Include attempts in period-ending possessions; this throw-level denominator does not require a completed possession outcome.",
+    "periodEnd": "Include ordinary attempts in period-ending possessions, but exclude reviewed clock-driven final scoring attempts from the whole possession, regardless of its recorded outcome.",
     "location": "All starts or original first throwing location at least 60 yards from the attacking goal line (first_y <=40 on the 120-yard coordinate system). Starting location remains before any centering pass; it is a recorded throwing-location proxy, not a verified pull-catching spot. The 60-yard cutoff does not exactly match field positions.",
     "comparison": "Second minus first. Opening baseline contains all eligible openings, not only openings followed by a second possession. Later possessions are conditional on losing the disc and recovering it with the original line.",
     "uncertainty": "10000 whole-game bootstrap draws with shared weights across possession groups. Team ranges are exploratory individual intervals, not simultaneous intervals or a ranking of proven team differences. No context model or CP model is needed for these observed counts.",
@@ -30,11 +30,12 @@
     "games": 131,
     "teams": 22,
     "source_attempts": 52997,
-    "retained_attempts": 50473,
-    "excluded_attempts": 2524,
+    "special_situation_attempts_excluded": 6,
+    "retained_attempts": 50467,
+    "excluded_attempts": 2530,
     "missing_game": "2026-07-18-PIT-CHI",
     "attempts_in_timeout_possessions": 734,
-    "attempts_in_period_ending_possessions": 611,
+    "attempts_in_period_ending_possessions": 607,
     "pre_cutoff_attempts_in_interrupted_possessions": 837,
     "source_excluded_points": [
       {
@@ -225,14 +226,14 @@
         "groups": [
           {
             "stage": 1,
-            "n": 40562,
-            "sum": 2064,
-            "estimate": 0.05088506483901188,
+            "n": 40556,
+            "sum": 2063,
+            "estimate": 0.05086793569385541,
             "games": 131,
-            "possessions": 5006,
+            "possessions": 5003,
             "ci95": [
-              0.04815467901606147,
-              0.05374922959204812
+              0.04814214607025773,
+              0.053723927152636214
             ]
           },
           {
@@ -265,19 +266,19 @@
           {
             "from": 1,
             "to": 2,
-            "difference": 0.017748887415630035,
+            "difference": 0.01776601656078651,
             "ci95": [
-              0.008724798771374678,
-              0.02732373861213682
+              0.008754073438712484,
+              0.027338130807234347
             ]
           },
           {
             "from": 1,
             "to": 3,
-            "difference": 0.02697381593957693,
+            "difference": 0.026990945084733403,
             "ci95": [
-              -8.404577290244311e-05,
-              0.05907559009682621
+              -8.885446030782342e-05,
+              0.059116957828268674
             ]
           }
         ],
@@ -285,14 +286,14 @@
           "groups": [
             {
               "stage": 0,
-              "n": 40562,
-              "sum": 2064,
-              "estimate": 0.05088506483901188,
+              "n": 40556,
+              "sum": 2063,
+              "estimate": 0.05086793569385541,
               "games": 131,
-              "possessions": 5006,
+              "possessions": 5003,
               "ci95": [
-                0.04818395279485126,
-                0.053693994272742435
+                0.048163089285856886,
+                0.05367444912972702
               ]
             },
             {
@@ -313,10 +314,10 @@
             {
               "from": 0,
               "to": 1,
-              "difference": 0.01885523279740481,
+              "difference": 0.018872361942561283,
               "ci95": [
-                0.010936719760838196,
-                0.027238528048119142
+                0.010941134307772597,
+                0.027275217550815054
               ]
             }
           ]
@@ -1170,14 +1171,14 @@
             "groups": [
               {
                 "stage": 1,
-                "n": 1538,
-                "sum": 81,
-                "estimate": 0.05266579973992198,
+                "n": 1536,
+                "sum": 80,
+                "estimate": 0.052083333333333336,
                 "games": 12,
-                "possessions": 171,
+                "possessions": 170,
                 "ci95": [
-                  0.042695159590484796,
-                  0.0654479762894474
+                  0.04229996625419576,
+                  0.06476717695670121
                 ]
               },
               {
@@ -1207,19 +1208,19 @@
               {
                 "from": 1,
                 "to": 2,
-                "difference": 0.08066753359341136,
+                "difference": 0.08124999999999999,
                 "ci95": [
-                  -0.04944663823151715,
-                  0.17494881504190005
+                  -0.04852714986411446,
+                  0.17567482592739775
                 ]
               },
               {
                 "from": 1,
                 "to": 3,
-                "difference": 0.19733420026007803,
+                "difference": 0.19791666666666666,
                 "ci95": [
-                  0.18551063320967778,
-                  0.20790585127032102
+                  0.18623044073312858,
+                  0.20825735243710153
                 ]
               }
             ],
@@ -1227,14 +1228,14 @@
               "groups": [
                 {
                   "stage": 0,
-                  "n": 1538,
-                  "sum": 81,
-                  "estimate": 0.05266579973992198,
+                  "n": 1536,
+                  "sum": 80,
+                  "estimate": 0.052083333333333336,
                   "games": 12,
-                  "possessions": 171,
+                  "possessions": 170,
                   "ci95": [
-                    0.042789087848496984,
-                    0.06580937972768533
+                    0.04241543655891385,
+                    0.06512786420869492
                   ]
                 },
                 {
@@ -1255,10 +1256,10 @@
                 {
                   "from": 0,
                   "to": 1,
-                  "difference": 0.09827759648649312,
+                  "difference": 0.09886006289308175,
                   "ci95": [
-                    -0.05011274235064558,
-                    0.1813281713615358
+                    -0.04920515754881361,
+                    0.18190032437250456
                   ]
                 }
               ]
@@ -1267,14 +1268,14 @@
           "exact": [
             {
               "stage": 1,
-              "n": 1538,
-              "sum": 81,
-              "estimate": 0.05266579973992198,
+              "n": 1536,
+              "sum": 80,
+              "estimate": 0.052083333333333336,
               "games": 12,
-              "possessions": 171,
+              "possessions": 170,
               "ci95": [
-                0.042873486700424894,
-                0.0656607756649505
+                0.04245195482102483,
+                0.06506604780019319
               ]
             },
             {
@@ -2284,14 +2285,14 @@
             "groups": [
               {
                 "stage": 1,
-                "n": 1615,
+                "n": 1613,
                 "sum": 107,
-                "estimate": 0.06625386996904024,
+                "estimate": 0.06633601983880967,
                 "games": 12,
-                "possessions": 224,
+                "possessions": 223,
                 "ci95": [
-                  0.0570340269334717,
-                  0.07629793621013134
+                  0.05715927266604933,
+                  0.076346284935242
                 ]
               },
               {
@@ -2324,19 +2325,19 @@
               {
                 "from": 1,
                 "to": 2,
-                "difference": 0.010179251050068033,
+                "difference": 0.010097101180298607,
                 "ci95": [
-                  -0.031220903331972565,
-                  0.05701408958167406
+                  -0.03126956805562009,
+                  0.0569443782966693
                 ]
               },
               {
                 "from": 1,
                 "to": 3,
-                "difference": 0.15596835225318195,
+                "difference": 0.15588620238341255,
                 "ci95": [
-                  -0.06932515337423313,
-                  0.4166455945156213
+                  -0.06940917178906503,
+                  0.41653967533127134
                 ]
               }
             ],
@@ -2344,14 +2345,14 @@
               "groups": [
                 {
                   "stage": 0,
-                  "n": 1615,
+                  "n": 1613,
                   "sum": 107,
-                  "estimate": 0.06625386996904024,
+                  "estimate": 0.06633601983880967,
                   "games": 12,
-                  "possessions": 224,
+                  "possessions": 223,
                   "ci95": [
-                    0.0570490071577003,
-                    0.07636180294734492
+                    0.057162511810254016,
+                    0.07643726538530257
                   ]
                 },
                 {
@@ -2372,10 +2373,10 @@
                 {
                   "from": 0,
                   "to": 1,
-                  "difference": 0.01808347942855011,
+                  "difference": 0.018001329558780685,
                   "ci95": [
-                    -0.01968138241097281,
-                    0.06101912064654775
+                    -0.019759047926126715,
+                    0.06095533312725217
                   ]
                 }
               ]
@@ -2384,14 +2385,14 @@
           "exact": [
             {
               "stage": 1,
-              "n": 1615,
+              "n": 1613,
               "sum": 107,
-              "estimate": 0.06625386996904024,
+              "estimate": 0.06633601983880967,
               "games": 12,
-              "possessions": 224,
+              "possessions": 223,
               "ci95": [
-                0.05696960315226569,
-                0.07615490983952179
+                0.05706840371440166,
+                0.07618467206611844
               ]
             },
             {
@@ -3136,14 +3137,14 @@
             "groups": [
               {
                 "stage": 1,
-                "n": 2038,
+                "n": 2036,
                 "sum": 94,
-                "estimate": 0.04612365063788027,
+                "estimate": 0.04616895874263261,
                 "games": 11,
-                "possessions": 225,
+                "possessions": 224,
                 "ci95": [
-                  0.035288256886477014,
-                  0.057681340350758364
+                  0.03532332603039847,
+                  0.05774733354894095
                 ]
               },
               {
@@ -3176,18 +3177,18 @@
               {
                 "from": 1,
                 "to": 2,
-                "difference": -0.023999756832570537,
+                "difference": -0.024045064937322877,
                 "ci95": [
-                  -0.03639778571168163,
-                  0.0024347588499820444
+                  -0.03646528271653174,
+                  0.0023873095073462746
                 ]
               },
               {
                 "from": 1,
                 "to": 3,
-                "difference": 0.13569453118030156,
+                "difference": 0.13564922307554922,
                 "ci95": [
-                  -0.043697820718155804,
+                  -0.043740646940988406,
                   0.29073140937547715
                 ]
               }
@@ -3196,14 +3197,14 @@
               "groups": [
                 {
                   "stage": 0,
-                  "n": 2038,
+                  "n": 2036,
                   "sum": 94,
-                  "estimate": 0.04612365063788027,
+                  "estimate": 0.04616895874263261,
                   "games": 11,
-                  "possessions": 225,
+                  "possessions": 224,
                   "ci95": [
-                    0.035406588571742836,
-                    0.05774519172727798
+                    0.0354071704990162,
+                    0.057800585426429935
                   ]
                 },
                 {
@@ -3224,10 +3225,10 @@
                 {
                   "from": 0,
                   "to": 1,
-                  "difference": -0.016587785658977318,
+                  "difference": -0.016633093763729657,
                   "ci95": [
-                    -0.028703013216508803,
-                    0.0074924918309431
+                    -0.028782881505261954,
+                    0.00749215097069591
                   ]
                 }
               ]
@@ -3236,14 +3237,14 @@
           "exact": [
             {
               "stage": 1,
-              "n": 2038,
+              "n": 2036,
               "sum": 94,
-              "estimate": 0.04612365063788027,
+              "estimate": 0.04616895874263261,
               "games": 11,
-              "possessions": 225,
+              "possessions": 224,
               "ci95": [
-                0.03525359862389104,
-                0.05806174423573147
+                0.035305732464073966,
+                0.05813953488372093
               ]
             },
             {
@@ -3411,9 +3412,9 @@
         "exclude_possessions_containing_timeout": [
           {
             "stage": 1,
-            "sum": 2046,
-            "n": 40010,
-            "estimate": 0.05113721569607598
+            "sum": 2045,
+            "n": 40004,
+            "estimate": 0.05111988801119888
           },
           {
             "stage": 2,
@@ -3431,9 +3432,9 @@
         "exclude_period_ending_possessions": [
           {
             "stage": 1,
-            "sum": 2054,
-            "n": 40115,
-            "estimate": 0.0512027919730774
+            "sum": 2053,
+            "n": 40113,
+            "estimate": 0.05118041532670207
           },
           {
             "stage": 2,
@@ -3451,9 +3452,9 @@
         "forward_over_40_yards": [
           {
             "stage": 1,
-            "sum": 1921,
-            "n": 40562,
-            "estimate": 0.04735959765297569
+            "sum": 1920,
+            "n": 40556,
+            "estimate": 0.04734194693756781
           },
           {
             "stage": 2,
@@ -3475,14 +3476,14 @@
         "groups": [
           {
             "stage": 1,
-            "n": 45149,
-            "sum": 2248,
-            "estimate": 0.049790693038605505,
+            "n": 45143,
+            "sum": 2247,
+            "estimate": 0.04977515893937044,
             "games": 131,
-            "possessions": 5704,
+            "possessions": 5701,
             "ci95": [
-              0.047299821909060624,
-              0.052341479357550194
+              0.047282367312911466,
+              0.05232689995721424
             ]
           },
           {
@@ -3515,19 +3516,19 @@
           {
             "from": 1,
             "to": 2,
-            "difference": 0.005764862516950048,
+            "difference": 0.00578039661618511,
             "ci95": [
-              -0.0010132207549045334,
-              0.012432939845898565
+              -0.0010182613365325188,
+              0.012460192848093103
             ]
           },
           {
             "from": 1,
             "to": 3,
-            "difference": 0.01730195871858299,
+            "difference": 0.017317492817818053,
             "ci95": [
-              -0.000994775710482911,
-              0.03819339748074308
+              -0.0009723991760352792,
+              0.038208309906114915
             ]
           }
         ],
@@ -3535,14 +3536,14 @@
           "groups": [
             {
               "stage": 0,
-              "n": 45149,
-              "sum": 2248,
-              "estimate": 0.049790693038605505,
+              "n": 45143,
+              "sum": 2247,
+              "estimate": 0.04977515893937044,
               "games": 131,
-              "possessions": 5704,
+              "possessions": 5701,
               "ci95": [
-                0.04728163020549581,
-                0.052355817409779216
+                0.04727305707254529,
+                0.05234252576862573
               ]
             },
             {
@@ -3563,10 +3564,10 @@
             {
               "from": 0,
               "to": 1,
-              "difference": 0.007121403129689008,
+              "difference": 0.00713693722892407,
               "ci95": [
-                0.0009654415676738174,
-                0.013341981509194495
+                0.0009879018739749126,
+                0.013346853949560731
               ]
             }
           ]
@@ -4420,14 +4421,14 @@
             "groups": [
               {
                 "stage": 1,
-                "n": 1902,
-                "sum": 93,
-                "estimate": 0.04889589905362776,
+                "n": 1900,
+                "sum": 92,
+                "estimate": 0.04842105263157895,
                 "games": 12,
-                "possessions": 221,
+                "possessions": 220,
                 "ci95": [
-                  0.040102795140474726,
-                  0.060052680622572394
+                  0.039806086770372485,
+                  0.0594117739028069
                 ]
               },
               {
@@ -4460,19 +4461,19 @@
               {
                 "from": 1,
                 "to": 2,
-                "difference": 0.03443743427970557,
+                "difference": 0.03491228070175438,
                 "ci95": [
-                  -0.03366581871131868,
-                  0.09842747274425873
+                  -0.03323659689352432,
+                  0.0989665798963745
                 ]
               },
               {
                 "from": 1,
                 "to": 3,
-                "difference": 0.06648871633098763,
+                "difference": 0.06696356275303644,
                 "ci95": [
-                  -0.054339632963946824,
-                  0.46640878365014715
+                  -0.05376332340863184,
+                  0.46669726486919305
                 ]
               }
             ],
@@ -4480,14 +4481,14 @@
               "groups": [
                 {
                   "stage": 0,
-                  "n": 1902,
-                  "sum": 93,
-                  "estimate": 0.04889589905362776,
+                  "n": 1900,
+                  "sum": 92,
+                  "estimate": 0.04842105263157895,
                   "games": 12,
-                  "possessions": 221,
+                  "possessions": 220,
                   "ci95": [
-                    0.04020100502512563,
-                    0.06001350744345951
+                    0.03986837431608859,
+                    0.05961589767733835
                   ]
                 },
                 {
@@ -4508,10 +4509,10 @@
                 {
                   "from": 0,
                   "to": 1,
-                  "difference": 0.04126803537260175,
+                  "difference": 0.04174288179465056,
                   "ci95": [
-                    -0.031664515100510084,
-                    0.12304022091045537
+                    -0.031214001665002006,
+                    0.12352939952841159
                   ]
                 }
               ]
@@ -4520,14 +4521,14 @@
           "exact": [
             {
               "stage": 1,
-              "n": 1902,
-              "sum": 93,
-              "estimate": 0.04889589905362776,
+              "n": 1900,
+              "sum": 92,
+              "estimate": 0.04842105263157895,
               "games": 12,
-              "possessions": 221,
+              "possessions": 220,
               "ci95": [
-                0.04001928640308582,
-                0.05982034799201687
+                0.03977785194685056,
+                0.05911338820821579
               ]
             },
             {
@@ -5549,14 +5550,14 @@
             "groups": [
               {
                 "stage": 1,
-                "n": 1775,
+                "n": 1773,
                 "sum": 110,
-                "estimate": 0.061971830985915494,
+                "estimate": 0.06204173716864072,
                 "games": 12,
-                "possessions": 247,
+                "possessions": 246,
                 "ci95": [
-                  0.05442582910058894,
-                  0.0694144959753321
+                  0.054545209110543884,
+                  0.06946039035591274
                 ]
               },
               {
@@ -5589,19 +5590,19 @@
               {
                 "from": 1,
                 "to": 2,
-                "difference": -0.0036060722310516796,
+                "difference": -0.003675978413776905,
                 "ci95": [
-                  -0.02569445534801167,
-                  0.021150391904213705
+                  -0.02572666724924558,
+                  0.021014371391421573
                 ]
               },
               {
                 "from": 1,
                 "to": 3,
-                "difference": 0.10469483568075116,
+                "difference": 0.10462492949802593,
                 "ci95": [
-                  0.02373463695336438,
-                  0.18829429242836918
+                  0.023661928273007882,
+                  0.18815896505482366
                 ]
               }
             ],
@@ -5609,14 +5610,14 @@
               "groups": [
                 {
                   "stage": 0,
-                  "n": 1775,
+                  "n": 1773,
                   "sum": 110,
-                  "estimate": 0.061971830985915494,
+                  "estimate": 0.06204173716864072,
                   "games": 12,
-                  "possessions": 247,
+                  "possessions": 246,
                   "ci95": [
-                    0.05430590270624474,
-                    0.06931244368198516
+                    0.05438855254287757,
+                    0.06934735790942778
                   ]
                 },
                 {
@@ -5637,10 +5638,10 @@
                 {
                   "from": 0,
                   "to": 1,
-                  "difference": 0.0056438273770738345,
+                  "difference": 0.005573921194348609,
                   "ci95": [
-                    -0.012429290086185561,
-                    0.024636354080051454
+                    -0.012525193283554264,
+                    0.024608574146854238
                   ]
                 }
               ]
@@ -5649,14 +5650,14 @@
           "exact": [
             {
               "stage": 1,
-              "n": 1775,
+              "n": 1773,
               "sum": 110,
-              "estimate": 0.061971830985915494,
+              "estimate": 0.06204173716864072,
               "games": 12,
-              "possessions": 247,
+              "possessions": 246,
               "ci95": [
-                0.05430088910731838,
-                0.06925680806870053
+                0.054402523587909285,
+                0.06925957189675891
               ]
             },
             {
@@ -6401,14 +6402,14 @@
             "groups": [
               {
                 "stage": 1,
-                "n": 2232,
+                "n": 2230,
                 "sum": 98,
-                "estimate": 0.04390681003584229,
+                "estimate": 0.04394618834080718,
                 "games": 11,
-                "possessions": 252,
+                "possessions": 251,
                 "ci95": [
-                  0.03583693312514469,
-                  0.05218155021226896
+                  0.03587773129939433,
+                  0.0521896409804091
                 ]
               },
               {
@@ -6441,18 +6442,18 @@
               {
                 "from": 1,
                 "to": 2,
-                "difference": -0.021518750334349756,
+                "difference": -0.021558128639314642,
                 "ci95": [
-                  -0.0312364010162646,
-                  -0.0028551746604114987
+                  -0.031279414082560124,
+                  -0.0029164834152013196
                 ]
               },
               {
                 "from": 1,
                 "to": 3,
-                "difference": 0.016699250570218316,
+                "difference": 0.01665987226525343,
                 "ci95": [
-                  -0.042706456668301855,
+                  -0.042778288868445265,
                   0.049898741173123914
                 ]
               }
@@ -6461,14 +6462,14 @@
               "groups": [
                 {
                   "stage": 0,
-                  "n": 2232,
+                  "n": 2230,
                   "sum": 98,
-                  "estimate": 0.04390681003584229,
+                  "estimate": 0.04394618834080718,
                   "games": 11,
-                  "possessions": 252,
+                  "possessions": 251,
                   "ci95": [
-                    0.03576676322910542,
-                    0.05226054537416812
+                    0.035800566297505346,
+                    0.052281447177303084
                   ]
                 },
                 {
@@ -6489,10 +6490,10 @@
                 {
                   "from": 0,
                   "to": 1,
-                  "difference": -0.017328736946141295,
+                  "difference": -0.01736811525110618,
                   "ci95": [
-                    -0.025733231922334787,
-                    -0.003139659280008699
+                    -0.025781425972587722,
+                    -0.0031881891986844575
                   ]
                 }
               ]
@@ -6501,14 +6502,14 @@
           "exact": [
             {
               "stage": 1,
-              "n": 2232,
+              "n": 2230,
               "sum": 98,
-              "estimate": 0.04390681003584229,
+              "estimate": 0.04394618834080718,
               "games": 11,
-              "possessions": 252,
+              "possessions": 251,
               "ci95": [
-                0.03573003489048265,
-                0.05234176626611246
+                0.035764050162563864,
+                0.05235401563479815
               ]
             },
             {
@@ -6679,9 +6680,9 @@
         "exclude_possessions_containing_timeout": [
           {
             "stage": 1,
-            "sum": 2227,
-            "n": 44525,
-            "estimate": 0.05001684446939921
+            "sum": 2226,
+            "n": 44519,
+            "estimate": 0.050001123115972955
           },
           {
             "stage": 2,
@@ -6699,9 +6700,9 @@
         "exclude_period_ending_possessions": [
           {
             "stage": 1,
-            "sum": 2237,
-            "n": 44579,
-            "estimate": 0.050180578299199176
+            "sum": 2236,
+            "n": 44577,
+            "estimate": 0.05016039661708953
           },
           {
             "stage": 2,
@@ -6719,9 +6720,9 @@
         "forward_over_40_yards": [
           {
             "stage": 1,
-            "sum": 2081,
-            "n": 45149,
-            "estimate": 0.046091829276395935
+            "sum": 2080,
+            "n": 45143,
+            "estimate": 0.04607580355758368
           },
           {
             "stage": 2,
@@ -9121,8 +9122,8 @@
       "GameID": "2026-05-09-PHI-CAR",
       "own_possession": 1,
       "starts_60_plus": true,
-      "attempts": 130,
-      "hucks": 8
+      "attempts": 128,
+      "hucks": 7
     },
     {
       "team": "flyers",
@@ -11993,7 +11994,7 @@
       "GameID": "2026-05-09-MTL-TOR",
       "own_possession": 1,
       "starts_60_plus": true,
-      "attempts": 157,
+      "attempts": 155,
       "hucks": 8
     },
     {
@@ -14209,7 +14210,7 @@
       "GameID": "2026-05-02-CHI-MIN",
       "own_possession": 1,
       "starts_60_plus": true,
-      "attempts": 193,
+      "attempts": 191,
       "hucks": 8
     },
     {
@@ -14877,6 +14878,24 @@
       "hucks": 0
     }
   ],
+  "special_situation_exclusions": {
+    "version": "typical-oline-special-situations-20261113",
+    "registryPath": "research/oline_possessions/special_situation_exclusions.json",
+    "registrySha256": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96",
+    "calculationSha256": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1",
+    "excludedPossessions": 3,
+    "sourceThrowsExcluded": 6,
+    "sourceHucksExcluded": 1,
+    "possessionIds": [
+      "2026-05-02-CHI-MIN|away|196|1",
+      "2026-05-09-MTL-TOR|home|85|1",
+      "2026-05-09-PHI-CAR|home|115|1"
+    ],
+    "coverage": "Known reviewed special situations only. Remaining games have not all been screened for clock-driven attacks.",
+    "rule": "Exclude the whole possession when identified as a clock-driven final scoring attempt at the end of a quarter. Apply regardless of goal, turnover, completion, or whether the source records a huck. Retain pull/centering labels and all original events for audit. Apply to the same comparison metrics and their denominators, including huck attempt percentage, huck timing/completion, throw counts and scoring. Never renumber later possessions.",
+    "rawRowsAndFilmLabelsPreserved": true,
+    "numericClockCutoffSeconds": null
+  },
   "inputs": {
     "throws.csv": {
       "path": "research/oline_possessions/throws.csv",
@@ -14888,7 +14907,7 @@
     },
     "original_line_scoring.json": {
       "path": "research/oline_possessions/original_line_scoring.json",
-      "sha256": "b3ce7f2ab43d756453cbf0ddb180c876d59920dbf52cff86dad70c80e3a452e3"
+      "sha256": "44c8fa3415e44537d70612ac9de9b04436be71bf4c25ce8ae58156c110ed918d"
     },
     "cohort_audit.json": {
       "path": "research/oline_possessions/cohort_audit.json",
@@ -14896,7 +14915,15 @@
     },
     "calculation": {
       "path": "research/oline_possessions/huck_attempt_percentage.py",
-      "sha256": "a2a83d4e8ac1f1a33897df89ee0847909955e5e2a857f8bdad3c4363ecbd31ef"
+      "sha256": "211b42715dddbc84906c38f6240f592f8bc924ab805de06ed2682697442deeb4"
+    },
+    "special_situations": {
+      "path": "research/oline_possessions/special_situation_exclusions.json",
+      "sha256": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96"
+    },
+    "special_filter": {
+      "path": "research/oline_possessions/special_situations.py",
+      "sha256": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1"
     }
   },
   "environment": {

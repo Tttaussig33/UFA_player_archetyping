@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "definitionVersion": "qualifying-pull-setup-centering-20261113",
+  "caseId": "R088",
+  "observedCenteringPass": true,
+  "qualifyingCenteringPass": false,
+  "decision": "attack1",
+  "firstThrowRetained": true,
+  "wholePossessionExcludedByThisLabel": false,
+  "contextPreserved": true,
+  "earlierArchiveReviewsUnchanged": true,
+  "source": "User clarification about card 56, Oregon at Salt Lake, Q1 point 2, in the research chat on November 13, 2026.",
+  "frozenFiles": {
+    "research/possession_review/opening_classifier_pilot.json": "b6fc95f9db98c179181338ee601d5ea98333e180e242f825d9ea056b32bfe9b8",
+    "research/possession_review/completed_classifier_pilot_2026-11-13.json": "c0cdcff44722b5513d060128796c1f3c13f0793d7b93383272ae4b9a1d96837a",
+    "research/possession_review/pattern_review_batch_100_2026-11-13.json": "d433b87702d27136cd5f347aaaf90e64ae5eb21e7602892c1e885d60e9873d16",
+    "research/possession_review/current_opening_label_inventory.json": "ee62fb610cd00e321c7a3e6bb0dcb482ba8d07ba82c6517fedbcfd65d9067b65",
+    "research/oline_possessions/reviewed_centering_counts.json": "a027e039207baa99bd45674a51b33cd82d243b13c4e92051fbedace7e07eb395",
+    "research/oline_possessions/centering_sensitivity_bounds.json": "9f5f8904c471329ad8d256e8353f6316a538adbac2d92be65d2e77f96d2c2a30"
+  },
+  "analysisRecalculated": false,
+  "browserVerification": {
+    "reviewsPreserved": 121,
+    "changedReview": "R088 only",
+    "positionPreserved": "New 100 possessions, card 56",
+    "scopeWordingRendered": true,
+    "screenshot": "/tmp/ufa-sideline-centering-scope-2026-11-13.png"
+  },
+  "componentChecks": "verify_dictation.cjs passed including separate physical observation and study label",
+  "frozenFilesUnchanged": true
+}

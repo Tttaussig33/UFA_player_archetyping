@@ -50,6 +50,15 @@ def main():
     }
     inputs = {k: {'path': str(p.relative_to(ROOT)), 'sha256': sha(p)} for k, p in paths.items()}
     loaded = {k: json.loads(p.read_text()) for k, p in paths.items()}
+    previous_evaluation = HERE / 'completed_classifier_pilot_2026-11-13.json'
+    if previous_evaluation.exists():
+        evaluated_version = json.loads(previous_evaluation.read_text())['definitionVersion']
+        if loaded['definition']['version'] != evaluated_version:
+            raise SystemExit(
+                'The centering definition has changed since this historical pilot. '
+                'Recheck earlier labels under the new definition before creating a new evaluation. '
+                'The archived evaluation and current corrections have not been overwritten.'
+            )
     pilot, batch = loaded['frozen_pilot'], loaded['frozen_pilot']['prospective_batch']
     assert inputs['original_archive']['sha256'] == pilot['inputs']['reviews']['sha256']
     assert inputs['inventory']['sha256'] == pilot['inputs']['inventory']['sha256']

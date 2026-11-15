@@ -1,0 +1,43 @@
+{
+  "version": "typical-oline-special-situations-20261113",
+  "date": "2026-11-13",
+  "timezone": "America/New_York",
+  "rule": "Exclude the whole possession when identified as a clock-driven final scoring attempt at the end of a quarter. Apply regardless of goal, turnover, completion, or whether the source records a huck. Retain pull/centering labels and all original events for audit. Apply to the same comparison metrics and their denominators, including huck attempt percentage, huck timing/completion, throw counts and scoring. Never renumber later possessions.",
+  "clockThresholdSeconds": null,
+  "coverage": "Reviewed examples only; a complete league-wide screen remains unfinished. A low clock is a review clue, not automatic exclusion.",
+  "possessions": [
+    {
+      "caseId": "R033",
+      "possessionId": "2026-05-09-PHI-CAR|home|115|1",
+      "gameId": "2026-05-09-PHI-CAR",
+      "quarter": 1,
+      "pointClock": "0:04",
+      "reason": "end_of_quarter_scoring_attempt",
+      "excludeFromTypicalOline": true,
+      "source": "Existing explicit end-of-quarter exclusion in reviewed_centering_counts.py; R033 also has a matching saved user note.",
+      "preserveFilmLabels": true
+    },
+    {
+      "caseId": "R060",
+      "possessionId": "2026-05-09-MTL-TOR|home|85|1",
+      "gameId": "2026-05-09-MTL-TOR",
+      "quarter": 1,
+      "pointClock": "0:04",
+      "reason": "end_of_quarter_scoring_attempt",
+      "excludeFromTypicalOline": true,
+      "source": "Existing explicit end-of-quarter exclusion in reviewed_centering_counts.py; R033 also has a matching saved user note.",
+      "preserveFilmLabels": true
+    },
+    {
+      "caseId": "R184",
+      "possessionId": "2026-05-02-CHI-MIN|away|196|1",
+      "gameId": "2026-05-02-CHI-MIN",
+      "quarter": 2,
+      "pointClock": "0:03",
+      "reason": "end_of_quarter_scoring_attempt",
+      "excludeFromTypicalOline": true,
+      "source": "User film clarification at example 28 of the 100-possession set, November 13, 2026",
+      "preserveFilmLabels": true
+    }
+  ]
+}

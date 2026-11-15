@@ -9,6 +9,7 @@ import hashlib
 import json
 import numpy as np
 import pandas as pd
+import special_situations as special
 
 ROOT = Path(__file__).resolve().parent
 
@@ -21,7 +22,7 @@ def main():
     columns = ['GameID', 'team', 'team_name', 'possession_id', 'stage',
                'first_x', 'first_y', 'has_timeout']
     p = pd.read_csv(source, usecols=columns)
-    p = p[~p.has_timeout].copy()
+    p = special.filter_frame(p[~p.has_timeout])
     known = p.dropna(subset=['first_x', 'first_y']).copy()
     known['yards_to_goal'] = 100 - known.first_y
     bands = [
@@ -76,7 +77,8 @@ def main():
                       'second_with_a_candidate': sum(bool(e) for e in edges),
                       'distinct_pairs': len(paired)})
     result = {
-        'reviewed_on': '2026-11-10',
+        'reviewed_on': '2026-11-13',
+        'special_situation_exclusions': special.metadata(),
         'status': 'Comparison options only; no final definition adopted.',
         'source': 'possessions.csv', 'source_sha256': digest,
         'filters': 'Exclude possessions containing recorded timeouts; retain original stage numbers. Location comparisons exclude unknown first-attempt coordinates. No goal, turnover, huck, or eventual-hold outcome used for pairing.',

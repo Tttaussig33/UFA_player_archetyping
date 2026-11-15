@@ -8,6 +8,7 @@ import math
 import numpy as np
 import pandas as pd
 import analyze
+import special_situations as special
 
 ROOT = Path(__file__).resolve().parent
 METRICS = ['throws_goal', 'throws_turnover', 'scoring', 'early_huck',
@@ -21,8 +22,8 @@ def main():
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == base['inputs'][name]
     p = pd.read_csv(ROOT / 'possessions.csv')
     t = pd.read_csv(ROOT / 'throws.csv')
-    p = p[~p.has_timeout].copy()
-    t = t[~t.has_timeout].copy()
+    p = special.filter_frame(p[~p.has_timeout])
+    t = special.filter_frame(t[~t.has_timeout])
     analyze.RNG = np.random.default_rng(20261109)
     result = {
         'date': '2026-11-09',
@@ -56,7 +57,7 @@ def main():
     # Reconcile every displayed numerator/denominator independently with CSV rows.
     def read(name):
         with (ROOT / name).open(newline='') as f:
-            return [r for r in csv.DictReader(f) if r['has_timeout'] == 'False']
+            return [r for r in csv.DictReader(f) if r['has_timeout'] == 'False' and r['possession_id'] not in special.excluded_ids()]
     pp, tt = read('possessions.csv'), read('throws.csv')
     eligible = lambda r: bool(r['first_y']) and float(r['first_y']) <= 60
     records = {
@@ -86,8 +87,9 @@ def main():
         'checks': ['All displayed exact-stage counts, sums, means, rates and game counts independently reconciled with CSV.',
                    'First and second estimates and intervals preserved from existing reviewed results.',
                    'Third uses own_possession == 3; fourth and later excluded; original numbers retained after timeout filtering.']}
+    result['special_situation_exclusions'] = special.metadata()
     result['inputs'] = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
-                       for name in ['results.json', 'follow_up_20261106.json', 'possessions.csv', 'throws.csv']}
+                       for name in ['results.json', 'follow_up_20261106.json', 'possessions.csv', 'throws.csv', 'special_situation_exclusions.json', 'special_situations.py']}
     analyze.dump('possession_filters.json', result)
     print(json.dumps({k: result[k] for k in ['possession_counts', 'fourth_or_later_not_in_third', 'validation']}, indent=2))
 

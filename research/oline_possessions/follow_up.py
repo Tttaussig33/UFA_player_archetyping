@@ -9,6 +9,7 @@ import json
 import numpy as np
 import pandas as pd
 import analyze
+import special_situations as special
 
 ROOT=Path(__file__).resolve().parent
 REPO=ROOT.parents[1]
@@ -21,7 +22,7 @@ def main():
     for name,digest in base['inputs'].items():
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest
     allp=pd.read_csv(ROOT/'possessions.csv')
-    p=allp[~allp.has_timeout].copy()
+    p=special.filter_frame(allp[~allp.has_timeout])
     games_path=REPO/'data/database-exports/2026-10-12/games.csv'
     games=pd.read_csv(games_path)
     playoffs=games[games.Year.eq(2026)&games.PlayoffRound.notna()&games.is_final]
@@ -91,7 +92,8 @@ def main():
       'Every eventual hold after a turnover includes a subsequent recorded regain.',
       'Timeout filtering does not remove later recovery events from the point-outcome classification.'],
       'method':'Descriptive follow-up with 10,000 whole-game bootstrap samples; seed 20261106.'}
-    result['inputs']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['results.json','possessions.csv']}
+    result['special_situation_exclusions']=special.metadata()
+    result['inputs']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['results.json','possessions.csv','special_situation_exclusions.json','special_situations.py']}
     result['inputs']['games.csv']=hashlib.sha256(games_path.read_bytes()).hexdigest()
     analyze.dump('follow_up_20261106.json',result)
     print(json.dumps(analyze.clean({'break_league':result['break_league'],

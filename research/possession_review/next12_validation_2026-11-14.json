@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-14",
+  "status": "complete",
+  "scope": "Preserve completed film reviews and replace the unreviewed next 100 with 12 fresh cases",
+  "activeBatch": "opening-pattern-review-12-20261114-v1",
+  "activeSize": 12,
+  "preservedRawReviews": 165,
+  "browserRawReviewsUnchanged": true,
+  "completed100Accessible": true,
+  "earlierChecksAccessible": true,
+  "nextPreviousNavigationChecked": true,
+  "componentSmokeTest": "passed",
+  "htmlExport": "passed",
+  "visualCheck": "passed",
+  "screenshot": "/tmp/ufa-next12-film-review-2026-11-14.png",
+  "limitations": [
+    "Clip windows remain estimated and have not all been individually film-verified.",
+    "Current statistical reports were not recalculated or validated against the final centering definition in this update.",
+    "New centering classifications have not been imputed."
+  ]
+}

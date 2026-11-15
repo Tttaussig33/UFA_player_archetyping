@@ -3,6 +3,7 @@ from pathlib import Path
 import csv
 import hashlib
 import json
+import special_situations as special
 
 ROOT = Path(__file__).resolve().parent
 CANVAS = Path('/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-oline-regain-hucking.canvas.tsx')
@@ -14,7 +15,7 @@ const pct = (v:number) => (100*v).toFixed(1)+"%";
 const number = (v:number) => v.toLocaleString();
 const signed = (v:number) => (v>0?"+":"")+v.toFixed(1);
 const range = (v:number[], scale=1) => v.map(x=>(scale*x).toFixed(1)).join(" to ");
-const SOURCE = "Source: preserved ShownSpace export and UFA event sequences · 2026 regular season · November 5 analysis, November 6 follow-ups and November 9 exact-possession tables.";
+const SOURCE = "Source: preserved ShownSpace export and UFA event sequences · 2026 regular season · recalculated November 13 with reviewed end-of-quarter exclusions.";
 const SCORING_SOURCE = "Source: preserved ShownSpace possession records and UFA event lineups · 2026 regular season · original-seven scoring audit, November 13, 2026.";
 const HAP_SOURCE = "Source: saved ShownSpace Postgres export and audited UFA event lineups · 2026 regular season · 131 of 132 games · recalculated November 13, 2026.";
 const metrics:Record<string,{label:string;unit:string;count:boolean;denominator:string;explain:string}> = {
@@ -138,6 +139,7 @@ export default function OLineRegainHucking() {
       <Text>2026 UFA regular season · 22 teams · 131 of 132 games · exploratory research</Text>
       <Text>After turning the disc over and getting it back, does an O-line change how it attacks, and how do its chances of scoring compare with its opening opportunity?</Text>
       <Text><strong>Current focus: throw counts, huck attempt percentage, scoring and outcomes after turnovers.</strong> The reviewed comparison shows the same possessions before and after subtracting confirmed centering passes. League-wide huck timing remains parked until more opening passes are classified and comparable starting locations are established.</Text>
+      <Text size="small"><strong>End-of-quarter attempts.</strong> {DATA.special_situation_exclusions.excludedPossessions} flagged possessions are excluded from huck rates, throw counts and scoring, whether they succeed or fail. Their pull and centering labels remain available. Other games still need screening; a short clock alone does not automatically exclude a possession.</Text>
       <Text><strong>When a timeout changes the lineup.</strong> After the O-line turns the disc over, a timeout may allow its team to replace it with D-line players. We keep the original O-line’s throws and turnover, regardless of which team calls the timeout. We stop following that O-line when its lineup changes. Later throws, goals and turnovers by the replacement players do not count as the original O-line’s second or third possession.</Text>
       <Text size="small">The turnover means the point was not a clean hold. The receiving team can still finish with a hold or a break, but we record that team result separately from the original O-line’s performance.</Text>
       <div style={{display:"flex",gap:18,flexWrap:"wrap",fontSize:14}}>
@@ -293,7 +295,7 @@ export default function OLineRegainHucking() {
         </Stack></details>
         <details><summary>What counts, and how to read this measure</summary><Stack gap={12} style={{marginTop:14}}>
           <Text>We retain every physical pass by the original seven before their first recorded personnel change or uncertain lineup record. If a timeout changes the lineup during a possession, the original players' earlier throws still count; the replacement players' throws do not. A timeout with the same seven does not remove their attempts.</Text>
-          <Text>Throws before a period ends also count. Pulls, stalls and other actions without a throw do not. This differs from possession scoring rate, which needs a resolved possession and retains the earlier within-possession timeout exclusion.</Text>
+          <Text>Ordinary throws before a period ends can count. Flagged end-of-quarter scoring possessions are excluded in full. Pulls, stalls and other actions without a throw do not. This differs from possession scoring rate, which needs a resolved possession and retains the earlier within-possession timeout exclusion.</Text>
           <Text>Starting position is the original first recorded throwing location, before any centering pass. This is a proxy for where the possession begins. The opening baseline includes all eligible openings, including those that score immediately and never have a second possession.</Text>
           <Text>A higher huck attempt percentage means a larger share of passes are hucks. It does not tell us whether hucks occur earlier, whether more possessions contain a huck, or whether those hucks are completed. A possession with fewer short passes can have a larger huck percentage even if its number of hucks stays the same.</Text>
           <Text size="small">Uncertainty is calculated by resampling whole games 10,000 times, preserving the first-versus-second comparison within each sampled game. These observed rates need no completion-probability model. The calculation also preserves checks excluding timeout-containing and period-ending possessions. The saved database snapshot is dated October 12, 2026; no live refresh is claimed. <a href="https://shownspace.com/about" style={linkStyle}>ShownSpace's metric catalog</a> supplies the HAP% formula.</Text>
@@ -418,11 +420,12 @@ export default function OLineRegainHucking() {
 
 def main():
     result = json.loads((ROOT/'results.json').read_text())
+    special.verify_metadata(result['special_situation_exclusions'])
     possession_path = ROOT/'possessions.csv'
     possession_hash = hashlib.sha256(possession_path.read_bytes()).hexdigest()
     assert possession_hash == result['inputs']['possessions.csv'], 'Possession rows no longer match the reviewed results.'
     with possession_path.open(newline='') as handle:
-        rows = [r for r in csv.DictReader(handle) if r['has_timeout']=='False' and r['first_y']]
+        rows = [r for r in csv.DictReader(handle) if r['has_timeout']=='False' and r['first_y'] and r['possession_id'] not in special.excluded_ids()]
     start_groups = []
     for stage in (1,2,3):
         group = [r for r in rows if int(r['stage'])==stage]

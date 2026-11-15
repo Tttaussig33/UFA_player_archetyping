@@ -1,5 +1,23 @@
 {
-  "reviewed_on": "2026-11-10",
+  "reviewed_on": "2026-11-13",
+  "special_situation_exclusions": {
+    "version": "typical-oline-special-situations-20261113",
+    "registryPath": "research/oline_possessions/special_situation_exclusions.json",
+    "registrySha256": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96",
+    "calculationSha256": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1",
+    "excludedPossessions": 3,
+    "sourceThrowsExcluded": 6,
+    "sourceHucksExcluded": 1,
+    "possessionIds": [
+      "2026-05-02-CHI-MIN|away|196|1",
+      "2026-05-09-MTL-TOR|home|85|1",
+      "2026-05-09-PHI-CAR|home|115|1"
+    ],
+    "coverage": "Known reviewed special situations only. Remaining games have not all been screened for clock-driven attacks.",
+    "rule": "Exclude the whole possession when identified as a clock-driven final scoring attempt at the end of a quarter. Apply regardless of goal, turnover, completion, or whether the source records a huck. Retain pull/centering labels and all original events for audit. Apply to the same comparison metrics and their denominators, including huck attempt percentage, huck timing/completion, throw counts and scoring. Never renumber later possessions.",
+    "rawRowsAndFilmLabelsPreserved": true,
+    "numericClockCutoffSeconds": null
+  },
   "status": "Comparison options only; no final definition adopted.",
   "source": "possessions.csv",
   "source_sha256": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7",
@@ -8,8 +26,8 @@
   "stage_counts": [
     {
       "stage": 1,
-      "all_n": 5676,
-      "known_location_n": 5645
+      "all_n": 5673,
+      "known_location_n": 5642
     },
     {
       "stage": 2,
@@ -28,7 +46,7 @@
       "groups": [
         {
           "stage": 1,
-          "n": 3511,
+          "n": 3509,
           "within_10_yards_of_sideline_n": 624
         },
         {
@@ -48,7 +66,7 @@
       "groups": [
         {
           "stage": 1,
-          "n": 1444,
+          "n": 1443,
           "within_10_yards_of_sideline_n": 322
         },
         {
@@ -106,7 +124,7 @@
   ],
   "illustrative_pairing": {
     "definition": "Both starts 60+ yards from goal, same team, at most five yards difference in each coordinate; one-to-one without replacement. Other game context not yet matched.",
-    "first_n": 4955,
+    "first_n": 4952,
     "second_n": 577,
     "second_with_a_candidate": 534,
     "distinct_pairs": 510,
@@ -162,7 +180,7 @@
       {
         "team": "flyers",
         "team_name": "Carolina Flyers",
-        "first_n": 172,
+        "first_n": 171,
         "second_n": 14,
         "second_with_a_candidate": 8,
         "distinct_pairs": 8
@@ -226,7 +244,7 @@
       {
         "team": "rush",
         "team_name": "Toronto Rush",
-        "first_n": 223,
+        "first_n": 222,
         "second_n": 29,
         "second_with_a_candidate": 25,
         "distinct_pairs": 22
@@ -274,7 +292,7 @@
       {
         "team": "union",
         "team_name": "Chicago Union",
-        "first_n": 222,
+        "first_n": 221,
         "second_n": 29,
         "second_with_a_candidate": 23,
         "distinct_pairs": 22

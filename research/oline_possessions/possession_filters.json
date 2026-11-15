@@ -4,7 +4,7 @@
   "scope": "Same preserved 2026 regular-season cohort, timeout exclusion, metric denominators and huck eligibility as the original analysis.",
   "uncertainty": "First and second retain the reviewed original intervals. Exact-third intervals resample whole games 10000 times, seed 20261109; intervals are omitted when fewer than two games contribute. No models or significance tests are refitted.",
   "possession_counts": {
-    "1": 5676,
+    "1": 5673,
     "2": 1104,
     "3": 204
   },
@@ -1981,13 +1981,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 141,
-            "sum": 1447.0,
-            "estimate": 10.26241134751773,
-            "median": 8.0,
+            "n": 140,
+            "sum": 1445.0,
+            "estimate": 10.321428571428571,
+            "median": 8.5,
             "ci95": [
-              9.210516781083143,
-              11.16234172077922
+              9.25599097744361,
+              11.212343128590366
             ],
             "games": 12
           },
@@ -2063,13 +2063,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 218,
-            "sum": 141.0,
-            "estimate": 0.6467889908256881,
+            "n": 217,
+            "sum": 140.0,
+            "estimate": 0.6451612903225806,
             "median": 1.0,
             "ci95": [
-              0.5736040609137056,
-              0.714975845410628
+              0.5728643216080402,
+              0.7116279069767442
             ],
             "games": 12
           },
@@ -2104,13 +2104,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 219,
-            "sum": 28.0,
-            "estimate": 0.1278538812785388,
+            "n": 218,
+            "sum": 27.0,
+            "estimate": 0.12385321100917432,
             "median": 0.0,
             "ci95": [
-              0.08438025092416265,
-              0.17894736842105263
+              0.08107834555202977,
+              0.17391304347826086
             ],
             "games": 12
           },
@@ -2145,13 +2145,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 1906,
-            "sum": 93.0,
-            "estimate": 0.04879328436516264,
+            "n": 1904,
+            "sum": 92.0,
+            "estimate": 0.04831932773109244,
             "median": 0.0,
             "ci95": [
-              0.0402410781972287,
-              0.05993728676364901
+              0.0399619058035268,
+              0.05940047482557015
             ],
             "games": 12
           },
@@ -2186,13 +2186,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 219,
-            "sum": 93.0,
-            "estimate": 0.4246575342465753,
+            "n": 218,
+            "sum": 92.0,
+            "estimate": 0.42201834862385323,
             "median": 0.0,
             "ci95": [
-              0.36213814389101745,
-              0.49029126213592233
+              0.36123348017621143,
+              0.48598130841121495
             ],
             "games": 12
           },
@@ -2227,13 +2227,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 93,
-            "sum": 60.0,
-            "estimate": 0.6451612903225806,
+            "n": 92,
+            "sum": 59.0,
+            "estimate": 0.6413043478260869,
             "median": 1.0,
             "ci95": [
-              0.524390243902439,
-              0.7362637362637363
+              0.5232558139534884,
+              0.7303370786516854
             ],
             "games": 12
           },
@@ -4760,13 +4760,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 243,
+            "n": 242,
             "sum": 41.0,
-            "estimate": 0.16872427983539096,
+            "estimate": 0.16942148760330578,
             "median": 0.0,
             "ci95": [
-              0.12345679012345678,
-              0.22018348623853212
+              0.1235509698657109,
+              0.22123893805309736
             ],
             "games": 12
           },
@@ -4801,13 +4801,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 1775,
+            "n": 1773,
             "sum": 111.0,
-            "estimate": 0.06253521126760564,
+            "estimate": 0.06260575296108291,
             "median": 0.0,
             "ci95": [
-              0.054723502304147464,
-              0.07003907669535467
+              0.05483861457699331,
+              0.07006404851816951
             ],
             "games": 12
           },
@@ -4842,13 +4842,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 243,
+            "n": 242,
             "sum": 108.0,
-            "estimate": 0.4444444444444444,
+            "estimate": 0.4462809917355372,
             "median": 0.0,
             "ci95": [
-              0.3849130036630037,
-              0.4956896551724138
+              0.38626609442060084,
+              0.49771741151676685
             ],
             "games": 12
           },
@@ -6746,13 +6746,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 249,
+            "n": 248,
             "sum": 29.0,
-            "estimate": 0.11646586345381527,
+            "estimate": 0.11693548387096774,
             "median": 0.0,
             "ci95": [
-              0.07782101167315175,
-              0.15589619771863114
+              0.0784313725490196,
+              0.15625
             ],
             "games": 11
           },
@@ -6787,13 +6787,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 2175,
+            "n": 2173,
             "sum": 99.0,
-            "estimate": 0.04551724137931035,
+            "estimate": 0.04555913483663138,
             "median": 0.0,
             "ci95": [
-              0.03772703694476639,
-              0.05330578512396694
+              0.03777038734178595,
+              0.05334499344118933
             ],
             "games": 11
           },
@@ -6828,13 +6828,13 @@
           {
             "stage": 1,
             "name": "First",
-            "n": 249,
+            "n": 248,
             "sum": 99.0,
-            "estimate": 0.39759036144578314,
+            "estimate": 0.39919354838709675,
             "median": 0.0,
             "ci95": [
-              0.3377178742310321,
-              0.4500046125461254
+              0.34016186035707174,
+              0.45105092276144904
             ],
             "games": 11
           },
@@ -7285,10 +7285,30 @@
       "Third uses own_possession == 3; fourth and later excluded; original numbers retained after timeout filtering."
     ]
   },
+  "special_situation_exclusions": {
+    "version": "typical-oline-special-situations-20261113",
+    "registryPath": "research/oline_possessions/special_situation_exclusions.json",
+    "registrySha256": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96",
+    "calculationSha256": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1",
+    "excludedPossessions": 3,
+    "sourceThrowsExcluded": 6,
+    "sourceHucksExcluded": 1,
+    "possessionIds": [
+      "2026-05-02-CHI-MIN|away|196|1",
+      "2026-05-09-MTL-TOR|home|85|1",
+      "2026-05-09-PHI-CAR|home|115|1"
+    ],
+    "coverage": "Known reviewed special situations only. Remaining games have not all been screened for clock-driven attacks.",
+    "rule": "Exclude the whole possession when identified as a clock-driven final scoring attempt at the end of a quarter. Apply regardless of goal, turnover, completion, or whether the source records a huck. Retain pull/centering labels and all original events for audit. Apply to the same comparison metrics and their denominators, including huck attempt percentage, huck timing/completion, throw counts and scoring. Never renumber later possessions.",
+    "rawRowsAndFilmLabelsPreserved": true,
+    "numericClockCutoffSeconds": null
+  },
   "inputs": {
-    "results.json": "3b19faee878a9f8c01dec57a2fc2c90cf074c35326cd43fc5f4189dac0a157fb",
-    "follow_up_20261106.json": "292f584920bd0c8508cbfd675afb1f13325f3e556104c1d87596179d7c3591dc",
+    "results.json": "da937eecbfb4081e40b5faf7d4d481c3156f56cd4cf70e58244c3459534c932d",
+    "follow_up_20261106.json": "0d6a47ca50e4e961a6cc263c7946ea27dfbac16466aebd2ad3f3ce63e2f7d773",
     "possessions.csv": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7",
-    "throws.csv": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc"
+    "throws.csv": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc",
+    "special_situation_exclusions.json": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96",
+    "special_situations.py": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1"
   }
 }

@@ -50,9 +50,16 @@ def validate():
     for pt in pts:
         assert sum(int(x['goal']) for x in bypoint[pt['point_id']])==int(pt['hold'])
     checks.append('Possession endings, zero-throw outcomes, prior own-team activity and eventual point holds reconcile.')
-    pp=[x for x in p if x['has_timeout']=='False'];tt=[x for x in t if x['has_timeout']=='False']
+    exclusions=json.loads((ROOT/'special_situation_exclusions.json').read_text())
+    excluded={x['possessionId'] for x in exclusions['possessions'] if x['excludeFromTypicalOline']}
+    assert excluded <= {x['possession_id'] for x in p}
+    pp=[x for x in p if x['has_timeout']=='False' and x['possession_id'] not in excluded]
+    tt=[x for x in t if x['has_timeout']=='False' and x['possession_id'] not in excluded]
+    assert r['special_situation_exclusions']['possessionIds']==sorted(excluded)
     assert len(pp)==r['scope']['possessions'] and len(tt)==r['scope']['physical_throws']
-    assert len(p)-len(pp)==146
+    assert sum(x['has_timeout']=='True' for x in p)==146
+    assert len(p)-len(pp)==sum(x['has_timeout']=='True' or x['possession_id'] in excluded for x in p)
+    checks.append('Reviewed end-of-quarter IDs are excluded from both possession and throw denominators without altering raw rows or renumbering.')
     metrics={
       'scoring':([x for x in pp if x['outcome']!='period_end'],'goal'),
       'throws_goal':([x for x in pp if x['outcome']=='goal'],'throws'),
@@ -125,7 +132,8 @@ def validate_followup():
         path=ROOT/name if name!='games.csv' else ROOT.parents[1]/'data/database-exports/2026-10-12/games.csv'
         assert hashlib.sha256(path.read_bytes()).hexdigest()==digest
     raw_cache={};point_end={};rows=[]
-    p=read(ROOT/'possessions.csv')
+    excluded={x['possessionId'] for x in json.loads((ROOT/'special_situation_exclusions.json').read_text())['possessions'] if x['excludeFromTypicalOline']}
+    p=[x for x in read(ROOT/'possessions.csv') if x['possession_id'] not in excluded]
     for x in p:
         if x['has_timeout']=='True' or x['outcome']!='turnover':continue
         gid,side,idx=x['point_id'].rsplit('|',2)

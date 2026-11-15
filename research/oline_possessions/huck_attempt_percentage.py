@@ -10,6 +10,7 @@ import json
 
 import numpy as np
 import pandas as pd
+import special_situations as special
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
@@ -84,6 +85,8 @@ def main():
     inputs = {name: ROOT / name for name in ['throws.csv', 'possessions.csv',
               'original_line_scoring.json', 'cohort_audit.json']}
     inputs['calculation'] = Path(__file__)
+    inputs['special_situations'] = special.REGISTRY
+    inputs['special_filter'] = ROOT / 'special_situations.py'
     audit = json.loads(inputs['original_line_scoring.json'].read_text())
     assert audit['validation']['passed']
     for source in audit['inputs'].values():
@@ -109,6 +112,9 @@ def main():
     counts = retained.groupby('possession_id').size()
     for row in audit['rows']:
         assert counts.get(row['possession_id'], 0) == row['physical_throws_before_cutoff']
+    pre_special_count = len(retained)
+    retained = special.filter_frame(retained)
+    assert not set(retained.possession_id) & special.excluded_ids()
     retained['team_name'] = retained.possession_id.map(possessions.team_name)
     retained['outcome'] = retained.possession_id.map(possessions.outcome)
     scopes = {}
@@ -145,7 +151,7 @@ def main():
             'unit': 'Throw attempts by the original seven receiving-point players, grouped by their own first, second, or later possession within that point.',
             'lineup': 'Retain actions strictly before the audited first personnel change or uncertain/contradictory lineup record. Keep pre-change attempts even when a replacement line finishes the possession. Preserve original possession numbers.',
             'timeout': 'A timeout alone does not delete an attempt. Retain original-seven actions before the cutoff, including before a timeout/substitution and after same-seven timeouts. The earlier exclusion of timeout-containing possessions is retained as a sensitivity check.',
-            'periodEnd': 'Include attempts in period-ending possessions; this throw-level denominator does not require a completed possession outcome.',
+            'periodEnd': 'Include ordinary attempts in period-ending possessions, but exclude reviewed clock-driven final scoring attempts from the whole possession, regardless of its recorded outcome.',
             'location': 'All starts or original first throwing location at least 60 yards from the attacking goal line (first_y <=40 on the 120-yard coordinate system). Starting location remains before any centering pass; it is a recorded throwing-location proxy, not a verified pull-catching spot. The 60-yard cutoff does not exactly match field positions.',
             'comparison': 'Second minus first. Opening baseline contains all eligible openings, not only openings followed by a second possession. Later possessions are conditional on losing the disc and recovering it with the original line.',
             'uncertainty': '10000 whole-game bootstrap draws with shared weights across possession groups. Team ranges are exploratory individual intervals, not simultaneous intervals or a ranking of proven team differences. No context model or CP model is needed for these observed counts.',
@@ -153,6 +159,7 @@ def main():
         },
         'scope': {'year': 2026, 'season': 'regular', 'games': int(retained.GameID.nunique()),
                   'teams': int(retained.team.nunique()), 'source_attempts': len(throws),
+                  'special_situation_attempts_excluded': pre_special_count-len(retained),
                   'retained_attempts': len(retained), 'excluded_attempts': len(throws)-len(retained),
                   'missing_game': '2026-07-18-PIT-CHI',
                   'attempts_in_timeout_possessions': int(retained.has_timeout.sum()),
@@ -160,6 +167,7 @@ def main():
                   'pre_cutoff_attempts_in_interrupted_possessions': int(sum(r['physical_throws_before_cutoff'] for r in audit['rows'] if r['first_issue'])),
                   'source_excluded_points': cohort['excluded_points']},
         'scopes': scopes, 'game_counts': per_game,
+        'special_situation_exclusions': special.metadata(),
         'inputs': {key: {'path': str(path.relative_to(REPO)), 'sha256': sha(path)} for key, path in inputs.items()},
         'environment': {'numpy': np.__version__, 'pandas': pd.__version__, 'bootstrap_draws': DRAWS, 'seed': SEED},
         'validation': {'passed': True, 'uniqueThrowKeys': True, 'huckGeometryRecalculated': True,

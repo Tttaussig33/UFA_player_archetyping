@@ -1,0 +1,39 @@
+{
+  "version": "completed-centering-transfer-20261113",
+  "source": "User clarification in the research chat, 2026-11-13",
+  "question": "Is the first pass a centering pass?",
+  "target": "Separate opening possessions with a completed, clear centering/setup transfer from those without one. The type of non-centering throw is not the target.",
+  "labels": {
+    "setup1": "Centering pass",
+    "attack1": "No centering pass",
+    "unclear": "Cannot tell"
+  },
+  "centeringPass": "A completed, clear opening transfer that hands the disc to the player who sets the offense in motion. It need not travel toward the middle. An interception or other incomplete attempt is not a completed centering pass, even if a setup transfer was intended.",
+  "noCenteringPass": "When the pull receiver first looks for a downfield option, finds none and then resets to a handler, that reset is not a centering pass. Other visible first throws without a clear setup transfer are also no centering pass, whether resets, unders or hucks. An intercepted or incomplete opening attempt has no completed centering transfer. This does not establish that the thrower intended to attack rather than set up.",
+  "cannotTell": "The footage or record alignment is insufficient to determine whether a centering pass occurred. Missing evidence is not a negative label.",
+  "timing": "The Houston example describes a downfield search lasting a couple of seconds. This is not a fixed time threshold; recorded event timestamp gaps remain unsuitable for that rule.",
+  "counting": "Subtract exactly one opening throw only for a confirmed, completed centering transfer. Keep every attempted throw, including interceptions and drops, when no such transfer was completed. A one-throw Callahan possession remains one attempt, zero completed passes and a turnover; it must not become a zero-throw possession or be removed. Subsequent possessions receive no deduction. Keep the original starting coordinates.",
+  "restartRules": "The previously adopted brick-coordinate rule and film-confirmed sideline-roller rule remain no-centering cases, with known film/coordinate conflicts preserved. A back-end-line restart is a separate observed context, not an automatic no-centering label from coordinates alone. The Houston user label was based on noncompletion, not a universal rule about back-line starts.",
+  "compatibility": "Keep setup1 and attack1 as existing storage codes. attack1 now displays as No centering pass; it does not imply an immediate, aggressive or downfield throw.",
+  "automaticLabels": "The geometry pilot remains a frozen development diagnostic. This clarification and new film labels do not authorize automatic centering deductions in league metrics.",
+  "previousVersion": "centering-vs-no-centering-20261113",
+  "updatedOn": "2026-11-14T00:11:02Z",
+  "attemptAndOutcome": "Where visible, preserve intended setup separately from completion. The user did not settle the precise intended pass in the Houston Callahan example; do not infer intent from its outcome.",
+  "interpretationLimit": "Completed-centering status depends on the result of the first throw. It is suitable for the user-defined completed-transfer count adjustment, but comparing scoring or huck success between these label groups cannot by itself establish a difference in tactical preference. Report all-attempt results alongside adjusted counts; failed opening throws stay in the denominator.",
+  "versioning": "This supersedes the older failed-setup deduction language for future completed-transfer counts. Preserve the original 52 reviews and frozen pilot. Do not silently apply this new target to earlier classifier evaluation or league statistics.",
+  "backEndlineRuleSource": {
+    "url": "https://watchufa.com/sites/default/files/UFA%20Rule%20Book%202026.pdf",
+    "section": "6.3.1.2",
+    "interpretation": "A pull landing in bounds and rolling out the back is put into play on the back line. This rule does not say whether the next pass is centering."
+  },
+  "boundaryExamples": [
+    {
+      "caseId": "R163",
+      "gameId": "2026-06-13-SD-COL",
+      "decision": "setup1",
+      "source": "User clarification in chat, November 13, 2026",
+      "note": "The receiver was not covered by his own defender. The thrower’s mark obstructed his initial route, requiring a small maneuver, but the user still identified this as a centering pass.",
+      "scope": "One reviewed borderline example; maneuvering or some nearby defensive pressure alone does not disqualify the opening transfer. Do not automatically label all short contested throws as centering."
+    }
+  ]
+}

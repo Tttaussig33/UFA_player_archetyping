@@ -21,47 +21,47 @@
           {
             "stage": 1,
             "all": {
-              "possessions": 4803,
+              "possessions": 4802,
               "games": 131,
-              "attempts": 39230,
-              "hucks": 2028,
-              "goals": 2373,
+              "attempts": 39228,
+              "hucks": 2027,
+              "goals": 2372,
               "confirmed_deductions": 25,
               "unknown_possible_deductions": 4285,
               "unknown_first_hucks": 29,
-              "mean_all_throws": 8.167811784301477,
-              "mean_confirmed_only": 8.162606704143244,
+              "mean_all_throws": 8.169096209912537,
+              "mean_confirmed_only": 8.163890045814243,
               "mean_label_range": [
-                7.270455965021862,
-                8.162606704143244
+                7.271553519366931,
+                8.163890045814243
               ],
-              "huck_attempt_share_all": 0.05169513127708386,
-              "huck_attempt_share_confirmed_only": 0.05172809590613442,
+              "huck_attempt_share_all": 0.05167227490567962,
+              "huck_attempt_share_confirmed_only": 0.05170522664081831,
               "huck_attempt_share_label_range": [
-                0.05102613845211354,
-                0.058027411370854674
+                0.051003216419053456,
+                0.05800211749220248
               ]
             },
             "goal": {
-              "possessions": 2373,
+              "possessions": 2372,
               "games": 131,
-              "attempts": 23439,
-              "hucks": 1180,
-              "goals": 2373,
+              "attempts": 23437,
+              "hucks": 1179,
+              "goals": 2372,
               "confirmed_deductions": 13,
               "unknown_possible_deductions": 2158,
               "unknown_first_hucks": 17,
-              "mean_all_throws": 9.877370417193426,
-              "mean_confirmed_only": 9.87189211967973,
+              "mean_all_throws": 9.880691399662732,
+              "mean_confirmed_only": 9.875210792580102,
               "mean_label_range": [
-                8.962494732406237,
-                9.87189211967973
+                8.965430016863406,
+                9.875210792580102
               ],
-              "huck_attempt_share_all": 0.05034344468620675,
-              "huck_attempt_share_confirmed_only": 0.05037138222487834,
+              "huck_attempt_share_all": 0.050305073174894396,
+              "huck_attempt_share_confirmed_only": 0.05033299180327869,
               "huck_attempt_share_label_range": [
-                0.049681746336878975,
-                0.055438101949729854
+                0.04964326910753193,
+                0.05539632570596251
               ]
             },
             "turnover": {
@@ -228,12 +228,12 @@
         ],
         "first_vs_second": {
           "mean_difference_range_second_minus_first": [
-            -1.9372237719769414,
-            -1.0450730328555595
+            -1.9385071136479413,
+            -1.0461705872006286
           ],
           "huck_share_difference_range_second_minus_first": [
-            0.012622852249531975,
-            0.01962412516827311
+            0.01264814612818417,
+            0.019647047201333194
           ],
           "fewer_second_possession_throws_for_every_label_assignment": true,
           "higher_second_possession_huck_share_for_every_label_assignment": true
@@ -1597,47 +1597,47 @@
             {
               "stage": 1,
               "all": {
-                "possessions": 168,
+                "possessions": 167,
                 "games": 12,
-                "attempts": 1522,
-                "hucks": 81,
-                "goals": 110,
+                "attempts": 1520,
+                "hucks": 80,
+                "goals": 109,
                 "confirmed_deductions": 4,
                 "unknown_possible_deductions": 157,
                 "unknown_first_hucks": 0,
-                "mean_all_throws": 9.05952380952381,
-                "mean_confirmed_only": 9.035714285714286,
+                "mean_all_throws": 9.10179640718563,
+                "mean_confirmed_only": 9.077844311377245,
                 "mean_label_range": [
-                  8.101190476190476,
-                  9.035714285714286
+                  8.137724550898204,
+                  9.077844311377245
                 ],
-                "huck_attempt_share_all": 0.053219448094612355,
-                "huck_attempt_share_confirmed_only": 0.0533596837944664,
+                "huck_attempt_share_all": 0.05263157894736842,
+                "huck_attempt_share_confirmed_only": 0.052770448548812667,
                 "huck_attempt_share_label_range": [
-                  0.0533596837944664,
-                  0.05951506245407789
+                  0.052770448548812667,
+                  0.05886681383370125
                 ]
               },
               "goal": {
-                "possessions": 110,
+                "possessions": 109,
                 "games": 12,
-                "attempts": 1153,
-                "hucks": 48,
-                "goals": 110,
+                "attempts": 1151,
+                "hucks": 47,
+                "goals": 109,
                 "confirmed_deductions": 3,
                 "unknown_possible_deductions": 103,
                 "unknown_first_hucks": 0,
-                "mean_all_throws": 10.481818181818182,
-                "mean_confirmed_only": 10.454545454545455,
+                "mean_all_throws": 10.559633027522937,
+                "mean_confirmed_only": 10.53211009174312,
                 "mean_label_range": [
-                  9.518181818181818,
-                  10.454545454545455
+                  9.587155963302752,
+                  10.53211009174312
                 ],
-                "huck_attempt_share_all": 0.04163052905464007,
-                "huck_attempt_share_confirmed_only": 0.04173913043478261,
+                "huck_attempt_share_all": 0.04083405734144222,
+                "huck_attempt_share_confirmed_only": 0.040940766550522645,
                 "huck_attempt_share_label_range": [
-                  0.04173913043478261,
-                  0.045845272206303724
+                  0.040940766550522645,
+                  0.044976076555023926
                 ]
               },
               "turnover": {
@@ -1804,12 +1804,12 @@
           ],
           "first_vs_second": {
             "mean_difference_range_second_minus_first": [
-              -4.944805194805196,
-              -4.0102813852813854
+              -4.986935220468154,
+              -4.046815459989113
             ],
             "huck_share_difference_range_second_minus_first": [
-              0.07381827087925544,
-              0.07997364953886693
+              0.07446651949963208,
+              0.08056288478452067
             ],
             "fewer_second_possession_throws_for_every_label_assignment": true,
             "higher_second_possession_huck_share_for_every_label_assignment": true
@@ -5198,47 +5198,47 @@
           {
             "stage": 1,
             "all": {
-              "possessions": 5475,
+              "possessions": 5474,
               "games": 131,
-              "attempts": 43612,
-              "hucks": 2208,
-              "goals": 2731,
+              "attempts": 43610,
+              "hucks": 2207,
+              "goals": 2730,
               "confirmed_deductions": 25,
               "unknown_possible_deductions": 4874,
               "unknown_first_hucks": 51,
-              "mean_all_throws": 7.965662100456621,
-              "mean_confirmed_only": 7.9610958904109586,
+              "mean_all_throws": 7.966751918158568,
+              "mean_confirmed_only": 7.96218487394958,
               "mean_label_range": [
-                7.0708675799086755,
-                7.9610958904109586
+                7.0717939349652905,
+                7.96218487394958
               ],
-              "huck_attempt_share_all": 0.05062826744932587,
-              "huck_attempt_share_confirmed_only": 0.05065730607750017,
+              "huck_attempt_share_all": 0.05060765879385462,
+              "huck_attempt_share_confirmed_only": 0.05063668693357807,
               "huck_attempt_share_label_range": [
-                0.049545203969128995,
-                0.05696006604065628
+                0.04952450957872008,
+                0.05693720654249007
               ]
             },
             "goal": {
-              "possessions": 2731,
+              "possessions": 2730,
               "games": 131,
-              "attempts": 26290,
-              "hucks": 1296,
-              "goals": 2731,
+              "attempts": 26288,
+              "hucks": 1295,
+              "goals": 2730,
               "confirmed_deductions": 13,
               "unknown_possible_deductions": 2515,
               "unknown_first_hucks": 39,
-              "mean_all_throws": 9.626510435737824,
-              "mean_confirmed_only": 9.621750274624679,
+              "mean_all_throws": 9.629304029304029,
+              "mean_confirmed_only": 9.624542124542124,
               "mean_label_range": [
-                8.700842182350787,
-                9.621750274624679
+                8.703296703296703,
+                9.624542124542124
               ],
-              "huck_attempt_share_all": 0.04929631038417649,
-              "huck_attempt_share_confirmed_only": 0.04932069870989839,
+              "huck_attempt_share_all": 0.04926202069385271,
+              "huck_attempt_share_confirmed_only": 0.04928639391056137,
               "huck_attempt_share_label_range": [
-                0.04790761490967299,
-                0.05445149363472123
+                0.04787315139502973,
+                0.05441405101054666
               ]
             },
             "turnover": {
@@ -5405,15 +5405,15 @@
         ],
         "first_vs_second": {
           "mean_difference_range_second_minus_first": [
-            -2.649114870244885,
-            -1.758886559742602
+            -2.6502038537835064,
+            -1.759812914799217
           ],
           "huck_share_difference_range_second_minus_first": [
-            -1.5001279602237794e-05,
-            0.0073998607919250475
+            7.858218563971953e-06,
+            0.007420555182333963
           ],
           "fewer_second_possession_throws_for_every_label_assignment": true,
-          "higher_second_possession_huck_share_for_every_label_assignment": false
+          "higher_second_possession_huck_share_for_every_label_assignment": true
         }
       },
       "teams": [
@@ -6774,47 +6774,47 @@
             {
               "stage": 1,
               "all": {
-                "possessions": 216,
+                "possessions": 215,
                 "games": 12,
-                "attempts": 1855,
-                "hucks": 92,
-                "goals": 140,
+                "attempts": 1853,
+                "hucks": 91,
+                "goals": 139,
                 "confirmed_deductions": 4,
                 "unknown_possible_deductions": 201,
                 "unknown_first_hucks": 0,
-                "mean_all_throws": 8.587962962962964,
-                "mean_confirmed_only": 8.569444444444445,
+                "mean_all_throws": 8.61860465116279,
+                "mean_confirmed_only": 8.6,
                 "mean_label_range": [
-                  7.638888888888889,
-                  8.569444444444445
+                  7.665116279069768,
+                  8.6
                 ],
-                "huck_attempt_share_all": 0.04959568733153639,
-                "huck_attempt_share_confirmed_only": 0.04970286331712588,
+                "huck_attempt_share_all": 0.04910955207771182,
+                "huck_attempt_share_confirmed_only": 0.04921579232017307,
                 "huck_attempt_share_label_range": [
-                  0.04970286331712588,
-                  0.055757575757575756
+                  0.04921579232017307,
+                  0.05521844660194175
                 ]
               },
               "goal": {
-                "possessions": 140,
+                "possessions": 139,
                 "games": 12,
-                "attempts": 1429,
-                "hucks": 56,
-                "goals": 140,
+                "attempts": 1427,
+                "hucks": 55,
+                "goals": 139,
                 "confirmed_deductions": 3,
                 "unknown_possible_deductions": 133,
                 "unknown_first_hucks": 0,
-                "mean_all_throws": 10.207142857142857,
-                "mean_confirmed_only": 10.185714285714285,
+                "mean_all_throws": 10.266187050359711,
+                "mean_confirmed_only": 10.244604316546763,
                 "mean_label_range": [
-                  9.235714285714286,
-                  10.185714285714285
+                  9.287769784172662,
+                  10.244604316546763
                 ],
-                "huck_attempt_share_all": 0.03918824352694192,
-                "huck_attempt_share_confirmed_only": 0.03927068723702665,
+                "huck_attempt_share_all": 0.03854239663629993,
+                "huck_attempt_share_confirmed_only": 0.038623595505617975,
                 "huck_attempt_share_label_range": [
-                  0.03927068723702665,
-                  0.04331013147718484
+                  0.038623595505617975,
+                  0.042602633617350893
                 ]
               },
               "turnover": {
@@ -6981,12 +6981,12 @@
           ],
           "first_vs_second": {
             "mean_difference_range_second_minus_first": [
-              -4.61292270531401,
-              -3.6823671497584547
+              -4.643478260869565,
+              -3.708594539939333
             ],
             "huck_share_difference_range_second_minus_first": [
-              0.03215451215451216,
-              0.03820922459496204
+              0.03269364131014617,
+              0.03869629559191485
             ],
             "fewer_second_possession_throws_for_every_label_assignment": true,
             "higher_second_possession_huck_share_for_every_label_assignment": true
@@ -10381,7 +10381,7 @@
     },
     "lineup_audit": {
       "path": "research/oline_possessions/original_line_scoring.json",
-      "sha256": "b3ce7f2ab43d756453cbf0ddb180c876d59920dbf52cff86dad70c80e3a452e3"
+      "sha256": "44c8fa3415e44537d70612ac9de9b04436be71bf4c25ce8ae58156c110ed918d"
     },
     "opening_labels": {
       "path": "research/possession_review/current_opening_label_inventory.json",
@@ -10391,6 +10391,24 @@
       "path": "research/possession_review/opening_pass_feasibility.json",
       "sha256": "a920a68f41ec6e0e9bab4886b2c6957eb840f33ffaccdf3972e6e5587a4558cc"
     }
+  },
+  "special_situation_exclusions": {
+    "version": "typical-oline-special-situations-20261113",
+    "registryPath": "research/oline_possessions/special_situation_exclusions.json",
+    "registrySha256": "364cfe89028ca64b0b2d57fba1780d419cf9cf9ebc56f2b15c480668be28ce96",
+    "calculationSha256": "8341f9c520d6f8bc0a02c263ad4f833398489ac64ceadf57b8803b4d15edaff1",
+    "excludedPossessions": 3,
+    "sourceThrowsExcluded": 6,
+    "sourceHucksExcluded": 1,
+    "possessionIds": [
+      "2026-05-02-CHI-MIN|away|196|1",
+      "2026-05-09-MTL-TOR|home|85|1",
+      "2026-05-09-PHI-CAR|home|115|1"
+    ],
+    "coverage": "Known reviewed special situations only. Remaining games have not all been screened for clock-driven attacks.",
+    "rule": "Exclude the whole possession when identified as a clock-driven final scoring attempt at the end of a quarter. Apply regardless of goal, turnover, completion, or whether the source records a huck. Retain pull/centering labels and all original events for audit. Apply to the same comparison metrics and their denominators, including huck attempt percentage, huck timing/completion, throw counts and scoring. Never renumber later possessions.",
+    "rawRowsAndFilmLabelsPreserved": true,
+    "numericClockCutoffSeconds": null
   },
   "validation": {
     "sameCohortForBothMetrics": true,

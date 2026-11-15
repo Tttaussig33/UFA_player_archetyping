@@ -1,0 +1,64 @@
+{
+  "recordedOn": "2026-11-14T04:52:28.512038Z",
+  "timezone": "America/New_York",
+  "source": "User request in the research chat, November 13, 2026: card 77, Carolina at DC, Q1 point 12; Carolina offsides and DC starts at midfield.",
+  "browserExport": {
+    "path": "research/possession_review/annotations/2026-11-13-before-offsides-midfield-browser-export.json",
+    "sha256": "c64c562fa80deaa511ff97a05cf160ffe69ebaa5b3e105cf9ca757dda71fa5f7"
+  },
+  "reviews": [
+    {
+      "caseId": "R129",
+      "possessionId": "2026-06-05-CAR-DC|home|70|1",
+      "decision": "attack1",
+      "gameId": "2026-06-05-CAR-DC",
+      "reviewedOn": "2026-11-14T04:52:28.512038Z",
+      "source": "User start-context correction confirmed in research chat",
+      "reviewMode": "manual",
+      "reviewInterface": "two-question-review",
+      "currentReviewExposesSuggestion": false,
+      "hasOpeningCenteringPass": false,
+      "completedCenteringPass": false,
+      "qualifyingCenteringPass": false,
+      "definitionVersion": "non-roller-pull-setup-centering-20261113",
+      "definitionConfirmedOn": "2026-11-14T04:52:28.512038Z",
+      "clip": {
+        "start": 2381,
+        "end": 2476,
+        "timingStatus": "estimated"
+      },
+      "reviewBatch": "opening-pattern-review-100-20261113-v1",
+      "context": "offsides_midfield",
+      "contextSource": "User request in the research chat, November 13, 2026: card 77, Carolina at DC, Q1 point 12; Carolina offsides and DC starts at midfield.",
+      "reviewHistory": [
+        {
+          "origin": "Browser review before midfield start correction",
+          "review": {
+            "caseId": "R129",
+            "possessionId": "2026-06-05-CAR-DC|home|70|1",
+            "decision": "attack1",
+            "gameId": "2026-06-05-CAR-DC",
+            "reviewedOn": "2026-11-14T04:50:42.119Z",
+            "source": "Local film review",
+            "reviewMode": "manual",
+            "reviewInterface": "two-question-review",
+            "currentReviewExposesSuggestion": false,
+            "hasOpeningCenteringPass": false,
+            "completedCenteringPass": false,
+            "qualifyingCenteringPass": false,
+            "definitionVersion": "qualifying-pull-setup-centering-20261113",
+            "definitionConfirmedOn": "2026-11-14T04:50:42.119Z",
+            "clip": {
+              "start": 2381,
+              "end": 2476,
+              "timingStatus": "estimated"
+            },
+            "reviewBatch": "opening-pattern-review-100-20261113-v1"
+          }
+        }
+      ]
+    }
+  ],
+  "recordCoordinatesChanged": false,
+  "analysisRecalculated": false
+}

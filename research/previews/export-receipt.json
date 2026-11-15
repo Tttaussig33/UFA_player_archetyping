@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-11-14T00:59:18.207Z",
+  "exportedAt": "2026-11-14T05:30:28.448Z",
   "note": "Presentation conversion only. The TSX source and embedded research data are copied without changes.",
   "reports": [
     {
@@ -20,19 +20,19 @@
     },
     {
       "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-oline-regain-hucking.canvas.tsx",
-      "sourceSha256": "bf89f819c19a1d68280b544c4d677e85bdf4db87a893f947b3435147bb763fb5",
+      "sourceSha256": "e1fbb7371b428540473dc2bc71958baa3171e6207370ae2e8f4b3f535f71dd98",
       "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-oline-regain-hucking.canvas.tsx",
-      "reportSha256": "bf89f819c19a1d68280b544c4d677e85bdf4db87a893f947b3435147bb763fb5",
+      "reportSha256": "e1fbb7371b428540473dc2bc71958baa3171e6207370ae2e8f4b3f535f71dd98",
       "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-oline-regain-hucking.ufa.html",
-      "htmlSha256": "a6b58c539b23280a209ed269dea2c03fd9b94355a42ad37d1c93b25fcb65ac51"
+      "htmlSha256": "f1918cc0d3e1a40caccd033052887637a922bfe89164dde4fa64a93589744cbb"
     },
     {
       "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-possession-review.canvas.tsx",
-      "sourceSha256": "d992abcd5b51903dffc37dd353b4194f1951322a113219c827290e4fc99e833c",
+      "sourceSha256": "1b3f3392fbe246f1d348b8973aef9daceb370cd1b5bbbb433e247fc583d1128b",
       "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-possession-review.canvas.tsx",
-      "reportSha256": "d992abcd5b51903dffc37dd353b4194f1951322a113219c827290e4fc99e833c",
+      "reportSha256": "1b3f3392fbe246f1d348b8973aef9daceb370cd1b5bbbb433e247fc583d1128b",
       "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-possession-review.ufa.html",
-      "htmlSha256": "16c1649d969eb709650ab0b9c434c81fe937e9d45533346f2bce2b59b6f6a4d3"
+      "htmlSha256": "2da1c7bb7005302fcb90e555dbd8c653a3764c1f1709823147d068e2618438a4"
     }
   ]
 }

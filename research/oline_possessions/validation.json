@@ -1,10 +1,11 @@
 {
-  "checked_at": "2026-11-07T01:06:55.962560+00:00",
+  "checked_at": "2026-11-14T02:20:22.569003+00:00",
   "passed": true,
   "checks": [
     "Analysis input hashes match the current cohort and specification.",
     "All 52,997 physical throws and original ordinals match the earlier independently audited cohort.",
     "Possession endings, zero-throw outcomes, prior own-team activity and eventual point holds reconcile.",
+    "Reviewed end-of-quarter IDs are excluded from both possession and throw denominators without altering raw rows or renumbering.",
     "Every league and team metric independently recomputed from CSV with exact numerator and denominator agreement.",
     "All 918 known prior-opponent activity counts independently match raw event sequences; uncertain contexts remain missing.",
     "24 reported regression fits converged with full-rank designs and no captured fit warnings.",
@@ -16,5 +17,5 @@
     "score_discrepancy_team_streams": 4,
     "combined_prior_activity_missing_eligible_regains": 303
   },
-  "results_sha256": "3b19faee878a9f8c01dec57a2fc2c90cf074c35326cd43fc5f4189dac0a157fb"
+  "results_sha256": "da937eecbfb4081e40b5faf7d4d481c3156f56cd4cf70e58244c3459534c932d"
 }

@@ -1,0 +1,120 @@
+{
+  "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+  "rawReviewSource": {
+    "path": "research/possession_review/annotations/2026-11-14-completed-100-browser-export.json",
+    "sha256": "5be1f36c2ff6b160466b995f802ec62d37717464b6f39ed888a15a2f2702ec84"
+  },
+  "scopeDerivedNoCentering": [
+    {
+      "caseId": "R010",
+      "possessionId": "2026-04-24-ATL-HTX|away|76|1",
+      "rawDecision": "setup1",
+      "context": "back_endline",
+      "effectiveStudyDecision": "attack1",
+      "firstThrowDeduction": 0,
+      "basis": "User-adopted start-context scope; preserve the physical observation and the raw label."
+    },
+    {
+      "caseId": "R066",
+      "possessionId": "2026-06-14-IND-MAD|away|47|1",
+      "rawDecision": "setup1",
+      "context": "sideline_inbounds",
+      "effectiveStudyDecision": "attack1",
+      "firstThrowDeduction": 0,
+      "basis": "User-adopted start-context scope; preserve the physical observation and the raw label."
+    }
+  ],
+  "rechecks": [
+    {
+      "caseId": "R084",
+      "possessionId": "2026-05-09-OAK-SEA|home|93|1",
+      "reason": "You could not tell from the first viewing. Check whether the pull and first transfer are visible; Cannot tell remains valid."
+    },
+    {
+      "caseId": "R086",
+      "possessionId": "2026-05-09-OAK-SEA|away|90|1",
+      "reason": "You could not tell from the first viewing. Check whether the pull and first transfer are visible; Cannot tell remains valid."
+    },
+    {
+      "caseId": "R014",
+      "possessionId": "2026-04-24-ATL-HTX|home|86|1",
+      "reason": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule."
+    },
+    {
+      "caseId": "R035",
+      "possessionId": "2026-05-02-CHI-MIN|home|3|1",
+      "reason": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule."
+    },
+    {
+      "caseId": "R047",
+      "possessionId": "2026-05-09-MTL-TOR|home|0|1",
+      "reason": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule."
+    },
+    {
+      "caseId": "R077",
+      "possessionId": "2026-05-09-OAK-SEA|home|41|1",
+      "reason": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule."
+    },
+    {
+      "caseId": "R109",
+      "possessionId": "2026-06-06-ATX-LV|away|63|1",
+      "reason": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule."
+    },
+    {
+      "caseId": "R182",
+      "possessionId": "2026-05-02-CHI-MIN|home|132|1",
+      "reason": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule."
+    },
+    {
+      "caseId": "R218",
+      "possessionId": "2026-06-05-CAR-DC|home|198|1",
+      "reason": "The start type is unclear. Check whether this is an ordinary pull setup or a roller, sideline or penalty restart, and apply the fixed-location rule."
+    },
+    {
+      "caseId": "R039",
+      "possessionId": "2026-05-02-CHI-MIN|away|43|2",
+      "reason": "Confirm that this clip shows the later possession after the turnover, rather than the pull opening."
+    },
+    {
+      "caseId": "R082",
+      "possessionId": "2026-05-09-OAK-SEA|home|74|2",
+      "reason": "Confirm that this clip shows the later possession after the turnover, rather than the pull opening."
+    },
+    {
+      "caseId": "R074",
+      "possessionId": "2026-05-09-OAK-SEA|away|3|1",
+      "reason": "Reconcile the observed caught-pull start with the recorded brick-like starting position."
+    }
+  ],
+  "pendingClockExclusions": [
+    {
+      "caseId": "R199",
+      "possessionId": "2026-06-14-IND-MAD|away|172|1",
+      "excludeFromTypicalOline": true,
+      "reason": "end_of_quarter_scoring_attempt",
+      "source": "Film-review checkbox",
+      "preservePullAndCenteringLabels": true,
+      "ruleVersion": "typical-oline-special-situations-20261113"
+    },
+    {
+      "caseId": "R204",
+      "possessionId": "2026-05-09-OAK-SEA|home|221|1",
+      "excludeFromTypicalOline": true,
+      "reason": "end_of_quarter_scoring_attempt",
+      "source": "Film-review checkbox",
+      "preservePullAndCenteringLabels": true,
+      "ruleVersion": "typical-oline-special-situations-20261113"
+    },
+    {
+      "caseId": "R227",
+      "possessionId": "2026-06-13-SD-COL|away|174|1",
+      "excludeFromTypicalOline": true,
+      "reason": "end_of_quarter_scoring_attempt",
+      "source": "Film-review checkbox",
+      "preservePullAndCenteringLabels": true,
+      "ruleVersion": "typical-oline-special-situations-20261113"
+    }
+  ],
+  "sourceEventsChanged": false,
+  "individualRawLabelsChanged": false
+}

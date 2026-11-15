@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "definitionVersion": "stationary-uncontested-centering-20261113",
+  "corrections": [
+    {
+      "caseId": "R163",
+      "possessionId": "2026-06-13-SD-COL|away|67|1",
+      "decision": "attack1",
+      "context": "caught_pull"
+    },
+    {
+      "caseId": "R194",
+      "possessionId": "2026-06-14-IND-MAD|home|124|1",
+      "decision": "attack1",
+      "context": "grounded_pull"
+    }
+  ],
+  "rawBrowserReviews": 106,
+  "olderArchiveRowsUnchanged": true,
+  "frozenFiles": {
+    "research/possession_review/opening_classifier_pilot.json": "b6fc95f9db98c179181338ee601d5ea98333e180e242f825d9ea056b32bfe9b8",
+    "research/possession_review/completed_classifier_pilot_2026-11-13.json": "c0cdcff44722b5513d060128796c1f3c13f0793d7b93383272ae4b9a1d96837a",
+    "research/possession_review/pattern_review_batch_100_2026-11-13.json": "d433b87702d27136cd5f347aaaf90e64ae5eb21e7602892c1e885d60e9873d16",
+    "research/possession_review/current_opening_label_inventory.json": "ee62fb610cd00e321c7a3e6bb0dcb482ba8d07ba82c6517fedbcfd65d9067b65",
+    "research/oline_possessions/reviewed_centering_counts.json": "a027e039207baa99bd45674a51b33cd82d243b13c4e92051fbedace7e07eb395",
+    "research/oline_possessions/centering_sensitivity_bounds.json": "9f5f8904c471329ad8d256e8353f6316a538adbac2d92be65d2e77f96d2c2a30"
+  },
+  "analysisRecalculated": false,
+  "reviewConsistencyCheck": "Earlier positive labels pending recheck under narrower definition.",
+  "browserVerification": {
+    "reviewCount": 106,
+    "onlyChangedReviews": [
+      "R163",
+      "R194"
+    ],
+    "pullContextsAndClipWindowsPreserved": true,
+    "savedPosition": "All reviewed sequences, 74 of 104, R163",
+    "ruleTextVisible": true,
+    "screenshot": "/tmp/ufa-stationary-centering-definition-2026-11-13.png"
+  },
+  "componentChecks": "verify_dictation.cjs passed, including definition version behavior and preservation of history",
+  "frozenFilesUnchanged": true
+}

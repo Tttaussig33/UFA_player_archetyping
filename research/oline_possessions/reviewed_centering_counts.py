@@ -7,6 +7,7 @@ from pathlib import Path
 import csv
 import hashlib
 import json
+import special_situations as special
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
@@ -26,6 +27,8 @@ def main():
         'possessions': ROOT / 'possessions.csv',
         'throws': ROOT / 'throws.csv',
         'raw_receipt': RAW / 'source_receipt.json',
+        'special_situations': special.REGISTRY,
+        'special_filter': ROOT / 'special_situations.py',
     }
     audit = json.loads(inputs['review_audit'].read_text())
     library = json.loads(inputs['film_library'].read_text())
@@ -44,7 +47,7 @@ def main():
     rows = []
     # These specific reviewed examples were flagged as end-of-quarter situations.
     # No general point-clock cutoff is inferred or applied to the league.
-    known_period_end_examples = {'R033', 'R060'}
+    excluded_special_ids = special.excluded_ids()
     for reviewed in audit['allReviewedRows']:
         pid = reviewed['possessionId']
         p, case = possessions[pid], cases[pid]
@@ -82,7 +85,7 @@ def main():
             reasons.append('Original seven players not established')
         if changes:
             reasons.append('Original lineup changed before this possession ended')
-        if reviewed['caseId'] in known_period_end_examples:
+        if pid in excluded_special_ids:
             reasons.append('Reviewed end-of-quarter example')
         if p['outcome'] not in {'goal', 'turnover'}:
             reasons.append('Possession did not end with a goal or turnover')
@@ -149,6 +152,7 @@ def main():
             'uncertain': 'Do not automatically subtract from unreviewed or unresolved starts.',
         },
         'groups': groups, 'rows': rows,
+        'special_situation_exclusions': special.metadata(),
         'exclusions': dict(Counter(reason for r in rows for reason in r['exclusionReasons'])),
         'primaryExclusions': [{'reason': reason, 'n': n} for reason, n in Counter(
             r['exclusionReasons'][0] for r in rows if r['exclusionReasons']).items()],
