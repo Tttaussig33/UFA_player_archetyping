@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "independently_recomputed_groups": 74,
+  "method": "Python standard-library CSV aggregation from original possession and throw files; inclusion from original-seven audit; checked denominators, numerators and rates for every plotted group and every team; input hashes preserved.",
+  "interval_check": "All displayed group intervals have at least 95% valid whole-game draws. Interval calculation retained in analyze.py; no p-value or causal claims.",
+  "source_window": "2026-04-24 through 2026-07-19; archived data, no live refresh"
+}

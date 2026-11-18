@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "group_rates_recomputed_independently": 264,
+  "all_requested_correlations_checked": true,
+  "same_cohort_and_original_line_audit_reconciled": true,
+  "input_hashes_current": true,
+  "primary_bootstrap_valid_draws": 9926
+}

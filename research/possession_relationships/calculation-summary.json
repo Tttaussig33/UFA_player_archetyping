@@ -1,0 +1,377 @@
+{
+  "coverage": {
+    "season": 2026,
+    "games": 131,
+    "teams": 22,
+    "missing_game": "2026-07-18-PIT-CHI",
+    "unknown_start_excluded": 5,
+    "third_or_later_excluded": 140,
+    "source_excluded_points": 29,
+    "zero_throw_possessions": 2,
+    "first_date": "2026-04-24",
+    "last_date": "2026-07-19"
+  },
+  "main": {
+    "hucking_vs_scoring_change": {
+      "pearson": -0.5428508152444711,
+      "spearman": -0.35177865612648224,
+      "ci95": [
+        -0.6794683412100921,
+        0.25240803031146286
+      ],
+      "valid_bootstrap": 9926,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.6876135988243857,
+        -0.2622824783567682
+      ],
+      "slope": -2.7133974107611487,
+      "intercept": 1.2356284688937316
+    },
+    "throws_vs_scoring_change": {
+      "pearson": 0.7168199402862807,
+      "spearman": 0.5505364201016375,
+      "ci95": [
+        0.27793436698431395,
+        0.8041335659040049
+      ],
+      "valid_bootstrap": 9926,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        0.5380259154512625,
+        0.7553909397204357
+      ],
+      "slope": 7.417630448434734,
+      "intercept": 9.836375744429946
+    },
+    "hucking_vs_throws_change": {
+      "pearson": -0.7373612195413857,
+      "spearman": -0.6736307171089779,
+      "ci95": [
+        -0.8426154124512872,
+        -0.16705002291441395
+      ],
+      "valid_bootstrap": 9926,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.8254409270469678,
+        -0.6280712074783488
+      ],
+      "slope": -0.3561706180141288,
+      "intercept": -1.1804816705672407
+    },
+    "hucking_vs_throws_first": {
+      "pearson": -0.7288176461748936,
+      "spearman": -0.7594579333709769,
+      "ci95": [
+        -0.8125418614733223,
+        -0.5406843915544072
+      ],
+      "valid_bootstrap": 9999,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.7944036056592262,
+        -0.7014024648023448
+      ],
+      "slope": -0.5851363930888233,
+      "intercept": 11.28451278743984
+    },
+    "hucking_vs_throws_second": {
+      "pearson": -0.8001653313574623,
+      "spearman": -0.6376729991644661,
+      "ci95": [
+        -0.8465151343380808,
+        -0.3239751099916867
+      ],
+      "valid_bootstrap": 9926,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.8484528831965271,
+        -0.7492459646309192
+      ],
+      "slope": -0.36259262716391194,
+      "intercept": 8.973592483465016
+    }
+  },
+  "league": {
+    "stages": [
+      {
+        "stage": 1,
+        "possessions": 4802,
+        "goals": 2372,
+        "attempts": 39228,
+        "hucks": 2027,
+        "hap": 5.167227490567962,
+        "scoring": 49.39608496459808,
+        "mean_throws": 8.169096209912537,
+        "hucks_per_possession": 0.422115785089546
+      },
+      {
+        "stage": 2,
+        "possessions": 457,
+        "goals": 203,
+        "attempts": 2845,
+        "hucks": 201,
+        "hap": 7.065026362038664,
+        "scoring": 44.42013129102845,
+        "mean_throws": 6.225382932166302,
+        "hucks_per_possession": 0.43982494529540483
+      }
+    ],
+    "change": {
+      "hap": 1.8977988714707026,
+      "scoring": -4.975953673569634,
+      "mean_throws": -1.9437132777462347,
+      "hucks_per_possession": 0.01770916020585883
+    },
+    "change_ci95": {
+      "hap": [
+        0.9406120600063307,
+        2.91479401715416
+      ],
+      "scoring": [
+        -10.218092992667321,
+        0.26086620422507895
+      ],
+      "mean_throws": [
+        -2.3486167486633454,
+        -1.523794674984751
+      ],
+      "hucks_per_possession": [
+        -0.03036402899115898,
+        0.06578895445602055
+      ]
+    }
+  },
+  "all_starts": {
+    "hucking_vs_scoring_change": {
+      "pearson": -0.47144972870607366,
+      "spearman": -0.34726143421795597,
+      "ci95": [
+        -0.6525772528406227,
+        0.15129425367864432
+      ],
+      "valid_bootstrap": 9998,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.5406318839766872,
+        -0.31451350432836234
+      ],
+      "slope": -2.2746408639694193,
+      "intercept": 9.329287744812373
+    },
+    "throws_vs_scoring_change": {
+      "pearson": 0.429184002323461,
+      "spearman": 0.20948616600790515,
+      "ci95": [
+        -0.019406202362754397,
+        0.6569550987275465
+      ],
+      "valid_bootstrap": 9998,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        0.19744322063507805,
+        0.5005873895816475
+      ],
+      "slope": 3.8959486981909803,
+      "intercept": 18.057107514747894
+    },
+    "hucking_vs_throws_change": {
+      "pearson": -0.7018700680030907,
+      "spearman": -0.6781479390175043,
+      "ci95": [
+        -0.7943753774593061,
+        -0.1639733421403146
+      ],
+      "valid_bootstrap": 9998,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.7459377573087043,
+        -0.6376738752426875
+      ],
+      "slope": -0.3730477841217054,
+      "intercept": -2.387756291626053
+    },
+    "hucking_vs_throws_first": {
+      "pearson": -0.734276035756867,
+      "spearman": -0.7843026538678712,
+      "ci95": [
+        -0.8175489261365748,
+        -0.548445751259582
+      ],
+      "valid_bootstrap": 9999,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.8142837668762591,
+        -0.7015898367108732
+      ],
+      "slope": -0.5643210745145718,
+      "intercept": 10.907084402733679
+    },
+    "hucking_vs_throws_second": {
+      "pearson": -0.7840434912144417,
+      "spearman": -0.779785431959345,
+      "ci95": [
+        -0.8016866671535311,
+        -0.3018874694240542
+      ],
+      "valid_bootstrap": 9998,
+      "ci_note": "Percentile game-bootstrap interval, conditional on the fixed team roster; non-estimable draws omitted.",
+      "teams": 22,
+      "leave_one_team_out_range": [
+        -0.8123229826496186,
+        -0.7495537539541259
+      ],
+      "slope": -0.37603210453939817,
+      "intercept": 7.5716270562184125
+    }
+  },
+  "standardized": {
+    "team_count": 22,
+    "rows": [
+      {
+        "team": "alleycats",
+        "hap_change": 4.945488774867907,
+        "scoring_change": -5.224482400911448,
+        "minimum_bin_possessions": 6
+      },
+      {
+        "team": "apex",
+        "hap_change": 3.3318706885492,
+        "scoring_change": -17.06709918072238,
+        "minimum_bin_possessions": 4
+      },
+      {
+        "team": "bighorns",
+        "hap_change": 1.6153461892659102,
+        "scoring_change": -3.782864768263252,
+        "minimum_bin_possessions": 14
+      },
+      {
+        "team": "breeze",
+        "hap_change": 1.538272631440524,
+        "scoring_change": 3.682636336835678,
+        "minimum_bin_possessions": 6
+      },
+      {
+        "team": "cascades",
+        "hap_change": -1.818053268445841,
+        "scoring_change": -16.547906579953256,
+        "minimum_bin_possessions": 8
+      },
+      {
+        "team": "empire",
+        "hap_change": 3.6379345829738687,
+        "scoring_change": -20.5832691366638,
+        "minimum_bin_possessions": 2
+      },
+      {
+        "team": "flyers",
+        "hap_change": 73.42279530698532,
+        "scoring_change": -60.1139947207363,
+        "minimum_bin_possessions": 1
+      },
+      {
+        "team": "glory",
+        "hap_change": 12.687906026641844,
+        "scoring_change": 21.217562326110496,
+        "minimum_bin_possessions": 3
+      },
+      {
+        "team": "growlers",
+        "hap_change": 1.3702060298936223,
+        "scoring_change": 15.381589439808621,
+        "minimum_bin_possessions": 4
+      },
+      {
+        "team": "havoc",
+        "hap_change": 0.1688796634416727,
+        "scoring_change": -25.92329018618797,
+        "minimum_bin_possessions": 3
+      },
+      {
+        "team": "hustle",
+        "hap_change": 21.991339760236947,
+        "scoring_change": 25.44793829223419,
+        "minimum_bin_possessions": 1
+      },
+      {
+        "team": "phoenix",
+        "hap_change": 3.878493587568326,
+        "scoring_change": 5.322098566101559,
+        "minimum_bin_possessions": 13
+      },
+      {
+        "team": "radicals",
+        "hap_change": 8.849984253836917,
+        "scoring_change": 6.9620943718213795,
+        "minimum_bin_possessions": 3
+      },
+      {
+        "team": "royal",
+        "hap_change": 9.17349102847471,
+        "scoring_change": -9.975142058600333,
+        "minimum_bin_possessions": 3
+      },
+      {
+        "team": "rush",
+        "hap_change": 3.2471879511027684,
+        "scoring_change": -1.10462983344339,
+        "minimum_bin_possessions": 4
+      },
+      {
+        "team": "shred",
+        "hap_change": 5.857542920805556,
+        "scoring_change": 4.227092904631775,
+        "minimum_bin_possessions": 7
+      },
+      {
+        "team": "sol",
+        "hap_change": -2.8034022525294024,
+        "scoring_change": 27.681053958181252,
+        "minimum_bin_possessions": 1
+      },
+      {
+        "team": "spiders",
+        "hap_change": 2.11877325394552,
+        "scoring_change": -9.062524355077542,
+        "minimum_bin_possessions": 7
+      },
+      {
+        "team": "steel",
+        "hap_change": 1.5266229380189582,
+        "scoring_change": 13.50166402614613,
+        "minimum_bin_possessions": 14
+      },
+      {
+        "team": "thunderbirds",
+        "hap_change": 9.712638886366241,
+        "scoring_change": -15.855625488607004,
+        "minimum_bin_possessions": 7
+      },
+      {
+        "team": "union",
+        "hap_change": -2.3622266492117587,
+        "scoring_change": 32.49649457021014,
+        "minimum_bin_possessions": 7
+      },
+      {
+        "team": "windchill",
+        "hap_change": 5.057270531235688,
+        "scoring_change": -0.5444805479933166,
+        "minimum_bin_possessions": 6
+      }
+    ],
+    "pearson": -0.5465792378322389,
+    "limitation": "Descriptive two-bin longitudinal standardization only; sparse regain bins, no lateral/opponent/wind adjustment, no interval. Not a causal estimate."
+  }
+}

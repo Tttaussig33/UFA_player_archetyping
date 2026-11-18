@@ -1562,7 +1562,7 @@
     "id": "opening-pattern-review-12-20261114-v1",
     "path": "research/possession_review/next_review_batch_12_2026-11-14.json",
     "size": 12,
-    "status": "Ready for user film review",
+    "status": "Completed; no replacement batch assigned",
     "priorCompletedBatch": "opening-pattern-review-100-20261113-v1"
   },
   "reviewChoiceWording2026_11_12": {
@@ -2175,5 +2175,14 @@
       "https://scikit-learn.org/stable/modules/cross_validation.html",
       "https://www.jstatsoft.org/article/view/v045i03"
     ]
+  },
+  "completedNext12Review2026_11_15": {
+    "path": "research/possession_review/database_classifier_check_2026-11-15.json",
+    "reviews": 177,
+    "latestBatchLabels": {
+      "centering": 6,
+      "noCentering": 6
+    },
+    "nextStep": "Reconcile definition consistency before expanding model training. The small game-held-out diagnostic is not adequate for automatic deductions. No new film set assigned."
   }
 }

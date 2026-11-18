@@ -33,7 +33,7 @@ for(const name of ['BarChart','H1','H2','Select','Stack','Table','Text'])context
 vm.createContext(context);vm.runInContext(compiled,context);
 const render=()=>{cursor=0;return context.PossessionReview();};
 const all=node=>node&&typeof node==='object'?[node,...(node.children||[]).flatMap(all)]:[];
-const words=node=>typeof node==='string'?node:(node?.children||[]).map(words).join('');
+const words=node=>typeof node==='string'||typeof node==='number'?String(node):(node?.children||[]).map(words).join('');
 const button=(tree,name)=>all(tree).find(n=>n.tag==='button'&&words(n)===name);
 const note=tree=>all(tree).find(n=>n.props.id==='ufa-review-note');
 const heading=tree=>all(tree).filter(n=>n.tag==='H2').map(words);
@@ -49,10 +49,10 @@ const exportStudyClasses=tree=>JSON.parse(decodeURIComponent(all(tree).find(n=>n
 const quarterCheckbox=tree=>all(tree).find(n=>n.tag==='input'&&n.props.type==='checkbox');
 let tree=render();
 const baseline=exportReviews(tree),baselineById=new Map(baseline.map(r=>[r.caseId,r]));
-assert.equal(baseline.length,165);assert.equal(activeCase(tree),firstBatchCase);
+assert.equal(baseline.length,177);assert.equal(activeCase(tree),firstBatchCase);
 assert.equal(select(tree,firstBatchCase).props.options.length,batch.caseIds.length);
 assert.equal(batch.caseIds.length,12);assert.equal(new Set(batch.caseIds).size,12);
-for(const id of batch.caseIds)assert(!baselineById.has(id),'Batch selection must not repeat earlier reviewed cases');
+for(const id of batch.caseIds)assert.equal(baselineById.get(id).reviewRound,batch.id,'Completed twelve must remain saved');
 assert.equal(baselineById.get('R194').decision,'attack1'); // Later explicit correction to card 41.
 assert.equal(baselineById.get('R197').decision,'attack1'); // Card 44: coverage forced a second read.
 assert.equal(baselineById.get('R197').completedCenteringPass,false);
@@ -78,7 +78,9 @@ assert.equal(baselineById.get('R013').inSampledBatch,false);
 assert.equal(baselineById.get('R014').decision,'setup1');
 assert.equal(baselineById.get('R014').completedCenteringPass,true);
 assert.equal(baselineById.get('R014').counting.adjustedThrowAttempts,4);
-assert(words(tree).includes('0 of 12 reviewed in this set'));
+assert(words(tree).includes('12 of 12 reviewed in this set'));
+assert(words(tree).includes('Database classifier check · 7 of 12 labels matched'));
+assert(words(tree).includes('It would wrongly remove 3 throws and fail to remove 2 confirmed centering passes.'));
 select(tree,'completed').props.onChange('completed');tree=render();
 assert(words(tree).includes('100 of 100 reviewed in this set'));
 assert.equal(select(tree,'R010').props.options.length,100);
@@ -109,7 +111,7 @@ assert.equal(select(tree,'attack1').props.options.find(o=>o.value==='attack1').l
 assert(!words(tree).includes('Immediate attack'));
 // Both sideline contexts group together without replacing observed labels.
 const originalGroups=exportStartGroups(tree);
-assert.equal(originalGroups.length,17);assert(originalGroups.every(r=>r.startGroup==='sideline_start'));
+assert.equal(originalGroups.length,19);assert(originalGroups.every(r=>r.startGroup==='sideline_start'));
 assert.deepEqual(originalGroups.filter(r=>r.conflict).map(r=>r.caseId),['R066']);
 assert.equal(originalGroups.find(r=>r.caseId==='R088').observedCenteringPass,true);
 assert.equal(originalGroups.find(r=>r.caseId==='R088').ruleBasis,'study_scope');
@@ -165,8 +167,8 @@ select(tree,'new').props.onChange('new');tree=render();
 assert(!quarterCheckbox(tree).props.checked);
 quarterCheckbox(tree).props.onChange({target:{checked:true}});tree=render();
 assert(exportEligibility(tree).find(r=>r.caseId===firstBatchCase).excludeFromTypicalOline);
-assert(button(tree,'Save & next').props.disabled);
-assert(!exportReviews(tree).find(r=>r.caseId===firstBatchCase).decision);
+assert(!button(tree,'Save & next').props.disabled);
+assert.equal(exportReviews(tree).find(r=>r.caseId===firstBatchCase).decision,baselineById.get(firstBatchCase).decision);
 saved.clear();states.length=0;tree=render();assert.deepEqual(exportReviews(tree),baseline);
 // A newer explicit chat correction beats an older browser choice. Future edits
 // still win, and neither path rewrites the archived research records.
@@ -181,7 +183,7 @@ saved.clear();states.length=0;tree=render();
 assert.equal(baselineById.get('R035').decision,'setup1');
 assert.equal(baselineById.get('R077').decision,'attack1');
 assert.equal(baselineById.get('R100').decision,'attack1');
-assert(button(tree,'Save & next').props.disabled);
+assert(!button(tree,'Save & next').props.disabled);
 // Clear the two answers in this memory-only test to exercise incomplete reviews.
 // The archived review and real browser answers are never changed.
 select(tree,'caught_pull').props.onChange('');tree=render();
@@ -199,12 +201,15 @@ assert.equal(newReview.reviewMode,'manual');assert(!newReview.suggestion);
 assert.equal(newReview.clip.start,firstClip.start);assert.equal(newReview.clip.end,firstClip.end);
 assert.equal(newReview.hasOpeningCenteringPass,true);
 assert.equal(newReview.completedCenteringPass,true);
-assert.equal(exportReviews(tree).length,baseline.length+1);
+assert.equal(exportReviews(tree).length,baseline.length);
 for(const r of exportReviews(tree).filter(r=>r.caseId!==firstBatchCase))assert.equal(JSON.stringify(r),JSON.stringify(baselineById.get(r.caseId)));
+// Create an unfinished second example in memory; no real answers are changed.
+select(tree,'caught_pull').props.onChange('');tree=render();
+select(tree,'setup1').props.onChange('');tree=render();
 // Resume at the first unfinished example after reload; allow jumping past skips.
 states.length=0;tree=render();assert.equal(activeCase(tree),secondBatchCase);
 select(tree,batch.caseIds.at(-1)).props.onChange(batch.caseIds.at(-1));tree=render();
-assert.equal(activeCase(tree),batch.caseIds.at(-1));assert(button(tree,'Finish this set').props.disabled);
+assert.equal(activeCase(tree),batch.caseIds.at(-1));assert(!button(tree,'Finish this set').props.disabled);
 button(tree,'Next unreviewed').props.onClick();tree=render();assert.equal(activeCase(tree),secondBatchCase);
 saved.clear();states.length=0;tree=render();
 select(tree,'focus').props.onChange('focus');tree=render();assert.equal(activeCase(tree),'R039');
@@ -254,4 +259,4 @@ assert.equal(activeCase(tree),'R039');assert.equal(note(tree).props.value,savedF
 assert.equal(exportReviews(tree).length,baseline.length);assert.equal(exportReviews(tree).find(r=>r.caseId==='R039').reviewRound,savedFirst.reviewRound);
 button(tree,'Restore archived answers').props.onClick();tree=render();
 assert.equal(note(tree).props.value,baselineById.get('R039').note);assert.equal(exportReviews(tree).find(r=>r.caseId==='R039').context,baselineById.get('R039').context);
-console.log('PASS: 165 reviews preserved; fresh 12 excludes earlier reviews; completed 100 and recheck set remain accessible. Saving, progress, exports, dictation and scope rules verified without modifying real browser labels.');
+console.log('PASS: 177 reviews preserved; latest 12 and completed 100 remain accessible; classifier counts are displayed. Saving, progress, exports, dictation and scope rules verified without modifying real browser labels.');

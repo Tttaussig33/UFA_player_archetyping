@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-11-14T05:30:28.448Z",
+  "exportedAt": "2026-11-15T21:42:13.904Z",
   "note": "Presentation conversion only. The TSX source and embedded research data are copied without changes.",
   "reports": [
     {
@@ -28,11 +28,11 @@
     },
     {
       "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-possession-review.canvas.tsx",
-      "sourceSha256": "1b3f3392fbe246f1d348b8973aef9daceb370cd1b5bbbb433e247fc583d1128b",
+      "sourceSha256": "24a246e72e42889b7e7e8b6003360e40244716a7e671a4c170b40ca0faf1fa2a",
       "reportPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-possession-review.canvas.tsx",
-      "reportSha256": "1b3f3392fbe246f1d348b8973aef9daceb370cd1b5bbbb433e247fc583d1128b",
+      "reportSha256": "24a246e72e42889b7e7e8b6003360e40244716a7e671a4c170b40ca0faf1fa2a",
       "htmlPath": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-possession-review.ufa.html",
-      "htmlSha256": "2da1c7bb7005302fcb90e555dbd8c653a3764c1f1709823147d068e2618438a4"
+      "htmlSha256": "1211329a40d271bb9a21edcbf23b4c4a249cf7c5bf56f49a615595615483ebb7"
     }
   ]
 }

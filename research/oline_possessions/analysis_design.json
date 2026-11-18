@@ -14,7 +14,7 @@
     "Goals divided by resolved goal-or-turnover possessions; period-ending possessions listed separately",
     "Huck attempts per physical throw",
     "Possessions containing any huck and containing a huck within their first three throws",
-    "Huck choice at throw 1, throws 2\u20133, throws 4\u20136, and throws 7+",
+    "Huck choice at throw 1, throws 2–3, throws 4–6, and throws 7+",
     "Actual huck catches per attempt, drops separately, and recorded expected completion",
     "Scoring after a completed huck as a descriptive continuation result",
     "Association of prior point activity with early hucking on subsequent possessions"
@@ -23,9 +23,24 @@
   "huck_possession_eligibility": "For the main huck comparisons retain starts at least 40 yards from the attacking goal line: first recorded throwing Y <=60 on the 120-yard coordinate system. This is a transparent working definition of sufficient room to huck, not a discovered optimum. Repeat with Y <=50 and Y <=70, and unrestricted as sensitivity checks. Do not apply this exclusion to scoring or possession throw counts.",
   "starting_location": "First recorded throwing or stall location; actual location where possession was won is not observed for every gain. Coordinate adjustments must describe this proxy accurately.",
   "adjustment": "Descriptive regression standardization using starting longitudinal and lateral position, team, opponent, quarter and raw point-start period time where available. Additional within-game and common-field-region sensitivity checks. No chosen-throw endpoint, future outcome, or eventual hold as a pre-choice control.",
-  "uncertainty": "Whole-game bootstrap for observed estimates and differences. Regression covariance clustered by game. Team comparisons have only 11\u201312 games; use team game-count t references and Holm correction both within each 22-team metric family and across all 132 team contrasts. This is a pragmatic small-sample precaution, not exact finite-sample inference. Apply Holm to 16 principal league contrasts and six team-heterogeneity tests. Report effects and uncertainty; no p-value-driven selection of outcomes or teams.",
-  "amendment_2026_11_05": "After inspecting initial results, added throws-2\u20133 and exact-third-possession checks; separately report second-to-third-or-later contrasts as exploratory. Changed actual-catch adjustment from fixed logit(CP) offset to a fitted logit(CP) covariate because production training target/calibration to actual catches is unverified. Preserve the original offset model as sensitivity. Added correction across all 132 team contrasts so searching six metrics does not overstate team evidence.",
+  "uncertainty": "Whole-game bootstrap for observed estimates and differences. Regression covariance clustered by game. Team comparisons have only 11–12 games; use team game-count t references and Holm correction both within each 22-team metric family and across all 132 team contrasts. This is a pragmatic small-sample precaution, not exact finite-sample inference. Apply Holm to 16 principal league contrasts and six team-heterogeneity tests. Report effects and uncertainty; no p-value-driven selection of outcomes or teams.",
+  "amendment_2026_11_05": "After inspecting initial results, added throws-2–3 and exact-third-possession checks; separately report second-to-third-or-later contrasts as exploratory. Changed actual-catch adjustment from fixed logit(CP) offset to a fitted logit(CP) covariate because production training target/calibration to actual catches is unverified. Preserve the original offset model as sensitivity. Added correction across all 132 team contrasts so searching six metrics does not overstate team evidence.",
   "selection": "All opening possessions define the baseline. A matched subset of points that reach a regain is outcome-selected and cannot define a scoring baseline. Later throw stages include only surviving possessions.",
   "interpretation": "Fewer throws describes fewer passing actions. Early hucking can fit the impatience hypothesis but cannot demonstrate fatigue, intent or that hucking causes better scoring. Receiving-team role is not proof of unchanged personnel.",
-  "amendment_2026_11_13_clock_scenarios": "Exclude reviewed end-of-quarter scoring attempts from typical O-line comparisons, regardless of outcome. Keep their raw records and pull/centering labels. The shared registry special_situation_exclusions.json applies at possession level to every metric denominator. No numerical clock cutoff is set; unreviewed examples remain a coverage limitation."
+  "amendment_2026_11_13_clock_scenarios": "Exclude reviewed end-of-quarter scoring attempts from typical O-line comparisons, regardless of outcome. Keep their raw records and pull/centering labels. The shared registry special_situation_exclusions.json applies at possession level to every metric denominator. No numerical clock cutoff is set; unreviewed examples remain a coverage limitation.",
+  "amendment_2026_11_16_literature_variables": {
+    "plan": "research/oline_possessions/literature_variable_plan_2026-11-16.json",
+    "question": "How does a receiving O-line's throwing approach change on its second and later possessions within a point, and how do those changes vary across teams with different levels of total aEC?",
+    "team_comparison": "Use all teams and verified official total aEC as a continuous offensive-contribution measure; retire playoff status as the proposed definition of team quality.",
+    "primary_style_measures": [
+      "Huck attempt percentage",
+      "Expected completion probability (xCP)",
+      "Throws per possession"
+    ],
+    "secondary_style_measure": "Throw direction profile, following existing ShownSpace bins after orientation and filter checks.",
+    "execution_outcomes": "CPOE, actual huck completion and possession scoring remain separate from throwing-choice measures.",
+    "status": "Measurement-plan revision only. Prior estimates and dashboard remain unchanged pending official aEC aggregation and cohort verification.",
+    "source_status": "Unpublished ShownSpace manuscript plus Braden Eberhard applied articles; no claim that these are independent peer-reviewed team-strength validation.",
+    "earlier_design": "Dated earlier specifications retained for provenance; later original-line, end-of-quarter and centering decisions continue to apply."
+  }
 }

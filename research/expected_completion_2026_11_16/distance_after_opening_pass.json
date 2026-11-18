@@ -1,0 +1,54 @@
+{
+  "question": "How many yards remain to score after an O-line completes the first pass of its opening possession?",
+  "definition": "Possession-weighted mean of max(0, 100 - first-pass receiver y). Goal-line distance is forward distance, not accumulated passing yardage or distance to the back of the end zone.",
+  "scope": "Receiving-team first possession within the point; preserved original-seven eligibility and reviewed exclusions; 2026 regular-season study sample. All 22 teams, not only the ten displayed in the presentation.",
+  "first_pass": "Ordinal 1, whether centering or attacking. No centering deduction. Failed first attempts leave no continuing O-line possession and are excluded; first-pass goals count as zero remaining.",
+  "scopes": {
+    "long_field": {
+      "eligible_opening_possessions": 4802,
+      "completed_first_passes_with_coordinates": 4677,
+      "mean_yards_remaining": 74.91941843061791,
+      "median_yards_remaining": 76.82,
+      "mean_yards_before_first_pass_same_sample": 83.3295980329271,
+      "sum_yards_remaining": 350398.12,
+      "first_pass_goals_included_at_zero_yards": 12,
+      "first_pass_turnovers_excluded": 124,
+      "no_recorded_first_throw_excluded": 1,
+      "completed_first_pass_missing_catch_coordinate": 0,
+      "games": 131,
+      "teams": 22
+    },
+    "all_known_starts": {
+      "eligible_opening_possessions": 5474,
+      "completed_first_passes_with_coordinates": 5272,
+      "mean_yards_remaining": 71.83247723823976,
+      "median_yards_remaining": 75.58,
+      "mean_yards_before_first_pass_same_sample": 79.30928679817906,
+      "sum_yards_remaining": 378700.82,
+      "first_pass_goals_included_at_zero_yards": 29,
+      "first_pass_turnovers_excluded": 201,
+      "no_recorded_first_throw_excluded": 1,
+      "completed_first_pass_missing_catch_coordinate": 0,
+      "games": 131,
+      "teams": 22
+    }
+  },
+  "validation": {
+    "eligible_input_hashes_match_existing_chart_analysis": true,
+    "unique_possessions_and_attempts": true,
+    "first_attempt_event_keys_match_eligible_throw_file": true,
+    "first_throw_coordinate_matches_possession_start": true,
+    "counts_reconcile_and_catch_coordinates_in_bounds": true,
+    "independent_pandas_check": {
+      "long_field_n": 4677,
+      "long_field_mean": 74.91941843061791,
+      "all_known_starts_n": 5272,
+      "all_known_starts_mean": 71.83247723823976
+    }
+  },
+  "inputs": {
+    "research/expected_completion_2026_11_16/eligible_possessions.csv": "fbe33fff58c63756f845232bec844910e9d9eff323ae7d02a9c0f31ee17e8030",
+    "research/expected_completion_2026_11_16/eligible_throws.csv": "6dfb3db2487f4f0b35a651f0549fb64d0e73568d3de17005b62574c690ff331f",
+    "research/oline_possessions/throws.csv": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc"
+  }
+}

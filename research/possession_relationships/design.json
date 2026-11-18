@@ -1,0 +1,18 @@
+{
+  "writtenOn": "2026-11-16",
+  "status": "Exploratory specification recorded before inspecting these correlations; previous league summaries were already known.",
+  "primaryQuestion": "Across teams, does the first-to-second change in huck attempt percentage accompany a change in scoring percentage?",
+  "secondaryQuestion": "Across teams, does the first-to-second change in mean physical throw count accompany a change in scoring percentage?",
+  "amendment_2026_11_16": "User corrected the secondary comparison to throw count versus scoring and requested meaningful four-quadrant team displays. Both delivered comparisons use zero change on each axis as the quadrant boundaries; do not split at averages or force teams into all four quadrants. Earlier huck-share/throw-count calculations are retained only as prior exploratory evidence.",
+  "population": "Preserved 2026 regular-season data; receiving team; original seven; exactly first and second possessions; resolved goal/turnover outcomes; no within-possession timeout; preserve previous reviewed special-situation exclusions.",
+  "mainStartFilter": "First recorded throwing location at least 60 yards from the attacking goal (first_y <= 40). This does not exactly match starting locations.",
+  "sensitivity": "All known starting locations. Additional two-bin longitudinal standardization within the long-field sample where both stages have observations in both bins; huck rates are standardized on throw exposure and scoring on possession exposure, using a shared within-team stage-pooled mix for each measure.",
+  "baseline": "Every eligible opening is included, not only openings followed by a regain. No re-numbering. No extrapolation to third or later possessions.",
+  "huck": "Distance >40 yards and forward gain >30 yards; completed and incomplete attempts. HAP = 100 * total hucks / total physical attempts.",
+  "scoring": "100 * goals / resolved possessions. Same underlying possession set as HAP; different denominators are intrinsic to the two measures.",
+  "throws": "Total physical attempts / possessions, including centering. Retain eligible zero-throw possessions. No new automatic centering deduction.",
+  "correlation": "Unweighted Pearson across the 22 observed team estimates, with Spearman and leave-one-team-out range as descriptive robustness checks. No team ranking or selected p-value claims.",
+  "uncertainty": "10000 whole-game bootstrap draws with identical weights for both teams and all stages in each game. Report percentile 95% intervals for differences and correlations conditional on the fixed team roster; point intervals are individual, not simultaneous. Invalid draws are counted. Do not equate sample correlation with causality.",
+  "secondaryWarning": "Mean throws depends on how possessions end: a quick turnover can produce fewer throws and lower scoring. This relationship does not establish that choosing more passes improves scoring, and throws are not a measure of elapsed time or patience. Centering remains included.",
+  "delivery": "Two separate interactive research canvases and their local browser previews; preserve existing reports, review labels and app runtime."
+}

@@ -1,0 +1,240 @@
+{
+  "date": "2026-11-16",
+  "status": "Literature-grounded revision of the measurement plan; existing estimates and dashboard rankings have not been recalculated.",
+  "question": "How does a receiving O-line's throwing tendencies change on its second and later possessions within a point, and how do those changes vary across teams with different levels of total aEC?",
+  "contribution_measure": {
+    "name": "Total adjusted Expected Contribution (aEC)",
+    "role": "Primary continuous measure of accumulated offensive contribution for team comparison; replaces playoff qualification as the proposed organizing measure.",
+    "scope": "All teams in the common 2026 regular-season study window. Keep team-season contribution distinct from contribution restricted to original O-line possessions.",
+    "definition": "Use ShownSpace's official total-aEC aggregation and attribution rules, including turnover costs. Do not substitute raw sum(aec), sum of duplicated team_total_aec rows, thrower-only aEC, or LC+aEC without verifying that definition.",
+    "sources": [
+      "manuscript_aec",
+      "manuscript_validation",
+      "shownspace_intro"
+    ],
+    "interpretation": "Use ShownSpace’s existing team Tot-aEC as the primary accumulated-contribution measure for team comparisons. It is an official platform metric, not a new metric proposed by this study. Keep attribution, season filters and exposure consistent with the platform definition.",
+    "opportunity": "Retain total aEC as the headline. Report games, possessions, and completeness beside totals and check comparable exposure. First possessions are more numerous than later ones, so larger pooled first-possession total aEC alone is not evidence of greater per-possession effectiveness. No aEC-per-attempt metric is introduced.",
+    "availability": "Verified on the live ShownSpace 2026 team leaderboard on November 16: Tot-aEC is a team field, with Total, Per Game and Per 100 Poss display options. The current table can include postseason games. The preserved O-line CSV has no aEC column, so an export or verified production aggregation with the study’s regular-season window is still needed to attach exact team totals.",
+    "implementation_status": "Planned; no new team ranking calculated."
+  },
+  "primary_throwing_style_measures": [
+    {
+      "name": "Huck attempt percentage",
+      "question": "How often does the team choose a deep throw?",
+      "formula": "100 * huck attempts / eligible throw attempts",
+      "huck_definition": "Straight-line distance >40 yards AND forward gain >30 yards, following Braden's equation as confirmed by Teddy on November 13.",
+      "sources": [
+        "six_passers",
+        "small_ball",
+        "user_huck_equation"
+      ],
+      "availability": "Already calculated from audited throw and possession records.",
+      "limits": "Does not equal the percentage of possessions containing a huck, or hucks per 100 possessions. Aggregate counts before computing the rate; do not average player percentages."
+    },
+    {
+      "name": "Expected completion probability (xCP)",
+      "question": "How difficult are the throws the team attempts, according to the existing model?",
+      "formula": "Mean stored CP over eligible attempts with nonmissing CP; report CP coverage",
+      "sources": [
+        "manuscript_cp",
+        "six_passers"
+      ],
+      "availability": "cp exists in the preserved O-line throw export.",
+      "limits": "A description of modeled throw difficulty, not a direct measurement of intention, receiver separation, defensive pressure or decision quality. Missing probabilities remain missing."
+    },
+    {
+      "name": "Throws per possession",
+      "question": "How many passing attempts does the offense use before the possession ends?",
+      "formula": "Mean eligible physical attempts per possession, with goal-ending and turnover-ending possessions reported separately; preserve the existing all-throw and confirmed-centering-adjusted comparisons.",
+      "sources": [
+        "small_ball"
+      ],
+      "availability": "Already present in the audited possession export.",
+      "limits": "Both a description of the passing sequence and a consequence of how it ends. Fewer attempts do not establish urgency, fatigue, impatience or elapsed time."
+    }
+  ],
+  "secondary_throwing_style_measures": [
+    {
+      "name": "Throw direction profile",
+      "question": "Does the distribution of throwing directions change on later possessions?",
+      "formula": "Attempt shares in the existing ShownSpace angle bins, with attacking-direction orientation and filters explicitly verified; retain the full profile rather than inventing an aggression score.",
+      "sources": [
+        "manuscript_geometry",
+        "six_passers",
+        "direction_function"
+      ],
+      "availability": "Recorded endpoint coordinates exist in the O-line export; throw_angle and the official 12-bin function are preserved in production exports and metadata.",
+      "limits": "Secondary extension rather than a required expansion of the core study. The saved function does not itself filter to regular season, original O-lines or actual attempts and its centerAngle field is a lower bin edge. Do not infer forehand/backhand or defensive force from direction alone."
+    }
+  ],
+  "execution_and_outcome_measures": [
+    {
+      "name": "Drop-credited CPOE",
+      "role": "Execution relative to modeled difficulty, kept distinct from throw selection.",
+      "formula": "100 * mean(credited_completion - CP) on eligible attempts with CP, where a recorded drop is credited as 1 under confirmed production policy.",
+      "sources": [
+        "manuscript_cp",
+        "production_metric_check"
+      ],
+      "availability": "Existing production validation supports this calculation. Never average stored per-throw cpoe values because drops contain 1.0.",
+      "limits": "The manuscript describes a binary outcome without explicitly documenting production drop treatment; cite the production convention separately. This is not raw catch percentage or a complete individual-skill isolation."
+    },
+    {
+      "name": "Huck completion percentage",
+      "role": "Observed result of deep attempts.",
+      "formula": "100 * completed hucks / huck attempts; retain observed drops as unsuccessful catches and report their count separately.",
+      "sources": [
+        "six_passers",
+        "team_strengths"
+      ],
+      "limits": "Keep distinct from the drop-credited CPOE target. Any comparison to the public dashboard must verify the dashboard's drop convention."
+    },
+    {
+      "name": "Possession scoring rate",
+      "role": "Supporting outcome when interpreting style changes and contribution.",
+      "formula": "Goals / resolved goal-or-turnover possessions, preserving the existing original-line and censoring rules; unresolved endings reported separately.",
+      "sources": [
+        "small_ball",
+        "team_strengths"
+      ],
+      "limits": "Compare similar starting field positions. This is a possession outcome, distinct from point hold percentage."
+    }
+  ],
+  "deferred_or_context_only": [
+    {
+      "name": "Lag Contribution (LC)",
+      "role": "Literature-backed description of value associated with the following action; useful in official player profiles.",
+      "sources": [
+        "manuscript_lc",
+        "six_passers",
+        "production_metric_check"
+      ],
+      "reason": "The prior attempt to reconstruct filtered LC from subsequent raw aEC did not reproduce all official player-game totals. Keep official season/game LC as context; no opening-versus-later LC until aggregation and possession-boundary handling are verified. Do not add LC to total aEC."
+    },
+    {
+      "name": "Decision Score and Expected Throw Value",
+      "sources": [
+        "manuscript_hybrid"
+      ],
+      "reason": "The manuscript supports these concepts, but the current O-line extract has no validated event-level DS or ETV. DS uses a proxy receiver-location grid, not observed feasible receivers. They are not required for the core comparison."
+    },
+    {
+      "name": "Mean throw distance",
+      "reason": "Distance appears in the source literature, but it remains outside the primary measure set in keeping with the user's preference for throw counts. Do not add it merely because it is available."
+    }
+  ],
+  "comparison_rules": [
+    "Keep all eligible teams; use total aEC as a continuous contribution measure rather than choosing an arbitrary high/low cutoff or a playoff-only sample.",
+    "Compare each team's opening, second and later O-line possessions within the same receiving point. Distinguish exact third from third-or-later in every display.",
+    "Use comparable starting locations, preserving the agreed original possession-start proxy and long-field sensitivity comparison. Starting-location cutoffs are study design choices, not thresholds established by the cited paper.",
+    "Preserve original-seven/timeout substitution restrictions and reviewed end-of-quarter exclusions. Do not condition the opening baseline on an eventual hold or on reaching a subsequent possession.",
+    "Retain all physical attempts. In the separate attack-only view, remove only the one confirmed qualifying opening centering pass; no centering deduction on subsequent possessions. Apply that same attempt mask consistently to style rates and xCP when comparing the adjusted view.",
+    "Keep the centering pass's recorded contribution in official total aEC. Adjusting a throw-count view does not authorize redefining the production value metric.",
+    "Use hucks per 100 possessions only as a clearly named secondary comparison to Braden's team article: 100 * number of huck attempts / number of eligible possessions. It can differ from the share of possessions containing at least one huck.",
+    "Same-season associations between aEC and changes in style are descriptive, not an independent validation that style causes team strength. A predictive claim would require an earlier or held-out contribution window.",
+    "Report denominators and game-clustered uncertainty, including small later-possession samples. Prespecify the limited core measure family for the next analysis; do not pick measures or teams based on statistical significance.",
+    "Treat the first-versus-later-possession comparison as this study's extension. Prior literature motivates the variables but does not need to have asked the identical research question."
+  ],
+  "sources": {
+    "manuscript_aec": {
+      "path": "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/JSDSS_manuscript.tex",
+      "section": "Performance Metrics / FV Metrics / Adjusted Expected Contribution",
+      "line": 272,
+      "status": "Unpublished manuscript; current October 20 version identified by repository README."
+    },
+    "manuscript_validation": {
+      "path": "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/JSDSS_manuscript.tex",
+      "sections": [
+        "Metric Validation Framework",
+        "Alignment with Expert Recognition"
+      ],
+      "lines": [
+        334,
+        413
+      ],
+      "scope": "Season-level player aggregates, award alignment, stability and complementarity; not an independent team-strength validation."
+    },
+    "manuscript_cp": {
+      "path": "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/JSDSS_manuscript.tex",
+      "section": "Performance Metrics / CP Metrics",
+      "line": 256
+    },
+    "manuscript_lc": {
+      "path": "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/JSDSS_manuscript.tex",
+      "section": "Performance Metrics / FV Metrics / Lag Contribution",
+      "line": 289
+    },
+    "manuscript_geometry": {
+      "path": "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/JSDSS_manuscript.tex",
+      "section": "Data / Figure 1: throw direction and direction-distance frequencies",
+      "line": 192
+    },
+    "manuscript_hybrid": {
+      "path": "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/JSDSS_manuscript.tex",
+      "section": "Performance Metrics / Hybrid Metrics",
+      "line": 295
+    },
+    "shownspace_intro": {
+      "title": "Introducing Shown Space: The Next Generation Of Frisbee Stats",
+      "author": "Braden Eberhard",
+      "date": "2026-04-15",
+      "url": "https://watchufa.com/league/news/2026-ufa-shown-space-stats-analytics-introduction",
+      "status": "Applied analyst article, not peer-reviewed evidence."
+    },
+    "six_passers": {
+      "title": "Six Players, Six Different Passer Types",
+      "author": "Braden Eberhard",
+      "date": "2026-06-23",
+      "url": "https://watchufa.com/league/news/2026-ufa-breaking-down-important-passers-thrower-types-janas-hawkins-edmonds-van-deusen",
+      "status": "Applied analyst article, not peer-reviewed evidence."
+    },
+    "small_ball": {
+      "title": "Small Ball Lives On In 2026",
+      "author": "Braden Eberhard",
+      "date": "2026-06-09",
+      "url": "https://watchufa.com/league/news/2026-ufa-midseason-stat-analysis-small-ball-offense",
+      "section": "Fewer Hucks, Longer Possessions, Harder Holds",
+      "status": "Applied analyst article, not peer-reviewed evidence."
+    },
+    "team_strengths": {
+      "title": "Team Strengths Heading Towards The Playoffs",
+      "author": "Braden Eberhard",
+      "date": "2026-07-07",
+      "url": "https://www.watchufa.com/league/news/2026-ufa-team-strengths-heading-towards-playoffs-oakland-new-york-salt-lake-indianapolis",
+      "status": "Applied team/line analysis using efficiency and over-expected efficiency, not total-aEC validation."
+    },
+    "direction_function": {
+      "path": "data/database-metadata/2026-10-12/get_player_throw_directions.sql",
+      "companion": "data/database-metadata/2026-10-12/discovery.json"
+    },
+    "production_metric_check": {
+      "path": "data/database-metadata/2026-11-04/throw-metric-validation.json",
+      "status": "Saved production reconciliation, not a new live database query."
+    },
+    "user_huck_equation": {
+      "path": "research/oline_possessions/huck_attempt_percentage.json",
+      "section": "huckDefinitionProvenance"
+    }
+  },
+  "next_implementation_checks": [
+    "Verify the official team total-aEC aggregation and the completeness of the common regular-season window before replacing the dashboard's playoff grouping with a contribution ordering.",
+    "Join verified event contribution to the existing possession and original-line IDs without duplicating thrower/receiver credit or repeated team totals.",
+    "Calculate the three primary style measures on common first/second/later cohorts, retaining full-throw and reviewed-centering-adjusted versions. Add the sourced direction profile only as a secondary extension."
+  ],
+  "terminology": {
+    "preferred": "throwing tendencies",
+    "broader_alternatives": [
+      "offensive tendencies",
+      "offensive style",
+      "offensive identity"
+    ],
+    "reason": "Throwing tendencies identifies the measured behaviors without implying that a small set of passing statistics captures the entire offense. Braden’s passer-types article uses role, style and offensive identity."
+  },
+  "platform_definition_check_20261116": {
+    "team_table": "https://shownspace.com/teams",
+    "metric_catalog": "https://shownspace.com/about",
+    "observed": "Team Tot-aEC exists. The metric catalog defines xCP as baseline completion likelihood for each throw in context; it distinguishes expected difficulty from CPOE execution.",
+    "method": "Read-only website inspection; no filters or external records changed.",
+    "xcp_artifact": "research/expected_completion_2026_11_16/results.json"
+  }
+}

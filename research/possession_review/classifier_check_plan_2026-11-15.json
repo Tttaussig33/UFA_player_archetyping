@@ -1,0 +1,24 @@
+{
+  "id": "database-centering-check-20261115",
+  "status": "Exploratory diagnostic; no deployment or automatic deductions",
+  "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+  "sourceReviews": "research/possession_review/annotations/2026-11-15-completed-next12-browser-export.json",
+  "batchId": "opening-pattern-review-12-20261114-v1",
+  "target": "The user's explicit current-definition centering versus no-centering film label.",
+  "cohort": "All twelve newly reviewed openings, one per game. Exclude no case based on prediction or whether its label is easy. Preserve unknown restart context when the centering label itself is explicit.",
+  "features": ["ty", "distance", "inward_gain"],
+  "featureMeanings": ["First throw's recorded downfield starting coordinate", "First throw distance", "Reduction in distance from field center"],
+  "fixedModel": "L2 logistic regression, penalty 1.0 on standardized slopes, unpenalized intercept; same implementation and three features as the earlier pilot.",
+  "decisionThreshold": 0.5,
+  "tests": [
+    "Score predictions frozen before these twelve reviews; report that some games appeared in historical training.",
+    "Exploratory leave-one-game-out refit using only these current-definition labels: fit on eleven games and score the twelfth, repeating for all twelve. Standardize using training rows only.",
+    "Compare with the fixed always-centering baseline on exactly the same cases."
+  ],
+  "primaryOutputs": ["correct centering out of six", "correct non-centering out of six", "false centering deductions", "missed centering deductions", "per-case predictions and held-out games"],
+  "forbiddenInputs": ["human restart context", "notes", "team/player identity", "review batch", "later hucks", "possession length", "scoring outcome", "unverified timestamp gaps"],
+  "timingPolicy": "Audit recorded timestamp pairs, but do not use them as elapsed action times. A pull-release log to first-throw log is not catch/pickup-to-release time.",
+  "legacyLabelPolicy": "Keep earlier labels and versions intact. Do not silently train on earlier positive labels under the narrower final definition. Use all twelve current labels in the same experimental pool to avoid selecting only compatible negatives from old batches.",
+  "interpretation": "The twelve were deliberately selected from a previously scored pool, not a random league audit. Cross-validation is a small development diagnostic, not an untouched prospective validation or calibrated automation confidence. Do not tune thresholds/features on these results and report the same results as independent validation.",
+  "deploymentPolicy": "Do not impute labels, score the remaining league as observed labels, or change research metrics."
+}

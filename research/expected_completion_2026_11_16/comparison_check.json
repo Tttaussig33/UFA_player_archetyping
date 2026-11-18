@@ -1,0 +1,768 @@
+{
+  "date": "2026-11-16",
+  "status": "Exploratory interval-based comparison; not a t-test or a p-value calculation.",
+  "scope": "Default graph: starts at least 60 yards from goal; recorded original seven; centering retained.",
+  "null": "Second-possession minus first-possession mean stored xCP equals zero.",
+  "method": "Whole-game percentile bootstrap; same game weights for both teams, stages and throw numbers. Attempt-weighted means exactly match the graph.",
+  "draws": 200000,
+  "seed": 20261116,
+  "games": 131,
+  "validation": {
+    "all_point_estimates_match_graph": true,
+    "first_10000_draws_reproduce_23_original_difference_intervals": true
+  },
+  "multiplicity": "Bonferroni intervals within 22 team comparisons, or separately within 12 pooled throw-number comparisons. Families inspected after prior graph results. Does not cover every team-by-throw view, alternate start filter or prior analysis in the project.",
+  "limits": [
+    "Approximate intervals inherit bootstrap assumptions. Some team estimates have only 6\u201312 games with second possessions.",
+    "Resampling quantiles can be unstable near zero; no binary finding should obscure its interval, sample size or sensitivity.",
+    "Centering passes and differences in starting location remain. No causal or fatigue interpretation. Model uncertainty is excluded.",
+    "These are differences in expected completion, not tests of actual catches or of total aEC."
+  ],
+  "references": [
+    "https://www.itl.nist.gov/div898/handbook/prc/section4/prc473.htm",
+    "https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm"
+  ],
+  "inputs": {
+    "research/expected_completion_2026_11_16/results.json": "7f56ed62a0067ffbc44e23400008af7ef6550fab194b69618e266bcd8db2c0d3",
+    "research/expected_completion_2026_11_16/eligible_possessions.csv": "fbe33fff58c63756f845232bec844910e9d9eff323ae7d02a9c0f31ee17e8030",
+    "research/expected_completion_2026_11_16/eligible_throws.csv": "6dfb3db2487f4f0b35a651f0549fb64d0e73568d3de17005b62574c690ff331f",
+    "research/expected_completion_2026_11_16/check_comparisons.py": "c45312ae84bd8cd09645c91d1455a4faf0e64a320deb12de9a0e2191cdeaa9fd"
+  },
+  "comparisons": [
+    {
+      "key": "Atlanta Hustle",
+      "family": "22_teams",
+      "change_pp": -1.3490422998772345,
+      "first_throws": 2021,
+      "second_throws": 133,
+      "first_games": 12,
+      "second_games": 10,
+      "valid_draws": 199997,
+      "ci95_pp": [
+        -2.8991919724009763,
+        -0.3393382076593687
+      ],
+      "bonferroni_interval_pp": [
+        -4.891017852532196,
+        0.24785562802772707
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Austin Sol",
+      "family": "22_teams",
+      "change_pp": -0.3533536226617562,
+      "first_throws": 1574,
+      "second_throws": 83,
+      "first_games": 12,
+      "second_games": 7,
+      "valid_draws": 199850,
+      "ci95_pp": [
+        -3.8276313864176386,
+        0.7700237208990407
+      ],
+      "bonferroni_interval_pp": [
+        -12.457205872234784,
+        1.372362826214429
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Boston Glory",
+      "family": "22_teams",
+      "change_pp": -1.1117428989958267,
+      "first_throws": 1772,
+      "second_throws": 79,
+      "first_games": 12,
+      "second_games": 9,
+      "valid_draws": 199988,
+      "ci95_pp": [
+        -5.681461623241352,
+        0.5945781429897198
+      ],
+      "bonferroni_interval_pp": [
+        -14.306846936507792,
+        1.4788367651352399
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Carolina Flyers",
+      "family": "22_teams",
+      "change_pp": -7.083123655627688,
+      "first_throws": 1520,
+      "second_throws": 45,
+      "first_games": 12,
+      "second_games": 7,
+      "valid_draws": 199843,
+      "ci95_pp": [
+        -18.086241411580225,
+        -2.7938037329894008
+      ],
+      "bonferroni_interval_pp": [
+        -48.10149424556317,
+        2.653424346841582
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Chicago Union",
+      "family": "22_teams",
+      "change_pp": 0.3526680863269127,
+      "first_throws": 1951,
+      "second_throws": 222,
+      "first_games": 11,
+      "second_games": 11,
+      "valid_draws": 199999,
+      "ci95_pp": [
+        -0.9127030014110427,
+        0.97803984746996
+      ],
+      "bonferroni_interval_pp": [
+        -2.4375599448798715,
+        1.3874188096833002
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Colorado Apex",
+      "family": "22_teams",
+      "change_pp": -1.0964916128606728,
+      "first_throws": 2053,
+      "second_throws": 147,
+      "first_games": 12,
+      "second_games": 11,
+      "valid_draws": 199999,
+      "ci95_pp": [
+        -2.766016267907839,
+        -0.14826533225805869
+      ],
+      "bonferroni_interval_pp": [
+        -4.883595921481258,
+        0.36821019281421663
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "DC Breeze",
+      "family": "22_teams",
+      "change_pp": -1.1464776897028295,
+      "first_throws": 1743,
+      "second_throws": 90,
+      "first_games": 12,
+      "second_games": 6,
+      "valid_draws": 199577,
+      "ci95_pp": [
+        -2.6427672113645606,
+        0.9401522745812609
+      ],
+      "bonferroni_interval_pp": [
+        -3.257554214881715,
+        1.9705561820940303
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Houston Havoc",
+      "family": "22_teams",
+      "change_pp": -2.81598364437623,
+      "first_throws": 2003,
+      "second_throws": 183,
+      "first_games": 12,
+      "second_games": 10,
+      "valid_draws": 199990,
+      "ci95_pp": [
+        -8.38511993564417,
+        0.6004015157644974
+      ],
+      "bonferroni_interval_pp": [
+        -13.593489364599693,
+        1.5556916775433918
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Indianapolis AlleyCats",
+      "family": "22_teams",
+      "change_pp": -1.2278931195937481,
+      "first_throws": 1791,
+      "second_throws": 90,
+      "first_games": 12,
+      "second_games": 10,
+      "valid_draws": 199994,
+      "ci95_pp": [
+        -3.772305319662112,
+        0.6328843119277907
+      ],
+      "bonferroni_interval_pp": [
+        -7.75009053938275,
+        1.9609772438301198
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Madison Radicals",
+      "family": "22_teams",
+      "change_pp": -2.5913593040465033,
+      "first_throws": 1915,
+      "second_throws": 92,
+      "first_games": 12,
+      "second_games": 8,
+      "valid_draws": 199956,
+      "ci95_pp": [
+        -6.8785985362532776,
+        0.46603466647805597
+      ],
+      "bonferroni_interval_pp": [
+        -13.682463589430148,
+        3.494767183130572
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Minnesota Wind Chill",
+      "family": "22_teams",
+      "change_pp": -1.3064810190499543,
+      "first_throws": 1674,
+      "second_throws": 125,
+      "first_games": 12,
+      "second_games": 11,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -3.5967206733448456,
+        -0.3126044943578144
+      ],
+      "bonferroni_interval_pp": [
+        -9.746365078852659,
+        0.3760824544321646
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Montreal Royal",
+      "family": "22_teams",
+      "change_pp": -0.8893901734939313,
+      "first_throws": 1772,
+      "second_throws": 166,
+      "first_games": 12,
+      "second_games": 11,
+      "valid_draws": 199998,
+      "ci95_pp": [
+        -3.0154729686562294,
+        0.5223607178346008
+      ],
+      "bonferroni_interval_pp": [
+        -4.994280387849913,
+        1.1591834125128404
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "New York Empire",
+      "family": "22_teams",
+      "change_pp": -1.9582131247488088,
+      "first_throws": 1810,
+      "second_throws": 64,
+      "first_games": 12,
+      "second_games": 6,
+      "valid_draws": 199559,
+      "ci95_pp": [
+        -4.0872606195065595,
+        0.08886843407580615
+      ],
+      "bonferroni_interval_pp": [
+        -5.209223336948237,
+        0.6999200410684656
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Oakland Spiders",
+      "family": "22_teams",
+      "change_pp": -0.9609799989880985,
+      "first_throws": 1390,
+      "second_throws": 116,
+      "first_games": 12,
+      "second_games": 11,
+      "valid_draws": 199999,
+      "ci95_pp": [
+        -4.018782305947683,
+        1.7052256564187975
+      ],
+      "bonferroni_interval_pp": [
+        -5.982967365280989,
+        2.8415355556071837
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Oregon Steel",
+      "family": "22_teams",
+      "change_pp": -0.6614753956292185,
+      "first_throws": 1865,
+      "second_throws": 251,
+      "first_games": 12,
+      "second_games": 12,
+      "valid_draws": 199999,
+      "ci95_pp": [
+        -1.8578768527547473,
+        0.4899845146698563
+      ],
+      "bonferroni_interval_pp": [
+        -2.4607143939995386,
+        1.1372701230098283
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Philadelphia Phoenix",
+      "family": "22_teams",
+      "change_pp": -0.5073774192283942,
+      "first_throws": 2177,
+      "second_throws": 165,
+      "first_games": 12,
+      "second_games": 11,
+      "valid_draws": 199994,
+      "ci95_pp": [
+        -1.664523076819267,
+        0.36509967444515556
+      ],
+      "bonferroni_interval_pp": [
+        -3.1693342553635757,
+        0.9287388350570658
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Pittsburgh Thunderbirds",
+      "family": "22_teams",
+      "change_pp": -2.8097956235635158,
+      "first_throws": 1934,
+      "second_throws": 70,
+      "first_games": 11,
+      "second_games": 9,
+      "valid_draws": 199978,
+      "ci95_pp": [
+        -6.69872413218662,
+        0.006621023104602122
+      ],
+      "bonferroni_interval_pp": [
+        -12.734601182334307,
+        1.6505249019308075
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Salt Lake Shred",
+      "family": "22_teams",
+      "change_pp": -1.1153547160913657,
+      "first_throws": 1652,
+      "second_throws": 142,
+      "first_games": 12,
+      "second_games": 10,
+      "valid_draws": 199994,
+      "ci95_pp": [
+        -3.7821707014905503,
+        0.47310908387498
+      ],
+      "bonferroni_interval_pp": [
+        -7.224902051364912,
+        1.395623056664656
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "San Diego Growlers",
+      "family": "22_teams",
+      "change_pp": -1.2780765061915944,
+      "first_throws": 1590,
+      "second_throws": 108,
+      "first_games": 12,
+      "second_games": 9,
+      "valid_draws": 199983,
+      "ci95_pp": [
+        -2.5568226645879433,
+        0.08369070428104752
+      ],
+      "bonferroni_interval_pp": [
+        -3.622277947172084,
+        0.8836637625068039
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Seattle Cascades",
+      "family": "22_teams",
+      "change_pp": -0.8874777605774264,
+      "first_throws": 1744,
+      "second_throws": 106,
+      "first_games": 12,
+      "second_games": 10,
+      "valid_draws": 199992,
+      "ci95_pp": [
+        -4.324255182606417,
+        1.1565961231312805
+      ],
+      "bonferroni_interval_pp": [
+        -9.99889744296917,
+        2.143855242148618
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Toronto Rush",
+      "family": "22_teams",
+      "change_pp": -0.7066419505318833,
+      "first_throws": 1570,
+      "second_throws": 152,
+      "first_games": 12,
+      "second_games": 12,
+      "valid_draws": 199999,
+      "ci95_pp": [
+        -2.5992452153523478,
+        0.6327576574234044
+      ],
+      "bonferroni_interval_pp": [
+        -4.629362665437539,
+        1.2388401800084357
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Vegas Bighorns",
+      "family": "22_teams",
+      "change_pp": -1.7433788505046954,
+      "first_throws": 1707,
+      "second_throws": 216,
+      "first_games": 12,
+      "second_games": 12,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -3.681894257320942,
+        -0.10987011125831293
+      ],
+      "bonferroni_interval_pp": [
+        -5.4431993974007,
+        0.9223615952255404
+      ],
+      "bonferroni_individual_confidence": 0.9977272727272727,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 1",
+      "family": "12_throw_numbers",
+      "change_pp": -3.1287616515903505,
+      "first_throws": 4801,
+      "second_throws": 456,
+      "first_games": 131,
+      "second_games": 127,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -4.230633831101857,
+        -2.0928636414678397
+      ],
+      "bonferroni_interval_pp": [
+        -4.7648512303664745,
+        -1.6491155455352
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": true
+    },
+    {
+      "key": "Throw 2",
+      "family": "12_throw_numbers",
+      "change_pp": -1.8611947423737063,
+      "first_throws": 4664,
+      "second_throws": 415,
+      "first_games": 131,
+      "second_games": 125,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -3.063964314082925,
+        -0.7528493638112408
+      ],
+      "bonferroni_interval_pp": [
+        -3.66387598807855,
+        -0.275111614874677
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": true
+    },
+    {
+      "key": "Throw 3",
+      "family": "12_throw_numbers",
+      "change_pp": -1.1492179816428139,
+      "first_throws": 4362,
+      "second_throws": 372,
+      "first_games": 131,
+      "second_games": 123,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -2.4576753037850283,
+        0.09141213299979742
+      ],
+      "bonferroni_interval_pp": [
+        -3.0775679341186186,
+        0.6203352841774469
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 4",
+      "family": "12_throw_numbers",
+      "change_pp": 0.005446726547408964,
+      "first_throws": 3942,
+      "second_throws": 316,
+      "first_games": 131,
+      "second_games": 116,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -1.1118519528353978,
+        1.039466651876718
+      ],
+      "bonferroni_interval_pp": [
+        -1.6728178123800221,
+        1.4717257381706257
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 5",
+      "family": "12_throw_numbers",
+      "change_pp": -0.7129566552349309,
+      "first_throws": 3498,
+      "second_throws": 270,
+      "first_games": 131,
+      "second_games": 113,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -2.169175176320633,
+        0.5999369104132954
+      ],
+      "bonferroni_interval_pp": [
+        -2.9097780720447863,
+        1.147120748211891
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 6",
+      "family": "12_throw_numbers",
+      "change_pp": -1.137248443894301,
+      "first_throws": 3050,
+      "second_throws": 233,
+      "first_games": 131,
+      "second_games": 103,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -2.6136741389734315,
+        0.2728431631288436
+      ],
+      "bonferroni_interval_pp": [
+        -3.3039095243907743,
+        0.8796413165956725
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 7",
+      "family": "12_throw_numbers",
+      "change_pp": 0.39287963939060866,
+      "first_throws": 2650,
+      "second_throws": 185,
+      "first_games": 131,
+      "second_games": 95,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -1.1153340096807045,
+        1.763146466713595
+      ],
+      "bonferroni_interval_pp": [
+        -1.904199554302078,
+        2.3126096653683366
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 8",
+      "family": "12_throw_numbers",
+      "change_pp": -1.7935895529090584,
+      "first_throws": 2276,
+      "second_throws": 156,
+      "first_games": 131,
+      "second_games": 89,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -3.6528202724852834,
+        -0.010328856777636708
+      ],
+      "bonferroni_interval_pp": [
+        -4.542893191721333,
+        0.7674663648446414
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 9",
+      "family": "12_throw_numbers",
+      "change_pp": -1.8252897734347018,
+      "first_throws": 1899,
+      "second_throws": 120,
+      "first_games": 131,
+      "second_games": 79,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -4.019572146449215,
+        0.10561461271282993
+      ],
+      "bonferroni_interval_pp": [
+        -5.189407613908013,
+        0.8489190157980103
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 10",
+      "family": "12_throw_numbers",
+      "change_pp": -1.7032098533485307,
+      "first_throws": 1604,
+      "second_throws": 90,
+      "first_games": 131,
+      "second_games": 65,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -4.30875482490434,
+        0.535432579490712
+      ],
+      "bonferroni_interval_pp": [
+        -5.711527891220191,
+        1.340212357708275
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 11",
+      "family": "12_throw_numbers",
+      "change_pp": -2.142215649438961,
+      "first_throws": 1327,
+      "second_throws": 66,
+      "first_games": 131,
+      "second_games": 54,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -5.262990989261861,
+        0.41829461754936165
+      ],
+      "bonferroni_interval_pp": [
+        -6.987671215525861,
+        1.3304210729255541
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "Throw 12",
+      "family": "12_throw_numbers",
+      "change_pp": 0.3423203338341563,
+      "first_throws": 1104,
+      "second_throws": 46,
+      "first_games": 131,
+      "second_games": 39,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -2.828761552391026,
+        2.7567250278350506
+      ],
+      "bonferroni_interval_pp": [
+        -4.732026644874149,
+        3.5423280909399915
+      ],
+      "bonferroni_individual_confidence": 0.9958333333333333,
+      "nominal_excludes_zero": false,
+      "bonferroni_excludes_zero": false
+    },
+    {
+      "key": "League overall",
+      "family": "league_overall",
+      "change_pp": -1.2752921927465466,
+      "first_throws": 39228,
+      "second_throws": 2845,
+      "first_games": 131,
+      "second_games": 127,
+      "valid_draws": 200000,
+      "ci95_pp": [
+        -1.8542564031283137,
+        -0.779896529106087
+      ],
+      "bonferroni_interval_pp": [
+        -1.8542564031283137,
+        -0.779896529106087
+      ],
+      "bonferroni_individual_confidence": 0.95,
+      "nominal_excludes_zero": true,
+      "bonferroni_excludes_zero": true
+    }
+  ]
+}

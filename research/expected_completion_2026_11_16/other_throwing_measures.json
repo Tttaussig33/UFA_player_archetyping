@@ -1,0 +1,5017 @@
+{
+  "scope": "Same as current xCP figure: original seven, first versus exactly second possession, starts at least 60 yards from goal; all physical throws including centering",
+  "date": "2026-11-16",
+  "status": "complete",
+  "metrics": {
+    "xcp": {
+      "name": "Mean expected completion probability",
+      "scale": 100,
+      "numerator": "cp",
+      "unit": "percentage points",
+      "role": "primary throwing tendency"
+    },
+    "hap": {
+      "name": "Huck attempt percentage",
+      "scale": 100,
+      "numerator": "huck",
+      "unit": "percentage points",
+      "role": "primary throwing tendency"
+    },
+    "mean_throws": {
+      "name": "Throws per possession",
+      "scale": 1,
+      "numerator": "throws",
+      "unit": "throws",
+      "role": "primary throwing tendency"
+    },
+    "cpoe": {
+      "name": "Drop-credited CPOE",
+      "scale": 100,
+      "numerator": "cpoe",
+      "unit": "percentage points",
+      "role": "secondary execution"
+    },
+    "huck_completion": {
+      "name": "Huck completion percentage",
+      "scale": 100,
+      "numerator": "complete",
+      "unit": "percentage points",
+      "role": "secondary execution"
+    }
+  },
+  "draws": 200000,
+  "seed": 20261116,
+  "method": "Two-sided percentile whole-game bootstrap; both teams and stages receive the same game weight; no p-values computed.",
+  "multiplicity": "League: five-measure Bonferroni check. Teams: 22-team check within each measure, plus a stricter exploratory 110-comparison check across all five measures and 22 teams. Does not cover every earlier analysis or filter in the project.",
+  "definitions": {
+    "hap": "100 \u00d7 hucks / all attempts",
+    "mean_throws": "All physical attempts / possessions",
+    "cpoe": "100 \u00d7 mean(max(complete, drop) \u2212 cp); drops credited as completed under confirmed production policy",
+    "huck_completion": "100 \u00d7 actual completed hucks / huck attempts; drops are unsuccessful catches"
+  },
+  "coverage": {
+    "first_possessions": 4802,
+    "second_possessions": 457,
+    "first_attempts": 39228,
+    "second_attempts": 2845,
+    "games": 131
+  },
+  "limitations": [
+    "Exploratory; variables come from existing literature-based plan but this joint testing family was selected after earlier results.",
+    "No causal inference, centering removal, or exact starting-position matching.",
+    "Huck completion and huck-share intervals are suppressed when a stage has identical binary outcomes; ordinary resampling cannot estimate that uncertainty.",
+    "No event-level aEC or LC comparison was attempted; no unavailable metrics invented."
+  ],
+  "input_hashes": {
+    "research/expected_completion_2026_11_16/eligible_possessions.csv": "fbe33fff58c63756f845232bec844910e9d9eff323ae7d02a9c0f31ee17e8030",
+    "research/expected_completion_2026_11_16/eligible_throws.csv": "6dfb3db2487f4f0b35a651f0549fb64d0e73568d3de17005b62574c690ff331f",
+    "research/expected_completion_2026_11_16/results.json": "7f56ed62a0067ffbc44e23400008af7ef6550fab194b69618e266bcd8db2c0d3",
+    "research/expected_completion_2026_11_16/team_significance.json": "1f57cb310ae768dc5d024d2d634d6ee5d87d3015b1c2b32583cb1beb354d16ea",
+    "research/oline_possessions/throws.csv": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc",
+    "research/oline_possessions/literature_variable_plan_2026-11-16.json": "0003b3d10303e5af92a7ec8faf34aa1631c58a32eda3a0cdba0cf2e0ddbeee83"
+  },
+  "records": [
+    {
+      "metric": "xcp",
+      "team": "league",
+      "team_name": "League pooled",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 37104.81142771813,
+          "denominator": 39228,
+          "estimate": 94.58756864412697,
+          "games": 131,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 2654.734265041773,
+          "denominator": 2845,
+          "estimate": 93.31227645138043,
+          "games": 127,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.275292192746548,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -1.8542564031283137,
+        -0.779896529106087
+      ],
+      "corrected_family_size": 5,
+      "corrected_interval": [
+        -2.0649251636580512,
+        -0.6366752144321687
+      ],
+      "broad_corrected_family_size": 5,
+      "broad_corrected_interval": [
+        -2.0649251636580512,
+        -0.6366752144321687
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": true
+    },
+    {
+      "metric": "xcp",
+      "team": "hustle",
+      "team_name": "Atlanta Hustle",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1933.8677292160014,
+          "denominator": 2021,
+          "estimate": 95.68865557723906,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 125.4716856588912,
+          "denominator": 133,
+          "estimate": 94.3396132773618,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.3490422998772544,
+      "valid_draws": 199997,
+      "estimable": true,
+      "ci95": [
+        -2.8991919724009763,
+        -0.3393382076593687
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.891017852532196,
+        0.24785562802772707
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.953785339793805,
+        0.5372297818026351
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1495.9820517933645,
+          "denominator": 1574,
+          "estimate": 95.04333238839673,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 78.59268237556003,
+          "denominator": 83,
+          "estimate": 94.68997876573498,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.35335362266175707,
+      "valid_draws": 199850,
+      "estimable": true,
+      "ci95": [
+        -3.8276313864176386,
+        0.7700237208990407
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -12.457205872234784,
+        1.372362826214429
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -13.416764796252142,
+        1.6562626261560698
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1684.391573667282,
+          "denominator": 1772,
+          "estimate": 95.0559578819008,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 74.21592983649494,
+          "denominator": 79,
+          "estimate": 93.94421498290498,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.1117428989958142,
+      "valid_draws": 199988,
+      "estimable": true,
+      "ci95": [
+        -5.681461623241352,
+        0.5945781429897198
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -14.306846936507792,
+        1.4788367651352399
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -22.432313966452455,
+        1.860318914801826
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1443.5566480650837,
+          "denominator": 1520,
+          "estimate": 94.97083210954499,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 39.54946880426279,
+          "denominator": 45,
+          "estimate": 87.88770845391731,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -7.0831236556276735,
+      "valid_draws": 199843,
+      "estimable": true,
+      "ci95": [
+        -18.086241411580225,
+        -2.7938037329894008
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -48.10149424556317,
+        2.653424346841582
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -48.79549818805289,
+        3.623509158621076
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "union",
+      "team_name": "Chicago Union",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1866.9385681806652,
+          "denominator": 1951,
+          "estimate": 95.69136689803513,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 213.21775766528373,
+          "denominator": 222,
+          "estimate": 96.04403498436203,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.3526680863269007,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -0.9127030014110427,
+        0.97803984746996
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -2.4375599448798715,
+        1.3874188096833002
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.6771243803232485,
+        1.59490650264188
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "apex",
+      "team_name": "Colorado Apex",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1943.5851766551818,
+          "denominator": 2053,
+          "estimate": 94.67049082587344,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 137.55377884312875,
+          "denominator": 147,
+          "estimate": 93.57399921301275,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.0964916128606887,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -2.766016267907839,
+        -0.14826533225805869
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.883595921481258,
+        0.36821019281421663
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.669601340647491,
+        0.7046511906707179
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1651.0823759027144,
+          "denominator": 1743,
+          "estimate": 94.72647021817065,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 84.22199327562105,
+          "denominator": 90,
+          "estimate": 93.57999252846783,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.1464776897028202,
+      "valid_draws": 199577,
+      "estimable": true,
+      "ci95": [
+        -2.6427672113645606,
+        0.9401522745812609
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.257554214881715,
+        1.9705561820940303
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.4640955779002214,
+        2.170690527671637
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "havoc",
+      "team_name": "Houston Havoc",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1866.2046831926905,
+          "denominator": 2003,
+          "estimate": 93.17047844197157,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 165.34872547959947,
+          "denominator": 183,
+          "estimate": 90.35449479759532,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.815983644376246,
+      "valid_draws": 199990,
+      "estimable": true,
+      "ci95": [
+        -8.38511993564417,
+        0.6004015157644974
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -13.593489364599693,
+        1.5556916775433918
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -16.37927552508707,
+        2.063757441645442
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1679.6182038352042,
+          "denominator": 1791,
+          "estimate": 93.7810275731549,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 83.29782100820503,
+          "denominator": 90,
+          "estimate": 92.55313445356114,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.2278931195937588,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -3.772305319662112,
+        0.6328843119277907
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.75009053938275,
+        1.9609772438301198
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -11.118479286441,
+        2.509309242939575
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1811.4441191314904,
+          "denominator": 1915,
+          "estimate": 94.59238220007782,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 84.64094106434881,
+          "denominator": 92,
+          "estimate": 92.00102289603132,
+          "games": 8,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.591359304046506,
+      "valid_draws": 199956,
+      "estimable": true,
+      "ci95": [
+        -6.8785985362532776,
+        0.46603466647805597
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -13.682463589430148,
+        3.494767183130572
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -26.80533713893998,
+        3.8402929853183387
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1600.709862614036,
+          "denominator": 1674,
+          "estimate": 95.62185559223632,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 117.89421821648297,
+          "denominator": 125,
+          "estimate": 94.31537457318638,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.30648101904994,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -3.5967206733448456,
+        -0.3126044943578144
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -9.746365078852659,
+        0.3760824544321646
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -12.681832291983552,
+        0.836814271698583
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "royal",
+      "team_name": "Montreal Royal",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1688.3986748432494,
+          "denominator": 1772,
+          "estimate": 95.28209225977704,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 156.69188546323,
+          "denominator": 166,
+          "estimate": 94.39270208628312,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.889390173493922,
+      "valid_draws": 199998,
+      "estimable": true,
+      "ci95": [
+        -3.0154729686562294,
+        0.5223607178346008
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.994280387849913,
+        1.1591834125128404
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.0287489444769635,
+        1.451061170221763
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "empire",
+      "team_name": "New York Empire",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1719.7478382749428,
+          "denominator": 1810,
+          "estimate": 95.01369272237253,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 59.555506942479184,
+          "denominator": 64,
+          "estimate": 93.05547959762373,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.958213124748795,
+      "valid_draws": 199559,
+      "estimable": true,
+      "ci95": [
+        -4.0872606195065595,
+        0.08886843407580615
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.209223336948237,
+        0.6999200410684656
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.384479604517278,
+        0.7826065751151227
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1314.796341458209,
+          "denominator": 1390,
+          "estimate": 94.58966485310857,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 108.60927443077973,
+          "denominator": 116,
+          "estimate": 93.62868485412046,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.9609799989881083,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -4.018782305947683,
+        1.7052256564187975
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.982967365280989,
+        2.8415355556071837
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.700604674503907,
+        3.301925288334782
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "steel",
+      "team_name": "Oregon Steel",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1758.3678588771677,
+          "denominator": 1865,
+          "estimate": 94.28245892102777,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 234.9886686487503,
+          "denominator": 251,
+          "estimate": 93.62098352539851,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.6614753956292532,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -1.8578768527547473,
+        0.4899845146698563
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -2.4607143939995386,
+        1.1372701230098283
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -2.700470955745768,
+        1.3979776613284762
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "phoenix",
+      "team_name": "Philadelphia Phoenix",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 2049.181620755961,
+          "denominator": 2177,
+          "estimate": 94.1286918124006,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 154.47516874873415,
+          "denominator": 165,
+          "estimate": 93.62131439317221,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.5073774192283906,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -1.664523076819267,
+        0.36509967444515556
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.1693342553635757,
+        0.9287388350570658
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.699165858167569,
+        1.1250417901927434
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "thunderbirds",
+      "team_name": "Pittsburgh Thunderbirds",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1823.0722131596428,
+          "denominator": 1934,
+          "estimate": 94.26433366906116,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 64.01817663184836,
+          "denominator": 70,
+          "estimate": 91.45453804549766,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.8097956235635024,
+      "valid_draws": 199978,
+      "estimable": true,
+      "ci95": [
+        -6.69872413218662,
+        0.006621023104602122
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -12.734601182334307,
+        1.6505249019308075
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -22.719297769177473,
+        2.348801199710323
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1564.1105656419259,
+          "denominator": 1652,
+          "estimate": 94.67981632215047,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 132.86153548060395,
+          "denominator": 142,
+          "estimate": 93.56446160605911,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.1153547160913604,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -3.7821707014905503,
+        0.47310908387498
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.224902051364912,
+        1.395623056664656
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -8.83713946197592,
+        2.022590005667606
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1501.756804730895,
+          "denominator": 1590,
+          "estimate": 94.45011350508774,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 100.62579995880785,
+          "denominator": 108,
+          "estimate": 93.17203699889615,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.2780765061915957,
+      "valid_draws": 199983,
+      "estimable": true,
+      "ci95": [
+        -2.5568226645879433,
+        0.08369070428104752
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.622277947172084,
+        0.8836637625068039
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.481297981315834,
+        1.495041728511763
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1628.5113381173333,
+          "denominator": 1744,
+          "estimate": 93.37794369938838,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 98.03989389513963,
+          "denominator": 106,
+          "estimate": 92.49046593881097,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.8874777605774113,
+      "valid_draws": 199992,
+      "estimable": true,
+      "ci95": [
+        -4.324255182606417,
+        1.1565961231312805
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -9.99889744296917,
+        2.143855242148618
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -15.577744755037532,
+        2.6480030601754874
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "rush",
+      "team_name": "Toronto Rush",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1479.2949211035088,
+          "denominator": 1570,
+          "estimate": 94.22260643971394,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 142.14426602355672,
+          "denominator": 152,
+          "estimate": 93.51596448918205,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.706641950531889,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -2.5992452153523478,
+        0.6327576574234044
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.629362665437539,
+        1.2388401800084357
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.218739185312657,
+        1.503090160916535
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "xcp",
+      "team": "bighorns",
+      "team_name": "Vegas Bighorns",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1600.1922585015836,
+          "denominator": 1707,
+          "estimate": 93.74295597548821,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 198.71908658996438,
+          "denominator": 216,
+          "estimate": 91.99957712498352,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.7433788505046977,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -3.681894257320942,
+        -0.10987011125831293
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.4431993974007,
+        0.9223615952255404
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.815198487677814,
+        1.3746906011718887
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "league",
+      "team_name": "League pooled",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 2027.0,
+          "denominator": 39228,
+          "estimate": 5.167227490567962,
+          "games": 131,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 201.0,
+          "denominator": 2845,
+          "estimate": 7.065026362038664,
+          "games": 127,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.8977988714707026,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        0.9568185545074009,
+        2.895307711364893
+      ],
+      "corrected_family_size": 5,
+      "corrected_interval": [
+        0.6658932309071504,
+        3.216383316808733
+      ],
+      "broad_corrected_family_size": 5,
+      "broad_corrected_interval": [
+        0.6658932309071504,
+        3.216383316808733
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": true
+    },
+    {
+      "metric": "hap",
+      "team": "hustle",
+      "team_name": "Atlanta Hustle",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 84.0,
+          "denominator": 2021,
+          "estimate": 4.156358238495794,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 10.0,
+          "denominator": 133,
+          "estimate": 7.518796992481203,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 3.3624387539854093,
+      "valid_draws": 199997,
+      "estimable": true,
+      "ci95": [
+        -0.36707948609942415,
+        8.51013172150528
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -2.793707146510887,
+        14.140972572430377
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.284540278562018,
+        21.32598440301402
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 67.0,
+          "denominator": 1574,
+          "estimate": 4.256670902160102,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 3.0,
+          "denominator": 83,
+          "estimate": 3.6144578313253013,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.6422130708348006,
+      "valid_draws": 199850,
+      "estimable": true,
+      "ci95": [
+        -3.9842586521700696,
+        9.929125980010934
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.1767571839633355,
+        27.89676002196595
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.632216035672971,
+        29.262652614650758
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 65.0,
+          "denominator": 1772,
+          "estimate": 3.6681715575620766,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 4.0,
+          "denominator": 79,
+          "estimate": 5.063291139240507,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.39511958167843,
+      "valid_draws": 199988,
+      "estimable": true,
+      "ci95": [
+        -2.5297852673220005,
+        9.459171873604381
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.236333791719442,
+        19.343473214273153
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.9461599319866325,
+        21.374889478337757
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 80.0,
+          "denominator": 1520,
+          "estimate": 5.2631578947368425,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 6.0,
+          "denominator": 45,
+          "estimate": 13.333333333333334,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 8.070175438596491,
+      "valid_draws": 199843,
+      "estimable": true,
+      "ci95": [
+        -5.344827586206897,
+        18.355441535588554
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.101694723261576,
+        94.09749145976713
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -7.839197919102743,
+        95.54007571364697
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "union",
+      "team_name": "Chicago Union",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 94.0,
+          "denominator": 1951,
+          "estimate": 4.818042029728344,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 5.0,
+          "denominator": 222,
+          "estimate": 2.2522522522522523,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.565789777476092,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -3.9076975547484993,
+        0.29316884624030715
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.823783900963908,
+        3.622835069606846
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.345821897407585,
+        5.785336518202547
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "apex",
+      "team_name": "Colorado Apex",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 116.0,
+          "denominator": 2053,
+          "estimate": 5.65026790063322,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 14.0,
+          "denominator": 147,
+          "estimate": 9.523809523809524,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 3.873541623176304,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -0.20401353953849963,
+        9.28682488415965
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -2.4819013503183056,
+        15.414023299133305
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.421155877367367,
+        21.552731709605776
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 76.0,
+          "denominator": 1743,
+          "estimate": 4.360298336201951,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 5.0,
+          "denominator": 90,
+          "estimate": 5.555555555555555,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.1952572193536044,
+      "valid_draws": 199577,
+      "estimable": true,
+      "ci95": [
+        -2.1370558925104097,
+        4.829923738046241
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.667022496303172,
+        10.38215515827456
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.009633911368015,
+        10.824175824175823
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "havoc",
+      "team_name": "Houston Havoc",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 117.0,
+          "denominator": 2003,
+          "estimate": 5.841238142785821,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 11.0,
+          "denominator": 183,
+          "estimate": 6.0109289617486334,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.16969081896281235,
+      "valid_draws": 199990,
+      "estimable": true,
+      "ci95": [
+        -3.3191363693936013,
+        4.509707717109412
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.209681535402669,
+        7.929158994355821
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.998251274837348,
+        8.984367686979313
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 134.0,
+          "denominator": 1791,
+          "estimate": 7.4818537130094915,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 7.0,
+          "denominator": 90,
+          "estimate": 7.777777777777778,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.29592406476828614,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -4.296208994255934,
+        8.886090863913982
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.126968921841695,
+        19.426271195524112
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -8.582925848979908,
+        25.42361801892903
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 64.0,
+          "denominator": 1915,
+          "estimate": 3.342036553524804,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 9.0,
+          "denominator": 92,
+          "estimate": 9.782608695652174,
+          "games": 8,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 6.44057214212737,
+      "valid_draws": 199956,
+      "estimable": true,
+      "ci95": [
+        -0.4479858099253638,
+        16.975008437106464
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.651566342242008,
+        30.630630630630627
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.25122217408691,
+        31.38354854263938
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 75.0,
+          "denominator": 1674,
+          "estimate": 4.480286738351254,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 10.0,
+          "denominator": 125,
+          "estimate": 8.0,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 3.5197132616487457,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        0.057827423757607535,
+        11.505997896841349
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -1.582255045454467,
+        34.09024671220741
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -2.6017188570803462,
+        44.431237183869136
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "royal",
+      "team_name": "Montreal Royal",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 96.0,
+          "denominator": 1772,
+          "estimate": 5.417607223476298,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 13.0,
+          "denominator": 166,
+          "estimate": 7.831325301204819,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 2.4137180777285208,
+      "valid_draws": 199998,
+      "estimable": true,
+      "ci95": [
+        -0.5279113266634406,
+        6.785337273252211
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -1.9443812046441895,
+        11.065183339746909
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -2.5825798706516814,
+        13.422264600442057
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "empire",
+      "team_name": "New York Empire",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 81.0,
+          "denominator": 1810,
+          "estimate": 4.475138121546961,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 5.0,
+          "denominator": 64,
+          "estimate": 7.8125,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 3.3373618784530388,
+      "valid_draws": 199559,
+      "estimable": true,
+      "ci95": [
+        -4.437689969604863,
+        10.398429902392621
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.103668261562999,
+        14.888336068949908
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.267810021714341,
+        15.418665429556961
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 45.0,
+          "denominator": 1390,
+          "estimate": 3.237410071942446,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 7.0,
+          "denominator": 116,
+          "estimate": 6.0344827586206895,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 2.7970726866782436,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -2.0211244026420725,
+        8.268784158397224
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.488581241277697,
+        13.203194913027444
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.277872858530557,
+        16.35483098215277
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "steel",
+      "team_name": "Oregon Steel",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 110.0,
+          "denominator": 1865,
+          "estimate": 5.898123324396783,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 19.0,
+          "denominator": 251,
+          "estimate": 7.569721115537849,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.6715977911410658,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -0.6412460280252121,
+        4.345228070305788
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -1.827599790752929,
+        6.535164165819577
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -2.2785226028528305,
+        7.948305689651014
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "phoenix",
+      "team_name": "Philadelphia Phoenix",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 136.0,
+          "denominator": 2177,
+          "estimate": 6.2471290767110705,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 15.0,
+          "denominator": 165,
+          "estimate": 9.090909090909092,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 2.843780014198021,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -0.4253052860329616,
+        6.454956736418369
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -2.476652444444078,
+        9.914110870732863
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.404923574510553,
+        12.43887211291257
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "thunderbirds",
+      "team_name": "Pittsburgh Thunderbirds",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 120.0,
+          "denominator": 1934,
+          "estimate": 6.204756980351603,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 8.0,
+          "denominator": 70,
+          "estimate": 11.428571428571429,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 5.223814448219826,
+      "valid_draws": 199978,
+      "estimable": true,
+      "ci95": [
+        -1.7110448414176325,
+        14.39740187134501
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.539599307183743,
+        26.20020342358884
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.2698477116285085,
+        43.05561081010178
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 70.0,
+          "denominator": 1652,
+          "estimate": 4.237288135593221,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 10.0,
+          "denominator": 142,
+          "estimate": 7.042253521126761,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 2.8049653855335404,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -0.7760252157454018,
+        9.262776119829223
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -2.6645045171419453,
+        18.20452740474865
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.815145814823807,
+        24.829433790260985
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 94.0,
+          "denominator": 1590,
+          "estimate": 5.911949685534591,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 8.0,
+          "denominator": 108,
+          "estimate": 7.407407407407407,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.4954577218728167,
+      "valid_draws": 199983,
+      "estimable": true,
+      "ci95": [
+        -2.9984786196528534,
+        8.47059946394545
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.715128696173003,
+        14.238332148779909
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -7.158130655607502,
+        17.844518549156266
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 85.0,
+          "denominator": 1744,
+          "estimate": 4.873853211009174,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 3.0,
+          "denominator": 106,
+          "estimate": 2.830188679245283,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.0436645317638913,
+      "valid_draws": 199992,
+      "estimable": true,
+      "ci95": [
+        -4.733264107804884,
+        3.2913438357792653
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.806700799030892,
+        11.429305484101189
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.336910345212133,
+        18.207915856586975
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "rush",
+      "team_name": "Toronto Rush",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 106.0,
+          "denominator": 1570,
+          "estimate": 6.751592356687898,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 11.0,
+          "denominator": 152,
+          "estimate": 7.2368421052631575,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.48524974857525915,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -3.657791239078102,
+        6.051144013926676
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.9970918675443174,
+        12.67477408363443
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -7.022379163698708,
+        18.50700292398574
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "hap",
+      "team": "bighorns",
+      "team_name": "Vegas Bighorns",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 112.0,
+          "denominator": 1707,
+          "estimate": 6.561218512009373,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 18.0,
+          "denominator": 216,
+          "estimate": 8.333333333333334,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.772114821323961,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -1.674526975345588,
+        6.334608602003203
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.351502176243894,
+        10.904232113837864
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.05603421199096,
+        14.639930525443859
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "league",
+      "team_name": "League pooled",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 39228.0,
+          "denominator": 4802,
+          "estimate": 8.169096209912537,
+          "games": 131,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 2845.0,
+          "denominator": 457,
+          "estimate": 6.225382932166302,
+          "games": 127,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.9437132777462347,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -2.3497443209687883,
+        -1.5321217078879221
+      ],
+      "corrected_family_size": 5,
+      "corrected_interval": [
+        -2.4753321133514703,
+        -1.3953586576726629
+      ],
+      "broad_corrected_family_size": 5,
+      "broad_corrected_interval": [
+        -2.4753321133514703,
+        -1.3953586576726629
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": true
+    },
+    {
+      "metric": "mean_throws",
+      "team": "hustle",
+      "team_name": "Atlanta Hustle",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 2021.0,
+          "denominator": 208,
+          "estimate": 9.716346153846153,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 133.0,
+          "denominator": 19,
+          "estimate": 7.0,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.7163461538461533,
+      "valid_draws": 199997,
+      "estimable": true,
+      "ci95": [
+        -4.970824340527577,
+        -0.7567120359058787
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -6.677769126310062,
+        0.4424677578376702
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -7.553517500841978,
+        1.0626506024096383
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1574.0,
+          "denominator": 174,
+          "estimate": 9.045977011494253,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 83.0,
+          "denominator": 10,
+          "estimate": 8.3,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.7459770114942526,
+      "valid_draws": 199850,
+      "estimable": true,
+      "ci95": [
+        -3.666666666666666,
+        0.7176295672291105
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -6.04972127773801,
+        1.3317128395097313
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.913043478260869,
+        1.5702574054733158
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1772.0,
+          "denominator": 184,
+          "estimate": 9.630434782608695,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 79.0,
+          "denominator": 14,
+          "estimate": 5.642857142857143,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -3.987577639751552,
+      "valid_draws": 199988,
+      "estimable": true,
+      "ci95": [
+        -5.656877669100427,
+        -2.3954545454545455
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.273384547825337,
+        -0.7974114693445427
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -8.245673513061208,
+        0.46305534995947983
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1520.0,
+          "denominator": 167,
+          "estimate": 9.10179640718563,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 45.0,
+          "denominator": 11,
+          "estimate": 4.090909090909091,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -5.010887316276539,
+      "valid_draws": 199843,
+      "estimable": true,
+      "ci95": [
+        -7.464275848460931,
+        -3.289573731856952
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -9.20885159762684,
+        -2.283629502281973
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -9.710982566630157,
+        -1.7815854458041986
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": true
+    },
+    {
+      "metric": "mean_throws",
+      "team": "union",
+      "team_name": "Chicago Union",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1951.0,
+          "denominator": 214,
+          "estimate": 9.116822429906541,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 222.0,
+          "denominator": 23,
+          "estimate": 9.652173913043478,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.535351483136937,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -3.311243904851455,
+        3.7045558849126756
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.659090909090908,
+        5.757674609479975
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.14030612244898,
+        6.858129706152367
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "apex",
+      "team_name": "Colorado Apex",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 2053.0,
+          "denominator": 276,
+          "estimate": 7.438405797101449,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 147.0,
+          "denominator": 28,
+          "estimate": 5.25,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.1884057971014492,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -3.333333333333333,
+        -1.1730836224648111
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.240403834179518,
+        -0.33073204335162004
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.675675675675675,
+        0.3390230106932521
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1743.0,
+          "denominator": 220,
+          "estimate": 7.922727272727273,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 90.0,
+          "denominator": 13,
+          "estimate": 6.923076923076923,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.9996503496503495,
+      "valid_draws": 199577,
+      "estimable": true,
+      "ci95": [
+        -3.2591515436435223,
+        0.4449526937935186
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.0,
+        1.0270064279155235
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.508736101329282,
+        1.294005365703472
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "havoc",
+      "team_name": "Houston Havoc",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 2003.0,
+          "denominator": 243,
+          "estimate": 8.242798353909466,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 183.0,
+          "denominator": 29,
+          "estimate": 6.310344827586207,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.9324535263232585,
+      "valid_draws": 199990,
+      "estimable": true,
+      "ci95": [
+        -3.5704349796696846,
+        -0.21963410324706673
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.948151547118708,
+        1.3450042881646687
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.67261884890961,
+        2.3758208060544215
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1791.0,
+          "denominator": 238,
+          "estimate": 7.525210084033613,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 90.0,
+          "denominator": 13,
+          "estimate": 6.923076923076923,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.60213316095669,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -3.0681818181818183,
+        1.8507545605306788
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.456482041156243,
+        3.604166666666667
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.145617098548758,
+        4.553557585774582
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1915.0,
+          "denominator": 205,
+          "estimate": 9.341463414634147,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 92.0,
+          "denominator": 16,
+          "estimate": 5.75,
+          "games": 8,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -3.5914634146341466,
+      "valid_draws": 199956,
+      "estimable": true,
+      "ci95": [
+        -6.128354559347937,
+        -1.1397502103451211
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.464146405754874,
+        0.11481718219377525
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -7.9853104690314,
+        0.5777777777777775
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1674.0,
+          "denominator": 175,
+          "estimate": 9.565714285714286,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 125.0,
+          "denominator": 18,
+          "estimate": 6.944444444444445,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.621269841269841,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -4.810530148185999,
+        -1.0978071903944067
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -6.758895621705026,
+        -0.022798221240616392
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -7.630504365467392,
+        0.766972997584108
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "royal",
+      "team_name": "Montreal Royal",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1772.0,
+          "denominator": 235,
+          "estimate": 7.540425531914893,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 166.0,
+          "denominator": 26,
+          "estimate": 6.384615384615385,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.1558101472995084,
+      "valid_draws": 199998,
+      "estimable": true,
+      "ci95": [
+        -2.502477188467077,
+        0.1590320701581851
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.4276700523818144,
+        1.077967192032961
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.8807286342157665,
+        1.5840211027681805
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "empire",
+      "team_name": "New York Empire",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1810.0,
+          "denominator": 203,
+          "estimate": 8.916256157635468,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 64.0,
+          "denominator": 10,
+          "estimate": 6.4,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.5162561576354676,
+      "valid_draws": 199559,
+      "estimable": true,
+      "ci95": [
+        -4.453859910835775,
+        1.8559999999999999
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.200931144788384,
+        5.659786795739276
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.488213338744589,
+        5.964064147088839
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1390.0,
+          "denominator": 170,
+          "estimate": 8.176470588235293,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 116.0,
+          "denominator": 18,
+          "estimate": 6.444444444444445,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.7320261437908488,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -3.6374999999999993,
+        0.12562202881591383
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.814911792752701,
+        0.9555023923445148
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.322293860684769,
+        1.2503594370744386
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "steel",
+      "team_name": "Oregon Steel",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1865.0,
+          "denominator": 258,
+          "estimate": 7.228682170542636,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 251.0,
+          "denominator": 42,
+          "estimate": 5.976190476190476,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.2524916943521598,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -2.4315811044003453,
+        0.32354518899853196
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.054994507493068,
+        1.9769135973849317
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.3219512195121945,
+        3.155391650461367
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "phoenix",
+      "team_name": "Philadelphia Phoenix",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 2177.0,
+          "denominator": 295,
+          "estimate": 7.379661016949153,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 165.0,
+          "denominator": 29,
+          "estimate": 5.689655172413793,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.69000584453536,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -2.958035288507391,
+        -0.010368190103721038
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.7675654224406783,
+        1.4296837997196858
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.162871101288603,
+        2.3384797780473003
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "thunderbirds",
+      "team_name": "Pittsburgh Thunderbirds",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1934.0,
+          "denominator": 267,
+          "estimate": 7.2434456928838955,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 70.0,
+          "denominator": 15,
+          "estimate": 4.666666666666667,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.5767790262172285,
+      "valid_draws": 199978,
+      "estimable": true,
+      "ci95": [
+        -4.066613558263042,
+        -0.44806711620557876
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.092198581560283,
+        1.8958903974813146
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.859328102453102,
+        3.4193895759061914
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1652.0,
+          "denominator": 205,
+          "estimate": 8.058536585365854,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 142.0,
+          "denominator": 22,
+          "estimate": 6.454545454545454,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.6039911308203996,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -3.921182266009853,
+        0.551656132018634
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.299752548853016,
+        1.8223153299403336
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.13861590688116,
+        2.4619434289388806
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1590.0,
+          "denominator": 202,
+          "estimate": 7.871287128712871,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 108.0,
+          "denominator": 17,
+          "estimate": 6.352941176470588,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.5183459522422833,
+      "valid_draws": 199983,
+      "estimable": true,
+      "ci95": [
+        -3.4091917306912567,
+        -0.09650028766616361
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.005558174238476,
+        0.8066565367617601
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -5.7262579114250896,
+        1.385146349861683
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1744.0,
+          "denominator": 196,
+          "estimate": 8.89795918367347,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 106.0,
+          "denominator": 16,
+          "estimate": 6.625,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.2729591836734695,
+      "valid_draws": 199992,
+      "estimable": true,
+      "ci95": [
+        -3.960898391901139,
+        -0.6172837152916985
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.289563769961271,
+        1.2299076756559033
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -6.292605999296271,
+        2.6823814800742527
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "rush",
+      "team_name": "Toronto Rush",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1570.0,
+          "denominator": 212,
+          "estimate": 7.40566037735849,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 152.0,
+          "denominator": 24,
+          "estimate": 6.333333333333333,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.0723270440251573,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -2.8166710296684117,
+        0.7589333460656976
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -4.146192443919716,
+        2.3571918333138075
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -4.871473558138434,
+        3.3121297709923474
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "mean_throws",
+      "team": "bighorns",
+      "team_name": "Vegas Bighorns",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1707.0,
+          "denominator": 255,
+          "estimate": 6.694117647058824,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 216.0,
+          "denominator": 44,
+          "estimate": 4.909090909090909,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.7850267379679146,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -2.7891293675389237,
+        -0.7963634513634518
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -3.460673281677836,
+        -0.18667037312124413
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -3.878782246472925,
+        0.0920278700869591
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "league",
+      "team_name": "League pooled",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 101.18857228186707,
+          "denominator": 39228,
+          "estimate": 0.25794986306175965,
+          "games": 131,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -24.73426504177287,
+          "denominator": 2845,
+          "estimate": -0.8693942018197846,
+          "games": 127,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.1273440648815443,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -2.1256780935085566,
+        -0.17835456882606285
+      ],
+      "corrected_family_size": 5,
+      "corrected_interval": [
+        -2.4511536735379824,
+        0.12289553713880962
+      ],
+      "broad_corrected_family_size": 5,
+      "broad_corrected_interval": [
+        -2.4511536735379824,
+        0.12289553713880962
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "hustle",
+      "team_name": "Atlanta Hustle",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 12.132270783998633,
+          "denominator": 2021,
+          "estimate": 0.6003102812468398,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 0.5283143411087974,
+          "denominator": 133,
+          "estimate": 0.39722882790135144,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.20308145334548838,
+      "valid_draws": 199997,
+      "estimable": true,
+      "ci95": [
+        -2.666286654746287,
+        2.233806905922794
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -5.218184857432275,
+        4.753119138474244
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -7.658105999487324,
+        7.2803309912900005
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 11.017948206635525,
+          "denominator": 1574,
+          "estimate": 0.6999967094431719,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 1.407317624439976,
+          "denominator": 83,
+          "estimate": 1.6955634029397302,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.9955666934965582,
+      "valid_draws": 199850,
+      "estimable": true,
+      "ci95": [
+        -7.059283977397988,
+        3.959915701837511
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -16.95710580223553,
+        7.310868978586916
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -17.957754966256783,
+        7.792728450057599
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 26.608426332718004,
+          "denominator": 1772,
+          "estimate": 1.5016041948486458,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -0.21592983649493258,
+          "denominator": 79,
+          "estimate": -0.2733289069556109,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.7749331018042567,
+      "valid_draws": 199988,
+      "estimable": true,
+      "ci95": [
+        -7.095143987804975,
+        4.839500967996177
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -12.82335582633189,
+        11.503712116110789
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -18.392313005361835,
+        13.730217745598226
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 28.443351934916375,
+          "denominator": 1520,
+          "estimate": 1.8712731536129195,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -1.549468804262783,
+          "denominator": 45,
+          "estimate": -3.4432640094728515,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -5.314537163085771,
+      "valid_draws": 199843,
+      "estimable": true,
+      "ci95": [
+        -17.91516861001147,
+        1.172745321964256
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -52.081905969932876,
+        15.110711881503592
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -52.995498885464315,
+        16.01883077667284
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "union",
+      "team_name": "Chicago Union",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": -1.9385681806652304,
+          "denominator": 1951,
+          "estimate": -0.0993627975738201,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -0.21775766528370266,
+          "denominator": 222,
+          "estimate": -0.09808903841608228,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.0012737591577378221,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -4.115990938587776,
+        2.116102794714435
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -8.357605536044868,
+        3.4526994267717104
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -10.758181860760287,
+        4.251509609297649
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "apex",
+      "team_name": "Colorado Apex",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": -20.585176655181705,
+          "denominator": 2053,
+          "estimate": -1.0026876110658405,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -7.553778843128751,
+          "denominator": 147,
+          "estimate": -5.138625063352892,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -4.135937452287052,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -10.032826883021754,
+        -0.6892283314937772
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -15.34526933713486,
+        0.8971359768696807
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -19.136314974458067,
+        1.4785084849759194
+      ],
+      "individual_significant": true,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 5.917624097285858,
+          "denominator": 1743,
+          "estimate": 0.3395079803376855,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 0.7780067243789667,
+          "denominator": 90,
+          "estimate": 0.8644519159766296,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.5249439356389441,
+      "valid_draws": 199577,
+      "estimable": true,
+      "ci95": [
+        -8.92832515581961,
+        4.450402519772448
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -22.253671619024214,
+        6.265045381638967
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -22.842897586125584,
+        6.763500303383112
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "havoc",
+      "team_name": "Houston Havoc",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 9.795316807309582,
+          "denominator": 2003,
+          "estimate": 0.48903229192758774,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -0.34872547959946276,
+          "denominator": 183,
+          "estimate": -0.19056037136582663,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.6795926632934144,
+      "valid_draws": 199990,
+      "estimable": true,
+      "ci95": [
+        -6.647499467335995,
+        5.610980976279595
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -10.093198511425156,
+        10.453843948456425
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -11.730984361422193,
+        13.39863213401641
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 12.38179616479567,
+          "denominator": 1791,
+          "estimate": 0.6913342358903221,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 0.702178991794975,
+          "denominator": 90,
+          "estimate": 0.7801988797721944,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.08886464388187232,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -7.107204276057264,
+        4.584965020191457
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -17.87005129838381,
+        7.161657191602785
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -21.858169570081568,
+        10.136323064995196
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 21.55588086850978,
+          "denominator": 1915,
+          "estimate": 1.1256334657185263,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -0.6409410643488066,
+          "denominator": 92,
+          "estimate": -0.696675069944355,
+          "games": 8,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.8223085356628812,
+      "valid_draws": 199956,
+      "estimable": true,
+      "ci95": [
+        -7.856332089312224,
+        2.3367018980634766
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -13.446627161262265,
+        6.474070259936462
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -15.968832816095787,
+        9.044317936603049
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 6.290137385964096,
+          "denominator": 1674,
+          "estimate": 0.37575492150323153,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 1.1057817835170396,
+          "denominator": 125,
+          "estimate": 0.8846254268136317,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.5088705053104001,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -5.46675961915835,
+        3.52307070242631
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -19.02373195860544,
+        5.541384407888563
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -32.42879063388215,
+        6.7154610755681
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "royal",
+      "team_name": "Montreal Royal",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": -20.398674843249495,
+          "denominator": 1772,
+          "estimate": -1.1511667518763824,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -4.691885463230015,
+          "denominator": 166,
+          "estimate": -2.826437026042178,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.6752702741657957,
+      "valid_draws": 199998,
+      "estimable": true,
+      "ci95": [
+        -7.210133979853979,
+        2.3896943543113873
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -11.604237517416077,
+        4.550435347748341
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -15.040994935814814,
+        5.5567424816236555
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "empire",
+      "team_name": "New York Empire",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 40.25216172505732,
+          "denominator": 1810,
+          "estimate": 2.223876338400957,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -0.5555069424791788,
+          "denominator": 64,
+          "estimate": -0.8679795976237168,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -3.091855936024674,
+      "valid_draws": 199559,
+      "estimable": true,
+      "ci95": [
+        -11.258402083891246,
+        3.7853141963729033
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -17.878244927613967,
+        5.715990043915258
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -18.406454116663415,
+        6.313435398954912
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 16.20365854179083,
+          "denominator": 1390,
+          "estimate": 1.165730830344664,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 0.390725569220262,
+          "denominator": 116,
+          "estimate": 0.33683238725884657,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.8288984430858175,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -4.055111868792698,
+        1.8769286705998343
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -8.257241726519718,
+        4.203917128823958
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -12.180371340807339,
+        5.695919911872723
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "steel",
+      "team_name": "Oregon Steel",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": -29.367858877167887,
+          "denominator": 1865,
+          "estimate": -1.5746841221001548,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -4.988668648750275,
+          "denominator": 251,
+          "estimate": -1.9875173899403489,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.41283326784019403,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -4.466893676713214,
+        2.7095548200330732
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.7567549599925325,
+        4.739461436962402
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -9.416279160939363,
+        5.8461710120937065
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "phoenix",
+      "team_name": "Philadelphia Phoenix",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": -15.181620755960843,
+          "denominator": 2177,
+          "estimate": -0.6973642974717889,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -1.4751687487341296,
+          "denominator": 165,
+          "estimate": -0.8940416658994725,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.19667736842768369,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -4.442651445180768,
+        3.546320526907783
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -7.998748539272722,
+        5.82661562221007
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -10.758614356376619,
+        6.7818991620952005
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "thunderbirds",
+      "team_name": "Pittsburgh Thunderbirds",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": -19.072213159642768,
+          "denominator": 1934,
+          "estimate": -0.9861537311087264,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -2.018176631848354,
+          "denominator": 70,
+          "estimate": -2.883109474069077,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -1.8969557429603507,
+      "valid_draws": 199978,
+      "estimable": true,
+      "ci95": [
+        -8.873046831617234,
+        4.055836666840017
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -18.27401071405801,
+        7.360446494509988
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -22.48121562402043,
+        8.962604683362294
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 8.889434358074208,
+          "denominator": 1652,
+          "estimate": 0.5381013533943225,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 2.138464519396061,
+          "denominator": 142,
+          "estimate": 1.5059609291521556,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.9678595757578331,
+      "valid_draws": 199994,
+      "estimable": true,
+      "ci95": [
+        -2.971252013613434,
+        4.493689197147827
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -8.277102433653994,
+        8.108014065835933
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -13.592972232070439,
+        11.511920571481575
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 7.243195269104771,
+          "denominator": 1590,
+          "estimate": 0.45554687227074037,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 1.3742000411921493,
+          "denominator": 108,
+          "estimate": 1.2724074455482863,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 0.816860573277546,
+      "valid_draws": 199983,
+      "estimable": true,
+      "ci95": [
+        -3.818997457695397,
+        5.012055589662538
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -9.799383711652977,
+        7.157267970686883
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -16.11360020134733,
+        8.729674764689118
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 37.48866188266674,
+          "denominator": 1744,
+          "estimate": 2.149579236391441,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -2.039893895139617,
+          "denominator": 106,
+          "estimate": -1.9244282029619026,
+          "games": 10,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -4.074007439353344,
+      "valid_draws": 199992,
+      "estimable": true,
+      "ci95": [
+        -10.738961098471599,
+        1.7618560538771812
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -18.30434920717926,
+        7.486781440718216
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -27.09750628094514,
+        14.21492431804492
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "rush",
+      "team_name": "Toronto Rush",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 3.705078896491224,
+          "denominator": 1570,
+          "estimate": 0.2359922864007149,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -1.1442660235567184,
+          "denominator": 152,
+          "estimate": -0.7528065944452095,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.9887988808459244,
+      "valid_draws": 199999,
+      "estimable": true,
+      "ci95": [
+        -5.807272660634942,
+        3.112295381915338
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -10.519561270402923,
+        5.936151108866905
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -14.057176492707107,
+        7.711838226140667
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "cpoe",
+      "team": "bighorns",
+      "team_name": "Vegas Bighorns",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": -40.192258501583616,
+          "denominator": 1707,
+          "estimate": -2.354555272500505,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": -5.71908658996437,
+          "denominator": 216,
+          "estimate": -2.6477252731316527,
+          "games": 12,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.29317000063114795,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -4.540016328375516,
+        3.6818062953925614
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -8.24285389072908,
+        6.396837268039443
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -11.49734589065778,
+        7.6546566750619744
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "league",
+      "team_name": "League pooled",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 1269.0,
+          "denominator": 2027,
+          "estimate": 62.60483473112975,
+          "games": 131,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 121.0,
+          "denominator": 201,
+          "estimate": 60.19900497512438,
+          "games": 101,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -2.4058297560053674,
+      "valid_draws": 200000,
+      "estimable": true,
+      "ci95": [
+        -9.667065803054546,
+        4.8505771063066545
+      ],
+      "corrected_family_size": 5,
+      "corrected_interval": [
+        -12.037857965377302,
+        7.127718637411696
+      ],
+      "broad_corrected_family_size": 5,
+      "broad_corrected_interval": [
+        -12.037857965377302,
+        7.127718637411696
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "hustle",
+      "team_name": "Atlanta Hustle",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 57.0,
+          "denominator": 84,
+          "estimate": 67.85714285714286,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 6.0,
+          "denominator": 10,
+          "estimate": 60.0,
+          "games": 8,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -7.857142857142861,
+      "valid_draws": 199950,
+      "estimable": true,
+      "ci95": [
+        -52.94117647058824,
+        25.33783783783784
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -73.33333333333333,
+        40.90909090909091
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -75.0,
+        45.63528014700754
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 48.0,
+          "denominator": 67,
+          "estimate": 71.64179104477611,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 1.0,
+          "denominator": 3,
+          "estimate": 33.333333333333336,
+          "games": 3,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -38.30845771144278,
+      "valid_draws": 190375,
+      "estimable": true,
+      "ci95": [
+        -76.05633802816901,
+        27.27272727272727
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -83.33333333333334,
+        36.50793650793651
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -86.20689655172413,
+        39.365062967336
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 46.0,
+          "denominator": 65,
+          "estimate": 70.76923076923077,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 4.0,
+          "denominator": 4,
+          "estimate": 100.0,
+          "games": 4,
+          "binary_outcomes_identical": true
+        }
+      ],
+      "change": 29.230769230769226,
+      "valid_draws": 196686,
+      "estimable": false,
+      "ci95": null,
+      "corrected_family_size": 22,
+      "corrected_interval": null,
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": null,
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 49.0,
+          "denominator": 80,
+          "estimate": 61.25,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 1.0,
+          "denominator": 6,
+          "estimate": 16.666666666666668,
+          "games": 3,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -44.58333333333333,
+      "valid_draws": 190364,
+      "estimable": true,
+      "ci95": [
+        -71.69811320754717,
+        -19.780219780219777
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -79.58477965966445,
+        -7.291666666666669
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -82.89216913430131,
+        0.47558655832892177
+      ],
+      "individual_significant": true,
+      "corrected_significant": true,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "union",
+      "team_name": "Chicago Union",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 48.0,
+          "denominator": 94,
+          "estimate": 51.06382978723404,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 3.0,
+          "denominator": 5,
+          "estimate": 60.0,
+          "games": 5,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 8.936170212765958,
+      "valid_draws": 198773,
+      "estimable": true,
+      "ci95": [
+        -48.484848484848484,
+        52.77777777777778
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -55.769230769230774,
+        60.0
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -57.14285714285714,
+        62.06896551724138
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "apex",
+      "team_name": "Colorado Apex",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 65.0,
+          "denominator": 116,
+          "estimate": 56.03448275862069,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 8.0,
+          "denominator": 14,
+          "estimate": 57.142857142857146,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.1083743842364555,
+      "valid_draws": 199984,
+      "estimable": true,
+      "ci95": [
+        -32.65038207063647,
+        32.248647984267386
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -59.34567024410774,
+        50.0
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -66.66666666666666,
+        53.29431326249494
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 48.0,
+          "denominator": 76,
+          "estimate": 63.1578947368421,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 2.0,
+          "denominator": 5,
+          "estimate": 40.0,
+          "games": 4,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -23.157894736842103,
+      "valid_draws": 196580,
+      "estimable": true,
+      "ci95": [
+        -64.58333333333334,
+        32.53012048192772
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -72.54901960784314,
+        43.548387096774185
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -76.08695652173914,
+        47.05882352941176
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "havoc",
+      "team_name": "Houston Havoc",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 70.0,
+          "denominator": 117,
+          "estimate": 59.82905982905983,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 7.0,
+          "denominator": 11,
+          "estimate": 63.63636363636363,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 3.8073038073038035,
+      "valid_draws": 199844,
+      "estimable": true,
+      "ci95": [
+        -26.880610271631593,
+        25.38445959980612
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -63.63636363636363,
+        42.42424242424242
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -69.52687747035573,
+        45.89877661752768
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 83.0,
+          "denominator": 134,
+          "estimate": 61.940298507462686,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 3.0,
+          "denominator": 7,
+          "estimate": 42.857142857142854,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -19.08315565031983,
+      "valid_draws": 199833,
+      "estimable": true,
+      "ci95": [
+        -61.46788990825688,
+        24.28571428571429
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -75.0,
+        48.550724637681164
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -78.66666666666666,
+        53.40107157865215
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 43.0,
+          "denominator": 64,
+          "estimate": 67.1875,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 6.0,
+          "denominator": 9,
+          "estimate": 66.66666666666667,
+          "games": 5,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -0.5208333333333286,
+      "valid_draws": 198846,
+      "estimable": true,
+      "ci95": [
+        -23.584905660377352,
+        36.36363636363637
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -39.3939393939394,
+        50.0
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -46.07843137254902,
+        55.81959298871012
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 53.0,
+          "denominator": 75,
+          "estimate": 70.66666666666667,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 5.0,
+          "denominator": 10,
+          "estimate": 50.0,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -20.66666666666667,
+      "valid_draws": 199969,
+      "estimable": true,
+      "ci95": [
+        -59.294871794871796,
+        13.333333333333341
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -76.66666666666667,
+        34.8199138428745
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -80.0,
+        40.36952521163071
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "royal",
+      "team_name": "Montreal Royal",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 50.0,
+          "denominator": 96,
+          "estimate": 52.083333333333336,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 7.0,
+          "denominator": 13,
+          "estimate": 53.84615384615385,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 1.762820512820511,
+      "valid_draws": 199987,
+      "estimable": true,
+      "ci95": [
+        -29.455510148330273,
+        34.34190744655862
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -47.368421052631575,
+        59.375
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -52.083333333333336,
+        64.28571428571428
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "empire",
+      "team_name": "New York Empire",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 62.0,
+          "denominator": 81,
+          "estimate": 76.54320987654322,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 3.0,
+          "denominator": 5,
+          "estimate": 60.0,
+          "games": 3,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -16.543209876543216,
+      "valid_draws": 190301,
+      "estimable": true,
+      "ci95": [
+        -49.01960784313725,
+        28.000000000000004
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -55.55555555555556,
+        35.43644514767932
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -57.43589743589743,
+        39.62510024057739
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 35.0,
+          "denominator": 45,
+          "estimate": 77.77777777777777,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 5.0,
+          "denominator": 7,
+          "estimate": 71.42857142857143,
+          "games": 5,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -6.349206349206341,
+      "valid_draws": 198783,
+      "estimable": true,
+      "ci95": [
+        -33.22981366459628,
+        29.166666666666664
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -48.148148148148145,
+        43.75
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -50.22466467958272,
+        52.63157894736843
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "steel",
+      "team_name": "Oregon Steel",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 66.0,
+          "denominator": 110,
+          "estimate": 60.0,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 15.0,
+          "denominator": 19,
+          "estimate": 78.94736842105263,
+          "games": 11,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 18.94736842105263,
+      "valid_draws": 199996,
+      "estimable": true,
+      "ci95": [
+        -1.0785802175121026,
+        39.76628402680743
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -13.947059884559886,
+        52.542372881355924
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -20.399580039525695,
+        58.419275300172934
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "phoenix",
+      "team_name": "Philadelphia Phoenix",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 79.0,
+          "denominator": 136,
+          "estimate": 58.088235294117645,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 8.0,
+          "denominator": 15,
+          "estimate": 53.333333333333336,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -4.754901960784309,
+      "valid_draws": 199979,
+      "estimable": true,
+      "ci95": [
+        -42.40845648604269,
+        39.50923076923074
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -63.91043163594709,
+        59.30648290817878
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -71.2586848796181,
+        63.63636363636363
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "thunderbirds",
+      "team_name": "Pittsburgh Thunderbirds",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 64.0,
+          "denominator": 120,
+          "estimate": 53.333333333333336,
+          "games": 11,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 2.0,
+          "denominator": 8,
+          "estimate": 25.0,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -28.333333333333336,
+      "valid_draws": 199601,
+      "estimable": true,
+      "ci95": [
+        -58.88888888888889,
+        22.540983606557376
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -68.09071286407087,
+        55.42406781275306
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -71.63101604278074,
+        59.16771400642322
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 52.0,
+          "denominator": 70,
+          "estimate": 74.28571428571429,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 8.0,
+          "denominator": 10,
+          "estimate": 80.0,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 5.714285714285708,
+      "valid_draws": 199858,
+      "estimable": true,
+      "ci95": [
+        -21.666666666666668,
+        27.77777777777778
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -67.5,
+        39.39393939393939
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -80.87508325008325,
+        45.363193624554654
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 64.0,
+          "denominator": 94,
+          "estimate": 68.08510638297872,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 6.0,
+          "denominator": 8,
+          "estimate": 75.0,
+          "games": 6,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 6.914893617021278,
+      "valid_draws": 199586,
+      "estimable": true,
+      "ci95": [
+        -27.105263157894733,
+        37.5
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -66.66666666666666,
+        45.205479452054796
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -68.62745098039215,
+        48.54024006296716
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 63.0,
+          "denominator": 85,
+          "estimate": 74.11764705882354,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 2.0,
+          "denominator": 3,
+          "estimate": 66.66666666666667,
+          "games": 3,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": -7.450980392156865,
+      "valid_draws": 190306,
+      "estimable": true,
+      "ci95": [
+        -76.92307692307693,
+        28.947368421052634
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -82.65184453227931,
+        33.92857142857143
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -84.69539141414141,
+        36.19768391916253
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "rush",
+      "team_name": "Toronto Rush",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 65.0,
+          "denominator": 106,
+          "estimate": 61.320754716981135,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 8.0,
+          "denominator": 11,
+          "estimate": 72.72727272727273,
+          "games": 7,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 11.406518010291599,
+      "valid_draws": 199865,
+      "estimable": true,
+      "ci95": [
+        -25.51724137931034,
+        39.0625
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -70.58823529411765,
+        52.38095238095239
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -74.07407407407408,
+        58.423956546596756
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    },
+    {
+      "metric": "huck_completion",
+      "team": "bighorns",
+      "team_name": "Vegas Bighorns",
+      "stages": [
+        {
+          "stage": 1,
+          "numerator": 59.0,
+          "denominator": 112,
+          "estimate": 52.67857142857143,
+          "games": 12,
+          "binary_outcomes_identical": false
+        },
+        {
+          "stage": 2,
+          "numerator": 11.0,
+          "denominator": 18,
+          "estimate": 61.111111111111114,
+          "games": 9,
+          "binary_outcomes_identical": false
+        }
+      ],
+      "change": 8.432539682539684,
+      "valid_draws": 199981,
+      "estimable": true,
+      "ci95": [
+        -9.704054679147415,
+        31.498709122203095
+      ],
+      "corrected_family_size": 22,
+      "corrected_interval": [
+        -23.409725594949006,
+        50.0
+      ],
+      "broad_corrected_family_size": 110,
+      "broad_corrected_interval": [
+        -33.447916666666664,
+        57.692307692307686
+      ],
+      "individual_significant": false,
+      "corrected_significant": false,
+      "broad_corrected_significant": false
+    }
+  ],
+  "validation": {
+    "original_xcp_means_and_intervals_reproduced": true,
+    "all_prior_league_means_reconciled": true,
+    "exact_eligible_throw_membership_verified": true,
+    "independent_standard_library_group_stage_aggregations_verified": 230
+  }
+}

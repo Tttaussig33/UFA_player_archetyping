@@ -1,0 +1,167 @@
+{
+  "date": "2026-11-16",
+  "status": "Exploratory follow-up; graph unchanged.",
+  "definition": "Attempt-weighted mean stored CP \u00d7 100. Exactly third possession, not third or later. First baseline includes all eligible openings, not only points reaching three possessions.",
+  "scope": "Receiving team, recorded original seven throughout, resolved goal/turnover, no within-possession timeout, preserved reviewed clock exclusions, unchanged original ordinal.",
+  "field_position": "Main: first recorded throw at least 60 yards from goal (first_y <= 40); sensitivity: all known starts. Broad restrictions, not exact matching.",
+  "centering": "Opening centering passes retained; no inferred deduction.",
+  "uncertainty": {
+    "draws": 200000,
+    "seed": 20261116,
+    "method": "Whole-game percentile bootstrap; identical game weights across stages and scopes.",
+    "multiplicity": "Alongside individual 95% intervals, 97.5% intervals give a Bonferroni adjustment for two league-wide baseline contrasts: first vs second and first vs third, separately within each scope. This is exploratory and does not correct all analyses in the project."
+  },
+  "limitations": [
+    "Third possessions occur only after multiple turnovers and returns of possession, so the sample is selected.",
+    "These differences do not establish fatigue or intentional risk taking. Model uncertainty and unmeasured defensive context are not included.",
+    "The small third-possession sample does not support confident generalization to every team."
+  ],
+  "stages": [
+    {
+      "scope": "long_field",
+      "stage": 1,
+      "xcp": 94.58756864412697,
+      "possessions": 4802,
+      "attempts": 39228,
+      "games": 131,
+      "teams": 22,
+      "ci95": [
+        94.37383400957368,
+        94.7745786684616
+      ]
+    },
+    {
+      "scope": "long_field",
+      "stage": 2,
+      "xcp": 93.31227645138043,
+      "possessions": 457,
+      "attempts": 2845,
+      "games": 127,
+      "teams": 22,
+      "ci95": [
+        92.61913362879982,
+        93.86981901011622
+      ]
+    },
+    {
+      "scope": "long_field",
+      "stage": 3,
+      "xcp": 92.5501130440177,
+      "possessions": 64,
+      "attempts": 348,
+      "games": 48,
+      "teams": 18,
+      "ci95": [
+        90.97790399299952,
+        93.80773357710842
+      ]
+    },
+    {
+      "scope": "all_starts",
+      "stage": 1,
+      "xcp": 94.53096574449813,
+      "possessions": 5474,
+      "attempts": 43610,
+      "games": 131,
+      "teams": 22,
+      "ci95": [
+        94.31457176390181,
+        94.71493643840246
+      ]
+    },
+    {
+      "scope": "all_starts",
+      "stage": 2,
+      "xcp": 93.528315159928,
+      "possessions": 838,
+      "attempts": 4478,
+      "games": 130,
+      "teams": 22,
+      "ci95": [
+        93.06065020132445,
+        93.93271720894147
+      ]
+    },
+    {
+      "scope": "all_starts",
+      "stage": 3,
+      "xcp": 92.92106830496122,
+      "possessions": 116,
+      "attempts": 521,
+      "games": 66,
+      "teams": 21,
+      "ci95": [
+        91.76214752203688,
+        93.88637699162877
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "scope": "long_field",
+      "later_stage": 2,
+      "difference_pp": -1.275292192746548,
+      "ci95_pp": [
+        -1.8542564031283075,
+        -0.7798965291060889
+      ],
+      "bonferroni_two_baseline_contrasts_interval_pp": [
+        -1.9495041617224893,
+        -0.7145140189686089
+      ]
+    },
+    {
+      "scope": "long_field",
+      "later_stage": 3,
+      "difference_pp": -2.0374556001092685,
+      "ci95_pp": [
+        -3.596399718255128,
+        -0.7914178638388033
+      ],
+      "bonferroni_two_baseline_contrasts_interval_pp": [
+        -3.870723866969886,
+        -0.628985006427702
+      ]
+    },
+    {
+      "scope": "all_starts",
+      "later_stage": 2,
+      "difference_pp": -1.0026505845701337,
+      "ci95_pp": [
+        -1.3662584290320818,
+        -0.6630411114688571
+      ],
+      "bonferroni_two_baseline_contrasts_interval_pp": [
+        -1.422145407952751,
+        -0.6153659313287524
+      ]
+    },
+    {
+      "scope": "all_starts",
+      "later_stage": 3,
+      "difference_pp": -1.6098974395369083,
+      "ci95_pp": [
+        -2.7556680618482905,
+        -0.649321041816257
+      ],
+      "bonferroni_two_baseline_contrasts_interval_pp": [
+        -2.9468689202434017,
+        -0.5198646234005094
+      ]
+    }
+  ],
+  "validation": {
+    "source_hashes_verified": true,
+    "unique_events": true,
+    "throw_counts_reconcile": true,
+    "first_and_second_means_match_graph": true,
+    "all_resamples_estimable": true
+  },
+  "inputs": {
+    "research/oline_possessions/possessions.csv": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7",
+    "research/oline_possessions/throws.csv": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc",
+    "research/oline_possessions/original_line_scoring.json": "44c8fa3415e44537d70612ac9de9b04436be71bf4c25ce8ae58156c110ed918d",
+    "research/expected_completion_2026_11_16/results.json": "7f56ed62a0067ffbc44e23400008af7ef6550fab194b69618e266bcd8db2c0d3",
+    "research/expected_completion_2026_11_16/first_vs_third.py": "e07e76db1033b09bf0e2e3dc36ee4c3fc1648b226074735e5b73290a335346ba"
+  }
+}

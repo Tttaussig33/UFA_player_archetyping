@@ -1,0 +1,1115 @@
+{
+  "date": "2026-11-16",
+  "status": "complete",
+  "scopes": {
+    "long_field": {
+      "league": {
+        "scope": "long_field",
+        "team": "league",
+        "team_name": "League pooled",
+        "difference_pp": -1.275292192746548,
+        "stage_games": [
+          131,
+          127
+        ],
+        "ci95_pp": [
+          -1.8542564031283137,
+          -0.779896529106087
+        ],
+        "bonferroni_interval_pp": [
+          -1.8542564031283137,
+          -0.779896529106087
+        ],
+        "nominal_excludes_zero": true,
+        "bonferroni_excludes_zero": true,
+        "estimable": true,
+        "valid_draws": 200000,
+        "family_size": 1
+      },
+      "teams": {
+        "hustle": {
+          "scope": "long_field",
+          "team": "hustle",
+          "team_name": "Atlanta Hustle",
+          "difference_pp": -1.3490422998772402,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -2.8991919724009763,
+            -0.3393382076593687
+          ],
+          "bonferroni_interval_pp": [
+            -4.891017852532196,
+            0.24785562802772707
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199997,
+          "family_size": 22
+        },
+        "sol": {
+          "scope": "long_field",
+          "team": "sol",
+          "team_name": "Austin Sol",
+          "difference_pp": -0.35335362266175707,
+          "stage_games": [
+            12,
+            7
+          ],
+          "ci95_pp": [
+            -3.8276313864176386,
+            0.7700237208990407
+          ],
+          "bonferroni_interval_pp": [
+            -12.457205872234784,
+            1.372362826214429
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199850,
+          "family_size": 22
+        },
+        "glory": {
+          "scope": "long_field",
+          "team": "glory",
+          "team_name": "Boston Glory",
+          "difference_pp": -1.1117428989958285,
+          "stage_games": [
+            12,
+            9
+          ],
+          "ci95_pp": [
+            -5.681461623241352,
+            0.5945781429897198
+          ],
+          "bonferroni_interval_pp": [
+            -14.306846936507792,
+            1.4788367651352399
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199988,
+          "family_size": 22
+        },
+        "flyers": {
+          "scope": "long_field",
+          "team": "flyers",
+          "team_name": "Carolina Flyers",
+          "difference_pp": -7.083123655627702,
+          "stage_games": [
+            12,
+            7
+          ],
+          "ci95_pp": [
+            -18.086241411580225,
+            -2.7938037329894008
+          ],
+          "bonferroni_interval_pp": [
+            -48.10149424556317,
+            2.653424346841582
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199843,
+          "family_size": 22
+        },
+        "union": {
+          "scope": "long_field",
+          "team": "union",
+          "team_name": "Chicago Union",
+          "difference_pp": 0.3526680863269007,
+          "stage_games": [
+            11,
+            11
+          ],
+          "ci95_pp": [
+            -0.9127030014110427,
+            0.97803984746996
+          ],
+          "bonferroni_interval_pp": [
+            -2.4375599448798715,
+            1.3874188096833002
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "apex": {
+          "scope": "long_field",
+          "team": "apex",
+          "team_name": "Colorado Apex",
+          "difference_pp": -1.0964916128606745,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -2.766016267907839,
+            -0.14826533225805869
+          ],
+          "bonferroni_interval_pp": [
+            -4.883595921481258,
+            0.36821019281421663
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "breeze": {
+          "scope": "long_field",
+          "team": "breeze",
+          "team_name": "DC Breeze",
+          "difference_pp": -1.1464776897028344,
+          "stage_games": [
+            12,
+            6
+          ],
+          "ci95_pp": [
+            -2.6427672113645606,
+            0.9401522745812609
+          ],
+          "bonferroni_interval_pp": [
+            -3.257554214881715,
+            1.9705561820940303
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199577,
+          "family_size": 22
+        },
+        "havoc": {
+          "scope": "long_field",
+          "team": "havoc",
+          "team_name": "Houston Havoc",
+          "difference_pp": -2.815983644376246,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -8.38511993564417,
+            0.6004015157644974
+          ],
+          "bonferroni_interval_pp": [
+            -13.593489364599693,
+            1.5556916775433918
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199990,
+          "family_size": 22
+        },
+        "alleycats": {
+          "scope": "long_field",
+          "team": "alleycats",
+          "team_name": "Indianapolis AlleyCats",
+          "difference_pp": -1.2278931195937588,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -3.772305319662112,
+            0.6328843119277907
+          ],
+          "bonferroni_interval_pp": [
+            -7.75009053938275,
+            1.9609772438301198
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199994,
+          "family_size": 22
+        },
+        "radicals": {
+          "scope": "long_field",
+          "team": "radicals",
+          "team_name": "Madison Radicals",
+          "difference_pp": -2.591359304046506,
+          "stage_games": [
+            12,
+            8
+          ],
+          "ci95_pp": [
+            -6.8785985362532776,
+            0.46603466647805597
+          ],
+          "bonferroni_interval_pp": [
+            -13.682463589430148,
+            3.494767183130572
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199956,
+          "family_size": 22
+        },
+        "windchill": {
+          "scope": "long_field",
+          "team": "windchill",
+          "team_name": "Minnesota Wind Chill",
+          "difference_pp": -1.3064810190499543,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -3.5967206733448456,
+            -0.3126044943578144
+          ],
+          "bonferroni_interval_pp": [
+            -9.746365078852659,
+            0.3760824544321646
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 200000,
+          "family_size": 22
+        },
+        "royal": {
+          "scope": "long_field",
+          "team": "royal",
+          "team_name": "Montreal Royal",
+          "difference_pp": -0.8893901734939362,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -3.0154729686562294,
+            0.5223607178346008
+          ],
+          "bonferroni_interval_pp": [
+            -4.994280387849913,
+            1.1591834125128404
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199998,
+          "family_size": 22
+        },
+        "empire": {
+          "scope": "long_field",
+          "team": "empire",
+          "team_name": "New York Empire",
+          "difference_pp": -1.9582131247488093,
+          "stage_games": [
+            12,
+            6
+          ],
+          "ci95_pp": [
+            -4.0872606195065595,
+            0.08886843407580615
+          ],
+          "bonferroni_interval_pp": [
+            -5.209223336948237,
+            0.6999200410684656
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199559,
+          "family_size": 22
+        },
+        "spiders": {
+          "scope": "long_field",
+          "team": "spiders",
+          "team_name": "Oakland Spiders",
+          "difference_pp": -0.960979998988094,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -4.018782305947683,
+            1.7052256564187975
+          ],
+          "bonferroni_interval_pp": [
+            -5.982967365280989,
+            2.8415355556071837
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "steel": {
+          "scope": "long_field",
+          "team": "steel",
+          "team_name": "Oregon Steel",
+          "difference_pp": -0.661475395629239,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -1.8578768527547473,
+            0.4899845146698563
+          ],
+          "bonferroni_interval_pp": [
+            -2.4607143939995386,
+            1.1372701230098283
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "phoenix": {
+          "scope": "long_field",
+          "team": "phoenix",
+          "team_name": "Philadelphia Phoenix",
+          "difference_pp": -0.5073774192284048,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -1.664523076819267,
+            0.36509967444515556
+          ],
+          "bonferroni_interval_pp": [
+            -3.1693342553635757,
+            0.9287388350570658
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199994,
+          "family_size": 22
+        },
+        "thunderbirds": {
+          "scope": "long_field",
+          "team": "thunderbirds",
+          "team_name": "Pittsburgh Thunderbirds",
+          "difference_pp": -2.8097956235635166,
+          "stage_games": [
+            11,
+            9
+          ],
+          "ci95_pp": [
+            -6.69872413218662,
+            0.006621023104602122
+          ],
+          "bonferroni_interval_pp": [
+            -12.734601182334307,
+            1.6505249019308075
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199978,
+          "family_size": 22
+        },
+        "shred": {
+          "scope": "long_field",
+          "team": "shred",
+          "team_name": "Salt Lake Shred",
+          "difference_pp": -1.1153547160913604,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -3.7821707014905503,
+            0.47310908387498
+          ],
+          "bonferroni_interval_pp": [
+            -7.224902051364912,
+            1.395623056664656
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199994,
+          "family_size": 22
+        },
+        "growlers": {
+          "scope": "long_field",
+          "team": "growlers",
+          "team_name": "San Diego Growlers",
+          "difference_pp": -1.27807650619161,
+          "stage_games": [
+            12,
+            9
+          ],
+          "ci95_pp": [
+            -2.5568226645879433,
+            0.08369070428104752
+          ],
+          "bonferroni_interval_pp": [
+            -3.622277947172084,
+            0.8836637625068039
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199983,
+          "family_size": 22
+        },
+        "cascades": {
+          "scope": "long_field",
+          "team": "cascades",
+          "team_name": "Seattle Cascades",
+          "difference_pp": -0.8874777605774256,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -4.324255182606417,
+            1.1565961231312805
+          ],
+          "bonferroni_interval_pp": [
+            -9.99889744296917,
+            2.143855242148618
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199992,
+          "family_size": 22
+        },
+        "rush": {
+          "scope": "long_field",
+          "team": "rush",
+          "team_name": "Toronto Rush",
+          "difference_pp": -0.706641950531889,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -2.5992452153523478,
+            0.6327576574234044
+          ],
+          "bonferroni_interval_pp": [
+            -4.629362665437539,
+            1.2388401800084357
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "bighorns": {
+          "scope": "long_field",
+          "team": "bighorns",
+          "team_name": "Vegas Bighorns",
+          "difference_pp": -1.7433788505046977,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -3.681894257320942,
+            -0.10987011125831293
+          ],
+          "bonferroni_interval_pp": [
+            -5.4431993974007,
+            0.9223615952255404
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 200000,
+          "family_size": 22
+        }
+      },
+      "nominal_teams": [
+        "Atlanta Hustle",
+        "Carolina Flyers",
+        "Colorado Apex",
+        "Minnesota Wind Chill",
+        "Vegas Bighorns"
+      ],
+      "corrected_teams": []
+    },
+    "all_starts": {
+      "league": {
+        "scope": "all_starts",
+        "team": "league",
+        "team_name": "League pooled",
+        "difference_pp": -1.0026505845701337,
+        "stage_games": [
+          131,
+          130
+        ],
+        "ci95_pp": [
+          -1.3662584290320858,
+          -0.6630411114688568
+        ],
+        "bonferroni_interval_pp": [
+          -1.3662584290320858,
+          -0.6630411114688568
+        ],
+        "nominal_excludes_zero": true,
+        "bonferroni_excludes_zero": true,
+        "estimable": true,
+        "valid_draws": 200000,
+        "family_size": 1
+      },
+      "teams": {
+        "hustle": {
+          "scope": "all_starts",
+          "team": "hustle",
+          "team_name": "Atlanta Hustle",
+          "difference_pp": -0.9611813070579132,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -2.3040314808737605,
+            -0.05853163768477629
+          ],
+          "bonferroni_interval_pp": [
+            -4.09463604375148,
+            0.5089310431890735
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "sol": {
+          "scope": "all_starts",
+          "team": "sol",
+          "team_name": "Austin Sol",
+          "difference_pp": -0.8973001194982544,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -3.678561240385685,
+            0.14757980631844336
+          ],
+          "bonferroni_interval_pp": [
+            -7.925548048177454,
+            0.5396127463062319
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199997,
+          "family_size": 22
+        },
+        "glory": {
+          "scope": "all_starts",
+          "team": "glory",
+          "team_name": "Boston Glory",
+          "difference_pp": 0.013302798377509362,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -1.1246006131573083,
+            0.8639093129485651
+          ],
+          "bonferroni_interval_pp": [
+            -2.3562994639708204,
+            1.4536388637414748
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199994,
+          "family_size": 22
+        },
+        "flyers": {
+          "scope": "all_starts",
+          "team": "flyers",
+          "team_name": "Carolina Flyers",
+          "difference_pp": -4.420640022957613,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -10.118513017866874,
+            -1.2216038645733798
+          ],
+          "bonferroni_interval_pp": [
+            -22.862061533164983,
+            0.6114752203759445
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199996,
+          "family_size": 22
+        },
+        "union": {
+          "scope": "all_starts",
+          "team": "union",
+          "team_name": "Chicago Union",
+          "difference_pp": 0.10372550950098969,
+          "stage_games": [
+            11,
+            11
+          ],
+          "ci95_pp": [
+            -0.958999718883789,
+            0.6511064552667367
+          ],
+          "bonferroni_interval_pp": [
+            -1.7206223479635088,
+            0.9552860099441673
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "apex": {
+          "scope": "all_starts",
+          "team": "apex",
+          "team_name": "Colorado Apex",
+          "difference_pp": -0.5940919472957091,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -2.2628880526430817,
+            0.6137009283250062
+          ],
+          "bonferroni_interval_pp": [
+            -3.5595824878535933,
+            1.2739439126447414
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "breeze": {
+          "scope": "all_starts",
+          "team": "breeze",
+          "team_name": "DC Breeze",
+          "difference_pp": -0.9646387105649552,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -2.361412066077422,
+            0.5280767200467378
+          ],
+          "bonferroni_interval_pp": [
+            -3.3262155689553534,
+            1.4641795436808112
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199998,
+          "family_size": 22
+        },
+        "havoc": {
+          "scope": "all_starts",
+          "team": "havoc",
+          "team_name": "Houston Havoc",
+          "difference_pp": -1.937019393422176,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -4.976871556503463,
+            -0.3098838217037608
+          ],
+          "bonferroni_interval_pp": [
+            -8.164594553367069,
+            0.2037334007457974
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199998,
+          "family_size": 22
+        },
+        "alleycats": {
+          "scope": "all_starts",
+          "team": "alleycats",
+          "team_name": "Indianapolis AlleyCats",
+          "difference_pp": -0.3706583779823944,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -1.731166340546742,
+            0.8986175062243229
+          ],
+          "bonferroni_interval_pp": [
+            -2.790506759265696,
+            1.6544501149750743
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "radicals": {
+          "scope": "all_starts",
+          "team": "radicals",
+          "team_name": "Madison Radicals",
+          "difference_pp": -2.4285476702470135,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -4.681339544594824,
+            -0.7772748311071721
+          ],
+          "bonferroni_interval_pp": [
+            -6.914231551093379,
+            0.4866217318190904
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199998,
+          "family_size": 22
+        },
+        "windchill": {
+          "scope": "all_starts",
+          "team": "windchill",
+          "team_name": "Minnesota Wind Chill",
+          "difference_pp": -1.2671547758089474,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -2.863037950991337,
+            -0.34516716854089735
+          ],
+          "bonferroni_interval_pp": [
+            -4.8567256293995325,
+            0.165539348662312
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 200000,
+          "family_size": 22
+        },
+        "royal": {
+          "scope": "all_starts",
+          "team": "royal",
+          "team_name": "Montreal Royal",
+          "difference_pp": -0.9538160225048102,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -2.947585280532573,
+            0.46074814757062466
+          ],
+          "bonferroni_interval_pp": [
+            -5.004173502475682,
+            1.197004125758855
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199998,
+          "family_size": 22
+        },
+        "empire": {
+          "scope": "all_starts",
+          "team": "empire",
+          "team_name": "New York Empire",
+          "difference_pp": -1.7030408120926381,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -3.255808722672723,
+            -0.08984339921745015
+          ],
+          "bonferroni_interval_pp": [
+            -5.075516250307263,
+            0.6630668449380133
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 200000,
+          "family_size": 22
+        },
+        "spiders": {
+          "scope": "all_starts",
+          "team": "spiders",
+          "team_name": "Oakland Spiders",
+          "difference_pp": -0.7150748454618707,
+          "stage_games": [
+            12,
+            11
+          ],
+          "ci95_pp": [
+            -3.233376240233004,
+            1.2724877601448272
+          ],
+          "bonferroni_interval_pp": [
+            -4.944138630904008,
+            2.152815915305463
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "steel": {
+          "scope": "all_starts",
+          "team": "steel",
+          "team_name": "Oregon Steel",
+          "difference_pp": -0.6265591799753594,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -1.5929973248369145,
+            0.406649635114119
+          ],
+          "bonferroni_interval_pp": [
+            -2.140245311222518,
+            0.9666357838697668
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "phoenix": {
+          "scope": "all_starts",
+          "team": "phoenix",
+          "team_name": "Philadelphia Phoenix",
+          "difference_pp": -0.8126025506333008,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -2.325120766520079,
+            0.2209196127558115
+          ],
+          "bonferroni_interval_pp": [
+            -4.022245312939457,
+            0.7968412011027852
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "thunderbirds": {
+          "scope": "all_starts",
+          "team": "thunderbirds",
+          "team_name": "Pittsburgh Thunderbirds",
+          "difference_pp": -0.6274094640310892,
+          "stage_games": [
+            11,
+            11
+          ],
+          "ci95_pp": [
+            -2.6145404437586817,
+            0.6011825665203614
+          ],
+          "bonferroni_interval_pp": [
+            -4.130780875398858,
+            1.1672203598045217
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "shred": {
+          "scope": "all_starts",
+          "team": "shred",
+          "team_name": "Salt Lake Shred",
+          "difference_pp": -0.8214278032665447,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -2.776632020523016,
+            0.493904702812479
+          ],
+          "bonferroni_interval_pp": [
+            -5.057657859559398,
+            1.2817457542518396
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 200000,
+          "family_size": 22
+        },
+        "growlers": {
+          "scope": "all_starts",
+          "team": "growlers",
+          "team_name": "San Diego Growlers",
+          "difference_pp": -1.3025014161088961,
+          "stage_games": [
+            12,
+            10
+          ],
+          "ci95_pp": [
+            -2.2848033866698656,
+            -0.2565416622819026
+          ],
+          "bonferroni_interval_pp": [
+            -3.138559679166547,
+            0.4628905976521459
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199995,
+          "family_size": 22
+        },
+        "cascades": {
+          "scope": "all_starts",
+          "team": "cascades",
+          "team_name": "Seattle Cascades",
+          "difference_pp": 0.02709586929488239,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -2.1151346743990342,
+            1.5584126688540032
+          ],
+          "bonferroni_interval_pp": [
+            -4.753815982627726,
+            2.3141807205649867
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "rush": {
+          "scope": "all_starts",
+          "team": "rush",
+          "team_name": "Toronto Rush",
+          "difference_pp": -0.39764055197049686,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -1.7412042585141434,
+            0.6858141801659094
+          ],
+          "bonferroni_interval_pp": [
+            -2.912640989832104,
+            1.1756359508564338
+          ],
+          "nominal_excludes_zero": false,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 199999,
+          "family_size": 22
+        },
+        "bighorns": {
+          "scope": "all_starts",
+          "team": "bighorns",
+          "team_name": "Vegas Bighorns",
+          "difference_pp": -1.3701888799051716,
+          "stage_games": [
+            12,
+            12
+          ],
+          "ci95_pp": [
+            -2.943911474665267,
+            -0.09481770493289862
+          ],
+          "bonferroni_interval_pp": [
+            -4.338384114043647,
+            0.6082574730249477
+          ],
+          "nominal_excludes_zero": true,
+          "bonferroni_excludes_zero": false,
+          "estimable": true,
+          "valid_draws": 200000,
+          "family_size": 22
+        }
+      },
+      "nominal_teams": [
+        "Atlanta Hustle",
+        "Carolina Flyers",
+        "Houston Havoc",
+        "Madison Radicals",
+        "Minnesota Wind Chill",
+        "New York Empire",
+        "San Diego Growlers",
+        "Vegas Bighorns"
+      ],
+      "corrected_teams": []
+    }
+  },
+  "definition": "A star means the unrounded individual 95% bootstrap interval for second-minus-first mean xCP excludes zero. A star does not imply significance after correcting across 22 teams.",
+  "method": "200,000 whole-game bootstrap resamples; same weights in both stages and all teams. Two-sided percentile intervals, no p-values calculated.",
+  "draws": 200000,
+  "seed": 20261116,
+  "multiplicity": "Bonferroni adjustment across 22 team comparisons separately within each starting-location filter. No claim of correction across every filter or earlier analysis.",
+  "display": "Whole-possession difference ranges and significance use this check. Per-throw marks and their individual intervals retain the original 10,000 draws.",
+  "limitations": [
+    "Exploratory, conditional on the selected cohort and recorded model outputs.",
+    "Centering retained; incomplete field-position matching; no causal interpretation.",
+    "Small second-possession samples can make differences and intervals unstable."
+  ],
+  "inputs": {
+    "research/expected_completion_2026_11_16/results.json": "7f56ed62a0067ffbc44e23400008af7ef6550fab194b69618e266bcd8db2c0d3",
+    "research/expected_completion_2026_11_16/comparison_check.json": "d1d28e18cf8bf6e9d799904b8dcd659b5bf886218c279f7a809eb9a91878f98d",
+    "research/expected_completion_2026_11_16/eligible_possessions.csv": "fbe33fff58c63756f845232bec844910e9d9eff323ae7d02a9c0f31ee17e8030",
+    "research/expected_completion_2026_11_16/eligible_throws.csv": "6dfb3db2487f4f0b35a651f0549fb64d0e73568d3de17005b62574c690ff331f",
+    "research/expected_completion_2026_11_16/prepare_team_significance.py": "8f4f81e3a31832331a943b0eacbaff895d57501597dc656ec057b137bc8e1f27"
+  },
+  "validation": {
+    "all_means_and_counts_match_graph": true,
+    "long_field_inference_matches_prior_200000_draw_check": true,
+    "all_22_teams_in_both_filters": true,
+    "flags_use_unrounded_difference_intervals": true
+  }
+}

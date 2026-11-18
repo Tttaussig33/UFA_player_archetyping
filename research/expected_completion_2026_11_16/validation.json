@@ -1,0 +1,168 @@
+{
+  "passed": true,
+  "independent_csv_aggregation_groups": 1932,
+  "eligible_attempts": 48088,
+  "input_hashes_verified": true,
+  "source_join_fields_verified": true,
+  "empty_cells_not_zero": true,
+  "probabilities_and_ranges_valid": true,
+  "managed_and_repo_canvas_identical": true,
+  "browser": {
+    "portable_preview_rendered": true,
+    "team_selector_checked": "New York Empire",
+    "starting_location_selector_checked": "All known starts",
+    "twenty_throw_view_checked": true,
+    "uncertainty_toggle_checked": true,
+    "team_sort_checked": true,
+    "team_row_selection_checked": "Chicago Union",
+    "counts_table_checked": true,
+    "console_errors": 0,
+    "header_overlap_repaired_and_verified": true,
+    "final_view": "Class presentation; all 22 teams; at least 60 yards from goal; total aEC descending with visible team totals",
+    "screenshot": "research/expected_completion_2026_11_16/class-presentation-aec-preview.png",
+    "native_canvas_host_checked": false
+  },
+  "artifacts": {
+    "research/previews/UFA-expected-completion-by-possession.canvas.tsx": "818458dae3987fc22ab229f5ea3ac6dc69d2b72e6f94fdb8c684e51646066cdd",
+    "research/previews/html/UFA-expected-completion-by-possession.ufa.html": "bc1f1094c165ce5f539ba48cb9fd1cc03bf46df6f9657b6c757b4a3ce81baeeb",
+    "research/expected_completion_2026_11_16/results.json": "7f56ed62a0067ffbc44e23400008af7ef6550fab194b69618e266bcd8db2c0d3",
+    "research/expected_completion_2026_11_16/team_significance.json": "1f57cb310ae768dc5d024d2d634d6ee5d87d3015b1c2b32583cb1beb354d16ea"
+  },
+  "aec_sort": {
+    "source": "ShownSpace team leaderboard, 2026, Team, Total, All divisions",
+    "matched_teams": 22,
+    "source_total_precision": 2,
+    "xcp_estimates_and_intervals_unchanged": true,
+    "descending_browser_checked": [
+      "New York Empire",
+      "Oakland Spiders",
+      "Minnesota Wind Chill"
+    ],
+    "ascending_browser_checked": [
+      "Vegas Bighorns",
+      "Houston Havoc",
+      "Pittsburgh Thunderbirds"
+    ],
+    "detail_table_uses_same_order": true,
+    "negative_totals_supported": true,
+    "default": "aec_desc",
+    "source_window_difference_disclosed": true,
+    "screenshot": "research/expected_completion_2026_11_16/aec-sort-preview.png"
+  },
+  "significance_markers": {
+    "default_unadjusted_teams": [
+      "Atlanta Hustle",
+      "Carolina Flyers",
+      "Colorado Apex",
+      "Minnesota Wind Chill",
+      "Vegas Bighorns"
+    ],
+    "all_starts_unadjusted_teams": [
+      "Atlanta Hustle",
+      "Carolina Flyers",
+      "Houston Havoc",
+      "Madison Radicals",
+      "Minnesota Wind Chill",
+      "New York Empire",
+      "San Diego Growlers",
+      "Vegas Bighorns"
+    ],
+    "corrected_teams_by_filter": {
+      "long_field": [],
+      "all_starts": []
+    },
+    "both_start_filters_and_reverse_aec_sort_checked": true,
+    "pittsburgh_unmarked_and_positive_upper_bound_verified": true,
+    "carolina_marked_and_matching_interval_verified": true,
+    "source_values_unchanged": true,
+    "differences_use_200000_draw_ranges": true,
+    "console_errors": 0,
+    "screenshot": "research/expected_completion_2026_11_16/significance-preview.png"
+  },
+  "significant_team_filter": {
+    "default": "All teams",
+    "optional_view": "Significant teams only",
+    "definition": "Existing unadjusted individual 95% interval excludes zero; no re-testing after filtering",
+    "long_field_teams_in_aec_desc_order": [
+      "windchill",
+      "flyers",
+      "hustle",
+      "apex",
+      "bighorns"
+    ],
+    "all_starts_teams_in_aec_asc_order": [
+      "bighorns",
+      "havoc",
+      "radicals",
+      "growlers",
+      "hustle",
+      "flyers",
+      "windchill",
+      "empire"
+    ],
+    "chart_and_details_table_match": true,
+    "all_22_teams_restored_and_verified": true,
+    "all_team_table_rows_including_header": 23,
+    "family_size_unchanged": 22,
+    "source_data_and_inference_unchanged": true,
+    "console_errors": 0,
+    "screenshots": [
+      "research/expected_completion_2026_11_16/significant-only-preview.png",
+      "research/expected_completion_2026_11_16/all-teams-filter-preview.png"
+    ]
+  },
+  "class_presentation": {
+    "measure": "Throw-weighted mean stored completion probability: second minus first possession in percentage points",
+    "encodings": "Blue diamond and Significant label for unadjusted 95% ranges excluding zero; gray circle and Uncertain label otherwise; horizontal 95% intervals and zero reference line",
+    "original_view_preserved": true,
+    "default_all_22_teams_verified": true,
+    "original_all_22_teams_verified": true,
+    "long_field_significant_teams": [
+      "windchill",
+      "flyers",
+      "hustle",
+      "apex",
+      "bighorns"
+    ],
+    "all_starts_significant_teams_ascending_aec": [
+      "bighorns",
+      "havoc",
+      "radicals",
+      "growlers",
+      "hustle",
+      "flyers",
+      "windchill",
+      "empire"
+    ],
+    "negative_changes_and_ci_endpoints_checked_against_reviewed_values": true,
+    "same_horizontal_domain_for_all_and_significant_teams_within_scope": true,
+    "long_field_ticks": [
+      -20,
+      -15,
+      -10,
+      -5,
+      0,
+      5
+    ],
+    "row_drilldown_checked": "Carolina Flyers original detailed view, -7.1 points; 95% range -18.09 to -2.79",
+    "example_disclosure_checked": "Carolina 95.0% first, 87.9% second, -7.1 percentage points",
+    "multiplicity_caveat_visible": true,
+    "centering_included_disclosure_visible": true,
+    "source_data_and_inference_unchanged": true,
+    "render_checked": "Portable HTML in Chrome; all teams and significant-only",
+    "console_errors": 0,
+    "screenshot": "research/expected_completion_2026_11_16/class-presentation-preview.png"
+  },
+  "class_presentation_aec": {
+    "visible_total_aec_values_checked": 22,
+    "precision": "2 decimal places",
+    "aec_source": "Preserved ShownSpace 2026 team total aEC snapshot; unchanged",
+    "descending_and_ascending_sort_verified": true,
+    "header_direction_arrow_follows_aec_sort": true,
+    "original_detailed_view_unchanged": true,
+    "statistical_results_unchanged": true,
+    "rendered_columns_no_overlap": true,
+    "console_errors": 0,
+    "screenshot": "research/expected_completion_2026_11_16/class-presentation-aec-preview.png"
+  }
+}

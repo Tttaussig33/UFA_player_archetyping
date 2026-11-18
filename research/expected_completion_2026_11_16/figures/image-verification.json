@@ -1,0 +1,96 @@
+{
+  "purpose": "Single-column presentation image, with full-league backup; original webpage preserved",
+  "scope": "Starts at least 60 yards from goal; exactly first versus second receiving-team possession; original seven; all physical throws",
+  "main_selection": "First 10 teams ranked by ShownSpace Pro total O-line aEC, descending; not selected by statistical significance",
+  "main": {
+    "title": "Do O-lines attempt harder throws on their second possession?",
+    "files": {
+      "research/expected_completion_2026_11_16/figures/UFA-xcp-first-vs-second.png": "a702ca790fed7e99b1743170bb5bb2d7eb2d55031c1197ac570486f60b2536f1",
+      "research/expected_completion_2026_11_16/figures/UFA-xcp-first-vs-second.svg": "77c6dc3096767863dc1b05c51f1ea66b4a930c0b048b429bfbdd592f1e76f58e"
+    },
+    "dimensions_px": [
+      4000,
+      2250
+    ],
+    "team_order": [
+      "empire",
+      "spiders",
+      "windchill",
+      "flyers",
+      "sol",
+      "breeze",
+      "shred",
+      "cascades",
+      "hustle",
+      "growlers"
+    ],
+    "blue_teams": [
+      "windchill",
+      "flyers",
+      "hustle"
+    ],
+    "visual_review_passed": true
+  },
+  "backup": {
+    "title": "Expected completion: all 22 teams",
+    "files": {
+      "research/expected_completion_2026_11_16/figures/UFA-xcp-all-teams.png": "b3a22eb7adc23a49da28fe04504978dff0bcb611920705f16aeffb47b6e48dad",
+      "research/expected_completion_2026_11_16/figures/UFA-xcp-all-teams.svg": "5b1c0540a893c54e5c7702f073519e710655a7bc1e1951550bbbfe1ab34cd0ac"
+    },
+    "dimensions_px": [
+      4000,
+      3300
+    ],
+    "team_order": [
+      "empire",
+      "spiders",
+      "windchill",
+      "flyers",
+      "sol",
+      "breeze",
+      "shred",
+      "cascades",
+      "hustle",
+      "growlers",
+      "glory",
+      "radicals",
+      "alleycats",
+      "rush",
+      "apex",
+      "royal",
+      "union",
+      "phoenix",
+      "steel",
+      "thunderbirds",
+      "havoc",
+      "bighorns"
+    ],
+    "blue_teams": [
+      "windchill",
+      "flyers",
+      "hustle",
+      "apex",
+      "bighorns"
+    ],
+    "visual_review_passed": true
+  },
+  "shared_x_axis": [
+    -20,
+    5
+  ],
+  "layout_columns": 1,
+  "x_axis_title_alignment": "Centered beneath the full figure",
+  "individual_status_text_removed": true,
+  "legend_and_selected_explanatory_copy_removed": true,
+  "difference_column_label": "Change",
+  "difference_values_match_interval_colors": false,
+  "testing_family_unchanged": 22,
+  "source_data_unchanged": true,
+  "source_data_unchanged_scope": "xCP calculations, intervals, and original overall team aEC source are preserved; ranking uses the separate verified O-line source.",
+  "ranking_source": "research/expected_completion_2026_11_16/shownspace-oline-aec-source.json",
+  "ranking_source_sha256": "6a77567fcc0cbed6e42a6829d29474a58a84275f913a17de1c66df3b1a422564",
+  "webpage_unchanged_sha256": "bc1f1094c165ce5f539ba48cb9fd1cc03bf46df6f9657b6c757b4a3ce81baeeb",
+  "numeric_and_text_bounds_checks_passed": true,
+  "speaker_notes": "research/expected_completion_2026_11_16/figures/presentation-notes.txt",
+  "caption_and_methodology_moved_to_speaker_notes": true
+}

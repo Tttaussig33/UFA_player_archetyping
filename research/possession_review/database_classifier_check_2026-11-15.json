@@ -1,0 +1,1040 @@
+{
+  "id": "database-centering-check-20261115",
+  "checkedOn": "2026-11-15",
+  "status": "Exploratory check complete; automatic labels not enabled",
+  "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+  "reviewCount": 177,
+  "latestBatch": {
+    "n": 12,
+    "games": 12,
+    "centering": 6,
+    "noCentering": 6,
+    "allPredictionsHiddenDuringReview": true
+  },
+  "labelAudit": {
+    "earlierReviews": 165,
+    "currentDefinitionLabels": 12,
+    "earlierOpeningPositiveLabels": 88,
+    "earlierPositiveScopeExclusions": 2,
+    "earlierPositiveLabelsNeedingDefinitionCheck": 86,
+    "recheckCaseIds": [
+      "R002",
+      "A",
+      "R003",
+      "C",
+      "R014",
+      "G",
+      "R018",
+      "R019",
+      "R020",
+      "R023",
+      "R026",
+      "R029",
+      "R030",
+      "R034",
+      "R035",
+      "R042",
+      "R043",
+      "R047",
+      "R050",
+      "R057",
+      "R060",
+      "R070",
+      "R072",
+      "R073",
+      "R074",
+      "R075",
+      "R076",
+      "R079",
+      "R090",
+      "R091",
+      "R092",
+      "R109",
+      "R114",
+      "R115",
+      "R116",
+      "R119",
+      "R125",
+      "R126",
+      "R130",
+      "R141",
+      "R142",
+      "R143",
+      "R147",
+      "R149",
+      "R151",
+      "R152",
+      "R161",
+      "R167",
+      "R168",
+      "R170",
+      "R172",
+      "R174",
+      "R175",
+      "R176",
+      "R177",
+      "R178",
+      "R180",
+      "R181",
+      "R182",
+      "R184",
+      "R185",
+      "R186",
+      "R188",
+      "R190",
+      "R191",
+      "R192",
+      "R193",
+      "R195",
+      "R196",
+      "R198",
+      "R199",
+      "R202",
+      "R209",
+      "R210",
+      "R212",
+      "R214",
+      "R215",
+      "R217",
+      "R218",
+      "R219",
+      "R220",
+      "R221",
+      "R222",
+      "R223",
+      "R226",
+      "R227"
+    ]
+  },
+  "models": {
+    "frozenEarlierModel": {
+      "n": 12,
+      "centering": 6,
+      "noCentering": 6,
+      "correctCentering": 6,
+      "correctNoCentering": 1,
+      "falseCentering": 5,
+      "missedCentering": 0,
+      "correct": 7
+    },
+    "currentDefinitionGameHoldout": {
+      "n": 12,
+      "centering": 6,
+      "noCentering": 6,
+      "correctCentering": 4,
+      "correctNoCentering": 3,
+      "falseCentering": 3,
+      "missedCentering": 2,
+      "correct": 7
+    },
+    "alwaysCentering": {
+      "n": 12,
+      "centering": 6,
+      "noCentering": 6,
+      "correctCentering": 6,
+      "correctNoCentering": 0,
+      "falseCentering": 6,
+      "missedCentering": 0,
+      "correct": 6
+    }
+  },
+  "rows": [
+    {
+      "ty": 1.0,
+      "distance": 21.199540089350993,
+      "inward_gain": 0.9099999999999984,
+      "possession_id": "2026-04-24-ATL-HTX|home|140|1",
+      "caseId": "R228",
+      "game_id": "2026-04-24-ATL-HTX",
+      "team": "Houston Havoc",
+      "human_label": "attack1",
+      "reviewContext": "grounded_pull",
+      "reviewedOn": "2026-11-15T21:21:05.426Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.7262749887843617,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 7162,
+        "timestamp_gap_pull_to_throw1": 6,
+        "timestamp_gap_throw1_to_throw2": 4
+      },
+      "heldOutScore": 0.8285913724215296,
+      "heldOutPrediction": "setup1"
+    },
+    {
+      "ty": 9.88,
+      "distance": 19.838649147560425,
+      "inward_gain": 15.14,
+      "possession_id": "2026-06-12-BOS-NY|home|0|1",
+      "caseId": "R015",
+      "game_id": "2026-06-12-BOS-NY",
+      "team": "New York Empire",
+      "human_label": "setup1",
+      "reviewContext": "grounded_pull",
+      "reviewedOn": "2026-11-15T21:22:26.876Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.8553615376979927,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 0,
+        "timestamp_gap_pull_to_throw1": 2,
+        "timestamp_gap_throw1_to_throw2": 4
+      },
+      "heldOutScore": 0.4631256936450133,
+      "heldOutPrediction": "attack1"
+    },
+    {
+      "ty": 42.27,
+      "distance": 12.544995017934438,
+      "inward_gain": 3.1999999999999993,
+      "possession_id": "2026-05-09-PHI-CAR|home|218|1",
+      "caseId": "R241",
+      "game_id": "2026-05-09-PHI-CAR",
+      "team": "Carolina Flyers",
+      "human_label": "attack1",
+      "reviewContext": "sideline",
+      "reviewedOn": "2026-11-15T21:23:27.888Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.7250256629839665,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unresolved",
+        "pull_event_type": null,
+        "pull_hangtime_ms": null,
+        "timestamp_gap_pull_to_throw1": null,
+        "timestamp_gap_throw1_to_throw2": 2
+      },
+      "heldOutScore": 0.147268234990495,
+      "heldOutPrediction": "attack1"
+    },
+    {
+      "ty": 5.22,
+      "distance": 10.0768348205178,
+      "inward_gain": 5.49,
+      "possession_id": "2026-05-02-CHI-MIN|away|139|1",
+      "caseId": "R248",
+      "game_id": "2026-05-02-CHI-MIN",
+      "team": "Chicago Union",
+      "human_label": "setup1",
+      "reviewContext": "grounded_pull",
+      "reviewedOn": "2026-11-15T21:25:24.553Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.8584033937414005,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 4081,
+        "timestamp_gap_pull_to_throw1": -1,
+        "timestamp_gap_throw1_to_throw2": 6
+      },
+      "heldOutScore": 0.837706750852269,
+      "heldOutPrediction": "setup1"
+    },
+    {
+      "ty": 13.24,
+      "distance": 11.51670091649514,
+      "inward_gain": 7.8999999999999995,
+      "possession_id": "2026-05-09-MTL-TOR|home|25|1",
+      "caseId": "R051",
+      "game_id": "2026-05-09-MTL-TOR",
+      "team": "Toronto Rush",
+      "human_label": "setup1",
+      "reviewContext": "grounded_pull",
+      "reviewedOn": "2026-11-15T21:25:57.311Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.8516526516757733,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 0,
+        "timestamp_gap_pull_to_throw1": null,
+        "timestamp_gap_throw1_to_throw2": null
+      },
+      "heldOutScore": 0.6926069272486848,
+      "heldOutPrediction": "setup1"
+    },
+    {
+      "ty": 17.59,
+      "distance": 23.47876061464915,
+      "inward_gain": -10.91,
+      "possession_id": "2026-06-14-IND-MAD|home|227|1",
+      "caseId": "R263",
+      "game_id": "2026-06-14-IND-MAD",
+      "team": "Madison Radicals",
+      "human_label": "attack1",
+      "reviewContext": "grounded_pull",
+      "reviewedOn": "2026-11-15T21:27:08.302Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.47146524017679853,
+      "frozenPrediction": "attack1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unresolved",
+        "pull_event_type": null,
+        "pull_hangtime_ms": null,
+        "timestamp_gap_pull_to_throw1": null,
+        "timestamp_gap_throw1_to_throw2": 4
+      },
+      "heldOutScore": 0.16083948936753428,
+      "heldOutPrediction": "attack1"
+    },
+    {
+      "ty": 13.63,
+      "distance": 10.49000476644315,
+      "inward_gain": -1.35,
+      "possession_id": "2026-05-09-OAK-SEA|away|136|1",
+      "caseId": "R270",
+      "game_id": "2026-05-09-OAK-SEA",
+      "team": "Oakland Spiders",
+      "human_label": "setup1",
+      "reviewContext": "caught_pull",
+      "reviewedOn": "2026-11-15T21:27:52.781Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.7754141108229505,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 7444,
+        "timestamp_gap_pull_to_throw1": -10,
+        "timestamp_gap_throw1_to_throw2": 1
+      },
+      "heldOutScore": 0.5709596076337483,
+      "heldOutPrediction": "setup1"
+    },
+    {
+      "ty": 26.44,
+      "distance": 19.995131907541897,
+      "inward_gain": 15.669999999999998,
+      "possession_id": "2026-05-01-ORE-SLC|home|89|1",
+      "caseId": "R277",
+      "game_id": "2026-05-01-ORE-SLC",
+      "team": "Salt Lake Shred",
+      "human_label": "attack1",
+      "reviewContext": "sideline_inbounds",
+      "reviewedOn": "2026-11-15T21:28:59.077Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.8250944036497984,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 7828,
+        "timestamp_gap_pull_to_throw1": 6,
+        "timestamp_gap_throw1_to_throw2": 6
+      },
+      "heldOutScore": 0.3815771994338197,
+      "heldOutPrediction": "attack1"
+    },
+    {
+      "ty": 36.18,
+      "distance": 8.968952001209507,
+      "inward_gain": 5.140000000000001,
+      "possession_id": "2026-06-06-ATX-LV|home|116|1",
+      "caseId": "R285",
+      "game_id": "2026-06-06-ATX-LV",
+      "team": "Vegas Bighorns",
+      "human_label": "attack1",
+      "reviewContext": "grounded_pull",
+      "reviewedOn": "2026-11-15T21:30:12.205Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.7982871576875327,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 9794,
+        "timestamp_gap_pull_to_throw1": 2,
+        "timestamp_gap_throw1_to_throw2": 5
+      },
+      "heldOutScore": 0.5010155791875139,
+      "heldOutPrediction": "setup1"
+    },
+    {
+      "ty": 16.06,
+      "distance": 17.564264857943815,
+      "inward_gain": 13.25,
+      "possession_id": "2026-06-05-CAR-DC|home|94|1",
+      "caseId": "R294",
+      "game_id": "2026-06-05-CAR-DC",
+      "team": "DC Breeze",
+      "human_label": "attack1",
+      "reviewContext": "unclear",
+      "reviewedOn": "2026-11-15T21:30:53.646Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.8449174292817367,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 13076,
+        "timestamp_gap_pull_to_throw1": 3,
+        "timestamp_gap_throw1_to_throw2": 3
+      },
+      "heldOutScore": 0.6432607158213794,
+      "heldOutPrediction": "setup1"
+    },
+    {
+      "ty": 12.7,
+      "distance": 21.314373084845823,
+      "inward_gain": 11.74,
+      "possession_id": "2026-07-05-MIN-PIT|away|85|1",
+      "caseId": "R301",
+      "game_id": "2026-07-05-MIN-PIT",
+      "team": "Minnesota Wind Chill",
+      "human_label": "setup1",
+      "reviewContext": "caught_pull",
+      "reviewedOn": "2026-11-15T21:31:36.171Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.8096810965454007,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 3983,
+        "timestamp_gap_pull_to_throw1": 1,
+        "timestamp_gap_throw1_to_throw2": 3
+      },
+      "heldOutScore": 0.3012219579736495,
+      "heldOutPrediction": "attack1"
+    },
+    {
+      "ty": 19.84,
+      "distance": 6.842879510849215,
+      "inward_gain": 1.7700000000000002,
+      "possession_id": "2026-06-13-SD-COL|away|123|1",
+      "caseId": "R305",
+      "game_id": "2026-06-13-SD-COL",
+      "team": "San Diego Growlers",
+      "human_label": "setup1",
+      "reviewContext": "grounded_pull",
+      "reviewedOn": "2026-11-15T21:32:18.150Z",
+      "definitionVersion": "fixed-location-pull-setup-centering-20261114",
+      "frozenScore": 0.8227664112891904,
+      "frozenPrediction": "setup1",
+      "alwaysCenteringPrediction": "setup1",
+      "timing": {
+        "pull_match": "unique",
+        "pull_event_type": 7,
+        "pull_hangtime_ms": 6563,
+        "timestamp_gap_pull_to_throw1": 4,
+        "timestamp_gap_throw1_to_throw2": 4
+      },
+      "heldOutScore": 0.6249108955574525,
+      "heldOutPrediction": "setup1"
+    }
+  ],
+  "folds": [
+    {
+      "heldOutGame": "2026-04-24-ATL-HTX",
+      "testId": "2026-04-24-ATL-HTX|home|140|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          19.36818181818182,
+          14.784686058726395,
+          6.094545454545454
+        ],
+        "training_scale": [
+          10.772913692288062,
+          5.492476172778332,
+          7.584514563043887
+        ],
+        "coefficients": [
+          0.2097256467963754,
+          -1.314519254697535,
+          -0.6670289102755345,
+          0.14088148999420855
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 9.29160438629497e-08,
+        "training_ids": [
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-05-01-ORE-SLC",
+      "testId": "2026-05-01-ORE-SLC|home|89|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          17.055454545454545,
+          14.894177711618134,
+          4.752727272727273
+        ],
+        "training_scale": [
+          11.697536930821544,
+          5.60608414007913,
+          7.059219749453503
+        ],
+        "coefficients": [
+          0.1613351442549555,
+          -0.8656322282399376,
+          -0.7539947083789974,
+          0.4761188194916468
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 8.291111749603768e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-05-02-CHI-MIN",
+      "testId": "2026-05-02-CHI-MIN|away|139|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          18.984545454545454,
+          15.795841083165778,
+          5.678181818181819
+        ],
+        "training_scale": [
+          11.330620109513676,
+          5.556159147772155,
+          7.730580147795352
+        ],
+        "coefficients": [
+          -0.25542490551703256,
+          -0.9035754440292288,
+          -0.7846852278703649,
+          0.3560743059144763
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 7.872194292150506e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-05-09-MTL-TOR",
+      "testId": "2026-05-09-MTL-TOR|home|25|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          18.255454545454544,
+          15.664944165349658,
+          5.459090909090909
+        ],
+        "training_scale": [
+          11.919533520186222,
+          5.67119890532421,
+          7.698591907314733
+        ],
+        "coefficients": [
+          -0.23943240807941732,
+          -0.9311195076633559,
+          -0.7627787708902195,
+          0.32181493751549417
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 7.313022707060472e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-05-09-OAK-SEA",
+      "testId": "2026-05-09-OAK-SEA|away|136|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          18.22,
+          15.758280178990747,
+          6.299999999999998
+        ],
+        "training_scale": [
+          11.933810638837722,
+          5.593174117575664,
+          7.408639919347238
+        ],
+        "coefficients": [
+          -0.2711015114635878,
+          -0.926282342078065,
+          -0.7461467499425882,
+          0.4863587511028272
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 9.426664235882999e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-05-09-PHI-CAR",
+      "testId": "2026-05-09-PHI-CAR|home|218|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          15.616363636363637,
+          15.57146288340063,
+          5.886363636363637
+        ],
+        "training_scale": [
+          9.217925494015622,
+          5.730026022308376,
+          7.69177751383346
+        ],
+        "coefficients": [
+          0.19373880257124712,
+          -0.7946166214951537,
+          -0.8831976368860371,
+          0.34009454783782084
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 8.624627126831477e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-06-05-CAR-DC",
+      "testId": "2026-06-05-CAR-DC|home|94|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          17.99909090909091,
+          15.115165625217958,
+          4.972727272727273
+        ],
+        "training_scale": [
+          11.994089040057458,
+          5.752968793623969,
+          7.352236630514172
+        ],
+        "coefficients": [
+          0.17806253496068583,
+          -1.005078021293323,
+          -0.8199097050480144,
+          0.5312009287042883
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 9.453151779717534e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-06-06-ATX-LV",
+      "testId": "2026-06-06-ATX-LV|home|116|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          16.17,
+          15.896557703102893,
+          5.71
+        ],
+        "training_scale": [
+          10.526387621764476,
+          5.440329076870928,
+          7.729019695572361
+        ],
+        "coefficients": [
+          0.20715566256505977,
+          -0.7469192096762822,
+          -0.976099303373098,
+          0.355157839961083
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 4.264210716759808e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-06-12-BOS-NY",
+      "testId": "2026-06-12-BOS-NY|home|0|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          18.56090909090909,
+          14.908403417070991,
+          4.800909090909091
+        ],
+        "training_scale": [
+          11.742728082090524,
+          5.618797049292549,
+          7.131392130503571
+        ],
+        "coefficients": [
+          -0.23638775715595284,
+          -0.8991595003377878,
+          -0.9247200687131149,
+          0.16230659417040122
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 3.004904052255069e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-06-13-SD-COL",
+      "testId": "2026-06-13-SD-COL|away|123|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          17.655454545454546,
+          16.089837020408375,
+          6.016363636363636
+        ],
+        "training_scale": [
+          11.990572329684202,
+          5.144994842506977,
+          7.632967101780245
+        ],
+        "coefficients": [
+          -0.26021977367919563,
+          -0.9883768473824344,
+          -0.6563613454628133,
+          0.411497719757483
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 1.288450527149139e-07,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-06-14-IND-MAD",
+      "testId": "2026-06-14-IND-MAD|home|227|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          17.86,
+          14.577484192790202,
+          7.169090909090908
+        ],
+        "training_scale": [
+          12.006891203123162,
+          5.195552299790748,
+          5.703247009053788
+        ],
+        "coefficients": [
+          0.1999166926872963,
+          -0.9720760642402967,
+          -0.7300228747168593,
+          0.1965510153697254
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 7.520632444942524e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-07-05-MIN-PIT|away|85|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    },
+    {
+      "heldOutGame": "2026-07-05-MIN-PIT",
+      "testId": "2026-07-05-MIN-PIT|away|85|1",
+      "fit": {
+        "features": [
+          "ty",
+          "distance",
+          "inward_gain"
+        ],
+        "training_mean": [
+          18.30454545454546,
+          14.774246695499595,
+          5.109999999999999
+        ],
+        "training_scale": [
+          11.897644047638067,
+          5.4801507974085455,
+          7.490109842622167
+        ],
+        "coefficients": [
+          -0.2656067561274688,
+          -0.9678321128530208,
+          -1.0420293647428438,
+          0.239265793862777
+        ],
+        "penalty": 1.0,
+        "gradient_check_error": 9.140978569903734e-08,
+        "training_ids": [
+          "2026-04-24-ATL-HTX|home|140|1",
+          "2026-06-12-BOS-NY|home|0|1",
+          "2026-05-09-PHI-CAR|home|218|1",
+          "2026-05-02-CHI-MIN|away|139|1",
+          "2026-05-09-MTL-TOR|home|25|1",
+          "2026-06-14-IND-MAD|home|227|1",
+          "2026-05-09-OAK-SEA|away|136|1",
+          "2026-05-01-ORE-SLC|home|89|1",
+          "2026-06-06-ATX-LV|home|116|1",
+          "2026-06-05-CAR-DC|home|94|1",
+          "2026-06-13-SD-COL|away|123|1"
+        ]
+      }
+    }
+  ],
+  "featurePolicy": {
+    "used": [
+      "ty",
+      "distance",
+      "inward_gain"
+    ],
+    "excluded": [
+      "human restart context",
+      "notes",
+      "team/player identity",
+      "review batch",
+      "later hucks",
+      "possession length",
+      "scoring outcome",
+      "unverified timestamp gaps"
+    ],
+    "pullTimingAvailable": 9,
+    "firstThrowLoggedBeforePull": 2,
+    "pullTypeCodesInMatchedRows": [
+      7
+    ],
+    "timingDecision": "Logging times do not reliably measure catch-to-release time. Excluded from the model."
+  },
+  "limitations": [
+    "Only twelve explicit final-definition labels, one per selected game. This is an exploratory development check, not proof of league accuracy.",
+    "Selection emphasized old-model geometry and earlier quarters. The sample is not a random audit.",
+    "Earlier-model predictions were frozen before review, but 10 of these games appeared in historical training. They test new possessions, not wholly unseen games.",
+    "The current-definition refit holds each game out but uses only eleven labeled examples per fit. No threshold or feature tuning was performed.",
+    "Scores are not calibrated probabilities. No high-confidence automation coverage is claimed.",
+    "Human restart context is used only for descriptive subgroup checks, never as a database feature.",
+    "Earlier labels are preserved; positive labels are not silently upgraded to the final definition."
+  ],
+  "methodReferences": [
+    "https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-for-grouped-data",
+    "https://scikit-learn.org/stable/modules/calibration.html"
+  ],
+  "automaticResearchDeductions": false,
+  "leagueMetricsChanged": false,
+  "inputs": {
+    "plan": {
+      "path": "research/possession_review/classifier_check_plan_2026-11-15.json",
+      "sha256": "d18106221694f1560bb94bdb59d827975fed2a8dca0b08dd7a7b7fc591994803"
+    },
+    "export": {
+      "path": "research/possession_review/annotations/2026-11-15-completed-next12-browser-export.json",
+      "sha256": "4e52bd20ace0673c595f64bbcc48c35f39d896c9a16de5a78f19d2dd8de2800f"
+    },
+    "batch": {
+      "path": "research/possession_review/next_review_batch_12_2026-11-14.json",
+      "sha256": "94cad31a00b052bef5fc8c193b3fa7118cfbcaa24959712aebbe347de32630f9"
+    },
+    "inventory": {
+      "path": "research/possession_review/opening_pass_feasibility.json",
+      "sha256": "a920a68f41ec6e0e9bab4886b2c6957eb840f33ffaccdf3972e6e5587a4558cc"
+    },
+    "frozen_model": {
+      "path": "research/possession_review/opening_classifier_pilot.json",
+      "sha256": "b6fc95f9db98c179181338ee601d5ea98333e180e242f825d9ea056b32bfe9b8"
+    },
+    "definition": {
+      "path": "research/possession_review/centering_definition.json",
+      "sha256": "fb8d25feede17904eab43e0bce64adab5e0aaa2fcd1b4917998a99677d9bb62e"
+    },
+    "possessions": {
+      "path": "research/oline_possessions/possessions.csv",
+      "sha256": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7"
+    },
+    "throws": {
+      "path": "research/oline_possessions/throws.csv",
+      "sha256": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc"
+    },
+    "model_implementation": {
+      "path": "research/possession_review/opening_classifier_pilot.py",
+      "sha256": "8708cf3dd684579092a7da39fdd84fcedbd554b51301ffef1972da5814f314d1"
+    },
+    "calculation": {
+      "path": "research/possession_review/check_database_classifier_2026_11_15.py",
+      "sha256": "b4c359ddb193e14a0f5b8961a2ce82c94a350910ba7ddcab586107e05c7564dd"
+    }
+  },
+  "validation": {
+    "uniqueReviews": true,
+    "prior165ReviewsUnchanged": true,
+    "all12JoinedOneToOne": true,
+    "frozenPredictionsReproduced": true,
+    "heldOutGamesDisjoint": true,
+    "trainingOnlyStandardization": true,
+    "noHumanContextInFeatures": true,
+    "noOutcomeFeatures": true,
+    "noNewReviewBatch": true
+  }
+}

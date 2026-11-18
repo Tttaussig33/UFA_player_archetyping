@@ -1,0 +1,754 @@
+{
+  "date": "2026-11-16",
+  "status": "Exploratory team check; no chart or source-data edits.",
+  "contrast": "Attempt-weighted stored xCP, exactly third minus first possession.",
+  "scope": "Starts at least 60 yards from goal; recorded original seven; existing resolved no-timeout cohort; original stage numbers and centering passes retained.",
+  "method": "Whole-game percentile bootstrap, identical weights across teams and stages. Bonferroni family: 22 team comparisons; no p-values calculated.",
+  "bootstrap_draws": 200000,
+  "seed": 20261116,
+  "family_size": 22,
+  "existing_display_rule": "At least two contributing games in both stages and at least 95% estimable resamples.",
+  "sparse_data_warning": "Reported conditional intervals discard empty resamples. At the much stricter Bonferroni tails, missing-draw mass is material. Do not turn a conditional interval into a confident team-level finding; each third-possession sample spans at most five games.",
+  "validation": {
+    "all_22_teams_included": true,
+    "source_hashes_verified": true,
+    "first_estimates_match_graph": true,
+    "third_total_64_possessions_348_throws": true
+  },
+  "comparisons": [
+    {
+      "team": "hustle",
+      "team_name": "Atlanta Hustle",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 95.68865557723906,
+          "possessions": 208,
+          "attempts": 2021,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 96.50049714858095,
+          "possessions": 2,
+          "attempts": 23,
+          "games": 2
+        }
+      ],
+      "difference_pp": 0.811841571341887,
+      "valid_draws": 173527,
+      "unestimable_fraction": 0.13236499999999995,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "Too few third-possession games / too many empty bootstrap samples"
+    },
+    {
+      "team": "sol",
+      "team_name": "Austin Sol",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 95.04333238839673,
+          "possessions": 174,
+          "attempts": 1574,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 97.01611310247536,
+          "possessions": 1,
+          "attempts": 15,
+          "games": 1
+        }
+      ],
+      "difference_pp": 1.972780714078624,
+      "valid_draws": 126806,
+      "unestimable_fraction": 0.36597,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "Too few third-possession games / too many empty bootstrap samples"
+    },
+    {
+      "team": "glory",
+      "team_name": "Boston Glory",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 95.05595788190078,
+          "possessions": 184,
+          "attempts": 1772,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 88.54374519947,
+          "possessions": 2,
+          "attempts": 8,
+          "games": 2
+        }
+      ],
+      "difference_pp": -6.5122126824307855,
+      "valid_draws": 173609,
+      "unestimable_fraction": 0.13195500000000004,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "Too few third-possession games / too many empty bootstrap samples"
+    },
+    {
+      "team": "flyers",
+      "team_name": "Carolina Flyers",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.97083210954497,
+          "possessions": 167,
+          "attempts": 1520,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 82.1044125272969,
+          "possessions": 2,
+          "attempts": 3,
+          "games": 1
+        }
+      ],
+      "difference_pp": -12.86641958224807,
+      "valid_draws": 126984,
+      "unestimable_fraction": 0.36507999999999996,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "Too few third-possession games / too many empty bootstrap samples"
+    },
+    {
+      "team": "union",
+      "team_name": "Chicago Union",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 95.69136689803513,
+          "possessions": 214,
+          "attempts": 1951,
+          "games": 11
+        },
+        {
+          "stage": 3,
+          "xcp": 91.12343048401402,
+          "possessions": 3,
+          "attempts": 11,
+          "games": 3
+        }
+      ],
+      "difference_pp": -4.567936414021105,
+      "valid_draws": 190284,
+      "unestimable_fraction": 0.04857999999999996,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -9.559162912571228,
+        2.7313474086411715
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -9.857085143135869,
+        3.1450392204181647
+      ],
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "apex",
+      "team_name": "Colorado Apex",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.67049082587344,
+          "possessions": 276,
+          "attempts": 2053,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 91.02506008646418,
+          "possessions": 5,
+          "attempts": 33,
+          "games": 5
+        }
+      ],
+      "difference_pp": -3.6454307394092638,
+      "valid_draws": 198778,
+      "unestimable_fraction": 0.006109999999999949,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -10.834996471862969,
+        -0.6155909074638108
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -12.977297522208154,
+        1.6279471559832086
+      ],
+      "nominal_excludes_zero": true,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "breeze",
+      "team_name": "DC Breeze",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.72647021817065,
+          "possessions": 220,
+          "attempts": 1743,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": null,
+          "possessions": 0,
+          "attempts": 0,
+          "games": 0
+        }
+      ],
+      "difference_pp": null,
+      "valid_draws": 0,
+      "unestimable_fraction": 1.0,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "No eligible third-possession throws"
+    },
+    {
+      "team": "havoc",
+      "team_name": "Houston Havoc",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 93.17047844197157,
+          "possessions": 243,
+          "attempts": 2003,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 91.89753465381246,
+          "possessions": 5,
+          "attempts": 23,
+          "games": 5
+        }
+      ],
+      "difference_pp": -1.272943788159111,
+      "valid_draws": 198787,
+      "unestimable_fraction": 0.006064999999999987,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -13.017776204543402,
+        4.070585578435155
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -49.096293253192236,
+        7.142910448714196
+      ],
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "alleycats",
+      "team_name": "Indianapolis AlleyCats",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 93.7810275731549,
+          "possessions": 238,
+          "attempts": 1791,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 88.2197605048425,
+          "possessions": 4,
+          "attempts": 13,
+          "games": 4
+        }
+      ],
+      "difference_pp": -5.561267068312404,
+      "valid_draws": 196603,
+      "unestimable_fraction": 0.016985000000000028,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -43.66041308704009,
+        1.8473040400908995
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -44.54647217586594,
+        2.385800024787104
+      ],
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "radicals",
+      "team_name": "Madison Radicals",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.59238220007784,
+          "possessions": 205,
+          "attempts": 1915,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 93.29465985707459,
+          "possessions": 3,
+          "attempts": 29,
+          "games": 3
+        }
+      ],
+      "difference_pp": -1.2977223430032439,
+      "valid_draws": 190529,
+      "unestimable_fraction": 0.047355000000000036,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -2.037344354768722,
+        -0.6961391360238878
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -2.436730300964889,
+        -0.3643228979732798
+      ],
+      "nominal_excludes_zero": true,
+      "bonferroni_conditional_excludes_zero": true,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "windchill",
+      "team_name": "Minnesota Wind Chill",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 95.62185559223632,
+          "possessions": 175,
+          "attempts": 1674,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": null,
+          "possessions": 0,
+          "attempts": 0,
+          "games": 0
+        }
+      ],
+      "difference_pp": null,
+      "valid_draws": 0,
+      "unestimable_fraction": 1.0,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "No eligible third-possession throws"
+    },
+    {
+      "team": "royal",
+      "team_name": "Montreal Royal",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 95.28209225977704,
+          "possessions": 235,
+          "attempts": 1772,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 94.1426614630259,
+          "possessions": 6,
+          "attempts": 24,
+          "games": 4
+        }
+      ],
+      "difference_pp": -1.1394307967511423,
+      "valid_draws": 196536,
+      "unestimable_fraction": 0.017320000000000002,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -8.34700978938395,
+        2.5995328938493003
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -8.888523617530664,
+        2.8802033082532885
+      ],
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "empire",
+      "team_name": "New York Empire",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 95.01369272237253,
+          "possessions": 203,
+          "attempts": 1810,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 97.1104444890871,
+          "possessions": 1,
+          "attempts": 15,
+          "games": 1
+        }
+      ],
+      "difference_pp": 2.0967517667145756,
+      "valid_draws": 126971,
+      "unestimable_fraction": 0.36514500000000005,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "Too few third-possession games / too many empty bootstrap samples"
+    },
+    {
+      "team": "spiders",
+      "team_name": "Oakland Spiders",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.58966485310857,
+          "possessions": 170,
+          "attempts": 1390,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 93.86778013802683,
+          "possessions": 3,
+          "attempts": 20,
+          "games": 3
+        }
+      ],
+      "difference_pp": -0.7218847150817425,
+      "valid_draws": 190298,
+      "unestimable_fraction": 0.04851000000000005,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -8.862003717305251,
+        1.8298869264689024
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -9.481983665166588,
+        2.390768837292032
+      ],
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "steel",
+      "team_name": "Oregon Steel",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.28245892102775,
+          "possessions": 258,
+          "attempts": 1865,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 94.40269486440236,
+          "possessions": 8,
+          "attempts": 45,
+          "games": 5
+        }
+      ],
+      "difference_pp": 0.12023594337460963,
+      "valid_draws": 198781,
+      "unestimable_fraction": 0.0060949999999999616,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -2.216105595793522,
+        2.8071361858501174
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -3.332254121207182,
+        4.116301054644818
+      ],
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "phoenix",
+      "team_name": "Philadelphia Phoenix",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.12869181240059,
+          "possessions": 295,
+          "attempts": 2177,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": null,
+          "possessions": 0,
+          "attempts": 0,
+          "games": 0
+        }
+      ],
+      "difference_pp": null,
+      "valid_draws": 0,
+      "unestimable_fraction": 1.0,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "No eligible third-possession throws"
+    },
+    {
+      "team": "thunderbirds",
+      "team_name": "Pittsburgh Thunderbirds",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.26433366906116,
+          "possessions": 267,
+          "attempts": 1934,
+          "games": 11
+        },
+        {
+          "stage": 3,
+          "xcp": 94.54064235417212,
+          "possessions": 2,
+          "attempts": 10,
+          "games": 2
+        }
+      ],
+      "difference_pp": 0.27630868511096196,
+      "valid_draws": 173414,
+      "unestimable_fraction": 0.13293,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "Too few third-possession games / too many empty bootstrap samples"
+    },
+    {
+      "team": "shred",
+      "team_name": "Salt Lake Shred",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.67981632215047,
+          "possessions": 205,
+          "attempts": 1652,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 91.74592168105053,
+          "possessions": 4,
+          "attempts": 39,
+          "games": 4
+        }
+      ],
+      "difference_pp": -2.93389464109994,
+      "valid_draws": 196556,
+      "unestimable_fraction": 0.017220000000000013,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -44.64501116394664,
+        -0.556104753528594
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -45.586080259162586,
+        0.5435300467008131
+      ],
+      "nominal_excludes_zero": true,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "growlers",
+      "team_name": "San Diego Growlers",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.45011350508774,
+          "possessions": 202,
+          "attempts": 1590,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": null,
+          "possessions": 0,
+          "attempts": 0,
+          "games": 0
+        }
+      ],
+      "difference_pp": null,
+      "valid_draws": 0,
+      "unestimable_fraction": 1.0,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "No eligible third-possession throws"
+    },
+    {
+      "team": "cascades",
+      "team_name": "Seattle Cascades",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 93.37794369938838,
+          "possessions": 196,
+          "attempts": 1744,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 84.50522365970014,
+          "possessions": 1,
+          "attempts": 6,
+          "games": 1
+        }
+      ],
+      "difference_pp": -8.872720039688247,
+      "valid_draws": 126926,
+      "unestimable_fraction": 0.36537,
+      "meets_existing_interval_display_rule": false,
+      "ci95_pp": null,
+      "bonferroni_conditional_interval_pp": null,
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": "Too few third-possession games / too many empty bootstrap samples"
+    },
+    {
+      "team": "rush",
+      "team_name": "Toronto Rush",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 94.22260643971394,
+          "possessions": 212,
+          "attempts": 1570,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 88.79533853090467,
+          "possessions": 4,
+          "attempts": 9,
+          "games": 4
+        }
+      ],
+      "difference_pp": -5.42726790880927,
+      "valid_draws": 196532,
+      "unestimable_fraction": 0.017340000000000022,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -17.090376280200026,
+        2.045138871079928
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -17.77029520824616,
+        2.7044583620403704
+      ],
+      "nominal_excludes_zero": false,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    },
+    {
+      "team": "bighorns",
+      "team_name": "Vegas Bighorns",
+      "stages": [
+        {
+          "stage": 1,
+          "xcp": 93.7429559754882,
+          "possessions": 255,
+          "attempts": 1707,
+          "games": 12
+        },
+        {
+          "stage": 3,
+          "xcp": 87.93403634573369,
+          "possessions": 8,
+          "attempts": 22,
+          "games": 5
+        }
+      ],
+      "difference_pp": -5.808919629754513,
+      "valid_draws": 198739,
+      "unestimable_fraction": 0.006305000000000005,
+      "meets_existing_interval_display_rule": true,
+      "ci95_pp": [
+        -15.487443386039937,
+        -1.3679990907842017
+      ],
+      "bonferroni_conditional_interval_pp": [
+        -23.109685523354717,
+        0.12682819128668668
+      ],
+      "nominal_excludes_zero": true,
+      "bonferroni_conditional_excludes_zero": false,
+      "missing_draw_mass_exceeds_bonferroni_tail": true,
+      "reason_if_suppressed": null
+    }
+  ],
+  "inputs": {
+    "research/oline_possessions/possessions.csv": "a9fe6a689a0f5b4bf6daceaafef5f3fcef196d2608b6f16d9b7402a2fc81cbb7",
+    "research/oline_possessions/throws.csv": "e116c80a339751679b31402c30e06c07eeaa074bfae2d8a7364abb64ebfb6adc",
+    "research/oline_possessions/original_line_scoring.json": "44c8fa3415e44537d70612ac9de9b04436be71bf4c25ce8ae58156c110ed918d",
+    "research/expected_completion_2026_11_16/results.json": "7f56ed62a0067ffbc44e23400008af7ef6550fab194b69618e266bcd8db2c0d3",
+    "research/expected_completion_2026_11_16/first_vs_third.json": "ccd794c359b7fc2e9f4d9a7abfee5e0c9601da9a5dc3e9e2c2e82e97bbab2929",
+    "research/expected_completion_2026_11_16/first_vs_third_teams.py": "cec55d1d4d722d64b27c53fef485d1aba394cffaac48a43bece8c2d7f5cf823e"
+  }
+}

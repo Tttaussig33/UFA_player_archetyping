@@ -1,0 +1,47 @@
+BRADEN EBERHARD — UFA ARTICLES LOCATED
+Checked November 16, 2026
+
+1. Introducing Shown Space: The Next Generation Of Frisbee Stats
+   2026-04-15 · By Braden Eberhard
+   https://watchufa.com/league/news/2026-ufa-shown-space-stats-analytics-introduction
+
+2. What Every UFA Team Actually Added And Lost Entering 2026 | By The Numbers
+   2026-04-15 · By Braden Eberhard
+   https://watchufa.com/league/news/2026-ufa-numbers-every-team-free-agency-analysis
+
+3. What Makes Tobe Decraene A Pick-Your-Poison Superstar In Boston?
+   2026-05-28 · By Braden Eberhard
+   https://watchufa.com/league/news/2026-ufa-tobe-decraene-boston-glory-reigning-mvp-analysis
+
+4. Small Ball Lives On In 2026
+   2026-06-09 · By Braden Eberhard
+   https://watchufa.com/league/news/2026-ufa-midseason-stat-analysis-small-ball-offense
+
+5. Six Players, Six Different Passer Types
+   2026-06-23 · By Braden Eberhard
+   https://watchufa.com/node/8298
+
+6. Team Strengths Heading Towards The Playoffs
+   2026-07-07 · By Braden Eberhard
+   https://www.watchufa.com/league/news/2026-ufa-team-strengths-heading-towards-playoffs-oakland-new-york-salt-lake-indianapolis
+
+7. Looking At The 2026 MVP Race
+   2026-07-23 · By Braden Eberhard
+   https://watchufa.com/league/news/2026-ufa-mvp-race-decraene-atkins-henke-hawkins-yorgason
+
+8. Championship Weekend By The Numbers
+   2026-08-26 · By Braden Eberhard
+   https://watchufa.com/node/8468
+
+Eight distinct articles with his byline were located. Searches covered the current UFA and former AUDL domains, byline variants, article cross-links and earlier/later date checks. Duplicate URLs were consolidated; articles merely mentioning him were excluded. Unindexed articles may exist.
+
+GRAPH SOURCES AND SCOPE
+The images use the project’s preserved ShownSpace export and audited UFA event records, April 24–July 19, 2026. They do not copy statistical values from the articles. The retained cohort follows the original seven receiving-point players and excludes within-possession timeouts, period-ending possessions and previously flagged special-clock possessions.
+
+The team map adapts the two-dimension team comparison in Team Strengths Heading Towards The Playoffs. The field-position view responds to the distinction between raw and context-adjusted efficiency. The throw-count progression and huck profile use the possession questions in Small Ball Lives On In 2026 and the separate huck-frequency/completion measures in Six Players, Six Different Passer Types. The other articles informed the review of rate denominators, role comparisons and uncertainty, without adding unrelated player-award or roster questions to this project.
+
+Figures 1, 3 and 4 use starts at least 60 yards from goal: 4,802 first, 457 second and 75 third-or-later possessions (the team map uses first/second only). Figure 2 includes all known starts: 5,474 first, 838 second and 137 third-or-later possessions. Distance is based on the first recorded throwing location, not a verified pickup location. Near-goal possessions remain in the field-position figure. Eight otherwise eligible possessions lack starting location and are omitted from these displays.
+
+Every displayed interval is an individual 95% whole-game bootstrap interval from 10,000 draws, preserving both teams and all stages within each resampled game. Later possessions are conditional on losing and regaining the disc. These are descriptive comparisons, not a causal test of fatigue. Centering passes remain in observed physical throw counts. No centering-sensitivity or early-huck-timing graph is delivered. The archived dataset lacks Pittsburgh at Chicago on July 18.
+
+Inspectable calculations: analyze.py and results.json. Exact included possession IDs: eligible_possessions.csv. The separate validation record checks rates and denominators independently.

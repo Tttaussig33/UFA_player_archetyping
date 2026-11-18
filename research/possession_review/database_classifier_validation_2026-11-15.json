@@ -1,0 +1,28 @@
+{
+  "checkedOn": "2026-11-15",
+  "independentModel": "Newton-method penalized logistic regression; training-fold-only standardization",
+  "heldOutGames": 12,
+  "matchingDecisions": 12,
+  "maximumProbabilityDifference": 1.0767472913286724e-08,
+  "groupSeparationPassed": true,
+  "inputHashesUnchanged": true,
+  "aggregateCountsVerified": true,
+  "uiVerification": {
+    "status": "passed",
+    "url": "http://127.0.0.1:8874/UFA-possession-review.ufa.html#film-classifier-check",
+    "reviewExportUnchangedAfterReload": true,
+    "savedReviews": 177,
+    "latestBatchComplete": 12,
+    "earlierHundredComplete": 100,
+    "classifierDownloadCountsVerified": true,
+    "chartCountsVerified": [
+      4,
+      2,
+      3,
+      3
+    ],
+    "distinctSeriesColorsVerified": true,
+    "screenshot": "/tmp/ufa-database-classifier-check-2026-11-15.png"
+  },
+  "reviewerInteractionCheck": "Passed memory-only check: saved reviews, navigation, export, dictation, scope rules and current classifier counts"
+}

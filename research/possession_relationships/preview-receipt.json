@@ -1,0 +1,18 @@
+{
+  "reports": [
+    {
+      "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-hucking-and-scoring.canvas.tsx",
+      "sourceSha256": "6227de7381c4875b7e36f069d14459e56fc9d9142be4ff15c122d87b27f07a59",
+      "copy": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-hucking-and-scoring.canvas.tsx",
+      "output": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-hucking-and-scoring.ufa.html",
+      "htmlSha256": "937744cd7ac65b665b94a31761e2089a1a9d8eb9812763ff2a7ec54c9e352ca5"
+    },
+    {
+      "sourcePath": "/Users/teddytaussig/.cursor/projects/Users-teddytaussig-Desktop-Work-UFA-player-archetyping/canvases/UFA-throw-count-and-scoring.canvas.tsx",
+      "sourceSha256": "0e60c5e41657b164597943211854d27beb3a5e5d7004a4dd23aef880ec049443",
+      "copy": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/UFA-throw-count-and-scoring.canvas.tsx",
+      "output": "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/previews/html/UFA-throw-count-and-scoring.ufa.html",
+      "htmlSha256": "d3c7c1efbb804749e8791ec9fbd2bb6824dc85808191478be969d9657192d17d"
+    }
+  ]
+}

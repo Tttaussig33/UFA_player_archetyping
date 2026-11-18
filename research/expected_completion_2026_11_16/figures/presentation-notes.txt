@@ -1,0 +1,27 @@
+Suggested spoken explanation
+
+This slide shows the ten teams with the highest total O-line aEC. I selected them by that contribution measure, not by whether their xCP change was statistically significant. The full twenty-two-team figure is available as a backup. With O-line aEC replacing overall team aEC, Seattle enters the top ten and Boston moves to eleventh.
+
+These are two possessions within the same point. The first starts after the team receives the pull. The second starts after both teams have turned the disc over and the original offense has the disc again.
+
+The teams are ranked by ShownSpace Pro's total O-line aEC, shown beside their names. These values come from the 2026 team leaderboard with O-LINE and Total selected, accessed November 16, 2026. The graph measures the change in average expected completion probability: second possession minus first. A mark to the left of zero means the model rates the second-possession throws as harder.
+
+The Change column shows the difference between each team's two recorded averages, in percentage points. All ten displayed values are negative. For the plotted points and horizontal lines, blue means the individual 95% range stays below zero; gray means that range includes no change. The difference tells us how large the observed change is, while the interval shows its uncertainty. A gray result is not proof that a team behaves the same way.
+
+All ten teams displayed have an observed decrease. In the full league analysis, twenty-one of the twenty-two teams show a decrease. Across the full league, average xCP falls from 94.59% to 93.31%, and that pooled decrease is statistically significant. For individual teams, however, no xCP result passes the stricter correction for testing all twenty-two teams. Showing only ten teams does not change that testing family or recalculate the colors.
+
+If asked about the data
+
+This uses the preserved 2026 regular-season sample of 131 games from April 24 through July 19, restricted to possessions starting at least sixty yards from the attacking goal. The original seven players must remain. All physical throws are included, including opening centering passes. The broad starting-position restriction does not exactly match the first and second groups. The result describes the recorded throws; it does not establish fatigue or a causal effect of turning the disc over.
+
+The error bars show uncertainty in the first-to-second difference, not the spread of individual throw probabilities. They come from resampling whole games so passes from the same game are not treated as independent observations. The O-line aEC column uses ShownSpace's full-season totals, including playoffs; the xCP comparison uses the regular-season study sample. The O-line filter defines the ranking metric, while the xCP study retains its original-seven, long-field possession rules. Changing the ranking does not change any team's xCP estimate, interval, or highlight.
+
+Other throwing measures, checked on the same cohort
+
+League-wide huck attempt percentage rises from 5.17% to 7.07%, while mean physical throws per possession falls from 8.17 to 6.23. Both differences remain significant after a correction across the five measures checked: xCP, huck attempt percentage, throws per possession, drop-credited CPOE, and actual huck completion percentage. CPOE falls from +0.26 to -0.87 percentage points, but does not pass that five-measure correction. Huck completion changes from 62.60% to 60.20%, without a statistically clear league-wide difference.
+
+When checking each measure across twenty-two teams, fewer throws per possession passes for Boston, Carolina, Colorado, Minnesota, and Vegas. When the correction also covers all five measures across all twenty-two teams, only Carolina's throw-count decrease remains: 9.10 to 4.09 throws per possession. This is exploratory and still includes centering passes.
+
+Carolina's huck completion drop also passes the within-measure twenty-two-team check, but not the broader five-measure/team check. It uses only six second-possession huck attempts across three games (one completed), so it should not be presented as an established Carolina tendency.
+
+The five-measure checks are exploratory follow-up analyses, not a preregistered confirmation, and do not correct for every earlier analysis or filter considered during the project.

@@ -1,0 +1,268 @@
+{
+  "coverage": {
+    "games": 131,
+    "teams": 22,
+    "missing_game": "2026-07-18-PIT-CHI",
+    "known_start_possessions": 6449,
+    "unknown_starts_excluded": 8,
+    "stage_counts": {
+      "1": 5474,
+      "2": 838,
+      "3": 137
+    },
+    "long_field_stage_counts": {
+      "1": 4802,
+      "2": 457,
+      "3": 75
+    }
+  },
+  "throws_by_outcome": [
+    {
+      "outcome": "all",
+      "stages": [
+        {
+          "stage": 1,
+          "estimate": 8.169096209912537,
+          "ci95": [
+            7.951732495301708,
+            8.391959873962625
+          ],
+          "numerator": 39228.0,
+          "denominator": 4802.0,
+          "records": 4802,
+          "games": 131,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 2,
+          "estimate": 6.225382932166302,
+          "ci95": [
+            5.83053825328007,
+            6.6464367742758705
+          ],
+          "numerator": 2845.0,
+          "denominator": 457.0,
+          "records": 457,
+          "games": 127,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 3,
+          "estimate": 5.306666666666667,
+          "ci95": [
+            4.193150252525252,
+            6.632709750566892
+          ],
+          "numerator": 398.0,
+          "denominator": 75.0,
+          "records": 75,
+          "games": 49,
+          "valid_draws": 10000
+        }
+      ],
+      "change": -1.9437132777462347,
+      "change_ci95": [
+        -2.3486167486633454,
+        -1.523794674984751
+      ]
+    },
+    {
+      "outcome": "goal",
+      "stages": [
+        {
+          "stage": 1,
+          "estimate": 9.880691399662732,
+          "ci95": [
+            9.612621467549568,
+            10.157988348367697
+          ],
+          "numerator": 23437.0,
+          "denominator": 2372.0,
+          "records": 2372,
+          "games": 131,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 2,
+          "estimate": 7.802955665024631,
+          "ci95": [
+            7.227759661835749,
+            8.389484548527282
+          ],
+          "numerator": 1584.0,
+          "denominator": 203.0,
+          "records": 203,
+          "games": 98,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 3,
+          "estimate": 7.2,
+          "ci95": [
+            5.541666666666667,
+            9.428690476190475
+          ],
+          "numerator": 216.0,
+          "denominator": 30.0,
+          "records": 30,
+          "games": 24,
+          "valid_draws": 10000
+        }
+      ],
+      "change": -2.077735734638101,
+      "change_ci95": [
+        -2.6603209614481456,
+        -1.4868733642002405
+      ]
+    },
+    {
+      "outcome": "turnover",
+      "stages": [
+        {
+          "stage": 1,
+          "estimate": 6.4983539094650205,
+          "ci95": [
+            6.285656046377728,
+            6.725751892093712
+          ],
+          "numerator": 15791.0,
+          "denominator": 2430.0,
+          "records": 2430,
+          "games": 131,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 2,
+          "estimate": 4.964566929133858,
+          "ci95": [
+            4.559826693576694,
+            5.3937034004598985
+          ],
+          "numerator": 1261.0,
+          "denominator": 254.0,
+          "records": 254,
+          "games": 104,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 3,
+          "estimate": 4.044444444444444,
+          "ci95": [
+            3.0,
+            5.413864942528734
+          ],
+          "numerator": 182.0,
+          "denominator": 45.0,
+          "records": 45,
+          "games": 32,
+          "valid_draws": 10000
+        }
+      ],
+      "change": -1.5337869803311621,
+      "change_ci95": [
+        -2.00137508269672,
+        -1.0722331679966561
+      ]
+    }
+  ],
+  "huck_profile": [
+    {
+      "metric": "attempt_share",
+      "stages": [
+        {
+          "stage": 1,
+          "estimate": 5.167227490567962,
+          "ci95": [
+            4.899534941164338,
+            5.448744357500541
+          ],
+          "numerator": 2027.0,
+          "denominator": 39228.0,
+          "records": 39228,
+          "games": 131,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 2,
+          "estimate": 7.065026362038664,
+          "ci95": [
+            6.118252992575394,
+            8.05070780945733
+          ],
+          "numerator": 201.0,
+          "denominator": 2845.0,
+          "records": 2845,
+          "games": 127,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 3,
+          "estimate": 8.040201005025125,
+          "ci95": [
+            5.191158406954221,
+            11.490956085170554
+          ],
+          "numerator": 32.0,
+          "denominator": 398.0,
+          "records": 398,
+          "games": 49,
+          "valid_draws": 10000
+        }
+      ],
+      "change": 1.8977988714707026,
+      "change_ci95": [
+        0.9406120600063307,
+        2.91479401715416
+      ]
+    },
+    {
+      "metric": "completion",
+      "stages": [
+        {
+          "stage": 1,
+          "estimate": 62.60483473112975,
+          "ci95": [
+            60.1690492002054,
+            64.990234375
+          ],
+          "numerator": 1269.0,
+          "denominator": 2027.0,
+          "records": 39228,
+          "games": 131,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 2,
+          "estimate": 60.19900497512438,
+          "ci95": [
+            53.15744978387999,
+            67.26498729102518
+          ],
+          "numerator": 121.0,
+          "denominator": 201.0,
+          "records": 2845,
+          "games": 127,
+          "valid_draws": 10000
+        },
+        {
+          "stage": 3,
+          "estimate": 53.125,
+          "ci95": [
+            34.146341463414636,
+            71.7948717948718
+          ],
+          "numerator": 17.0,
+          "denominator": 32.0,
+          "records": 398,
+          "games": 49,
+          "valid_draws": 10000
+        }
+      ],
+      "change": -2.4058297560053674,
+      "change_ci95": [
+        -9.794967500864146,
+        4.9018798534013
+      ]
+    }
+  ]
+}

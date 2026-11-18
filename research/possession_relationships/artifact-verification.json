@@ -1,0 +1,27 @@
+{
+  "checkedOn": "2026-11-16",
+  "status": "complete",
+  "calculation": "264 team-stage-outcome-scope groups independently recomputed with the Python standard library; requested correlations reconciled; input hashes verified.",
+  "previews": {
+    "scoring": "http://127.0.0.1:8874/UFA-hucking-and-scoring.ufa.html",
+    "throws": "http://127.0.0.1:8874/UFA-throw-count-and-scoring.ufa.html"
+  },
+  "browserChecks": [
+    "22 source-bound plotted marks on each chart",
+    "Four quadrant memberships independently checked from the signs of both changes",
+    "Throw count/scoring long-field r=0.72 with quadrant counts 7/1/14/0",
+    "All-starts filter updates r=0.43 and moves Chicago to fewer throws/higher scoring",
+    "Comparison filter changes both axes, titles, correlations and quadrant counts",
+    "Selecting Seattle updates throw and scoring rates, sample counts and uncertainty",
+    "Default huck/scoring quadrant counts are 2/6/1/13",
+    "No console errors observed",
+    "Both full-page layouts inspected after label placement repairs"
+  ],
+  "staticFigures": "Both PNG and SVG quadrant figures regenerated and PNGs inspected; axis/caption spacing repaired.",
+  "notChecked": [
+    "Native canvas host was not separately observed; identical source was checked through local browser previews",
+    "Dedicated mobile viewport and a light browser theme were not separately tested for this revision"
+  ],
+  "preservation": "Existing app runtime, review labels, source rows and prior research figures were not changed by this work. New files are limited to the relationship study and its separate previews.",
+  "revision": "Corrected secondary measure to throw count versus scoring; added four-quadrant displays for both comparisons."
+}
