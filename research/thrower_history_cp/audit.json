@@ -1,0 +1,1196 @@
+{
+  "purpose": "Feasibility only: data audit and prospective split proposal; no models fitted or test performance compared.",
+  "source": {
+    "snapshot": "2026-10-12",
+    "manifest": "data/database-exports/2026-10-12/manifest.json",
+    "verified_sha256": {
+      "throws": "10fbc9e30efe263bbfdf626a182afd28e7bacc5bc2326f97232e404d02621025",
+      "games": "1fba1f00bff914bd89e358d9cce145767c63c7027945c73957190c527adafef6",
+      "players": "bd622652a1b250294e32f6b6693ba2516ed3c9455c725b09ec0078a72a0adc9f",
+      "teams": "b3f20513df39890b86655770225d6bb9da471d05818f77c73365c94d171523b4",
+      "blocks": "c1adb97ce9812c6808af99e55ef8ff873257fa97b5dd4f545f9f7c1d0ccb8919"
+    },
+    "live_count_check": "See database_readonly_receipt.json. Count agreement does not prove identical row contents."
+  },
+  "consulted_reference_sha256": {
+    "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/data/database-metadata/2026-11-04/throw-metric-validation.json": "d7b02ef160b9ef411cf5a0146f14f9b8ffc7ff44e5ad62550f730395e3adc8ad",
+    "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/analysis/multiseason_release_validation.json": "d0155b8221959369e4ea9bc8c7a21aeeb60abede04237d1d7399fa21c996a532",
+    "/Users/teddytaussig/Desktop/Work/UFA_player_archetyping/research/oline_possessions/cohort_audit.json": "ef217f4c9447c738bf8a59626c2b24190cca344a8bb24881065442d780bb0baf",
+    "/Users/teddytaussig/Desktop/Work/Nature_AI_in_Sports/journal_of_statistics_and_data_science_in_sports/submission/JSDSS_manuscript.docx": "926f941ed6234b8565790f8fa2f8bff9b06c5c257314a3ed49168dce4810a33c"
+  },
+  "scope": "All recorded lines, possession numbers, field locations and phases. No earlier O-line or long-field filters imported.",
+  "seasons": [
+    {
+      "rows": 71856,
+      "cp_missing": 0,
+      "cp_invalid_nonmissing": 0,
+      "missing_geometry": 0,
+      "out_of_bounds_geometry": 0,
+      "physical_throws": 71772,
+      "caught": 66726,
+      "drops": 816,
+      "drop_rows_with_stored_cpoe_one": 816,
+      "distance_below_1_5": 908,
+      "unknown_thrower": 4,
+      "stalls_excluded": 84,
+      "year": 2021,
+      "games": 134
+    },
+    {
+      "rows": 84993,
+      "cp_missing": 0,
+      "cp_invalid_nonmissing": 0,
+      "missing_geometry": 1,
+      "out_of_bounds_geometry": 0,
+      "physical_throws": 84890,
+      "caught": 78938,
+      "drops": 973,
+      "drop_rows_with_stored_cpoe_one": 973,
+      "distance_below_1_5": 855,
+      "unknown_thrower": 18,
+      "stalls_excluded": 103,
+      "year": 2022,
+      "games": 160
+    },
+    {
+      "rows": 84712,
+      "cp_missing": 0,
+      "cp_invalid_nonmissing": 0,
+      "missing_geometry": 1,
+      "out_of_bounds_geometry": 0,
+      "physical_throws": 84620,
+      "caught": 78883,
+      "drops": 821,
+      "drop_rows_with_stored_cpoe_one": 821,
+      "distance_below_1_5": 709,
+      "unknown_thrower": 10,
+      "stalls_excluded": 92,
+      "year": 2023,
+      "games": 155
+    },
+    {
+      "rows": 85964,
+      "cp_missing": 0,
+      "cp_invalid_nonmissing": 0,
+      "missing_geometry": 1,
+      "out_of_bounds_geometry": 0,
+      "physical_throws": 85897,
+      "caught": 80342,
+      "drops": 740,
+      "drop_rows_with_stored_cpoe_one": 740,
+      "distance_below_1_5": 897,
+      "unknown_thrower": 7,
+      "stalls_excluded": 67,
+      "year": 2024,
+      "games": 155
+    },
+    {
+      "rows": 84316,
+      "cp_missing": 0,
+      "cp_invalid_nonmissing": 0,
+      "missing_geometry": 0,
+      "out_of_bounds_geometry": 0,
+      "physical_throws": 84250,
+      "caught": 78439,
+      "drops": 846,
+      "drop_rows_with_stored_cpoe_one": 846,
+      "distance_below_1_5": 1143,
+      "unknown_thrower": 18,
+      "stalls_excluded": 66,
+      "year": 2025,
+      "games": 155
+    },
+    {
+      "rows": 78847,
+      "cp_missing": 18,
+      "cp_invalid_nonmissing": 0,
+      "missing_geometry": 0,
+      "out_of_bounds_geometry": 0,
+      "physical_throws": 78784,
+      "caught": 73709,
+      "drops": 742,
+      "drop_rows_with_stored_cpoe_one": 742,
+      "distance_below_1_5": 1082,
+      "unknown_thrower": 12,
+      "stalls_excluded": 63,
+      "physical_invalid_or_missing_cp": 18,
+      "year": 2026,
+      "games": 142
+    }
+  ],
+  "event_types": {
+    "18": 421149,
+    "22": 28094,
+    "19": 35888,
+    "20": 4938,
+    "24": 475,
+    "23": 144
+  },
+  "duplicates": {
+    "game_throw_id": 0,
+    "exact_rows": 0,
+    "duplicate_game_ids": 0,
+    "repeated_source_hash_extra_rows": 0,
+    "repeated_source_side_index_extra_rows": 0
+  },
+  "missing_or_unknown_fields": {
+    "2024": {
+      "Receiver": 4890,
+      "Thrower": 7,
+      "ThrowerX": 1,
+      "ThrowerY": 1
+    },
+    "2023": {
+      "Receiver": 5022,
+      "Thrower": 10,
+      "ThrowerX": 1,
+      "ThrowerY": 1
+    },
+    "2025": {
+      "Receiver": 5057,
+      "Thrower": 20
+    },
+    "2026": {
+      "Receiver": 4427,
+      "Thrower": 12,
+      "cp": 18
+    },
+    "2021": {
+      "Receiver": 4325,
+      "Thrower": 4
+    },
+    "2022": {
+      "Receiver": 5102,
+      "Thrower": 18,
+      "ThrowerX": 1,
+      "ThrowerY": 1
+    }
+  },
+  "physical_missing_or_unknown_fields": {
+    "2024": {
+      "Receiver": 4823,
+      "Thrower": 7,
+      "ThrowerX": 1,
+      "ThrowerY": 1
+    },
+    "2023": {
+      "Receiver": 4930,
+      "Thrower": 10,
+      "ThrowerX": 1,
+      "ThrowerY": 1
+    },
+    "2025": {
+      "Receiver": 4991,
+      "Thrower": 18
+    },
+    "2026": {
+      "Receiver": 4364,
+      "Thrower": 12,
+      "cp": 18
+    },
+    "2021": {
+      "Receiver": 4241,
+      "Thrower": 4
+    },
+    "2022": {
+      "Receiver": 4999,
+      "Thrower": 18,
+      "ThrowerX": 1,
+      "ThrowerY": 1
+    }
+  },
+  "cp_range": [
+    0.114750392393255,
+    0.99649580625609
+  ],
+  "cp_zero_one_by_year_type_and_distance": [],
+  "missing_cp_rows": [
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "c5aa880b3d9df3e6956ee4c97c1233d1ea628684c291b42967d077fba0578580",
+      "type": "18",
+      "thrower": "dritthale",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "31fc226adc90b9b3fcac9fce69cff064a04ff7525bf9477a1795b4db73071c29",
+      "type": "18",
+      "thrower": "wfrankenb",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "446f7266910a8ee4d41afe7ef0078754644258a8faab77937b8bb9aaf1fdac4c",
+      "type": "18",
+      "thrower": "dritthale",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "963eb80fcd4478833f807615678bfb065f2087995e65f08dc6d73ea08e12053e",
+      "type": "18",
+      "thrower": "lgordon",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "a4842ada4fb4dd3f0db94bd025c37f0f5d7adfb1bf3e70506d06547025628cd4",
+      "type": "18",
+      "thrower": "wfrankenb",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "5c2e2129447fff21e2b09680183d63547fd34ea43b474371fc8a904d4ff93c38",
+      "type": "18",
+      "thrower": "cboydflie",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "37ce07c91dc2a435626606b12c60ebbe5c43e47ad16c5dee00a1aa692d34f973",
+      "type": "18",
+      "thrower": "wfrankenb",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "abdca96838bae42b69bf69068be75c1810fa060a77a2943ac8ae823b2ee20ba5",
+      "type": "19",
+      "thrower": "arees",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "db3221fa187bb1f756b4c9d7d774495f70d0705390fb9bbd5c5552a6aa22e121",
+      "type": "18",
+      "thrower": "arees",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "1796faca48e75a4237c6bc54b0825489851bd2c04d4531e4a05790f99eafe021",
+      "type": "22",
+      "thrower": "cboydflie",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "38ca95552b177ef2690826ad7f2051bb3c16453e4ec107bfb1e552c71bde763c",
+      "type": "18",
+      "thrower": "lgordon",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "fd3443de716e29518a418125096acb4f4da5e9e47ce5c161aef83f9d54f1e889",
+      "type": "18",
+      "thrower": "wfrankenb",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "cb7deb97fb5694c2e0aba2321a42501dad1c3b5dd6acd9d8ef18355a6b144007",
+      "type": "18",
+      "thrower": "dwhited",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "3ec8c97fcb03676f41d76cd35d9885835b2f5669e982e209a383c8d9836c1853",
+      "type": "18",
+      "thrower": "dritthale",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "43395298d9a33fbe901dae5d3e5934346582e027392a6ef91b7ca8be58e02037",
+      "type": "18",
+      "thrower": "dclyburn",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "eff08f876c4d12e3f68bd9b6877fa908b57ae02eea78f0376add01eb5cd5b91a",
+      "type": "18",
+      "thrower": "lgordon",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "2fbe522de6b8a847deb62cd9cdf1dd68f026958a0f58323d7592061908f8ddff",
+      "type": "18",
+      "thrower": "cboydflie",
+      "cp": ""
+    },
+    {
+      "game": "2026-05-02-SLC-OAK",
+      "throw_id": "5b14f3590089040e60bc5a75472f4435e687a16f1153bed879d3dc6b098ac662",
+      "type": "18",
+      "thrower": "dwhited",
+      "cp": ""
+    }
+  ],
+  "unknown_roster_thrower_ids": [],
+  "roster": {
+    "conflicting_names_per_id": {},
+    "names_with_multiple_ids": {
+      "James Pollard": [
+        "jpollard",
+        "jpollard1"
+      ],
+      "Jonathan Lee": [
+        "jlee",
+        "jlee1"
+      ],
+      "Alex Davis": [
+        "adavis1",
+        "adavis4"
+      ],
+      "Jordan Taylor": [
+        "jtaylor",
+        "jtaylor3"
+      ],
+      "Will Turner": [
+        "wturner",
+        "wturner1"
+      ],
+      "Jeffrey Silverman": [
+        "jsilverma",
+        "jsilverma1"
+      ],
+      "John Laney": [
+        "jlaney",
+        "jlaney1"
+      ],
+      "Garrett Wilson": [
+        "gwilson",
+        "gwilson1"
+      ],
+      "Alex Liu": [
+        "aliu",
+        "aliu1"
+      ],
+      "Aaron Weaver": [
+        "aweaver",
+        "aweaver1"
+      ],
+      "Aaron Richards": [
+        "arichards",
+        "arichards1"
+      ],
+      "Colin Smith": [
+        "csmith",
+        "csmith1"
+      ],
+      "Ryan Smith": [
+        "rsmith",
+        "rsmith2",
+        "rsmith4"
+      ],
+      "Justin Kinkead": [
+        "jkinkead",
+        "jkinkead1"
+      ],
+      "Ryan Lee": [
+        "rlee",
+        "rlee1"
+      ]
+    },
+    "extra_year_player_rows": 30
+  },
+  "missing_2026_scheduled_games": [
+    {
+      "GameID": "2026-08-27-OAK-NY",
+      "Status": "Upcoming",
+      "RegularSeasonWeek": "",
+      "PlayoffRound": ""
+    },
+    {
+      "GameID": "2026-07-18-PIT-CHI",
+      "Status": "Final",
+      "RegularSeasonWeek": "13",
+      "PlayoffRound": ""
+    },
+    {
+      "GameID": "2026-07-17-IND-PIT",
+      "Status": "Upcoming",
+      "RegularSeasonWeek": "",
+      "PlayoffRound": ""
+    }
+  ],
+  "game_date_disagreements": [
+    {
+      "game": "2025-05-03-CAR-ATL",
+      "StartTimestamp": "2025-05-17 15:30:00"
+    }
+  ],
+  "games_with_throws_missing_start_date": [],
+  "training_provenance": {
+    "fields_in_export": [],
+    "cp_training_labels_verified": false,
+    "2026_excluded_from_cp_training": "working assumption, unverified",
+    "older_predictions_out_of_sample": "unverified; neither values nor aggregate metrics prove this"
+  },
+  "cohort_counts": {
+    "all_physical_cp": {
+      "2024": {
+        "throws": 85897,
+        "caught": 80342,
+        "drops": 740,
+        "hucks": 4148,
+        "unknown_thrower": 7,
+        "missing_receiver": 4823,
+        "games": 155
+      },
+      "2023": {
+        "throws": 84620,
+        "caught": 78883,
+        "drops": 821,
+        "hucks": 4008,
+        "unknown_thrower": 10,
+        "missing_receiver": 4930,
+        "games": 155
+      },
+      "2025": {
+        "throws": 84250,
+        "caught": 78439,
+        "drops": 846,
+        "hucks": 4002,
+        "unknown_thrower": 18,
+        "missing_receiver": 4991,
+        "games": 155
+      },
+      "2026": {
+        "throws": 78766,
+        "caught": 73692,
+        "drops": 742,
+        "hucks": 3778,
+        "unknown_thrower": 12,
+        "missing_receiver": 4363,
+        "games": 142
+      },
+      "2021": {
+        "throws": 71772,
+        "caught": 66726,
+        "drops": 816,
+        "hucks": 3521,
+        "unknown_thrower": 4,
+        "missing_receiver": 4241,
+        "games": 134
+      },
+      "2022": {
+        "throws": 84890,
+        "caught": 78938,
+        "drops": 973,
+        "hucks": 4463,
+        "unknown_thrower": 18,
+        "missing_receiver": 4999,
+        "games": 160
+      }
+    },
+    "distance_ge_1_5_cp": {
+      "2024": {
+        "throws": 84999,
+        "caught": 80159,
+        "drops": 675,
+        "hucks": 4148,
+        "unknown_thrower": 5,
+        "missing_receiver": 4173,
+        "games": 155
+      },
+      "2023": {
+        "throws": 83910,
+        "caught": 78676,
+        "drops": 776,
+        "hucks": 4008,
+        "unknown_thrower": 7,
+        "missing_receiver": 4472,
+        "games": 155
+      },
+      "2025": {
+        "throws": 83107,
+        "caught": 78185,
+        "drops": 747,
+        "hucks": 4002,
+        "unknown_thrower": 13,
+        "missing_receiver": 4199,
+        "games": 155
+      },
+      "2026": {
+        "throws": 77686,
+        "caught": 73232,
+        "drops": 676,
+        "hucks": 3778,
+        "unknown_thrower": 9,
+        "missing_receiver": 3808,
+        "games": 142
+      },
+      "2021": {
+        "throws": 70864,
+        "caught": 66440,
+        "drops": 734,
+        "hucks": 3521,
+        "unknown_thrower": 3,
+        "missing_receiver": 3701,
+        "games": 134
+      },
+      "2022": {
+        "throws": 84034,
+        "caught": 78775,
+        "drops": 908,
+        "hucks": 4463,
+        "unknown_thrower": 17,
+        "missing_receiver": 4370,
+        "games": 160
+      }
+    }
+  },
+  "proposed_2026_splits": {
+    "date_source": "StartTimestamp calendar date; all games on same date remain together",
+    "train": "through 2026-06-14",
+    "validation": "2026-06-15 through 2026-07-05",
+    "test": "2026-07-06 onward",
+    "counts": {
+      "all_physical_cp": {
+        "train": {
+          "throws": 44392,
+          "caught": 41452,
+          "drops": 453,
+          "hucks": 2072,
+          "unknown_thrower": 7,
+          "missing_receiver": 2507,
+          "games": 80,
+          "regular_games": 80,
+          "named_throwers": 684
+        },
+        "all": {
+          "throws": 78766,
+          "caught": 73692,
+          "drops": 742,
+          "hucks": 3778,
+          "unknown_thrower": 12,
+          "missing_receiver": 4363,
+          "games": 142,
+          "regular_games": 131,
+          "playoffs_games": 11,
+          "named_throwers": 747
+        },
+        "test": {
+          "throws": 18357,
+          "caught": 17270,
+          "drops": 142,
+          "hucks": 858,
+          "unknown_thrower": 3,
+          "missing_receiver": 949,
+          "games": 33,
+          "playoffs_games": 11,
+          "regular_games": 22,
+          "named_throwers": 538
+        },
+        "validation": {
+          "throws": 16017,
+          "caught": 14970,
+          "drops": 147,
+          "hucks": 848,
+          "unknown_thrower": 2,
+          "missing_receiver": 907,
+          "games": 29,
+          "regular_games": 29,
+          "named_throwers": 540
+        }
+      },
+      "distance_ge_1_5_cp": {
+        "train": {
+          "throws": 43791,
+          "caught": 41180,
+          "drops": 419,
+          "hucks": 2072,
+          "unknown_thrower": 5,
+          "missing_receiver": 2212,
+          "games": 80,
+          "regular_games": 80,
+          "named_throwers": 683
+        },
+        "all": {
+          "throws": 77686,
+          "caught": 73232,
+          "drops": 676,
+          "hucks": 3778,
+          "unknown_thrower": 9,
+          "missing_receiver": 3808,
+          "games": 142,
+          "regular_games": 131,
+          "playoffs_games": 11,
+          "named_throwers": 746
+        },
+        "test": {
+          "throws": 18158,
+          "caught": 17217,
+          "drops": 127,
+          "hucks": 858,
+          "unknown_thrower": 2,
+          "missing_receiver": 817,
+          "games": 33,
+          "playoffs_games": 11,
+          "regular_games": 22,
+          "named_throwers": 538
+        },
+        "validation": {
+          "throws": 15737,
+          "caught": 14835,
+          "drops": 130,
+          "hucks": 848,
+          "unknown_thrower": 2,
+          "missing_receiver": 779,
+          "games": 29,
+          "regular_games": 29,
+          "named_throwers": 540
+        }
+      }
+    }
+  },
+  "history_coverage": {
+    "all_physical_cp": {
+      "2026_only": {
+        "throw_weighted_coverage": {
+          "all_2026": {
+            "named_throws": 78754,
+            "player_games": 5383,
+            "throws_with_at_least_1_prior_throws": 69607,
+            "throws_with_at_least_50_prior_throws": 47398,
+            "throws_with_at_least_100_prior_throws": 30964,
+            "throws_with_at_least_200_prior_throws": 13717,
+            "throws_with_at_least_500_prior_throws": 520,
+            "throws_with_at_least_1_prior_games": 69607,
+            "throws_with_at_least_3_prior_games": 51841,
+            "throws_with_at_least_5_prior_games": 36619,
+            "throws_with_at_least_10_prior_games": 7751
+          },
+          "train": {
+            "named_throws": 44385,
+            "player_games": 3052,
+            "throws_with_at_least_1_prior_throws": 35765,
+            "throws_with_at_least_50_prior_throws": 18597,
+            "throws_with_at_least_100_prior_throws": 8631,
+            "throws_with_at_least_200_prior_throws": 1840,
+            "throws_with_at_least_500_prior_throws": 0,
+            "throws_with_at_least_1_prior_games": 35765,
+            "throws_with_at_least_3_prior_games": 19793,
+            "throws_with_at_least_5_prior_games": 8327,
+            "throws_with_at_least_10_prior_games": 0
+          },
+          "validation": {
+            "named_throws": 16015,
+            "player_games": 1096,
+            "throws_with_at_least_1_prior_throws": 15715,
+            "throws_with_at_least_50_prior_throws": 12795,
+            "throws_with_at_least_100_prior_throws": 9029,
+            "throws_with_at_least_200_prior_throws": 3932,
+            "throws_with_at_least_500_prior_throws": 0,
+            "throws_with_at_least_1_prior_games": 15715,
+            "throws_with_at_least_3_prior_games": 14536,
+            "throws_with_at_least_5_prior_games": 11991,
+            "throws_with_at_least_10_prior_games": 496
+          },
+          "test": {
+            "named_throws": 18354,
+            "player_games": 1235,
+            "throws_with_at_least_1_prior_throws": 18127,
+            "throws_with_at_least_50_prior_throws": 16006,
+            "throws_with_at_least_100_prior_throws": 13304,
+            "throws_with_at_least_200_prior_throws": 7945,
+            "throws_with_at_least_500_prior_throws": 520,
+            "throws_with_at_least_1_prior_games": 18127,
+            "throws_with_at_least_3_prior_games": 17512,
+            "throws_with_at_least_5_prior_games": 16301,
+            "throws_with_at_least_10_prior_games": 7255
+          }
+        },
+        "first_2026_appearance": {
+          "players": 747,
+          "with_prior_history": 0,
+          "prior_throws": {
+            "n": 747,
+            "min": 0,
+            "p25": 0.0,
+            "median": 0.0,
+            "p75": 0.0,
+            "max": 0
+          },
+          "prior_games": {
+            "n": 747,
+            "min": 0,
+            "p25": 0.0,
+            "median": 0.0,
+            "p75": 0.0,
+            "max": 0
+          }
+        },
+        "player_game_history_distribution": {
+          "train": {
+            "prior_throws": {
+              "n": 3052,
+              "min": 0,
+              "p25": 2.0,
+              "median": 20.0,
+              "p75": 51.0,
+              "max": 353
+            },
+            "prior_games": {
+              "n": 3052,
+              "min": 0,
+              "p25": 1.0,
+              "median": 2.0,
+              "p75": 4.0,
+              "max": 8
+            }
+          },
+          "validation": {
+            "prior_throws": {
+              "n": 1096,
+              "min": 0,
+              "p25": 25.0,
+              "median": 63.0,
+              "p75": 115.0,
+              "max": 437
+            },
+            "prior_games": {
+              "n": 1096,
+              "min": 0,
+              "p25": 4.0,
+              "median": 6.0,
+              "p75": 7.0,
+              "max": 10
+            }
+          },
+          "test": {
+            "prior_throws": {
+              "n": 1235,
+              "min": 0,
+              "p25": 42.0,
+              "median": 95.0,
+              "p75": 176.5,
+              "max": 618
+            },
+            "prior_games": {
+              "n": 1235,
+              "min": 0,
+              "p25": 6.0,
+              "median": 8.0,
+              "p75": 10.0,
+              "max": 14
+            }
+          }
+        }
+      },
+      "all_available_seasons": {
+        "throw_weighted_coverage": {
+          "all_2026": {
+            "named_throws": 78754,
+            "player_games": 5383,
+            "throws_with_at_least_1_prior_throws": 77116,
+            "throws_with_at_least_50_prior_throws": 69961,
+            "throws_with_at_least_100_prior_throws": 63868,
+            "throws_with_at_least_200_prior_throws": 54572,
+            "throws_with_at_least_500_prior_throws": 36882,
+            "throws_with_at_least_1_prior_games": 77116,
+            "throws_with_at_least_3_prior_games": 73967,
+            "throws_with_at_least_5_prior_games": 70801,
+            "throws_with_at_least_10_prior_games": 62960
+          },
+          "train": {
+            "named_throws": 44385,
+            "player_games": 3052,
+            "throws_with_at_least_1_prior_throws": 42974,
+            "throws_with_at_least_50_prior_throws": 37960,
+            "throws_with_at_least_100_prior_throws": 34261,
+            "throws_with_at_least_200_prior_throws": 28998,
+            "throws_with_at_least_500_prior_throws": 19917,
+            "throws_with_at_least_1_prior_games": 42974,
+            "throws_with_at_least_3_prior_games": 40352,
+            "throws_with_at_least_5_prior_games": 38035,
+            "throws_with_at_least_10_prior_games": 34235
+          },
+          "validation": {
+            "named_throws": 16015,
+            "player_games": 1096,
+            "throws_with_at_least_1_prior_throws": 15895,
+            "throws_with_at_least_50_prior_throws": 14643,
+            "throws_with_at_least_100_prior_throws": 13524,
+            "throws_with_at_least_200_prior_throws": 11233,
+            "throws_with_at_least_500_prior_throws": 7016,
+            "throws_with_at_least_1_prior_games": 15895,
+            "throws_with_at_least_3_prior_games": 15591,
+            "throws_with_at_least_5_prior_games": 14983,
+            "throws_with_at_least_10_prior_games": 12690
+          },
+          "test": {
+            "named_throws": 18354,
+            "player_games": 1235,
+            "throws_with_at_least_1_prior_throws": 18247,
+            "throws_with_at_least_50_prior_throws": 17358,
+            "throws_with_at_least_100_prior_throws": 16083,
+            "throws_with_at_least_200_prior_throws": 14341,
+            "throws_with_at_least_500_prior_throws": 9949,
+            "throws_with_at_least_1_prior_games": 18247,
+            "throws_with_at_least_3_prior_games": 18024,
+            "throws_with_at_least_5_prior_games": 17783,
+            "throws_with_at_least_10_prior_games": 16035
+          }
+        },
+        "first_2026_appearance": {
+          "players": 747,
+          "with_prior_history": 555,
+          "prior_throws": {
+            "n": 747,
+            "min": 0,
+            "p25": 0.0,
+            "median": 88.0,
+            "p75": 374.5,
+            "max": 3241
+          },
+          "prior_games": {
+            "n": 747,
+            "min": 0,
+            "p25": 0.0,
+            "median": 12.0,
+            "p75": 32.0,
+            "max": 71
+          }
+        },
+        "player_game_history_distribution": {
+          "train": {
+            "prior_throws": {
+              "n": 3052,
+              "min": 0,
+              "p25": 43.0,
+              "median": 180.0,
+              "p75": 548.25,
+              "max": 3388
+            },
+            "prior_games": {
+              "n": 3052,
+              "min": 0,
+              "p25": 6.0,
+              "median": 23.0,
+              "p75": 42.0,
+              "max": 77
+            }
+          },
+          "validation": {
+            "prior_throws": {
+              "n": 1096,
+              "min": 0,
+              "p25": 64.75,
+              "median": 208.0,
+              "p75": 536.0,
+              "max": 3594
+            },
+            "prior_games": {
+              "n": 1096,
+              "min": 0,
+              "p25": 8.0,
+              "median": 21.0,
+              "p75": 42.0,
+              "max": 78
+            }
+          },
+          "test": {
+            "prior_throws": {
+              "n": 1235,
+              "min": 0,
+              "p25": 95.5,
+              "median": 308.0,
+              "p75": 741.5,
+              "max": 3652
+            },
+            "prior_games": {
+              "n": 1235,
+              "min": 0,
+              "p25": 12.0,
+              "median": 30.0,
+              "p75": 49.0,
+              "max": 81
+            }
+          }
+        }
+      }
+    },
+    "distance_ge_1_5_cp": {
+      "2026_only": {
+        "throw_weighted_coverage": {
+          "all_2026": {
+            "named_throws": 77677,
+            "player_games": 5379,
+            "throws_with_at_least_1_prior_throws": 68649,
+            "throws_with_at_least_50_prior_throws": 46428,
+            "throws_with_at_least_100_prior_throws": 30281,
+            "throws_with_at_least_200_prior_throws": 13275,
+            "throws_with_at_least_500_prior_throws": 471,
+            "throws_with_at_least_1_prior_games": 68649,
+            "throws_with_at_least_3_prior_games": 51198,
+            "throws_with_at_least_5_prior_games": 36149,
+            "throws_with_at_least_10_prior_games": 7665
+          },
+          "train": {
+            "named_throws": 43786,
+            "player_games": 3049,
+            "throws_with_at_least_1_prior_throws": 35274,
+            "throws_with_at_least_50_prior_throws": 18198,
+            "throws_with_at_least_100_prior_throws": 8455,
+            "throws_with_at_least_200_prior_throws": 1799,
+            "throws_with_at_least_500_prior_throws": 0,
+            "throws_with_at_least_1_prior_games": 35274,
+            "throws_with_at_least_3_prior_games": 19567,
+            "throws_with_at_least_5_prior_games": 8240,
+            "throws_with_at_least_10_prior_games": 0
+          },
+          "validation": {
+            "named_throws": 15735,
+            "player_games": 1095,
+            "throws_with_at_least_1_prior_throws": 15439,
+            "throws_with_at_least_50_prior_throws": 12439,
+            "throws_with_at_least_100_prior_throws": 8745,
+            "throws_with_at_least_200_prior_throws": 3763,
+            "throws_with_at_least_500_prior_throws": 0,
+            "throws_with_at_least_1_prior_games": 15439,
+            "throws_with_at_least_3_prior_games": 14298,
+            "throws_with_at_least_5_prior_games": 11770,
+            "throws_with_at_least_10_prior_games": 486
+          },
+          "test": {
+            "named_throws": 18156,
+            "player_games": 1235,
+            "throws_with_at_least_1_prior_throws": 17936,
+            "throws_with_at_least_50_prior_throws": 15791,
+            "throws_with_at_least_100_prior_throws": 13081,
+            "throws_with_at_least_200_prior_throws": 7713,
+            "throws_with_at_least_500_prior_throws": 471,
+            "throws_with_at_least_1_prior_games": 17936,
+            "throws_with_at_least_3_prior_games": 17333,
+            "throws_with_at_least_5_prior_games": 16139,
+            "throws_with_at_least_10_prior_games": 7179
+          }
+        },
+        "first_2026_appearance": {
+          "players": 746,
+          "with_prior_history": 0,
+          "prior_throws": {
+            "n": 746,
+            "min": 0,
+            "p25": 0.0,
+            "median": 0.0,
+            "p75": 0.0,
+            "max": 0
+          },
+          "prior_games": {
+            "n": 746,
+            "min": 0,
+            "p25": 0.0,
+            "median": 0.0,
+            "p75": 0.0,
+            "max": 0
+          }
+        },
+        "player_game_history_distribution": {
+          "train": {
+            "prior_throws": {
+              "n": 3049,
+              "min": 0,
+              "p25": 2.0,
+              "median": 19.0,
+              "p75": 50.0,
+              "max": 348
+            },
+            "prior_games": {
+              "n": 3049,
+              "min": 0,
+              "p25": 1.0,
+              "median": 2.0,
+              "p75": 4.0,
+              "max": 8
+            }
+          },
+          "validation": {
+            "prior_throws": {
+              "n": 1095,
+              "min": 0,
+              "p25": 24.5,
+              "median": 61.0,
+              "p75": 114.0,
+              "max": 437
+            },
+            "prior_games": {
+              "n": 1095,
+              "min": 0,
+              "p25": 4.0,
+              "median": 6.0,
+              "p75": 7.0,
+              "max": 10
+            }
+          },
+          "test": {
+            "prior_throws": {
+              "n": 1235,
+              "min": 0,
+              "p25": 41.0,
+              "median": 93.0,
+              "p75": 174.5,
+              "max": 618
+            },
+            "prior_games": {
+              "n": 1235,
+              "min": 0,
+              "p25": 6.0,
+              "median": 8.0,
+              "p75": 10.0,
+              "max": 14
+            }
+          }
+        }
+      },
+      "all_available_seasons": {
+        "throw_weighted_coverage": {
+          "all_2026": {
+            "named_throws": 77677,
+            "player_games": 5379,
+            "throws_with_at_least_1_prior_throws": 76065,
+            "throws_with_at_least_50_prior_throws": 68935,
+            "throws_with_at_least_100_prior_throws": 62829,
+            "throws_with_at_least_200_prior_throws": 53596,
+            "throws_with_at_least_500_prior_throws": 36191,
+            "throws_with_at_least_1_prior_games": 76065,
+            "throws_with_at_least_3_prior_games": 72957,
+            "throws_with_at_least_5_prior_games": 69842,
+            "throws_with_at_least_10_prior_games": 62131
+          },
+          "train": {
+            "named_throws": 43786,
+            "player_games": 3049,
+            "throws_with_at_least_1_prior_throws": 42396,
+            "throws_with_at_least_50_prior_throws": 37412,
+            "throws_with_at_least_100_prior_throws": 33716,
+            "throws_with_at_least_200_prior_throws": 28491,
+            "throws_with_at_least_500_prior_throws": 19511,
+            "throws_with_at_least_1_prior_games": 42396,
+            "throws_with_at_least_3_prior_games": 39804,
+            "throws_with_at_least_5_prior_games": 37525,
+            "throws_with_at_least_10_prior_games": 33801
+          },
+          "validation": {
+            "named_throws": 15735,
+            "player_games": 1095,
+            "throws_with_at_least_1_prior_throws": 15615,
+            "throws_with_at_least_50_prior_throws": 14348,
+            "throws_with_at_least_100_prior_throws": 13233,
+            "throws_with_at_least_200_prior_throws": 10997,
+            "throws_with_at_least_500_prior_throws": 6864,
+            "throws_with_at_least_1_prior_games": 15615,
+            "throws_with_at_least_3_prior_games": 15316,
+            "throws_with_at_least_5_prior_games": 14717,
+            "throws_with_at_least_10_prior_games": 12483
+          },
+          "test": {
+            "named_throws": 18156,
+            "player_games": 1235,
+            "throws_with_at_least_1_prior_throws": 18054,
+            "throws_with_at_least_50_prior_throws": 17175,
+            "throws_with_at_least_100_prior_throws": 15880,
+            "throws_with_at_least_200_prior_throws": 14108,
+            "throws_with_at_least_500_prior_throws": 9816,
+            "throws_with_at_least_1_prior_games": 18054,
+            "throws_with_at_least_3_prior_games": 17837,
+            "throws_with_at_least_5_prior_games": 17600,
+            "throws_with_at_least_10_prior_games": 15847
+          }
+        },
+        "first_2026_appearance": {
+          "players": 746,
+          "with_prior_history": 555,
+          "prior_throws": {
+            "n": 746,
+            "min": 0,
+            "p25": 0.0,
+            "median": 87.0,
+            "p75": 370.25,
+            "max": 3225
+          },
+          "prior_games": {
+            "n": 746,
+            "min": 0,
+            "p25": 0.0,
+            "median": 12.0,
+            "p75": 32.0,
+            "max": 71
+          }
+        },
+        "player_game_history_distribution": {
+          "train": {
+            "prior_throws": {
+              "n": 3049,
+              "min": 0,
+              "p25": 43.0,
+              "median": 176.0,
+              "p75": 545.0,
+              "max": 3383
+            },
+            "prior_games": {
+              "n": 3049,
+              "min": 0,
+              "p25": 6.0,
+              "median": 23.0,
+              "p75": 42.0,
+              "max": 77
+            }
+          },
+          "validation": {
+            "prior_throws": {
+              "n": 1095,
+              "min": 0,
+              "p25": 63.5,
+              "median": 204.0,
+              "p75": 530.0,
+              "max": 3578
+            },
+            "prior_games": {
+              "n": 1095,
+              "min": 0,
+              "p25": 8.0,
+              "median": 21.0,
+              "p75": 42.0,
+              "max": 78
+            }
+          },
+          "test": {
+            "prior_throws": {
+              "n": 1235,
+              "min": 0,
+              "p25": 93.0,
+              "median": 304.0,
+              "p75": 729.5,
+              "max": 3636
+            },
+            "prior_games": {
+              "n": 1235,
+              "min": 0,
+              "p25": 12.0,
+              "median": 30.0,
+              "p75": 49.0,
+              "max": 81
+            }
+          }
+        }
+      }
+    }
+  },
+  "checks": {
+    "source_hashes_verified": true,
+    "outcomes_match_event_codes": true,
+    "unique_game_throw_ids": true,
+    "all_throws_join_games": true,
+    "no_current_game_or_same_date_history": "All reads precede all updates within each date",
+    "no_model_fit_or_test_scores": true
+  }
+}

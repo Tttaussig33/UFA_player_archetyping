@@ -1,0 +1,62 @@
+{
+  "checked_date": "2026-11-20",
+  "timezone": "America/New_York",
+  "last_result_display_time": "22:40:39",
+  "method": "Read-only SELECT queries through the user's existing DBeaver PostgreSQL connection. Results transcribed from visible result grids; this is not a complete schema dump or database export.",
+  "queries": "database_checks.sql",
+  "source_rows_changed": false,
+  "completion_percentage": {
+    "table": "prod.player_stats_game",
+    "season": 2026,
+    "rows": 5631,
+    "comparable_rows": 5378,
+    "formula": "Completions / (ThrowAttempts - throws_dropped)",
+    "matches_tolerance_1e_8": 5378,
+    "comparable_rows_with_drops": 639,
+    "matches_with_drops": 639,
+    "note": "This omits drops from the denominator. It is distinct from crediting drops as successes in CPOE and does not identify the CP training target. Rows without a positive denominator were not compared."
+  },
+  "model_storage_lead": {
+    "table": "public.model_files",
+    "columns": {"filename": "text", "file_data": "bytea", "insert_timestamp": "timestamp without time zone"},
+    "table_select_privilege": false,
+    "filename_select_privilege": false,
+    "file_data_select_privilege": false,
+    "contents_read": false,
+    "interpretation": "Potential model artifact location; its name and binary column do not prove that it contains the trained production CP model."
+  },
+  "model_version_lead": {
+    "table": "dd_metrics.throws",
+    "column": "model_version",
+    "type": "text",
+    "table_select_privilege": false,
+    "schema_qualified_privilege_check": "SQLSTATE 42501: permission denied for schema dd_metrics",
+    "values_read": false
+  },
+  "catalog_notes": {
+    "searched_schemas": ["prod", "dd_metrics", "public"],
+    "matching_function_names": ["prod.get_player_throw_directions", "prod.refresh_metric_percentile_lookup", "prod.refresh_metric_percentile_lookup_all"],
+    "training_or_prediction_function_found_by_name_search": false,
+    "column_comments": "No comments shown for prod.throws cp/cpoe/DroppedThrow, dd_metrics.throws model_version, or public.model_files columns.",
+    "limitation": "A scoped name search cannot rule out application-side code or relevant logic under other names/schemas. No refresh or other stored functions were executed."
+  },
+  "production_coverage": [
+    {"season": 2021, "rows": 71856, "games": 134, "missing_cp": 0},
+    {"season": 2022, "rows": 84993, "games": 160, "missing_cp": 0},
+    {"season": 2023, "rows": 84712, "games": 155, "missing_cp": 0},
+    {"season": 2024, "rows": 85964, "games": 155, "missing_cp": 0},
+    {"season": 2025, "rows": 84316, "games": 155, "missing_cp": 0},
+    {"season": 2026, "rows": 78847, "games": 142, "missing_cp": 18}
+  ],
+  "coverage_matches_preserved_export_counts": true,
+  "full_row_identity_to_export_verified": false,
+  "cp_training_drop_labels_verified": false,
+  "cp_training_2026_exclusion_verified": false,
+  "older_cp_prediction_training_membership_verified": false,
+  "needed_from_model_owner": [
+    "Production CP model identifier/version and an authorized model_files listing or artifact export, if applicable.",
+    "Exact training label construction including drops, handblocks, stalls, and short throws.",
+    "Training cutoff and included game IDs; whether 2026 was excluded from fitting and tuning.",
+    "Whether older saved CP predictions are in-sample, out-of-fold, or time-held-out, with fold/model identifiers and prediction-generation dates."
+  ]
+}
