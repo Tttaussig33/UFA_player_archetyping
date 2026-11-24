@@ -1,0 +1,519 @@
+{
+  "created_at_utc": "2026-11-24T21:39:04.887165+00:00",
+  "protocol": {
+    "protocol_version": 1,
+    "scope": "Initial fitting and validation; no test performance scoring",
+    "season": 2026,
+    "fit_end": "2026-06-14",
+    "validation_end": "2026-07-05",
+    "test_start": "2026-07-06",
+    "physical_event_types": [
+      18,
+      19,
+      20,
+      22,
+      23
+    ],
+    "success_event_types": [
+      18,
+      19,
+      20
+    ],
+    "minimum_distance_yards": 1.5,
+    "history_rule": "Eligible 2026 attempts on strictly earlier calendar dates from game StartTimestamp; all same-date games share frozen history",
+    "history_residual": "research_y minus original cp",
+    "c1_k_grid": [
+      0,
+      10,
+      25,
+      50,
+      100,
+      200,
+      400,
+      800
+    ],
+    "c1_fit_rule": "Fit shared coefficients on all fitting rows; zero history has h=0. Apply B directly at prediction time when history is absent or thrower is unknown.",
+    "c2_fit_rule": "Normal random intercept per known thrower; estimate population intercept, xCP log-odds slope, and random-intercept standard deviation by marginal maximum likelihood on fitting games. Unknown throwers use B and are omitted from the random-effects likelihood.",
+    "c2_prediction_rule": "Integrate predicted probabilities over the player posterior from strictly earlier dates; B directly for no history or unknown throwers",
+    "selection_metric": "Mean validation log loss, lower is better",
+    "tie_break": "Within 1e-10 log loss: prefer B over C, C1 over C2, and larger k among C1 candidates",
+    "probability_clip_for_logit": 1e-06,
+    "probability_clip_for_scoring": 1e-12,
+    "quadrature_orders": [
+      81,
+      161,
+      321
+    ],
+    "quadrature_mean_log_likelihood_tolerance": 1e-07,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261124,
+    "bootstrap_unit": "Whole game, paired across models; fixed fitted models and history path",
+    "calibration_bin_edges": [
+      0,
+      0.5,
+      0.7,
+      0.8,
+      0.9,
+      0.95,
+      0.98,
+      1
+    ],
+    "original_xcp_training_excluded_2026": "Working assumption; unverified",
+    "older_season_xcp_provenance": "Unverified; no older seasons used for fitting or player history",
+    "test_status": "Reserved; this command does not produce test predictions or metrics",
+    "interpretation": "Retrospective context-conditioned prediction; validation performance is used for selection and cannot establish final improvement. Prior project work has inspected 2026."
+  },
+  "protocol_sha256": "7abddea2c56adca3ed636089eb4a3244009c67b36a6cfc24f8f3ae6c67747d1b",
+  "research_plan_sha256": "9f264b0a98bdaac222b7557c1a8ae45132e34b0cdeaada16ae5da210916510e0",
+  "code_sha256": {
+    "modeling_data.py": "1004d9302a083e194470f5d0e8c783a905546b39eeadcf709cfe277dcdf2b1d6",
+    "modeling_models.py": "ecc39557c4200324b24e2d51e9d84d025586083ae51171e31763e4fa61f3efef",
+    "modeling_evaluation.py": "bab479d4845648040353a57015644d8d0675327a7bc2e1057fa8c1590f936ea5",
+    "run_modeling.py": "b53c2936d322e328dcc90a86e2942a4e41139b785fce3f4d1f8efe4b184cd2ac",
+    "test_modeling.py": "2f89b775669c9815c5063e80960e34d1b62e92a6de47cc30349aacb26e8bf9b5"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.18.1"
+  },
+  "git_head_at_run": "e965d793b2d08a0838ec67358d63e675a61346d9",
+  "cohort": {
+    "season_records": 78847,
+    "physical_attempts": 78784,
+    "missing_cp_physical": 18,
+    "all_distances_with_cp": 78766,
+    "cohort_throws": 77686,
+    "cohort_games": 142,
+    "known_players": 746,
+    "unknown_thrower_attempts": 9,
+    "splits": {
+      "fit": {
+        "throws": 43791,
+        "games": 80,
+        "first_date": "2026-04-24",
+        "last_date": "2026-06-14"
+      },
+      "validation": {
+        "throws": 15737,
+        "games": 29,
+        "first_date": "2026-06-18",
+        "last_date": "2026-07-05"
+      },
+      "test": {
+        "throws": 18158,
+        "games": 33,
+        "first_date": "2026-07-10",
+        "last_date": "2026-08-28"
+      }
+    },
+    "verified_export_sha256": {
+      "throws": "10fbc9e30efe263bbfdf626a182afd28e7bacc5bc2326f97232e404d02621025",
+      "games": "1fba1f00bff914bd89e358d9cce145767c63c7027945c73957190c527adafef6"
+    },
+    "original_cp_and_cpoe_preserved": true,
+    "history_uses_strictly_earlier_dates": true
+  },
+  "test_scored": false,
+  "validation_scores": {
+    "A Original xCP": {
+      "n": 15737,
+      "log_loss": 0.15354251776387756,
+      "brier": 0.03991409009805891,
+      "mean_prediction": 0.9486482104749943,
+      "completion_credit_rate": 0.9509436360170299,
+      "observed_minus_predicted_percentage_points": 0.22954255420356562,
+      "calibration_intercept": 0.05278477894722531,
+      "calibration_slope": 1.0019430772240185
+    },
+    "B General recalibration": {
+      "n": 15737,
+      "log_loss": 0.1536313259250195,
+      "brier": 0.039897932641228345,
+      "mean_prediction": 0.9476698992733691,
+      "completion_credit_rate": 0.9509436360170299,
+      "observed_minus_predicted_percentage_points": 0.32737367436608267,
+      "calibration_intercept": 0.0244172570143925,
+      "calibration_slope": 1.0248589839197375
+    },
+    "C1 History summary": {
+      "n": 15737,
+      "log_loss": 0.15292773828114936,
+      "brier": 0.03971015336597684,
+      "mean_prediction": 0.9479699060854395,
+      "completion_credit_rate": 0.9509436360170299,
+      "observed_minus_predicted_percentage_points": 0.29737299315903964,
+      "calibration_intercept": 0.019697865477259907,
+      "calibration_slope": 1.0239030212978188
+    },
+    "C2 Partially pooled player model": {
+      "n": 15737,
+      "log_loss": 0.15308506007139172,
+      "brier": 0.03977034139782691,
+      "mean_prediction": 0.9480019608388504,
+      "completion_credit_rate": 0.9509436360170299,
+      "observed_minus_predicted_percentage_points": 0.2941675178179559,
+      "calibration_intercept": 0.041733555571004846,
+      "calibration_slope": 1.0138322709106327
+    }
+  },
+  "validation_comparisons": {
+    "B minus A": {
+      "games": 29,
+      "replicates": 10000,
+      "seed": 20261124,
+      "direction": "new minus reference; negative favors new",
+      "limitation": "Development intervals; validation was used to select models. Conditional on fitted models and recorded history path.",
+      "metrics": {
+        "log_loss": {
+          "difference": 8.88081611419189e-05,
+          "game_bootstrap_95_interval": [
+            -4.1099085221705676e-05,
+            0.0002119559441077199
+          ],
+          "equal_game_weight_difference": 8.163852672492172e-05,
+          "equal_game_weight_95_interval": [
+            -5.308595060600639e-05,
+            0.00020926424852488857
+          ]
+        },
+        "brier": {
+          "difference": -1.615745683056287e-05,
+          "game_bootstrap_95_interval": [
+            -2.9090113729553286e-05,
+            -2.0045513546460724e-06
+          ],
+          "equal_game_weight_difference": -1.5859620354284626e-05,
+          "equal_game_weight_95_interval": [
+            -2.8903432918915063e-05,
+            -1.6405681683647232e-06
+          ]
+        }
+      }
+    },
+    "C1 minus B": {
+      "games": 29,
+      "replicates": 10000,
+      "seed": 20261124,
+      "direction": "new minus reference; negative favors new",
+      "limitation": "Development intervals; validation was used to select models. Conditional on fitted models and recorded history path.",
+      "metrics": {
+        "log_loss": {
+          "difference": -0.0007035876438701457,
+          "game_bootstrap_95_interval": [
+            -0.0019196434514392468,
+            0.000211930929185812
+          ],
+          "equal_game_weight_difference": -0.0007797261347095722,
+          "equal_game_weight_95_interval": [
+            -0.0021272730672782106,
+            0.00021091217524533653
+          ]
+        },
+        "brier": {
+          "difference": -0.00018777927525150616,
+          "game_bootstrap_95_interval": [
+            -0.0005201381277448793,
+            8.398936850114431e-05
+          ],
+          "equal_game_weight_difference": -0.00020140209283565818,
+          "equal_game_weight_95_interval": [
+            -0.0005709006400944139,
+            8.895286664230799e-05
+          ]
+        }
+      }
+    },
+    "C2 minus B": {
+      "games": 29,
+      "replicates": 10000,
+      "seed": 20261124,
+      "direction": "new minus reference; negative favors new",
+      "limitation": "Development intervals; validation was used to select models. Conditional on fitted models and recorded history path.",
+      "metrics": {
+        "log_loss": {
+          "difference": -0.0005462658536277878,
+          "game_bootstrap_95_interval": [
+            -0.002112658370143746,
+            0.00065217744783732
+          ],
+          "equal_game_weight_difference": -0.0006486905798703422,
+          "equal_game_weight_95_interval": [
+            -0.002378789787393057,
+            0.0006502977420069155
+          ]
+        },
+        "brier": {
+          "difference": -0.00012759124340142765,
+          "game_bootstrap_95_interval": [
+            -0.0005389283616442552,
+            0.00020417044449862583
+          ],
+          "equal_game_weight_difference": -0.00014467855587866647,
+          "equal_game_weight_95_interval": [
+            -0.0005931919333002308,
+            0.00021274026393454273
+          ]
+        }
+      }
+    }
+  },
+  "c1_grid": [
+    {
+      "k": 0,
+      "coefficients": {
+        "a": 0.02797683275403917,
+        "b": 0.9775742929107882,
+        "c": 1.6137436949180815
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.1534048326459098,
+        "brier": 0.03985589181202991,
+        "mean_prediction": 0.9475529338287881,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.33907021882417787,
+        "calibration_intercept": 0.023111879820039205,
+        "calibration_slope": 1.026758275512671
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 1.8582364979015957e-10,
+        "iterations": 17,
+        "fitting_mean_log_loss": 0.1606744797661276
+      }
+    },
+    {
+      "k": 10,
+      "coefficients": {
+        "a": 0.02430675835734621,
+        "b": 0.977845398023433,
+        "c": 4.3000284653378715
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.15328051499688164,
+        "brier": 0.039827815807554554,
+        "mean_prediction": 0.9475259076807047,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.3417728336325254,
+        "calibration_intercept": 0.023318329964912843,
+        "calibration_slope": 1.0269932829443031
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 4.339933309623856e-10,
+        "iterations": 16,
+        "fitting_mean_log_loss": 0.16051259408415772
+      }
+    },
+    {
+      "k": 25,
+      "coefficients": {
+        "a": 0.02117557670590225,
+        "b": 0.9779814615708108,
+        "c": 6.233445239572974
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.15321319766537028,
+        "brier": 0.039805371509463686,
+        "mean_prediction": 0.9475253631227912,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.3418272894238683,
+        "calibration_intercept": 0.02386642970879999,
+        "calibration_slope": 1.0267792111623335
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 1.977767518795874e-11,
+        "iterations": 15,
+        "fitting_mean_log_loss": 0.16046633336849914
+      }
+    },
+    {
+      "k": 50,
+      "coefficients": {
+        "a": 0.018006716727592305,
+        "b": 0.9781274241531902,
+        "c": 8.809275169819648
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.15314692933592958,
+        "brier": 0.039782787517555124,
+        "mean_prediction": 0.9475529125190814,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.33907234979485557,
+        "calibration_intercept": 0.02395351638767015,
+        "calibration_slope": 1.026465510591414
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 6.266684570275278e-11,
+        "iterations": 17,
+        "fitting_mean_log_loss": 0.1604354994487302
+      }
+    },
+    {
+      "k": 100,
+      "coefficients": {
+        "a": 0.014562113180862568,
+        "b": 0.9783022107835495,
+        "c": 13.208005190168972
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.15307322923448477,
+        "brier": 0.03975797439206412,
+        "mean_prediction": 0.9476234138633352,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.3320222153694763,
+        "calibration_intercept": 0.0233418311010543,
+        "calibration_slope": 1.0259984255230614
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 1.3178957287849115e-10,
+        "iterations": 15,
+        "fitting_mean_log_loss": 0.16041398174271418
+      }
+    },
+    {
+      "k": 200,
+      "coefficients": {
+        "a": 0.01146507349537449,
+        "b": 0.9784750605714178,
+        "c": 21.078913636864353
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.15300577001160776,
+        "brier": 0.03973577826349857,
+        "mean_prediction": 0.9477353425535422,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.32082934634877214,
+        "calibration_intercept": 0.022125151846543935,
+        "calibration_slope": 1.025347194770263
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 8.507748990219676e-10,
+        "iterations": 13,
+        "fitting_mean_log_loss": 0.16040275803847273
+      }
+    },
+    {
+      "k": 400,
+      "coefficients": {
+        "a": 0.009177130788831473,
+        "b": 0.9786153947440287,
+        "c": 35.79256799898353
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.15295670929562213,
+        "brier": 0.03971979227466717,
+        "mean_prediction": 0.947861806294009,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.3081829723020957,
+        "calibration_intercept": 0.020775065137515362,
+        "calibration_slope": 1.0245897877124193
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 8.288722650879029e-11,
+        "iterations": 17,
+        "fitting_mean_log_loss": 0.16039924653460036
+      }
+    },
+    {
+      "k": 800,
+      "coefficients": {
+        "a": 0.007750882595476203,
+        "b": 0.978711920635168,
+        "c": 64.22013553142052
+      },
+      "validation": {
+        "n": 15737,
+        "log_loss": 0.15292773828114936,
+        "brier": 0.03971015336597684,
+        "mean_prediction": 0.9479699060854395,
+        "completion_credit_rate": 0.9509436360170299,
+        "observed_minus_predicted_percentage_points": 0.29737299315903964,
+        "calibration_intercept": 0.019697865477259907,
+        "calibration_slope": 1.0239030212978188
+      },
+      "fit_diagnostics": {
+        "optimizer_success": true,
+        "message": "Optimization terminated successfully.",
+        "max_abs_gradient": 2.332401306364404e-10,
+        "iterations": 17,
+        "fitting_mean_log_loss": 0.1603996896481764
+      }
+    }
+  ],
+  "selection": {
+    "c1_k": 800,
+    "history_candidate": "C1",
+    "preferred_model": "C1",
+    "c1_upper_grid_boundary": true,
+    "selected_using": "Validation mean log loss only",
+    "test_performance_inspected": false
+  },
+  "coefficients": {
+    "B": {
+      "a": 0.02767944514571403,
+      "b": 0.9776399412757037
+    },
+    "C1": {
+      "a": 0.007750882595476203,
+      "b": 0.978711920635168,
+      "c": 64.22013553142052
+    },
+    "C2": {
+      "a": -0.01096610584901076,
+      "b": 0.9928353650295192,
+      "tau": 0.4593469482002436,
+      "prediction_quadrature_order": 161
+    }
+  },
+  "fit_diagnostics": {
+    "B": {
+      "optimizer_success": true,
+      "message": "Optimization terminated successfully.",
+      "max_abs_gradient": 1.3258221919163688e-10,
+      "iterations": 12,
+      "fitting_mean_log_loss": 0.1608211770776393
+    },
+    "C2": {
+      "quadrature_checks": [
+        {
+          "order": 81,
+          "check_order": 161,
+          "mean_negative_log_marginal_likelihood": 0.1597691804369597,
+          "quadrature_difference_per_throw": 0.0,
+          "higher_order_max_abs_gradient": 4.369622000773585e-10,
+          "parameters": [
+            -0.01096610584901076,
+            0.9928353650295192,
+            0.4593469482002436
+          ],
+          "optimizer_success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "starts": 3
+        }
+      ],
+      "known_fitting_throws": 43786,
+      "known_fitting_players": 683
+    }
+  }
+}

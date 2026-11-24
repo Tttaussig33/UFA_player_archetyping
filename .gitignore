@@ -24,5 +24,6 @@ data/database-exports/**/*.csv
 research/oline_possessions/*.csv
 research/dead_disc_study/raw_events/
 research/huck_timing_study/oline_regains/throw_cohort.csv
+research/thrower_history_cp/artifacts/
 
 # Keep dist/: the documented launcher opens this ready-to-use build.

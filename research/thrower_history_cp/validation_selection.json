@@ -1,0 +1,26 @@
+{
+  "protocol_sha256": "7abddea2c56adca3ed636089eb4a3244009c67b36a6cfc24f8f3ae6c67747d1b",
+  "c1_k": 800,
+  "history_candidate": "C1",
+  "preferred_model": "C1",
+  "c1_upper_grid_boundary": true,
+  "selected_using": "Validation mean log loss only",
+  "test_performance_inspected": false,
+  "coefficients": {
+    "B": {
+      "a": 0.02767944514571403,
+      "b": 0.9776399412757037
+    },
+    "C1": {
+      "a": 0.007750882595476203,
+      "b": 0.978711920635168,
+      "c": 64.22013553142052
+    },
+    "C2": {
+      "a": -0.01096610584901076,
+      "b": 0.9928353650295192,
+      "tau": 0.4593469482002436,
+      "prediction_quadrature_order": 161
+    }
+  }
+}
